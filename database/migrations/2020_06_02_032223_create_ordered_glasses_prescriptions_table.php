@@ -18,7 +18,7 @@ class CreateOrderedGlassesPrescriptionsTable extends Migration
             $table->unsignedBigInteger("order_id");
             $table->foreign('order_id')->references('id')->on('orders');
             $table->unsignedBigInteger("product_id");
-            $table->foreign('product_id')->references('id')->on('contact_lenses');
+            $table->foreign('product_id')->references('id')->on('glasses');
             $table->string('image');
             $table->float('right_sphere');
             $table->float('left_sphere');
