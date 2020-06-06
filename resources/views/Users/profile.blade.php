@@ -13,41 +13,46 @@
 <body class="form-v6">
 	<div class="page-content" >
         <div id="maindiv">
-            <h2>Your Profile Information</h2>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Name</label>
+            <div style="float:left;padding-left:30px;padding-top:20px;">
+                <h2>Your Profile Information</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Name</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p>{{$user->name}}</p>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <p>{{$user->name}}</p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>E-mail Address</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p>{{$user->email}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Address</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p>{{$user->address}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Phone</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p>{{$user->phone}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <a href="{{route('user.edit',Auth::user())}}" class="btn btn-info">Edit</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>E-mail Address</label>
-                </div>
-                <div class="col-md-3">
-                    <p>{{$user->email}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Address</label>
-                </div>
-                <div class="col-md-3">
-                    <p>{{$user->address}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Phone</label>
-                </div>
-                <div class="col-md-3">
-                    <p>{{$user->phone}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <a href="{{route('user.edit',Auth::user())}}" class="btn btn-info">Edit</a>
+            <div style="float:right;">
+                <img style="height:550px;border-top-right-radius:10px;border-bottom-right-radius:10px" src="/images/model.jpg" alt="form" >
             </div>
         </div>
 	</div>

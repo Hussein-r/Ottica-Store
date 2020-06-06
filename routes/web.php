@@ -20,6 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
+Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
+Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 
 

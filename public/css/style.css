@@ -192,9 +192,8 @@ input:-moz-placeholder {
 
 #maindiv {
     color: black;
-    width: 70%;
+    width: 65%;
     height: 550px;
     background-color: white;
-    border-radius: 50px;
-    padding: 50px;
+    border-radius: 10px;
 }

@@ -64,7 +64,7 @@
                     <input id="password-confirm" placeholder="Confirm Password" type="password" class="input-text" name="password_confirmation" required autocomplete="new-password">
                 </div>
 				<div class="form-row-last">
-                <input type="submit" name="register" class="register" value="Register">
+                    <input type="submit" name="register" class="register" value="Register">
 				</div>
 			</form>
 		</div>
