@@ -19,8 +19,8 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('phone');
             $table->string('address');
-            $table->boolean('user_order_state');
-            $table->enum('admin_order_state', ['inactive','processing','out for delivery']);
+            $table->boolean('user_order_state')->default('0');
+            $table->enum('admin_order_state', ['inactive','processing','out for delivery'])->default('inactive');
             $table->timestamps();
         });
     }
