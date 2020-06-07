@@ -19,8 +19,6 @@ body {
 .page-content {
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    display: -webkit-flex;
     justify-content: center;
     -o-justify-content: center;
     -ms-justify-content: center;
@@ -196,4 +194,7 @@ input:-moz-placeholder {
     height: 550px;
     background-color: white;
     border-radius: 10px;
+    display: block;
+    margin-left: 20%;
+    margin-top: 10px;
 }

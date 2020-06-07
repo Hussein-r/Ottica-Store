@@ -8,6 +8,8 @@ use App\GlassProductPrescriptions;
 use App\LenseProductPrescriptions;
 use App\LenseProduct;
 use App\Glasses;
+use App\lenses_images;
+use App\glass_images;
 use Illuminate\Http\Request;
 
 class ListOrdersController extends Controller
@@ -101,18 +103,28 @@ class ListOrdersController extends Controller
         // dd($order);
         $glassesDetails = GlassProductPrescriptions::where('order_id',$id)->get();
         $lensesDetails= LenseProductPrescriptions::where('order_id',$id)->get();
+        $glassQty=GlassProduct::where('order_id',$id)->get();
         $lensearr=array();
         $glassarr=array();
-
+        $lenseImgarr=array();
+        $glassImgarr=array();
+       
         foreach ($lensesDetails as $product) {
             array_push($lensearr,$product->product_id);
         }
         $lenses = ContactLenses::find($lensearr);
+        foreach($lenses as $lense){
+            $lenseImgarr =lenses_images::where('lense_id', $lense->id)->first();
+        }
+        // dd($lenseImgarr->image);
 
         foreach ($glassesDetails as $product) {
             array_push($glassarr,$product->product_id);
         }
         $glasses = Glasses::find($glassarr);
+        foreach($glasses as $glass){
+            $glassImgarr =glass_images::where('glass_id', $glass->id)->first();
+        }
 
 
 
@@ -122,7 +134,10 @@ class ListOrdersController extends Controller
         ['glassesDetails' => $glassesDetails,
         'lensesDetails'=> $lensesDetails,
         'lenses' => $lenses ,
+        'lenseImgarr' =>$lenseImgarr,
         'glasses'=> $glasses,
+        'glassImgarr'=>$glassImgarr,
+        'glassQty' => $glassQty,
         ]);
     }
 
