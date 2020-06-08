@@ -7,7 +7,7 @@ use App\GlassProduct;
 use App\GlassProductPrescriptions;
 use App\LenseProductPrescriptions;
 use App\LenseProduct;
-use App\Glasses;
+use App\Glass;
 use App\lenses_images;
 use App\glass_images;
 use Illuminate\Http\Request;
@@ -121,7 +121,7 @@ class ListOrdersController extends Controller
         foreach ($glassesDetails as $product) {
             array_push($glassarr,$product->product_id);
         }
-        $glasses = Glasses::find($glassarr);
+        $glasses = Glass::find($glassarr);
         foreach($glasses as $glass){
             $glassImgarr =glass_images::where('glass_id', $glass->id)->first();
         }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     // use SoftDeletes;
+
+    public function images()
+    {
+        return $this->hasMany('App\Glass');
+    }
 }

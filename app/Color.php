@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Color extends Model
 {
-    //
+    public function glass()
+    {
+        return $this->hasMany('App\Glass');
+    }
 }

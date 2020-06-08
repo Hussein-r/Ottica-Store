@@ -3,7 +3,7 @@
 @section('content')
 <section class="container">
     <h1 style="text-align: center">Add New Glass</h1>
-    {!! Form::open(['route' => 'glass.store','files' => 'true','enctype'=>'multipart/form-data']) !!}
+    {!! Form::model($glass, ['route' => ['glass.update',$glass],'method' => 'PUT', 'files' => 'true','enctype'=>'multipart/form-data']) !!}
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Brand Name</span>
@@ -114,7 +114,7 @@
             </div>   
             {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
         </div>
-        {!! Form::submit('Add Glass',['class'=>'btn btn-primary'])  !!}
+        {!! Form::submit('Update Glass',['class'=>'btn btn-primary'])  !!}
 
     {!! Form::close() !!}
 </section>
