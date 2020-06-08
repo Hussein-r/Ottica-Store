@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDefaultBestsellerGlassesTable extends Migration
+class AddBestsellerGlassesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class AddDefaultBestsellerGlassesTable extends Migration
     public function up()
     {
         Schema::table('glasses', function (Blueprint $table) {
-            $table->dropColumn('best_seller');
-            
-            $table->softDeletes();
+            $table->boolean('best_seller')->default(0);
         });
     }
 
@@ -28,8 +26,7 @@ class AddDefaultBestsellerGlassesTable extends Migration
     public function down()
     {
         Schema::table('glasses', function (Blueprint $table) {
-            
-            $table->dropSoftDeletes();
+            $table->dropColumn('best_seller');
         });
     }
 }

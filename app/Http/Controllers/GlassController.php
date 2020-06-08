@@ -10,6 +10,7 @@ use App\FaceShape;
 use App\FrameShape;
 use App\Material;
 use App\Fit;
+use App\GlassImage;
 
 class GlassController extends Controller
 {
@@ -20,8 +21,8 @@ class GlassController extends Controller
      */
     public function index()
     {
-         
-        return view('glass\index')->render();
+         $glasses = Glasses::all();
+        return view('glass.index',compact('glasses'));
     }
 
     /**
@@ -53,18 +54,22 @@ class GlassController extends Controller
      */
     public function store(Request $request)
     {
-        Glasses::create($request->all());
+        // $request->validate([
+        //     'image' => 'required|image|mimes:jpeg,png,jpg',
+        // ]);
+        $glass= Glasses::create($request->all());
         $images=array();
         if($files=$request->file('images')){
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
-                $file->move('image',$name);
+                $file->move(public_path('images'),$name);
                 $images[]=$name;
             }
         }
-        // $glass = new Glasses();
-        // $glass->brand_id = $request->brand_id;
-        // $glass->save();
+        GlassImage::insert( [
+            'glass_id' => $glass->id,
+            'image'=>  implode("|",$images),
+        ]);
         return redirect()->action('GlassController@index');
 
     }
