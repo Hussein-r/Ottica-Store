@@ -1,15 +1,22 @@
-index glass 
 
 @extends('layouts.app')
 @section('content')
+<a style="margin-left: 80px" href="{{route('glass.create')}}" class="btn btn-primary btn-lg">Add New Glass</a>
+
 <section class="container">
     @forelse($glasses as $glass)
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/{{$glass->images->image}}" alt="Card image cap">
+    <div class="card" style="width: 15rem; display:inline-block; margin:10px">
+        @if($glass->images->first()->image)
+            <img class="card-img-top" style="height:15rem" src="/images/{{$glass->images->first()->image}}" alt="Card image cap">
+        @endif
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title">{{$glass->brand->name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{$color->find($glass->color_id)->name}}</h6> 
+            <h6 class="card-title">{{$glass->price_after_discount}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{$glass->price_before_discount}}</h6> 
+            <a href="{{route('glass.edit', $glass->id)}}" class="btn btn-success">Edit</a>
         </div>
-      </div>
+    </div>
 
     @empty
         <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">

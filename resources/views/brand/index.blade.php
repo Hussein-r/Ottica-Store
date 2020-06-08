@@ -27,7 +27,7 @@
         </div>
     @endforelse
 </table>
-    <a href="{{route('brand.create')}}" class="btn btn-primary btn-lg">Add Brand</a>
+    <a href="{{route('brand.create')}}" class="btn btn-primary btn-lg">Add New Brand</a>
 
 </section>
 @endsection

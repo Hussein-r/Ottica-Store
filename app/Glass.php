@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Glasses extends Model
+class Glass extends Model
 {
     //
     protected $table = 'glasses';
@@ -13,6 +13,16 @@ class Glasses extends Model
     public function images()
     {
         return $this->hasMany('App\GlassImage');
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo('App\Brand');
+    }
+
+    public function color()
+    {
+        return $this->hasOne('App\Color');
     }
 
 }

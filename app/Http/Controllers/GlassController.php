@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Brand;
-use App\Glasses;
+use App\Glass;
 use App\Color;
 use App\FaceShape;
 use App\FrameShape;
@@ -21,8 +21,9 @@ class GlassController extends Controller
      */
     public function index()
     {
-         $glasses = Glasses::all();
-        return view('glass.index',compact('glasses'));
+         $glasses = Glass::all();
+         $color = new Color();
+        return view('glass.index',compact('glasses','color'));
     }
 
     /**
@@ -44,6 +45,7 @@ class GlassController extends Controller
 
         
         return view('glass.create', compact('brand','color','face','frame','material','fit','type','gender','label'));
+    
     }
 
     /**
@@ -57,19 +59,18 @@ class GlassController extends Controller
         // $request->validate([
         //     'image' => 'required|image|mimes:jpeg,png,jpg',
         // ]);
-        $glass= Glasses::create($request->all());
+        $glass= Glass::create($request->all());
         $images=array();
         if($files=$request->file('images')){
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
                 $file->move(public_path('images'),$name);
-                $images[]=$name;
+                GlassImage::insert( [
+                    'glass_id' => $glass->id,
+                    'image'=> $name,
+                ]);
             }
         }
-        GlassImage::insert( [
-            'glass_id' => $glass->id,
-            'image'=>  implode("|",$images),
-        ]);
         return redirect()->action('GlassController@index');
 
     }
@@ -93,7 +94,20 @@ class GlassController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brand = Brand::pluck('name', 'id');
+        $color = Color::pluck('name','id');
+        $face = FaceShape::pluck('name','id');
+        $frame = FrameShape::pluck('name','id');
+        $material = Material::pluck('name','id');
+        $fit = Fit::pluck('name','id');
+        $type = ['sunglass'=>'Sun glass','eyeglass'=>'Eye glass'];
+        $gender = ['male'=>'male','female'=>'female','unisex'=>'unisex'];
+        $label = ['best'=>'Best seller','new'=>'New arrival'];
+
+        $glass= Glass::find($id);
+        return view('glass.edit', compact('brand','color','face','frame','material','fit','type','gender','label','glass'));
+
+        // return view('glass\edit',['glass'=>$glass])->render();
     }
 
     /**
@@ -105,7 +119,20 @@ class GlassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $glass= Glass::update($request->all());
+        $images=array();
+        if($files=$request->file('images')){
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move(public_path('images'),$name);
+                GlassImage::update( [
+                    'glass_id' => $glass->id,
+                    'image'=> $name,
+                ]);
+            }
+        }
+        return redirect()->action('GlassController@index');
+
     }
 
     /**
