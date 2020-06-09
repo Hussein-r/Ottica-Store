@@ -41,7 +41,7 @@ class GlassController extends Controller
         $fit = Fit::pluck('name','id');
         $type = ['sunglass'=>'Sun glass','eyeglass'=>'Eye glass'];
         $gender = ['male'=>'male','female'=>'female','unisex'=>'unisex'];
-        $label = ['best'=>'Best seller','new'=>'New arrival'];
+        $label = ['Best seller'=>'Best seller','new'=>'New arrival'];
 
         
         return view('glass.create', compact('brand','color','face','frame','material','fit','type','gender','label'));
@@ -157,5 +157,21 @@ class GlassController extends Controller
         return redirect()->action(
             'GlassController@index'
         );
+    }
+
+    public function sunglasses()
+    {
+        $glasses = Glass::where('glass_type','=','sunglass')->get();
+        // $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
+        // $colors=Color::whereIn("id",$allcolors)->get('name');
+        return view('glass.sunglass',['glasses'=>$glasses])->render();
+    }
+
+    public function eyeglasses()
+    {
+        $glasses = Glass::where('glass_type','=','eyeglass')->get();
+        // $allcolors=Glass::where("glass_code",$glass->glass_code)->get('color_id');
+        // $colors=Color::whereIn("id",$allcolors)->get('name');
+        return view('glass.eyeglass', compact('glasses'));
     }
 }

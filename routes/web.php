@@ -27,6 +27,8 @@ Route::resource('user','UserController');
 //mariam
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
+Route::get('sunglasses','GlassController@sunglasses');
+Route::get('eyeglasses','GlassController@eyeglasses');
 //hajar
 Route::resource('specialoffers','specialOffersController');
 Route::resource('orderslist','ListOrdersController');
