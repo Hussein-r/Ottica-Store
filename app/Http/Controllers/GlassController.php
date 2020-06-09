@@ -87,8 +87,15 @@ class GlassController extends Controller
         $brand=Brand::where("id","=",$glass->brand_id)->firstOrFail();
         $images=GlassImage::where("glass_id","=",$id)->get();
         $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
-        $colorsnames=Color::whereIn("id",$allcolors)->get('name');
+        $colorsnames=Color::whereIn("id",$allcolors)->get();
         return view('glass.glass_details',compact('glass','images','brand','colorsnames'));
+
+    }
+
+    public function changeColor(Request $request){
+        $glass=Glass::where([["glass_code","=",$request->code],["color_id","=",$request->color]])->firstOrFail();
+        $id=$glass->id;
+        return redirect()->route('glass.show', $id);
 
     }
 

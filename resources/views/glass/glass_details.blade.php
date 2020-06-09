@@ -36,112 +36,34 @@
                 <span>{{$brand->name}}</span>
             </a>
             <h2>{{$glass->label}}</h2>
-            <p>{{$glass->glass_code}}</p>
+            <p id='id'>{{$glass->glass_code}}</p>
             <p class="product-price"><span class="old-price">{{$glass->price_before_discount}}</span>{{$glass->price_after_discount}}</p>
             <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
-            <!-- Form -->
-            <form class="cart-form clearfix" method="post">
-                <!-- Select Box -->
+            <a href="#" onclick="myFunction()">Add Your Lense</a>
+            <form action="/changecolor" method='post'>
+            @csrf
                 <div class="select-box d-flex mt-50 mb-30">
-                    <select name="select" id="productColor">
+                    <select name='color' id="productColor" >
                     @foreach($colorsnames as $color)
-                        <option value="value">Color: {{$color->name}}</option>
+                        <option value="{{$color->id}}" {{( $glass->color_id==$color->id ? "selected":"") }}>Color: {{$color->name}}</option>
                     @endforeach   
                     </select>
-                </div>
-                <!-- Cart & Favourite Box -->
-                <div class="cart-fav-box d-flex align-items-center">
-                    <!-- Cart -->
-                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
-                    <!-- Favourite -->
-                    <div class="product-favourite ml-4">
-                        <a href="#" class="favme fa fa-heart"></a>
-                    </div>
+                    <input type="text" hidden name='code' value="{{$glass->glass_code}}"></input>
                 </div>
             </form>
+            <div class="cart-fav-box d-flex align-items-center">
+                <form class="cart-form clearfix" method="post">
+                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+                </form>
+                <div class="product-favourite ml-4">
+                    <a href="#" class="favme fa fa-heart"></a>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- ##### Single Product Details Area End ##### -->
-
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer_area clearfix">
-        <div class="container">
-            <div class="row">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area d-flex mb-30">
-                        <!-- Logo -->
-                        <div class="footer-logo mr-50">
-                            <h2 style="color:white;">Ottica</h2>
-                        </div>
-                        <!-- Footer Menu -->
-                        <div class="footer_menu">
-                            <ul>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area mb-30">
-                        <ul class="footer_widget_menu">
-                            <li><a href="#">Order Status</a></li>
-                            <li><a href="#">Payment Options</a></li>
-                            <li><a href="#">Shipping and Delivery</a></li>
-                            <li><a href="#">Guides</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row align-items-end">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area">
-                        <div class="footer_heading mb-30">
-                            <h6>Subscribe</h6>
-                        </div>
-                        <div class="subscribtion_form">
-                            <form action="#" method="post">
-                                <input type="email" name="mail" class="mail" placeholder="Your email here">
-                                <button type="submit" class="submit"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area">
-                        <div class="footer_social_area">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-<div class="row mt-5">
-                <div class="col-md-12 text-center">
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i>
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </footer>
-    <!-- ##### Footer Area End ##### -->
-
+    <div id="mydiv">
+        
+    </div>
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -154,6 +76,7 @@
     <script src="/js/classy-nav.min.js"></script>
     <!-- Active js -->
     <script src="/js/active.js"></script>
+    <script src="/js/colors.js"></script>
 
 </body>
 @endsection
