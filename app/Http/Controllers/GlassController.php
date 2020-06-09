@@ -83,7 +83,13 @@ class GlassController extends Controller
      */
     public function show($id)
     {
-        //
+        $glass=Glass::where("id","=",$id)->firstOrFail();
+        $brand=Brand::where("id","=",$glass->brand_id)->firstOrFail();
+        $images=GlassImage::where("glass_id","=",$id)->get();
+        $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
+        $colorsnames=Color::whereIn("id",$allcolors)->get('name');
+        return view('glass.glass_details',compact('glass','images','brand','colorsnames'));
+
     }
 
     /**
