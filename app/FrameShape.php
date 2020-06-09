@@ -4,9 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Glasses extends Model
+class FrameShape extends Model
 {
     //
-    protected $table = 'glasses';
-
 }

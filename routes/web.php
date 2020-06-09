@@ -23,8 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
 Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
 Route::post('/mail', 'SendEmailController@send')->name('mail');
-Route::resource('brand', 'BrandController');
 Route::resource('user','UserController');
+//mariam
+Route::resource('brand', 'BrandController');
+Route::resource('glass', 'GlassController');
+Route::get('sunglasses','GlassController@sunglasses');
+Route::get('eyeglasses','GlassController@eyeglasses');
 //hajar
 //specail offers & list orders for admin 
 Route::resource('specialoffers','specialOffersController');

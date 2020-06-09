@@ -36,8 +36,17 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+  
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
+
         $brand = new Brand();
         $brand->name = $request->name;
+        $brand->image = $imageName;
         $brand->save();
         // return view('index', $brand)->render();
         return redirect()->action('BrandController@index');
@@ -75,8 +84,17 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+  
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
+
         $brand = Brand::find($id);
         $brand->name = $request->name;
+        $brand->image = $imageName;
         $brand->save();
         return redirect()->action('BrandController@index');
     }
@@ -90,6 +108,9 @@ class BrandController extends Controller
     public function destroy($id)
     {
         $brand = Brand::find($id);
+        foreach($brand->glasses as $glass){
+            $glass->delete();
+        }
         $brand->delete();
         return redirect()->action(
             'BrandController@index'
