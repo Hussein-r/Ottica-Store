@@ -108,6 +108,9 @@ class BrandController extends Controller
     public function destroy($id)
     {
         $brand = Brand::find($id);
+        foreach($brand->glasses as $glass){
+            $glass->delete();
+        }
         $brand->delete();
         return redirect()->action(
             'BrandController@index'

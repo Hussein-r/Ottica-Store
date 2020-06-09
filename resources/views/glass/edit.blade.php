@@ -91,7 +91,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Label</span>
             </div>   
-            {!! Form::select('label', $label, null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('label', null, ['class'=>'form-control']) !!}
         </div>
         
 

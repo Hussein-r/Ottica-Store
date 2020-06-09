@@ -106,12 +106,12 @@ class GlassController extends Controller
         $frame = FrameShape::pluck('name','id');
         $material = Material::pluck('name','id');
         $fit = Fit::pluck('name','id');
-        $type = ['sunglass'=>'Sun glass','eyeglass'=>'Eye glass'];
+        // $type = ['sunglass'=>'Sun glass','eyeglass'=>'Eye glass'];
         $gender = ['male'=>'male','female'=>'female','unisex'=>'unisex'];
-        $label = ['best'=>'Best seller','new'=>'New arrival'];
+        // $label = ['best'=>'Best seller','new'=>'New arrival'];
 
         $glass= Glass::find($id);
-        return view('glass.edit', compact('brand','color','face','frame','material','fit','type','gender','label','glass'));
+        return view('glass.edit', compact('brand','color','face','frame','material','fit','gender','glass'));
 
         // return view('glass\edit',['glass'=>$glass])->render();
     }
@@ -125,13 +125,13 @@ class GlassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $glass= Glass::update($request->all());
+        $glass= Glass::whereId($id)->update($request->except(['_method','_token']));
         $images=array();
         if($files=$request->file('images')){
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
                 $file->move(public_path('images'),$name);
-                GlassImage::update( [
+                GlassImage::whereId($id)->update( [
                     'glass_id' => $glass->id,
                     'image'=> $name,
                 ]);
@@ -149,6 +149,13 @@ class GlassController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $glass = Glass::find($id);
+        foreach($glass->images as $image){
+            $image->delete();
+        }
+        $glass->delete();
+        return redirect()->action(
+            'GlassController@index'
+        );
     }
 }
