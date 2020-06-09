@@ -26,6 +26,7 @@ Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('brand', 'BrandController');
 Route::resource('user','UserController');
 //hajar
+//specail offers & list orders for admin 
 Route::resource('specialoffers','specialOffersController');
 Route::resource('orderslist','ListOrdersController');
 Route::get('processing/{id}', 'ListOrdersController@processingOrder');
@@ -33,6 +34,12 @@ Route::get('done/{id}', 'ListOrdersController@doneOrder');
 Route::get('orders/inactive', 'ListOrdersController@inactiveOrdersList');
 Route::get('orders/processing', 'ListOrdersController@processingOrdersList');
 Route::get('orders/done', 'ListOrdersController@doneOrdersList');
+//our brands home page 
+Route::resource('ourbrands','OurBrandsController');
+Route::get('ourbrands/home','OurBrandsController@returnHome');
+
+
+
 
 
 

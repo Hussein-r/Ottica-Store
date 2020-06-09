@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
+
 <body>
 	
 	<div class="limiter">
@@ -24,20 +25,38 @@
 <form action="{{route('specialoffers.store')}}" enctype='multipart/form-data' method="POST">
 @method('POST')
 @csrf
-  <div class="form-group">
-    <label for="exampleInputEmail1">Discount value</label>
-    <input type="text"  name="discount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Discount value in percent </span>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Description</label>
-    <input type="text" name="description" class="form-control" id="exampleInputPassword1">
+  <input type="text" name="discount" aria-label="First name" class="form-control">
+</div>
+
+
+
+<div class="input-group mt-4" >
+  <div class="input-group-prepend">
+    <span class="input-group-text">Description</span>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Add image </label>
-    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+  <input type="text-area" name="description" class="form-control"  id="exampleInputPassword1">
+</div>
+
+
+
+
+
+
+<div class="input-group mb-3 mt-4">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
   </div>
-  <div class="col-md-13 text-center"> 
-  <button type="submit" class=" col-3 btn btn-warning btn-lg" >ADD</button>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" name="image" id="browse"  onChange="Handlechange();" aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" id="filename" for="inputGroupFile01">Choose image</label>
+  </div>
+</div>
+  <div class="col-md-13 mt-5 text-center"> 
+  <button type="submit" class=" col-3 btn btn-success btn-lg" >ADD</button>
 </div>
 </form>
 </section>
@@ -49,6 +68,21 @@
 			</div>
 		</div>
 	</div>
+
 </body>
+<script>
+   function HandleBrowseClick()
+{
+    var fileinput = document.getElementById("browse");
+    fileinput.click();
+}
+
+function Handlechange()
+{
+    var fileinput = document.getElementById("browse");
+    var textinput = document.getElementById("filename");
+    textinput.value = fileinput.value;
+}
+</script>
 </html>
 @endsection
