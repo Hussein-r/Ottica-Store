@@ -30,6 +30,36 @@ $("#defaultCheck1").change(function() {
     }
 });
 
+var is_image = false;
+var imagemessage = document.getElementById("presimage");
+var imagesave = document.getElementById("saveimage");
+imagesave.onclick = function() {
+    is_image = true;
+    imagemessage.style.display = "block";
+};
+
+var manual = false;
+var tablemessage = document.getElementById("prestable");
+var tablesave = document.getElementById("savetable");
+tablesave.onclick = function() {
+    manual = true;
+    tablemessage.style.display = "block";
+};
+
+var checkBox = document.getElementById("defaultCheck1");
+var object = document.getElementById("submitorder");
+var imageform = document.getElementById("imageform");
+var tableform = document.getElementById("tableform");
+object.onclick = function() {
+    if (checkBox.checked == true) {
+        if (is_image) {
+            imageform.submit();
+        } else if (manual) {
+            tableform.submit();
+        }
+    }
+};
+
 function openPage(pageName, elmnt, color) {
     // Hide all elements with class="tabcontent" by default */
     var i, tabcontent, tablinks;

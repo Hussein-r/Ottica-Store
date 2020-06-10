@@ -26,6 +26,7 @@ Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
 Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
+Route::resource('order','ClientOrdersController');
 //mariam
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
