@@ -37,12 +37,13 @@
 									<td class="column2">{{$user->email}}</td>
 									<td class="column3">{{$user->address}}</td>
 									<td class="column4">{{$user->phone}}</td>
-                                    <th class="column5"></th>
+                                    <th class="column5"><a href="/mail/{{$user->id}}" class="btn btn-success mr-2">Send Email</a></th>
 								</tr>
                             @endforeach   
                         @endif			
 						</tbody>
 					</table>
+					<a href="/mail" class="btn btn-success mt-3">Send An Email To Everyone</a>
 				</div>
 			</div>
 		</div>

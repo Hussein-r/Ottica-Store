@@ -1,0 +1,83 @@
+@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Ottica</title>
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link rel="stylesheet" href="/css/glassstyle.css">
+
+</head>
+@section('content')
+<body>
+    <section class="single_product_details_area d-flex align-items-center">
+
+        <!-- Single Product Thumb -->
+        <div class="single_product_thumb clearfix">
+            <div class="product_thumbnail_slides owl-carousel">
+            @if ($images->count())
+                @foreach($images as $image)
+                    <img src="/images/{{$image->image}}" alt="">
+                @endforeach   
+            @endif	
+            </div>
+        </div>
+
+        <!-- Single Product Description -->
+        <div class="single_product_desc clearfix">
+            <a href="#">
+                <span>{{$brand->name}}</span>
+            </a>
+            <h2>{{$glass->label}}</h2>
+            <p id='id'>{{$glass->glass_code}}</p>
+            <p class="product-price"><span class="old-price">{{$glass->price_before_discount}}</span>{{$glass->price_after_discount}}</p>
+            <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
+            <a href="#" onclick="myFunction()">Add Your Lense</a>
+            <form action="/changecolor" method='post'>
+            @csrf
+                <div class="select-box d-flex mt-50 mb-30">
+                    <select name='color' id="productColor" >
+                    @foreach($colorsnames as $color)
+                        <option value="{{$color->id}}" {{( $glass->color_id==$color->id ? "selected":"") }}>Color: {{$color->name}}</option>
+                    @endforeach   
+                    </select>
+                    <input type="text" hidden name='code' value="{{$glass->glass_code}}"></input>
+                </div>
+            </form>
+            <div class="cart-fav-box d-flex align-items-center">
+                <form class="cart-form clearfix" method="post">
+                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+                </form>
+                <div class="product-favourite ml-4">
+                    <a href="#" class="favme fa fa-heart"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="mydiv">
+        
+    </div>
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="/js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="/js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="/js/active.js"></script>
+    <script src="/js/colors.js"></script>
+
+</body>
+@endsection
+</html>

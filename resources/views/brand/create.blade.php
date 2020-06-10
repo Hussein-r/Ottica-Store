@@ -12,7 +12,7 @@
         </div>
 
         <div><span class="text-white">{{$errors->first('name')}}</span></div>
-{{-- 
+
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">Upload</span>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div><span class="text-white">{{$errors->first('image')}}</span></div>
-         --}}
+        
         {!! Form::submit('Add Brand',['class'=>'btn btn-primary'])  !!}
 
     {!! Form::close() !!}

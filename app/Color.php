@@ -16,4 +16,8 @@ class Color extends Model
     {
         return $this->hasMany('App\ColorLense','color_id');
     }
+    public function glass()
+    {
+        return $this->hasMany('App\Glass');
+    }
 }

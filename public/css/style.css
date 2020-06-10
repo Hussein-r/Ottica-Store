@@ -19,8 +19,6 @@ body {
 .page-content {
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    display: -webkit-flex;
     justify-content: center;
     -o-justify-content: center;
     -ms-justify-content: center;
@@ -42,6 +40,7 @@ body {
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     margin: 10px 0;
+    margin-left: 15%;
     font-family: "Nunito", sans-serif;
     color: #fff;
     font-weight: 700;
@@ -192,9 +191,11 @@ input:-moz-placeholder {
 
 #maindiv {
     color: black;
-    width: 70%;
+    width: 65%;
     height: 550px;
     background-color: white;
-    border-radius: 50px;
-    padding: 50px;
+    border-radius: 10px;
+    display: block;
+    margin-left: 20%;
+    margin-top: 10px;
 }

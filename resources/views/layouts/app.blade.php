@@ -33,6 +33,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('glass.index') }}">{{ __('Glasses') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('brand.index') }}">{{ __('brands') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            {{-- <a class="nav-link" href="{{ route('setting.index') }}">{{ __('setting') }}</a> --}}
+                        </li>
 
                     </ul>
 

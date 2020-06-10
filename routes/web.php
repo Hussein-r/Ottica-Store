@@ -24,10 +24,29 @@ Route::resource('brand', 'BrandController');
 Route::resource('lenses', 'ContactLensesController');
 Route::resource('lenseBrand', 'LenseBrandController');
 Route::resource('lensetype', 'LenseTypeController');
-// Route::resource('lenseImage', 'LenseImageController');
-
 Route::get('/details/{lense}','ContactLensesController@details');
 Route::resource('LenseManufacturerer', 'LenseManufacturererController');
+Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
+Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
+Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
+Route::post('/changecolor','GlassController@changeColor');
+//mariam
+Route::resource('brand', 'BrandController');
+Route::resource('glass', 'GlassController');
+Route::get('sunglasses','GlassController@sunglasses');
+Route::get('eyeglasses','GlassController@eyeglasses');
+//hajar
+Route::resource('specialoffers','specialOffersController');
+Route::resource('orderslist','ListOrdersController');
+Route::get('processing/{id}', 'ListOrdersController@processingOrder');
+Route::get('done/{id}', 'ListOrdersController@doneOrder');
+Route::get('orders/inactive', 'ListOrdersController@inactiveOrdersList');
+Route::get('orders/processing', 'ListOrdersController@processingOrdersList');
+Route::get('orders/done', 'ListOrdersController@doneOrdersList');
+
+
+
+
 
 

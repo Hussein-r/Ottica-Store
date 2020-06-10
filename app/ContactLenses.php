@@ -39,4 +39,10 @@ class ContactLenses extends Model
         return $this->hasMany('App\ColorLense','lense_id');
     }
     
+  
+
+    public function lenseProduct()
+    {
+        return $this->belongsToMany('App\orderList', 'ordered_lenses_prescriptions', 'order_id', 'product_id');
+    }
 }
