@@ -21,6 +21,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('brand', 'BrandController');
+Route::resource('lenses', 'ContactLensesController');
+Route::resource('lenseBrand', 'LenseBrandController');
+Route::resource('lensetype', 'LenseTypeController');
+// Route::resource('lenseImage', 'LenseImageController');
+
+Route::get('/details/{lense}','ContactLensesController@details');
+Route::resource('LenseManufacturerer', 'LenseManufacturererController');
 Route::resource('user','UserController');
 
 
