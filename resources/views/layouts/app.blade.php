@@ -40,6 +40,9 @@
                             <a class="nav-link" href="{{ route('brand.index') }}">{{ __('brands') }}</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('lenses.index') }}">{{ __('Lenses') }}</a>
+                        </li>
+                        <li class="nav-item">
                             {{-- <a class="nav-link" href="{{ route('setting.index') }}">{{ __('setting') }}</a> --}}
                         </li>
 

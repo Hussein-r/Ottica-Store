@@ -35,6 +35,7 @@ class ContactLensesController extends Controller
         'color'=>$color,
         ])->render();
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -65,7 +66,7 @@ class ContactLensesController extends Controller
     public function store(Request $request)
     {
         $lense= ContactLenses::create($request->all());
-        $color= Color::create($request->all());
+        // $color= Color::create($request->all());
         $images=array();
         if($files=$request->file('images')){
             foreach($files as $file){
@@ -77,11 +78,11 @@ class ContactLensesController extends Controller
                 ]);
             }
         }
-        ColorLense::insert(
-            [
-                'lense_id' => $lense->id,
-                'color_id'=> $color->id,
-            ]);
+        // ColorLense::insert(
+        //     [
+        //         'lense_id' => $lense->id,
+        //         'color_id'=> $color->id,
+        //     ]);
         return redirect()->action('ContactLensesController@index');
         // $images=array();
         // $data=$this->validate($request,[
@@ -123,11 +124,50 @@ class ContactLensesController extends Controller
 
    
 
-    public function show()
+   
+
+       /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $lense=ContactLenses::where("id","=",$id)->firstOrFail();
+        $brand=LenseBrand::where("id","=",$lense->brand_id)->firstOrFail();
+        $images=LenseImage::where("lense_id","=",$id)->get();
+       
+        return view('ContactLenses/lenseProfile',compact('lense','images','brand'));
+
+    }
+
+
+
+    public function list()
     {
          $lenses = ContactLenses::all();
          $brands=LenseBrand::all();
-         return view('ContactLenses.index',['lenses'=>$lenses, 'brands' => $brands,])->render();
+         return view('ContactLenses.allLenses',['lenses'=>$lenses, 'brands' => $brands,])->render();
+    }
+
+    public function search(Request $request)
+    {
+        $brands=LenseBrand::all();
+        $types=LenseType::all();
+        $manufacturerers=LenseManufacturerer::all();
+        $search=$request->get('search');
+        $lenses=ContactLenses::where("name","like","%". $search ."%")
+         ->orWhere("label","like","%". $search ."%");
+         return view(
+             'ContactLenses.allLenses',[
+             'lenses'=>$lenses,
+             'brands' => $brands,
+             'types' => $types,
+             'manufacturerers' => $manufacturerers,
+            
+             ]);
+        
     }
 
 

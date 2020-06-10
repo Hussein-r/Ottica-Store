@@ -22,12 +22,7 @@
                     {!! Form::number('quantity',null,['class'=>'form-control','aria-label'=>'quantity', 'aria-describedby'=>'basic-addon4','placeholder'=>'The quantity'])  !!}
                 </div>
                 <div><span class="text">{{$errors->first('quantity')}}</span></div>
-                <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Color</span>
-            </div>   
-            {!! Form::select('color_id', $color, null, ['class'=>'form-control', 'required']) !!}
-        </div>
+   
                 <div class="input-group mb-3">
                        
                     {!! Form::text('label',null,['class'=>'form-control','aria-label'=>'label', 'aria-describedby'=>'basic-addon1','placeholder'=>'The label'])  !!}
