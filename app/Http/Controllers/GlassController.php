@@ -95,7 +95,7 @@ class GlassController extends Controller
     public function changeColor(Request $request){
         $glass=Glass::where([["glass_code","=",$request->code],["color_id","=",$request->color]])->firstOrFail();
         $id=$glass->id;
-        return redirect()->route('glass.show', $id);
+        return ($id);
 
     }
 
