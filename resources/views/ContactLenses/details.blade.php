@@ -21,8 +21,10 @@
                     <h1  class="card-title"> {{$lense->name}}</h1>
                     <p class="card-text"><b>Quantity :</b> {{$lense->quantity}}</p>
                     <p class="card-text"><b>Label </b>: {{$lense->label}}</p>
+                    
                     <p class="card-text"><b>Price Before Discount</b>  : {{$lense->price_before_discount}}</p>
                     <p class="card-text"><b>description </b>: {{$lense->description}}</p>
+                   
                     @foreach($brand as $subbrand)
                         <p class="card-text"><b>Brand</b> : {{$subbrand->name}}</p>
                     @endforeach

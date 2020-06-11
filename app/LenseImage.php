@@ -5,6 +5,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class LenseImage extends Model
 {
     //
@@ -15,5 +16,6 @@ class LenseImage extends Model
         return $this->belongsTo('App\ContactLenses');
         
     }
+    
   
 }

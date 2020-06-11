@@ -23,7 +23,7 @@
         <!-- Single Product Thumb -->
         <div class="single_product_thumb clearfix">
             <div class="product_thumbnail_slides owl-carousel">
-            @if ($lense->images->first())
+            @if ($images->count())
                 @foreach($images as $image)
                     <img src="/images/{{$image->image}}" alt="">
                 @endforeach   
@@ -41,7 +41,12 @@
            
             <p class="product-price"><span class="old-price">{{$lense->price_before_discount}}</span>{{$lense->price_after_discount}}</p>
             <p class="product-desc">{{$lense->description}}</p>
-            
+            <div class="select-box mt-3 mb-30">
+                    <select name='color' class="custom-select" id="productColor" >
+                    @foreach($colors as $color)
+                        <option value="{{$color->id}}" >{{$color->name}}</option>
+                    @endforeach   
+                    </select>
             
             <div class="cart-fav-box d-flex align-items-center">
                 <form class="cart-form clearfix" method="post">

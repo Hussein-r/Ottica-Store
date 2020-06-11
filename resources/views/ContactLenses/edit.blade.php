@@ -30,6 +30,19 @@
                 </div>
                 <div><span class="text">{{$errors->first('label')}}</span></div>
                 <div class="input-group mb-3">
+                    
+                    <select class="custom-select" id="inputGroupSelect01"name="color[]" multiple>
+                        
+                        @if ($colors->count())
+                            @foreach($colors as $color)
+                                    <option selected value="{{ $color->id }}">{{ $color->name }}</option> 
+                            @endforeach 
+                         @endif 
+                    </select>
+                   
+                </div>
+                <div><span class="text">{{$errors->first('color')}}</span></div>
+                <div class="input-group mb-3">
                    
                     {!! Form::text('price_before_discount',null,['class'=>'form-control','aria-label'=>'Price', 'aria-describedby'=>'basic-addon5','placeholder'=>'Price Before Discount'])  !!}
                 </div>
@@ -124,7 +137,7 @@
            <div style="text-align: center ">
                 {!! Form::submit('Update',['class'=>'btn btn-primary center-block btn-lg'])  !!}
                 {!! Form::close() !!}
-           <a href="{{route('lenseBrand.index')}}" class="btn btn-primary center-block btn-lg">Cancel</a>
+           <a href="{{route('lenses.index')}}" class="btn btn-primary center-block btn-lg">Cancel</a>
            </div>
          </div>
     </body>
