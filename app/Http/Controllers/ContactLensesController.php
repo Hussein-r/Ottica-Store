@@ -70,10 +70,10 @@ class ContactLensesController extends Controller
                 'name' => 'required|unique:contact_lenses',
                 'quantity'=>'required|numeric',
                 'price_before_discount'=>'required|numeric',
-                'price_after_discount'=>'required|numeric',
-                'brand_id'=>'required',
-                'type_id'=>'required',
-                'manufacturerer_id'=>'required',
+                'price_after_discount'=>'required|numeric|lt:price_before_discount',
+                'brand_id'=>'required|numeric',
+                'type_id'=>'required|numeric',
+                'manufacturerer_id'=>'required|numeric',
                 'color'=>'required'
             ]);
     

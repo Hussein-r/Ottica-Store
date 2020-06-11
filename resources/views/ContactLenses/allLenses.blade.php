@@ -96,7 +96,7 @@
                             <p class="product-price">
                                 <span class="old-price">{{$lense->price_before_discount}}EGP</span> 
                                 {{$lense->price_after_discount}}EGP
-                                <span><h5 class="text-danger" style="text-align:right;">-40%</h5></span>
+                                <span><h5 class="text-danger" style="text-align:right;">-{{($lense->price_before_discount-$lense->price_after_discount)/100}}%</h5></span>
                             </p>
                     
                     
