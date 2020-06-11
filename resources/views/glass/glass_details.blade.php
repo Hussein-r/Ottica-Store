@@ -40,10 +40,11 @@
             <p id='id'>{{$glass->glass_code}}</p>
             <p class="product-price"><span class="old-price">{{$glass->price_before_discount}}</span>{{$glass->price_after_discount}}</p>
             <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
-            <form action="/addorder" method='post' class="mt-3">
+            <form action="{{ route('order.store') }}" id="mainform" method='post' class="mt-3">
                 @csrf 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <input class="form-check-input"  name="check" value="0" type="Hidden" id="defaultCheck1"></input>
+                    <input class="form-check-input" name="check" value="1" type="checkbox" id="defaultCheck1"></input>
                     <label class="form-check-label" for="defaultCheck1">
                         Add Custom Lense
                     </label>
@@ -55,7 +56,9 @@
                     @endforeach   
                     </select>
                     <input type="text" class="id" hidden name='code' value="{{$glass->glass_code}}"></input>
+                    <input type="text" hidden name='product_id' value="{{$glass->id}}"></input>
                     <input type="number" class="form-control mt-3" id="quantity" name="quantity" min="1" placeholder="Quantity"></input>
+                    <input type="text" hidden name='price' value="{{$glass->price_after_discount}}"></input>
                     <div class="alert alert-success mt-2" id="presimage">
                         <ul>
                             <li>Your prescription image has been added</li>
@@ -89,7 +92,7 @@
                 <li>make sure all the numbers are clear</li>
             </ul>
         </div>
-        <form action="/addorder" method='post' id="imageform" class="mt-3">
+        <form action="{{ route('order.store') }}" method='post' id="imageform" class="mt-3">
             @csrf 
             <div class="input-group mb-3 col-md-6">
                 <div class="input-group-prepend">
@@ -104,7 +107,7 @@
         <button  name="save" id="saveimage" class="btn btn-success ml-3">Save & Continue</button>
     </div>
     <div id="prescription" class="tabcontent prescription-table-wrapper">
-        <form action="/addorder" method='post' id="tableform" class="mt-3">
+        <form action="{{ route('order.store') }}" method='post' id="tableform" class="mt-3">
             @csrf 
             <table class="params-prescription-table">
                 <colgroup>

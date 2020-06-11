@@ -48,14 +48,20 @@ tablesave.onclick = function() {
 
 var checkBox = document.getElementById("defaultCheck1");
 var object = document.getElementById("submitorder");
-var imageform = document.getElementById("imageform");
-var tableform = document.getElementById("tableform");
 object.onclick = function() {
     if (checkBox.checked == true) {
         if (is_image) {
-            imageform.submit();
+            $("#imageform :input")
+                .not(":submit")
+                .clone()
+                .hide()
+                .appendTo("#mainform");
         } else if (manual) {
-            tableform.submit();
+            $("#tableform :input")
+                .not(":submit")
+                .clone()
+                .hide()
+                .appendTo("#mainform");
         }
     }
 };
