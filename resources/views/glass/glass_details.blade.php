@@ -43,7 +43,7 @@
             <form action="{{ route('order.store') }}" id="mainform" method='post' class="mt-3">
                 @csrf 
                 <div class="form-check">
-                    <input class="form-check-input"  name="check" value="0" type="Hidden" id="defaultCheck1"></input>
+                    <input class="form-check-input"  name="check" value="0" type="Hidden"></input>
                     <input class="form-check-input" name="check" value="1" type="checkbox" id="defaultCheck1"></input>
                     <label class="form-check-label" for="defaultCheck1">
                         Add Custom Lense
