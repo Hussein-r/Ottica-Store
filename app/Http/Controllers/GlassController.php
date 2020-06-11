@@ -60,6 +60,7 @@ class GlassController extends Controller
         //     'image' => 'required|image|mimes:jpeg,png,jpg',
         // ]);
         $glass= Glass::create($request->all());
+        
         $images=array();
         if($files=$request->file('images')){
             foreach($files as $file){

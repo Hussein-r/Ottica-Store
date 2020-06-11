@@ -36,7 +36,8 @@ class ContactLenses extends Model
 
     public function color()
     {
-        return $this->hasMany('App\ColorLense','lense_id');
+        return $this->belongsToMany('App\Color','lense_colors','color_id','lense_id');
+
     }
     
   

@@ -1,5 +1,24 @@
 @extends('layouts.userNavbar')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title  -->
+    <title>brands</title>
+    <!-- Favicon  -->
+    <link rel="icon" href="/img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
 @section('content')
+<body>
 <section class="container">
     <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
         <div class="container h-100">
@@ -25,18 +44,19 @@
                             <p><span>{{count($lenses)}}</span> products found</p>
                         </div> --}}
                         <!-- Sorting -->
-                        <div class="product-sorting d-flex">
                        
-                            <p>Sort by:</p>
-                            <form action="#" method="get">
-                                <select name="select" id="sortByselect">
-                                    <option value="value">Highest Rated</option>
-                                    <option value="value"><a  href="/latestSort/created_at">Newest</a></option>
-                                    <option value="value">Price: $$ - $</option>
-                                    <option value="value">Price: $ - $$</option>
-                                </select>
-                                <input type="submit" class="d-none" value="">
-                            </form>
+
+                        <div class="btn-group" style=margin-left:900px;>
+                            <button type="button" class="btn btn-danger">Sorted BY</button>
+                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item"  href='/sort/1'>Newest</a>
+                                <a class="dropdown-item"  href='/sort/4'>Name</a>
+                                <a class="dropdown-item" href="/sort/2">Price: $ - $$</a>
+                                <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>
+                                
                         </div>
                         <div>
                         </div>
@@ -71,24 +91,16 @@
                             <a href="#">
                                 <h6>{{$lense->brand->name}}</h6>
                             </a>
-                            {{-- <span style="margin-left: 20px">{{$colors}}</span> --}}
+                            <h3>{{$lense->name}}</h3>
+                            
                             <p class="product-price">
                                 <span class="old-price">{{$lense->price_before_discount}}EGP</span> 
                                 {{$lense->price_after_discount}}EGP
                                 <span><h5 class="text-danger" style="text-align:right;">-40%</h5></span>
                             </p>
                     
-                        <hr/>
-                        <span>Lenses Colors</span>
-                        {{-- <div class="row" style="margin: 5px;">
-                            @forelse ($colors as $color)
-                                <div style="width: 30px; border: lightgrey solid 1px; border-radius: 50%; background-color:{{$color->name}};">
-                                    <pre>   </pre>
-                                </div>      
-                            @empty
-                            
-                            @endforelse
-                        </div> --}}
+                    
+                        
                             <!-- Hover Content -->
                             <div class="hover-content">
                                 <!-- Add to Cart -->
@@ -108,4 +120,7 @@
             </div>
         </div>
 </section>
+</body>
+
 @endsection
+</html>

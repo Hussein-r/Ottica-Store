@@ -25,14 +25,14 @@ class ContactLensesController extends Controller
         $lenses = ContactLenses::all();
         $brands=LenseBrand::all();
         $types=LenseType::all();
-        $color = new Color();
+        $colors = new Color();
         $manufacturerers=LenseManufacturerer::all();
         return view('ContactLenses/index', [
         'lenses'=>$lenses,
         'brands' => $brands,
         'types' => $types,
         'manufacturerers' => $manufacturerers,
-        'color'=>$color,
+        'colors'=>$colors,
         ])->render();
     }
     
@@ -46,13 +46,13 @@ class ContactLensesController extends Controller
     {
         $brands=LenseBrand::all();
         $types=LenseType::all();
-        $color = Color::pluck('name','id');
+        $colors = Color::all();
         $manufacturerers=LenseManufacturerer::all();
         return view('ContactLenses.create',[
             'brands' => $brands,
             'types' => $types,
             'manufacturerers' => $manufacturerers,
-            'color' =>$color,
+            'colors' =>$colors,
             ]);
     }
 
@@ -65,8 +65,22 @@ class ContactLensesController extends Controller
 
     public function store(Request $request)
     {
+        
+        $data=$this->validate($request,[
+                'name' => 'required|unique:contact_lenses',
+                'quantity'=>'required|numeric',
+                'price_before_discount'=>'required|numeric',
+                'price_after_discount'=>'required|numeric',
+                'brand_id'=>'required',
+                'type_id'=>'required',
+                'manufacturerer_id'=>'required',
+                'color'=>'required'
+            ]);
+    
         $lense= ContactLenses::create($request->all());
-        // $color= Color::create($request->all());
+        $lense->best_seller=$request->best_seller;
+        $lense->save();
+        // dd($request);
         $images=array();
         if($files=$request->file('images')){
             foreach($files as $file){
@@ -77,54 +91,24 @@ class ContactLensesController extends Controller
                     'image'=> $name,
                 ]);
             }
+            $color=$request->color;
+            // dd($color);
+            foreach($color as $subColor)
+          {
+            //     dd($subColor);
+            $colorlense=new ColorLense();
+            $colorlense->color_id=$subColor;
+            $colorlense->lense_id=$lense->id;
+            $colorlense->save();
+            }
+            
+            // $lense->quantity=$request->quantity;
+
         }
-        // ColorLense::insert(
-        //     [
-        //         'lense_id' => $lense->id,
-        //         'color_id'=> $color->id,
-        //     ]);
+       
+        
         return redirect()->action('ContactLensesController@index');
-        // $images=array();
-        // $data=$this->validate($request,[
-        //     'name' => 'required|unique:contact_lenses',
-        //     'quantity'=>'required|numeric',
-        //     'brand_id'=>'required|numeric',
-        //     'type_id'=>'required|numeric',
-        //     'manufacturerer_id'=>'required|numeric',
-        // ]);
-
-        // $lense= new ContactLenses();
-        // $lense->name=$request->name;
-        // $lense->quantity=$request->quantity;
-        // $lense->label=$request->label;
-        // $lense->price_before_discount=$request->price_before_discount;
-        // $lense->price_after_discount=$request->price_after_discount;
-        // $lense->description=$request->description;
-        // $lense->brand_id=$request->brand_id;
-        // $lense->type_id=$request->type_id;
-        // $lense->manufacturerer_id=$request->manufacturerer_id;
-        // $lense->material_of_content=$request->material_of_content;
-        // $lense->water_of_content=$request->water_of_content;
-        // $lense->lense_purpose=$request->lense_purpose;
-        // if($files=$request->file('images')){
-        //     foreach($files as $file){
-        //         $name=$file->getClientOriginalName();
-        //         $file->move(public_path('images'),$name);
-        //         LenseImage::insert( [
-        //             'lense_id' => $request->id,
-        //             'image'=> $name,
-        //         ]);
-        //     }
-        // }
-        // $lense->save();
-        // return redirect()->action(
-        //     'ContactLensesController@index'
-        // );
-    }
-
-   
-
-   
+           }
 
        /**
      * Display the specified resource.
@@ -137,8 +121,12 @@ class ContactLensesController extends Controller
         $lense=ContactLenses::where("id","=",$id)->firstOrFail();
         $brand=LenseBrand::where("id","=",$lense->brand_id)->firstOrFail();
         $images=LenseImage::where("lense_id","=",$id)->get();
-       
-        return view('ContactLenses/lenseProfile',compact('lense','images','brand'));
+        $color=ColorLense::where("lense_id","=",$lense->id)->get('color_id');
+        // dd($color);
+        $colors=Color::where("id","=",$color)->get('name');
+        // dd($colors);
+        
+        return view('ContactLenses/lenseProfile',compact('lense','images','brand','colors'));
 
     }
 
@@ -157,8 +145,10 @@ class ContactLensesController extends Controller
         $types=LenseType::all();
         $manufacturerers=LenseManufacturerer::all();
         $search=$request->get('search');
+        
         $lenses=ContactLenses::where("name","like","%". $search ."%")
-         ->orWhere("label","like","%". $search ."%");
+         ->orWhere("label","like","%". $search ."%")->get();
+      
          return view(
              'ContactLenses.allLenses',[
              'lenses'=>$lenses,
@@ -170,18 +160,56 @@ class ContactLensesController extends Controller
         
     }
 
+//// Sorttt
 
 
+    public function sort($value)
+    {
+        $sort = ContactLenses::all();
+        $brands=LenseBrand::all();
+        $types=LenseType::all();
+        $manufacturerers=LenseManufacturerer::all();
+      
+            if($value==1)
+            {
+                $lenses=$sort->sortByDesc('created_at');
+                
+            }
+            else if($value==2)
+            {
+                $lenses=$sort->sortBy('price_after_discount');
+            }
+            else if($value==3)
+            {
+                $lenses=$sort->sortByDesc('price_after_discount');
+            }
+            else if ($value==4)
+            {
+                $lenses=$sort->sortBy('name');
+            }
+
+      
+        return view(
+            'ContactLenses.allLenses',[
+            'lenses'=>$lenses,
+            'brands' => $brands,
+            'types' => $types,
+            'manufacturerers' => $manufacturerers,
+           
+            ]);
+    }
     
 
     public function destroy($id)
     {
    
         $lense = ContactLenses::find($id);
-        foreach($lense->images as $image){
-            $image->delete();
-        }
+        
+        
         if ($lense != null) {
+            foreach($lense->images as $image){
+                $image->delete();
+            }
         $lense->delete();
     }
     
@@ -193,6 +221,8 @@ class ContactLensesController extends Controller
         $brand=LenseBrand::where("id","=",$lense->brand_id)->get();
         $type=LenseType::where("id","=",$lense->type_id)->get();
         $manufacturerer=LenseManufacturerer::where("id","=",$lense->manufacturerer_id)->get();
+        // $color=Color::where("id","=",$lense->manufacturerer_id)->get();
+        // $colorlense = ColorLense::find($id);
         return view('ContactLenses.details',[
         'lense'=>$lense,
         'brand'=>$brand,
@@ -212,18 +242,60 @@ class ContactLensesController extends Controller
     {   
         
         
-        $lense= ContactLenses::whereId($id)->update($request->except(['_method','_token']));
-        $images=array();
-        if($files=$request->file('images')){
-            foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $file->move(public_path('images'),$name);
+        // $lense= ContactLenses::whereId($id)->update($request->except(['_method','_token']));
+        // $images=array();
+        // if($files=$request->file('images')){
+        //     foreach($files as $file){
+        //         $name=$file->getClientOriginalName();
+        //         $file->move(public_path('images'),$name);
+        //         LenseImage::whereId($id)->update( [
+        //             'glass_id' => $lense->id,
+        //             'image'=> $name,
+        //         ]);
+               
+        //     }
+
+        // }
+        $lense = ContactLenses::find($id);
+        
+                $lense->name=$request->name;
+                $lense->quantity=$request->quantity;
+                $lense->label=$request->label;
+                $lense->price_before_discount=$request->price_before_discount;
+                $lense->price_after_discount=$request->price_after_discount;
+                $lense->description=$request->description;
+                $lense->brand_id=$request->brand_id;
+                $lense->type_id=$request->type_id;
+                $lense->manufacturerer_id=$request->manufacturerer_id;
+                $lense->material_of_content=$request->material_of_content;
+                $lense->water_of_content=$request->water_of_content;
+                $lense->lense_purpose=$request->lense_purpose;
+                $lense->save();
+            
+       if($request->hasFile('images')){
+            foreach($request->hasFile('images') as $file){
+                $imageName = time().'.'.$file->image->extension();  
+                $file->image->move(public_path('images'), $imageName);
                 LenseImage::whereId($id)->update( [
                     'lense_id' => $lense->id,
                     'image'=> $name,
                 ]);
             }
         }
+        $color=$request->color;
+        foreach($color as $subColor)
+      {
+        $colorlense = ColorLense::find($id);
+        $colorlense->color_id=$subColor;
+        $colorlense->lense_id=$lense->id;
+        $colorlense->save();
+        }
+
+       
+        return redirect()->action(
+            'ContactLensesController@index'
+        );
+
         return redirect()->action('ContactLensesController@index');
     }
     public function edit($id)
@@ -233,11 +305,13 @@ class ContactLensesController extends Controller
         $brands=LenseBrand::all();
         $types=LenseType::all();
         $manufacturerers=LenseManufacturerer::all();
+        $colors=Color::all();
         return view('ContactLenses/edit', [
         'lense' =>$lense,
         'brands' => $brands,
         'types' => $types,
-        'manufacturerers' => $manufacturerers])->render();
+        'manufacturerers' => $manufacturerers,
+        'colors'=>$colors])->render();
     }
 
 }

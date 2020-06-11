@@ -28,6 +28,21 @@
                     {!! Form::text('label',null,['class'=>'form-control','aria-label'=>'label', 'aria-describedby'=>'basic-addon1','placeholder'=>'The label'])  !!}
                 </div>
                 <div><span class="text">{{$errors->first('label')}}</span></div>
+               
+               <div class="input-group mb-3">
+                    
+                    <select class="custom-select" id="inputGroupSelect01"name="color[]" multiple>
+                        
+                        @if ($colors->count())
+                            @foreach($colors as $color)
+                                    <option value="{{ $color->id }}">{{ $color->name }}</option> 
+                            @endforeach 
+                         @endif 
+                    </select>
+                   
+                </div>
+                <div><span class="text">{{$errors->first('color')}}</span></div>
+
                 <div class="input-group mb-3">
                         
                     {!! Form::text('price_before_discount',null,['class'=>'form-control','aria-label'=>'Price', 'aria-describedby'=>'basic-addon5','placeholder'=>'Price Before Discount'])  !!}
@@ -106,6 +121,12 @@
                         <option  value="2">beauty</option>        
                 </select>
                  <div ><span class="text">{{$errors->first('lense_purpose')}}</span></div> 
+                 <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Best seller</span>
+                    </div>   
+                    {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
+                 </div>
                 <div style=margin:18px;>
                     <div class="custom-file" >
                         <input type="file" class="custom-file-input" name="images[]" id="inputGroupFile01" multiple>
@@ -114,6 +135,7 @@
               
                      <div><span class="text-white">{{$errors->first('image')}}</span></div>
                 </div>
+
         <div  style="text-align: center "> 
          <button type="submit" class="btn btn-primary center-block btn-lg" >ADD</button>
          <a href="{{route('lenses.index')}}" class="btn btn-primary center-block btn-lg">List All Lenses</a>

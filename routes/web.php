@@ -50,6 +50,7 @@ Route::get('/details/{lense}','ContactLensesController@details');
 Route::resource('LenseManufacturerer', 'LenseManufacturererController');
 Route::get('allLenses','ContactLensesController@list');
 Route::get('/search', 'ContactLensesController@search');
+Route::get('/sort/{value}', 'ContactLensesController@sort');
 
 
 
