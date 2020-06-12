@@ -190,6 +190,7 @@ class GlassController extends Controller
 
     public function sort($value)
     {
+        dd($value);
         $all_glasses = Glass::paginate(15);
         if($value == 'low'){
             $glasses=$all_glasses->sortBy('price_after_discount');

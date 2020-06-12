@@ -104,11 +104,12 @@
                 </div>
                 <!-- Favourite Area -->
                 <div class="favourite-area">
-                    <a href="#"><img src="img/core-img/heart.svg" alt=""></a>
+                    <a style="margin-right:25px; padding:5px" href="{{url('favourite')}}"><span style="color: red;font-size:40px;">&#x2764;</span></a>
+                    {{-- <img src="img/core-img/heart.svg" alt=""> --}}
                 </div>
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="#"><img src="img/core-img/user.svg" alt=""></a>
+                    <a href="#" ><img src="img/core-img/user.svg" alt=""></a>
                 </div>
                 <!-- Cart Area -->
                 <div class="cart-area">

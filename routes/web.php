@@ -34,7 +34,8 @@ Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
 Route::get('eyeglasses','GlassController@eyeglasses');
 Route::get('/fav','GlassController@favourite');
-Route::post('/sort/{value}', 'GlassController@sort');
+Route::patch('/sort/{value}', 'GlassController@sort');
+Route::get('favourite', 'UserController@myFavourite');
 //hajar
 Route::resource('specialoffers','specialOffersController');
 Route::resource('orderslist','ListOrdersController');

@@ -25,15 +25,17 @@
                         <!-- Sorting -->
                         <div class="product-sorting d-flex">
                             <p>Sort by:</p>
-                            {{-- <form action="sort/?value" method="get"> --}}
-                                <select name="select" id="sortByselect" onchange="sortby()">
+                            <form action="sort/?value" method="POSt">
+                                {{ csrf_field() }}
+                                {{ method_field('PATCH') }}
+                                <select name="select" id="sortByselect">
                                     {{-- <option value="value">Highest Rated</option>
                                     <option value="value">Newest</option> --}}
                                     <option value="low">Price: Low - High</option>
                                     <option value="high">Price: High - Low</option>
                                 </select>
-                                {{-- <input type="submit" class="d-none" value="select"> --}}
-                            {{-- </form> --}}
+                                <input type="submit" class="d-none" value="select">
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -1,25 +1,25 @@
 // onload(function(){
 //     if()
 // })
-function sortby(glass){
+
+
+$('#sortByselect').change(function(){
     $.ajax({
-        type: "GEt",
-        url: "/sort/?value",
-        data: {
-            glass: glass
-        }, 
-        success: function(response) {
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        url: "/sort/{value}",
+    // url: '{{ route('sort', ['id' => Auth::->id]) }}',
+        type: 'PATCH',
+        data: {"sort": $(this).children("option:selected").val()},
+        success: function(response){
             console.log(response);
-           
         },
         error: function(response) {
-           
-         console.log(response)
+            console.log(response);
             alert(response);
-        }
-    });
+           }
+    })
+});
 
-}
 
 function updateFavorite(glass,love) {
     
@@ -36,7 +36,7 @@ function updateFavorite(glass,love) {
                 love.style.color = "red";
             } else {
                 console.log(love.className);
-                love.style.color = "blue";
+                love.style.color = "gray";
             }
         },
         error: function(response) {

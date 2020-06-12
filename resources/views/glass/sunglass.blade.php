@@ -64,7 +64,7 @@
                         <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
                             <!-- Favourite -->
                             <div class="product-favourite" style="text-align: right">
-                                <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$glass->id}},this)"></button>
+                                <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button>
                             </div>
                             <a href="#">
                                 <h6>{{$glass->brand->name}}</h6>
@@ -76,7 +76,7 @@
                         <p class="product-price">
                             <span class="old-price">{{$glass->price_before_discount}}EGP</span> 
                             {{$glass->price_after_discount}}EGP
-                            <span><h5 class="text-danger" style="text-align:right;">-30%</h5></span>
+                            <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
                         </p>
                         <hr/>
                         <span>Frame Colors</span>
