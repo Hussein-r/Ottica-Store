@@ -47,8 +47,8 @@
                         <option value="{{$color->id}}" >{{$color->name}}</option>
                     @endforeach   
                     </select>
-            
-            <div class="cart-fav-box d-flex align-items-center">
+                    <input type="number" class="form-control mt-3" id="quantity" name="quantity" min="1" placeholder="Quantity"></input>
+            <div class="cart-fav-box d-flex align-items-center" style="margin:18px;">
                 <form class="cart-form clearfix" method="post">
                     <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
                 </form>

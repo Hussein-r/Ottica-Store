@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Title  -->
-    <title>brands</title>
+    <title>Ottica</title>
     <!-- Favicon  -->
     <link rel="icon" href="/img/core-img/favicon.ico">
 
@@ -47,7 +47,7 @@
                        
 
                         <div class="btn-group" style=margin-left:900px;>
-                            <button type="button" class="btn btn-danger">Sorted BY</button>
+                            <button type="button" class="btn btn-danger" disabled>Sorted BY</button>
                             <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
@@ -96,7 +96,7 @@
                             <p class="product-price">
                                 <span class="old-price">{{$lense->price_before_discount}}EGP</span> 
                                 {{$lense->price_after_discount}}EGP
-                                <span><h5 class="text-danger" style="text-align:right;">-{{($lense->price_before_discount-$lense->price_after_discount)/100}}%</h5></span>
+                                <span><h5 class="text-danger" style="text-align:right;">-{{round((($lense->price_before_discount-$lense->price_after_discount)/$lense->price_before_discount)*100)}}%</h5></span>
                             </p>
                     
                     
