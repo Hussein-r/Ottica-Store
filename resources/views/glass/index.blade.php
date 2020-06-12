@@ -10,6 +10,7 @@
             <img class="card-img-top" style="height:15rem" src="/images/{{$glass->images->first()->image}}" alt="Card image cap">
         @endif
         <div class="card-body" >
+            {{$glass->id}}
             <h5 class="card-title">{{$glass->brand->name}}</h5>
             <p class="card-text">{{$glass->glass_code}}</p>
             <h6 class="card-subtitle mb-2 text-muted">{{$color->find($glass->color_id)->name}}</h6> 
@@ -24,12 +25,13 @@
             {{-- @endif --}}
         </div>
     </div>
-
     @empty
         <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
             No brands yet!
         </div>
     @endforelse
-
+    <div style="text-align: center;">
+    {{ $glasses->links() }}
+    </div>
 </section>
 @endsection

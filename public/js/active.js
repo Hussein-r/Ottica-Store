@@ -117,6 +117,28 @@
     var favme = $(".favme");
 
     favme.on('click', function () {
+        // $.ajax({
+        //     type: "GEt",
+        //     url: "/fav",
+        //     data: {
+        //         glass: glass
+        //     },
+        //     success: function(response) {
+        //         console.log(response);
+        //         if (response.like == "yes") {
+        //             console.log(this);
+        //             this.style.color = "red";
+        //         } else {
+        //             console.log(this.className);
+        //             this.style.color = "blue";
+        //         }
+        //     },
+        //     error: function(response) {
+               
+        //      console.log(response)
+        //         // alert(response);
+        //     }
+        // });
         $(this).toggleClass('active');
     });
 
