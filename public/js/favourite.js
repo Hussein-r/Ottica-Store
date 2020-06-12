@@ -1,7 +1,25 @@
 // onload(function(){
 //     if()
 // })
+function sortby(glass){
+    $.ajax({
+        type: "GEt",
+        url: "/sort/?value",
+        data: {
+            glass: glass
+        }, 
+        success: function(response) {
+            console.log(response);
+           
+        },
+        error: function(response) {
+           
+         console.log(response)
+            alert(response);
+        }
+    });
 
+}
 
 function updateFavorite(glass,love) {
     
@@ -24,7 +42,7 @@ function updateFavorite(glass,love) {
         error: function(response) {
            
          console.log(response)
-            // alert(response);
+            alert(response);
         }
     });
 }

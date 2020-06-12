@@ -25,15 +25,15 @@
                         <!-- Sorting -->
                         <div class="product-sorting d-flex">
                             <p>Sort by:</p>
-                            <form action="#" method="get">
-                                <select name="select" id="sortByselect">
+                            {{-- <form action="sort/?value" method="get"> --}}
+                                <select name="select" id="sortByselect" onchange="sortby()">
                                     {{-- <option value="value">Highest Rated</option>
                                     <option value="value">Newest</option> --}}
                                     <option value="low">Price: Low - High</option>
                                     <option value="high">Price: High - Low</option>
                                 </select>
-                                <input type="submit" class="d-none" value="">
-                            </form>
+                                {{-- <input type="submit" class="d-none" value="select"> --}}
+                            {{-- </form> --}}
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                             <p class="product-price">
                                 <span class="old-price">{{$glass->price_before_discount}}EGP</span> 
                                 {{$glass->price_after_discount}}EGP
-                                <span><h5 class="text-danger" style="text-align:right;">-40%</h5></span>
+                                <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
                             </p>
                     
                         <hr/>
