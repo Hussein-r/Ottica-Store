@@ -62,6 +62,7 @@ class GlassController extends Controller
         //     'image' => 'required|image|mimes:jpeg,png,jpg',
         // ]);
         $glass= Glass::create($request->all());
+        
         $images=array();
         if($files=$request->file('images')){
             foreach($files as $file){
@@ -91,13 +92,12 @@ class GlassController extends Controller
         $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
         $colorsnames=Color::whereIn("id",$allcolors)->get();
         return view('glass.glass_details',compact('glass','images','brand','colorsnames'));
-
     }
 
     public function changeColor(Request $request){
         $glass=Glass::where([["glass_code","=",$request->code],["color_id","=",$request->color]])->firstOrFail();
         $id=$glass->id;
-        return redirect()->route('glass.show', $id);
+        return ($id);
 
     }
 

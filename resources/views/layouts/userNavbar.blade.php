@@ -72,6 +72,7 @@
                                 </div> --}}
                             </li>
                             <li><a href="{{ url('sunglasses') }}">Sun Glasses</a>
+
                                 {{-- <ul class="dropdown">
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="shop.html">Shop</a></li>
@@ -83,6 +84,7 @@
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul> --}}
                             </li>
+                            <li><a href="{{ url('allLenses') }}">Lenses</a></li>
                             {{-- <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact</a></li> --}}
                         </ul>
@@ -95,7 +97,7 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form action="#" method="post">
+                <form class="form-inline d-block" metod="POST" action="/search">
                         <input type="search" name="search" id="headerSearch" placeholder="Type for search">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>

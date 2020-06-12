@@ -4,9 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class lenses_images extends Model
+class LenseType extends Model
 {
     //
-    protected $table = 'lense_images';
-
 }
