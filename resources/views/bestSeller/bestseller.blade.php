@@ -56,15 +56,6 @@
                         </p>
                         <hr/>
                         <span>Frame Colors</span>
-                        {{-- <div class="row" style="margin: 5px;">
-                            @forelse ($colors as $color)
-                                <div style="width: 30px; border: lightgrey solid 1px; border-radius: 50%; background-color:{{$color->name}};">
-                                    <pre>   </pre>
-                                </div>      
-                            @empty
-                            
-                            @endforelse
-                        </div> --}}
                             <!-- Hover Content -->
                             <div class="hover-content">
                                 <!-- Add to Cart -->
