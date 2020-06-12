@@ -122,6 +122,7 @@
     // :: Favorite Button Active Code
     var favme = $(".favme");
 
+
     favme.on("click", function() {
         $(this).toggleClass("active");
     });

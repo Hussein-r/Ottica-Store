@@ -57,14 +57,15 @@
                             <div class="product-badge new-badge">
                             <span>{{$glass->label}}</span>
                             </div>
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
+                            
                         </div>
 
                         <!-- Product Description -->
                         <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
+                            <!-- Favourite -->
+                            <div class="product-favourite" style="text-align: right">
+                                <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$glass->id}},this)"></button>
+                            </div>
                             <a href="#">
                                 <h6>{{$glass->brand->name}}</h6>
                             </a>
@@ -109,5 +110,7 @@
     </div>
 
 </section>
+<script src="{{ asset('js/favourite.js') }}" defer></script>
+
 @endsection
 
