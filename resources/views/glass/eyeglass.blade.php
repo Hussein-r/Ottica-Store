@@ -27,10 +27,10 @@
                             <p>Sort by:</p>
                             <form action="#" method="get">
                                 <select name="select" id="sortByselect">
-                                    <option value="value">Highest Rated</option>
-                                    <option value="value">Newest</option>
-                                    <option value="value">Price: $$ - $</option>
-                                    <option value="value">Price: $ - $$</option>
+                                    {{-- <option value="value">Highest Rated</option>
+                                    <option value="value">Newest</option> --}}
+                                    <option value="low">Price: Low - High</option>
+                                    <option value="high">Price: High - Low</option>
                                 </select>
                                 <input type="submit" class="d-none" value="">
                             </form>
@@ -57,14 +57,17 @@
                             <div class="product-badge new-badge">
                             <span>{{$glass->label}}</span>
                             </div>
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
+                            
+                            
                         </div>
 
                         <!-- Product Description -->
                         <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
+                            <!-- Favourite -->
+                            <div class="product-favourite" style="text-align: right">
+                                <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$glass->id}},this)"></button>
+                            </div>
+
                             <a href="#">
                                 <h6>{{$glass->brand->name}}</h6>
                             </a>
@@ -104,7 +107,13 @@
                 </div>
                     
                 @endforelse
+                
+            </div>
+            <div style="text-align: center;">
+                {{ $glasses->links() }}
             </div>
         </div>
 </section>
+<script src="{{ asset('js/favourite.js') }}" defer></script>
+
 @endsection

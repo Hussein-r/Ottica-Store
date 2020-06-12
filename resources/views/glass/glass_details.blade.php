@@ -14,6 +14,8 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="/css/core-style.css">
     <link rel="stylesheet" href="/css/glassstyle.css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
+
 
 </head>
 @section('content')
@@ -42,13 +44,13 @@
             <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
             <form action="{{ route('order.store') }}" id="mainform" method='post' class="mt-3">
                 @csrf 
-                <div class="form-check">
-                    <input class="form-check-input"  name="check" value="0" type="Hidden" id="defaultCheck1"></input>
-                    <input class="form-check-input" name="check" value="1" type="checkbox" id="defaultCheck1"></input>
-                    <label class="form-check-label" for="defaultCheck1">
-                        Add Custom Lense
-                    </label>
-                </div>
+                    <div class="form-check">
+                        <input class="form-check-input"  name="check" value="0" type="Hidden"></input>
+                        <input class="form-check-input" name="check" value="1" type="checkbox" id="defaultCheck1"></input>
+                        <label class="form-check-label" for="defaultCheck1">
+                            Add Custom Lense
+                        </label>
+                    </div>
                 <div class="select-box mt-3 mb-30">
                     <select name='color' class="custom-select" id="productColor" >
                     @foreach($colorsnames as $color)
@@ -71,7 +73,7 @@
 				    </div>
                 </div>
                 <div class="cart-fav-box d-flex align-items-center">
-                    <button type="submit" name="addtocart" value="5" id="submitorder"  class="btn essence-btn">Add to cart</button>
+                    <button type="submit" name="addtocart" value="5" id="submitorder"  class="btn essence-btn">Add to cart<i class="fas fa-shopping-cart"></i></button>
                     <div class="product-favourite ml-4">
                         <a href="#" class="favme fa fa-heart"></a>
                     </div>

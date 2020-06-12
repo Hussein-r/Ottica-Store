@@ -5,6 +5,8 @@ use App\GlassProductPrescriptions;
 use App\LenseProductPrescriptions;
 use App\GlassProduct;
 use App\LenseProduct;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use App\orderList;
 use Illuminate\Http\Request;
 
@@ -38,8 +40,12 @@ class ClientOrdersController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        $openOrder=orderList::where([["user_id","=",Auth::id()],["user_order_state","=",'0']])->firstOrFail();
+        try {
+            $openOrder=orderList::where([["user_id","=",Auth::id()],["user_order_state","=",'0']])->get();
+
+        } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+        }
         if ($openOrder->isEmpty()) {
             $userdata=User::where("id","=",Auth::id())->firstOrFail();
             $order = new orderList();
@@ -52,6 +58,7 @@ class ClientOrdersController extends Controller
             $glass->product_id=$request->product_id;
             $glass->quantity=$request->quantity;
             $glass->price=$request->price * $request->quantity;
+            $glass->save();
             if($request->check=='1'){
                 if(Request::exists('image')){
                     $prescription_image= new GlassPrescriptionImage();
@@ -60,18 +67,22 @@ class ClientOrdersController extends Controller
                     $imageName = time().'.'.$request->image->extension();  
                     $request->image->move(public_path('images'), $imageName);
                     $prescription_image->image = $imageName;
+                    $prescription_image->save();
                 }else{
                     $prescription_details= GlassProductPrescriptions::create($request->all());
                     $prescription_details->order_id = $order->id;
                     $prescription_details->product_id =$request->product_id;
+                    $prescription_details->save();
                 }
             }
         }else{
+            dd('hussein');
             $glass = new GlassProduct();
             $glass->order_id= $openOrder->id;
             $glass->product_id=$request->product_id;
             $glass->quantity=$request->quantity;
             $glass->price=$request->price * $request->quantity;
+            $glass->save();
             if($request->check=='1'){
                 if(Request::exists('image')){
                     $prescription_image= new GlassPrescriptionImage();
@@ -80,10 +91,12 @@ class ClientOrdersController extends Controller
                     $imageName = time().'.'.$request->image->extension();  
                     $request->image->move(public_path('images'), $imageName);
                     $prescription_image->image = $imageName;
+                    $prescription_image->save();
                 }else{
                     $prescription_details= GlassProductPrescriptions::create($request->all());
                     $prescription_details->order_id = $openOrder->id;
                     $prescription_details->product_id =$request->product_id;
+                    $prescription_details->save();
                 }
             }   
         }
