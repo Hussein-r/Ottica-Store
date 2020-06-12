@@ -49,6 +49,16 @@
 
   <div><span class="text-white">{{$errors->first('description')}}</span></div>
   
+  <div class="input-group mt-4" >
+<select  name="location" class="custom-select custom-select-lg mb-3">
+  <option selected>Choose offer location</option>
+  <option value="Online">Online</option>
+        <option value="In store">In store</option>
+        <option value="Online and In store">Online/In store</option>
+</select>
+ </div>
+ <div><span class="text-white">{{$errors->first('location')}}</span></div>
+
   
   
   

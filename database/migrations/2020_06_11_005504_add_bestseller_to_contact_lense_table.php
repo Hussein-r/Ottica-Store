@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImageToBrandsTable extends Migration
+class AddBestsellerToContactLenseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class AddImageToBrandsTable extends Migration
      */
     public function up()
     {
-        Schema::table('brands', function (Blueprint $table) {
+        Schema::table('contact_lenses', function (Blueprint $table) {
             //
-            $table->string('image');
-
+            $table->boolean('best_seller');
         });
     }
 
@@ -27,10 +26,9 @@ class AddImageToBrandsTable extends Migration
      */
     public function down()
     {
-        Schema::table('brands', function (Blueprint $table) {
+        Schema::table('contact_lense', function (Blueprint $table) {
             //
-            $table->dropColumn('image');
-
+            $table->dropColumn('best_seller');
         });
     }
 }

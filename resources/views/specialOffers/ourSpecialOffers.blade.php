@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Title  -->
-    <title>brands</title>
+    <title>special offers</title>
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico">
 
@@ -22,12 +22,12 @@
 @section('content')
 <body>
     <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb_area breadcumb-style-two bg-img" style="background-image: url(img/bg-img/breadcumb2.jpg);">
+    <div class="breadcumb_area breadcumb-style-two bg-img" style="background-image: url(img/bg-img/img.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <h2>Our Brands</h2>
+                        <h2>Special offers</h2>
                     </div>
                 </div>
             </div>
@@ -39,50 +39,40 @@
     <div class="blog-wrapper section-padding-80">
         <div class="container">
             <div class="row">
-            <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>Glasses Brands</h2>
-                    </div>
-                </div>
-                <!-- Single Blog Area -->
-                @foreach ($glass_brands as $glassbrand)
-                <div class="col-4 col-lg-4">
+                @foreach ($specialOffers as $offer)
+                <div class="col-12 col-lg-6">
                     <div class="single-blog-area mb-50">
                     <a href="/ourbrands/home">
-                        <img src="/images/{{$glassbrand->image}}" style="width:150 px ; height:130px ;"   title="{{$glassbrand->name}}"  alt="{{$glassbrand->name}}">
-                    </a>
-
-                    <div class="hover-content">
+                        <img src="/images/{{$offer->image}}" style="width:690 px ; height:369px ;" >
+                    </a>                      
+                        <div class="post-title">
+                            <p style="color:red; font-weight:900;">{{$offer->discount}} % OFF </p>
+                        </div>
+                        <!-- Hover Content -->
+                        <div class="hover-content">
                             <!-- Post Title -->
-                            <!-- <p>{{$glassbrand->name}}</p> -->
-                            <a href="/ourbrands/home">Continue shopping <i class="fa fa-angle-right"></i></a>
-                        </div> 
-
+                            <div class="hover-post-title">
+                                <a href="#">Available {{$offer->location}}</a>
+                            </div>
+                            <p>{{$offer->description}}</p>
+                            <a href="#">Explore more <i class="fa fa-angle-right"></i></a>
+                        </div>
                     </div>
                 </div>
+
                 @endforeach
-  
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>contact lenses brands</h2>
-                    </div>
-                </div>
-                @foreach ($lense_brands as $lense_brand)
-                <div class="col-4 col-lg-4">
-                    <div class="single-blog-area mb-50">
-                    <a href="/ourbrands/home">
-                        <img src="/images/{{$lense_brand->image}}" style="width:150 px ; height:130px ;"   title="{{$lense_brand->name}}"  alt="{{$lense_brand->name}}">
-                    </a>
 
-                    <div class="hover-content">
-                            <!-- Post Title -->
-                            <!-- <p>{{$glassbrand->name}}</p> -->
-                            <a href="/ourbrands/home">Continue shopping <i class="fa fa-angle-right"></i></a>
-                        </div> 
 
-                    </div>
-                </div>
-                @endforeach
+
+
+
+
+
+
+
+
+
+
 
             </div>
         </div>
@@ -188,20 +178,4 @@
 @endsection
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -39,10 +39,15 @@ Route::get('done/{id}', 'ListOrdersController@doneOrder');
 Route::get('orders/inactive', 'ListOrdersController@inactiveOrdersList');
 Route::get('orders/processing', 'ListOrdersController@processingOrdersList');
 Route::get('orders/done', 'ListOrdersController@doneOrdersList');
+//our special offers home
+Route::get('offer','specialOffersController@list');
+
 //our brands home page 
 Route::resource('ourbrands','OurBrandsController');
 Route::get('ourbrands/home','OurBrandsController@returnHome');
 
+//best seller home page
+Route::resource('bestseller','BestSellerController');
 
 
 

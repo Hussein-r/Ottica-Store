@@ -41,10 +41,14 @@
   <input type="text-area" name="description" class="form-control"  id="exampleInputPassword1">
 </div>
 
-
-
-
-
+<div class="input-group mt-4" >
+<select name="location" class="custom-select custom-select-lg mb-3">
+  <option selected>Choose offer location</option>
+  <option value="Online">Online</option>
+        <option value="In store">In store</option>
+        <option value="Online and In store">Online/In store</option>
+</select>
+ </div>
 
 <div class="input-group mb-3 mt-4">
   <div class="input-group-prepend">

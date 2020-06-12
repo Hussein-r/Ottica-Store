@@ -67,6 +67,12 @@
                                     <a class="dropdown-item" href="{{route('user.show',Auth::user())}}">
                                         {{ __('profile') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{route('specialoffers.index')}}">
+                                    Special Offers
+                                    </a>
+                                    <a class="dropdown-item" href="{{route('orderslist.index')}}">
+                                    Orders
+                                    </a>
                                     <a class="dropdown-item" href="{{route('user.index')}}">
                                     {{ __('Users') }}
                                     </a>
