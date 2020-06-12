@@ -91,7 +91,13 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Label</span>
             </div>   
-            {!! Form::text('label', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('label', null, ['class'=>'form-control']) !!}
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Description</span>
+            </div>   
+            {!! Form::text('description', null, ['class'=>'form-control', 'required']) !!}
         </div>
         
 

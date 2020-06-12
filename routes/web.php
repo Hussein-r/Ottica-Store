@@ -20,16 +20,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('brand', 'BrandController');
 Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
 Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
 Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
-Route::post('/changecolor','GlassController@changeColor');
+Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
+Route::resource('order','ClientOrdersController');
+
 //mariam
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
 Route::get('eyeglasses','GlassController@eyeglasses');
+Route::get('/fav','GlassController@favourite');
 //hajar
 //specail offers & list orders for admin 
 Route::resource('specialoffers','specialOffersController');
@@ -51,8 +55,15 @@ Route::resource('bestseller','BestSellerController');
 
 
 
-
-
+//haidy
+Route::resource('lenses', 'ContactLensesController');
+Route::resource('lenseBrand', 'LenseBrandController');
+Route::resource('lensetype', 'LenseTypeController');
+Route::get('/details/{lense}','ContactLensesController@details');
+Route::resource('LenseManufacturerer', 'LenseManufacturererController');
+Route::get('allLenses','ContactLensesController@list');
+Route::get('/search', 'ContactLensesController@search');
+Route::get('/sort/{value}', 'ContactLensesController@sort');
 
 
 

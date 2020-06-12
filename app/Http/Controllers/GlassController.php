@@ -11,6 +11,8 @@ use App\FrameShape;
 use App\Material;
 use App\Fit;
 use App\GlassImage;
+use App\Favourite;
+use Illuminate\Support\Facades\Auth;
 
 class GlassController extends Controller
 {
@@ -21,7 +23,7 @@ class GlassController extends Controller
      */
     public function index()
     {
-         $glasses = Glass::all();
+         $glasses = Glass::paginate(3);
          $color = new Color();
         return view('glass.index',compact('glasses','color'));
     }
@@ -41,10 +43,10 @@ class GlassController extends Controller
         $fit = Fit::pluck('name','id');
         $type = ['sunglass'=>'Sun glass','eyeglass'=>'Eye glass'];
         $gender = ['male'=>'male','female'=>'female','unisex'=>'unisex'];
-        $label = ['Best seller'=>'Best seller','new'=>'New arrival'];
+        // $label = ['Best seller'=>'Best seller','new'=>'New arrival'];
 
         
-        return view('glass.create', compact('brand','color','face','frame','material','fit','type','gender','label'));
+        return view('glass.create', compact('brand','color','face','frame','material','fit','type','gender'));
     
     }
 
@@ -60,6 +62,7 @@ class GlassController extends Controller
         //     'image' => 'required|image|mimes:jpeg,png,jpg',
         // ]);
         $glass= Glass::create($request->all());
+        
         $images=array();
         if($files=$request->file('images')){
             foreach($files as $file){
@@ -89,13 +92,12 @@ class GlassController extends Controller
         $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
         $colorsnames=Color::whereIn("id",$allcolors)->get();
         return view('glass.glass_details',compact('glass','images','brand','colorsnames'));
-
     }
 
     public function changeColor(Request $request){
         $glass=Glass::where([["glass_code","=",$request->code],["color_id","=",$request->color]])->firstOrFail();
         $id=$glass->id;
-        return redirect()->route('glass.show', $id);
+        return ($id);
 
     }
 
@@ -132,14 +134,16 @@ class GlassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $glass= Glass::whereId($id)->update($request->except(['_method','_token']));
+        $glass= Glass::whereId($id)->update($request->except(['_method','_token','images']));
         $images=array();
+        
         if($files=$request->file('images')){
+            GlassImage::where('glass_id','=',$id)->delete();
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
                 $file->move(public_path('images'),$name);
-                GlassImage::whereId($id)->update( [
-                    'glass_id' => $glass->id,
+                GlassImage::insert( [
+                    'glass_id' => $id,
                     'image'=> $name,
                 ]);
             }
@@ -168,7 +172,7 @@ class GlassController extends Controller
 
     public function sunglasses()
     {
-        $glasses = Glass::where('glass_type','=','sunglass')->get();
+        $glasses = Glass::where('glass_type','=','sunglass')->paginate(15);
         // $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
         return view('glass.sunglass',['glasses'=>$glasses])->render();
@@ -176,9 +180,32 @@ class GlassController extends Controller
 
     public function eyeglasses()
     {
-        $glasses = Glass::where('glass_type','=','eyeglass')->get();
+        $glasses = Glass::where('glass_type','=','eyeglass')->paginate(15);
         // $allcolors=Glass::where("glass_code",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
         return view('glass.eyeglass', compact('glasses'));
     }
+
+    public function sort($sort)
+    {
+
+    }
+
+    public function favourite(Request $request)
+    {
+    
+		$fav = Favourite::where(['user_id'=>Auth::id(),'glass_id'=>$request->glass]);
+		if($fav->exists()){
+			$fav->delete();
+		   return response()->json(["like"=>"no"]);
+		}
+		else
+		{    
+			$fav=new Favourite();
+			$fav->user_id=Auth::id();
+			$fav->glass_id=$request->glass;
+			$fav->save();
+			return response()->json(["like"=>"yes"]);
+		}
+	}
 }
