@@ -10,24 +10,26 @@
 </head>
     <body class="form-v6">
     <h1 style="text-align: center">Add New Contact Lense</h1>
-        <div class="container">
+        <div class="container" >
+            
             {!! Form::open(['route' => 'lenses.store','files' => 'true', 'method'=>'post']) !!}
+            
                 <div class="input-group mb-3">
                  
                     {!! Form::text('name',null,['class'=>'form-control','aria-label'=>'name', 'aria-describedby'=>'basic-addon1','placeholder'=>'Contact Name'])  !!}
                 </div>
-                <div><span class="text">{{$errors->first('name')}}</span></div>
+                <div><span class="text-white">{{$errors->first('name')}}</span></div>
                 <div class="input-group mb-3">
                      
                     {!! Form::number('quantity',null,['class'=>'form-control','aria-label'=>'quantity', 'aria-describedby'=>'basic-addon4','placeholder'=>'The quantity'])  !!}
                 </div>
-                <div><span class="text">{{$errors->first('quantity')}}</span></div>
+                <div><span class="text-white">{{$errors->first('quantity')}}</span></div>
    
                 <div class="input-group mb-3">
                        
                     {!! Form::text('label',null,['class'=>'form-control','aria-label'=>'label', 'aria-describedby'=>'basic-addon1','placeholder'=>'The label'])  !!}
                 </div>
-                <div><span class="text">{{$errors->first('label')}}</span></div>
+                <div><span class="text-white">{{$errors->first('label')}}</span></div>
                
                <div class="input-group mb-3">
                     
@@ -41,7 +43,7 @@
                     </select>
                    
                 </div>
-                <div><span class="text">{{$errors->first('color')}}</span></div>
+                <div><span class="text-white">{{$errors->first('color')}}</span></div>
 
                 <div class="input-group mb-3">
                         
@@ -68,12 +70,12 @@
                     <a href="{{route('lenseBrand.create')}}"  class="btn btn-info center-block">Add A New Brand</a>
                     </div>
                 </div>
-                <div><span class="text">{{$errors->first('brand_id')}}</span></div>
+                <div><span class="text-white">{{$errors->first('brand_id')}}</span></div>
                 <div class="input-group mb-3">
                        
                     {!! Form::text('description',null,['class'=>'form-control','aria-label'=>'description', 'aria-describedby'=>'basic-addon1','placeholder'=>'Description'])  !!}
                 </div>
-                <div><span class="text">{{$errors->first('description')}}</span></div>
+                <div><span class="text-white">{{$errors->first('description')}}</span></div>
                 <div class="input-group mb-3">
                     
                     <select class="custom-select" id="inputGroupSelect01" name="type_id">
@@ -88,7 +90,7 @@
                     <a href="{{route('lensetype.create')}}"  class="btn btn-info center-block">Add A New Type</a>
                     </div>
                 </div>
-                <div><span class="text">{{$errors->first('type_id')}}</span></div>
+                <div><span class="text-white">{{$errors->first('type_id')}}</span></div>
                 <div class="input-group mb-3">
                 
                     <select class="custom-select" id="inputGroupSelect01" name="manufacturerer_id">
@@ -104,27 +106,28 @@
                     <a href="{{route('LenseManufacturerer.create')}}"  class="btn btn-info center-block">Add A New Manufacturerer</a>
                     </div>
                 </div>
-                <div><span class="text">{{$errors->first('manufacturerer_id')}}</span></div>
+                <div><span class="text-white">{{$errors->first('manufacturerer_id')}}</span></div>
                 <div class="input-group mb-3">
                       
                     {!! Form::text('material_of_content',null,['class'=>'form-control','aria-label'=>'material_of_content', 'aria-describedby'=>'basic-addon1','placeholder'=>'Material Of Content'])  !!}
                 </div>
-                <div><span class="text">{{$errors->first('material_of_content')}}</span></div>
+                <div><span class="text-white">{{$errors->first('material_of_content')}}</span></div>
                 <div class="input-group mb-3">
                        
                     {!! Form::text('water_of_content',null,['class'=>'form-control','aria-label'=>'water_of_content', 'aria-describedby'=>'basic-addon1','placeholder'=>'Water Of Content'])  !!}
                 </div>
-                <div><span class="text">{{$errors->first('water_of_content')}}</span></div>
+                <div><span class="text-white">{{$errors->first('water_of_content')}}</span></div>
                 <select class="custom-select" id="inputGroupSelect01" name="lense_purpose">
                         <option disabled>Choose Lense Purpose</option>
                         <option  value="1">medical</option> 
                         <option  value="2">beauty</option>        
                 </select>
-                 <div ><span class="text">{{$errors->first('lense_purpose')}}</span></div> 
+                 <div ><span class="text-white">{{$errors->first('lense_purpose')}}</span></div> 
                  <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Best seller</span>
                     </div>   
+                    {!! Form::checkbox('best_seller', '0', null, ['class'=>'form-control','Hidden']) !!}
                     {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
                  </div>
                 <div style=margin:18px;>
@@ -133,7 +136,7 @@
                         <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
                     </div>
               
-                     <div><span class="text-white">{{$errors->first('image')}}</span></div>
+                     
                 </div>
 
         <div  style="text-align: center "> 

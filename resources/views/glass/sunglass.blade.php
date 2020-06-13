@@ -61,6 +61,7 @@
                                 
                             </div>
 
+<<<<<<< HEAD
                             <!-- Product Description -->
                             <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
                                 <!-- Favourite -->
@@ -96,6 +97,42 @@
                                     <div class="add-to-cart-btn">
                                     <a href="{{route('glass.show', $glass->id)}}" class="btn essence-btn">View Details</a>
                                     </div>
+=======
+                        <!-- Product Description -->
+                        <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
+                            <!-- Favourite -->
+                            <div class="product-favourite" style="text-align: right">
+                                <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button>
+                            </div>
+                            <a href="#">
+                                <h6>{{$glass->brand->name}}</h6>
+                            </a>
+                            <span>{{$glass->glass_code}}</span>
+
+                            {{-- <span style="margin-left: 20px">{{$colors}}</span> --}}
+                            
+                        <p class="product-price">
+                            <span class="old-price">{{$glass->price_before_discount}}EGP</span> 
+                            {{$glass->price_after_discount}}EGP
+                            <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
+                        </p>
+                        <hr/>
+                        <span>Frame Colors</span>
+                        {{-- <div class="row" style="margin: 5px;">
+                            @forelse ($colors as $color)
+                                <div style="width: 30px; border: lightgrey solid 1px; border-radius: 50%; background-color:{{$color->name}};">
+                                    <pre>   </pre>
+                                </div>      
+                            @empty
+                            
+                            @endforelse
+                        </div> --}}
+                            <!-- Hover Content -->
+                            <div class="hover-content">
+                                <!-- Add to Cart -->
+                                <div class="add-to-cart-btn">
+                                <a href="{{route('glass.show', $glass->id)}}" class="btn essence-btn">View Details</a>
+>>>>>>> 412ac0f33b5a47ee4df1693941c6498809d7b004
                                 </div>
                             </div>
                         </div>

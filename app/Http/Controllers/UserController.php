@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use App\Favourite;
+use App\Glass;
 class UserController extends Controller
 {
     /**
@@ -104,6 +106,16 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function myFavourite()
+    {
+        $glasses = Favourite::all()->where('user_id','=',Auth::id());
+        // dd($glasses);
+        // $glasses = Glass::where('id','=',$fav->glass_id);
+        // return view('Users\favourite', compact('glasses'));
+        return view('Users\favourite',['glasses'=>$glasses])->render();
+        
     }
 
     
