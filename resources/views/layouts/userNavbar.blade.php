@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Ottica Store</title>
-    <meta charset="utf-8">
+
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">   
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="/fonts/icomoon/style.css">
@@ -28,7 +33,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="index.html" class="js-logo-clone">Ottica</a>
+              <a href="/" class="js-logo-clone">Ottica</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
@@ -51,7 +56,7 @@
           </div>
           <div class="icons">
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
+          <a href="{{url('/favourite')}}" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
             <a href="cart.html" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
               <span class="number">2</span>
@@ -64,4 +69,7 @@
 </div>
 @yield('content')
 </body>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/sunmain.js"></script>
 </html>

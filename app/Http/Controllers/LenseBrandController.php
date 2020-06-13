@@ -10,7 +10,7 @@ class LenseBrandController extends Controller
     public function create()
     {
         $brands=LenseBrand::all();
-        return view('LenseBrand.create',['brands' => $brands]);
+        return view('lenseBrand.create',['brands' => $brands]);
     }
 
 
