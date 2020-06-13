@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddBestsellerToContactLenseTable extends Migration
+class AddBestSellerToContactLenses extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class AddBestsellerToContactLenseTable extends Migration
     {
         Schema::table('contact_lenses', function (Blueprint $table) {
             //
-            $table->boolean('best_seller');
+            $table->boolean('best_seller')->default(0);
         });
     }
 
@@ -26,9 +26,8 @@ class AddBestsellerToContactLenseTable extends Migration
      */
     public function down()
     {
-        Schema::table('contact_lense', function (Blueprint $table) {
+        Schema::table('contact_lenses', function (Blueprint $table) {
             //
-            $table->dropColumn('best_seller');
         });
     }
 }
