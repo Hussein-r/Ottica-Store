@@ -12,7 +12,7 @@
     
   </head>
   <body>
-  <div class="site-wrap">
+  <div class="site-wrap fixed-top">
     <div class="site-navbar bg-white py-2">
 
       <div class="search-wrap">
@@ -42,8 +42,8 @@
                   </ul>
                 </li>
                 
-                <li><a href="shop.html">Contact Lenses</a></li>
-                <li><a href="#">New Arrivals</a></li>
+                <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
+                <li><a href="{{ url('offers') }}">Special Offers</a></li>
                 <li><a href="#">About</a></li>
                 <li class="active"><a href="contact.html">Contact</a></li>
               </ul>

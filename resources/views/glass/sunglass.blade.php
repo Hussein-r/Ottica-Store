@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/styling.css">
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
-    <link rel="stylesheet" href="/css/navstyle.css">
 </head>
 @section('content')
 <body>
@@ -125,8 +125,8 @@
 <body>
 <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
-@endsection
 <script src="{{ asset('js/favourite.js') }}" defer></script>
+@endsection
 
 
 
