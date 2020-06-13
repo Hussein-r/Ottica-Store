@@ -1,5 +1,6 @@
 @extends('layouts.userNavbar')
 @section('content')
+
 <section class="container">
     <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
         <div class="container h-100">
@@ -25,14 +26,13 @@
                         <!-- Sorting -->
                         <div class="product-sorting d-flex">
                             <p>Sort by:</p>
-                            <form action="sort/?value" method="POSt">
+                            <form action="/sort" method="POSt">
                                 {{ csrf_field() }}
-                                {{ method_field('PATCH') }}
                                 <select name="select" id="sortByselect">
                                     {{-- <option value="value">Highest Rated</option>
                                     <option value="value">Newest</option> --}}
-                                    <option value="low">Price: Low - High</option>
-                                    <option value="high">Price: High - Low</option>
+                                    <option value="low" {{( "low"=="low" ? "selected":"") }}>Price: Low - High</option>
+                                    <option value="high" {{( "high"=="high" ? "selected":"") }}>Price: High - Low</option>
                                 </select>
                                 <input type="submit" class="d-none" value="select">
                             </form>
@@ -69,7 +69,7 @@
                             <div class="product-favourite" style="text-align: right">
                                 <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$glass->id}},this)"></button>
                             </div>
-
+                    
                             <a href="#">
                                 <h6>{{$glass->brand->name}}</h6>
                             </a>

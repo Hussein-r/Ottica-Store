@@ -188,18 +188,19 @@ class GlassController extends Controller
         return view('glass.eyeglass', compact('glasses'));
     }
 
-    public function sort($value)
+    public function sort(Request $request)
     {
-        dd($value);
+        dd($request);
         $all_glasses = Glass::paginate(15);
-        if($value == 'low'){
+        if($request->option == 'low'){
             $glasses=$all_glasses->sortBy('price_after_discount');
         }
-        elseif($value == 'high'){
+        elseif($request->option == 'high'){
             $glasses=$all_glasses->sortByDesc('price_after_discount');
         }
         dd($glasses);
-        return  response()->json(['glasses'=>$glasses]);
+        return($glasses);
+        // return  response()->json(['glasses'=>$glasses]);
 
 
     }

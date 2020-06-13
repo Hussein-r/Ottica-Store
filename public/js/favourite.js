@@ -6,16 +6,16 @@
 $('#sortByselect').change(function(){
     $.ajax({
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-        url: "/sort/{value}",
-    // url: '{{ route('sort', ['id' => Auth::->id]) }}',
-        type: 'PATCH',
-        data: {"sort": $(this).children("option:selected").val()},
-        success: function(response){
-            console.log(response);
+        url: "sort",
+        type: 'post',
+        data: {_token: $("#csrf-token")[0].content, option: $(this).children("option:selected").val()},
+        success: function(data){
+            console.log(data);
+            window.location = /glass/+data;
         },
-        error: function(response) {
-            console.log(response);
-            alert(response);
+        error: function(data) {
+            console.log(data);
+            alert(data);
            }
     })
 });
