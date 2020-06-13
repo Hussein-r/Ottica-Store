@@ -12,7 +12,8 @@
     <h1 style="text-align: center">Edit Contact Lense Data</h1>
         <div class="container">
        
-        {!! Form::model($lense,['route' =>['lenses.update',$lense],'method' => 'put']) !!}
+        {!! Form::model($lense,['route' =>['lenses.update',$lense],'method' => 'put','files' => 'true','enctype'=>'multipart/form-data'
+]) !!}
      
                <div class="input-group mb-3">
                      
@@ -121,6 +122,13 @@
                             
                     </select>
                  <div><span class="text">{{$errors->first('lense_purpose')}}</span></div>
+                 <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Best seller</span>
+                    </div>   
+                    {!! Form::checkbox('best_seller', '0', null, ['class'=>'form-control','Hidden']) !!}
+                    {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
+                 </div>
                         <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Upload</span>

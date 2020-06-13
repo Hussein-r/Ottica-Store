@@ -74,15 +74,16 @@ class ContactLensesController extends Controller
                 'brand_id'=>'required|numeric',
                 'type_id'=>'required|numeric',
                 'manufacturerer_id'=>'required|numeric',
-                'color'=>'required'
+                'color'=>'required',
+               
             ]);
     
         $lense= ContactLenses::create($request->all());
-        $lense->best_seller=$request->best_seller;
-        $lense->save();
+        
         // dd($request);
         $images=array();
         if($files=$request->file('images')){
+          
             foreach($files as $file){
                 $name=$file->getClientOriginalName();
                 $file->move(public_path('images'),$name);
@@ -123,7 +124,7 @@ class ContactLensesController extends Controller
         $images=LenseImage::where("lense_id","=",$id)->get();
         $color=ColorLense::where("lense_id","=",$lense->id)->get('color_id');
         // dd($color);
-        $colors=Color::where("id","=",$color)->get('name');
+        $colors=Color::whereIn("id",$color)->get();
         // dd($colors);
         
         return view('ContactLenses/lenseProfile',compact('lense','images','brand','colors'));
@@ -204,14 +205,18 @@ class ContactLensesController extends Controller
     {
    
         $lense = ContactLenses::find($id);
-        
-        
+        $colors = ColorLense::where('lesne_id','=',$id);
         if ($lense != null) {
             foreach($lense->images as $image){
                 $image->delete();
             }
+            foreach($colors as $color){
+                $color->delete();
+            }
+
         $lense->delete();
     }
+    
     
         return redirect()->action("ContactLensesController@index");   
     }
@@ -221,8 +226,7 @@ class ContactLensesController extends Controller
         $brand=LenseBrand::where("id","=",$lense->brand_id)->get();
         $type=LenseType::where("id","=",$lense->type_id)->get();
         $manufacturerer=LenseManufacturerer::where("id","=",$lense->manufacturerer_id)->get();
-        // $color=Color::where("id","=",$lense->manufacturerer_id)->get();
-        // $colorlense = ColorLense::find($id);
+        
         return view('ContactLenses.details',[
         'lense'=>$lense,
         'brand'=>$brand,
@@ -242,52 +246,31 @@ class ContactLensesController extends Controller
     {   
         
         
-        // $lense= ContactLenses::whereId($id)->update($request->except(['_method','_token']));
-        // $images=array();
-        // if($files=$request->file('images')){
-        //     foreach($files as $file){
-        //         $name=$file->getClientOriginalName();
-        //         $file->move(public_path('images'),$name);
-        //         LenseImage::whereId($id)->update( [
-        //             'glass_id' => $lense->id,
-        //             'image'=> $name,
-        //         ]);
-               
-        //     }
-
-        // }
-        $lense = ContactLenses::find($id);
+        $lense= ContactLenses::whereId($id)->update($request->except(['_method','_token','images','color']));
+       
+        if($files=$request->file('images')){
         
-                $lense->name=$request->name;
-                $lense->quantity=$request->quantity;
-                $lense->label=$request->label;
-                $lense->price_before_discount=$request->price_before_discount;
-                $lense->price_after_discount=$request->price_after_discount;
-                $lense->description=$request->description;
-                $lense->brand_id=$request->brand_id;
-                $lense->type_id=$request->type_id;
-                $lense->manufacturerer_id=$request->manufacturerer_id;
-                $lense->material_of_content=$request->material_of_content;
-                $lense->water_of_content=$request->water_of_content;
-                $lense->lense_purpose=$request->lense_purpose;
-                $lense->save();
-            
-       if($request->hasFile('images')){
-            foreach($request->hasFile('images') as $file){
-                $imageName = time().'.'.$file->image->extension();  
-                $file->image->move(public_path('images'), $imageName);
-                LenseImage::whereId($id)->update( [
-                    'lense_id' => $lense->id,
+            LenseImage::where('lense_id','=',$id)->delete();
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move(public_path('images'),$name);
+                LenseImage::insert( [
+                    'lense_id' => $id,
                     'image'=> $name,
                 ]);
+               
             }
+
         }
-        $color=$request->color;
+    
+       
+       $color=$request->color;
+       ColorLense::where('lense_id','=',$id)->delete();
         foreach($color as $subColor)
       {
-        $colorlense = ColorLense::find($id);
+        $colorlense=new ColorLense ();
         $colorlense->color_id=$subColor;
-        $colorlense->lense_id=$lense->id;
+        $colorlense->lense_id=$id;
         $colorlense->save();
         }
 

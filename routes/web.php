@@ -34,6 +34,8 @@ Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
 Route::get('eyeglasses','GlassController@eyeglasses');
 Route::get('/fav','GlassController@favourite');
+Route::patch('/sort/{value}', 'GlassController@sort');
+Route::get('favourite', 'UserController@myFavourite');
 //hajar
 //specail offers & list orders for admin 
 Route::resource('specialoffers','specialOffersController');
