@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Favourite extends Model
 {
     protected $table = 'glass_favourites';
-    protected $fillable = ['user_id', 'glass_id'];
+    // protected $fillable = ['user_id', 'glass_id'];
 
     public function user()
     {

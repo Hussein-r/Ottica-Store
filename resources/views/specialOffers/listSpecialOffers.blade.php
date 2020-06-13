@@ -33,6 +33,7 @@
 							<tr class="table100-head">
 								<th class="column1">Discount</th>
 								<th class="column1">Description</th>
+                                <th class="column1">Location</th>
 								<th class="column1">Image</th>
 								<th class="column1">Edit</th>
                  <th class="column1">Delete</th>
@@ -43,6 +44,8 @@
    <tr>
    <td>    {{$specialOffer->discount}}     </td>
    <td>        {{$specialOffer->description}}          </td>
+   <td>        {{$specialOffer->location}}          </td>
+
    <td> 
       <img style="height:200px ; width:150px;" class="img-thumbnail" src="/images/{{$specialOffer->image}}" />
        </td>

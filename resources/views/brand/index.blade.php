@@ -16,8 +16,10 @@
         <th>
             <a href="{{route('brand.edit', $brand->id)}}" class="btn btn-success">Edit</a>
             <div>
-            {!! Form::open(['route' => ['brand.destroy', $brand->id] ,'method' => 'delete' ]) !!}
-            {!! Form::submit('Delete',['class'=>'btn btn-danger mt-3'])  !!}      
+                
+            {!! Form::open(['route' => ['brand.destroy', $brand] ,'method' => 'delete' ]) !!}
+            {!! Form::submit('Delete',['class'=>'btn btn-danger mt-3'])  !!}
+            {!! Form::close() !!}
             </div>
         </th>
     </tr>

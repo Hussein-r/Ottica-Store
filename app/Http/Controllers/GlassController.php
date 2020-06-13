@@ -109,6 +109,7 @@ class GlassController extends Controller
      */
     public function edit($id)
     {
+        dd($id);
         $brand = Brand::pluck('name', 'id');
         $color = Color::pluck('name','id');
         $face = FaceShape::pluck('name','id');
@@ -136,7 +137,6 @@ class GlassController extends Controller
     {
         $glass= Glass::whereId($id)->update($request->except(['_method','_token','images']));
         $images=array();
-        
         if($files=$request->file('images')){
             GlassImage::where('glass_id','=',$id)->delete();
             foreach($files as $file){
@@ -161,6 +161,7 @@ class GlassController extends Controller
     public function destroy($id)
     {
         $glass = Glass::find($id);
+        dd($id);
         foreach($glass->images as $image){
             $image->delete();
         }
@@ -186,8 +187,19 @@ class GlassController extends Controller
         return view('glass.eyeglass', compact('glasses'));
     }
 
-    public function sort($sort)
+    public function sort($value)
     {
+        dd($value);
+        $all_glasses = Glass::paginate(15);
+        if($value == 'low'){
+            $glasses=$all_glasses->sortBy('price_after_discount');
+        }
+        elseif($value == 'high'){
+            $glasses=$all_glasses->sortByDesc('price_after_discount');
+        }
+        dd($glasses);
+        return  response()->json(['glasses'=>$glasses]);
+
 
     }
 
