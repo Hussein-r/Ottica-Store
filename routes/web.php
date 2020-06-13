@@ -37,13 +37,25 @@ Route::get('/fav','GlassController@favourite');
 Route::post('/sort', 'GlassController@sort');
 Route::get('favourite', 'UserController@myFavourite');
 //hajar
-Route::resource('specialoffers','specialOffersController');
+//specail offers & list orders for admin 
+Route::resource('specialoffers','SpecialOffersController');
 Route::resource('orderslist','ListOrdersController');
 Route::get('processing/{id}', 'ListOrdersController@processingOrder');
 Route::get('done/{id}', 'ListOrdersController@doneOrder');
 Route::get('orders/inactive', 'ListOrdersController@inactiveOrdersList');
 Route::get('orders/processing', 'ListOrdersController@processingOrdersList');
 Route::get('orders/done', 'ListOrdersController@doneOrdersList');
+//our special offers home
+Route::get('offers','SpecialOffersController@list');
+
+//our brands home page 
+Route::resource('ourbrands','OurBrandsController');
+Route::get('ourbrands/home','OurBrandsController@returnHome');
+
+//best seller home page
+Route::resource('bestseller','BestSellerController');
+
+
 
 //haidy
 Route::resource('lenses', 'ContactLensesController');

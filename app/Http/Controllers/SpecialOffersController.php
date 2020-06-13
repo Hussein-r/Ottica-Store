@@ -43,6 +43,7 @@ class SpecialOffersController extends Controller
         // dd($request);
         $specialOffer = new SpecialOffers();
         $specialOffer->discount = $request->discount;
+        $specialOffer->location = $request->location;
         $specialOffer->description = $request->description;
         if ($request->hasFile('image')) {
             $imageName = time().'.'.$request->image->extension();  
@@ -64,6 +65,16 @@ class SpecialOffersController extends Controller
         //
         
     }
+
+    public function list()
+    {
+        //
+        $specialOffers = SpecialOffers::List()->get();
+        return view('specialOffers.ourSpecialOffers',['specialOffers' => $specialOffers]);
+
+        
+    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -95,6 +106,7 @@ class SpecialOffersController extends Controller
         $data=$this->validate($request,[
             'discount'=>'required',
             'description'=>'required',
+            'location'=>'required',
             'image'=>'required',
         ]);
         if ($request->hasFile('image')) {
@@ -103,6 +115,7 @@ class SpecialOffersController extends Controller
             $request->image->move(public_path('images'), $imageName);
             $offer->discount = $request->discount;
             $offer->description = $request->description;
+            $offer->location = $request->location;
             $offer->image = $imageName;
             $offer->save();
         }

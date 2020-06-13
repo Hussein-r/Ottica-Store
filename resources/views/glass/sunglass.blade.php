@@ -1,64 +1,77 @@
 @extends('layouts.userNavbar')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/styling.css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
+</head>
 @section('content')
-<section class="container">
-    <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="page-title text-center">
-                        <h2>SUN GLASSES</h2>
+<body>
+    <section class="container">
+    <div class="site-blocks-cover" data-aos="fade">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                        <div class="site-block-cover-content">
+                            <h2 class="sub-title">Ottica Store</h2>
+                            <h1>Sun Glasses</h1>
+                            <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 align-self-end">
+                        <img src="/images/model_3.png" alt="Image" class="img-fluid">
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 
-    <div class="col-12 col-md-8 col-lg-9">
-        <div class="shop_grid_product_area">
-            <div class="row">
-                <div class="col-12">
-                    <div class="product-topbar d-flex align-items-center justify-content-between">
-                        <!-- Total Products -->
-                        {{-- <div class="total-products">
-                            <p><span>{{count($glasses)}}</span> products found</p>
-                        </div> --}}
-                        <!-- Sorting -->
-                        <div class="product-sorting d-flex">
-                            <p>Sort by:</p>
-                            <form action="#" method="get">
-                                <select name="select" id="sortByselect">
-                                    <option value="value">Highest Rated</option>
-                                    <option value="value">Newest</option>
-                                    <option value="value">Price: $$ - $</option>
-                                    <option value="value">Price: $ - $$</option>
-                                </select>
-                                <input type="submit" class="d-none" value="">
-                            </form>
+        <div class="col-12 col-md-8 col-lg-9">
+            <div class="shop_grid_product_area">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="product-topbar d-flex align-items-center justify-content-between">
+                            <!-- Total Products -->
+                            {{-- <div class="total-products">
+                                <p><span>{{count($glasses)}}</span> products found</p>
+                            </div> --}}
+                            <!-- Sorting -->
+                            <div class="product-sorting d-flex">
+                                <p>Sort by:</p>
+                                <form action="#" method="get">
+                                    <select name="select" id="sortByselect">
+                                        <option value="value">Highest Rated</option>
+                                        <option value="value">Newest</option>
+                                        <option value="value">Price: $$ - $</option>
+                                        <option value="value">Price: $ - $$</option>
+                                    </select>
+                                    <input type="submit" class="d-none" value="">
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                @forelse ($glasses as $glass)
-                {{$allcolors = $glasses->where("glass_code",$glass->glass_code)->get('color_id')}}
-                {{-- {{$colors=Color::whereIn("id",$allcolors)->get('name')}} --}}
-                <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        @if($glass->images->first()->image)                        
-                        <div class="product-img">
-                            <img style="height: 150px" src="/images/{{$glass->images->first()->image}}" alt="product image">
-                            @endif
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="/images/{{$glass->images->last()->image}}" alt="">
+                <div class="row">
+                    @forelse ($glasses as $glass)
+                    {{$allcolors = $glasses->where("glass_code",$glass->glass_code)->get('color_id')}}
+                    {{-- {{$colors=Color::whereIn("id",$allcolors)->get('name')}} --}}
+                    <!-- Single Product -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            @if($glass->images->first()->image)                        
+                            <div class="product-img">
+                                <img style="height: 150px" src="/images/{{$glass->images->first()->image}}" alt="product image">
+                                @endif
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="/images/{{$glass->images->last()->image}}" alt="">
 
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                            <span>{{$glass->label}}</span>
+                                <!-- Product Badge -->
+                                <div class="product-badge new-badge">
+                                <span>{{$glass->label}}</span>
+                                </div>
+                                
                             </div>
-                            
-                        </div>
 
                         <!-- Product Description -->
                         <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
@@ -98,19 +111,22 @@
                             </div>
                         </div>
                     </div>
+                    @empty
+                    <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
+                        No products yet!
+                    </div>
+                        
+                    @endforelse
                 </div>
-                @empty
-                <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
-                    No products yet!
-                </div>
-                    
-                @endforelse
             </div>
         </div>
-    </div>
 
-</section>
+    </section>
+<body>
+<script src="/js/aos.js"></script>
+<script src="/js/sunmain.js"></script>
 <script src="{{ asset('js/favourite.js') }}" defer></script>
-
 @endsection
+
+
 

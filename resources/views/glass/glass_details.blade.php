@@ -44,6 +44,7 @@
             <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
             <form action="{{ route('order.store') }}" id="mainform" method='post' class="mt-3">
                 @csrf 
+                @if ($glass->glass_type == 'eyeglass')
                     <div class="form-check">
                         <input class="form-check-input"  name="check" value="0" type="Hidden"></input>
                         <input class="form-check-input" name="check" value="1" type="checkbox" id="defaultCheck1"></input>
@@ -51,6 +52,7 @@
                             Add Custom Lense
                         </label>
                     </div>
+                @endif	
                 <div class="select-box mt-3 mb-30">
                     <select name='color' class="custom-select" id="productColor" >
                     @foreach($colorsnames as $color)

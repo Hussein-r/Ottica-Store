@@ -137,7 +137,6 @@ class GlassController extends Controller
     {
         $glass= Glass::whereId($id)->update($request->except(['_method','_token','images']));
         $images=array();
-        
         if($files=$request->file('images')){
             GlassImage::where('glass_id','=',$id)->delete();
             foreach($files as $file){

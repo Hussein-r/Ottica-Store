@@ -32,21 +32,6 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('glass.index') }}">{{ __('Glasses') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('brand.index') }}">{{ __('brands') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('lenses.index') }}">{{ __('Lenses') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            {{-- <a class="nav-link" href="{{ route('setting.index') }}">{{ __('setting') }}</a> --}}
-                        </li>
-
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -69,6 +54,12 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{route('user.show',Auth::user())}}">
                                         {{ __('profile') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{route('specialoffers.index')}}">
+                                    Special Offers
+                                    </a>
+                                    <a class="dropdown-item" href="{{route('orderslist.index')}}">
+                                    Orders
                                     </a>
                                     <a class="dropdown-item" href="{{route('user.index')}}">
                                     {{ __('Users') }}

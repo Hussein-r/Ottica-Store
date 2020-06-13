@@ -25,22 +25,60 @@
 <form action="{{route('specialoffers.update', $offer->id )}}" enctype='multipart/form-data' method="POST">
 @method('PATCH')
 @csrf
-  <div class="form-group">
-    <label for="exampleInputEmail1">Discount value</label>
-    <input type="text"  name="discount" class="form-control"   value="{{old('discount') ?? $offer->discount}}" id="exampleInputEmail1" aria-describedby="emailHelp">
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Discount value in percent </span>
   </div>
+  <input type="text" name="discount" value="{{old('discount') ?? $offer->discount}}" aria-label="First name" class="form-control">
+</div>
+  
   <div><span class="text-white">{{$errors->first('discount')}}</span></div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">description</label>
-    <input type="text" name="description" class="form-control"  value="{{old('description') ?? $offer->description}}"  id="exampleInputPassword1">
+  
+  
+  
+  
+  <div class="input-group mt-4" >
+  <div class="input-group-prepend">
+    <span class="input-group-text">Description</span>
   </div>
+    <input type="text-area" name="description" class="form-control"  value="{{old('description') ?? $offer->description}}"  id="exampleInputPassword1">
+  </div>
+
+
+
+
   <div><span class="text-white">{{$errors->first('description')}}</span></div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Add image </label>
-    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+  
+  <div class="input-group mt-4" >
+<select  name="location" class="custom-select custom-select-lg mb-3">
+  <option selected>Choose offer location</option>
+  <option value="Online">Online</option>
+        <option value="In store">In store</option>
+        <option value="Online and In store">Online/In store</option>
+</select>
+ </div>
+ <div><span class="text-white">{{$errors->first('location')}}</span></div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="input-group mb-3 mt-4">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
   </div>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" name="image" id="browse" aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" id="filename" for="inputGroupFile01">Choose image</label>
+  </div>
+</div>
  <div><span class="text-white">{{$errors->first('image')}}</span></div>
- <div class="col-md-13 text-center"> 
+
+ <div class="col-md-13 mt-5 text-center"> 
   <button type="submit" class=" col-3 btn btn-success btn-lg" >Save changes</button>
 </div>
 </form>
