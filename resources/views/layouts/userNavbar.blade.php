@@ -33,7 +33,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="index.html" class="js-logo-clone">Ottica</a>
+              <a href="/" class="js-logo-clone">Ottica</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
@@ -69,4 +69,7 @@
 </div>
 @yield('content')
 </body>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/sunmain.js"></script>
 </html>
