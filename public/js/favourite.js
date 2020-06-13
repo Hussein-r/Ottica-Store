@@ -13,7 +13,7 @@ $('#sortByselect').change(function(){
         },
         success: function(response){
             console.log(response.glasses);
-            var glass = @JSON($glasses);
+            
             window.location = /sort/+option;
 
         },

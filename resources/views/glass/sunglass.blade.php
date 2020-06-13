@@ -115,9 +115,7 @@
 
     </section>
 <body>
-<script src="/js/jquery/jquery-2.2.4.min.js"></script>
-<script src="/js/aos.js"></script>
-<script src="/js/sunmain.js"></script>
+
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
 @endsection
 
