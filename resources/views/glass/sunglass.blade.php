@@ -2,17 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/css/aos.css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="/css/navstyle.css">
 </head>
 @section('content')
 <body>
     <section class="container">
-        <div class="breadcumb_area bg-img" style="background-image: url(/images/bg-img/breadcumb.jpg);">
-            <div class="col-12">
-                <div class="page-title text-center">
-                    <h2>SUN GLASSES</h2>
+    <div class="site-blocks-cover" data-aos="fade">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                        <div class="site-block-cover-content">
+                            <h2 class="sub-title">Ottica Store</h2>
+                            <h1>Sun Glasses</h1>
+                            <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 align-self-end">
+                        <img src="/images/model_3.png" alt="Image" class="img-fluid">
+                    </div>
                 </div>
-            </div>
         </div>
+    </div>
 
         <div class="col-12 col-md-8 col-lg-9">
             <div class="shop_grid_product_area">
@@ -61,43 +73,6 @@
                                 
                             </div>
 
-<<<<<<< HEAD
-                            <!-- Product Description -->
-                            <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
-                                <!-- Favourite -->
-                                <div class="product-favourite" style="text-align: right">
-                                    <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$glass->id}},this)"></button>
-                                </div>
-                                <a href="#">
-                                    <h6>{{$glass->brand->name}}</h6>
-                                </a>
-                                <span>{{$glass->glass_code}}</span>
-
-                                {{-- <span style="margin-left: 20px">{{$colors}}</span> --}}
-                                
-                            <p class="product-price">
-                                <span class="old-price">{{$glass->price_before_discount}}EGP</span> 
-                                {{$glass->price_after_discount}}EGP
-                                <span><h5 class="text-danger" style="text-align:right;">-30%</h5></span>
-                            </p>
-                            <hr/>
-                            <span>Frame Colors</span>
-                            {{-- <div class="row" style="margin: 5px;">
-                                @forelse ($colors as $color)
-                                    <div style="width: 30px; border: lightgrey solid 1px; border-radius: 50%; background-color:{{$color->name}};">
-                                        <pre>   </pre>
-                                    </div>      
-                                @empty
-                                
-                                @endforelse
-                            </div> --}}
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                    <a href="{{route('glass.show', $glass->id)}}" class="btn essence-btn">View Details</a>
-                                    </div>
-=======
                         <!-- Product Description -->
                         <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
                             <!-- Favourite -->
@@ -132,7 +107,6 @@
                                 <!-- Add to Cart -->
                                 <div class="add-to-cart-btn">
                                 <a href="{{route('glass.show', $glass->id)}}" class="btn essence-btn">View Details</a>
->>>>>>> 412ac0f33b5a47ee4df1693941c6498809d7b004
                                 </div>
                             </div>
                         </div>
@@ -149,7 +123,10 @@
 
     </section>
 <body>
+<script src="/js/aos.js"></script>
+<script src="/js/sunmain.js"></script>
 @endsection
 <script src="{{ asset('js/favourite.js') }}" defer></script>
+
 
 
