@@ -31,22 +31,14 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="product-topbar d-flex align-items-center justify-content-between">
-                            <!-- Total Products -->
-                            {{-- <div class="total-products">
-                                <p><span>{{count($glasses)}}</span> products found</p>
-                            </div> --}}
                             <!-- Sorting -->
                             <div class="product-sorting d-flex">
                                 <p>Sort by:</p>
-                                <form action="#" method="get">
-                                    <select name="select" id="sortByselect">
-                                        <option value="value">Highest Rated</option>
-                                        <option value="value">Newest</option>
-                                        <option value="value">Price: $$ - $</option>
-                                        <option value="value">Price: $ - $$</option>
-                                    </select>
-                                    <input type="submit" class="d-none" value="">
-                                </form>
+                                <select name="select" id="sortByselect">
+                                    
+                                    <option  value="low" >Price: Low - High</option>
+                                    <option value="high" >Price: High - Low</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -123,9 +115,10 @@
 
     </section>
 <body>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
-<script src="{{ asset('js/favourite.js') }}" defer></script>
+<script src="{{ asset('/js/favourite.js') }}" defer></script>
 @endsection
 
 

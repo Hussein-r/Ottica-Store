@@ -1,21 +1,25 @@
-// onload(function(){
-//     if()
-// })
+
 
 
 $('#sortByselect').change(function(){
+    option =$(this).children("option:selected").val();
+    console.log(option);
     $.ajax({
-        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-        url: "sort",
-        type: 'post',
-        data: {_token: $("#csrf-token")[0].content, option: $(this).children("option:selected").val()},
-        success: function(data){
-            console.log(data);
-            window.location = /glass/+data;
+        url: /sort/+option,
+        type: 'get',
+        data: {
+            _token: $("#csrf-token")[0].content,
+            option:option 
         },
-        error: function(data) {
-            console.log(data);
-            alert(data);
+        success: function(response){
+            console.log(response.glasses);
+            var glass = @JSON($glasses);
+            window.location = /sort/+option;
+
+        },
+        error: function(response) {
+            console.log(response);
+            alert(data.option);
            }
     })
 });

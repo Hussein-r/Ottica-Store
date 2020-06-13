@@ -31,23 +31,18 @@
             <div class="row">
                 <div class="col-12">
                     <div class="product-topbar d-flex align-items-center justify-content-between">
-                        <!-- Total Products -->
-                        {{-- <div class="total-products">
-                            <p><span>{{count($glasses)}}</span> products found</p>
-                        </div> --}}
                         <!-- Sorting -->
                         <div class="product-sorting d-flex">
                             <p>Sort by:</p>
-                            <form action="/sort" method="POSt">
-                                {{ csrf_field() }}
+                            {{-- <form action="/sort" method="POSt"> --}}
+                                {{-- {{ csrf_field() }} --}}
                                 <select name="select" id="sortByselect">
-                                    {{-- <option value="value">Highest Rated</option>
-                                    <option value="value">Newest</option> --}}
-                                    <option value="low" {{( "low"=="low" ? "selected":"") }}>Price: Low - High</option>
-                                    <option value="high" {{( "high"=="high" ? "selected":"") }}>Price: High - Low</option>
+                                    
+                                    <option  value="low" >Price: Low - High</option>
+                                    <option value="high" >Price: High - Low</option>
                                 </select>
-                                <input type="submit" class="d-none" value="select">
-                            </form>
+                                {{-- <input type="submit" class="d-none" value="select"> --}}
+                            {{-- </form> --}}
                         </div>
                     </div>
                 </div>
@@ -124,14 +119,15 @@
                 
             </div>
             <div style="text-align: center;">
-                {{ $glasses->links() }}
+                {{-- {{ $glasses->links() }} --}}
             </div>
         </div>
 </section>
 </body>
-<script src="{{ asset('js/favourite.js') }}" defer></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{ asset('/js/favourite.js') }}" defer></script>
 <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
-@endsection
+</html>
 
 
