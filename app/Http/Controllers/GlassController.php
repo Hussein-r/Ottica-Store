@@ -109,7 +109,6 @@ class GlassController extends Controller
      */
     public function edit($id)
     {
-        dd($id);
         $brand = Brand::pluck('name', 'id');
         $color = Color::pluck('name','id');
         $face = FaceShape::pluck('name','id');
