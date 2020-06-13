@@ -1,13 +1,26 @@
 @extends('layouts.userNavbar')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/aos.css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="/css/styling.css">
+</head>
+
+<body>
 <section class="container">
-    <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="page-title text-center">
-                        <h2>EYE GLASSES</h2>
+    <div class="site-blocks-cover" data-aos="fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                    <div class="site-block-cover-content">
+                        <h2 class="sub-title">Ottica Store</h2>
+                        <h1>Eye Glasses</h1>
+                        <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
                     </div>
+                </div>
+                <div class="col-md-6 order-1 align-self-end">
+                    <img src="/images/eyeglassmodel.jpg" alt="Image" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -18,24 +31,18 @@
             <div class="row">
                 <div class="col-12">
                     <div class="product-topbar d-flex align-items-center justify-content-between">
-                        <!-- Total Products -->
-                        {{-- <div class="total-products">
-                            <p><span>{{count($glasses)}}</span> products found</p>
-                        </div> --}}
                         <!-- Sorting -->
                         <div class="product-sorting d-flex">
                             <p>Sort by:</p>
-                            <form action="sort/?value" method="POSt">
-                                {{ csrf_field() }}
-                                {{ method_field('PATCH') }}
+                            {{-- <form action="/sort" method="POSt"> --}}
+                                {{-- {{ csrf_field() }} --}}
                                 <select name="select" id="sortByselect">
-                                    {{-- <option value="value">Highest Rated</option>
-                                    <option value="value">Newest</option> --}}
-                                    <option value="low">Price: Low - High</option>
-                                    <option value="high">Price: High - Low</option>
+                                    
+                                    <option  value="low" >Price: Low - High</option>
+                                    <option value="high" >Price: High - Low</option>
                                 </select>
-                                <input type="submit" class="d-none" value="select">
-                            </form>
+                                {{-- <input type="submit" class="d-none" value="select"> --}}
+                            {{-- </form> --}}
                         </div>
                     </div>
                 </div>
@@ -69,7 +76,7 @@
                             <div class="product-favourite" style="text-align: right">
                                 <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$glass->id}},this)"></button>
                             </div>
-
+                    
                             <a href="#">
                                 <h6>{{$glass->brand->name}}</h6>
                             </a>
@@ -112,10 +119,15 @@
                 
             </div>
             <div style="text-align: center;">
-                {{ $glasses->links() }}
+                {{-- {{ $glasses->links() }} --}}
             </div>
         </div>
 </section>
-<script src="{{ asset('js/favourite.js') }}" defer></script>
+</body>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{ asset('/js/favourite.js') }}" defer></script>
+<script src="/js/aos.js"></script>
+<script src="/js/sunmain.js"></script>
+</html>
 
-@endsection
+

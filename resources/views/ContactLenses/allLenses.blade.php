@@ -8,30 +8,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- Title  -->
     <title>Ottica</title>
-    <!-- Favicon  -->
     <link rel="icon" href="/img/core-img/favicon.ico">
-
-    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/css/styling.css">
     <link rel="stylesheet" href="/css/core-style.css">
     <link rel="stylesheet" href="/style.css">
 </head>
 @section('content')
 <body>
 <section class="container">
-    <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="page-title text-center">
-                        <h2>Conatct Lenses</h2>
+<div class="site-blocks-cover" data-aos="fade">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                    <div class="site-block-cover-content">
+                        <h2 class="sub-title">Ottica Store</h2>
+                        <h1>Contact Lenses</h1>
+                        <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
                     </div>
+                </div>
+                <div class="col-md-6 order-1 align-self-end">
+                    <img src="/images/contactlense.jpg" alt="Image" style="height:100%;" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
-
     <div class="col-12 col-md-8 col-lg-9">
         <div class="shop_grid_product_area">
             <div class="row">
@@ -121,6 +122,7 @@
         </div>
 </section>
 </body>
-
+<script src="/js/aos.js"></script>
+<script src="/js/sunmain.js"></script>
 @endsection
 </html>

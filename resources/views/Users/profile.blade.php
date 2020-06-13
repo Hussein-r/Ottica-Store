@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body class="form-v6">
-	<div class="page-content" >
+	<div class="page-content">
         <div id="maindiv">
             <div style="float:left;padding-left:30px;padding-top:20px;">
                 <h2>Your Profile Information</h2>

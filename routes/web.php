@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::resource('brand', 'BrandController');
 Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
 Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
@@ -34,11 +34,11 @@ Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
 Route::get('eyeglasses','GlassController@eyeglasses');
 Route::get('/fav','GlassController@favourite');
-Route::patch('/sort/{value}', 'GlassController@sort');
+Route::get('/sort/{option}', 'GlassController@sort');
 Route::get('favourite', 'UserController@myFavourite');
 //hajar
 //specail offers & list orders for admin 
-Route::resource('specialoffers','specialOffersController');
+Route::resource('specialoffers','SpecialOffersController');
 Route::resource('orderslist','ListOrdersController');
 Route::get('processing/{id}', 'ListOrdersController@processingOrder');
 Route::get('done/{id}', 'ListOrdersController@doneOrder');
@@ -46,7 +46,7 @@ Route::get('orders/inactive', 'ListOrdersController@inactiveOrdersList');
 Route::get('orders/processing', 'ListOrdersController@processingOrdersList');
 Route::get('orders/done', 'ListOrdersController@doneOrdersList');
 //our special offers home
-Route::get('offer','specialOffersController@list');
+Route::get('offers','SpecialOffersController@list');
 //our brands home page 
 Route::resource('ourbrands','OurBrandsController');
 Route::get('ourbrands/home','OurBrandsController@returnHome');
