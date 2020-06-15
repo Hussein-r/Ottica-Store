@@ -1,21 +1,25 @@
-// onload(function(){
-//     if()
-// })
+
 
 
 $('#sortByselect').change(function(){
+    option =$(this).children("option:selected").val();
+    console.log(option);
     $.ajax({
-        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-        url: "/sort/{value}",
-    // url: '{{ route('sort', ['id' => Auth::->id]) }}',
-        type: 'PATCH',
-        data: {"sort": $(this).children("option:selected").val()},
+        url: /sort/+option,
+        type: 'get',
+        data: {
+            _token: $("#csrf-token")[0].content,
+            option:option 
+        },
         success: function(response){
-            console.log(response);
+            console.log(response.glasses);
+            
+            window.location = /sort/+option;
+
         },
         error: function(response) {
             console.log(response);
-            alert(response);
+            alert(data.option);
            }
     })
 });
