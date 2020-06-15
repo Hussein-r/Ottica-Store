@@ -41,8 +41,8 @@
                     <li><a href="{{ url('eyeglasses') }}">Eye Glasses</a></li>
                   </ul>
                 </li>
-                
                 <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
+                <li><a href="{{ url('ourLenses') }}">Our Lenses</a></li>
                 <li><a href="{{ url('offers') }}">Special Offers</a></li>
                 <li><a href="#">About</a></li>
                 <li class="active"><a href="contact.html">Contact</a></li>
@@ -51,7 +51,7 @@
           </div>
           <div class="icons">
             <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="#" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
+            <a href="favourite" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
             <a href="cart.html" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
               <span class="number">2</span>

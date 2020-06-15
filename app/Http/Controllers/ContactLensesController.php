@@ -204,7 +204,7 @@ class ContactLensesController extends Controller
     public function destroy($id)
     {
            $lense = ContactLenses::find($id);
-        $colors = ColorLense::where('lesne_id','=',$id);
+           $colors = ColorLense::where('lesne_id','=',$id);
             foreach($lense->images as $image){
                 $image->delete();
             }
@@ -294,5 +294,6 @@ class ContactLensesController extends Controller
         'manufacturerers' => $manufacturerers,
         'colors'=>$colors])->render();
     }
+    
 
 }

@@ -6,6 +6,9 @@ use App\LenseProductPrescriptions;
 use App\GlassProduct;
 use App\LenseProduct;
 use App\User;
+use App\Glass;
+use App\LenseImage;
+use App\ContactLenses;
 use Illuminate\Support\Facades\Auth;
 use App\orderList;
 use Illuminate\Http\Request;
@@ -20,6 +23,14 @@ class ClientOrdersController extends Controller
     public function index()
     {
         //
+       
+        $orders=orderList::where("user_id","=",Auth::id())->get();
+        // dd($orders);
+        return view('ordersForClient.index', [
+            'orders' =>$orders,
+            ])->render();
+        
+       
     }
 
     /**
@@ -112,6 +123,24 @@ class ClientOrdersController extends Controller
     public function show($id)
     {
         //
+        $glassesArray=array();
+        $lensesArray=array();
+        
+        $glassesProduct=GlassProduct::where('order_id','=',$id)->get();
+        $lensesProduct=LenseProduct::where('order_id','=',$id)->get();
+            foreach ($glassesProduct as $product) {
+                array_push($glassesArray,$product->product_id);
+             }
+             foreach ($lensesProduct as $product) {
+                array_push($lensesArray,$product->product_id);
+             }
+            //  dd($lensesArray);
+        $glasses=Glass::whereIn('id',$glassesArray)->get();
+        // dd($glasses);
+        $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
+        // dd($lenses);
+        return view('ordersForClient.show',compact('glasses','lenses'));
+
     }
 
     /**
@@ -146,5 +175,10 @@ class ClientOrdersController extends Controller
     public function destroy($id)
     {
         //
+        // dd($id);
+        $order=orderList::find($id);
+        $order->delete();
+        return redirect()->action("ClientOrdersController@index");   
+  
     }
 }
