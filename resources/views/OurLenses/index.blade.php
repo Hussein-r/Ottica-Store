@@ -42,13 +42,13 @@
                         <img src="img/bg-img/blog1.png" alt="">
                         <!-- Post Title -->
                         <div class="post-title">
-                            <a href="#">EyeGlasses</a>
+                            <a >EyeGlasses</a>
                         </div>
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <!-- Post Title -->
                             <div class="hover-post-title">
-                            <a href="#">EyeGlasses</a>
+                            <a href="/ComfortLight1">EyeGlasses</a>
                             </div>
                             <p>Eyeglasses For Your Style</p>
                         </div>

@@ -1,6 +1,22 @@
+@extends('layouts.userNavbar')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ottica</title>
+    <link rel="icon" href="/img/core-img/favicon.ico">
+    <link rel="stylesheet" href="/css/styling.css">
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+@section('content')
+
 <body class="ng-scope" ng-app="TargetOpticalApp" style="overflow: inherit;">
-
-
 	<!-- BEGIN DevelopersGlobalEspotHeader.jspf -->
 <div aria-hidden="true">
 <!-- BEGIN ContentAreaESpot.jsp -->
@@ -14,30 +30,7 @@
             <div class="ad" id="ad_716259662">
         <style type="text/css"> 
 
-	a[class*='grey'].facet-link.color-swatch
-	{
-		background-position: 0 -200px;
-	}
-
-	a[class*='brown'].facet-link.color-swatch
-	{
-		background-position: 0 -50px;
-	}
-
-	a[class*='pink'].facet-link.color-swatch
-	{
-		background-position: 0 -350px;
-	}
 	
-	a[class*='copper'].facet-link.color-swatch
-	{
-		background-position: 0 -125px;
-	}
-	
-	a[class*='orange'].facet-link.color-swatch
-	{
-		background-position: 0 -300px;
-	}
 
 	a[class*='red'].facet-link.color-swatch
 	{
@@ -72,7 +65,160 @@
 </style>
 
 <script>
+	// Cocco: Map product-quantity for the print, in the cart, of qty box-month supply for each
 	
+	EspotManagerJS.addFunctionAfterBodyStart('CART_MONTHS_PER_BOX_MAP', function() {
+	
+	 CART_MONTHS_PER_BOX_MAP = {
+				'aos':3,
+				'aoc6':3,
+				'aom':3,
+				'aoa':3,
+				'and':3,
+				'ahg':3,
+				'dt30':0.5,
+				'dt90':1.5,
+				'dam3':0.5,
+				'dam9':1.5,
+				'da30':0.5,
+				'da90':1.5,
+				'dapt3':0.5,
+				'dapt9':1.5,
+				'dapm3':0.5,
+				'dapm9':1.5,
+				'fd30':0.5,
+				'fd90':1.5,
+				'fl1':0.166667,
+				'cb':1.5,
+				'flc':1.5,
+				'dim':1.5,
+				'bo30':0.5,
+				'bo90':1.5,
+				'bop90':0.5,
+				'pv6':3,
+				'pv2':3,
+				'p2m':3,
+				'pvm':3,
+				'pvt':3,
+				'p2t':3,
+				'sld':1.5,
+				'sda':0.5,
+				'sfm':1.5,
+				'sft':1.5,
+				's38':1.5,
+				'ul6p':3,
+				'ula':3,
+				'ulm':3,
+				'ac1':0.5,
+				'a1d3':0.5,
+				'a1d9':1.5,
+				'a1m':0.5,
+				'a1m9':1.5,
+				'a1t':0.5,
+				'a1ma9':1.5,
+				'a1mm3':0.5,
+				'a1mm9':1.5,
+				'te9a':1.5,
+				'a2':1.5,
+				'aod90':1.5,
+				'o1t3':0.5,
+				'ao54':6,
+				'aot':1.5,
+				'aob':1.5,
+				'ao12':3,
+				'ao24':6,
+				'avi':3,
+				'avi2':6,
+				'av':1.5,
+				'avt':1.5,
+				'avv':1.5,
+				'bf':3,
+				'bfe':3,
+				'bft':3,
+				'bftx':3,
+				'bfmdi':3,
+				'bfx':3,
+				'b5p':1.5,
+				'bt':1.5,
+				'cs30':0.5,
+				'cs90':1.5,
+				'c1d90':1.5,
+				'c1dm3':0.5,
+				'c1dm9':1.5,
+				'c1dt3':0.5,
+				'clm9':1.5,
+				'f55t':3,
+				'md90':1.5,
+				'pd30':0.5,
+				'pd90':1.5,
+				'pdm':0.5,
+				'pdm9':1.5,
+				'pcmdi':3,
+				'pct':3,
+				'vrt':1.5
+				};
+	
+	 ARRAY_FRAME_UPC =
+			["8053672518641",
+			"8053672518658",
+			"8053672518665",
+			"8053672518610",
+			"8053672518634",
+			"8053672518627",
+			"8053672636192",
+			"8053672636208",
+			"8053672518436",
+			"8053672518443",
+			"8053672518450",
+			"8053672518580",
+			"8053672518597",
+			"8053672518603",
+			"8053672518566",
+			"8053672518573"];
+	
+		LENSES_DISCOUNTS_MAP = {
+		  //Kid's eyeglasses lenses
+		  '539554':{r:'235.00',o:'25.00'},
+		  '539553':{r:'260.00',o:'50.00'},
+		  //Kid's sunlasses lenses
+		  '682151':{r:'260.00',o:'50.00'},
+		  '682154':{r:'260.00',o:'115.00'},
+	
+		  //Man's lenses
+	
+		  /* Eyeglasses */
+		  //Single Vision Lenses
+		  '108056':{r:'260.00',o:'130.00'},
+		  '108058':{r:'285.00',o:'142.50'},
+		  '732652':{r:'310.00',o:'155.00'},
+		  //Progressive Lenses
+		  '518702':{r:'375.00',o:'187.50'},
+		  '717330':{r:'400.00',o:'200.00'},
+		  '732654':{r:'425.00',o:'212.50'},
+	
+		  /* Sunglasses */
+		  //Single Vision Lenses
+		  '108061':{r:'205.00',o:'102.50'},
+		  //'732655':{r:'285.00',o:'285.00'},
+		  //Progressive Lenses
+		  '518703':{r:'320.00',o:'160.00'}
+		};
+	
+		  //OTHER SUNGLASSES LEAVE COMMENTED
+		  //Single Vision Lenses
+		  //'732655':{r:'285.00',o:'185.00'},
+		  //Progressive Lenses
+		  //'732658':{r:'400.00',o:'300.00'}
+	
+	
+		/* timeTable is releated to the time of availability of the chat service */
+		timeTable = {
+			startingTime : [0, 0, 0, 0, 0, 0, 0],
+			endingTime : [24, 24, 24, 24, 24, 24, 24]
+		}
+	});
+	 
+/* TO BE REMOVED WITH REL2020.1 */
 var tealium_data2track=[];
 utagFiller.initialize(); 
 	</script>
@@ -92,71 +238,16 @@ utagFiller.initialize();
 
 
 </div>
-
-
-	
-
-<!--  espot with name  [X_Nav_PromoStripe] --><style>
-    .promo-stripe.ct-strip{
-        background-color: #cc0000;
-        height: 0;
-        padding: 0;
-        overflow: hidden;
-        box-sizing: border-box;
-        transition:all .6s ease;
-    }
-</style>
-<div class="promo-stripe ct-strip">
-    <a href="" data-element-id="X_X_GlobalBanner_strip" data-description="offer" aria-label="offer page">
-       
-    </a>
 </div>
-
-
-
-	<div class="site-search__hints-wrapper py-4">
-		<!--  espot with name  [X_Search_SuggestedTags] --><style media="screen">
-    #SimpleSearchForm_SearchTerm {
-        min-width: 270px;
-    }
-</style>
-
-	<script type="text/javascript">
-
-		// The primary Array to hold all static search suggestions
-		var staticContent = new Array();
-
-		// The titles of each search grouping
-		var staticContentHeaders = new Array();
-		var staticContentHeaderHistory = "???SEARCH_HISTORY???"
-
-		// The auto suggest container ID's
-		var staticContentSectionDiv = ["autoSuggestStatic_1", "autoSuggestStatic_2", "autoSuggestStatic_3"];
-		
-		
-	</script>
+		<main class="main">
 			
-	<div dojotype="wc.widget.RefreshArea" widgetid="AutoSuggestCachedSuggestions" controllerid="AutoSuggestCachedSuggestionsController" id="autoSuggestCachedSuggestions_div" role="region" aria-live="polite" aria-atomic="true" aria-relevant="all" style="display:none;" aria-label="Autosuggest cache">
-	</div>
+			<!-- BEGIN StoreCommonUtilities.jspf -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/StoreCommonUtilities.js"></script>
+
+<!-- END StoreCommonUtilities.jspf --><!-- Header Start --><!-- BEGIN HeaderDisplay.jspf --><!-- BEGIN CachedHeaderDisplay.jsp -->
 			
-</div> 
 
-
-
-<script type="text/javascript">
-/*$(function(){
-	var quantity = parseInt($("#cartQuantity").text());
-	
-	var tahQuantity = $('<span>')
-		.attr('id', 'tah-quantity-header')
-		.addClass('iefix tah-quantity counter')
-		.text(quantity)
-		.appendTo('a#Header_Try_Link');
-	if(quantity == 0)
-		tahQuantity.hide();
-
-});*/
-</script>
 
 
 
@@ -166,7 +257,6 @@ utagFiller.initialize();
 					<!-- Main Content Start -->
 					<div id="content_wrapper_box" role="main" aria-label="Main content">
 						
-							<!-- Content Start --><!-- BEGIN MessageDisplay.jspf -->
 
 <!-- END MessageDisplay.jspf -->
 
@@ -185,15 +275,7 @@ utagFiller.initialize();
 <div class="rowContainer" id="4099276460824377020">
 	<div class="row12">
 		<div class="col12" data-slot-id="1">
-			<!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
-					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
-					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
-					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
-					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
-					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
-					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
-					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
-					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
+		
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374784" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374784_espot" dataci_espot="4099276460824374784_CSS_LP_Lenses" id="ci_espot_4099276460824374784_CSS_LP_Lenses">
@@ -716,6 +798,15 @@ utagFiller.initialize();
 <!-- END Content_UI.jspf -->
 				</div>
 			</div>
+		<!-- END ContentRecommendation_UI.jspf --><!-- END ContentRecommendation.jsp --><!-- END EMarketingSpot.jsp --><!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374785" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374785_espot" dataci_espot="4099276460824374785_HTML_LP_Lenses" id="ci_espot_4099276460824374785_HTML_LP_Lenses">
@@ -726,50 +817,10 @@ utagFiller.initialize();
 					<!-- AAAAAAAAAA -->
 <div class="to-container">
     <div class="to-first">
-        <h1 style="opacity: 0;">All about lenses</h1>
-        <h2 style="opacity: 0;">First off, what are you looking for?</h2>
-        <div class="to-selection">
-            <div class="card clicked" data-type="eyeglasses" data-lens="eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Eyeglasses</h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_1-D?$g-jpg$&amp;scl=1" alt="Eyeglasses image">
-                </div>
-                <p>Eyeglasses for your style</p>
-            </div>
-            <div class="card" data-type="intelliblue" data-lens="device_responsive_eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Device-responsive<span> eyeglasses</span></h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_2-D?$g-jpg$&amp;scl=1" alt="Device-responsive eyeglasses image">
-                </div>
-                <p>Device-proof eyeglasses that protect your eyes when you’re surfing the web</p>
-            </div>
-            <div class="card" data-type="transition" data-lens="light_responsive_eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Light-responsive<span> eyeglasses</span></h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_3-D?$g-jpg$&amp;scl=1" alt="Light-responsive eyeglasses image">
-                </div>
-                <p>Light-responsive eyeglasses that help your eyes adjust from indoors to outdoors</p>
-            </div>
-            <div class="card" data-type="sunglasses" data-lens="sunglasses" style="opacity: 0;">
-                <div>
-                    <h3>Sunglasses</h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_4-D?$g-jpg$&amp;scl=1" alt="Sunglasses image">
-                </div>
-                <p>Sunglasses for fun in the sun</p>
-            </div>
-        </div>
-    </div>
-    <div class="to-modal" style="display: block; opacity: 1;">
         
-            <div class="to-row to-main">
+    <div class="to-modal rb-black" style="display: block; opacity: 1;">
+        <div class="to-content">
+                      <div class="to-row to-main">
                 <div class="to-col to-title" style="opacity: 1;">
                     <h3>
                         <strong>Great!</strong><br>
@@ -1173,7 +1224,7 @@ utagFiller.initialize();
                             	.st381{clip-path:url(#SVGID_696_);fill:none;stroke:#CC0000;stroke-width:4;stroke-miterlimit:10;}
                             </style>
                         	<g id="lenti">
-                        		<g id="eyeglasses" style="opacity: 1;">
+                        		<g id="eyeglasses" style="opacity: 0;">
                         			<path class="st0" d="M47.93,120.67c-0.01,1.19-0.02,2.39-0.02,3.61c0,130.57,94.53,136.12,104.45,136.12
                         				c10.92,0,39.7,0.83,79.17-28c45.49-33.23,100.55-98.03,100.55-150.3c0,0,0.29-2.1,0-5.53c0-0.07,0-0.14,0-0.2
                         				c0,0,3.39-23.96-24.22-42.77c-6.6-4.5-15.09-8.64-25.74-12.14c-5.81-1.91-12.26-3.63-19.39-5.11c-17.84-3.7-39.98-5.91-67.12-5.91
@@ -1263,7 +1314,7 @@ utagFiller.initialize();
                         				C47.91,119.27,47.93,119.96,47.93,120.67C47.93,120.67,47.93,120.67,47.93,120.67C47.93,120.67,47.93,120.67,47.93,120.67
                         				C47.93,120.67,47.93,120.67,47.93,120.67z"></path>
                         		</g>
-                        		<g id="eyeglasses_rayban" style="opacity: 0;">
+                        		<g id="eyeglasses_rayban" style="opacity: 1;">
 
                         				<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="4880.3955" y1="65.5342" x2="5164.7021" y2="65.5342" gradientTransform="matrix(-1 0 0 1 5212.6128 0)">
                         				<stop offset="0" style="stop-color:#FFFFFF"></stop>
@@ -2458,7 +2509,7 @@ utagFiller.initialize();
                         	</g>
                         	<g id="info">
                         		<g id="info_eyeglasses_ComfortLight">
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<polyline class="st53" points="80.94,159.59 80.94,189.22 8.89,189.22 				"></polyline>
                         				</g>
@@ -2497,7 +2548,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<line class="st53" x1="296.89" y1="101.59" x2="372.89" y2="101.59"></line>
                         				</g>
@@ -2994,7 +3045,7 @@ utagFiller.initialize();
                         			</g>
                         		</g>
                         		<g id="info_eyeglasses_RayBan">
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<polyline class="st53" points="90.89,63.59 90.89,93.22 8.89,93.22 				"></polyline>
                         				</g>
@@ -3033,7 +3084,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<line class="st53" x1="286.89" y1="41.59" x2="372.89" y2="41.59"></line>
                         				</g>
@@ -3072,7 +3123,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="113.89,221.59 113.89,190 8.89,190 			"></polyline>
                         				<g>
                         					<defs>
@@ -3109,7 +3160,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="235.89,200.59 235.89,179.27 372.89,179.27 			"></polyline>
                         				<g>
                         					<defs>
@@ -3146,7 +3197,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="70.94,119.59 70.94,149.22 8.89,149.22 			"></polyline>
                         				<g>
                         					<defs>
@@ -3183,7 +3234,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="301.89,98.59 301.89,129.59 372.89,129.59 			"></polyline>
                         				<g>
                         					<defs>
@@ -5590,40 +5641,39 @@ utagFiller.initialize();
                         	</g>
                         </svg>
 
-                    <p class="right" style="top:65%; right:77%;">UV protection</p><p class="left" style="top:35%; left:76%;">Scratch resistant</p></div>
+                    <p class="right" style="top:32%; right:77%;"><strong>Ray-Ban signature</strong></p><p class="right" style="top:51%; right:77%;">UV protection</p><p class="right" style="top:63%; right:77%;">Impact &amp; scratch <br>resistant</p><p class="left" style="top:14.5%; left:76%;">Hi-definition clarity </p><p class="left" style="top:44.5%; left:76%;">Thin &amp; lightweight</p><p class="left" style="top:59%; left:76%;">Glare &amp; smudge<br> resistant</p></div>
                 </div>
                 <div class="to-col to-text" style="opacity: 1;">
-                    <p><strong>ComfortLight lenses</strong><br><br>Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.</p>
+                    <p><strong>Ray-Ban Authentic Lenses</strong><br>Get the true Ray-Ban experience with our Ray-Ban Authentic premium polycarbonate lenses. These stylish, hi-definition lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function.</p>
                 </div>
             </div>
         </div>
 
         <div class="to-sub-selector" style="opacity: 1;">
-            <div style="opacity: 1;" data-material="ComfortLight" class="current">
-               <a href='#'> <div>
+            <div style="opacity: 1;" data-material="ComfortLight" >
+               <a href="/ComfortLight1"> <div>
                     <h4>ComfortLight</h4>  </a>
                     <p>I’m looking for something standard that I could use every day or as a spare pair.</p>
                     <div class="line"></div>
-                  
-                </div>
+			 </div>
               
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Active">
-            <a href='#'>  <div>
+            <div style="opacity: 2;" data-material="ComfortLight Active" >
+            <a href="/ComfortLightActive1">  <div>
                <h4>ComfortLight Active</h4> </a>
                     <p>I want lenses that are perfect for my on-the-go, active lifestyle.</p>
                     <div class="line"></div>
                 </div>
             </div>
             <div style="opacity: 1;" data-material="ComfortLight Performance">
-            <a href='#'>   <div>
+            <a href='/ComfortLightPerformance1'>  <div>
                     <h4>ComfortLight Performance</h4></a>
                     <p>I’m looking for something sleek, even with a strong prescription.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="RayBan">
-            <a href='#'>  <div>
+            <div style="opacity: 1;" data-material="RayBan" class="current">
+            <a href='/rayban1'>  <div>
                     <h4><img src="https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&amp;scl=1" alt="logo Ray-ban"></h4></a>
                     <p>I want something high-performing and iconic.</p>
                     <div class="line"></div>
@@ -5636,8 +5686,115 @@ utagFiller.initialize();
 
 </div>
 
-                    </div>
+				
+	
+</div>
+
+<!-- END Content_UI.jspf -->
 				</div>
 			</div>
+
+			<div id="contentRecommendationWidget_1_-2012_4099276460824374786" class="contentRecommendationWidget">
+				
+				<div dataci_toolbar="4099276460824374786_espot" dataci_espot="4099276460824374786_JS_LP_Lenses" id="ci_espot_4099276460824374786_JS_LP_Lenses">
+				
+
+
+<!-- END Content_UI.jspf -->
+				</div>
+			</div>
+		<!-- END ContentRecommendation_UI.jspf --><!-- END ContentRecommendation.jsp --><!-- END EMarketingSpot.jsp --><!-- emsName: JS_LP_Lenses -->
+		</div>
+	</div>
+</div>
+
+<!-- END StaticContentPageDisplayContainer.jsp --> 
+						</div> 
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  end Commerce composer content -->
+	</div>
+</div>			
+			
+		
+	<script type="text/javascript">  
+		utagFiller.setPage("Static", "Eyeglass Lenses, Sunglass Lenses, Glasses Lenses | Target Optical", "");
+	</script>
+							<input type="hidden" id="isOCRMobile" value="false" autocomplete="off">
+							<!-- Content End -->
+						
+						<div class="footerPush"></div>
+					</div>
+					<!-- Main Content End -->
+				</div>
+			</div> 
+			<!-- Global AJAX Loader - JQUERY -->
+		
+
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: INTERRUPTER_MODAL_DESKTOP_ESPOT -->
+
+
+
+<!-- END ContentAreaESpot.jsp -->
+		</main>
+
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: __DEVELOPERS_DESKTOP_FOOTER_ESPOT -->
+
+<div class="genericESpot" id="WC_ContentAreaESpot_div_1___DEVELOPERS_DESKTOP_FOOTER_ESPOT_716259663">
+
+            <div class="ad" id="ad_716259663">
+        <script>
+
+<div class="modal fade" id="insur-communication-error-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title">Communication error</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true"><img src="/wcsstore/TargetOpticalStorefrontAssetStore/responsive30/images/icon-close-black.svg" width="20" height="20" alt=""></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p class="lead">
+					The store has encountered a problem processing the last request. Try again later. If the problem persists, contact your site administrator.
+				</p>
+			</div> 
+		</div>
+	</div>
+</div>
+
 	
-</body>
+	
+	
+
+</div></div></div>
+	</section> 
+	<section id="postLoaded" aria-label="postLoaded">
+	</section> 
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"192325011","applicationTime":198,"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"5760995f5e","transactionName":"M11QZ0IFCEdYAE1dXgoXYFZDEDFRWzBcRkcNW1ccQxAJRlxMQkdFC0pXelQZSURYBFwbShRZVVZ5ABsUESR8YBg=","agent":"","errorBeacon":"bam.nr-data.net"}</script>
+
+<!-- END Layout.jsp --><div id="1592244303156.3564" data-test-id="toast-wrapper" style="height: 1px; width: 1px; position: fixed; z-index: 2147483646; bottom: 0px; border: 0px; right: auto; left: 0px; overflow: hidden; padding: 0px; top: auto; box-shadow: none;"><iframe src="https://www.affirm.com/apps/toast/" data-test-id="toast-frame" title="Affirm toast" __idm_frm__="602" style="height: 100%; width: 100%; margin: 0px; border: 0px; padding: 0px;"></iframe></div><script>// Custom script
+</script><div id="ClickTaleDiv" style="display:none" aria-hidden="true"></div><iframe id="utag_143_iframe" height="1" width="1" style="display:none" src="//4208691.fls.doubleclick.net/activityi;src=4208691;type=flood0;cat=tgo_a00;ord=1511555084262.9456?"></iframe><iframe name="__bkframe" id="__bkframe" title="bk" src="about:blank" __idm_frm__="604" aria-hidden="true" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);"></iframe><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.49207344831550004"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.2740303914956228" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=5683956&amp;Ver=2&amp;mid=5d1cb837-2573-f601-0913-d8998d33b314&amp;sid=628fe2c7-689c-8371-1a25-96f85109ea37&amp;vid=ee29739f-988e-c3bc-476c-851fafa26a37-0&amp;pi=1200101525&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=Eyeglass%20Lenses,%20Sunglass%20Lenses,%20Glasses%20Lenses%20%7C%20Target%20Optical&amp;kw=transition%20lenses,%20eyeglass%20lenses&amp;p=https%3A%2F%2Fwww.targetoptical.com%2Fto-us%2Flensoptions&amp;r=https%3A%2F%2Fwww.targetoptical.com%2F&amp;lt=3820&amp;evt=pageLoad&amp;msclkid=N&amp;sv=1&amp;rn=318594"></div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1093909630652447");fbq("track","PageView");</script>
+<noscript>
+<img height="1" width="1" src="https://www.facebook.com/tr?id=1093909630652447&amp;ev=PageView
+&amp;noscript=1">
+</noscript>
+
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="https://vars.hotjar.com/box-469cf41adb11dc78be68c1ae7f9457a4.html" aria-hidden="true" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><div class="bv-verify-css-loaded" aria-hidden="true" style="height: 0px; width: 0px; border: 0px;"></div><iframe height="0" width="0" title="Criteo DIS iframe" style="display: none;" __idm_frm__="606"></iframe>
+    </body>
+<script src="/js/aos.js"></script>
+<script src="/js/sunmain.js"></script>
+@endsection
+</html>
