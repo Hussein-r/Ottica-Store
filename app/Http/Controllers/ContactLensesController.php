@@ -79,7 +79,7 @@ class ContactLensesController extends Controller
             ]);
     
         $lense= ContactLenses::create($request->all());
-        
+       
         // dd($request);
         $images=array();
         if($files=$request->file('images')){
@@ -203,10 +203,8 @@ class ContactLensesController extends Controller
 
     public function destroy($id)
     {
-   
-        $lense = ContactLenses::find($id);
-        $colors = ColorLense::where('lesne_id','=',$id);
-        if ($lense != null) {
+           $lense = ContactLenses::find($id);
+           $colors = ColorLense::where('lesne_id','=',$id);
             foreach($lense->images as $image){
                 $image->delete();
             }
@@ -215,7 +213,7 @@ class ContactLensesController extends Controller
             }
 
         $lense->delete();
-    }
+  
     
     
         return redirect()->action("ContactLensesController@index");   
@@ -296,5 +294,6 @@ class ContactLensesController extends Controller
         'manufacturerers' => $manufacturerers,
         'colors'=>$colors])->render();
     }
+    
 
 }

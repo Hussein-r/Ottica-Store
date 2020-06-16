@@ -69,9 +69,24 @@ Route::resource('lenseBrand', 'LenseBrandController');
 Route::resource('lensetype', 'LenseTypeController');
 Route::get('/details/{lense}','ContactLensesController@details');
 Route::resource('LenseManufacturerer', 'LenseManufacturererController');
+Route::resource('/orderHistory', 'ClientOrdersController');
 Route::get('allLenses','ContactLensesController@list');
 Route::get('/search', 'ContactLensesController@search');
 Route::get('/sort/{value}', 'ContactLensesController@sort');
-
+Route::get('/ourLenses', function () {
+    return view('OurLenses.index');
+});
+Route::get('/ComfortLight1', function () {
+    return view('OurLenses.ComfortLight1');
+});
+Route::get('/ComfortLightActive1', function () {
+    return view('OurLenses.ComfortLightActive1');
+});
+Route::get('/ComfortLightPerformance1', function () {
+    return view('OurLenses.ComfortLightPerformance1');
+});
+Route::get('/rayban1', function () {
+    return view('OurLenses.rayban1');
+});
 
 

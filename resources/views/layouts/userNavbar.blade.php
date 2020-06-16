@@ -46,8 +46,8 @@
                     <li><a href="{{ url('eyeglasses') }}">Eye Glasses</a></li>
                   </ul>
                 </li>
-                
                 <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
+                <li><a href="{{ url('ourLenses') }}">Our Lenses</a></li>
                 <li><a href="{{ url('offers') }}">Special Offers</a></li>
                 <li><a href="#">About</a></li>
                 <li class="active"><a href="contact.html">Contact</a></li>

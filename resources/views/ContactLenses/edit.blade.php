@@ -7,10 +7,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" type="text/css" href="/css/nunito-font.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
+    <style>
+        .small-middle-container{
+        margin: auto;
+        width: 40%;
+        }
+    </style>
 </head>
     <body class="form-v6">
     <h1 style="text-align: center">Edit Contact Lense Data</h1>
-        <div class="container">
+    <div  class="small-middle-container" >
        
         {!! Form::model($lense,['route' =>['lenses.update',$lense],'method' => 'put','files' => 'true','enctype'=>'multipart/form-data'
 ]) !!}
@@ -126,10 +132,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Best seller</span>
                     </div>   
-                    {!! Form::checkbox('best_seller', '0', null, ['class'=>'form-control','Hidden']) !!}
                     {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
-                 </div>
-                        <div class="input-group mb-3">
+                </div>
+                    <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Upload</span>
                     </div>

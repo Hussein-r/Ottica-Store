@@ -56,8 +56,7 @@
                                 <a class="dropdown-item"  href='/sort/1'>Newest</a>
                                 <a class="dropdown-item"  href='/sort/4'>Name</a>
                                 <a class="dropdown-item" href="/sort/2">Price: $ - $$</a>
-                                <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>
-                                
+                                <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>  
                         </div>
                         <div>
                         </div>
@@ -67,7 +66,7 @@
             <div class="row">
                 @forelse ($lenses as $lense)
                
-                {{-- {{$colors=Color::whereIn("id",$allcolors)->get('name')}} --}}
+               
                 <!-- Single Product -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-product-wrapper">

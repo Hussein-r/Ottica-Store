@@ -7,10 +7,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" type="text/css" href="/css/nunito-font.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
+    <style>
+    .small-middle-container{
+	margin: auto;
+	width: 40%;
+  }
+</style>
     </head>
     <body class="form-v6">
     <h1 style="text-align: center">Add New Manufacturerer</h1>
-        <div class="container">
+        <div  class="small-middle-container" >
             {!! Form::open(['route' => 'LenseManufacturerer.store','files' => 'true' ]) !!}
                 <div class="input-group mb-3">
                      
