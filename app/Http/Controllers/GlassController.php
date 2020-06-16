@@ -23,7 +23,7 @@ class GlassController extends Controller
      */
     public function index()
     {
-         $glasses = Glass::paginate(3);
+         $glasses = Glass::paginate(15);
          $color = new Color();
         return view('glass.index',compact('glasses','color'));
     }

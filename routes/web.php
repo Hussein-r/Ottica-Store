@@ -19,8 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::resource('brand', 'BrandController');
 Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
 Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
 Route::post('/mail', 'SendEmailController@send')->name('mail');
@@ -29,6 +27,10 @@ Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
 Route::resource('order','ClientOrdersController');
 
 //mariam
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/contact', function () {
+    return view('contact')->render();
+});
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
