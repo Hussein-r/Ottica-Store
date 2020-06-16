@@ -22,13 +22,79 @@ $("#productColor").change(function() {
 });
 
 var x = document.getElementById("mydiv");
+var big_div = document.getElementById("the_big_div");
 $("#defaultCheck1").change(function() {
     if (this.checked) {
+        big_div.style.display = "inline-block";
         x.style.display = "inline-block";
     } else {
         x.style.display = "none";
+        big_div.style.display = "none";
     }
 });
+
+function validateFirstForm() {
+    var isValid = true;
+    $(".form1-field").each(function() {
+        if ($(this).val() === "") isValid = false;
+    });
+    return isValid;
+}
+function validateSecondForm() {
+    var isValid = true;
+    $(".form2-field").each(function() {
+        if ($(this).val() === "") isValid = false;
+    });
+    return isValid;
+}
+function validateThirdForm() {
+    var isValid = true;
+    $(".form3-field").each(function() {
+        if ($(this).val() === "") isValid = false;
+    });
+    return isValid;
+}
+function changeFirstForm() {
+    console.log("Hussein");
+    if (validateFirstForm()) {
+        $("#savesingle").removeAttr("disabled");
+    }
+}
+
+function changeSecondForm() {
+    if (validateSecondForm()) {
+        $("#saveprogressive").removeAttr("disabled");
+    }
+}
+function changeThirdForm() {
+    if (validateThirdForm()) {
+        $("#savebifocal").removeAttr("disabled");
+    }
+}
+
+var is_single = false;
+var savesingle = document.getElementById("savesingle");
+var presdiv = document.getElementById("presdiv");
+savesingle.onclick = function() {
+    is_single = true;
+    presdiv.style.display = "block";
+};
+
+var is_progressive = false;
+var saveprogressive = document.getElementById("saveprogressive");
+var presdiv = document.getElementById("presdiv");
+savesingle.onclick = function() {
+    is_progressive = true;
+    presdiv.style.display = "block";
+};
+
+var is_bifocal = false;
+var savebifocal = document.getElementById("savebifocal");
+var presdiv = document.getElementById("presdiv");
+savesingle.onclick = function() {
+    is_bifocal = true;
+    presdiv.style.display = "block";
+};
 
 var is_image = false;
 var imagemessage = document.getElementById("presimage");
@@ -66,16 +132,16 @@ object.onclick = function() {
     }
 };
 
-function openPage(pageName, elmnt, color) {
+function openPageone(pageName, elmnt, color) {
     // Hide all elements with class="tabcontent" by default */
     var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
+    tabcontent = document.getElementsByClassName("tabcontent1");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
     // Remove the background color of all tablinks/buttons
-    tablinks = document.getElementsByClassName("tablink");
+    tablinks = document.getElementsByClassName("tablink1");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].style.backgroundColor = "";
         tablinks[i].style.color = "grey";
@@ -88,6 +154,28 @@ function openPage(pageName, elmnt, color) {
     elmnt.style.backgroundColor = color;
     elmnt.style.color = "white";
 }
+function openPagetwo(pageName, elmnt, color) {
+    // Hide all elements with class="tabcontent" by default */
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
 
+    // Remove the background color of all tablinks/buttons
+    tablinks = document.getElementsByClassName("tablink2");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+        tablinks[i].style.color = "grey";
+    }
+
+    // Show the specific tab content
+    document.getElementById(pageName).style.display = "block";
+
+    // Add the specific color to the button used to open the tab content
+    elmnt.style.backgroundColor = color;
+    elmnt.style.color = "white";
+}
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen1").click();

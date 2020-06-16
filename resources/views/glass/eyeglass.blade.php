@@ -1,6 +1,4 @@
 
-
-
  @extends('layouts.userNavbar')
 <!DOCTYPE html>
 <html lang="en">

@@ -767,6 +767,10 @@ img {
     display: none;
     width: 100%;
 }
+#presdiv {
+    display: none;
+    width: 100%;
+}
 @media only screen and (max-width: 767px) {
     .right-side-cart-area
         .cart-content
@@ -2343,7 +2347,23 @@ img {
 .contact-area .contact-info .contact-address p:last-child a:hover {
     color: #0315ff;
 }
-.tablink {
+.tablink1 {
+    background-color: white;
+    color: grey;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 428px;
+}
+
+.tablink1:hover {
+    background-color: #dc0647;
+    color: white;
+}
+.tablink2 {
     background-color: white;
     color: grey;
     float: left;
@@ -2355,12 +2375,17 @@ img {
     width: 50%;
 }
 
-.tablink:hover {
+.tablink2:hover {
     background-color: #dc0647;
     color: white;
 }
 
 /* Style the tab content (and add height:100% for full page content) */
+.tabcontent1 {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+}
 .tabcontent {
     color: white;
     display: none;
@@ -2387,10 +2412,21 @@ table {
     height: 120px;
 }
 #presimage,
-#prestable {
+#prestable,
+#the_big_div {
     display: none;
 }
 #savetable {
     margin-left: 40%;
     margin-top: 5%;
+}
+.reveal-if-active {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+input[type="radio"]:checked ~ .reveal-if-active {
+    opacity: 1;
+    max-height: 100px; /* little bit of a magic number :( */
+    overflow: visible;
 }
