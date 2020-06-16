@@ -34,6 +34,7 @@ Route::resource('comment','CommentsController');
 
 //mariam
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('admin','HomeController@adminHome');
 Route::get('/contact', function () {
     return view('contact')->render();
 });
@@ -44,6 +45,7 @@ Route::get('eyeglasses','GlassController@eyeglasses');
 Route::get('/fav','GlassController@favourite');
 Route::get('/sort/{option}', 'GlassController@sort');
 Route::get('favourite', 'UserController@myFavourite');
+
 //hajar
 //specail offers & list orders for admin 
 Route::resource('specialoffers','SpecialOffersController');
