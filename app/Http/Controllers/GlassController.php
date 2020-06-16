@@ -168,7 +168,7 @@ class GlassController extends Controller
     public function destroy($id)
     {
         $glass = Glass::find($id);
-        dd($id);
+        // dd($id);
         foreach($glass->images as $image){
             $image->delete();
         }

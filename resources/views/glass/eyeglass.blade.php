@@ -27,6 +27,13 @@
                 </div>
         </div>
     </div>
+    {{-- <div class="product-sorting d-flex">
+        <p>Sort by:</p>
+            <select name="select" id="sortByselect">
+                <option value="value">Low</option>
+                <option value="value">High</option>
+            </select>
+    </div> --}}
     <div class="mt-3" style="border-top:1px solid black;">
     @foreach ($glasses as $glass)
     <div class="single-product-wrapper mt-6 col-md-4 h-30" style="display:inline-block;">
@@ -40,6 +47,9 @@
                 {{-- <a href="#" class="favme fa fa-heart"></a> --}}
             </div>
         </div>
+
+
+
         <!-- Product Description -->
         <div class="product-description">
             <span>{{$glass->code}}</span>

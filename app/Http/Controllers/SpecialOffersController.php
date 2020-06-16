@@ -51,7 +51,7 @@ class SpecialOffersController extends Controller
             $specialOffer->image=$imageName;
         }
         $specialOffer->save();
-        return redirect()->action('specialOffersController@index');
+        return redirect()->action('SpecialOffersController@index');
     }
 
     /**
@@ -119,7 +119,7 @@ class SpecialOffersController extends Controller
             $offer->image = $imageName;
             $offer->save();
         }
-        return redirect()->action('specialOffersController@index');
+        return redirect()->action('SpecialOffersController@index');
     }
 
     /**
@@ -137,6 +137,6 @@ class SpecialOffersController extends Controller
         }
         
             return redirect()->action(
-                'specialOffersController@index');
+                'SpecialOffersController@index');
     }
 }
