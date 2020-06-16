@@ -10,8 +10,12 @@ use App\FaceShape;
 use App\FrameShape;
 use App\Material;
 use App\Fit;
+use App\Comment;
 use App\GlassImage;
 use App\Favourite;
+use App\SingleVision;
+use App\ProgressiveVision;
+use App\Bifocal;
 use Illuminate\Support\Facades\Auth;
 
 class GlassController extends Controller
@@ -91,7 +95,11 @@ class GlassController extends Controller
         $images=GlassImage::where("glass_id","=",$id)->get();
         $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
         $colorsnames=Color::whereIn("id",$allcolors)->get();
-        return view('glass.glass_details',compact('glass','images','brand','colorsnames'));
+        $comments=Comment::where([["category","=",'glass'],["product_id","=",$id]])->get();
+        $singlelenses= SingleVision::all()->groupBy('lense_type');
+        $progressivelenses= ProgressiveVision::all()->groupBy('lense_type');
+        $bifocallenses= Bifocal::all()->groupBy('lense_type');
+        return view('glass.glass_details',compact('glass','images','brand','colorsnames','comments','singlelenses','progressivelenses','bifocallenses'));
     }
 
     public function changeColor(Request $request){

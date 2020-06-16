@@ -14,9 +14,11 @@ class CreateSingleVisionLensesTable extends Migration
     public function up()
     {
         Schema::create('single_vision_lenses', function (Blueprint $table) {
+            $table->id();
             $table->string('lense_type');
             $table->unsignedBigInteger("color_id");
             $table->foreign('color_id')->references('id')->on('colors');
+            $table->timestamps();
         });
     }
 

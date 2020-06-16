@@ -27,6 +27,12 @@ Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
 Route::resource('order','ClientOrdersController');
+Route::resource('cart','CartController');
+Route::resource('SingleVisionLense','SingleVisionController');
+Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
+Route::resource('BifocalLense','BifocalController');
+Route::resource('comment','CommentsController');
+
 
 //mariam
 Route::resource('brand', 'BrandController');

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBifocalLensesTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateBifocalLensesTable extends Migration
      */
     public function up()
     {
-        Schema::create('bifocal_lenses', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('lense_type');
-            $table->unsignedBigInteger("color_id");
-            $table->foreign('color_id')->references('id')->on('colors');
+            $table->unsignedBigInteger("user_id");
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('category');
+            $table->integer('product_id');
+            $table->mediumText('comment');
             $table->timestamps();
         });
     }
@@ -29,7 +31,6 @@ class CreateBifocalLensesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bifocal_lenses');
-
+        Schema::dropIfExists('comments');
     }
 }
