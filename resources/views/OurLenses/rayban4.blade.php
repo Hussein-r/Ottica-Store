@@ -17,78 +17,164 @@
 @section('content')
 
 <body class="ng-scope" ng-app="TargetOpticalApp" style="overflow: inherit;">
-	<!-- BEGIN DevelopersGlobalEspotHeader.jspf -->
-<div aria-hidden="true">
-<!-- BEGIN ContentAreaESpot.jsp -->
 
-<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
 
-<!-- ContentAreaESpot.jsp - emsName: __DEVELOPERS_DESKTOP_HEADER_ESPOT -->
-
-<div class="genericESpot" id="WC_ContentAreaESpot_div_1___DEVELOPERS_DESKTOP_HEADER_ESPOT_716259662">
-
-            <div class="ad" id="ad_716259662">
-        <style type="text/css"> 
-
-	a[class*='grey'].facet-link.color-swatch
-	{
-		background-position: 0 -200px;
-	}
-
-	a[class*='brown'].facet-link.color-swatch
-	{
-		background-position: 0 -50px;
-	}
-
-	a[class*='pink'].facet-link.color-swatch
-	{
-		background-position: 0 -350px;
-	}
-	
-	a[class*='copper'].facet-link.color-swatch
-	{
-		background-position: 0 -125px;
-	}
-	
-	a[class*='orange'].facet-link.color-swatch
-	{
-		background-position: 0 -300px;
-	}
-
-	a[class*='red'].facet-link.color-swatch
-	{
-		background-position: 0 -400px;
-	}
-	
-	a[class*='clear'].facet-link.color-swatch
-	{
-			background-position: 0 -100px;
-	}
-	
-	
-	.item .change-colors-views a[class*='copper']  { background-color: #a04c2e; background-position:0 -250px; }
-	.item .change-colors-views a[class*='gold']  { background-color: #cfab21; background-position:0 -300px; }
-	.item .change-colors-views a[class*='green']  { background-color: #427622; background-position:0 -350px; }
-	.item .change-colors-views a[class*='grey'] { background-color: #999; background-position:0 -400px; }
-	.item .change-colors-views a[class*='gunmetal']  { background-color: #555566; background-position:0 -450px; }
-	.item .change-colors-views a[class*='metallic'] { background-color: #a7a7a7; background-position:0 -500px; }
-	.item .change-colors-views a[class*='multi']  { background-color: #a0a9ff; background-position:0 -550px; }
-	.item .change-colors-views a[class*='orange'] { background-color: #ffa500; background-position:0 -600px; }
-	.item .change-colors-views a[class*='honey']{ background-color: #ffa500; background-position:0 -600px; }
-	.item .change-colors-views a[class*='pewter']  { background-color: #555; background-position:0 -650px; }
-	.item .change-colors-views a[class*='pink'] { background-color: #f52886; background-position:0 -700px; }
-	.item .change-colors-views a[class*='purple']  { background-color: #997eab; background-position:0 -750px; }
-	.item .change-colors-views a[class*='violet'] { background-color: #997eab; background-position:0 -750px; }
-	.item .change-colors-views a[class*='red']  { background-color: #a10000; background-position:0 -800px; }
-	.item .change-colors-views a[class*='silver']  { background-color: #a7a7a7; background-position:0 -850px; }
-	.item .change-colors-views a[class*='tortoise'] { background-color: #61341e; background-position:0 -900px; }
-	.item .change-colors-views a[class*='yellow']{ background-color: #ffeb14; background-position:0 -950px; }
-	.item .change-colors-views a[class*='clear'] {background-position: 0px -210px;}
-	
-</style>
 
 <script>
+	// Cocco: Map product-quantity for the print, in the cart, of qty box-month supply for each
 	
+	EspotManagerJS.addFunctionAfterBodyStart('CART_MONTHS_PER_BOX_MAP', function() {
+	
+	 CART_MONTHS_PER_BOX_MAP = {
+				'aos':3,
+				'aoc6':3,
+				'aom':3,
+				'aoa':3,
+				'and':3,
+				'ahg':3,
+				'dt30':0.5,
+				'dt90':1.5,
+				'dam3':0.5,
+				'dam9':1.5,
+				'da30':0.5,
+				'da90':1.5,
+				'dapt3':0.5,
+				'dapt9':1.5,
+				'dapm3':0.5,
+				'dapm9':1.5,
+				'fd30':0.5,
+				'fd90':1.5,
+				'fl1':0.166667,
+				'cb':1.5,
+				'flc':1.5,
+				'dim':1.5,
+				'bo30':0.5,
+				'bo90':1.5,
+				'bop90':0.5,
+				'pv6':3,
+				'pv2':3,
+				'p2m':3,
+				'pvm':3,
+				'pvt':3,
+				'p2t':3,
+				'sld':1.5,
+				'sda':0.5,
+				'sfm':1.5,
+				'sft':1.5,
+				's38':1.5,
+				'ul6p':3,
+				'ula':3,
+				'ulm':3,
+				'ac1':0.5,
+				'a1d3':0.5,
+				'a1d9':1.5,
+				'a1m':0.5,
+				'a1m9':1.5,
+				'a1t':0.5,
+				'a1ma9':1.5,
+				'a1mm3':0.5,
+				'a1mm9':1.5,
+				'te9a':1.5,
+				'a2':1.5,
+				'aod90':1.5,
+				'o1t3':0.5,
+				'ao54':6,
+				'aot':1.5,
+				'aob':1.5,
+				'ao12':3,
+				'ao24':6,
+				'avi':3,
+				'avi2':6,
+				'av':1.5,
+				'avt':1.5,
+				'avv':1.5,
+				'bf':3,
+				'bfe':3,
+				'bft':3,
+				'bftx':3,
+				'bfmdi':3,
+				'bfx':3,
+				'b5p':1.5,
+				'bt':1.5,
+				'cs30':0.5,
+				'cs90':1.5,
+				'c1d90':1.5,
+				'c1dm3':0.5,
+				'c1dm9':1.5,
+				'c1dt3':0.5,
+				'clm9':1.5,
+				'f55t':3,
+				'md90':1.5,
+				'pd30':0.5,
+				'pd90':1.5,
+				'pdm':0.5,
+				'pdm9':1.5,
+				'pcmdi':3,
+				'pct':3,
+				'vrt':1.5
+				};
+	
+	 ARRAY_FRAME_UPC =
+			["8053672518641",
+			"8053672518658",
+			"8053672518665",
+			"8053672518610",
+			"8053672518634",
+			"8053672518627",
+			"8053672636192",
+			"8053672636208",
+			"8053672518436",
+			"8053672518443",
+			"8053672518450",
+			"8053672518580",
+			"8053672518597",
+			"8053672518603",
+			"8053672518566",
+			"8053672518573"];
+	
+		LENSES_DISCOUNTS_MAP = {
+		  //Kid's eyeglasses lenses
+		  '539554':{r:'235.00',o:'25.00'},
+		  '539553':{r:'260.00',o:'50.00'},
+		  //Kid's sunlasses lenses
+		  '682151':{r:'260.00',o:'50.00'},
+		  '682154':{r:'260.00',o:'115.00'},
+	
+		  //Man's lenses
+	
+		  /* Eyeglasses */
+		  //Single Vision Lenses
+		  '108056':{r:'260.00',o:'130.00'},
+		  '108058':{r:'285.00',o:'142.50'},
+		  '732652':{r:'310.00',o:'155.00'},
+		  //Progressive Lenses
+		  '518702':{r:'375.00',o:'187.50'},
+		  '717330':{r:'400.00',o:'200.00'},
+		  '732654':{r:'425.00',o:'212.50'},
+	
+		  /* Sunglasses */
+		  //Single Vision Lenses
+		  '108061':{r:'205.00',o:'102.50'},
+		  //'732655':{r:'285.00',o:'285.00'},
+		  //Progressive Lenses
+		  '518703':{r:'320.00',o:'160.00'}
+		};
+	
+		  //OTHER SUNGLASSES LEAVE COMMENTED
+		  //Single Vision Lenses
+		  //'732655':{r:'285.00',o:'185.00'},
+		  //Progressive Lenses
+		  //'732658':{r:'400.00',o:'300.00'}
+	
+	
+		/* timeTable is releated to the time of availability of the chat service */
+		timeTable = {
+			startingTime : [0, 0, 0, 0, 0, 0, 0],
+			endingTime : [24, 24, 24, 24, 24, 24, 24]
+		}
+	});
+	 
+/* TO BE REMOVED WITH REL2020.1 */
 var tealium_data2track=[];
 utagFiller.initialize(); 
 	</script>
@@ -109,82 +195,20 @@ utagFiller.initialize();
 
 </div>
 
-
-	
-
-<!--  espot with name  [X_Nav_PromoStripe] --><style>
-    .promo-stripe.ct-strip{
-        background-color: #cc0000;
-        height: 0;
-        padding: 0;
-        overflow: hidden;
-        box-sizing: border-box;
-        transition:all .6s ease;
-    }
-</style>
-<div class="promo-stripe ct-strip">
-    <a href="" data-element-id="X_X_GlobalBanner_strip" data-description="offer" aria-label="offer page">
-       
-    </a>
+<!-- END ContentAreaESpot.jsp -->
 </div>
-
-
-
-	<div class="site-search__hints-wrapper py-4">
-		<!--  espot with name  [X_Search_SuggestedTags] --><style media="screen">
-    #SimpleSearchForm_SearchTerm {
-        min-width: 270px;
-    }
-</style>
-
-	<script type="text/javascript">
-
-		// The primary Array to hold all static search suggestions
-		var staticContent = new Array();
-
-		// The titles of each search grouping
-		var staticContentHeaders = new Array();
-		var staticContentHeaderHistory = "???SEARCH_HISTORY???"
-
-		// The auto suggest container ID's
-		var staticContentSectionDiv = ["autoSuggestStatic_1", "autoSuggestStatic_2", "autoSuggestStatic_3"];
-		
-		
-	</script>
-			
-	<div dojotype="wc.widget.RefreshArea" widgetid="AutoSuggestCachedSuggestions" controllerid="AutoSuggestCachedSuggestionsController" id="autoSuggestCachedSuggestions_div" role="region" aria-live="polite" aria-atomic="true" aria-relevant="all" style="display:none;" aria-label="Autosuggest cache">
-	</div>
-			
-</div> 
-
-
-
 <script type="text/javascript">
-/*$(function(){
-	var quantity = parseInt($("#cartQuantity").text());
-	
-	var tahQuantity = $('<span>')
-		.attr('id', 'tah-quantity-header')
-		.addClass('iefix tah-quantity counter')
-		.text(quantity)
-		.appendTo('a#Header_Try_Link');
-	if(quantity == 0)
-		tahQuantity.hide();
-
-});*/
+EspotManagerJS.execute(EspotManagerJS.TYPES.AFTER_BODY_START);
 </script>
-
-
-
-<!-- END CachedHeaderDisplay.jsp --><!-- END HeaderDisplay.jspf --><!-- Header End -->
+<!-- END DevelopersGlobalEspotHeader.jspf -->
+		<main class="main">
+		
 			<div id="page">
 			   <div id="main_content_wrapper">
 					<!-- Main Content Start -->
 					<div id="content_wrapper_box" role="main" aria-label="Main content">
 						
-							<!-- Content Start --><!-- BEGIN MessageDisplay.jspf -->
 
-<!-- END MessageDisplay.jspf -->
 
 <script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/slick.min.js"></script>  
 <div class="commerceComposerPage">
@@ -201,15 +225,7 @@ utagFiller.initialize();
 <div class="rowContainer" id="4099276460824377020">
 	<div class="row12">
 		<div class="col12" data-slot-id="1">
-			<!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
-					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
-					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
-					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
-					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
-					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
-					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
-					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
-					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
+		
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374784" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374784_espot" dataci_espot="4099276460824374784_CSS_LP_Lenses" id="ci_espot_4099276460824374784_CSS_LP_Lenses">
@@ -732,6 +748,15 @@ utagFiller.initialize();
 <!-- END Content_UI.jspf -->
 				</div>
 			</div>
+		<!-- END ContentRecommendation_UI.jspf --><!-- END ContentRecommendation.jsp --><!-- END EMarketingSpot.jsp --><!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374785" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374785_espot" dataci_espot="4099276460824374785_HTML_LP_Lenses" id="ci_espot_4099276460824374785_HTML_LP_Lenses">
@@ -745,7 +770,7 @@ utagFiller.initialize();
         <h1 style="opacity: 0;">All about lenses</h1>
         <h2 style="opacity: 0;">First off, what are you looking for?</h2>
         <div class="to-selection">
-            <div class="card clicked" data-type="eyeglasses" data-lens="eyeglasses" style="opacity: 0;">
+            <div class="card" data-type="eyeglasses" data-lens="eyeglasses" style="opacity: 0;">
                 <div>
                     <h3>Eyeglasses</h3>
                 </div>
@@ -772,7 +797,7 @@ utagFiller.initialize();
                 </div>
                 <p>Light-responsive eyeglasses that help your eyes adjust from indoors to outdoors</p>
             </div>
-            <div class="card" data-type="sunglasses" data-lens="sunglasses" style="opacity: 0;">
+            <div class="card clicked" data-type="sunglasses" data-lens="sunglasses" style="opacity: 0;">
                 <div>
                     <h3>Sunglasses</h3>
                 </div>
@@ -783,8 +808,9 @@ utagFiller.initialize();
             </div>
         </div>
     </div>
-    <div class="to-modal" style="display: block; opacity: 1;">
-        
+    <div class="to-modal rb-black" style="display: block; opacity: 1;">
+        <div class="to-content">
+          
             <div class="to-row to-main">
                 <div class="to-col to-title" style="opacity: 1;">
                     <h3>
@@ -793,12 +819,9 @@ utagFiller.initialize();
                     </h3>
                 </div>
                 <div class="to-col to-img" style="opacity: 1;">
-                    <div class="to-switcher-container" style="display: none;">
+                    <div class="to-switcher-container" style="display: block;">
                         <label class="to-switch">
-                            <p>Brown</p>
-                            <input type="checkbox">
-                            <span class="to-switcher"></span>
-                            <p>Grey</p>
+                          
                         </label>
                     </div>
                     <div class="svg-container">
@@ -1189,7 +1212,7 @@ utagFiller.initialize();
                             	.st381{clip-path:url(#SVGID_696_);fill:none;stroke:#CC0000;stroke-width:4;stroke-miterlimit:10;}
                             </style>
                         	<g id="lenti">
-                        		<g id="eyeglasses" style="opacity: 1;">
+                        		<g id="eyeglasses" style="opacity: 0;">
                         			<path class="st0" d="M47.93,120.67c-0.01,1.19-0.02,2.39-0.02,3.61c0,130.57,94.53,136.12,104.45,136.12
                         				c10.92,0,39.7,0.83,79.17-28c45.49-33.23,100.55-98.03,100.55-150.3c0,0,0.29-2.1,0-5.53c0-0.07,0-0.14,0-0.2
                         				c0,0,3.39-23.96-24.22-42.77c-6.6-4.5-15.09-8.64-25.74-12.14c-5.81-1.91-12.26-3.63-19.39-5.11c-17.84-3.7-39.98-5.91-67.12-5.91
@@ -2225,7 +2248,7 @@ utagFiller.initialize();
                         				C47.91,119.27,47.93,119.96,47.94,120.67C47.94,120.67,47.94,120.67,47.94,120.67C47.94,120.67,47.94,120.67,47.94,120.67
                         				C47.94,120.67,47.94,120.67,47.94,120.67z"></path>
                         		</g>
-                        		<g id="sunglasses_rayban_brown" style="opacity: 0;">
+                        		<g id="sunglasses_rayban_brown" style="opacity: 1;">
                         			<path class="st45" d="M47.94,120.67c-0.01,1.19-0.02,2.39-0.02,3.61c0,130.57,94.53,136.12,104.45,136.12
                         				c10.92,0,39.7,0.83,79.17-28c45.49-33.23,100.55-98.03,100.55-150.3c0,0,0.29-2.1,0-5.53c0-0.07,0-0.14,0-0.2
                         				c0,0,3.39-23.96-24.22-42.77c-6.6-4.5-15.09-8.64-25.74-12.14c-5.81-1.91-12.26-3.63-19.39-5.11c-17.84-3.7-39.98-5.91-67.12-5.91
@@ -2474,7 +2497,7 @@ utagFiller.initialize();
                         	</g>
                         	<g id="info">
                         		<g id="info_eyeglasses_ComfortLight">
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<polyline class="st53" points="80.94,159.59 80.94,189.22 8.89,189.22 				"></polyline>
                         				</g>
@@ -2513,7 +2536,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<line class="st53" x1="296.89" y1="101.59" x2="372.89" y2="101.59"></line>
                         				</g>
@@ -5376,7 +5399,7 @@ utagFiller.initialize();
                         			</g>
                         		</g>
                         		<g id="info_sunglasses_RayBan">
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<polyline class="st53" points="90.89,63.59 90.89,93.22 8.89,93.22 				"></polyline>
                         				</g>
@@ -5415,7 +5438,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<line class="st53" x1="286.89" y1="41.59" x2="372.89" y2="41.59"></line>
                         				</g>
@@ -5454,7 +5477,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="113.89,221.59 113.89,190 8.89,190 			"></polyline>
                         				<g>
                         					<defs>
@@ -5491,7 +5514,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="235.89,200.59 235.89,179.27 372.89,179.27 			"></polyline>
                         				<g>
                         					<defs>
@@ -5528,7 +5551,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="70.94,119.59 70.94,149.22 8.89,149.22 			"></polyline>
                         				<g>
                         					<defs>
@@ -5565,7 +5588,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="301.89,98.59 301.89,129.59 372.89,129.59 			"></polyline>
                         				<g>
                         					<defs>
@@ -5606,40 +5629,40 @@ utagFiller.initialize();
                         	</g>
                         </svg>
 
-                    <p class="right" style="top:65%; right:77%;">UV protection</p><p class="left" style="top:35%; left:76%;">Scratch resistant</p></div>
+                    <p class="right" style="top:32%; right:77%;"><strong>Ray-Ban signature</strong></p><p class="right" style="top:51%; right:77%;">Blue light protection</p><p class="right" style="top:65%; right:77%;">UV protection</p><p class="left" style="top:14.5%; left:76%;">Hi-definition clarity </p><p class="left" style="top:44.5%; left:76%;">Thin &amp; lightweight</p><p class="left" style="top:61.5%; left:76%;">Scratch &amp; glare resistant</p></div>
                 </div>
                 <div class="to-col to-text" style="opacity: 1;">
-                    <p><strong>ComfortLight lenses</strong><br><br>Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.</p>
+                    <p><strong>Ray-Ban Authentic Lenses</strong><br>Get the true Ray-Ban experience with our Ray-Ban Authentic polarized premium polycarbonate lenses. These stylish, glare-resistant lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function.</p>
+
                 </div>
             </div>
         </div>
 
-        <div class="to-sub-selector" style="opacity: 1;">
-            <div style="opacity: 1;" data-material="ComfortLight" class="current">
-               <a href="/ComfortLight1"> <div>
-                    <h4>ComfortLight</h4>  </a>
+		<div class="to-sub-selector" style="opacity: 1;">
+            <div data-material="SunVision" class="" style="opacity: 1;">
+			<a href="/ComfortLight4">  <div>
+                    <h4>SunVision</h4></a>
                     <p>I’m looking for something standard that I could use every day or as a spare pair.</p>
                     <div class="line"></div>
-			 </div>
-              
+                </div>
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Active">
-			<a href="/ComfortLightActive1">   <div>
-               <h4>ComfortLight Active</h4> </a>
+            <div data-material="SunVision Active" class="" style="opacity: 1;">
+			<a href="/ComfortLightActive4"> <div>
+                    <h4>SunVision Active</h4></a>
                     <p>I want lenses that are perfect for my on-the-go, active lifestyle.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Performance">
-            <a href='/ComfortLightPerformance1'>   <div>
-                    <h4>ComfortLight Performance</h4></a>
+            <div data-material="SunVision Performance" style="opacity: 1;" class="">
+			<a href='/ComfortLightPerformance4'> <div>
+                    <h4>SunVision Performance</h4></a>
                     <p>I’m looking for something sleek, even with a strong prescription.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="RayBan">
-            <a href='/rayban1'>  <div>
-                   <h4> <img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
+            <div data-material="RayBan" style="opacity: 1;" class="current">
+			<a href='/rayban4'> <div>
+			<h4><img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
                     <p>I want something high-performing and iconic.</p>
                     <div class="line"></div>
                 </div>
@@ -5651,12 +5674,42 @@ utagFiller.initialize();
 
 </div>
 
-                    </div>
+				
+	
+</div>
+
+<!-- END Content_UI.jspf -->
 				</div>
 			</div>
+
+			<div id="contentRecommendationWidget_1_-2012_4099276460824374786" class="contentRecommendationWidget">
+				
+				<div dataci_toolbar="4099276460824374786_espot" dataci_espot="4099276460824374786_JS_LP_Lenses" id="ci_espot_4099276460824374786_JS_LP_Lenses">
+					<!-- BEGIN Content_UI.jspf -->
+
+
+<!-- END Content_UI.jspf -->
+				</div>
+			</div>
+		<!-- END ContentRecommendation_UI.jspf --><!-- END ContentRecommendation.jsp --><!-- END EMarketingSpot.jsp --><!-- emsName: JS_LP_Lenses -->
+		</div>
+	</div>
+</div>
+
+<!-- END StaticContentPageDisplayContainer.jsp --> 
+						</div> 
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  end Commerce composer content -->
+	</div>
+</div>			
+			
 	
-			</body>
-<script src="/js/aos.js"></script>
-<script src="/js/sunmain.js"></script>
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="https://vars.hotjar.com/box-469cf41adb11dc78be68c1ae7f9457a4.html" aria-hidden="true" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><div class="bv-verify-css-loaded" aria-hidden="true" style="height: 0px; width: 0px; border: 0px;"></div><iframe height="0" width="0" title="Criteo DIS iframe" style="display: none;" __idm_frm__="1549"></iframe></body>
+<script src="/js/sunmain.js">
+</script>
 @endsection
 </html>

@@ -42,7 +42,7 @@
                         <img src="img/bg-img/blog1.png" alt="">
                         <!-- Post Title -->
                         <div class="post-title">
-                            <a >EyeGlasses</a>
+                        <a href="/ComfortLight1">EyeGlasses</a>
                         </div>
                         <!-- Hover Content -->
                         <div class="hover-content">
@@ -61,13 +61,13 @@
                         <img src="img/bg-img/blog2.jpeg" alt="">
                         <!-- Post Title -->
                         <div class="post-title">
-                            <a href="#">Device-Responsive</a>
+                            <a href="/ComfortLight2">Device-Responsive</a>
                         </div>
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <!-- Post Title -->
                             <div class="hover-post-title">
-                            <a href="#">Device-Responsive</a>
+                            <a href="/ComfortLight2">Device-Responsive</a>
                             </div>
                             <p>Device-proof eyeglasses that protect your eyes when you’re surfing the web</p>
                            
@@ -81,13 +81,13 @@
                         <img src="img/bg-img/blog3.jpg" alt="">
                         <!-- Post Title -->
                         <div class="post-title">
-                            <a href="#">Light-Responsive</a>
+                        <a href="/ComfortLight3">Light-Responsive</a>
                         </div>
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <!-- Post Title -->
                             <div class="hover-post-title">
-                            <a href="#">Light-Responsive</a>
+                            <a href="/ComfortLight3">Light-Responsive</a>
                             </div>
                             <p>Light-responsive eyeglasses that help your eyes adjust from indoors to outdoors</p>
                            
@@ -101,13 +101,13 @@
                         <img src="img/bg-img/blog4.jpg" alt="">
                         <!-- Post Title -->
                         <div class="post-title">
-                            <a href="#">SunGlasses</a>
+                        <a href="/ComfortLight4">SunGlasses</a>
                         </div>
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <!-- Post Title -->
                             <div class="hover-post-title">
-                            <a href="#">SunGlasses</a>
+                            <a href="/ComfortLight4">SunGlasses</a>
                             </div>
                             <p>Sunglasses for fun in the sun</p>
                           

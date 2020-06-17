@@ -17,6 +17,8 @@
 @section('content')
 
 <body class="ng-scope" ng-app="TargetOpticalApp" style="overflow: inherit;">
+
+
 	<!-- BEGIN DevelopersGlobalEspotHeader.jspf -->
 <div aria-hidden="true">
 <!-- BEGIN ContentAreaESpot.jsp -->
@@ -87,31 +89,21 @@
 	
 </style>
 
-<script>
-	
-var tealium_data2track=[];
-utagFiller.initialize(); 
-	</script>
-	
-	<style>
-	
-	/* TO BE MERGED AND REMOVED WITH R2020.1 */
-	.site-search.js-site-search{ background-color: white; }
-	.ui-helper-hidden-accessible{ display: none; }
-	.main-nav__backdrop{overflow: visible !important; }
-	
-	</style>
-	
-	
-            </div>
-        
 
-
+<!-- END ContentAreaESpot.jsp -->
 </div>
 
+<!-- END DevelopersGlobalEspotHeader.jspf -->
+		<main class="main">
+			
+			<!-- BEGIN StoreCommonUtilities.jspf -->
 
-	
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/StoreCommonUtilities.js"></script>
 
+<input type="hidden" id="currentCountryName" value="US" autocomplete="off">
+<input type="hidden" id="scene7" value="//s7d9.scene7.com/is/image/TargetOptical/{0}_noshad_{1}?${2}$" autocomplete="off">
+<input type="hidden" id="scene7Generic" value="//s7d9.scene7.com/is/image/TargetOptical/" autocomplete="off">
+<input type="hidden" id="scene7Secure" value="//s7d9.scene7.com/is/image/TargetOptical/{0}_noshad_{1}?${2}$" autocomplete="off">
 <!--  espot with name  [X_Nav_PromoStripe] --><style>
     .promo-stripe.ct-strip{
         background-color: #cc0000;
@@ -129,7 +121,19 @@ utagFiller.initialize();
 </div>
 
 
-
+<div class="site-search js-site-search border-box-fix">
+	<div class="site-search__query container py-3 px-2 d-flex justify-content-between">
+		<div class="d-none d-md-block">
+			<a id="target_logo2_r19" class="header__logo" href="https://www.targetoptical.com/" data-element-id="D_X_MainNav_LOGO">
+				<img src="/wcsstore/TargetOpticalStorefrontAssetStore/Attachment/TO_logo.png" height="32" alt="Target optical home">
+			</a>
+		</div>
+	
+		<button type="button" class="close pb-2" aria-label="Close" data-close="" style="float:none">
+			<span aria-hidden="true">×</span>
+		</button>
+	</div>
+			
 	<div class="site-search__hints-wrapper py-4">
 		<!--  espot with name  [X_Search_SuggestedTags] --><style media="screen">
     #SimpleSearchForm_SearchTerm {
@@ -137,42 +141,6 @@ utagFiller.initialize();
     }
 </style>
 
-	<script type="text/javascript">
-
-		// The primary Array to hold all static search suggestions
-		var staticContent = new Array();
-
-		// The titles of each search grouping
-		var staticContentHeaders = new Array();
-		var staticContentHeaderHistory = "???SEARCH_HISTORY???"
-
-		// The auto suggest container ID's
-		var staticContentSectionDiv = ["autoSuggestStatic_1", "autoSuggestStatic_2", "autoSuggestStatic_3"];
-		
-		
-	</script>
-			
-	<div dojotype="wc.widget.RefreshArea" widgetid="AutoSuggestCachedSuggestions" controllerid="AutoSuggestCachedSuggestionsController" id="autoSuggestCachedSuggestions_div" role="region" aria-live="polite" aria-atomic="true" aria-relevant="all" style="display:none;" aria-label="Autosuggest cache">
-	</div>
-			
-</div> 
-
-
-
-<script type="text/javascript">
-/*$(function(){
-	var quantity = parseInt($("#cartQuantity").text());
-	
-	var tahQuantity = $('<span>')
-		.attr('id', 'tah-quantity-header')
-		.addClass('iefix tah-quantity counter')
-		.text(quantity)
-		.appendTo('a#Header_Try_Link');
-	if(quantity == 0)
-		tahQuantity.hide();
-
-});*/
-</script>
 
 
 
@@ -183,7 +151,24 @@ utagFiller.initialize();
 					<div id="content_wrapper_box" role="main" aria-label="Main content">
 						
 							<!-- Content Start --><!-- BEGIN MessageDisplay.jspf -->
-
+<div id="MessageArea" class="msgpopup1">
+	<div id="msgpopup_content_wrapper" class="msgpopup_content_wrapper">
+		<div id="msgpopup1_left" class="left"></div>
+		<div id="msgpopup1_content" class="content">
+			<div id="msggroup1_icon" class="icon">
+				<div id="msgpopup1_exc" class="exc"></div>
+			</div>
+			<div id="msgpopup1_txt" class="message_text">
+				<span id="ErrorMessageText" class="error_msg" tabindex="1">
+					
+				</span>
+			</div>
+		
+		</div>
+		<div id="msgpopup1_right" class="right"></div>
+		<div id="msgpopup1_shadow" class="shadow"></div>
+	</div>
+</div>
 <!-- END MessageDisplay.jspf -->
 
 <script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/slick.min.js"></script>  
@@ -201,15 +186,7 @@ utagFiller.initialize();
 <div class="rowContainer" id="4099276460824377020">
 	<div class="row12">
 		<div class="col12" data-slot-id="1">
-			<!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
-					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
-					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
-					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
-					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
-					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
-					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
-					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
-					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
+		
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374784" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374784_espot" dataci_espot="4099276460824374784_CSS_LP_Lenses" id="ci_espot_4099276460824374784_CSS_LP_Lenses">
@@ -732,59 +709,17 @@ utagFiller.initialize();
 <!-- END Content_UI.jspf -->
 				</div>
 			</div>
+	
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374785" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374785_espot" dataci_espot="4099276460824374785_HTML_LP_Lenses" id="ci_espot_4099276460824374785_HTML_LP_Lenses">
 					<!-- BEGIN Content_UI.jspf -->
 <div class="left_espot">
 	
-	
-					<!-- AAAAAAAAAA -->
 <div class="to-container">
-    <div class="to-first">
-        <h1 style="opacity: 0;">All about lenses</h1>
-        <h2 style="opacity: 0;">First off, what are you looking for?</h2>
-        <div class="to-selection">
-            <div class="card clicked" data-type="eyeglasses" data-lens="eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Eyeglasses</h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_1-D?$g-jpg$&amp;scl=1" alt="Eyeglasses image">
-                </div>
-                <p>Eyeglasses for your style</p>
-            </div>
-            <div class="card" data-type="intelliblue" data-lens="device_responsive_eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Device-responsive<span> eyeglasses</span></h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_2-D?$g-jpg$&amp;scl=1" alt="Device-responsive eyeglasses image">
-                </div>
-                <p>Device-proof eyeglasses that protect your eyes when you’re surfing the web</p>
-            </div>
-            <div class="card" data-type="transition" data-lens="light_responsive_eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Light-responsive<span> eyeglasses</span></h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_3-D?$g-jpg$&amp;scl=1" alt="Light-responsive eyeglasses image">
-                </div>
-                <p>Light-responsive eyeglasses that help your eyes adjust from indoors to outdoors</p>
-            </div>
-            <div class="card" data-type="sunglasses" data-lens="sunglasses" style="opacity: 0;">
-                <div>
-                    <h3>Sunglasses</h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_4-D?$g-jpg$&amp;scl=1" alt="Sunglasses image">
-                </div>
-                <p>Sunglasses for fun in the sun</p>
-            </div>
-        </div>
-    </div>
-    <div class="to-modal" style="display: block; opacity: 1;">
-        
+      <div class="to-modal rb-black" style="display: block; opacity: 1;">
+        <div class="to-content">
+          
             <div class="to-row to-main">
                 <div class="to-col to-title" style="opacity: 1;">
                     <h3>
@@ -1189,7 +1124,7 @@ utagFiller.initialize();
                             	.st381{clip-path:url(#SVGID_696_);fill:none;stroke:#CC0000;stroke-width:4;stroke-miterlimit:10;}
                             </style>
                         	<g id="lenti">
-                        		<g id="eyeglasses" style="opacity: 1;">
+                        		<g id="eyeglasses" style="opacity: 0;">
                         			<path class="st0" d="M47.93,120.67c-0.01,1.19-0.02,2.39-0.02,3.61c0,130.57,94.53,136.12,104.45,136.12
                         				c10.92,0,39.7,0.83,79.17-28c45.49-33.23,100.55-98.03,100.55-150.3c0,0,0.29-2.1,0-5.53c0-0.07,0-0.14,0-0.2
                         				c0,0,3.39-23.96-24.22-42.77c-6.6-4.5-15.09-8.64-25.74-12.14c-5.81-1.91-12.26-3.63-19.39-5.11c-17.84-3.7-39.98-5.91-67.12-5.91
@@ -1479,7 +1414,7 @@ utagFiller.initialize();
                         				C47.91,119.27,47.93,119.96,47.93,120.67C47.93,120.67,47.93,120.67,47.93,120.67C47.93,120.67,47.93,120.67,47.93,120.67
                         				C47.93,120.67,47.93,120.67,47.93,120.67z"></path>
                         		</g>
-                        		<g id="device_responsive_eyeglasses_rayban" style="opacity: 0;">
+                        		<g id="device_responsive_eyeglasses_rayban" style="opacity: 1;">
 
                         				<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="4880.3955" y1="65.5342" x2="5164.7021" y2="65.5342" gradientTransform="matrix(-1 0 0 1 5212.6128 0)">
                         				<stop offset="0" style="stop-color:#FFFFFF"></stop>
@@ -2474,7 +2409,7 @@ utagFiller.initialize();
                         	</g>
                         	<g id="info">
                         		<g id="info_eyeglasses_ComfortLight">
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<polyline class="st53" points="80.94,159.59 80.94,189.22 8.89,189.22 				"></polyline>
                         				</g>
@@ -2513,7 +2448,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<line class="st53" x1="296.89" y1="101.59" x2="372.89" y2="101.59"></line>
                         				</g>
@@ -3811,7 +3746,7 @@ utagFiller.initialize();
                         			</g>
                         		</g>
                         		<g id="info_intelliblue_RayBan">
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<polyline class="st53" points="90.89,63.59 90.89,93.22 8.89,93.22 				"></polyline>
                         				</g>
@@ -3850,7 +3785,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<line class="st53" x1="286.89" y1="41.59" x2="372.89" y2="41.59"></line>
                         				</g>
@@ -3889,7 +3824,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="113.89,221.59 113.89,190 8.89,190 			"></polyline>
                         				<g>
                         					<defs>
@@ -3926,7 +3861,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="235.89,200.59 235.89,179.27 372.89,179.27 			"></polyline>
                         				<g>
                         					<defs>
@@ -3963,7 +3898,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="70.94,119.59 70.94,149.22 8.89,149.22 			"></polyline>
                         				<g>
                         					<defs>
@@ -4000,7 +3935,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="301.89,98.59 301.89,129.59 372.89,129.59 			"></polyline>
                         				<g>
                         					<defs>
@@ -5606,41 +5541,41 @@ utagFiller.initialize();
                         	</g>
                         </svg>
 
-                    <p class="right" style="top:65%; right:77%;">UV protection</p><p class="left" style="top:35%; left:76%;">Scratch resistant</p></div>
+                    <p class="right" style="top:32%; right:77%;"><strong>Ray-Ban signature</strong></p><p class="right" style="top:51%; right:77%;"><strong>Blue light protection</strong></p><p class="right" style="top:63%; right:77%;">UV protection &amp; scratch resistant</p><p class="left" style="top:14.5%; left:76%;">Hi-definition clarity</p><p class="left" style="top:44.5%; left:76%;">Thin &amp; lightweight</p><p class="left" style="top:59%; left:76%;">Glare, smudge &amp;<br> impact resistant</p></div>
                 </div>
                 <div class="to-col to-text" style="opacity: 1;">
-                    <p><strong>ComfortLight lenses</strong><br><br>Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.</p>
+                    <p><strong>Ray-Ban Authentic Lenses + IntelliBlue</strong><br>Get the true Ray-Ban experience with our Ray-Ban Authentic premium polycarbonate lenses. These stylish, hi-definition lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function. <br><br>Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices. </p>
+               
                 </div>
             </div>
         </div>
 
         <div class="to-sub-selector" style="opacity: 1;">
-            <div style="opacity: 1;" data-material="ComfortLight" class="current">
-               <a href="/ComfortLight1"> <div>
-                    <h4>ComfortLight</h4>  </a>
+            <div data-material="ComfortLight" class="" style="opacity: 1;">
+			<a href="/ComfortLight2"> <div>
+                    <h4>ComfortLight + IntelliBlue</h4></a>
                     <p>I’m looking for something standard that I could use every day or as a spare pair.</p>
                     <div class="line"></div>
-			 </div>
-              
+                </div>
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Active">
-			<a href="/ComfortLightActive1">   <div>
-               <h4>ComfortLight Active</h4> </a>
+            <div data-material="ComfortLight Active" style="opacity: 1;">
+			<a href="/ComfortLightActive2"> <div>
+                    <h4>ComfortLight Active + IntelliBlue</h4></a>
                     <p>I want lenses that are perfect for my on-the-go, active lifestyle.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Performance">
-            <a href='/ComfortLightPerformance1'>   <div>
-                    <h4>ComfortLight Performance</h4></a>
+            <div data-material="ComfortLight Performance" class="" style="opacity: 1;">
+			<a href='/ComfortLightPerformance2'>   <div>
+                    <h4>ComfortLight Performance + IntelliBlue</h4></a>
                     <p>I’m looking for something sleek, even with a strong prescription.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="RayBan">
-            <a href='/rayban1'>  <div>
-                   <h4> <img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
-                    <p>I want something high-performing and iconic.</p>
+            <div data-material="RayBan" style="opacity: 1;" class="current">
+			<a href='/rayban2'> <div>
+			<h4><img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
+                    <p>I want something high-performing and iconic with IntelliBlue technology.</p>
                     <div class="line"></div>
                 </div>
             </div>
@@ -5651,11 +5586,1711 @@ utagFiller.initialize();
 
 </div>
 
-                    </div>
+				
+	
+</div>
+
+<!-- END Content_UI.jspf -->
 				</div>
 			</div>
+		<!-- END ContentRecommendation_UI.jspf --><!-- END ContentRecommendation.jsp --><!-- END EMarketingSpot.jsp --><!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
+			<div id="contentRecommendationWidget_1_-2012_4099276460824374786" class="contentRecommendationWidget">
+				
+				<div dataci_toolbar="4099276460824374786_espot" dataci_espot="4099276460824374786_JS_LP_Lenses" id="ci_espot_4099276460824374786_JS_LP_Lenses">
+					<!-- BEGIN Content_UI.jspf -->
+<div class="left_espot">
 	
-			</body>
+	
+					
+<!-- AAAAAAAAAA -->
+<script type="text/javascript">
+
+    var lenses = {
+        "uses" : {
+            "Eyeglasses" : {
+                "type" : "eyeglasses",
+                "lens" : "eyeglasses",
+                "img" : "https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_1-D?$g-jpg$&scl=1",
+                "alt" : "Eyeglasses image",
+                "text" : "Eyeglasses for your style"
+            },
+            "Device-responsive<span> eyeglasses</span>" : {
+                "type" : "intelliblue",
+                "lens" : "device_responsive_eyeglasses",
+                "img" : "https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_2-D?$g-jpg$&scl=1",
+                "alt" : "Device-responsive eyeglasses image",
+                "text" : "Device-proof eyeglasses that protect your eyes when you’re surfing the web"
+            },
+            "Light-responsive<span> eyeglasses</span>" : {
+                "type" : "transition",
+                "lens" : "light_responsive_eyeglasses",
+                "img" : "https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_3-D?$g-jpg$&scl=1",
+                "alt" : "Light-responsive eyeglasses image",
+                "text" : "Light-responsive eyeglasses that help your eyes adjust from indoors to outdoors"
+            },
+            "Sunglasses" : {
+                "type" : "sunglasses",
+                "lens" : "sunglasses",
+                "img" : "https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_4-D?$g-jpg$&scl=1",
+                "alt" : "Sunglasses image",
+                "text" : "Sunglasses for fun in the sun"
+            }
+        },
+
+        "materials" : {
+
+            "eyeglasses" : {
+
+                "ComfortLight" : {
+                    "title" : "ComfortLight",
+                    "desc" : "I’m looking for something standard that I could use every day or as a spare pair.",
+                    "text" : "<strong>ComfortLight lenses</strong><br /><br />Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_ComfortLight_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "35",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "ComfortLight Active" : {
+                    "title" : "ComfortLight Active",
+                    "desc" : "I want lenses that are perfect for my on-the-go, active lifestyle.",
+                    "text" : "<strong>ComfortLight Active</strong><br />Our most popular selection, these premium polycarbonate lenses are light, durable, and perfect for kids.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_ComfortLightActive_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "ComfortLight Performance" : {
+                    "title" : "ComfortLight Performance",
+                    "desc" : "I’m looking for something sleek, even with a strong prescription.",
+                    "text" : "<strong>ComfortLight Performance</strong><br />Our hi-index lenses offer the sharpest visual experience, as well as our thinnest and lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_ComfortLightPerformance_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Hi-Definition clarity",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "RayBan" : {
+                    "title" : "<img src='https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&scl=1' alt='logo Ray-ban'>",
+                    "desc" : "I want something high-performing and iconic.",
+                    "text" : "<strong>Ray-Ban Authentic Lenses</strong><br />Get the true Ray-Ban experience with our Ray-Ban Authentic premium polycarbonate lenses. These stylish, hi-definition lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function.",
+                    "link" : "Shop Ray-Ban eyeglasses",
+                    "href" : "/to-us/ray-ban",
+                    "data-element-id" : "D_Lens_RayBan_cta",
+                    "data-description" : "Ray Ban",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Ray-Ban signature</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact & scratch <br/>resistant",
+                            "top" : "63",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Hi-definition clarity ",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare & smudge<br/> resistant",
+                            "top" : "59",
+                            "left" : "76"
+                        }
+                    ]
+                }
+
+            },
+
+            "intelliblue" : {
+
+                "ComfortLight" : {
+                    "title" : "ComfortLight + IntelliBlue",
+                    "desc" : "I’m looking for something standard that I could use every day or as a spare pair.",
+                    "text" : "<strong>ComfortLight + IntelliBlue </strong><br />Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.<br/><br/>Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_IntelliblueComfortLight_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Blue light protection</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "35",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "ComfortLight Active" : {
+                    "title" : "ComfortLight Active + IntelliBlue",
+                    "desc" : "I want lenses that are perfect for my on-the-go, active lifestyle.",
+                    "text" : "<strong>ComfortLight Active + IntelliBlue</strong><br />Our most popular selection, these premium polycarbonate lenses are light, durable, and perfect for kids.<br /><br />Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices. ",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_IntelliblueComfortLightActive_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Blue light protection</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "61.5",
+                            "left" : "76"
+                        },
+                    ]
+                },
+                "ComfortLight Performance" : {
+                    "title" : "ComfortLight Performance + IntelliBlue",
+                    "desc" : "I’m looking for something sleek, even with a strong prescription.",
+                    "text" : "<strong>ComfortLight Performance + IntelliBlue</strong><br />Our hi-index lenses offer the sharpest visual experience, as well as our thinnest and lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you. <br/> <br/> Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_IntelliblueComfortLightPerformance_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<trong>Blue light protection</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Hi-definition clarity",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "RayBan" : {
+                    "title" : "<img src='https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&scl=1' alt='logo Ray-ban'>",
+                    "desc" : "I want something high-performing and iconic with IntelliBlue technology.",
+                    "text" : "<strong>Ray-Ban Authentic Lenses + IntelliBlue</strong><br />Get the true Ray-Ban experience with our Ray-Ban Authentic premium polycarbonate lenses. These stylish, hi-definition lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function. <br/><br/>Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices. ",
+                    "link" : "Shop Ray-Ban eyeglasses",
+                    "href" : "/to-us/ray-ban",
+                    "data-element-id" : "D_Lens_IntelliblueRayBan_cta",
+                    "data-description" : "Ray Ban",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Ray-Ban signature</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "<strong>Blue light protection</strong>",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection & scratch resistant",
+                            "top" : "63",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Hi-definition clarity",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare, smudge &<br/> impact resistant",
+                            "top" : "59",
+                            "left" : "76"
+                        }
+                    ]
+                }
+
+            },
+
+            "transition" : {
+
+                "ComfortLight" : {
+                    "title" : "ComfortLight + Transitions&reg",
+                    "desc" : "I’m looking for something standard that I could use every day or as a spare pair.",
+                    "text" : "<strong>ComfortLight + Transitions&reg</strong><br />Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.<br/><br/>Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_transitionComfortLight_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Light-responsive tint</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "35",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "ComfortLight Active" : {
+                    "title" : "ComfortLight Active + Transitions&reg;",
+                    "desc" : "I want lenses that are perfect for my on-the-go, active lifestyle.",
+                    "text" : "<strong>ComfortLight Active + Transitions&reg</strong><br/>Our most popular selection, these premium polycarbonate lenses are light, durable, and perfect for kids.<br /><br />Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_transitionComfortLighActive_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Light-responsive tint</strong> ",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "51",
+                            "right" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+
+                    ]
+                },
+                "ComfortLight Performance" : {
+                    "title" : "ComfortLight Performance + Transitions&reg;",
+                    "desc" : "I’m looking for something sleek, even with a strong prescription.",
+                    "text" : "<strong>ComfortLight Performance + Transitions&reg</strong><br />Our hi-index lenses offer the sharpest visual experience, as well as our thinnest and lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you. <br/> <br/>Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasse",
+                    "data-element-id" : "D_Lens_transitionComfortLighPerformance_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Light-responsive tint</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protectiont",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Hi-definition clarity",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "RayBan" : {
+                    "title" : "<img src='https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&scl=1' alt='logo Ray-ban'>",
+                    "desc" : "I want something high-performing and iconic with Transitions® technology.",
+                    "text" : "<strong>Ray-Ban Authentic Lenses + Transitions®</strong><br />Get the true Ray-Ban experience with our Ray-Ban Authentic premium polycarbonate lenses. These stylish, hi-definition lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function. <br /><br />Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.",
+                    "link" : "Shop Ray-Ban eyeglasses",
+                    "href" : "/to-us/ray-ban",
+                    "data-element-id" : "D_Lens_transitionRayBan_cta",
+                    "data-description" : "Ray Ban",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Ray-Ban signature</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "<strong>Light-responsive tint</strong>",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection &<br/> scratch resistant",
+                            "top" : "63",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Hi-definition clarity",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare, smudge &<br/> impact resistant",
+                            "top" : "59",
+                            "left" : "76"
+                        }
+                    ]
+                }
+
+            },
+
+            "sunglasses" : {
+
+                "SunVision" : {
+                    "title" : "SunVision",
+                    "desc" : "I’m looking for something standard that I could use every day or as a spare pair.",
+                    "text" : "<strong>SunVision</strong><br />These dependable plastic lenses guard your eyes from harmful rays.",
+                    "link" : "Shop sunglasses",
+                    "href" : "/to-us/sunglasses",
+                    "data-element-id" : "D_Lens_SunVision_cta",
+                    "data-description" : "sunglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "35",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "SunVision Active" : {
+                    "title" : "SunVision Active",
+                    "desc" : "I want lenses that are perfect for my on-the-go, active lifestyle.",
+                    "text" : "<strong>SunVision Active</strong><br />Our most popular selection, these polarized premium polycarbonate lenses are light, durable, and shield your eyes from the sun’s blinding glare.",
+                    "link" : "Shop sunglasses",
+                    "href" : "/to-us/sunglasses",
+                    "data-element-id" : "D_Lens_SunVisionActive_cta",
+                    "data-description" : "sunglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Blue light protection",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "SunVision Performance" : {
+                    "title" : "SunVision Performance",
+                    "desc" : "I’m looking for something sleek, even with a strong prescription.",
+                    "text" : "<strong>SunVision Performance</strong><br />Our polarized hi-index lenses shield your eyes from the sun’s blinding glare, while offering our sharpest visual experience and thinnest, lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you.",
+                    "link" : "Shop sunglasses",
+                    "href" : "/to-us/sunglasses",
+                    "data-element-id" : "D_Lens_SunVisionPerformance_cta",
+                    "data-description" : "sunglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Hi-Definition clarity",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "RayBan" : {
+                    "title" : "<img src='https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&scl=1' alt='logo Ray-ban'>",
+                    "desc" : "I want something high-performing and iconic.",
+                    "text" : "<strong>Ray-Ban Authentic Lenses</strong><br />Get the true Ray-Ban experience with our Ray-Ban Authentic polarized premium polycarbonate lenses. These stylish, glare-resistant lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function.",
+                    "link" : "Shop Ray-Ban sunglasses",
+                    "href" : "/to-us/ray-ban",
+                    "data-element-id" : "D_Lens_RayBan_cta",
+                    "data-description" : "Ray Ban",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Ray-Ban signature</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Blue light protection",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Hi-definition clarity ",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                }
+
+            }
+        }
+    }
+
+
+
+	var equivalence = [
+		["sun", "eye"],
+		["SunVision", "ComfortLight"],
+		["SunVision Active", "ComfortLight Active"],
+		["SunVision Performance", "ComfortLight Performance"]
+	];
+
+	var getEquivalent = function(word) {
+		for (var i = 0; i < equivalence.length; i++) {
+			for (var ii = 0; ii < equivalence[i].length; ii++) {
+				equivalence[i][ii];
+				if (equivalence[i][ii] == word) {
+					if (ii == 0) {
+						return equivalence[i][1];
+					} else {
+						return equivalence[i][0];
+					}
+				}
+			}
+
+		}
+	}
+
+    // stampa da json blocchi prima sezione e elementi ddm
+    var iii = 0;
+    for (uses in lenses["uses"]) {
+
+		$('.to-selection').children().eq(iii).find('h3').html(uses);
+		$('.to-selection').children().eq(iii).attr('data-type', lenses["uses"][uses]["type"]);
+		$('.to-selection').children().eq(iii).attr('data-lens', lenses["uses"][uses]["lens"]);
+		$('.to-selection').children().eq(iii).find('p').html(lenses["uses"][uses]["text"]);
+		$('.to-selection').children().eq(iii).find('img').attr("src", lenses["uses"][uses]["img"]);
+		$('.to-selection').children().eq(iii).find('img').attr("alt", lenses["uses"][uses]["alt"]);
+
+		$('.to-modal .to-selector').children().eq(iii + 1).find('p').html(uses);
+		$('.to-modal .to-selector').children().eq(iii + 1).attr('data-type', lenses["uses"][uses]["type"]);
+		$('.to-modal .to-selector').children().eq(iii + 1).attr('data-lens', lenses["uses"][uses]["lens"]);
+
+        iii++;
+    }
+
+    // riordina elementi ddm
+    var changeDDM = function(lens){
+        $('.to-modal .to-selector > div').show();
+        $('.to-modal .to-selector > div').removeClass('current');
+        $('.to-modal .to-selector > :first-child p').html( $('.to-modal .to-selector > [data-lens="'+lens+'"] p').html() );
+        $('.to-modal .to-selector [data-lens="'+lens+'"]').hide();
+        $('.to-modal .to-selector [data-lens="'+lens+'"]').addClass('current');
+    }
+
+    // stampa le tab dei materiali sotto
+    var printTab = function(type, lens, current){
+
+        var ii = 0;
+        for (material in lenses["materials"][type]) {
+
+            $('.to-sub-selector').children().eq(ii).attr('data-material', material);
+			$('.to-sub-selector').children().eq(ii).find('h4').html(lenses["materials"][type][material]["title"]);
+			$('.to-sub-selector').children().eq(ii).find('p').html(lenses["materials"][type][material]["desc"]);
+			if (current == undefined && ii == 0) {
+				$('.to-sub-selector').children().eq(ii).addClass('current');
+
+                printMain(type, lens, current, material);
+			} else if (current != undefined && (current == material || current == getEquivalent(material))) {
+				if (current == "RayBan") {
+					$('.to-modal').addClass('rb-black');
+				}else {
+					$('.to-modal').removeClass('rb-black');
+				}
+                $('.to-sub-selector > div').removeClass('current');
+                $('.to-sub-selector').children().eq(ii).addClass('current');
+                printMain(type, lens, current, material);
+			}
+			ii++;
+		}
+    }
+
+    // stampa lenti, info e paragrafo info
+    var printMain = function(type, lens, current, material){
+        $('#lens #lenti > *, #lens #info > * > *').css('opacity', 0);
+
+        // console.log($('.to-main > .to-text > p'));
+        // console.log(lenses);
+        // console.log(lenses["materials"]);
+        // console.log(lenses["materials"][type]);
+        // console.log(lenses["materials"][type][material]);
+        // console.log(lenses["materials"][type][material]["text"]);
+
+        $('.to-main > .to-text > p').html(lenses["materials"][type][material]["text"]);
+        $('.to-main > .to-text a').html(lenses["materials"][type][material]["link"]);
+        $('.to-main > .to-text a').attr('href', lenses["materials"][type][material]["href"]);
+        $('.to-main > .to-text a').attr('data-description', lenses["materials"][type][material]["data-description"]);
+        $('.to-main > .to-text a').attr('data-element-id', lenses["materials"][type][material]["data-element-id"]);
+
+        // if (lens == "sunglasses" || lens == "light_responsive_eyeglasses") {
+        //     $('.to-modal #lens #lenti #' + lens + '_brown').css('opacity', 1);
+        // } else {
+        //     $('.to-modal #lens #lenti #' + lens + ' ').css('opacity', 1);
+        // }
+
+        if (current == "RayBan") {
+            $('.to-modal').addClass('rb-black');
+            $('.to-sub-selector > :last-child h4 img').attr('src', 'https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_white_2X?fmt=png-alpha&scl=1');
+            var ifrb = '_rayban';
+
+        }else {
+            $('.to-modal').removeClass('rb-black');
+            $('.to-sub-selector > :last-child h4 img').attr('src', 'https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?fmt=png-alpha&scl=1');
+            var ifrb = '';
+        }
+
+        if (lens == "sunglasses" && current == "RayBan") {
+             $('.to-switch > :last-child').html('Green');
+        } else {
+            $('.to-switch > :last-child').html('Grey');
+        }
+
+        $('#lens #info #info_' + type + '_' + material.replace(/ /g,"_") + ' > *').css('opacity', 1);
+
+        if (lens == "sunglasses" || lens == "light_responsive_eyeglasses") {
+        // if (lens == "light_responsive_eyeglasses") {
+            $('.to-switcher-container').show();
+
+            if ($(".to-switcher-container input").attr('checked') != undefined) {
+                 $('#lens #lenti #' + lens + ifrb +'_gray').css('opacity', 1);
+            } else {
+                 $('#lens #lenti #' + lens + ifrb + '_brown').css('opacity', 1);
+            }
+        } else {
+            $('.to-switcher-container').hide();
+            $('.to-modal #lens #lenti #' + lens + ifrb + ' ').css('opacity', 1);
+        }
+
+        $('.to-main > .to-img  .svg-container p').remove();
+        var elements = lenses["materials"][type][material]["elements"];
+
+        $.each(lenses["materials"][type][material]["elements"], function(index, value) {
+            if (value["right"] == undefined) {
+                $('.to-main > .to-img .svg-container').append('<p class="left" style="top:'+value["top"]+'%; left:'+value["left"]+'%;">'+value["text"]+'</p>');
+            }else {
+                $('.to-main > .to-img .svg-container').append('<p class="right" style="top:'+value["top"]+'%; right:'+value["right"]+'%;">'+value["text"]+'</p>');
+            }
+
+        });
+
+    }
+
+	var printModal = function(level, type, lens, current) {
+
+
+        if (level == "sw") {
+
+            changeDDM(lens);
+            printTab(type, lens, current);
+
+        } else {
+
+
+            $('.to-ddm').fadeTo( 200, 0 );
+            $('.to-main > .to-title').delay(50).fadeTo( 200, 0 );
+            $('.to-sub-selector').delay(100).fadeTo( 200, 0 );
+            $('.to-sub-selector > :nth-child(1)').delay(100).fadeTo( 200, 0 );
+            $('.to-sub-selector > :nth-child(2)').delay(120).fadeTo( 200, 0 );
+            $('.to-sub-selector > :nth-child(3)').delay(140).fadeTo( 200, 0 );
+            $('.to-sub-selector > :nth-child(4)').delay(160).fadeTo( 200, 0 );
+            $('.to-main > .to-text').delay(210).fadeTo( 200, 0 );
+            $('.to-main > .to-img').delay(260).fadeTo( 200, 0 );
+            // $('.to-modal > .to-content').delay(320).fadeTo( 200, 0 );
+
+            setTimeout(function(){
+
+                changeDDM(lens);
+                printTab(type, lens, current);
+
+                $('.to-ddm').fadeTo( 200, 1 );
+                $('.to-main > .to-title').delay(50).fadeTo( 200, 1 );
+                $('.to-sub-selector').delay(100).fadeTo( 200, 1 );
+                $('.to-sub-selector > :nth-child(1)').delay(100).fadeTo( 200, 1 );
+                $('.to-sub-selector > :nth-child(2)').delay(120).fadeTo( 200, 1 );
+                $('.to-sub-selector > :nth-child(3)').delay(140).fadeTo( 200, 1 );
+                $('.to-sub-selector > :nth-child(4)').delay(160).fadeTo( 200, 1 );
+                $('.to-main > .to-text').delay(210).fadeTo( 200, 1 );
+                $('.to-main > .to-img').delay(260).fadeTo( 200, 1 );
+                // $('.to-modal > .to-content').delay(320).fadeTo( 200, 1 );
+
+
+            }, 520);
+
+        }
+
+	}
+
+
+
+
+	$(document).ready(function(){
+        $(window).on('load', function() {
+            if ($(window).width() > 1024) {
+                $('html, body').stop().animate({
+                    'scrollTop': 141
+                }, 600);
+            }
+        });
+
+
+		$('.to-first > .to-selection > .card').click(function(){
+            if ($(window).width() > 1024) {
+                $('html, body').stop().animate({
+                    'scrollTop': 141
+                }, 600);
+            }
+
+			$(this).addClass('clicked');
+			$('.to-first > h1').fadeTo( 200, 0 );
+			$('.to-first > h2').delay(50).fadeTo( 200, 0 );
+
+			$('.to-first > .to-selection > .card:not(.clicked)').each( function(i, v) {
+				$(this).delay( (i + 2) * 50 ).fadeTo( 200, 0 );
+			});
+
+			$('.to-first > .to-selection > .card.clicked').delay(250).fadeTo( 200, 0 );
+
+			$('.to-modal').show();
+			$('.to-modal').delay(300).fadeTo( 1000, 1 );
+
+			printModal("first", $(this).attr('data-type'), $(this).attr('data-lens'));
+
+
+		});
+
+
+		$('.to-ddm > .to-selector').click(function(){
+			if ( $('.to-ddm > .to-selector').hasClass("clicked") ) {
+				$(this).removeClass("clicked");
+                $('#outer').remove();
+			}else {
+				$('.to-ddm > .to-selector').addClass("clicked");
+				$('.to-ddm > .to-selector').css('z-index', '201');
+				$(this).parent().prepend('<div id="outer"></div>');
+
+				$('#outer').click(function() {
+					if ($('.to-ddm > .to-selector').hasClass("clicked")) {
+						$(this).parent().find('.to-selector').removeClass("clicked");
+						$(this).remove();
+					}
+				});
+			}
+		});
+
+        $('.to-ddm > .to-selector > :first-child').click(function(){
+			if ( $('.to-ddm > .to-selector').hasClass("clicked") ) {
+
+                $(this).parent().find('.to-selector').removeClass("clicked");
+
+				$('#outer').remove();
+
+			}
+		});
+
+		$('.to-ddm > .to-selector > div:not(:first-child)').click(function(){
+			if ( $('.to-ddm > .to-selector').hasClass("clicked") ) {
+
+                changeDDM($(this).attr('data-lens'));
+
+				$('#outer').remove();
+
+				printModal("ddm", $(this).attr('data-type'), $(this).attr('data-lens'), $('.to-sub-selector .current').attr('data-material'));
+			}
+		});
+
+
+        $('.to-modal .to-sub-selector > div').click(function(){
+
+            if (!$(this).hasClass('current')) {
+                $(this).addClass('current');
+
+                var type = $('.to-modal .to-selector > .current').attr('data-type');
+                var lens = $('.to-modal .to-selector > .current').attr('data-lens');
+
+                var material = $(this).attr('data-material');
+
+                printModal("sub", type, lens, material);
+            }
+
+
+		});
+
+        $('.to-modal .to-sub-selector > div').on('click touchstart', function(){
+
+            if (!$(this).hasClass('current')) {
+                $(this).addClass('current');
+
+                var type = $('.to-modal .to-selector > .current').attr('data-type');
+                var lens = $('.to-modal .to-selector > .current').attr('data-lens');
+
+                var material = $(this).attr('data-material');
+
+                printModal("sub", type, lens, material);
+            }
+
+
+		});
+
+        $(".to-switcher-container input").change(function() {
+
+            var type = $('.to-modal .to-selector > .current').attr('data-type');
+			var lens = $('.to-modal .to-selector > .current').attr('data-lens');
+
+			var material = $('.to-sub-selector .current').attr('data-material');
+
+            printModal("sw", type, lens, material);
+
+        });
+
+        $( window ).on( "orientationchange", function( event ) {
+            if (window.orientation == 0) {
+                $('body').append('<div class="to-no-landscape" style="z-index: 900; background: #fff; position: fixed; top:0; left: 0; bottom: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 40px;">\
+                    Please turn your device orientation to landscape mode for a better experience.\
+                </div>');
+                $('html, body').css('overflow', 'hidden');
+            }else {
+                $('.to-no-landscape').remove();
+                $('html, body').css('overflow', 'inherit');
+            }
+
+        });
+    });
+    
+</script>
+
+				
+	
+</div>
+
+<!-- END Content_UI.jspf -->
+				</div>
+			</div>
+		<!-- END ContentRecommendation_UI.jspf --><!-- END ContentRecommendation.jsp --><!-- END EMarketingSpot.jsp --><!-- emsName: JS_LP_Lenses -->
+		</div>
+	</div>
+</div>
+
+<!-- END StaticContentPageDisplayContainer.jsp --> 
+						</div> 
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  end Commerce composer content -->
+	</div>
+</div>			
+			
+		
+	
+			
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/UserArea/AddressBookForm.js"></script>
+
+	<script type="text/javascript">
+		function chat_now(){
+			sendDLforChat();
+			//document.location = "https://targetoptical.custhelp.com/app/chat/chat_launch/request_source/1017/incidents.c$county/3"; 
+			window.open("https://targetoptical.custhelp.com/app/chat/chat_launch/request_source/1017/incidents.c$county/3", "_blank", "menubar=no, width=600,  height=600");
+		}
+	</script> 
+
+
+<div id="FSModal" class="hide">
+	<!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+
+        
+
+
+</div>
+
+<!-- END ContentAreaESpot.jsp -->
+</div>
+
+<div id="tah-modal" class="hide">
+	<!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: HOME_TRY_ON_MODAL_DESKTOP_ESPOT -->
+
+<div class="genericESpot" id="WC_ContentAreaESpot_div_1_HOME_TRY_ON_MODAL_DESKTOP_ESPOT_271468">
+
+
+
+</div>
+
+<!-- END ContentAreaESpot.jsp -->
+</div>
+
+<div id="PDModal" class="hide">
+	<!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: INTERRUPTER_MODAL_DESKTOP_ESPOT -->
+
+
+
+<script type="text/javascript">
+
+
+
+
+	function discounted_onDocumentReady($)
+	{
+		var DiscountedLensesPricesManager = function(){
+
+			var OFFER_PRICE_KEY = 'o';
+			var RETAIL_PRICE_KEY = 'r';
+			this.internalPricesMap = {};
+
+			//creating internal map to manage boxes and prices
+			this.init = function(globalDiscountMap) {
+				this.internalPricesMap = {};
+				for (var k in globalDiscountMap)
+				{
+					var prodMap = globalDiscountMap[k];
+					this.internalPricesMap[k.toLowerCase()] = prodMap;
+				}
+			}
+
+			this.findOfferPrice = function(productId)
+			{
+				var prodMap = getInternalMapByProductId(productId);
+				if (!prodMap)
+					return null;
+
+				return prodMap[OFFER_PRICE_KEY];
+			}
+
+			this.findRetailPrice = function(productId)
+			{
+				var prodMap = getInternalMapByProductId(productId);
+				if (!prodMap)
+					return null;
+
+				return prodMap[RETAIL_PRICE_KEY];
+			}
+
+			//private and static functions
+			var self = this;
+
+			var getInternalMapByProductId = function(productId)
+			{
+				if (!productId)
+					return null;
+				return self.internalPricesMap[productId.toLowerCase()];
+			}
+		}
+
+		var discountedLensesPricesManager = new DiscountedLensesPricesManager();
+		//window.discountedLensesPricesManager = discountedLensesPricesManager;   //externalization
+		if (window['LENSES_DISCOUNTS_MAP'])
+			discountedLensesPricesManager.init(window['LENSES_DISCOUNTS_MAP']);
+
+        //----------- desktop
+		if($('.brand-name.to-brand').text().toLowerCase().includes('twild') == false)
+		{
+			$('#hic-lens .to-table .to-table-row').each(function() {
+				var productId = $(this).find('input.rx-lens-choice').val();
+				if (productId )
+				{
+
+					var offerPrice = discountedLensesPricesManager.findOfferPrice(productId);
+					if (offerPrice)
+					{
+						var retailPrice = discountedLensesPricesManager.findRetailPrice(productId);
+
+						if ($(this).find('.to-prices-list').length >0) {
+                /*if($('.brand-name.to-brand').text().toLowerCase().includes("ray-ban jr") == true){
+                  offerPrice = 0.00; 
+                }*/
+
+								$(this).find('.to-prices-list').html(
+								"  <p class='clearfix list-price-row'>	"+
+								"	 <span class='to-price  list-price'>"+
+										formatPriceNumber(parseFloat(retailPrice)) +
+								"	 </span><span class='hide __prjid5_to_be_removed'> </span>"+
+								"  </p>	"+
+								"  <p class='to-actual-price clearfix'> "+
+								"	 <span class='to-price bold product-price only-product-price'>   "+
+								"	   <span class='price listPrice'>"+
+										formatPriceNumber(parseFloat(retailPrice)) +
+								"	   </span>   "+
+								"	   <span class='price offerprice product-price'>"+
+										formatPriceNumber(parseFloat(offerPrice)) +
+								"	   </span>"+
+								"	 </span><span class='hide'> offer price:</span>"+
+								" </p>" +
+											 "<p class='clearfix list-insurance-price-row' style='display:none' >"+
+												"  <span class='to-price  insurance-price'>"+
+												"  </span> "+
+												"     <span class='hide'> price with insurance:</span>"+
+											  " </p>"
+										   );
+						}
+
+					}
+				}
+			});
+		}
+
+		saveLensSelectionData();
+
+    _prjid5_propagateEditLens(false, false);
+
+		  if($('#choice1-single-lens-button').is(':checked')) {
+				   _prjid5_propagateEditLens(true, false);
+		  }
+
+
+		//https://stackoverflow.com/a/25346429/3122531
+		function getCookie(name) {
+		    function escape(s) { return s.replace(/([.*+?\^${}()|\[\]\/\\])/g, '\\$1'); };
+		    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+		    return match ? match[1] : null;
+		}
+
+		function log(s)
+		{
+			if (window['console'] && window.console['log'])
+			{
+				window.console.log(s);
+			}
+		}
+
+		function formatPriceNumber(price)
+		{
+			price = price.toFixed(2);
+			price = (''+price).replace(',', '.');
+			return '$'+price;
+		}
+	}
+
+	$(document).ready(function($) {
+		if ($('.to-redesign0717').length >= 1)
+		{
+			if ($('.to-redesign0717 #lens-selection-area input[name=choice1]:radio').length >= 1) discounted_onDocumentReady($);
+			$('body').on('change', '.to-redesign0717 #lens-selection-area input[name=choice1]:radio, #lens-selection-area.to-redesign0717 input[name=choice1]:radio', function(e) {
+				var isPricesUpdated = $('#choice1-single-lens-button').attr('data-price-updated');
+				if (!isPricesUpdated) discounted_onDocumentReady($);
+				$('#choice1-single-lens-button').attr('data-price-updated', true);
+			});
+		}
+	});
+
+
+$(document).ready(function() {
+	if ($('#ShoppingCart.to-redesign0717 .to-list-item.contacts').length >= 1)
+	{
+		// CARRELLO prescrizione lenti a contatto chiuse (275)
+		$('.to-list-item.contacts .to-dropdown-with-edit').each(function(index) {
+			$(this).find('.open').removeClass('open');
+			$(this).find('.to_accord_presc_details').removeClass('active');
+		});
+	}
+
+
+	/*if (location.href.indexOf('v7stage') < 0)
+	{
+		if ($('#ShoppingCart.to-redesign0717 .to-list-item.frame').length >= 1)
+		{
+			var change = true;
+			$( '.to-list-item.frame .to-list-item-info .edit-prescriptions.editPrescriptionsLink' ).each(function( index ) {   $('this');change=false;     });    if(change == true && ($('.to-list-item.contacts').length == 0))   {      $('#guestShopperContinue').attr('href', 'OrderShippingBillingView?catalogId='+constants.ajaxParams['catalogId']+'&langId='+constants.ajaxParams['langId']+'&storeId='+constants.ajaxParams['storeId']+'');    $('#guestShopperContinue').attr('onclick', '');  }
+		}
+	}*/
+});
+
+$(window).load(function() {
+if ($('.to-redesign0717 #Product').length >= 1) {
+    var xinsx = $('#insurance a.link-blue');
+    if(xinsx.length == 1)
+       xinsx.text(xinsx.text().replace("your eligible", "you are eligible")).attr('style', 'font-size: 0.9em !important');
+}
+});
+</script>
+
+            </div>
+        
+
+
+</div>
+
+<!-- END ContentAreaESpot.jsp -->
+
+<div class="hide"></div>
+<!-- END CachedFooterDisplay.jsp --> 
+			<script type="text/javascript">
+				dojo.addOnLoad(function() {
+					//Make sure page is loaded at this point
+					//Set requestedSubmitted to false
+					requestSubmitted = false;
+				});
+			</script>
+			<!-- Footer Start End --> 
+			<script type="text/javascript">
+				dojo.require("currency");
+			</script>
+			<!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: DISCOUNTED_PRICES_JAVASCRIPT_SNIPPET_ESPOT -->
+
+<div class="genericESpot" id="WC_ContentAreaESpot_div_1_DISCOUNTED_PRICES_JAVASCRIPT_SNIPPET_ESPOT_305966">
+
+            <div class="ad" id="ad_305966">
+        <script type="text/javascript">
+var CONTACTS_MAP = {"dac30":{"name":"DAILIES® COLORS 30 PACK","brand":"DAILIES","manuf":"ALCON","type":"Single Vision","water":"31% Nelfilcon A","material":"69%","url":"dailies-colors-contacts-30pks","pubDate":"2019-07-15","bestSeller":"0"},
+"dac90":{"name":"DAILIES® COLORS 90 PACK","brand":"DAILIES","manuf":"ALCON","type":"Color Contacts","water":"Etafilcon A","material":"58%","url":"dailies-colors-contacts-90pk","pubDate":"2019-07-15","bestSeller":"0"},
+"a1m9":{"name":"1-DAY ACUVUE® MOIST, 90 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"Etafilcon A","material":"58%","url":"acuvue-1-day-moist-90","pubDate":"2013-07-03","bestSeller":"0"},
+"aod90":{"name":"ACUVUE OASYS® 1-Day with HydraLuxe™ Technology, 90 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"Senofilcon A","material":"38%","url":"acuvue-oasys-1-day-90pk","pubDate":"2015-12-22","bestSeller":"0"},
+"ao24":{"name":"ACUVUE OASYS® with HYDRACLEAR® PLUS Technology, 24 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"Senofilcon A","material":"38%","url":"acuvue-oasys-24","pubDate":"2013-07-03","bestSeller":"0"},
+"da90":{"name":"DAILIES® AquaComfort Plus® 90 PK","brand":"DAILIES","manuf":"ALCON","type":"Single Vision","water":"31% Nelfilcon A","material":"69%","url":"dailies-aqua-comfort-plus-90","pubDate":"2017-09-28","bestSeller":"0"},
+"aot":{"name":"ACUVUE OASYS® for ASTIGMATISM, 6 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Astigmatism","water":"Senofilcon A","material":"38%","url":"acuvue-oasys-for-astigmatism-6","pubDate":"2016-06-08","bestSeller":"0"},
+"dt90":{"name":"DAILIES TOTAL1® 90 PK","brand":"DAILIES","manuf":"ALCON","type":"Single Vision","water":"","material":"78%","url":"dailies-total-90","pubDate":"2017-09-28","bestSeller":"0"},
+"ao12":{"name":"ACUVUE OASYS® with HYDRACLEAR® PLUS Technology, 12 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"Senofilcon A","material":"38%","url":"acuvue-oasys-12pk-ao","pubDate":"2016-04-14","bestSeller":"0"},
+"bt":{"name":"Biomedics Toric 6PK","brand":"BIOMEDICS","manuf":"COOPER VISION","type":"Astigmatism","water":"","material":"55%","url":"biomedics-toric06","pubDate":"2016-06-08","bestSeller":"0"},
+"bft":{"name":"Biofinity Toric 6PK","brand":"BIOFINITY","manuf":"COOPER VISION","type":"Astigmatism","water":"52% Comfilcon A","material":"48%","url":"biofinity-toric-6","pubDate":"2013-06-04","bestSeller":"0"},
+"and":{"name":"AIR OPTIX® NIGHT & DAY® AQUA 6PK","brand":"AIR OPTIX","manuf":"ALCON","type":"Single Vision","water":"76% Lotrafilcon A","material":"24%","url":"air-optix-night-day-aqua-6","pubDate":"2013-06-03","bestSeller":"0"},
+"a1m":{"name":"1-DAY ACUVUE® MOIST, 30 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"Etafilcon A","material":"58%","url":"A1M","pubDate":"2013-07-09","bestSeller":"0"},
+"a1t":{"name":"1-DAY ACUVUE® MOIST for ASTIGMATISM - 30 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Astigmatism","water":"Etafilcon A","material":"58%","url":"A1T","pubDate":"2018-03-02","bestSeller":"0"},
+"a2":{"name":"ACUVUE® 2, 6 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"Etafilcon A","material":"58%","url":"A2","pubDate":"2013-07-01","bestSeller":"0"},
+"aob":{"name":"ACUVUE OASYS® for PRESBYOPIA, 6 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Extended Wear","water":"Senofilcon A","material":"38%","url":"acuvue-oasys-for-presbyopia-6","pubDate":"2013-07-03","bestSeller":"0"},
+"aoa":{"name":"AIR OPTIX® for Astigmatism 6PK","brand":"AIR OPTIX","manuf":"ALCON","type":"Astigmatism","water":"67% Lotrafilcon B","material":"33%","url":"Air-optix-for-astigmatism-6","pubDate":"2013-06-03","bestSeller":"0"},
+"aom":{"name":"AIR OPTIX® AQUA Multifocal 6PK","brand":"AIR OPTIX","manuf":"ALCON","type":"Soft Contacts","water":"67% Lotrafilcon B","material":"33%","url":"air-optix-aqua-multifocal-6","pubDate":"2013-06-03","bestSeller":"0"},
+"aos":{"name":"AIR OPTIX® AQUA 6PK","brand":"AIR OPTIX","manuf":"ALCON","type":"Single Vision","water":"67% Lotrafilcon B","material":"33%","url":"air-optix-aqua-6","pubDate":"2013-06-03","bestSeller":"0"},
+"cb":{"name":"FreshLook® COLORBLENDS® 6PK","brand":"FRESHLOOK","manuf":"ALCON","type":"Color Contacts","water":"45% Polymer (Phemfilcon)","material":"55%","url":"freshloock-colorblends-6","pubDate":"2016-06-08","bestSeller":"0"},
+"da30":{"name":"DAILIES® AquaComfort Plus® 30pk","brand":"DAILIES","manuf":"ALCON","type":"Single Vision","water":"31% Nelfilcon A","material":"69%","url":"dailies-aqua-comfort-plus-30","pubDate":"2017-09-28","bestSeller":"0"},
+"dim":{"name":"FreshLook® DIMENSIONS 6PK","brand":"FRESHLOOK","manuf":"ALCON","type":"Color Contacts","water":"45% Polymer (Phemfilcon)","material":"55%","url":"Freshlook-dimensions-6","pubDate":"2013-06-03","bestSeller":"0"},
+"fd30":{"name":"FOCUS® DAILIES® Aquarelease 30pk","brand":"DAILIES","manuf":"ALCON","type":"Single Vision","water":"31% Nelfilcon A","material":"69%","url":"focus-dailies-aquarelease-30","pubDate":"2013-06-03","bestSeller":"0"},
+"fd90":{"name":"FOCUS® DAILIES® Aquarelease 90pk","brand":"DAILIES","manuf":"ALCON","type":"Single Vision","water":"31% Nelfilcon A","material":"69%","url":"beaded-perfection-|-sunglasshutcom","pubDate":"2013-06-03","bestSeller":"0"},
+"flc":{"name":"FreshLook® COLORS 6PK","brand":"FRESHLOOK","manuf":"ALCON","type":"Color Contacts","water":"45% Polymer (Phemfilcon)","material":"55%","url":"freshlook-colors-6","pubDate":"2016-06-08","bestSeller":"0"},
+"5412":{"name":"Extreme H20 54% 12pk","brand":"EXTREME","manuf":"HYDROGEL","type":"Single Vision","water":"","material":"","url":"Extreme-h20-54-12","pubDate":"2013-06-03","bestSeller":"0"},
+"54t":{"name":"Extreme H20 54% Toric 6pk","brand":"EXTREME","manuf":"HYDROGEL","type":"Astigmatism","water":"","material":"","url":"extreme-h20-54-toric-6","pubDate":"2013-06-03","bestSeller":"0"},
+"cy6":{"name":"Extreme H2O Monthly 6pk","brand":"EXTREME","manuf":"HYDROGEL","type":"Multi-Focal Contacts","water":"","material":"","url":"extreme-h2o-monthly-6pk\n-cy6","pubDate":"2013-06-03","bestSeller":"0"},
+"ih12":{"name":"EXTREME H2O WEEKLY 12PK","brand":"EXTREME","manuf":"HYDROGEL","type":"Extended Wear","water":"","material":"59%","url":"extreme-h2o-weekly-12pk","pubDate":"2016-06-07","bestSeller":"0"},
+"x54":{"name":"Extreme H2O 54% 6pk","brand":"EXTREME","manuf":"HYDROGEL","type":"Single Vision","water":"","material":"","url":"extreme-h2o-2-week-54-6pk-x54","pubDate":"2013-06-03","bestSeller":"0"},
+"xh":{"name":"Extreme H20 59% Thin 6pk","brand":"EXTREME","manuf":"HYDROGEL","type":"Single Vision","water":"","material":"59%","url":"extreme-h20-59-thin-6pk-xh","pubDate":"2013-06-03","bestSeller":"0"},
+"xhx":{"name":"Extreme H20 59% Xtra 6pk","brand":"EXTREME","manuf":"HYDROGEL","type":"Extended Wear","water":"","material":"59%","url":"extreme-h20-59-xtra-6pk-xhx","pubDate":"2016-06-08","bestSeller":"0"},
+"b5p":{"name":"Biomedics 55 Premier 6PK","brand":"BIOMEDICS","manuf":"COOPER VISION","type":"Single Vision","water":"","material":"55%","url":"biomedics-55-premier-6","pubDate":"2013-06-04","bestSeller":"0"},
+"bf":{"name":"Biofinity 6PK","brand":"BIOFINITY","manuf":"COOPER VISION","type":"Single Vision","water":"52% Comfilcon A","material":"48%","url":"Biofinity-ew-6","pubDate":"2013-06-04","bestSeller":"0"},
+"bfmdi":{"name":"Biofinity Multifocal 6PK - Distance","brand":"BIOFINITY","manuf":"COOPER VISION","type":"Soft Contacts","water":"52% Comfilcon A","material":"48%","url":"biofinity-multifocal-6-distance","pubDate":"2016-06-13","bestSeller":"0"},
+"bfmne":{"name":"Biofinity Multifocal 6PK - Near","brand":"BIOFINITY","manuf":"COOPER VISION","type":"Multi-Focal Contacts","water":"-","material":"-","url":"biofinity-multifocal-6-near","pubDate":"2016-06-13","bestSeller":"0"},
+"cs30":{"name":"Clearsight 1-Day 30PK","brand":"CLEARSIGHT","manuf":"COOPER VISION","type":"Daily Disposable","water":"","material":"","url":"clearsight-1-day-30","pubDate":"2013-06-04","bestSeller":"0"},
+"cs90":{"name":"Clearsight 1-Day 90PK","brand":"CLEARSIGHT","manuf":"COOPER VISION","type":"Single Vision","water":"","material":"","url":"clearsight-1-day-90","pubDate":"2013-06-04","bestSeller":"0"},
+"exp":{"name":"Expressions 6pk","brand":"EXPRESSIONS","manuf":"COOPER VISION","type":"Single Vision","water":"","material":"55%","url":"expressions-6","pubDate":"2013-06-04","bestSeller":"0"},
+"pc":{"name":"Proclear Sphere 6PK","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Single Vision","water":"38% Omafilcon B","material":"62%","url":"proclear-shpere-6","pubDate":"2013-06-04","bestSeller":"0"},
+"pcmdi":{"name":"Proclear® Multifocal DOM - 6 pack","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Soft Contacts","water":"38% Omafilcon B","material":"62%","url":"proclear-multifocal-distance-6","pubDate":"2013-06-04","bestSeller":"0"},
+"pcmne":{"name":"Proclear® Multifocal NON DOM - 6 pack","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Soft Contacts","water":"-","material":"-","url":"proclear-multifocal-near-6","pubDate":"2013-06-04","bestSeller":"0"},
+"pct":{"name":"Proclear Toric 6PK","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Astigmatism","water":"38% Omafilcon B","material":"62%","url":"proclear-toric-6","pubDate":"2013-06-04","bestSeller":"0"},
+"pd90":{"name":"Proclear 1-Day 90PK","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Single Vision","water":"40% Omafilcon A","material":"60%","url":"proclear-1-day-90","pubDate":"2013-06-04","bestSeller":"0"},
+"pmd":{"name":"Proclear® Multifocal XR DOM - 6 pack","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Soft Contacts","water":"38% Omafilcon B","material":"62%","url":"proclear-multifocal-xr-distance-6","pubDate":"2013-06-04","bestSeller":"0"},
+"pmn":{"name":"Proclear® Multifocal XR NON DOM - 6 pack","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Multi-Focal Contacts","water":"38% Omafilcon B","material":"62%","url":"proclear-multifocal-xr-near-6","pubDate":"2013-06-04","bestSeller":"0"},
+"ptx":{"name":"Proclear Toric XR 6PK","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Multi-Focal Contacts","water":"38% Omafilcon B","material":"62%","url":"proclear-toric-xr-6","pubDate":"2016-06-08","bestSeller":"0"},
+"vrt":{"name":"Vertex Toric 6pk","brand":"VERTEX","manuf":"COOPER VISION","type":"Astigmatism","water":"","material":"55%","url":"vertex-toric-6","pubDate":"2013-06-04","bestSeller":"0"},
+"bo90":{"name":"Biotrue Oneday 90pk","brand":"BIOTRUE","manuf":"BAUSCH + LOMB","type":"Single Vision","water":"22% Nesofilcon A","material":"78%","url":"biotrue-1-day-90","pubDate":"2016-06-08","bestSeller":"0"},
+"p2t":{"name":"Purevision 2 For Astigmatism","brand":"PUREVISION","manuf":"BAUSCH + LOMB","type":"Multi-Focal Contacts","water":"","material":"","url":"purevision-2-for-astigmatism-6","pubDate":"2013-07-03","bestSeller":"0"},
+"pv2":{"name":"Purevision 2 6pk","brand":"PUREVISION","manuf":"BAUSCH + LOMB","type":"Single Vision","water":"","material":"","url":"purevision-2-6","pubDate":"2013-07-03","bestSeller":"0"},
+"pv6":{"name":"Purevision 6PK","brand":"PUREVISION","manuf":"BAUSCH + LOMB","type":"Single Vision","water":"","material":"","url":"purevision-6","pubDate":"2013-06-05","bestSeller":"0"},
+"pvm":{"name":"Purevision Multi-Focal 6Pk","brand":"PUREVISION","manuf":"BAUSCH + LOMB","type":"Soft Contacts","water":"","material":"","url":"purevision-multifocal-6","pubDate":"2013-07-03","bestSeller":"0"},
+"pvt":{"name":"Purevision Toric 6Pk","brand":"PUREVISION","manuf":"BAUSCH + LOMB","type":"Astigmatism","water":"","material":"","url":"purevision-toric-6","pubDate":"2013-06-05","bestSeller":"0"},
+"s38":{"name":"Soflens 38 6PK","brand":"SOFLENS","manuf":"BAUSCH + LOMB","type":"Single Vision","water":"","material":"38%","url":"soflens-38-6","pubDate":"2013-07-03","bestSeller":"0"},
+"sfm":{"name":"Soflens MultiFocal 6PK","brand":"SOFLENS","manuf":"BAUSCH + LOMB","type":"Soft Contacts","water":"","material":"38%","url":"soflens-multifocal-6","pubDate":"2016-06-08","bestSeller":"0"},
+"sft":{"name":"Soflens Toric 6PK","brand":"SOFLENS","manuf":"BAUSCH + LOMB","type":"Astigmatism","water":"","material":"","url":"soflens-toric-6","pubDate":"2013-07-03","bestSeller":"0"},
+"sld":{"name":"Soflens Daily Disposable 90PK","brand":"SOFLENS","manuf":"BAUSCH + LOMB","type":"Single Vision","water":"","material":"59%","url":"soflens-daily-disposable-90","pubDate":"2013-07-03","bestSeller":"0"},
+"bo30":{"name":"BioTrue Oneday 30Pk","brand":"BIOTRUE","manuf":"BAUSCH + LOMB","type":"Single Vision","water":"22% Nesofilcon A","material":"78%","url":"Biotrue-1-day-30pk","pubDate":"2016-06-08","bestSeller":"0"},
+"p2m":{"name":"Purevision 2 Presbyopia 6pk","brand":"PUREVISION","manuf":"BAUSCH + LOMB","type":"Soft Contacts","water":"","material":"","url":"purevision-2-presbyopia-6","pubDate":"2014-03-13","bestSeller":"0"},
+"sda":{"name":"Soflens Daily for Astigmatism 30PK","brand":"SOFLENS","manuf":"BAUSCH + LOMB","type":"Astigmatism","water":"","material":"59%","url":"soflens-daily-for-astigmatism-30","pubDate":"2014-03-13","bestSeller":"0"},
+"dt30":{"name":"DAILIES TOTAL1® 30 PK","brand":"DAILIES","manuf":"ALCON","type":"Single Vision","water":"","material":"33%","url":"dailies-total-30","pubDate":"2017-09-28","bestSeller":"0"},
+"bfx":{"name":"BIOFINITY XR 6PK","brand":"BIOFINITY","manuf":"COOPER VISION","type":"Single Vision","water":"52% Comfilcon A","material":"48%","url":"BIOFINITY-XR-6PK","pubDate":"2014-03-17","bestSeller":"0"},
+"te9a":{"name":"1-DAY ACUVUE® TruEye®, 90 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"54% Narafilcon A","material":"46%","url":"acuvue-1-day-trueye-nara","pubDate":"2014-03-17","bestSeller":"0"},
+"ul6p":{"name":"Ultra 6PK","brand":"ULTRA","manuf":"BAUSCH + LOMB","type":"Single Vision","water":"","material":"46%","url":"Ultra-6PK","pubDate":"2015-12-22","bestSeller":"0"},
+"md90":{"name":"MYDAY 90 PK","brand":"MYDAY","manuf":"COOPER VISION","type":"Single Vision","water":"","material":"","url":"MYDAY-90pk","pubDate":"2017-09-28","bestSeller":"0"},
+"ep6":{"name":"Encore Premium 6Pk","brand":"ENCORE","manuf":"COOPER VISION","type":"Single Vision","water":"","material":"","url":"Enore-premium-6pk","pubDate":"2015-12-22","bestSeller":"0"},
+"dapt9":{"name":"DAILIES® AquaComfort Plus® Toric 90Pk","brand":"DAILIES","manuf":"ALCON","type":"Daily Disposable","water":"31% Nelfilcon A","material":"69%","url":"dailies-aquacomfort-plus-toric-90pk","pubDate":"2015-12-22","bestSeller":"0"},
+"dapt3":{"name":"DAILIES® AquaComfort Plus® Toric 30Pk","brand":"DAILIES","manuf":"ALCON","type":"Astigmatism","water":"31% Nelfilcon A","material":"69%","url":"dailies-aquacomfort-plus-toric-30pk","pubDate":"2015-12-22","bestSeller":"0"},
+"dapm9":{"name":"DAILIES® AquaComfort Plus® Multifocal - 90 pack","brand":"DAILIES","manuf":"ALCON","type":"Soft Contacts","water":"31% Nelfilcon A","material":"69%","url":"dailies-aquacomfort-plus-multi-90pk","pubDate":"2015-12-22","bestSeller":"0"},
+"dapm3":{"name":"DAILIES® AquaComfort Plus® Multifocal - 30 pack","brand":"DAILIES","manuf":"ALCON","type":"Soft Contacts","water":"31% Nelfilcon A","material":"69%","url":"dailies-aquacomfort-plus-multi-30pk","pubDate":"2015-12-22","bestSeller":"0"},
+"c1dt3":{"name":"Clariti 1-Day Toric 30Pk","brand":"CLARITI","manuf":"COOPER VISION","type":"Astigmatism","water":"","material":"","url":"calriti-1-day-toric-30","pubDate":"2015-12-22","bestSeller":"0"},
+"c1dm9":{"name":"clariti® 1day Multifocal - 90 pack","brand":"CLARITI","manuf":"COOPER VISION","type":"Soft Contacts","water":"","material":"","url":"clariti-1-day-multi-90pk","pubDate":"2015-12-22","bestSeller":"0"},
+"c1dm3":{"name":"clariti® 1day Multifocal - 30 pack","brand":"CLARITI","manuf":"COOPER VISION","type":"Daily Disposable","water":"","material":"","url":"calriti-1-day-multi-30pk","pubDate":"2015-12-22","bestSeller":"0"},
+"c1d90":{"name":"Clariti 1-Day 90Pk","brand":"CLARITI","manuf":"COOPER VISION","type":"Single Vision","water":"","material":"","url":"calriti-1-day-90pk","pubDate":"2015-12-22","bestSeller":"0"},
+"bop90":{"name":"Biotrue® ONEday for Presbyopia - 30 pack","brand":"BIOTRUE","manuf":"BAUSCH + LOMB","type":"Soft Contacts","water":"22% Nesofilcon A","material":"78%","url":"biotrue-1-day-for-presbyopia-30pk-bop90","pubDate":"2015-12-22","bestSeller":"0"},
+"aoc6":{"name":"AIR OPTIX® COLORS 6PK","brand":"AIR OPTIX","manuf":"ALCON","type":"Color Contacts","water":"67% Lotrafilcon B","material":"33%","url":"air-optix-colors-6pk-aoc6","pubDate":"2018-05-01","bestSeller":"0"},
+"a1mm9":{"name":"1-DAY ACUVUE® MOIST MULTIFOCAL - 90 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Soft Contacts","water":"Etafilcon A","material":"58%","url":"Acuvue-1-Day-Moist-Multrifocal-90Pk","pubDate":"2015-12-22","bestSeller":"0"},
+"a1mm3":{"name":"1-DAY ACUVUE® MOIST MULTIFOCAL - 30 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Soft Contacts","water":"Etafilcon A","material":"58%","url":"acuvue-1-day-moist-multi-30pk","pubDate":"2015-12-22","bestSeller":"0"},
+"a1ma9":{"name":"1-DAY ACUVUE® MOIST for ASTIGMATISM - 90 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Astigmatism","water":"Etafilcon A","material":"58%","url":"acuvue-1-day-moist-astig-90","pubDate":"2018-03-02","bestSeller":"0"},
+"exd3":{"name":"EXTREME H20 DAILY 30PK","brand":"EXTREME","manuf":"HYDROGEL","type":"Single Vision","water":"","material":"59%","url":"extreme-h2o-daily-30pk","pubDate":"2016-06-07","bestSeller":"0"},
+"exd9":{"name":"EXTREME H20 DAILY 90PK","brand":"EXTREME","manuf":"HYDROGEL","type":"Single Vision","water":"","material":"59%","url":"extreme-h2o-daily-90pk","pubDate":"2016-06-07","bestSeller":"0"},
+"ulm":{"name":"ULTRA® for Presbyopia - 6 pack","brand":"ULTRA","manuf":"BAUSCH + LOMB","type":"Soft Contacts","water":"-","material":"46%","url":"ultra-for-presbyopia-6pk-ulm","pubDate":"2017-09-28","bestSeller":"0"},
+"pdm9":{"name":"Proclear® 1-Day Multifocal - 90 pack","brand":"PROCLEAR","manuf":"COOPER VISION","type":"Soft Contacts","water":"38% Omafilcon B","material":"60%","url":"Proclear-1-Day-Multifocal-90-pack","pubDate":"2016-06-08","bestSeller":"0"},
+"avi":{"name":"ACUVUE® VITA, 6 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"","material":"41%","url":"acuvue-vita-6","pubDate":"2016-08-17","bestSeller":"0"},
+"ahg":{"name":"AIR OPTIX® plus HydraGlyde® 6 PK","brand":"AIR OPTIX","manuf":"ALCON","type":"Single Vision","water":"67% Lotrafilcon B","material":"33%","url":"air-optix-plus-hydraglyde-6pk","pubDate":"2017-02-22","bestSeller":"0"},
+"bfe":{"name":"BIOFINITY ENERGYS 6 PK","brand":"BIOFINITY","manuf":"COOPER VISION","type":"Single Vision","water":"52% Comfilcon A","material":"48%","url":"biofinity-energys-6pk","pubDate":"2017-02-22","bestSeller":"0"},
+"avi2":{"name":"ACUVUE® VITA, 12 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"","material":"41%","url":"acuvue-vita-12pk","pubDate":"2017-02-22","bestSeller":"0"},
+"bftx":{"name":"BIOFINITY TORIC XR 6 PK","brand":"BIOFINITY","manuf":"COOPER VISION","type":"Astigmatism","water":"52% Comfilcon A","material":"48%","url":"biofinity-toric-xr-6-pk-bftx","pubDate":"2017-02-22","bestSeller":"0"},
+"avvt":{"name":"AVAIRA VITALITY TORIC 6 PK","brand":"AVAIRA","manuf":"COOPER VISION","type":"Astigmatism","water":"","material":"55%","url":"avaira-vitality-toric-6-pk","pubDate":"2017-11-14","bestSeller":"0"},
+"boa90":{"name":"BIOTRUE ONEDAY FOR ASTIG 90PK","brand":"BIOTRUE","manuf":"BAUSCH + LOMB","type":"Astigmatism","water":"-","material":"-","url":"biotrue-oneday-for-astig-90pk","pubDate":"2018-08-14","bestSeller":"0"},
+"clt9":{"name":"CLARITI 1 DAY TORIC 90 PK","brand":"CLARITI","manuf":"COOPER VISION","type":"Astigmatism","water":"","material":"","url":"clariti-1-day-toric-90-pk","pubDate":"2017-09-28","bestSeller":"0"},
+"dtm3":{"name":"DAILIES TOTAL1® Multifocal - 30 pack","brand":"DAILIES","manuf":"ALCON","type":"Soft Contacts","water":"-","material":"-","url":"dailies-total-1-multifocal-30-pk","pubDate":"2017-09-28","bestSeller":"0"},
+"dtm9":{"name":"DAILIES TOTAL1® Multifocal - 90 pack","brand":"DAILIES","manuf":"ALCON","type":"Soft Contacts","water":"-","material":"-","url":"dailies-total-1-multifocal-90-pk","pubDate":"2017-09-28","bestSeller":"0"},
+"mir9":{"name":"MIRU FLAT PACK 90 PK","brand":"MIRU","manuf":"Menicon","type":"Single Vision","water":"","material":"","url":"miru-flat-pack-90-pk","pubDate":"2018-03-02","bestSeller":"0"},
+"mir3":{"name":"MIRU FLAT PACK 30 PK","brand":"MIRU","manuf":"Menicon","type":"Single Vision","water":"","material":"","url":"miru-flat-pack-30-pk","pubDate":"2018-03-02","bestSeller":"0"},
+"ula":{"name":"ULTRA® FOR ASTIGMATISM 6 PK","brand":"ULTRA","manuf":"BAUSCH + LOMB","type":"Multi-Focal Contacts","water":"","material":"46%","url":"ultra-for-astigmatism-6-pk","pubDate":"2018-08-13","bestSeller":"0"},
+"boa30":{"name":"BIOTRUE ONEDAY FOR ASTIG 30PK","brand":"BIOTRUE","manuf":"BAUSCH + LOMB","type":"Astigmatism","water":"-","material":"-","url":"biotrue-oneday-for-astig-30pk","pubDate":"2018-08-14","bestSeller":"0"},
+"o1t3":{"name":"ACUVUE OASYS®  1-Day for ASTIGMATISM, 30 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Astigmatism","water":"Senofilcon A","material":"38%","url":"acuvue-oasys-1-day-for-astig-30-pk","pubDate":"2017-10-06","bestSeller":"0"},
+"avv":{"name":"AVAIRA VITALITY 6 PK","brand":"AVAIRA","manuf":"COOPER VISION","type":"Single Vision","water":"","material":"55%","url":"avaira-vitality-6-pk","pubDate":"2017-10-06","bestSeller":"0"},
+"mdat9":{"name":"MyDay® Toric 90 pk","brand":"MYDAY","manuf":"COOPER VISION","type":"Astigmatism","water":"","material":"","url":"myday®-toric-90-pack-mdat9","pubDate":"2018-06-13","bestSeller":"0"},
+"avia":{"name":"ACUVUE® VITA for ASTIGMATISM, 6 pack","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"Senofilcon A","material":"38%","url":"acuvue-vita-for-astigmatism-6-pack-avia","pubDate":"2018-01-12","bestSeller":"0"},
+"aoc2":{"name":"AIR OPTIX COLORS 2 Pack","brand":"AIR OPTIX","manuf":"ALCON","type":"Color Contacts","water":"67% Lotrafilcon B","material":"33%","url":"air-optix-colors-2-pack-aoc2","pubDate":"2018-04-20","bestSeller":"0"},
+"bom9":{"name":"BioTrue® ONEday for Presbyopia 90 pk","brand":"BIOTRUE","manuf":"BAUSCH + LOMB","type":"Daily Disposable","water":"22% Nesofilcon A","material":"78%","url":"BioTrue-ONEday-for-Presbyopia-90-pk","pubDate":"2018-04-20","bestSeller":"0"},
+"acowtr":{"name":"ACUVUE OASYS® with Transitions™","brand":"ACUVUE","manuf":"VISTAKON","type":"Single Vision","water":"Senofilcon A","material":"38%","url":"acuvue-oasys-with-transitions","pubDate":"2019-04-04","bestSeller":"0"},
+"aohas":{"name":"AIR OPTIX® plus HydraGlyde® Astigmatism - 6 Pack","brand":"AIR OPTIX","manuf":"ALCON","type":"Astigmatism","water":"67% Lotrafilcon B","material":"33%","url":"air-optix-hydraglyde-for-astigmatism","pubDate":"2019-08-28","bestSeller":"0"},
+"aophmf":{"name":"AIR OPTIX® plus Hydraglyde Multifocal - 6 Pack","brand":"ACUVUE","manuf":"ALCON","type":"Single Vision","water":"","material":"","url":"air-optix-plus-hydraglyde-multifocal","pubDate":"2019-10-01","bestSeller":"0"},
+"pc130":{"name":"Precision 1® 30 pack","brand":"PRECISION 1","manuf":"ALCON","type":"","water":" ","material":"","url":"PC130","pubDate":"2020-02-14","bestSeller":"0"},
+"pc1":{"name":"Precision 1® 90 pack","brand":"PRECISION 1","manuf":"ALCON","type":"","water":" ","material":"","url":"PC1","pubDate":"2020-02-14","bestSeller":"0"}
+};
+
+
+var DISCOUNTS_MAP = {
+	'aos':{r:'67.99',4:{u:'67.99',t:'271.96'},2:{u:'67.99',t:'-0'}},
+	'aoc6':{r:'100.99',4:{u:'93.49',t:'-30'},2:{u:'100.99',t:'-0'}},
+	'aohas':{r:'74.99',4:{u:'64.99',t:'-40'},2:{u:'74.99',t:'-0'}},
+	'aom':{r:'95.99',4:{u:'95.99',t:'-0'},2:{u:'95.99',t:'-0'}},
+	'aoa':{r:'83.99',4:{u:'83.99',t:'-0'},2:{u:'83.99',t:'-0'}},
+	'and':{r:'89.99',4:{u:'82.49',t:'-30'},2:{u:'89.99',t:'-0'}},
+	'ahg':{r:'57.99',4:{u:'47.99',t:'-40'},2:{u:'57.99',t:'-0'}},
+	'dac30':{r:'40.99',24:{u:'38.28',t:'-65'},12:{u:'40.99',t:'-0'}},
+	'dac90':{r:'89.99',8:{u:'81.865',t:'-65'},4:{u:'89.99',t:'-0'}},
+	'dt30':{r:'44.99',24:{u:'41.45',t:'-85'},12:{u:'40.66',t:'-52'}},
+	'dt90':{r:'107.99',8:{u:'97.365',t:'-85'},4:{u:'94.99',t:'-52'}},
+	'dtm3':{r:'58.99',24:{u:'55.45',t:'-85'},12:{u:'53.66',t:'-64'}},
+	'dtm9':{r:'136.99',8:{u:'126.365',t:'-85'},4:{u:'122.99',t:'-56'}},
+	'da30':{r:'31.99',24:{u:'28.45',t:'-85'},12:{u:'28.66',t:'-40'}},
+	'da90':{r:'66.99',8:{u:'56.37',t:'-85'},4:{u:'56.99',t:'-40'}},
+	'dapt3':{r:'35.99',24:{u:'32.45',t:'-85'},12:{u:'32.66',t:'-40'}},
+	'dapt9':{r:'86.99',8:{u:'76.365',t:'-85'},4:{u:'74.99',t:'-48'}},
+	'dapm3':{r:'40.99',24:{u:'37.45',t:'-85'},12:{u:'37.66',t:'-40'}},
+	'dapm9':{r:'93.99',8:{u:'83.37',t:'-85'},4:{u:'83.99',t:'-40'}},
+	'fd30':{r:'37.99',24:{u:'37.99',t:'-0'},12:{u:'37.99',t:'-0'}},
+    'fd90':{r:'79.99',8:{u:'79.99',t:'-0'},4:{u:'79.99',t:'-0'}},
+	'fl1':{r:'26.99',72:{u:'26.71',t:'-20'},36:{u:'26.99',t:'-0'}},
+	'cb':{r:'74.99',8:{u:'72.49',t:'-20'},4:{u:'74.99',t:'-0'}},
+	'flc':{r:'74.99',8:{u:'72.49',t:'-20'},4:{u:'74.99',t:'-0'}},
+	'dim':{r:'74.99',8:{u:'72.49',t:'-20'},4:{u:'74.99',t:'-0'}},
+	'fl':{r:'38.99',8:{u:'37.74',t:'-10'},4:{u:'38.99',t:'-0'}},
+	'bo30':{r:'35.99',24:{u:'30.99',t:'-120'},12:{u:'30.99',t:'-60'}},
+	'bo90':{r:'74.99',8:{u:'59.99',t:'-120'},4:{u:'59.99',t:'-60'}},
+	'boa30':{r:'37.99',24:{u:'32.99',t:'-120'},12:{u:'32.99',t:'-60'}},
+	'boa90':{r:'87.99',8:{u:'72.99',t:'-120'},4:{u:'72.99',t:'-60'}},
+	'bop90':{r:'36.99',24:{u:'31.99',t:'-120'},12:{u:'31.99',t:'-60'}},
+	'bom':{r:'35.99',24:{u:'31.82',t:'-100'},12:{u:'32.66',t:'-40'}},
+	'38sp':{r:'51.99',2:{u:'51.99',t:'-0'}},
+	'opt2':{r:'289.99',2:{u:'289.99',t:'-0'}},
+	'opt1':{r:'156.99',2:{u:'156.99',t:'-0'}},
+	'pv6':{r:'62.99',4:{u:'57.99',t:'-20'},2:{u:'62.99',t:'-0'}},
+	'pv2':{r:'59.99',4:{u:'49.99',t:'-40'},2:{u:'59.99',t:'-0'}},
+	'p2m':{r:'78.99',4:{u:'68.99',t:'-40'},2:{u:'78.99',t:'-0'}},
+	'pvm':{r:'82.99',4:{u:'77.99',t:'-20'},2:{u:'82.99',t:'-0'}},
+	'pvt':{r:'72.99',4:{u:'67.99',t:'-20'},2:{u:'72.99',t:'-0'}},
+	'p2t':{r:'65.99',4:{u:'55.99',t:'-40'},2:{u:'65.99',t:'-0'}},
+	'sila':{r:'239.99',2:{u:'239.99',t:'-0'}},
+	'silp':{r:'239.99',2:{u:'239.99',t:'-0'}},
+	'sld':{r:'54.99',8:{u:'47.49',t:'-60'},4:{u:'54.99',t:'-0'}},
+	'sda':{r:'34.99',24:{u:'32.49',t:'-60'},12:{u:'34.99',t:'-0'}},
+	'sfm':{r:'59.99',8:{u:'54.99',t:'-40'},4:{u:'59.99',t:'-0'}},
+	'sft':{r:'49.99',8:{u:'44.99',t:'-40'},4:{u:'49.99',t:'-0'}},
+	's38':{r:'29.99',8:{u:'27.49',t:'-20'},4:{u:'29.99',t:'-0'}},
+	'ul6p':{r:'59.99',4:{u:'44.49',t:'-60'},2:{u:'59.99',t:'-0'}},
+	'ula':{r:'69.99',4:{u:'54.99',t:'-60'},2:{u:'69.99',t:'-0'}},
+	'ulm':{r:'155.99',4:{u:'140.99',t:'-60'},2:{u:'155.99',t:'-0'}},
+	'cy12':{r:'79.99',2:{u:'79.99',t:'-0'},1:{u:'79.99',t:'-0'}},
+	'cy6':{r:'49.99',4:{u:'49.99',t:'-0'},2:{u:'49.99',t:'-0'}},
+	'x54':{r:'39.99',8:{u:'39.99',t:'-0'},4:{u:'39.99',t:'-0'}},
+	'5412':{r:'69.99',4:{u:'69.99',t:'-0'},2:{u:'69.99',t:'-0'}},
+	'54t':{r:'57.99',8:{u:'57.99',t:'-0'},4:{u:'57.99',t:'-0'}},
+	'xh':{r:'41.99',8:{u:'41.99',t:'-0'},4:{u:'41.99',t:'-0'}},
+	'xhx':{r:'39.99',8:{u:'39.99',t:'-0'},4:{u:'39.99',t:'-0'}},
+	'exd3':{r:'39.99',24:{u:'39.99',t:'-0'},12:{u:'39.99',t:'-0'}},
+	'exd9':{r:'95.99',8:{u:'95.99',t:'-0'},4:{u:'95.99',t:'-0'}},
+	'ih12':{r:'42.99',8:{u:'42.99',t:'-0'},4:{u:'42.99',t:'-0'}},
+	'mir3':{r:'29.99',24:{u:'29.99',t:'-0'},12:{u:'29.99',t:'-0'}},
+	'mir9':{r:'61.99',8:{u:'61.99',t:'-0'},4:{u:'61.99',t:'-0'}},
+	'ac1':{r:'43.99',24:{u:'42.32',t:'-40'},12:{u:'43.99',t:'-0'}},
+	'a1d3':{r:'42.99',24:{u:'38.82',t:'-100'},12:{u:'39.66',t:'-40'}},
+	'a1d9':{r:'94.99',8:{u:'82.49',t:'-100'},4:{u:'84.99',t:'-40'}},
+	'a1m':{r:'40.99',24:{u:'35.78',t:'-125'},12:{u:'35.66',t:'-64'}},
+	'a1m9':{r:'81.99',8:{u:'66.365',t:'-125'},4:{u:'69.99',t:'-48'}},
+	'a1t':{r:'42.99',24:{u:'37.78',t:'-125'},12:{u:'39.66',t:'-40'}},
+	'a1ma9':{r:'96.99',8:{u:'81.365',t:'-125'},4:{u:'83.99',t:'-52'}},
+    'a1mm3':{r:'53.99',24:{u:'48.78',t:'-125'},12:{u:'48.66',t:'-64'}},
+    'a1mm9':{r:'106.99',8:{u:'91.365',t:'-125'},4:{u:'93.99',t:'-52'}},
+	'te9a':{r:'105.99',8:{u:'93.49',t:'-100'},4:{u:'88.99',t:'-68'}},
+	'a2':{r:'33.99',8:{u:'31.49',t:'-20'},4:{u:'33.99',t:'-0'}},
+	'aod90':{r:'100.99',8:{u:'88.49',t:'-100'},4:{u:'86.99',t:'-56'}},
+	'o1t3':{r:'46.99',24:{u:'42.82',t:'-100'},12:{u:'42.66',t:'-52'}},
+	'ao54':{r:'224.99',2:{u:'174.99',t:'-100'},1:{u:'224.99',t:'-0'}},
+	'ao12':{r:'82.99',4:{u:'75.49',t:'-30'},2:{u:'82.99',t:'-0'}},
+	'ao24':{r:'151.99',2:{u:'136.99',t:'-30'},1:{u:'151.99',t:'-0'}},
+	'aot':{r:'54.99',8:{u:'49.99',t:'-40'},4:{u:'54.99',t:'-0'}},
+    'aob':{r:'59.99',8:{u:'54.99',t:'-40'},4:{u:'59.99',t:'-0'}},
+    'avi':{r:'67.99',4:{u:'57.99',t:'-40'},2:{u:'67.99',t:'-0'}},
+	'avi2':{r:'119.99',2:{u:'99.99',t:'-40'},1:{u:'119.99',t:'-0'}},
+	'acowtr':{r:'54.99',8:{u:'49.99',t:'-40'},4:{u:'54.99',t:'-0'}},
+    'avia':{r:'73.99',4:{u:'63.99',t:'-40'},2:{u:'73.99',t:'-0'}},
+	'av':{r:'39.99',8:{u:'34.37',t:'-45'},4:{u:'39.99',t:'-0'}},
+	'avt':{r:'46.99',8:{u:'37.62',t:'-45'},4:{u:'46.99',t:'-0'}},
+	'avv':{r:'34.99',8:{u:'27.49',t:'-60'},4:{u:'27.49',t:'-30'}},
+	'avvt':{r:'45.99',8:{u:'38.49',t:'-60'},4:{u:'38.49',t:'-30'}},
+	'bf':{r:'52.99',4:{u:'40.49',t:'-50'},2:{u:'52.99',t:'-0'}},
+	'bfe':{r:'59.99',4:{u:'44.99',t:'-60'},2:{u:'59.99',t:'-0'}},
+	'bft':{r:'72.99',4:{u:'60.49',t:'-50'},2:{u:'72.99',t:'-0'}},
+	'bftx':{r:'139.99',4:{u:'127.49',t:'-50'},2:{u:'139.99',t:'-0'}},
+	'bfmdi':{r:'84.99',4:{u:'72.49',t:'-50'},2:{u:'84.99',t:'-0'}},
+	'bfx':{r:'61.99',4:{u:'49.49',t:'-50'},2:{u:'61.99',t:'-0'}},
+	'b5p':{r:'29.99',8:{u:'26.87',t:'-25'},4:{u:'29.99',t:'-0'}},
+	'bt':{r:'44.99',8:{u:'41.87',t:'-25'},4:{u:'44.99',t:'-0'}},
+	'cs30':{r:'42.99',24:{u:'41.53',t:'-35'},12:{u:'42.99',t:'-0'}},
+	'cs90':{r:'66.99',8:{u:'62.62',t:'-35'},4:{u:'66.99',t:'-0'}},
+	'c1t':{r:'52.99',24:{u:'52.99',t:'-0'},12:{u:'52.99',t:'-0'}},
+	'c1d90':{r:'72.99',8:{u:'60.49',t:'-100'},4:{u:'59.99',t:'-52'}},
+	'c1dm3':{r:'41.99',24:{u:'37.82',t:'-100'},12:{u:'38.66',t:'-40'}},
+	'c1dm9':{r:'95.99',8:{u:'83.49',t:'-100'},4:{u:'82.99',t:'-52'}},
+	'clt3':{r:'32.99',24:{u:'28.82',t:'-100'},12:{u:'29.66',t:'-40'}},
+	'ep6':{r:'54.99',8:{u:'54.99',t:'-0'},4:{u:'54.99',t:'-0'}},
+	'exp':{r:'79.99',4:{u:'79.99',t:'-0'},2:{u:'79.99',t:'-0'}},
+	'fa':{r:'54.99',4:{u:'54.99',t:'-0'},2:{u:'54.99',t:'-0'}},
+	'f55t':{r:'84.99',4:{u:'79.99',t:'-20'},2:{u:'84.99',t:'-0'}},
+	'f5tx':{r:'139.99',4:{u:'139.99',t:'-0'},2:{u:'139.99',t:'-0'}},
+	'md90':{r:'84.99',8:{u:'72.49',t:'-100'},4:{u:'74.99',t:'-40'}},
+	'pd30':{r:'34.99',24:{u:'31.66',t:'-80'},12:{u:'34.99',t:'-0'}},
+	'pd90':{r:'68.99',8:{u:'58.99',t:'-80'},4:{u:'68.99',t:'-0'}},
+	'pdm':{r:'45.99',24:{u:'43.49',t:'-60'},12:{u:'45.99',t:'-0'}},
+	'pdm9':{r:'95.99',8:{u:'86.62',t:'-75'},4:{u:'95.99',t:'-0'}},
+	'pc':{r:'55.99',4:{u:'55.99',t:'-0'},2:{u:'55.99',t:'-0'}},
+	'pcmdi':{r:'99.99',4:{u:'99.99',t:'-0'},2:{u:'99.99',t:'-0'}},
+	'pcmne':{r:'99.99',4:{u:'88.74',t:'-45'},2:{u:'99.99',t:'-0'}},
+	'mdt':{r:'219.44',4:{u:'219.44',t:'-0'},2:{u:'219.44',t:'-0'}},
+	'mnt':{r:'219.44',4:{u:'219.44',t:'-0'},2:{u:'219.44',t:'-0'}},
+	'pmd':{r:'159.99',4:{u:'159.99',t:'-0'},2:{u:'159.99',t:'-0'}},
+	'pmn':{r:'159.99',4:{u:'159.99',t:'-0'},2:{u:'159.99',t:'-0'}},
+	'pct':{r:'95.99',4:{u:'89.74',t:'-25'},2:{u:'95.99',t:'-0'}},
+	'ptx':{r:'149.99',4:{u:'149.99',t:'-0'},2:{u:'149.99',t:'-0'}},
+	'vrt':{r:'63.99',8:{u:'60.87',t:'-25'},4:{u:'63.99',t:'-0'}},
+	'vrx':{r:'137.99',8:{u:'137.99',t:'-0'},4:{u:'137.99',t:'-0'}},
+	'c1dt3':{r:'36.99',24:{u:'32.82',t:'-100'},12:{u:'33.66',t:'-40'}},
+	'clt9':{r:'86.99',8:{u:'74.49',t:'-100'},4:{u:'74.99',t:'-48'}},
+	'bfmne':{r:'84.99',4:{u:'72.49',t:'-50'},2:{u:'84.99',t:'-0'}},
+	'prs':{r:'88.99',2:{u:'88.99',t:'-0'},1:{u:'88.99',t:'-0'}},
+	'mdat9':{r:'125.99',8:{u:'113.49',t:'-100'},4:{u:'115.99',t:'-40'}},
+	'aoc2':{r:'39.99',12:{u:'39.99',t:'-0'},6:{u:'39.99',t:'-0'}},
+	'te90':{r:'98.99',8:{u:'86.49',t:'-100'},4:{u:'88.99',t:'-40'}},
+	'aophmf':{r:'92.99',4:{u:'82.99',t:'-40'},2:{u:'92.99',t:'-0'}},
+	'bom9':{r:'99.99',8:{u:'84.99',t:'-120'},4:{u:'99.99',t:'-0'}},
+	'pc130':{r:'39.99',24:{u:'34.78',t:'-125'},12:{u:'35.82',t:'-50'}},
+	'pc1':{r:'84.99',8:{u:'69.37',t:'-125'},4:{u:'72.49',t:'-50'}},
+	'acot25':{r:'219.99',2:{u:'199.99',t:'-40'},1:{u:'219.99',t:'-0'}}
+}
+
+var RELATED_CONTACTS_MAP = {"x54":["5412"],
+"a1m9":["A1M"],
+"a1m":["A1M9"],
+"a1t":["A1MA9"],
+"a1mm9":["A1MM3"],
+"a1mm3":["A1MM9"],
+"a1ma9":["A1T"],
+"ao24":["AO12"],
+"ao12":["AO24"],
+"bo90":["BO30"],
+"bo30":["BO90"],
+"boa90":["BOA30"],
+"boa30":["BOA90"],
+"bop90":["BOM9"],
+"bom9":["BOP90"],
+"c1dm9":["C1DM3"],
+"c1dm3":["C1DM9"],
+"clt9":["C1DT3"],
+"c1dt3":["CLT9"],
+"cs90":["CS30"],
+"cs30":["CS90"],
+"da90":["DA30"],
+"da30":["DA90"],
+"dapm9":["DAPM3"],
+"dapm3":["DAPM9"],
+"dt90":["DT30"],
+"dt30":["DT90"],
+"dtm9":["DTM3"],
+"dtm3":["DTM9"],
+"exd9":["EXD3"],
+"exd3":["EXD9"],
+"fd90":["FD30"],
+"fd30":["FD90"],
+"fdt9":["FDT"],
+"fdt":["FDT9"],
+"mir9":["MIR3"],
+"mir3":["MIR9"],
+"pd90":["PD30"],
+"pd30":["PD90"],
+"pdm9":["PDM"],
+"pdm":["PDM9"],
+"te90":["TE30"],
+"te30":["TE90"],
+"5412":["X54"],
+"pc1":["PC130"],
+"pc130":["PC1"]
+};
+
+/** This map is not used anymore date: 07/07/2018 */
+var RELATED_PRODUCTS_MAP = {
+	'DT30': {'target': 'DT90', 'html': 'looking for this product in a <a href="/to-us/FOCUS/dailies-total-90">90 pack?</a>'},
+	'DT90': {'target': 'DT30', 'html': 'looking for this product in a <a href="/to-us/FOCUS/dailies-total-30">30 pack?</a>'},
+	'DA30': {'target': 'DA90', 'html': 'looking for this product in a <a href="/to-us/DAILIES/dailies-aqua-comfort-plus-90">90 pack?</a>'},
+	'DA90': {'target': 'DA30', 'html': 'looking for this product in a <a href="/to-us/DAILIES/dailies-aqua-comfort-plus-30 ">30 pack?</a>'},
+	'DAPM9': {'target': 'DAPM3', 'html': 'looking for this product in a <a href="/to-us/DAILIES/dailies-aquacomfort-plus-multi-30pk">30 pack?</a>'},
+	'FD30': {'target': 'FD90', 'html': 'looking for this product in a <a href="/to-us/FOCUS/focus-dailies-aquarelease-90">90 pack?</a>'},
+	'FD90': {'target': 'FD30', 'html': 'looking for this product in a <a href="/to-us/FOCUS/focus-dailies-aquarelease-30">30 pack?</a>'},
+	'BO30': {'target': 'BO90', 'html': 'looking for this product in a <a href="/to-us/BIOTRUE/biotrue-1-day-90">90 pack?</a>'},
+	'BO90': {'target': 'BO30', 'html': 'looking for this product in a <a href="/to-us/BIOTRUE/Biotrue-1-day-30pk">30 pack?</a>'},
+	'A1M': {'target': 'A1M9', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-1-day-moist-90">90 pack?</a>'},
+	'A1M9': {'target': 'A1M3', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-1-day-moist-30">30 pack?</a>'},
+	'A1T': {'target': 'A1MA9', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-1-day-moist-astig-90">90 pack?</a>'},
+	'A1MA9': {'target': 'A1T', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-1-day-moist-for-astigmatism">30 pack?</a>'},
+	'A1MM3': {'target': 'A1MM9', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/Acuvue-1-Day-Moist-Multrifocal-90Pk">90 pack?</a>'},
+	'A1MM9': {'target': 'A1MM3', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-1-day-moist-multi-30pk">30 pack?</a>'},
+	'AO12': {'target': 'AO24', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-oasys-24">24 pack?</a>'},
+	'AO24': {'target': 'AO12', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-oasys-12pk-ao">12 pack?</a>'},
+	'AVI': {'target': 'AVI2', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-vita-12pk">12 pack?</a>'},
+	'AVI2': {'target': 'AVI', 'html': 'looking for this product in a <a href="/to-us/ACUVUE/acuvue-vita-6">6 pack?</a>'},
+	'CS30': {'target': 'CS90', 'html': 'looking for this product in a <a href="/to-us/CLEARSIGHT/clearsight-1-day-90">90 pack?</a>'},
+	'CS90': {'target': 'CS30', 'html': 'looking for this product in a <a href="/to-us/CLEARSIGHT/clearsight-1-day-30">30 pack?</a>'},
+	'C1DM3': {'target': 'C1DM9', 'html': 'looking for this product in a <a href="/to-us/CLARITI/clariti-1-day-multi-90pk">90 pack?</a>'},
+	'C1DM9': {'target': 'C1DM3', 'html': 'looking for this product in a <a href="/to-us/CLARITI/clariti-1-day-multi-30pk">30 pack?</a>'},
+	'CLM9': {'target': 'CLDT3', 'html': 'looking for this product in a <a href="/to-us/CLARITI/calriti-1-day-toric-30">30 pack?</a>'},
+	'PD30': {'target': 'PD90', 'html': 'looking for this product in a <a href="/to-us/PROCLEAR/proclear-1-day-90">90 pack?</a>'},
+	'PD90': {'target': 'PD30', 'html': 'looking for this product in a <a href="/to-us/PROCLEAR/proclear-1-day-30">30 pack?</a>'},
+	'PDM9': {'target': 'PDM', 'html': 'looking for this product in a <a href="/to-us/PROCLEAR/Proclear-1-day-multifocal-30">30 pack?</a>'}
+};
+
+$(document).ready(function() {
+	if ($('.to-redesign0717 #contactLensesForm').length >= 1)   //PDP CL
+	{
+		//PDP LENTI: modifica ai dettagli
+		$('.to-contact-lenses-details div:eq(1) > p').each(function( index ) {
+			if($(this).html().trim() == "" && index != 1) $('.to-contact-lenses-details .to-title p:eq('+(index-1)+')').css('display', 'none');
+		});
+
+	}
+
+});
+
+
+</script>
+<style>
+
+/*
+#Search_Area_div .results_grid .item_container .contactlenses.discountedprice
+{
+    color: #d51513 !important;
+    font-size: 24px !important;
+}*/
+
+#Search_Area_div .results_grid .item_container .contactlenses.discountedprice + .per_box,
+#Search_Area_div .results_grid .item_container .contactlenses.regprice + .per_box
+{
+	position: relative;
+    top: -3px;
+    font-size: 14px !important;
+    line-height: 14px;
+}
+
+#Search_Area_div .results_grid .item_container .contactlenses.regprice
+{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#Search_Area_div .results_grid .item_container p span.regularprice_msg {
+    font-size: 14px !important;
+}
+
+#Search_Area_div .results_grid .item_container p span.regularprice_msg span.regularprice {
+    text-decoration: line-through;
+}
+
+#plp .item_container .price .col .price a {
+	font-size: 18px;
+}
+
+#before-insurance-price {
+	xdisplay: none;
+}
+
+#iphonecontent #before-insurance-label {
+	font-size: 0.6em;
+    color: #666;
+}
+</style>
+
+            </div>
+        
+
+
+</div>
+
+<!-- END ContentAreaESpot.jsp -->
+		</main>
+	<!-- BEGIN DevelopersGlobalEspotFooter.jspf --><!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"192325011","applicationTime":424,"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"5760995f5e","transactionName":"M11QZ0IFCEdYAE1dXgoXYFZDEDFRWzBcRkcNW1ccQxAJRlxMQkdFC0pXelQZSURYBFwbShRZVVZ5ABsUESR8YBg=","agent":"","errorBeacon":"bam.nr-data.net"}</script>
+
+<!-- END Layout.jsp --><div id="1592326947681.7515" data-test-id="toast-wrapper" style="height: 1px; width: 1px; position: fixed; z-index: 2147483646; bottom: 0px; border: 0px; right: auto; left: 0px; overflow: hidden; padding: 0px; top: auto; box-shadow: none;"><iframe src="https://www.affirm.com/apps/toast/" data-test-id="toast-frame" title="Affirm toast" style="height: 100%; width: 100%; margin: 0px; border: 0px; padding: 0px;"></iframe></div><div id="ClickTaleDiv" style="display:none" aria-hidden="true"></div><iframe id="utag_143_iframe" height="1" width="1" style="display:none" src="//4208691.fls.doubleclick.net/activityi;src=4208691;type=flood0;cat=tgo_a00;ord=5299052850750.059?"></iframe><iframe name="__bkframe" id="__bkframe" title="bk" src="about:blank" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);" __idm_frm__="518" aria-hidden="true"></iframe><script>// Custom script
+</script><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.40278985403039647"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.8362179301594594" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=5683956&amp;Ver=2&amp;mid=51d7bd7b-81a7-e080-eb8a-fa288c20da21&amp;sid=628fe2c7-689c-8371-1a25-96f85109ea37&amp;vid=ee29739f-988e-c3bc-476c-851fafa26a37-0&amp;pi=1200101525&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=Eyeglass%20Lenses,%20Sunglass%20Lenses,%20Glasses%20Lenses%20%7C%20Target%20Optical&amp;kw=transition%20lenses,%20eyeglass%20lenses&amp;p=https%3A%2F%2Fwww.targetoptical.com%2Fto-us%2Flensoptions&amp;r=https%3A%2F%2Fwww.targetoptical.com%2F&amp;lt=2790&amp;evt=pageLoad&amp;msclkid=N&amp;sv=1&amp;rn=364567"></div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1093909630652447");fbq("track","PageView");</script>
+<noscript>
+<img height="1" width="1" src="https://www.facebook.com/tr?id=1093909630652447&amp;ev=PageView
+&amp;noscript=1">
+</noscript>
+
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="https://vars.hotjar.com/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;" aria-hidden="true"></iframe><div class="bv-verify-css-loaded" style="height: 0px; width: 0px; border: 0px;" aria-hidden="true"></div><script async="" src="//aa.agkn.com/adscores/g.jsonp?sid=9202274878&amp;userid=830DB9-1D5B0B83-E34C-483F-856C-ABB60ABE6EF7"></script><img src="https://p.alcmpn.com/idr/ven/1012/idr.gif?fpid=830DB9-1D5B0B83-E34C-483F-856C-ABB60ABE6EF7" style="display: none;"><iframe height="0" width="0" title="Criteo DIS iframe" style="display: none;" __idm_frm__="520"></iframe></body>
 <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
 @endsection

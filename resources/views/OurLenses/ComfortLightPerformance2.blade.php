@@ -88,7 +88,160 @@
 </style>
 
 <script>
+	// Cocco: Map product-quantity for the print, in the cart, of qty box-month supply for each
 	
+	EspotManagerJS.addFunctionAfterBodyStart('CART_MONTHS_PER_BOX_MAP', function() {
+	
+	 CART_MONTHS_PER_BOX_MAP = {
+				'aos':3,
+				'aoc6':3,
+				'aom':3,
+				'aoa':3,
+				'and':3,
+				'ahg':3,
+				'dt30':0.5,
+				'dt90':1.5,
+				'dam3':0.5,
+				'dam9':1.5,
+				'da30':0.5,
+				'da90':1.5,
+				'dapt3':0.5,
+				'dapt9':1.5,
+				'dapm3':0.5,
+				'dapm9':1.5,
+				'fd30':0.5,
+				'fd90':1.5,
+				'fl1':0.166667,
+				'cb':1.5,
+				'flc':1.5,
+				'dim':1.5,
+				'bo30':0.5,
+				'bo90':1.5,
+				'bop90':0.5,
+				'pv6':3,
+				'pv2':3,
+				'p2m':3,
+				'pvm':3,
+				'pvt':3,
+				'p2t':3,
+				'sld':1.5,
+				'sda':0.5,
+				'sfm':1.5,
+				'sft':1.5,
+				's38':1.5,
+				'ul6p':3,
+				'ula':3,
+				'ulm':3,
+				'ac1':0.5,
+				'a1d3':0.5,
+				'a1d9':1.5,
+				'a1m':0.5,
+				'a1m9':1.5,
+				'a1t':0.5,
+				'a1ma9':1.5,
+				'a1mm3':0.5,
+				'a1mm9':1.5,
+				'te9a':1.5,
+				'a2':1.5,
+				'aod90':1.5,
+				'o1t3':0.5,
+				'ao54':6,
+				'aot':1.5,
+				'aob':1.5,
+				'ao12':3,
+				'ao24':6,
+				'avi':3,
+				'avi2':6,
+				'av':1.5,
+				'avt':1.5,
+				'avv':1.5,
+				'bf':3,
+				'bfe':3,
+				'bft':3,
+				'bftx':3,
+				'bfmdi':3,
+				'bfx':3,
+				'b5p':1.5,
+				'bt':1.5,
+				'cs30':0.5,
+				'cs90':1.5,
+				'c1d90':1.5,
+				'c1dm3':0.5,
+				'c1dm9':1.5,
+				'c1dt3':0.5,
+				'clm9':1.5,
+				'f55t':3,
+				'md90':1.5,
+				'pd30':0.5,
+				'pd90':1.5,
+				'pdm':0.5,
+				'pdm9':1.5,
+				'pcmdi':3,
+				'pct':3,
+				'vrt':1.5
+				};
+	
+	 ARRAY_FRAME_UPC =
+			["8053672518641",
+			"8053672518658",
+			"8053672518665",
+			"8053672518610",
+			"8053672518634",
+			"8053672518627",
+			"8053672636192",
+			"8053672636208",
+			"8053672518436",
+			"8053672518443",
+			"8053672518450",
+			"8053672518580",
+			"8053672518597",
+			"8053672518603",
+			"8053672518566",
+			"8053672518573"];
+	
+		LENSES_DISCOUNTS_MAP = {
+		  //Kid's eyeglasses lenses
+		  '539554':{r:'235.00',o:'25.00'},
+		  '539553':{r:'260.00',o:'50.00'},
+		  //Kid's sunlasses lenses
+		  '682151':{r:'260.00',o:'50.00'},
+		  '682154':{r:'260.00',o:'115.00'},
+	
+		  //Man's lenses
+	
+		  /* Eyeglasses */
+		  //Single Vision Lenses
+		  '108056':{r:'260.00',o:'130.00'},
+		  '108058':{r:'285.00',o:'142.50'},
+		  '732652':{r:'310.00',o:'155.00'},
+		  //Progressive Lenses
+		  '518702':{r:'375.00',o:'187.50'},
+		  '717330':{r:'400.00',o:'200.00'},
+		  '732654':{r:'425.00',o:'212.50'},
+	
+		  /* Sunglasses */
+		  //Single Vision Lenses
+		  '108061':{r:'205.00',o:'102.50'},
+		  //'732655':{r:'285.00',o:'285.00'},
+		  //Progressive Lenses
+		  '518703':{r:'320.00',o:'160.00'}
+		};
+	
+		  //OTHER SUNGLASSES LEAVE COMMENTED
+		  //Single Vision Lenses
+		  //'732655':{r:'285.00',o:'185.00'},
+		  //Progressive Lenses
+		  //'732658':{r:'400.00',o:'300.00'}
+	
+	
+		/* timeTable is releated to the time of availability of the chat service */
+		timeTable = {
+			startingTime : [0, 0, 0, 0, 0, 0, 0],
+			endingTime : [24, 24, 24, 24, 24, 24, 24]
+		}
+	});
+	 
+/* TO BE REMOVED WITH REL2020.1 */
 var tealium_data2track=[];
 utagFiller.initialize(); 
 	</script>
@@ -109,8 +262,18 @@ utagFiller.initialize();
 
 </div>
 
+<!-- END ContentAreaESpot.jsp -->
+</div>
 
-	
+<!-- END DevelopersGlobalEspotHeader.jspf -->
+		<main class="main">
+			
+			<!-- BEGIN StoreCommonUtilities.jspf -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/StoreCommonUtilities.js"></script>
+
+
+ 
 
 <!--  espot with name  [X_Nav_PromoStripe] --><style>
     .promo-stripe.ct-strip{
@@ -128,62 +291,20 @@ utagFiller.initialize();
     </a>
 </div>
 
-
-
-	<div class="site-search__hints-wrapper py-4">
-		<!--  espot with name  [X_Search_SuggestedTags] --><style media="screen">
-    #SimpleSearchForm_SearchTerm {
-        min-width: 270px;
-    }
-</style>
-
-	<script type="text/javascript">
-
-		// The primary Array to hold all static search suggestions
-		var staticContent = new Array();
-
-		// The titles of each search grouping
-		var staticContentHeaders = new Array();
-		var staticContentHeaderHistory = "???SEARCH_HISTORY???"
-
-		// The auto suggest container ID's
-		var staticContentSectionDiv = ["autoSuggestStatic_1", "autoSuggestStatic_2", "autoSuggestStatic_3"];
-		
-		
-	</script>
-			
-	<div dojotype="wc.widget.RefreshArea" widgetid="AutoSuggestCachedSuggestions" controllerid="AutoSuggestCachedSuggestionsController" id="autoSuggestCachedSuggestions_div" role="region" aria-live="polite" aria-atomic="true" aria-relevant="all" style="display:none;" aria-label="Autosuggest cache">
-	</div>
-			
-</div> 
-
-
-
-<script type="text/javascript">
-/*$(function(){
-	var quantity = parseInt($("#cartQuantity").text());
-	
-	var tahQuantity = $('<span>')
-		.attr('id', 'tah-quantity-header')
-		.addClass('iefix tah-quantity counter')
-		.text(quantity)
-		.appendTo('a#Header_Try_Link');
-	if(quantity == 0)
-		tahQuantity.hide();
-
-});*/
-</script>
-
-
-
-<!-- END CachedHeaderDisplay.jsp --><!-- END HeaderDisplay.jspf --><!-- Header End -->
 			<div id="page">
 			   <div id="main_content_wrapper">
 					<!-- Main Content Start -->
 					<div id="content_wrapper_box" role="main" aria-label="Main content">
 						
 							<!-- Content Start --><!-- BEGIN MessageDisplay.jspf -->
-
+<div id="MessageArea" class="msgpopup1">
+	<div id="msgpopup_content_wrapper" class="msgpopup_content_wrapper">
+		<div id="msgpopup1_left" class="left"></div>
+		
+		<div id="msgpopup1_right" class="right"></div>
+		<div id="msgpopup1_shadow" class="shadow"></div>
+	</div>
+</div>
 <!-- END MessageDisplay.jspf -->
 
 <script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/slick.min.js"></script>  
@@ -201,15 +322,7 @@ utagFiller.initialize();
 <div class="rowContainer" id="4099276460824377020">
 	<div class="row12">
 		<div class="col12" data-slot-id="1">
-			<!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
-					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
-					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
-					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
-					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
-					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
-					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
-					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
-					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
+		
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374784" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374784_espot" dataci_espot="4099276460824374784_CSS_LP_Lenses" id="ci_espot_4099276460824374784_CSS_LP_Lenses">
@@ -732,6 +845,15 @@ utagFiller.initialize();
 <!-- END Content_UI.jspf -->
 				</div>
 			</div>
+		<!-- END ContentRecommendation_UI.jspf --><!-- END ContentRecommendation.jsp --><!-- END EMarketingSpot.jsp --><!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
+					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
+					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
+					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
+					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
+					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
+					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
+					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
+					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374785" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374785_espot" dataci_espot="4099276460824374785_HTML_LP_Lenses" id="ci_espot_4099276460824374785_HTML_LP_Lenses">
@@ -741,50 +863,10 @@ utagFiller.initialize();
 	
 					<!-- AAAAAAAAAA -->
 <div class="to-container">
-    <div class="to-first">
-        <h1 style="opacity: 0;">All about lenses</h1>
-        <h2 style="opacity: 0;">First off, what are you looking for?</h2>
-        <div class="to-selection">
-            <div class="card clicked" data-type="eyeglasses" data-lens="eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Eyeglasses</h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_1-D?$g-jpg$&amp;scl=1" alt="Eyeglasses image">
-                </div>
-                <p>Eyeglasses for your style</p>
-            </div>
-            <div class="card" data-type="intelliblue" data-lens="device_responsive_eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Device-responsive<span> eyeglasses</span></h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_2-D?$g-jpg$&amp;scl=1" alt="Device-responsive eyeglasses image">
-                </div>
-                <p>Device-proof eyeglasses that protect your eyes when you’re surfing the web</p>
-            </div>
-            <div class="card" data-type="transition" data-lens="light_responsive_eyeglasses" style="opacity: 0;">
-                <div>
-                    <h3>Light-responsive<span> eyeglasses</span></h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_3-D?$g-jpg$&amp;scl=1" alt="Light-responsive eyeglasses image">
-                </div>
-                <p>Light-responsive eyeglasses that help your eyes adjust from indoors to outdoors</p>
-            </div>
-            <div class="card" data-type="sunglasses" data-lens="sunglasses" style="opacity: 0;">
-                <div>
-                    <h3>Sunglasses</h3>
-                </div>
-                <div class="to-scale-img">
-                    <img src="https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_4-D?$g-jpg$&amp;scl=1" alt="Sunglasses image">
-                </div>
-                <p>Sunglasses for fun in the sun</p>
-            </div>
-        </div>
-    </div>
+   
     <div class="to-modal" style="display: block; opacity: 1;">
-        
+        <div class="to-content">
+          
             <div class="to-row to-main">
                 <div class="to-col to-title" style="opacity: 1;">
                     <h3>
@@ -794,12 +876,7 @@ utagFiller.initialize();
                 </div>
                 <div class="to-col to-img" style="opacity: 1;">
                     <div class="to-switcher-container" style="display: none;">
-                        <label class="to-switch">
-                            <p>Brown</p>
-                            <input type="checkbox">
-                            <span class="to-switcher"></span>
-                            <p>Grey</p>
-                        </label>
+                        
                     </div>
                     <div class="svg-container">
 
@@ -1189,7 +1266,7 @@ utagFiller.initialize();
                             	.st381{clip-path:url(#SVGID_696_);fill:none;stroke:#CC0000;stroke-width:4;stroke-miterlimit:10;}
                             </style>
                         	<g id="lenti">
-                        		<g id="eyeglasses" style="opacity: 1;">
+                        		<g id="eyeglasses" style="opacity: 0;">
                         			<path class="st0" d="M47.93,120.67c-0.01,1.19-0.02,2.39-0.02,3.61c0,130.57,94.53,136.12,104.45,136.12
                         				c10.92,0,39.7,0.83,79.17-28c45.49-33.23,100.55-98.03,100.55-150.3c0,0,0.29-2.1,0-5.53c0-0.07,0-0.14,0-0.2
                         				c0,0,3.39-23.96-24.22-42.77c-6.6-4.5-15.09-8.64-25.74-12.14c-5.81-1.91-12.26-3.63-19.39-5.11c-17.84-3.7-39.98-5.91-67.12-5.91
@@ -1389,7 +1466,7 @@ utagFiller.initialize();
                         				 M118.35,37.23c0.04,0.2-0.09,0.4-0.3,0.44c-0.2,0.04-0.4-0.09-0.44-0.3s0.09-0.4,0.3-0.44
                         				C118.11,36.89,118.31,37.03,118.35,37.23z"></path>
                         		</g>
-                        		<g id="device_responsive_eyeglasses" style="opacity: 0;">
+                        		<g id="device_responsive_eyeglasses" style="opacity: 1;">
                         			<path class="st12" d="M47.93,120.67c-0.01,1.19-0.02,2.39-0.02,3.61c0,130.57,94.53,136.12,104.45,136.12
                         				c10.92,0,39.7,0.83,79.17-28c45.49-33.23,100.55-98.03,100.55-150.3c0,0,0.29-2.1,0-5.53c0-0.07,0-0.14,0-0.2
                         				c0,0,3.39-23.96-24.22-42.77c-6.6-4.5-15.09-8.64-25.74-12.14c-5.81-1.91-12.26-3.63-19.39-5.11c-17.84-3.7-39.98-5.91-67.12-5.91
@@ -2474,7 +2551,7 @@ utagFiller.initialize();
                         	</g>
                         	<g id="info">
                         		<g id="info_eyeglasses_ComfortLight">
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<polyline class="st53" points="80.94,159.59 80.94,189.22 8.89,189.22 				"></polyline>
                         				</g>
@@ -2513,7 +2590,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<line class="st53" x1="296.89" y1="101.59" x2="372.89" y2="101.59"></line>
                         				</g>
@@ -3583,7 +3660,7 @@ utagFiller.initialize();
                         			</g>
                         		</g>
                         		<g id="info_intelliblue_ComfortLight_Performance">
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<polyline class="st53" points="90.89,63.59 90.89,93.22 8.89,93.22 				"></polyline>
                         				</g>
@@ -3622,7 +3699,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<line class="st53" x1="286.89" y1="41.59" x2="372.89" y2="41.59"></line>
                         				</g>
@@ -3661,7 +3738,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="113.89,221.59 113.89,190 8.89,190 			"></polyline>
                         				<g>
                         					<defs>
@@ -3698,7 +3775,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="235.89,200.59 235.89,179.27 372.89,179.27 			"></polyline>
                         				<g>
                         					<defs>
@@ -3735,7 +3812,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="70.94,119.59 70.94,149.22 8.89,149.22 			"></polyline>
                         				<g>
                         					<defs>
@@ -3772,7 +3849,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="301.89,98.59 301.89,129.59 372.89,129.59 			"></polyline>
                         				<g>
                         					<defs>
@@ -5606,41 +5683,41 @@ utagFiller.initialize();
                         	</g>
                         </svg>
 
-                    <p class="right" style="top:65%; right:77%;">UV protection</p><p class="left" style="top:35%; left:76%;">Scratch resistant</p></div>
+                    <p class="right" style="top:32%; right:77%;"><trong>Blue light protection</trong></p><p class="right" style="top:51%; right:77%;">UV protection</p><p class="right" style="top:65%; right:77%;">Thin &amp; lightweight</p><p class="left" style="top:14.5%; left:76%;">Glare resistant</p><p class="left" style="top:44.5%; left:76%;">Scratch &amp; glare resistant</p><p class="left" style="top:61.5%; left:76%;">Hi-definition clarity</p></div>
                 </div>
                 <div class="to-col to-text" style="opacity: 1;">
-                    <p><strong>ComfortLight lenses</strong><br><br>Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.</p>
+                    <p><strong>ComfortLight Performance + IntelliBlue</strong><br>Our hi-index lenses offer the sharpest visual experience, as well as our thinnest and lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you. <br> <br> Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices.</p>
+                    
                 </div>
             </div>
         </div>
 
         <div class="to-sub-selector" style="opacity: 1;">
-            <div style="opacity: 1;" data-material="ComfortLight" class="current">
-               <a href="/ComfortLight1"> <div>
-                    <h4>ComfortLight</h4>  </a>
+            <div data-material="ComfortLight" class="" style="opacity: 1;">
+			<a href="/ComfortLight2"><div>
+				 <h4>ComfortLight + IntelliBlue</h4></a>
                     <p>I’m looking for something standard that I could use every day or as a spare pair.</p>
                     <div class="line"></div>
-			 </div>
-              
+                </div>
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Active">
-			<a href="/ComfortLightActive1">   <div>
-               <h4>ComfortLight Active</h4> </a>
+            <div data-material="ComfortLight Active" style="opacity: 1;">
+			<a href="/ComfortLightActive2">  <div>
+                    <h4>ComfortLight Active + IntelliBlue</h4></a>
                     <p>I want lenses that are perfect for my on-the-go, active lifestyle.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Performance">
-            <a href='/ComfortLightPerformance1'>   <div>
-                    <h4>ComfortLight Performance</h4></a>
+            <div data-material="ComfortLight Performance" class="current" style="opacity: 1;">
+			<a href='/ComfortLightPerformance2'> <div>
+                    <h4>ComfortLight Performance + IntelliBlue</h4></a>
                     <p>I’m looking for something sleek, even with a strong prescription.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="RayBan">
-            <a href='/rayban1'>  <div>
-                   <h4> <img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
-                    <p>I want something high-performing and iconic.</p>
+            <div data-material="RayBan" style="opacity: 1;">
+			<a href='/rayban2'>  <div>
+                    <h4><img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
+                    <p>I want something high-performing and iconic with IntelliBlue technology.</p>
                     <div class="line"></div>
                 </div>
             </div>
@@ -5651,11 +5728,1410 @@ utagFiller.initialize();
 
 </div>
 
-                    </div>
+				
+	
+</div>
+
+<!-- END Content_UI.jspf -->
 				</div>
 			</div>
 	
-			</body>
+			<div id="contentRecommendationWidget_1_-2012_4099276460824374786" class="contentRecommendationWidget">
+				
+				<div dataci_toolbar="4099276460824374786_espot" dataci_espot="4099276460824374786_JS_LP_Lenses" id="ci_espot_4099276460824374786_JS_LP_Lenses">
+					<!-- BEGIN Content_UI.jspf -->
+<div class="left_espot">
+	
+	
+					
+<!-- AAAAAAAAAA -->
+<script type="text/javascript">
+
+    var lenses = {
+        "uses" : {
+            "Eyeglasses" : {
+                "type" : "eyeglasses",
+                "lens" : "eyeglasses",
+                "img" : "https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_1-D?$g-jpg$&scl=1",
+                "alt" : "Eyeglasses image",
+                "text" : "Eyeglasses for your style"
+            },
+            "Device-responsive<span> eyeglasses</span>" : {
+                "type" : "intelliblue",
+                "lens" : "device_responsive_eyeglasses",
+                "img" : "https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_2-D?$g-jpg$&scl=1",
+                "alt" : "Device-responsive eyeglasses image",
+                "text" : "Device-proof eyeglasses that protect your eyes when you’re surfing the web"
+            },
+            "Light-responsive<span> eyeglasses</span>" : {
+                "type" : "transition",
+                "lens" : "light_responsive_eyeglasses",
+                "img" : "https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_3-D?$g-jpg$&scl=1",
+                "alt" : "Light-responsive eyeglasses image",
+                "text" : "Light-responsive eyeglasses that help your eyes adjust from indoors to outdoors"
+            },
+            "Sunglasses" : {
+                "type" : "sunglasses",
+                "lens" : "sunglasses",
+                "img" : "https://s7d5.scene7.com/is/image/TargetOptical/TO-2019-Lens_Options_4-D?$g-jpg$&scl=1",
+                "alt" : "Sunglasses image",
+                "text" : "Sunglasses for fun in the sun"
+            }
+        },
+
+        "materials" : {
+
+            "eyeglasses" : {
+
+                "ComfortLight" : {
+                    "title" : "ComfortLight",
+                    "desc" : "I’m looking for something standard that I could use every day or as a spare pair.",
+                    "text" : "<strong>ComfortLight lenses</strong><br /><br />Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_ComfortLight_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "35",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "ComfortLight Active" : {
+                    "title" : "ComfortLight Active",
+                    "desc" : "I want lenses that are perfect for my on-the-go, active lifestyle.",
+                    "text" : "<strong>ComfortLight Active</strong><br />Our most popular selection, these premium polycarbonate lenses are light, durable, and perfect for kids.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_ComfortLightActive_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "ComfortLight Performance" : {
+                    "title" : "ComfortLight Performance",
+                    "desc" : "I’m looking for something sleek, even with a strong prescription.",
+                    "text" : "<strong>ComfortLight Performance</strong><br />Our hi-index lenses offer the sharpest visual experience, as well as our thinnest and lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_ComfortLightPerformance_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Hi-Definition clarity",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "RayBan" : {
+                    "title" : "<img src='https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&scl=1' alt='logo Ray-ban'>",
+                    "desc" : "I want something high-performing and iconic.",
+                    "text" : "<strong>Ray-Ban Authentic Lenses</strong><br />Get the true Ray-Ban experience with our Ray-Ban Authentic premium polycarbonate lenses. These stylish, hi-definition lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function.",
+                    "link" : "Shop Ray-Ban eyeglasses",
+                    "href" : "/to-us/ray-ban",
+                    "data-element-id" : "D_Lens_RayBan_cta",
+                    "data-description" : "Ray Ban",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Ray-Ban signature</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact & scratch <br/>resistant",
+                            "top" : "63",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Hi-definition clarity ",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare & smudge<br/> resistant",
+                            "top" : "59",
+                            "left" : "76"
+                        }
+                    ]
+                }
+
+            },
+
+            "intelliblue" : {
+
+                "ComfortLight" : {
+                    "title" : "ComfortLight + IntelliBlue",
+                    "desc" : "I’m looking for something standard that I could use every day or as a spare pair.",
+                    "text" : "<strong>ComfortLight + IntelliBlue </strong><br />Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.<br/><br/>Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_IntelliblueComfortLight_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Blue light protection</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "35",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "ComfortLight Active" : {
+                    "title" : "ComfortLight Active + IntelliBlue",
+                    "desc" : "I want lenses that are perfect for my on-the-go, active lifestyle.",
+                    "text" : "<strong>ComfortLight Active + IntelliBlue</strong><br />Our most popular selection, these premium polycarbonate lenses are light, durable, and perfect for kids.<br /><br />Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices. ",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_IntelliblueComfortLightActive_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Blue light protection</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "61.5",
+                            "left" : "76"
+                        },
+                    ]
+                },
+                "ComfortLight Performance" : {
+                    "title" : "ComfortLight Performance + IntelliBlue",
+                    "desc" : "I’m looking for something sleek, even with a strong prescription.",
+                    "text" : "<strong>ComfortLight Performance + IntelliBlue</strong><br />Our hi-index lenses offer the sharpest visual experience, as well as our thinnest and lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you. <br/> <br/> Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_IntelliblueComfortLightPerformance_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<trong>Blue light protection</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Hi-definition clarity",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "RayBan" : {
+                    "title" : "<img src='https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&scl=1' alt='logo Ray-ban'>",
+                    "desc" : "I want something high-performing and iconic with IntelliBlue technology.",
+                    "text" : "<strong>Ray-Ban Authentic Lenses + IntelliBlue</strong><br />Get the true Ray-Ban experience with our Ray-Ban Authentic premium polycarbonate lenses. These stylish, hi-definition lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function. <br/><br/>Add IntelliBlue technology to your lenses and reduce your exposure to the harmful blue light emitted by the sun and everyday digital devices. ",
+                    "link" : "Shop Ray-Ban eyeglasses",
+                    "href" : "/to-us/ray-ban",
+                    "data-element-id" : "D_Lens_IntelliblueRayBan_cta",
+                    "data-description" : "Ray Ban",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Ray-Ban signature</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "<strong>Blue light protection</strong>",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection & scratch resistant",
+                            "top" : "63",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Hi-definition clarity",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare, smudge &<br/> impact resistant",
+                            "top" : "59",
+                            "left" : "76"
+                        }
+                    ]
+                }
+
+            },
+
+            "transition" : {
+
+                "ComfortLight" : {
+                    "title" : "ComfortLight + Transitions&reg",
+                    "desc" : "I’m looking for something standard that I could use every day or as a spare pair.",
+                    "text" : "<strong>ComfortLight + Transitions&reg</strong><br />Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.<br/><br/>Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_transitionComfortLight_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Light-responsive tint</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "35",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "ComfortLight Active" : {
+                    "title" : "ComfortLight Active + Transitions&reg;",
+                    "desc" : "I want lenses that are perfect for my on-the-go, active lifestyle.",
+                    "text" : "<strong>ComfortLight Active + Transitions&reg</strong><br/>Our most popular selection, these premium polycarbonate lenses are light, durable, and perfect for kids.<br /><br />Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasses",
+                    "data-element-id" : "D_Lens_transitionComfortLighActive_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Light-responsive tint</strong> ",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "51",
+                            "right" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+
+                    ]
+                },
+                "ComfortLight Performance" : {
+                    "title" : "ComfortLight Performance + Transitions&reg;",
+                    "desc" : "I’m looking for something sleek, even with a strong prescription.",
+                    "text" : "<strong>ComfortLight Performance + Transitions&reg</strong><br />Our hi-index lenses offer the sharpest visual experience, as well as our thinnest and lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you. <br/> <br/>Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.",
+                    "link" : "Shop eyeglasses",
+                    "href" : "/to-us/eyeglasse",
+                    "data-element-id" : "D_Lens_transitionComfortLighPerformance_cta",
+                    "data-description" : "eyeglasses",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Light-responsive tint</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protectiont",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Hi-definition clarity",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "RayBan" : {
+                    "title" : "<img src='https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&scl=1' alt='logo Ray-ban'>",
+                    "desc" : "I want something high-performing and iconic with Transitions® technology.",
+                    "text" : "<strong>Ray-Ban Authentic Lenses + Transitions®</strong><br />Get the true Ray-Ban experience with our Ray-Ban Authentic premium polycarbonate lenses. These stylish, hi-definition lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function. <br /><br />Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.",
+                    "link" : "Shop Ray-Ban eyeglasses",
+                    "href" : "/to-us/ray-ban",
+                    "data-element-id" : "D_Lens_transitionRayBan_cta",
+                    "data-description" : "Ray Ban",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Ray-Ban signature</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "<strong>Light-responsive tint</strong>",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection &<br/> scratch resistant",
+                            "top" : "63",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Hi-definition clarity",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare, smudge &<br/> impact resistant",
+                            "top" : "59",
+                            "left" : "76"
+                        }
+                    ]
+                }
+
+            },
+
+            "sunglasses" : {
+
+                "SunVision" : {
+                    "title" : "SunVision",
+                    "desc" : "I’m looking for something standard that I could use every day or as a spare pair.",
+                    "text" : "<strong>SunVision</strong><br />These dependable plastic lenses guard your eyes from harmful rays.",
+                    "link" : "Shop sunglasses",
+                    "href" : "/to-us/sunglasses",
+                    "data-element-id" : "D_Lens_SunVision_cta",
+                    "data-description" : "sunglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "35",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "SunVision Active" : {
+                    "title" : "SunVision Active",
+                    "desc" : "I want lenses that are perfect for my on-the-go, active lifestyle.",
+                    "text" : "<strong>SunVision Active</strong><br />Our most popular selection, these polarized premium polycarbonate lenses are light, durable, and shield your eyes from the sun’s blinding glare.",
+                    "link" : "Shop sunglasses",
+                    "href" : "/to-us/sunglasses",
+                    "data-element-id" : "D_Lens_SunVisionActive_cta",
+                    "data-description" : "sunglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Impact resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Blue light protection",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "SunVision Performance" : {
+                    "title" : "SunVision Performance",
+                    "desc" : "I’m looking for something sleek, even with a strong prescription.",
+                    "text" : "<strong>SunVision Performance</strong><br />Our polarized hi-index lenses shield your eyes from the sun’s blinding glare, while offering our sharpest visual experience and thinnest, lightest weight construction. Have a strong prescription and hate bulky glasses? These are for you.",
+                    "link" : "Shop sunglasses",
+                    "href" : "/to-us/sunglasses",
+                    "data-element-id" : "D_Lens_SunVisionPerformance_cta",
+                    "data-description" : "sunglasses",
+                    "elements" : [
+                        {
+                            "text" : "UV protection",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Scratch resistant",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Glare resistant",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Smudge resistant",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Hi-Definition clarity",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                },
+                "RayBan" : {
+                    "title" : "<img src='https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&scl=1' alt='logo Ray-ban'>",
+                    "desc" : "I want something high-performing and iconic.",
+                    "text" : "<strong>Ray-Ban Authentic Lenses</strong><br />Get the true Ray-Ban experience with our Ray-Ban Authentic polarized premium polycarbonate lenses. These stylish, glare-resistant lenses sport the iconic Ray-Ban logo and provide the perfect combination of form and function.",
+                    "link" : "Shop Ray-Ban sunglasses",
+                    "href" : "/to-us/ray-ban",
+                    "data-element-id" : "D_Lens_RayBan_cta",
+                    "data-description" : "Ray Ban",
+                    "elements" : [
+                        {
+                            "text" : "<strong>Ray-Ban signature</strong>",
+                            "top" : "32",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Blue light protection",
+                            "top" : "51",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "UV protection",
+                            "top" : "65",
+                            "right" : "77"
+                        },
+                        {
+                            "text" : "Hi-definition clarity ",
+                            "top" : "14.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Thin & lightweight",
+                            "top" : "44.5",
+                            "left" : "76"
+                        },
+                        {
+                            "text" : "Scratch & glare resistant",
+                            "top" : "61.5",
+                            "left" : "76"
+                        }
+                    ]
+                }
+
+            }
+        }
+    }
+
+
+
+	var equivalence = [
+		["sun", "eye"],
+		["SunVision", "ComfortLight"],
+		["SunVision Active", "ComfortLight Active"],
+		["SunVision Performance", "ComfortLight Performance"]
+	];
+
+	var getEquivalent = function(word) {
+		for (var i = 0; i < equivalence.length; i++) {
+			for (var ii = 0; ii < equivalence[i].length; ii++) {
+				equivalence[i][ii];
+				if (equivalence[i][ii] == word) {
+					if (ii == 0) {
+						return equivalence[i][1];
+					} else {
+						return equivalence[i][0];
+					}
+				}
+			}
+
+		}
+	}
+
+    // stampa da json blocchi prima sezione e elementi ddm
+    var iii = 0;
+    for (uses in lenses["uses"]) {
+
+		$('.to-selection').children().eq(iii).find('h3').html(uses);
+		$('.to-selection').children().eq(iii).attr('data-type', lenses["uses"][uses]["type"]);
+		$('.to-selection').children().eq(iii).attr('data-lens', lenses["uses"][uses]["lens"]);
+		$('.to-selection').children().eq(iii).find('p').html(lenses["uses"][uses]["text"]);
+		$('.to-selection').children().eq(iii).find('img').attr("src", lenses["uses"][uses]["img"]);
+		$('.to-selection').children().eq(iii).find('img').attr("alt", lenses["uses"][uses]["alt"]);
+
+		$('.to-modal .to-selector').children().eq(iii + 1).find('p').html(uses);
+		$('.to-modal .to-selector').children().eq(iii + 1).attr('data-type', lenses["uses"][uses]["type"]);
+		$('.to-modal .to-selector').children().eq(iii + 1).attr('data-lens', lenses["uses"][uses]["lens"]);
+
+        iii++;
+    }
+
+    // riordina elementi ddm
+    var changeDDM = function(lens){
+        $('.to-modal .to-selector > div').show();
+        $('.to-modal .to-selector > div').removeClass('current');
+        $('.to-modal .to-selector > :first-child p').html( $('.to-modal .to-selector > [data-lens="'+lens+'"] p').html() );
+        $('.to-modal .to-selector [data-lens="'+lens+'"]').hide();
+        $('.to-modal .to-selector [data-lens="'+lens+'"]').addClass('current');
+    }
+
+    // stampa le tab dei materiali sotto
+    var printTab = function(type, lens, current){
+
+        var ii = 0;
+        for (material in lenses["materials"][type]) {
+
+            $('.to-sub-selector').children().eq(ii).attr('data-material', material);
+			$('.to-sub-selector').children().eq(ii).find('h4').html(lenses["materials"][type][material]["title"]);
+			$('.to-sub-selector').children().eq(ii).find('p').html(lenses["materials"][type][material]["desc"]);
+			if (current == undefined && ii == 0) {
+				$('.to-sub-selector').children().eq(ii).addClass('current');
+
+                printMain(type, lens, current, material);
+			} else if (current != undefined && (current == material || current == getEquivalent(material))) {
+				if (current == "RayBan") {
+					$('.to-modal').addClass('rb-black');
+				}else {
+					$('.to-modal').removeClass('rb-black');
+				}
+                $('.to-sub-selector > div').removeClass('current');
+                $('.to-sub-selector').children().eq(ii).addClass('current');
+                printMain(type, lens, current, material);
+			}
+			ii++;
+		}
+    }
+
+    // stampa lenti, info e paragrafo info
+    var printMain = function(type, lens, current, material){
+        $('#lens #lenti > *, #lens #info > * > *').css('opacity', 0);
+
+        // console.log($('.to-main > .to-text > p'));
+        // console.log(lenses);
+        // console.log(lenses["materials"]);
+        // console.log(lenses["materials"][type]);
+        // console.log(lenses["materials"][type][material]);
+        // console.log(lenses["materials"][type][material]["text"]);
+
+        $('.to-main > .to-text > p').html(lenses["materials"][type][material]["text"]);
+        $('.to-main > .to-text a').html(lenses["materials"][type][material]["link"]);
+        $('.to-main > .to-text a').attr('href', lenses["materials"][type][material]["href"]);
+        $('.to-main > .to-text a').attr('data-description', lenses["materials"][type][material]["data-description"]);
+        $('.to-main > .to-text a').attr('data-element-id', lenses["materials"][type][material]["data-element-id"]);
+
+        // if (lens == "sunglasses" || lens == "light_responsive_eyeglasses") {
+        //     $('.to-modal #lens #lenti #' + lens + '_brown').css('opacity', 1);
+        // } else {
+        //     $('.to-modal #lens #lenti #' + lens + ' ').css('opacity', 1);
+        // }
+
+        if (current == "RayBan") {
+            $('.to-modal').addClass('rb-black');
+            $('.to-sub-selector > :last-child h4 img').attr('src', 'https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_white_2X?fmt=png-alpha&scl=1');
+            var ifrb = '_rayban';
+
+        }else {
+            $('.to-modal').removeClass('rb-black');
+            $('.to-sub-selector > :last-child h4 img').attr('src', 'https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?fmt=png-alpha&scl=1');
+            var ifrb = '';
+        }
+
+        if (lens == "sunglasses" && current == "RayBan") {
+             $('.to-switch > :last-child').html('Green');
+        } else {
+            $('.to-switch > :last-child').html('Grey');
+        }
+
+        $('#lens #info #info_' + type + '_' + material.replace(/ /g,"_") + ' > *').css('opacity', 1);
+
+        if (lens == "sunglasses" || lens == "light_responsive_eyeglasses") {
+        // if (lens == "light_responsive_eyeglasses") {
+            $('.to-switcher-container').show();
+
+            if ($(".to-switcher-container input").attr('checked') != undefined) {
+                 $('#lens #lenti #' + lens + ifrb +'_gray').css('opacity', 1);
+            } else {
+                 $('#lens #lenti #' + lens + ifrb + '_brown').css('opacity', 1);
+            }
+        } else {
+            $('.to-switcher-container').hide();
+            $('.to-modal #lens #lenti #' + lens + ifrb + ' ').css('opacity', 1);
+        }
+
+        $('.to-main > .to-img  .svg-container p').remove();
+        var elements = lenses["materials"][type][material]["elements"];
+
+        $.each(lenses["materials"][type][material]["elements"], function(index, value) {
+            if (value["right"] == undefined) {
+                $('.to-main > .to-img .svg-container').append('<p class="left" style="top:'+value["top"]+'%; left:'+value["left"]+'%;">'+value["text"]+'</p>');
+            }else {
+                $('.to-main > .to-img .svg-container').append('<p class="right" style="top:'+value["top"]+'%; right:'+value["right"]+'%;">'+value["text"]+'</p>');
+            }
+
+        });
+
+    }
+
+	var printModal = function(level, type, lens, current) {
+
+
+        if (level == "sw") {
+
+            changeDDM(lens);
+            printTab(type, lens, current);
+
+        } else {
+
+
+            $('.to-ddm').fadeTo( 200, 0 );
+            $('.to-main > .to-title').delay(50).fadeTo( 200, 0 );
+            $('.to-sub-selector').delay(100).fadeTo( 200, 0 );
+            $('.to-sub-selector > :nth-child(1)').delay(100).fadeTo( 200, 0 );
+            $('.to-sub-selector > :nth-child(2)').delay(120).fadeTo( 200, 0 );
+            $('.to-sub-selector > :nth-child(3)').delay(140).fadeTo( 200, 0 );
+            $('.to-sub-selector > :nth-child(4)').delay(160).fadeTo( 200, 0 );
+            $('.to-main > .to-text').delay(210).fadeTo( 200, 0 );
+            $('.to-main > .to-img').delay(260).fadeTo( 200, 0 );
+            // $('.to-modal > .to-content').delay(320).fadeTo( 200, 0 );
+
+            setTimeout(function(){
+
+                changeDDM(lens);
+                printTab(type, lens, current);
+
+                $('.to-ddm').fadeTo( 200, 1 );
+                $('.to-main > .to-title').delay(50).fadeTo( 200, 1 );
+                $('.to-sub-selector').delay(100).fadeTo( 200, 1 );
+                $('.to-sub-selector > :nth-child(1)').delay(100).fadeTo( 200, 1 );
+                $('.to-sub-selector > :nth-child(2)').delay(120).fadeTo( 200, 1 );
+                $('.to-sub-selector > :nth-child(3)').delay(140).fadeTo( 200, 1 );
+                $('.to-sub-selector > :nth-child(4)').delay(160).fadeTo( 200, 1 );
+                $('.to-main > .to-text').delay(210).fadeTo( 200, 1 );
+                $('.to-main > .to-img').delay(260).fadeTo( 200, 1 );
+                // $('.to-modal > .to-content').delay(320).fadeTo( 200, 1 );
+
+
+            }, 520);
+
+        }
+
+	}
+
+
+
+
+	$(document).ready(function(){
+        $(window).on('load', function() {
+            if ($(window).width() > 1024) {
+                $('html, body').stop().animate({
+                    'scrollTop': 141
+                }, 600);
+            }
+        });
+
+
+		$('.to-first > .to-selection > .card').click(function(){
+            if ($(window).width() > 1024) {
+                $('html, body').stop().animate({
+                    'scrollTop': 141
+                }, 600);
+            }
+
+			$(this).addClass('clicked');
+			$('.to-first > h1').fadeTo( 200, 0 );
+			$('.to-first > h2').delay(50).fadeTo( 200, 0 );
+
+			$('.to-first > .to-selection > .card:not(.clicked)').each( function(i, v) {
+				$(this).delay( (i + 2) * 50 ).fadeTo( 200, 0 );
+			});
+
+			$('.to-first > .to-selection > .card.clicked').delay(250).fadeTo( 200, 0 );
+
+			$('.to-modal').show();
+			$('.to-modal').delay(300).fadeTo( 1000, 1 );
+
+			printModal("first", $(this).attr('data-type'), $(this).attr('data-lens'));
+
+
+		});
+
+
+		$('.to-ddm > .to-selector').click(function(){
+			if ( $('.to-ddm > .to-selector').hasClass("clicked") ) {
+				$(this).removeClass("clicked");
+                $('#outer').remove();
+			}else {
+				$('.to-ddm > .to-selector').addClass("clicked");
+				$('.to-ddm > .to-selector').css('z-index', '201');
+				$(this).parent().prepend('<div id="outer"></div>');
+
+				$('#outer').click(function() {
+					if ($('.to-ddm > .to-selector').hasClass("clicked")) {
+						$(this).parent().find('.to-selector').removeClass("clicked");
+						$(this).remove();
+					}
+				});
+			}
+		});
+
+        $('.to-ddm > .to-selector > :first-child').click(function(){
+			if ( $('.to-ddm > .to-selector').hasClass("clicked") ) {
+
+                $(this).parent().find('.to-selector').removeClass("clicked");
+
+				$('#outer').remove();
+
+			}
+		});
+
+		$('.to-ddm > .to-selector > div:not(:first-child)').click(function(){
+			if ( $('.to-ddm > .to-selector').hasClass("clicked") ) {
+
+                changeDDM($(this).attr('data-lens'));
+
+				$('#outer').remove();
+
+				printModal("ddm", $(this).attr('data-type'), $(this).attr('data-lens'), $('.to-sub-selector .current').attr('data-material'));
+			}
+		});
+
+
+        $('.to-modal .to-sub-selector > div').click(function(){
+
+            if (!$(this).hasClass('current')) {
+                $(this).addClass('current');
+
+                var type = $('.to-modal .to-selector > .current').attr('data-type');
+                var lens = $('.to-modal .to-selector > .current').attr('data-lens');
+
+                var material = $(this).attr('data-material');
+
+                printModal("sub", type, lens, material);
+            }
+
+
+		});
+
+        $('.to-modal .to-sub-selector > div').on('click touchstart', function(){
+
+            if (!$(this).hasClass('current')) {
+                $(this).addClass('current');
+
+                var type = $('.to-modal .to-selector > .current').attr('data-type');
+                var lens = $('.to-modal .to-selector > .current').attr('data-lens');
+
+                var material = $(this).attr('data-material');
+
+                printModal("sub", type, lens, material);
+            }
+
+
+		});
+
+        $(".to-switcher-container input").change(function() {
+
+            var type = $('.to-modal .to-selector > .current').attr('data-type');
+			var lens = $('.to-modal .to-selector > .current').attr('data-lens');
+
+			var material = $('.to-sub-selector .current').attr('data-material');
+
+            printModal("sw", type, lens, material);
+
+        });
+
+        $( window ).on( "orientationchange", function( event ) {
+            if (window.orientation == 0) {
+                $('body').append('<div class="to-no-landscape" style="z-index: 900; background: #fff; position: fixed; top:0; left: 0; bottom: 0; right: 0; display: flex; align-items: center; justify-content: center; padding: 40px;">\
+                    Please turn your device orientation to landscape mode for a better experience.\
+                </div>');
+                $('html, body').css('overflow', 'hidden');
+            }else {
+                $('.to-no-landscape').remove();
+                $('html, body').css('overflow', 'inherit');
+            }
+
+        });
+    });
+    
+</script>
+
+				
+	
+</div>
+
+<!-- END Content_UI.jspf -->
+				</div>
+			</div>
+		<!-- END ContentRecommendation_UI.jspf --><!-- END ContentRecommendation.jsp --><!-- END EMarketingSpot.jsp --><!-- emsName: JS_LP_Lenses -->
+		</div>
+	</div>
+</div>
+
+<!-- END StaticContentPageDisplayContainer.jsp --> 
+						</div> 
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  end Commerce composer content -->
+	</div>
+</div>			
+			
+		
+	<script type="text/javascript">  
+		utagFiller.setPage("Static", "Eyeglass Lenses, Sunglass Lenses, Glasses Lenses | Target Optical", "");
+	</script>
+							<input type="hidden" id="isOCRMobile" value="false" autocomplete="off">
+							<!-- Content End -->
+						
+						<div class="footerPush"></div>
+					</div>
+					<!-- Main Content End -->
+				</div>
+			</div> 
+			
+
+           
+
+          </div>
+        </div>
+
+</footer>
+
+<div id="FSModal" class="hide">
+	<!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: FACESHAPE_MODAL_ESPOT -->
+
+<div class="genericESpot" id="WC_ContentAreaESpot_div_1_FACESHAPE_MODAL_ESPOT_263469">
+
+            <div class="ad" id="ad_263469">
+        
+            </div>
+        
+
+
+</div>
+
+<!-- END ContentAreaESpot.jsp -->
+</div>
+
+<div id="tah-modal" class="hide">
+	<!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: HOME_TRY_ON_MODAL_DESKTOP_ESPOT -->
+
+<div class="genericESpot" id="WC_ContentAreaESpot_div_1_HOME_TRY_ON_MODAL_DESKTOP_ESPOT_271468">
+
+
+
+</div>
+
+<!-- END ContentAreaESpot.jsp -->
+</div>
+
+
+
+
+<!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: INTERRUPTER_MODAL_DESKTOP_ESPOT -->
+
+
+
+
+
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: DISCOUNTED_PRICES_JAVASCRIPT_SNIPPET_ESPOT -->
+
+
+
+            </div>
+        
+
+
+</div>
+
+<!-- END ContentAreaESpot.jsp -->
+		</main>
+	<!-- BEGIN DevelopersGlobalEspotFooter.jspf --><!-- BEGIN ContentAreaESpot.jsp -->
+
+<script type="text/javascript" src="/wcsstore/TargetOpticalStorefrontAssetStore/javascript/CatalogArea/CatalogEntryThumbnailDisplay.js"></script>
+
+<!-- ContentAreaESpot.jsp - emsName: __DEVELOPERS_DESKTOP_FOOTER_ESPOT -->
+
+<div class="genericESpot" id="WC_ContentAreaESpot_div_1___DEVELOPERS_DESKTOP_FOOTER_ESPOT_716259663">
+
+            <div class="ad" id="ad_716259663">
+        <script>
+
+    /** Content of espot __OMNYS_DEVELOPERS_DESKTOP_FOOTER_ESPOT ***/
+    /*
+     * example:
+     * EspotManagerJS.addFunction('LUXTO-XXX', function() {
+     * 		$(document).ready(function() {
+     * 			//code to execute on document ready
+     * 		});
+     * });
+     */
+
+     //TODP-2261: Hide type section filter
+     $('#facet-type').hide();
+
+		
+	EspotManagerJS.addFunction('pdp-cl-prescription', function() {
+		$(document).ready(function() {
+			if($("#contactLensesForm").length > 0)
+			{
+				getProductInformation($("#contactLensesForm input#productId")[0].defaultValue);
+			}
+		});
+	});
+	
+	EspotManagerJS.addFunction('cart-change-description-method-ship', function() {
+		$(document).ready(function() {
+			if($(".shipping_method").length > 0)
+			{
+				var prescription = $(".shipping_method .info")[0];
+				$(prescription).text("- Prescription eyewear requires 5 days processing plus shipping.");
+				var nonprescription = $(".shipping_method .info")[1];
+				$(nonprescription).text("- Non-prescription eyewear requires (up-to) 2 days processing plus shipping.");
+				var contact = $(".shipping_method .info")[2];
+				$(contact).text("- Contact lenses require (up-to) 2 days of processing plus shipping.");
+			}
+		});
+	});
+	
+	// Hide second level if empty
+	EspotManagerJS.addFunction('hide-second-level', function() {
+		if($( ".to-table-row.list-lenses" ).length > 0)
+		{
+			$( ".to-table-row.list-lenses" ).each(function() {
+				
+				if($(this).find('.to-table-row').length == 0)
+					$(this).css('display', 'none');
+			});
+		}
+	});
+	
+	EspotManagerJS.addFunction('change-load-more-function', function() {
+		$(document).ready(function() {
+			if(categoryDisplayJS.loadMoreFrameResultsDesktop.length > 0)
+			{
+				categoryDisplayJS.loadMoreFrameResultsDesktop = function(categoryId, pageSize){
+					console.debug("new");
+					var searchFilterType = decodeURIComponent(getUrlParameter('searchFilterType'));
+					var currentSearchTerm = $("#currentSearchTerm").val();
+					console.debug("categoryId: " + categoryId + ": " + currentSearchTerm + ":" + facetParameterValue);		
+					var isClicked = parseInt($("#loadMorePressedFlag").val());
+
+					if (isClicked == 0) {
+						$("#loadMorePressedFlag").val(1);
+						
+						var searchType = '100';
+						if(document.location.pathname.match(/clearance$/) || document.location.pathname.match(/seemore$/))
+							searchType = '0';
+						
+						var resultsLeft = parseInt($("#resultsLeft").val());
+						var beginIndexCount = parseInt($("#beginIndexCount").val());
+						console.debug("beginIndexCount: " + beginIndexCount + ":" + pageSize + ":" + resultsLeft + ":" + categoryId + " : " + globalFacet + ": " + globalOrder);
+						
+						if(resultsLeft > 0){
+							var params = {};
+							//if($("#filterByPrice").val()=='true'){
+							if(searchFilterType=='priceFilter'){
+								console.debug("priceFilter: " );
+								var facetPrice = '';
+								if(typeof globalFacet != 'undefined' && globalFacet.indexOf("price_USD") > -1){
+									var facetCookieVal = decodeURIComponent(read_cookie('facets'));
+									if ((facetCookieVal != null) && (facetCookieVal.indexOf('PR:') != -1)) 
+									{
+										console.log("price cookie found");					       
+										var priceByStore = 'price_USD';
+										var val1 = (facetCookieVal.split('PR:'))[1].split('|');
+										var val2 = val1[0].split('-');
+										var lowerSelected = val2[0];
+										var upperSelected = val2[1];
+										if (upperSelected == '*') {
+											facetPrice = priceByStore + ':({' + lowerSelected + ' ' + upperSelected + '})';
+										} else {
+											facetPrice = priceByStore + ':({' + lowerSelected + ' ' + upperSelected + '} ' + upperSelected + ')';
+										}
+										//console.log("facetPrice:" + facetPrice);
+										facetPrice = escape(facetPrice);					        
+										//console.log("facetPrice:" + facetPrice);					     				        
+									} else {
+										facetPrice = globalFacet;
+										params = {
+										storeId:		constants.ajaxParams['storeId'],
+										catalogId:		constants.ajaxParams['catalogId'],
+										langId:			constants.ajaxParams['langId'],
+										beginIndex:		beginIndexCount,
+										categoryId: 	categoryId,
+										pageSize: 		pageSize,
+										searchType:		searchType,
+										facet:			globalFacet,
+										orderBy:		globalOrder
+									};
+									}					
+								} else {
+									console.log("price_USD not found");
+									facetPrice = globalFacet;
+									params = {
+										storeId:		constants.ajaxParams['storeId'],
+										catalogId:		constants.ajaxParams['catalogId'],
+										langId:			constants.ajaxParams['langId'],
+										beginIndex:		beginIndexCount,
+										categoryId: 	categoryId,
+										pageSize: 		pageSize,
+										searchType:		searchType,
+										facet:			globalFacet,
+										orderBy:		globalOrder
+									};
+								}					
+								//if(currentSearchTerm != '' && currentSearchTerm != 'undefined'){					
+								 
+								 params = {
+										storeId:		constants.ajaxParams['storeId'],
+										catalogId:		constants.ajaxParams['catalogId'],
+										langId:			constants.ajaxParams['langId'],
+										beginIndex:		beginIndexCount,
+										categoryId: 	categoryId,
+										searchTerm:		currentSearchTerm,
+										pageSize: 		pageSize,
+										searchType:		searchType,							
+										facet:			facetPrice,
+										orderBy:		globalOrder
+									};
+								 
+							}
+							else if(currentSearchTerm != '' && currentSearchTerm != 'undefined'){
+								
+								 params = {
+										storeId:		constants.ajaxParams['storeId'],
+										catalogId:		constants.ajaxParams['catalogId'],
+										langId:			constants.ajaxParams['langId'],
+										beginIndex:		beginIndexCount,
+										categoryId: 	categoryId,
+										searchTerm:		currentSearchTerm,
+										pageSize: 		pageSize,
+										searchType:		searchType,
+										facet:			facetParameterValue,
+										metaData:		globalMetadata,
+										orderBy:		globalOrder
+									};
+							} else {
+								//facetParameterValue = "(((ads_f2_ntk_cs:\"Merona\" OR ads_f2_ntk_cs:\"Mossimo Mens\"))AND(ads_f6_ntk_cs:\"Men\"))";
+								 params = {
+										storeId:		constants.ajaxParams['storeId'],
+										catalogId:		constants.ajaxParams['catalogId'],
+										langId:			constants.ajaxParams['langId'],
+										beginIndex:		beginIndexCount,
+										categoryId: 	categoryId,
+										pageSize: 		pageSize,
+										searchType:		searchType,
+										//facet:			globalFacet,
+										facet:			facetParameterValue,
+										metaData:		globalMetadata,							
+										orderBy:		globalOrder
+									};
+							}			 
+							console.debug("searchType" + searchType + "globalFacet: " + globalFacet + "globalOrder: " + globalOrder + " storeId:" + constants.ajaxParams['storeId'] + " catalog:" + constants.ajaxParams['catalogId'] + " lang:" + constants.ajaxParams['langId'] + " begin index :" + beginIndexCount + " category :" + categoryId + " pageSize:" + pageSize); 
+							$.get('AjaxFrameCategoryResultsView', params, function(data) {  
+								$("#loadMorePressedFlag").val(0);
+								
+			/*
+								var loadableProds = pageSize; 
+								if(resultsLeft <= pageSize){ // prods to load are less than the default loaded products
+									var loadableProds = resultsLeft - pageSize; 
+								}*/
+								var loadableProds = resultsLeft - pageSize; 
+								if(loadableProds <= pageSize){  
+									$(".__prjid5_loadable").html(loadableProds);
+									$(".__prjid5_showable").html(resultsLeft-pageSize);
+								}else{ 
+									$(".__prjid5_showable").html(resultsLeft-pageSize);
+									$(".__prjid5_loadable").html(pageSize);
+								}
+								if(resultsLeft <= pageSize){ // that is 9
+									$("#currentResults").text(parseInt($("#currentResults").text()) + resultsLeft);
+									$("#resultsLeft").val(resultsLeft - resultsLeft);
+									$("#loadResultsButton").hide(); 
+									$('.items-shown', '.resultsNumber').text(parseInt($("#currentResults").text()));
+								} else {
+									$("#resultsLeft").val(resultsLeft-pageSize);
+									$("#currentResults").text(parseInt($("#currentResults").text())+pageSize);
+									$("#beginIndexCount").val(beginIndexCount + pageSize);
+									$('.items-shown', '.resultsNumber').text(parseInt(pageSize + beginIndexCount)); 
+								}
+								$(".products-holder").append(data);
+
+								monetateFiller.onGlassesPLP();
+											
+								
+							}, 'html');
+						}
+					}
+				}
+			} // fine if
+		}); 
+	});
+	
+	EspotManagerJS.addFunction('fix-order-menu-plp', function() {
+		if($( ".sort-by-options" ).length > 0)
+{
+	
+		$('.sort-by-options li').each(function( index ) {
+			
+			$(this).find('a').attr('href', $($('.sort-by-options li')[index]).find('a').attr('href').replace('searchType=0','searchType=100'));
+		});
+}
+	});
+	
+/* TO BE REMOVED AFTER R2020.1 */
+	EspotManagerJS.addFunction('fix-kids-title', function() {
+		if($( "#title-plp-shop" ).length > 0)
+{ 
+$("#title-plp-shop").text($("#title-plp-shop").text().replace("sunglasses sunglasses", "sunglasses") );
+}
+	});
+
+/* TO BE REMOVED AFTER R2020.3 */
+	EspotManagerJS.addFunction('fix-manageDoubleClickLens', function() {
+        $(document).ready(function() 
+		{
+			if(typeof manageDoubleClickLens !== 'undefined'  && manageDoubleClickLens !== null)
+			{
+				manageDoubleClickLens = function(lens)
+				{
+					if ($("#__prjid5_VISIBLE_SKU").text().length > 0  
+					&& (typeof lens.attr('id').split('_')[2] != "undefined") && lens.attr('id').split('_')[2].length>0
+					&& (lens.attr("data-upc2") == $("#__prjid5_VISIBLE_SKU").text()) )
+					{
+						var firstLevel;
+						
+						
+						firstLevel = lens.parent().parent().parent().parent().parent().parent().parent().attr('accordion');
+						firstLevel = firstLevel.split('_')[1];
+						
+						//$("#__prjid5_VISIBLE_SKU").text($('.first-level-'+firstLevel+' .rx-lens-choice').data('upc2')); 
+						__prjjid5_updateUPC.call(this);
+						lens.prop('checked', false); // tolgo il check dalla lente attuale 
+						$('.first-level-'+firstLevel+' .rx-lens-choice').prop('checked', true); // altrimenti la save successiva non ha il check corretto
+						$('.first-level-'+firstLevel+' .rx-lens-choice').trigger('click');
+						
+						//$('.first-level-'+firstLevel+' .lens-option-title')
+					}
+					else
+					{
+						saveLensSelectionData();
+						__prjjid5_updateUPC.call(this);
+					}
+						
+				}
+			}
+        });
+	});
+
+</script>
+
+
+
+            </div>
+        
+
+
+</div>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"192325011","applicationTime":424,"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"5760995f5e","transactionName":"M11QZ0IFCEdYAE1dXgoXYFZDEDFRWzBcRkcNW1ccQxAJRlxMQkdFC0pXelQZSURYBFwbShRZVVZ5ABsUESR8YBg=","agent":"","errorBeacon":"bam.nr-data.net"}</script>
+
+<!-- END Layout.jsp --><div id="1592326947681.7515" data-test-id="toast-wrapper" style="height: 1px; width: 1px; position: fixed; z-index: 2147483646; bottom: 0px; border: 0px; right: auto; left: 0px; overflow: hidden; padding: 0px; top: auto; box-shadow: none;"><iframe src="https://www.affirm.com/apps/toast/" data-test-id="toast-frame" title="Affirm toast" style="height: 100%; width: 100%; margin: 0px; border: 0px; padding: 0px;"></iframe></div><div id="ClickTaleDiv" style="display:none" aria-hidden="true"></div><iframe id="utag_143_iframe" height="1" width="1" style="display:none" src="//4208691.fls.doubleclick.net/activityi;src=4208691;type=flood0;cat=tgo_a00;ord=5299052850750.059?"></iframe><iframe name="__bkframe" id="__bkframe" title="bk" src="about:blank" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);" __idm_frm__="518" aria-hidden="true"></iframe><script>// Custom script
+</script><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.40278985403039647"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.8362179301594594" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=5683956&amp;Ver=2&amp;mid=51d7bd7b-81a7-e080-eb8a-fa288c20da21&amp;sid=628fe2c7-689c-8371-1a25-96f85109ea37&amp;vid=ee29739f-988e-c3bc-476c-851fafa26a37-0&amp;pi=1200101525&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=Eyeglass%20Lenses,%20Sunglass%20Lenses,%20Glasses%20Lenses%20%7C%20Target%20Optical&amp;kw=transition%20lenses,%20eyeglass%20lenses&amp;p=https%3A%2F%2Fwww.targetoptical.com%2Fto-us%2Flensoptions&amp;r=https%3A%2F%2Fwww.targetoptical.com%2F&amp;lt=2790&amp;evt=pageLoad&amp;msclkid=N&amp;sv=1&amp;rn=364567"></div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1093909630652447");fbq("track","PageView");</script>
+<noscript>
+<img height="1" width="1" src="https://www.facebook.com/tr?id=1093909630652447&amp;ev=PageView
+&amp;noscript=1">
+</noscript>
+
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="https://vars.hotjar.com/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;" aria-hidden="true"></iframe><div class="bv-verify-css-loaded" style="height: 0px; width: 0px; border: 0px;" aria-hidden="true"></div><script async="" src="//aa.agkn.com/adscores/g.jsonp?sid=9202274878&amp;userid=830DB9-1D5B0B83-E34C-483F-856C-ABB60ABE6EF7"></script><img src="https://p.alcmpn.com/idr/ven/1012/idr.gif?fpid=830DB9-1D5B0B83-E34C-483F-856C-ABB60ABE6EF7" style="display: none;"><iframe height="0" width="0" title="Criteo DIS iframe" style="display: none;" __idm_frm__="520"></iframe>
+</body>
 <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
 @endsection
