@@ -60,6 +60,7 @@
                         <option value="{{$color->id}}" {{( $glass->color_id==$color->id ? "selected":"") }}>{{$color->name}}</option>
                     @endforeach   
                     </select>
+                    <input type="text" id="maincategory" disabled hidden name="category" value="1">
                     <input type="text" class="id" hidden name='code' value="{{$glass->glass_code}}"></input>
                     <input type="text" hidden name='product_id' value="{{$glass->id}}"></input>
                     <input type="number" class="form-control mt-3" id="quantity" name="quantity" min="1" placeholder="Quantity"></input>
@@ -87,9 +88,9 @@
     <div id="the_big_div">
     <div id="mydiv">
         <div>
-            <button class="tablink1" style="border: 1px solid grey" onclick="openPageone('Single', this,'#dc0647' )" id="defaultOpen">Single Vision Lense</button>
-            <button class="tablink1" style="border: 1px solid grey" onclick="openPageone('Progressive', this,'#dc0647' )" >Progressive Vision Lense</button>
-            <button class="tablink1" style="border: 1px solid grey" onclick="openPageone('Bifocal', this,'#dc0647' )" >Bifocal Lense</button>
+            <button class="tablink1 defaultOpen" style="border: 1px solid grey" onclick="openPageone('Single', this,'#dc0647' )" id="singlebutton" >Single Vision Lense</button>
+            <button class="tablink1" style="border: 1px solid grey" onclick="openPageone('Progressive', this,'#dc0647' )" id="progressivebutton">Progressive Vision Lense</button>
+            <button class="tablink1" style="border: 1px solid grey" onclick="openPageone('Bifocal', this,'#dc0647' )" id="bifocalbutton">Bifocal Lense</button>
         </div>
         <div id="Single" class="tabcontent1">
             <form action="{{ route('order.store') }}" method='post' id="singleform" class="mt-3">
@@ -97,13 +98,14 @@
                 @foreach($singlelenses as $singlelense)
                     <div class="form-check">
                         <input type="text" hidden name="category" value="2">
-                        <input class="form-check-input form1-field" type="radio" name="lense_type" id="choice-animals-dogs" onchange="changeFirstForm()" value="{{$singlelense[0]->lense_type}}" required>
+                        <input class="form-check-input form1-field" type="radio" name="single_lense_type" id="choice-animals-dogs" onchange="changeFirstForm()" value="{{$singlelense[0]->lense_type}}">
                         <label style="color:black" class="form-check-label">
                             {{$singlelense[0]->lense_type}}
                         </label>
                         @foreach($singlelense as $singlelensecolor)
                         <div class="form-check reveal-if-active" >
-                            <input class="form-check-input form1-field" type="radio" name="color"  value="{{$singlelensecolor->color_id}}" onchange="changeFirstForm()" required>
+                            <input class="form-check-input form1-field" type="radio" name="single_lense_color"  value="{{$singlelensecolor->color_id}}" onchange="changeFirstForm()">
+                            <input type="text" name="lense_price" value="{{$singlelensecolor->price}}" hidden>
                             <label style="color:black" class="form-check-label">
                                 {{$singlelensecolor->color->name}}&emsp;{{$singlelensecolor->price}} EGP
                             </label>
@@ -112,6 +114,11 @@
                     </div>
                 @endforeach  
                 <button type="button" name="save" disabled id="savesingle" class="btn btn-success ml-3 mt-3">Save & Continue</button> 
+                <div class="alert alert-success mt-2" id="singlelensemessage">
+                    <ul>
+                        <li id="single_lense_message"></li>
+                    </ul>
+                </div>
             </form>
         </div>
         <div id="Progressive" class="tabcontent1">
@@ -120,13 +127,14 @@
                 @foreach($progressivelenses as $progressivelense)
                     <div class="form-check">
                     <input type="text" hidden name="category" value="3">
-                        <input class="form-check-input form2-field" type="radio" name="lense_type" id="choice-animals-dogs" value="{{$progressivelense[0]->lense_type}}" required>
+                        <input class="form-check-input form2-field" type="radio" name="progressive_lense_type" id="choice-animals-dogs" value="{{$progressivelense[0]->lense_type}}" onchange="changeSecondForm()">
                         <label style="color:black" class="form-check-label">
                             {{$progressivelense[0]->lense_type}}
                         </label>
                         @foreach($progressivelense as $progressivelensecolor)
                         <div class="form-check reveal-if-active" id="progressivecolors">
-                            <input class="form-check-input form2-field" type="radio" name="color"  value="{{$progressivelensecolor->color_id}}" required>
+                            <input type="text" name="lense_price" value="{{$progressivelensecolor->price}}" hidden>
+                            <input class="form-check-input form2-field" type="radio" name="progressive_lense_color"  value="{{$progressivelensecolor->color_id}}" onchange="changeSecondForm()">
                             <label style="color:black" class="form-check-label" >
                                 {{$progressivelensecolor->color->name}}&emsp;{{$progressivelensecolor->price}} EGP
                             </label>
@@ -135,6 +143,11 @@
                     </div>
                 @endforeach  
                 <button type="button" name="save" disabled id="saveprogressive" class="btn btn-success ml-3 mt-3">Save & Continue</button>
+                <div class="alert alert-success mt-2" id="progressivelensemessage">
+                    <ul>
+                        <li id="progressive_lense_message"></li>
+                    </ul>
+                </div>
             </form>
         </div>
         <div id="Bifocal" class="tabcontent1">
@@ -143,13 +156,14 @@
             @foreach($bifocallenses as $bifocallense)
                 <div class="form-check">
                     <input type="text" hidden name="category" value="4">
-                    <input class="form-check-input form3-field" type="radio" name="lense_type" id="choice-animals-dogs" value="{{$bifocallense[0]->lense_type}}" required>
+                    <input class="form-check-input form3-field" type="radio" name="bifocal_lense_type" id="choice-animals-dogs" value="{{$bifocallense[0]->lense_type}}" onchange="changeThirdForm()">
                     <label style="color:black" class="form-check-label">
                         {{$bifocallense[0]->lense_type}}
                     </label>
                     @foreach($bifocallense as $bifocallensecolor)
                     <div class="form-check reveal-if-active" id="bifocalcolors">
-                        <input class="form-check-input form3-field" type="radio" name="color" value="{{$bifocallensecolor->color_id}}" required>
+                        <input type="text" name="lense_price" value="{{$bifocallensecolor->price}}" hidden>
+                        <input class="form-check-input form3-field" type="radio" name="bifocal_lense_color" value="{{$bifocallensecolor->color_id}}" onchange="changeThirdForm()">
                         <label style="color:black" class="form-check-label" >
                             {{$bifocallensecolor->color->name}}&emsp;{{$bifocallensecolor->price}} EGP
                         </label>
@@ -158,12 +172,17 @@
                 </div>
             @endforeach  
             <button type="button" disabled name="save" id="savebifocal" class="btn btn-success ml-3 mt-3">Save & Continue</button>
+            <div class="alert alert-success mt-2" id="bifocallensemessage">
+                <ul>
+                    <li id="bifocal_lense_message"></li>
+                </ul>
+            </div>
         </form>
         </div>
     </div>
     <div id="presdiv">
         <div>
-            <button class="tablink2" style="border: 1px solid grey" onclick="openPagetwo('Image', this,'#dc0647' )" id="defaultOpen1">Add Your Prescription Image</button>
+            <button class="tablink2 defaultOpen" style="border: 1px solid grey" onclick="openPagetwo('Image', this,'#dc0647' )" >Add Your Prescription Image</button>
             <button class="tablink2" style="border: 1px solid grey" onclick="openPagetwo('prescription', this,'#dc0647' )" >Enter Prescription Manually</button>
         </div>
         <div id="Image" class="tabcontent">

@@ -68,7 +68,22 @@ class ClientOrdersController extends Controller
             $glass->order_id= $order->id;
             $glass->product_id=$request->product_id;
             $glass->quantity=$request->quantity;
-            $glass->price=$request->price * $request->quantity;
+            $glass->category=$request->category;
+            if($request->category == 1){
+                $glass->price=$request->price * $request->quantity;
+            }else if($request->category == 2){
+                $glass->lense_type=$request->single_lense_type;
+                $glass->color_id=$request->single_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }else if($request->category == 3){
+                $glass->lense_type=$request->progressive_lense_type;
+                $glass->color_id=$request->progressive_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }else if($request->category == 4){
+                $glass->lense_type=$request->bifocal_lense_type;
+                $glass->color_id=$request->bifocal_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }
             $glass->save();
             if($request->check=='1'){
                 if(Request::exists('image')){
@@ -87,12 +102,26 @@ class ClientOrdersController extends Controller
                 }
             }
         }else{
-            dd('hussein');
             $glass = new GlassProduct();
             $glass->order_id= $openOrder->id;
             $glass->product_id=$request->product_id;
             $glass->quantity=$request->quantity;
-            $glass->price=$request->price * $request->quantity;
+            $glass->category=$request->category;
+            if($request->category == 1){
+                $glass->price=$request->price * $request->quantity;
+            }else if($request->category == 2){
+                $glass->lense_type=$request->single_lense_type;
+                $glass->color_id=$request->single_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }else if($request->category == 3){
+                $glass->lense_type=$request->progressive_lense_type;
+                $glass->color_id=$request->progressive_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }else if($request->category == 4){
+                $glass->lense_type=$request->bifocal_lense_type;
+                $glass->color_id=$request->bifocal_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }
             $glass->save();
             if($request->check=='1'){
                 if(Request::exists('image')){
@@ -109,7 +138,7 @@ class ClientOrdersController extends Controller
                     $prescription_details->product_id =$request->product_id;
                     $prescription_details->save();
                 }
-            }   
+            }
         }
     }
     
