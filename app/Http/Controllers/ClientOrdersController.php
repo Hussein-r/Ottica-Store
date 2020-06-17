@@ -103,7 +103,7 @@ class ClientOrdersController extends Controller
             }
         }else{
             $glass = new GlassProduct();
-            $glass->order_id= $openOrder->id;
+            $glass->order_id= $openOrder[0]->id;
             $glass->product_id=$request->product_id;
             $glass->quantity=$request->quantity;
             $glass->category=$request->category;
@@ -126,7 +126,7 @@ class ClientOrdersController extends Controller
             if($request->check=='1'){
                 if(Request::exists('image')){
                     $prescription_image= new GlassPrescriptionImage();
-                    $prescription_image->order_id=$openOrder->id;
+                    $prescription_image->order_id=$openOrder[0]->id;
                     $prescription_image->product_id=$request->product_id;
                     $imageName = time().'.'.$request->image->extension();  
                     $request->image->move(public_path('images'), $imageName);
@@ -134,7 +134,7 @@ class ClientOrdersController extends Controller
                     $prescription_image->save();
                 }else{
                     $prescription_details= GlassProductPrescriptions::create($request->all());
-                    $prescription_details->order_id = $openOrder->id;
+                    $prescription_details->order_id = $openOrder[0]->id;
                     $prescription_details->product_id =$request->product_id;
                     $prescription_details->save();
                 }

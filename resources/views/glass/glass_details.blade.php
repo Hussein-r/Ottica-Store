@@ -60,7 +60,7 @@
                         <option value="{{$color->id}}" {{( $glass->color_id==$color->id ? "selected":"") }}>{{$color->name}}</option>
                     @endforeach   
                     </select>
-                    <input type="text" id="maincategory" disabled hidden name="category" value="1">
+                    <input type="text" id="maincategory" hidden name="category" value="1">
                     <input type="text" class="id" hidden name='code' value="{{$glass->glass_code}}"></input>
                     <input type="text" hidden name='product_id' value="{{$glass->id}}"></input>
                     <input type="number" class="form-control mt-3" id="quantity" name="quantity" min="1" placeholder="Quantity"></input>

@@ -27,10 +27,10 @@ $("#defaultCheck1").change(function() {
     if (this.checked) {
         big_div.style.display = "inline-block";
         x.style.display = "inline-block";
+        $("#maincategory").prop("disabled", true);
     } else {
         x.style.display = "none";
         big_div.style.display = "none";
-        $("#maincategory").removeAttr("disabled");
     }
 });
 
