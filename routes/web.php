@@ -19,16 +19,25 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::resource('brand', 'BrandController');
 Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
 Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
 Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
 Route::resource('order','ClientOrdersController');
+Route::resource('cart','CartController');
+Route::resource('SingleVisionLense','SingleVisionController');
+Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
+Route::resource('BifocalLense','BifocalController');
+Route::resource('comment','CommentsController');
+
 
 //mariam
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('admin','HomeController@adminHome');
+Route::get('/contact', function () {
+    return view('contact')->render();
+});
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
@@ -36,6 +45,7 @@ Route::get('eyeglasses','GlassController@eyeglasses');
 Route::get('/fav','GlassController@favourite');
 Route::get('/sort/{option}', 'GlassController@sort');
 Route::get('favourite', 'UserController@myFavourite');
+
 //hajar
 //specail offers & list orders for admin 
 Route::resource('specialoffers','SpecialOffersController');

@@ -44,7 +44,7 @@
             <div class="select-box mt-3 mb-30">
                     <select name='color' class="custom-select" id="productColor" >
                     @foreach($colors as $color)
-                        <option value="{{$color->id}}" >{{$color->name}}</option>
+                        <option value="{{$color->id}}">{{$color->name}}</option>
                     @endforeach   
                     </select>
                     <input type="number" class="form-control mt-3" id="quantity" name="quantity" min="1" placeholder="Quantity"></input>

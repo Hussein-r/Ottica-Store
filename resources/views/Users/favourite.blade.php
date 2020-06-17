@@ -1,5 +1,13 @@
 @extends('layouts.userNavbar')
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/styling.css">
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
+</head>
 @section('content')
+<body>
 <section class="container">
 <br>
     <div class="col-12 col-md-8 col-lg-9">
@@ -30,7 +38,7 @@
                 <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
                     <!-- Favourite -->
                     {{-- <div class="product-favourite" style="text-align: right">
-                        <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$glass->id}},this)"></button>
+                        <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$fav->glass->id}},this)"></button>
                     </div> --}}
 
                     <a href="#">
