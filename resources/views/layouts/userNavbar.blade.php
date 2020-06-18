@@ -52,10 +52,48 @@
                 <li><a href="#">About</a></li>
               <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
               </ul>
+            {{--  <ul class="navbar-nav">
+                <!-- Authentication Links -->
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle mr-2 d-none d-lg-inline text-gray-600" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+   
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{route('user.show',Auth::user())}}">
+                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            {{ __('profile') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+                          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+   
+                            {{ __('Logout') }}
+                        </a>
+   
+   
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+             </ul>
+             --}}
             </nav>
           </div>
           <div class="icons">
-            <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
           <a href="{{url('/favourite')}}" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
             <a href="/cart" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
@@ -63,6 +101,7 @@
             </a>
             <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
           </div>
+          
         </div>
       </div>
     </div>

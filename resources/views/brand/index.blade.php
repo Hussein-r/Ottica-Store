@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <a style="margin-left: 80px" href="{{route('brand.create')}}" class="btn btn-primary btn-lg">Add New Brand</a>
 

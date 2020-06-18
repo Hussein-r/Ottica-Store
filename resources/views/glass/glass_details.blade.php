@@ -35,7 +35,7 @@
         </div>
 
         <!-- Single Product Description -->
-        <div class="single_product_desc clearfix">
+        <div class="single_product_desc clearfix"> 
             <a href="#">
                 <span>{{$brand->name}}</span>
             </a>

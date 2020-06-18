@@ -1,27 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>All Lenses</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
+
 <div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
+		<div class="container">
+      <a href="{{route('lenses.create')}}" class="btn btn-primary center-block btn-lg" style="margin-bottom: 10px;">Add A New Contact Lense</a>        
+
 				<div class="table100">
-        <div style="text-align: center;margin:18px;">
-          <a href="{{route('lenses.create')}}"  style="background-color:#E6E6FA;color:#4682B4;" class="btn btn-info center-block btn-lg">Add A New Contact Lense</a>
-        </div>
-        
-            <table>
+            <table class="table table-striped">
 						<thead>
 			<tr class="table100-head">
               <th class="column1">Name</th>
@@ -68,9 +53,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
-</html>
  
    
 @endsection

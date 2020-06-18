@@ -1,34 +1,15 @@
 
-
-
-
-
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>special orders</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
 	
 	<div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
+		<div class="container">
+            <form method="get" action="{{route('specialoffers.create')}}">
+                <button class="btn btn-primary btn-lg" style="margin-bottom: 10px;" type="submit">Add new offer </button>
+            </form>                
 				<div class="table100">
-
-<form method="get" action="{{route('specialoffers.create')}}">
-    <button class="btn btn-success btn-lg btn-block" type="submit">Add new offer </button>
-</form>
-					<table>
+					<table class="table table-striped">
 						<thead>
 							<tr class="table100-head">
 								<th class="column1">Discount</th>
@@ -47,12 +28,12 @@
    <td>        {{$specialOffer->location}}          </td>
 
    <td> 
-      <img style="height:200px ; width:150px;" class="img-thumbnail" src="/images/{{$specialOffer->image}}" />
+      <img style="height:150px ; width:150px;" class="img-thumbnail" src="/images/{{$specialOffer->image}}" />
        </td>
    <td>
    <form action="{{route('specialoffers.edit',$specialOffer->id)}}" enctype='multipart/form-data' method="get">
        @csrf       
-       <button class="btn btn-warning btn-lg" type="submit">Edit</button>
+       <button class="btn btn-success btn-lg" type="submit">Edit</button>
        </form>
    </td>
    <td>
@@ -72,7 +53,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
-</html>
 @endsection
