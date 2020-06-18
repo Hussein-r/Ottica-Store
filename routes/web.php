@@ -82,20 +82,22 @@ Route::resource('/orderHistory', 'ClientOrdersController');
 Route::get('allLenses','ContactLensesController@list');
 Route::get('/search', 'ContactLensesController@search');
 Route::get('/sort/{value}', 'ContactLensesController@sort');
-Route::get('/ourLenses', function () {
-    return view('OurLenses.index');
-});
-Route::get('/ComfortLight1', function () {
-    return view('OurLenses.ComfortLight1');
-});
-Route::get('/ComfortLightActive1', function () {
-    return view('OurLenses.ComfortLightActive1');
-});
-Route::get('/ComfortLightPerformance1', function () {
-    return view('OurLenses.ComfortLightPerformance1');
-});
-Route::get('/rayban1', function () {
-    return view('OurLenses.rayban1');
-});
+Route::get('/ourLenses', function () {return view('OurLenses.index');});
+Route::get('/ComfortLight1', function () {return view('OurLenses.ComfortLight1');});
+Route::get('/ComfortLightActive1', function () {return view('OurLenses.ComfortLightActive1');});
+Route::get('/ComfortLightPerformance1', function () {return view('OurLenses.ComfortLightPerformance1');});
+Route::get('/rayban1', function () {return view('OurLenses.rayban1');});
+Route::get('/ComfortLight2', function () {return view('OurLenses.ComfortLight2');});
+Route::get('/ComfortLightActive2', function () {return view('OurLenses.ComfortLightActive2');});
+Route::get('/ComfortLightPerformance2', function () {return view('OurLenses.ComfortLightPerformance2');});
+Route::get('/rayban2', function () {return view('OurLenses.rayban2');});
+Route::get('/ComfortLight3', function () {return view('OurLenses.ComfortLight3');});
+Route::get('/ComfortLightActive3', function () {return view('OurLenses.ComfortLightActive3');});
+Route::get('/ComfortLightPerformance3', function () {return view('OurLenses.ComfortLightPerformance3');});
+Route::get('/rayban3', function () {return view('OurLenses.rayban3');});
+Route::get('/ComfortLight4', function () {return view('OurLenses.ComfortLight4');});
+Route::get('/ComfortLightActive4', function () {return view('OurLenses.ComfortLightActive4');});
+Route::get('/ComfortLightPerformance4', function () {return view('OurLenses.ComfortLightPerformance4');});
+Route::get('/rayban4', function () {return view('OurLenses.rayban4');});
 
 

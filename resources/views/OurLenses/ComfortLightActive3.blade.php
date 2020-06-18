@@ -201,15 +201,7 @@ utagFiller.initialize();
 <div class="rowContainer" id="4099276460824377020">
 	<div class="row12">
 		<div class="col12" data-slot-id="1">
-			<!--  BEGIN EMarketingSpot.jsp --><!-- BEGIN ContentRecommendation.jsp --><!-- JSPs References: HomePage.jsp, BundleDisplay.jsp , CategoryNavigationDisplay.jsp, CompareProductsDisplay.jsp
-					  DynamicKitDisplay.jsp, PackageDisplay.jsp, ProductDisplay.jsp, 
-					  SearchResultDisplay.jsp, SubCategoryPage.jsp, TopCategoryPage.jsp
-					   , Footer.jsp , OrderCancelNotify.jsp , OrderCreateNotify.jsp
-					  OrderShipmentNotify.jsp, AccountActivationNotify.jsp, PasswordChangeNotify.jsp,
-					  PasswordResetNotify.jsp, WishlistCreateNotify.jsp,  LandingPage.jsp, 	
-					  ShippingDetailDisplay.jsp, ShopCartDisplay.jsp, StaticContent, 
-					  Static JSPs, Footer_UI.jsp, Header_UI.jsp, ProductDescription_UI.jsp  
-					  UserTime--><!-- BEGIN ContentRecommendation_UI.jspf -->
+			
 			<div id="contentRecommendationWidget_1_-2012_4099276460824374784" class="contentRecommendationWidget">
 				
 				<div dataci_toolbar="4099276460824374784_espot" dataci_espot="4099276460824374784_CSS_LP_Lenses" id="ci_espot_4099276460824374784_CSS_LP_Lenses">
@@ -788,17 +780,14 @@ utagFiller.initialize();
             <div class="to-row to-main">
                 <div class="to-col to-title" style="opacity: 1;">
                     <h3>
-                        <strong>Great!</strong><br>
+                    <strong>Great!</strong><br>
                         Now which lenses suit your lifestyle?
                     </h3>
                 </div>
                 <div class="to-col to-img" style="opacity: 1;">
-                    <div class="to-switcher-container" style="display: none;">
+                    <div class="to-switcher-container" style="display: block;">
                         <label class="to-switch">
-                            <p>Brown</p>
-                            <input type="checkbox">
-                            <span class="to-switcher"></span>
-                            <p>Grey</p>
+                           
                         </label>
                     </div>
                     <div class="svg-container">
@@ -1189,7 +1178,7 @@ utagFiller.initialize();
                             	.st381{clip-path:url(#SVGID_696_);fill:none;stroke:#CC0000;stroke-width:4;stroke-miterlimit:10;}
                             </style>
                         	<g id="lenti">
-                        		<g id="eyeglasses" style="opacity: 1;">
+                        		<g id="eyeglasses" style="opacity: 0;">
                         			<path class="st0" d="M47.93,120.67c-0.01,1.19-0.02,2.39-0.02,3.61c0,130.57,94.53,136.12,104.45,136.12
                         				c10.92,0,39.7,0.83,79.17-28c45.49-33.23,100.55-98.03,100.55-150.3c0,0,0.29-2.1,0-5.53c0-0.07,0-0.14,0-0.2
                         				c0,0,3.39-23.96-24.22-42.77c-6.6-4.5-15.09-8.64-25.74-12.14c-5.81-1.91-12.26-3.63-19.39-5.11c-17.84-3.7-39.98-5.91-67.12-5.91
@@ -1601,7 +1590,7 @@ utagFiller.initialize();
                         				 M118.35,37.23c0.04,0.2-0.09,0.4-0.3,0.44c-0.2,0.04-0.4-0.09-0.44-0.3s0.09-0.4,0.3-0.44
                         				C118.11,36.89,118.31,37.03,118.35,37.23z"></path>
                         		</g>
-                        		<g id="light_responsive_eyeglasses_brown" style="opacity: 0;">
+                        		<g id="light_responsive_eyeglasses_brown" style="opacity: 1;">
 
                         				<linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="3763.8516" y1="260.3987" x2="3763.8516" y2="10.3987" gradientTransform="matrix(-1 0 0 1 3953.9189 0)">
                         				<stop offset="0.2" style="stop-color:#FFFFFF"></stop>
@@ -2474,7 +2463,7 @@ utagFiller.initialize();
                         	</g>
                         	<g id="info">
                         		<g id="info_eyeglasses_ComfortLight">
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<polyline class="st53" points="80.94,159.59 80.94,189.22 8.89,189.22 				"></polyline>
                         				</g>
@@ -2513,7 +2502,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 1;">
+                        			<g style="opacity: 0;">
                         				<g>
                         					<line class="st53" x1="296.89" y1="101.59" x2="372.89" y2="101.59"></line>
                         				</g>
@@ -4156,7 +4145,7 @@ utagFiller.initialize();
                         			</g>
                         		</g>
                         		<g id="info_transition_ComfortLight_Active">
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<polyline class="st53" points="90.89,63.59 90.89,93.22 8.89,93.22 				"></polyline>
                         				</g>
@@ -4195,7 +4184,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<g>
                         					<line class="st53" x1="286.89" y1="41.59" x2="372.89" y2="41.59"></line>
                         				</g>
@@ -4234,7 +4223,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="113.89,221.59 113.89,190 8.89,190 			"></polyline>
                         				<g>
                         					<defs>
@@ -4271,7 +4260,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="235.89,200.59 235.89,179.27 372.89,179.27 			"></polyline>
                         				<g>
                         					<defs>
@@ -4308,7 +4297,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="70.94,119.59 70.94,149.22 8.89,149.22 			"></polyline>
                         				<g>
                         					<defs>
@@ -4345,7 +4334,7 @@ utagFiller.initialize();
                         					</g>
                         				</g>
                         			</g>
-                        			<g style="opacity: 0;">
+                        			<g style="opacity: 1;">
                         				<polyline class="st53" points="301.89,98.59 301.89,129.59 372.89,129.59 			"></polyline>
                         				<g>
                         					<defs>
@@ -5606,56 +5595,51 @@ utagFiller.initialize();
                         	</g>
                         </svg>
 
-                    <p class="right" style="top:65%; right:77%;">UV protection</p><p class="left" style="top:35%; left:76%;">Scratch resistant</p></div>
+                    <p class="right" style="top:32%; right:77%;"><strong>Light-responsive tint</strong> </p><p class="right" style="top:51%; right:76%;">UV protection</p><p class="right" style="top:65%; right:77%;">Thin &amp; lightweight</p><p class="left" style="top:14.5%; left:76%;">Impact resistant</p><p class="left" style="top:44.5%; left:76%;">Scratch &amp; glare resistant</p><p class="left" style="top:61.5%; left:76%;">Smudge resistant</p></div>
                 </div>
                 <div class="to-col to-text" style="opacity: 1;">
-                    <p><strong>ComfortLight lenses</strong><br><br>Our dependable plastic lenses sharpen your vision while guarding your eyes from harmful rays.</p>
+                    <p><strong>ComfortLight Active + Transitions®</strong><br>Our most popular selection, these premium polycarbonate lenses are light, durable, and perfect for kids.<br><br>Add Transitions® technology to your lenses for a light-responsive tint that darkens with greater light exposure, helping your eyes comfortably adjust to varying amounts of light and reducing your exposure to harmful blue light.</p>
                 </div>
             </div>
         </div>
 
-        <div class="to-sub-selector" style="opacity: 1;">
-            <div style="opacity: 1;" data-material="ComfortLight" class="current">
-               <a href="/ComfortLight1"> <div>
-                    <h4>ComfortLight</h4>  </a>
+       <div class="to-sub-selector" style="opacity: 1;">
+            <div data-material="ComfortLight" class="" style="opacity: 1;">
+			<a href="/ComfortLight3"> <div>
+                    <h4>ComfortLight + Transitions®</h4></a>
                     <p>I’m looking for something standard that I could use every day or as a spare pair.</p>
                     <div class="line"></div>
-			 </div>
-              
+                </div>
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Active">
-			<a href="/ComfortLightActive1">   <div>
-               <h4>ComfortLight Active</h4> </a>
+            <div data-material="ComfortLight Active" class="current" style="opacity: 1;">
+			<a href="/ComfortLightActive3">  <div>
+                    <h4>ComfortLight Active + Transitions®</h4></a>
                     <p>I want lenses that are perfect for my on-the-go, active lifestyle.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="ComfortLight Performance">
-            <a href='/ComfortLightPerformance1'>   <div>
-                    <h4>ComfortLight Performance</h4></a>
+            <div data-material="ComfortLight Performance" style="opacity: 1;" class="">
+			<a href='/ComfortLightPerformance3'>   <div>
+                    <h4>ComfortLight Performance + Transitions®</h4></a>
                     <p>I’m looking for something sleek, even with a strong prescription.</p>
                     <div class="line"></div>
                 </div>
             </div>
-            <div style="opacity: 1;" data-material="RayBan">
-            <a href='/rayban1'>  <div>
-                   <h4> <img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
-                    <p>I want something high-performing and iconic.</p>
+            <div data-material="RayBan" style="opacity: 1;" class="">
+			<a href='/rayban3'> <div>
+			<h4><img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
+                    <p>I want something high-performing and iconic with Transitions® technology.</p>
                     <div class="line"></div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </div>
-
-                    </div>
-				</div>
-			</div>
+</div>
+</div>
+</div>
 	
-			</body>
+</body>
 <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
 @endsection
