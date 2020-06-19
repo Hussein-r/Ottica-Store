@@ -15,6 +15,9 @@ class AdminChart extends BaseChart
      * It must always return an instance of Chartisan
      * and never a string or an array.
      */
+    // public ?string $name = 'custom_chart_name';
+    public ?array $middlewares = ['auth'];
+
     public function handler(Request $request): Chartisan
     {
         return Chartisan::build()
