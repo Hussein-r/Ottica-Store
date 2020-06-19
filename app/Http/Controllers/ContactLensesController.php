@@ -137,7 +137,14 @@ class ContactLensesController extends Controller
     {
          $lenses = ContactLenses::all();
          $brands=LenseBrand::all();
-         return view('ContactLenses.allLenses',['lenses'=>$lenses, 'brands' => $brands,])->render();
+        $types=LenseType::all();
+         $manufacturers=LenseManufacturerer::all();
+         return view('ContactLenses.allLenses',
+         ['lenses'=>$lenses,
+         'brands' => $brands,
+         'types'=>$types,
+         'manufacturers'=>$manufacturers,
+         ])->render();
     }
 
     public function search(Request $request)

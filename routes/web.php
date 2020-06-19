@@ -52,6 +52,14 @@ Route::resource('ourbrands','OurBrandsController');
 Route::get('ourbrands/home','OurBrandsController@returnHome');
 //best seller home page
 Route::resource('bestseller','BestSellerController');
+//filteration 
+// Route::resource('filter','FilterationController');
+Route::post('/Sunfilters','FilterationController@show');
+Route::post('/Eyefilters','FilterationController@store');
+Route::post('/Lensefilters','FilterationController@edit');
+
+
+
 
 
 
