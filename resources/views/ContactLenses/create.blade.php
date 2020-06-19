@@ -15,7 +15,7 @@
 </style>
 </head>
     <body class="form-v6">
-    <h1 style="text-align: center">Add New Contact Lense</h1>
+    <h1 style="text-align: center;color:white;">Add New Contact Lense</h1>
         <div  class="small-middle-container" >
             
             {!! Form::open(['route' => 'lenses.store','files' => 'true', 'method'=>'post']) !!}
@@ -96,6 +96,16 @@
                     <a href="{{route('lensetype.create')}}"  class="btn btn-info center-block">Add A New Type</a>
                     </div>
                 </div>
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="inputGroupSelect01" name="duration">
+                        <option selected disabled>Choose Duration</option>
+                        <option value="1">1 Day</option> 
+                        <option value="7">1 Week</option> 
+                        <option value="30">1 Month</option> 
+                        <option value="90">3 Months</option> 
+                        <option value="365">1 Year</option> 
+                    </select>
+                </div>
                 <div><span class="text-white">{{$errors->first('type_id')}}</span></div>
                 <div class="input-group mb-3">
                 
@@ -141,7 +151,7 @@
                 <div class="input-group mb-3">
                
                     <div class="custom-file" >
-                        <input type="file" class="custom-file-input" name="images[]" id="inputGroupFile01" multiple>
+                        <input type="file" class="custom-file-input" name="image" id="inputGroupFile01" >
                         <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
                     </div>
                     </div>

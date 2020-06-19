@@ -11,7 +11,7 @@ class LenseTypeController extends Controller
     public function create()
     {
         $types=LenseType::all();
-        return view('LenseType.create',['types' => $types]);
+        return view('lenseType.create',['types' => $types]);
     }
 
     public function store(Request $request)
@@ -26,7 +26,7 @@ class LenseTypeController extends Controller
     public function index()
     {
         $type = LenseType::all();
-        return view('LenseType/index', ['type'=>$type])->render();
+        return view('lenseType.index', ['type'=>$type])->render();
     }
 
 }

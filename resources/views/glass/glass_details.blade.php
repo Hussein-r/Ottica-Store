@@ -43,7 +43,7 @@
             <p id='id'>{{$glass->glass_code}}</p>
             <p class="product-price"><span class="old-price">{{$glass->price_before_discount}}</span>{{$glass->price_after_discount}}</p>
             <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
-            <form action="{{ route('order.store') }}" id="mainform" method='post' class="mt-3">
+            <form action="{{ route('order.store') }}" id="mainform" method='post' class="mt-3" enctype="multipart/form-data">
                 @csrf 
                 @if ($glass->glass_type == 'eyeglass')
                     <div class="form-check">
@@ -79,7 +79,7 @@
                 <div class="cart-fav-box d-flex align-items-center">
                     <button type="submit" name="addtocart" value="5" id="submitorder"  class="btn essence-btn">Add to cart<i class="fas fa-shopping-cart"></i></button>
                     <div class="product-favourite ml-4">
-                        <a href="#" class="favme fa fa-heart"></a>
+                        <a id="love"  onclick="return updateFavorite({{$glass->id}},this)" class="favme fa fa-heart"></a>
                     </div>
                 </div>
             </form>
@@ -93,7 +93,7 @@
             <button class="tablink1" style="border: 1px solid grey" onclick="openPageone('Bifocal', this,'#dc0647' )" id="bifocalbutton">Bifocal Lense</button>
         </div>
         <div id="Single" class="tabcontent1">
-            <form action="{{ route('order.store') }}" method='post' id="singleform" class="mt-3">
+            <form action="{{ route('order.store') }}" method='post' id="singleform" class="mt-3" enctype="multipart/form-data">
                 @csrf 
                 @foreach($singlelenses as $singlelense)
                     <div class="form-check">
@@ -122,7 +122,7 @@
             </form>
         </div>
         <div id="Progressive" class="tabcontent1">
-            <form action="{{ route('order.store') }}" method='post' id="progressiveform" class="mt-3">
+            <form action="{{ route('order.store') }}" method='post' id="progressiveform" class="mt-3" enctype="multipart/form-data">
                 @csrf 
                 @foreach($progressivelenses as $progressivelense)
                     <div class="form-check">
@@ -151,7 +151,7 @@
             </form>
         </div>
         <div id="Bifocal" class="tabcontent1">
-        <form action="{{ route('order.store') }}" method='post' id="bifocalform" class="mt-3">
+        <form action="{{ route('order.store') }}" method='post' id="bifocalform" class="mt-3" enctype="multipart/form-data">
             @csrf 
             @foreach($bifocallenses as $bifocallense)
                 <div class="form-check">
@@ -193,7 +193,7 @@
                     <li>make sure all the numbers are clear</li>
                 </ul>
             </div>
-            <form action="{{ route('order.store') }}" method='post' id="imageform" class="mt-3">
+            <form action="{{ route('order.store') }}" method='post' id="imageform" class="mt-3" enctype="multipart/form-data">
                 @csrf 
                 <div class="input-group mb-3 col-md-6">
                     <div class="input-group-prepend">
@@ -208,7 +208,7 @@
             <button  name="save" id="saveimage" class="btn btn-success ml-3">Save & Continue</button>
         </div>
         <div id="prescription" class="tabcontent prescription-table-wrapper">
-            <form action="{{ route('order.store') }}" method='post' id="tableform" class="mt-3">
+            <form action="{{ route('order.store') }}" method='post' id="tableform" class="mt-3" enctype="multipart/form-data">
                 @csrf 
                 <table class="params-prescription-table">
                     <colgroup>
@@ -1243,6 +1243,8 @@
     <script src="/js/classy-nav.min.js"></script>
     <!-- Active js -->
     <script src="/js/active.js"></script>
+    <script src="{{ asset('/js/favourite.js') }}" defer></script>
+
     <script src="/js/colors.js"></script>
     @endsection
 </html>

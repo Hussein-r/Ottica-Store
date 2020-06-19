@@ -12,7 +12,6 @@
     <link rel="icon" href="/img/core-img/favicon.ico">
     <link rel="stylesheet" href="/css/styling.css">
     <link rel="stylesheet" href="/css/core-style.css">
-    <link rel="stylesheet" href="/style.css">
 </head>
 @section('content')
 <body>       
@@ -21,9 +20,9 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
-                    <div class="page-title text-center">
-                        <h1>All about lenses</h1>
-                        <h5>First off, what are you looking for?</h5>
+                    <div class="page-title text-center" >
+                        <h1 style="color:white;">ALL ABOUT LENSES</h1>
+                        <h5 style="color:white;">FIRST OFF, WHAT ARE YOU LOOKING FOR?</h5>
                     </div>
                 </div>
             </div>

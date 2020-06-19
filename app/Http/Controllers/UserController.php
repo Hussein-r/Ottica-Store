@@ -115,7 +115,7 @@ class UserController extends Controller
         // dd($glasses);
         // $glasses = Glass::where('id','=',$fav->glass_id);
         // return view('Users\favourite', compact('glasses'));
-        return view('Users\favourite',['glasses'=>$glasses])->render();
+        return view('Users.favourite',['glasses'=>$glasses])->render();
         
     }
 

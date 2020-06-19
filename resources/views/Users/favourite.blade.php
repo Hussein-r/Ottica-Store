@@ -9,22 +9,36 @@
 @section('content')
 <body>
 <section class="container">
-<br>
-    <div class="col-12 col-md-8 col-lg-9">
+<div class="site-blocks-cover" data-aos="fade">
+    <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                    <div class="site-block-cover-content">
+                        <h2 class="sub-title">Ottica Store</h2>
+                        <h1>Your Favourite Glasses</h1>
+                    </div>
+                </div>
+                <div class="col-md-6 order-1 align-self-end">
+                    <img src="/images/fav.jpg" alt="Image" class="img-fluid">
+                </div>
+            </div>
+    </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12">
     <div class="shop_grid_product_area">
     <div class="row">
 
         @forelse ($glasses as $fav)
         <!-- Single Product -->
-        <div class="col-12 col-sm-6 col-lg-4">
+        <div class="col-12 col-sm-3 h-100 col-lg-3">
             <div class="single-product-wrapper">
                 <!-- Product Image -->
                 @if($fav->glass->images->first()->image)                        
                 <div class="product-img">
-                    <img style="height: 150px" src="/images/{{$fav->glass->images->first()->image}}" alt="product image">
+                    <img style="height: 200px" src="/images/{{$fav->glass->images->first()->image}}" alt="product image">
                     @endif
                     <!-- Hover Thumb -->
-                    <img class="hover-img" src="/images/{{$fav->glass->images->last()->image}}" alt="">
+                    <img class="hover-img" style="height: 250px" src="/images/{{$fav->glass->images->last()->image}}" alt="">
 
                     <!-- Product Badge -->
                     <div class="product-badge new-badge">
@@ -53,7 +67,6 @@
                         <span><h5 class="text-danger" style="text-align:right;">{{(($fav->glass->price_before_discount - $fav->glass->price_after_discount)/$fav->glass->price_before_discount)*100 }} %</h5></span>
                     </p>
             
-                <hr/>
                     <!-- Hover Content -->
                     <div class="hover-content">
                         <!-- Add to Cart -->

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\ContactLenses;
-use App\LenseImage;
 use App\LenseBrand;
 use App\LenseType;
 use App\LenseManufacturerer;
 use App\Color;
+use App\ColoredEye;
 use App\ColorLense;
 use Illuminate\Http\Request;
 
@@ -75,23 +75,17 @@ class ContactLensesController extends Controller
                 'type_id'=>'required|numeric',
                 'manufacturerer_id'=>'required|numeric',
                 'color'=>'required',
+                'duration'=>'required',
+                'image'=>'required'
                
             ]);
-    
-        $lense= ContactLenses::create($request->all());
-       
-        // dd($request);
-        $images=array();
-        if($files=$request->file('images')){
-          
-            foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $file->move(public_path('images'),$name);
-                LenseImage::insert( [
-                    'lense_id' => $lense->id,
-                    'image'=> $name,
-                ]);
-            }
+        $lense= ContactLenses::create($request->except(['image']));
+        if($files=$request->file('image')){
+            $imageName = time().'.'.$request->image->extension();  
+            $request->image->move(public_path('images'), $imageName);
+            $lense->image=$imageName;
+        }
+            $lense->save();
             $color=$request->color;
             // dd($color);
             foreach($color as $subColor)
@@ -104,8 +98,6 @@ class ContactLensesController extends Controller
             }
             
             // $lense->quantity=$request->quantity;
-
-        }
        
         
         return redirect()->action('ContactLensesController@index');
@@ -121,13 +113,12 @@ class ContactLensesController extends Controller
     {
         $lense=ContactLenses::where("id","=",$id)->firstOrFail();
         $brand=LenseBrand::where("id","=",$lense->brand_id)->firstOrFail();
-        $images=LenseImage::where("lense_id","=",$id)->get();
         $color=ColorLense::where("lense_id","=",$lense->id)->get('color_id');
         // dd($color);
         $colors=Color::whereIn("id",$color)->get();
         // dd($colors);
         
-        return view('ContactLenses/lenseProfile',compact('lense','images','brand','colors'));
+        return view('ContactLenses/lenseProfile',compact('lense','brand','colors'));
 
     }
 
@@ -205,9 +196,6 @@ class ContactLensesController extends Controller
     {
            $lense = ContactLenses::find($id);
            $colors = ColorLense::where('lesne_id','=',$id);
-            foreach($lense->images as $image){
-                $image->delete();
-            }
             foreach($colors as $color){
                 $color->delete();
             }
@@ -244,22 +232,13 @@ class ContactLensesController extends Controller
     {   
         
         
-        $lense= ContactLenses::whereId($id)->update($request->except(['_method','_token','images','color']));
-       
-        if($files=$request->file('images')){
-        
-            LenseImage::where('lense_id','=',$id)->delete();
-            foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $file->move(public_path('images'),$name);
-                LenseImage::insert( [
-                    'lense_id' => $id,
-                    'image'=> $name,
-                ]);
-               
-            }
-
+        $lense= ContactLenses::whereId($id)->update($request->except(['_method','_token','image','color']));
+        if($files=$request->file('image')){
+            $imageName = time().'.'.$request->image->extension();  
+            $request->image->move(public_path('images'), $imageName);
+            $lense->image=$imageName;
         }
+        $lense.save();
     
        
        $color=$request->color;
@@ -293,6 +272,12 @@ class ContactLensesController extends Controller
         'types' => $types,
         'manufacturerers' => $manufacturerers,
         'colors'=>$colors])->render();
+    }
+
+    public function changeColor(Request $request){
+        $eye=ColoredEye::where("color_id","=",$request->lensecolor)->firstOrFail();
+        $image=$eye->image;
+        return ($image);
     }
     
 

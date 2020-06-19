@@ -22,12 +22,10 @@ class ContactLenses extends Model
         'manufacturerer_id',
         'material_of_content',
         'water_of_content',
-        'lense_purpose'];
-    
-    public function images()
-    {
-        return $this->hasMany('App\LenseImage','lense_id');
-    }
+        'lense_purpose',
+        'duration',
+        'image'
+    ];
 
     public function brand()
     {
