@@ -28,20 +28,42 @@
 <div class="genericESpot" id="WC_ContentAreaESpot_div_1___DEVELOPERS_DESKTOP_HEADER_ESPOT_716259662">
 
             <div class="ad" id="ad_716259662">
-        <style type="text/css"> 
+			<style type="text/css"> 
 
-	
+a[class*='grey'].facet-link.color-swatch
+{
+	background-position: 0 -200px;
+}
 
-	a[class*='red'].facet-link.color-swatch
-	{
-		background-position: 0 -400px;
-	}
-	
-	a[class*='clear'].facet-link.color-swatch
-	{
-			background-position: 0 -100px;
-	}
-	
+a[class*='brown'].facet-link.color-swatch
+{
+	background-position: 0 -50px;
+}
+
+a[class*='pink'].facet-link.color-swatch
+{
+	background-position: 0 -350px;
+}
+
+a[class*='copper'].facet-link.color-swatch
+{
+	background-position: 0 -125px;
+}
+
+a[class*='orange'].facet-link.color-swatch
+{
+	background-position: 0 -300px;
+}
+
+a[class*='red'].facet-link.color-swatch
+{
+	background-position: 0 -400px;
+}
+
+a[class*='clear'].facet-link.color-swatch
+{
+		background-position: 0 -100px;
+}
 	
 	.item .change-colors-views a[class*='copper']  { background-color: #a04c2e; background-position:0 -250px; }
 	.item .change-colors-views a[class*='gold']  { background-color: #cfab21; background-position:0 -300px; }
@@ -5674,7 +5696,7 @@ utagFiller.initialize();
             </div>
             <div style="opacity: 1;" data-material="RayBan" class="current">
             <a href='/rayban1'>  <div>
-                    <h4><img src="https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&amp;scl=1" alt="logo Ray-ban"></h4></a>
+                    <h4> <img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
                     <p>I want something high-performing and iconic.</p>
                     <div class="line"></div>
                 </div>

@@ -25,16 +25,20 @@
                         <img src="/images/eyeglassmodel.jpg" alt="Image" class="img-fluid">
                     </div>
                 </div>
+                
         </div>
     </div>
-    {{-- <div class="product-sorting d-flex">
-        <p>Sort by:</p>
-            <select name="select" id="sortByselect">
-                <option value="value">Low</option>
-                <option value="value">High</option>
-            </select>
-    </div> --}}
+    
     <div class="mt-3" style="border-top:1px solid black;">
+        <div class="product-sorting d-flex" style="text-align: right">
+            <strong>Sort by:</strong>
+            <select name="select" id="sortByselect" aria-placeholder="sorting by price">
+                <option value="" disabled selected>Sorting by Price</option>
+                <option value="low">Price: Low - High</option>
+                <option value="high">Price: High - Low</option>
+                <input type="hidden" id='glassType' value="eye" />
+            </select>
+        </div>
     @foreach ($glasses as $glass)
     <div class="single-product-wrapper mt-6 col-md-4 h-30" style="display:inline-block;">
         <!-- Product Image -->
@@ -42,9 +46,9 @@
             <img src="images/{{$glass->images->first()->image}}" alt="">
             <!-- Favourite -->
             <div class="product-favourite">
-                <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button>
+                {{-- <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button> --}}
 
-                {{-- <a href="#" class="favme fa fa-heart"></a> --}}
+                <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
             </div>
         </div>
 
@@ -77,9 +81,10 @@
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/jquery-ui.js"></script>
     <script src="/js/aos.js"></script>
-
+<script src="/js/active.js"></script>
 <script src="/js/sunmain.js"></script>
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
+
 <script src="/js/active.js"></script>
 @endsection
 

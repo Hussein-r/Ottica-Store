@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <!DOCTYPE html>
-<html lang="en">
+{{-- <html lang="en">
 <head>
 	<title>All Brands</title>
 	<meta charset="UTF-8">
@@ -12,15 +12,15 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
+<body> --}}
 <div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
+		<div class="container">
+			{{-- <div class="wrap-table100"> --}}
+        <a href="{{route('lenseBrand.create')}}" class="btn btn-primary btn-lg" style="margin-bottom: 10px;">Add A New Brand</a>
+
 				<div class="table100">
-        <div style="text-align: center ">
-          <a href="{{route('lenseBrand.create')}}"   style="background-color:#E6E6FA;color:#4682B4;" class="btn btn-info center-block btn-lg">Add A New Brand</a>
-        </div>
-            <table>
+       
+            <table class="table table-striped">
 						<thead>
 							<tr class="table100-head">
               <th class="column1">Name</th>
@@ -40,7 +40,7 @@
                   <td  class="column1">
                     <form action="{{route('lenseBrand.edit',$brand->id)}}" enctype='multipart/form-data' method="get">
                         @csrf       
-                        <button class="btn btn-warning" type="submit">Edit</button>
+                        <button class="btn btn-success" type="submit">Edit</button>
                      </form>
                     </td>
                   <td  class="column1">
@@ -58,11 +58,11 @@
 				</div>
         
 			</div>
-		</div>
+		{{-- </div> --}}
    
 	</div>
-</body>
-</html>
+{{-- </body>
+</html> --}}
  
    
 @endsection
