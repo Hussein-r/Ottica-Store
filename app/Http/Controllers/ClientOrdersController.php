@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\GlassProductPrescriptions;
 use App\LenseProductPrescriptions;
+use App\GlassPrescriptionImage;
 use App\GlassProduct;
 use App\LenseProduct;
 use App\User;
@@ -12,6 +13,7 @@ use App\ContactLenses;
 use Illuminate\Support\Facades\Auth;
 use App\orderList;
 use Illuminate\Http\Request;
+
 
 class ClientOrdersController extends Controller
 {
@@ -86,7 +88,7 @@ class ClientOrdersController extends Controller
             }
             $glass->save();
             if($request->check=='1'){
-                if(Request::exists('image')){
+                if($request->file('image')){
                     $prescription_image= new GlassPrescriptionImage();
                     $prescription_image->order_id=$order->id;
                     $prescription_image->product_id=$request->product_id;
@@ -124,7 +126,7 @@ class ClientOrdersController extends Controller
             }
             $glass->save();
             if($request->check=='1'){
-                if(Request::exists('image')){
+                if($request->file('image')){
                     $prescription_image= new GlassPrescriptionImage();
                     $prescription_image->order_id=$openOrder[0]->id;
                     $prescription_image->product_id=$request->product_id;

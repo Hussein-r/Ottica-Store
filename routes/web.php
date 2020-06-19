@@ -30,6 +30,9 @@ Route::resource('SingleVisionLense','SingleVisionController');
 Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
 Route::resource('BifocalLense','BifocalController');
 Route::resource('comment','CommentsController');
+Route::resource('ColoredEye','ColoredEyesController');
+Route::post('/changeLenseColor','ContactLensesController@changeColor');
+
 
 
 //mariam

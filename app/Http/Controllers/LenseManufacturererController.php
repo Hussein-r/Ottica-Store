@@ -12,7 +12,7 @@ class LenseManufacturererController extends Controller
     public function create()
     {
         $manufacturerers=LenseManufacturerer::all();
-        return view('LenseManufacturerer.create',['manufacturerers' => $manufacturerers]);
+        return view('lenseManufacturerer.create',['manufacturerers' => $manufacturerers]);
     }
 
     public function store(Request $request)
