@@ -51,7 +51,7 @@ Route::get('favourite', 'UserController@myFavourite');
 Route::get('admin/sunglasses','AdminController@sun');
 Route::get('admin/eyeglasses','AdminController@eye');
 Route::get('dashboard','AdminController@adminHome');
-
+Route::get('chart', 'AdminController@adminHome');
 
 
 //hajar

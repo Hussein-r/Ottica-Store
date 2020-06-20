@@ -32,4 +32,8 @@ class Glass extends Model
         return $this->hasMany('App\Favourite');
     }
 
+    // public function orders(){
+    //     return $this->belongsToMany('App\orderList','order_glasses_products','order_id','product_id');
+    // }
+
 }

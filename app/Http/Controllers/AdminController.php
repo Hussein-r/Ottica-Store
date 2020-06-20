@@ -24,11 +24,12 @@ class AdminController extends Controller
     public function adminHome(){
         // $orders = orderList::whereYear('created_at', date('Y'));
         $glass = Glass::pluck('price_before_discount','id');
+       $chart = new AdminChart();
 
-        // $chart = new AdminChart();
-        // $chart->labels(['1', '2', '3'])
-        // ->dataset('glasses','line', $glass->values());
-        return view('dashboard');
+    //    $chart->labels(['First', 'Second', 'Third'])
+    //     ->dataset('Sample', $glass->values()->toArray()); 
+
+        return view('dashboard',compact('chart'));
     }
 
 

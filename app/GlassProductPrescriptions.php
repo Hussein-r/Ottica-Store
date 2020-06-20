@@ -8,5 +8,6 @@ class GlassProductPrescriptions extends Model
 {
     //
     protected $table = 'ordered_glasses_prescriptions';
+    
 
 }

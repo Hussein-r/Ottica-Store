@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\orderList;
+use App\Glass;
+use App\GlassProduct;
+use App\Brand;
+use App\Color;
+use App\glass_images;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -13,7 +20,12 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('cart');
+        $glasses = GlassProduct::crossJoin('glasses','glasses.id','=','order_glasses_products.product_id')->get();
+        // dd($glasses);
+        $brand = new Brand;
+        $color = new Color;
+        $image = new glass_images;
+        return view('cart',compact('glasses','brand','color','image'));
     }
 
     /**
