@@ -30,7 +30,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 order-1 align-self-end">
-                  <img src="images/model.jpg"  alt="Image" class="img-fluid" style="height: 450px; weidth:300px">
+                  <img src="images/home.jpg"  alt="Image" class="img-fluid" >
                 </div>
               </div>
             </div>

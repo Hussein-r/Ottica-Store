@@ -15,7 +15,7 @@
 </style>
 </head>
     <body class="form-v6">
-    <h1 style="text-align: center;color:white;">Add New Contact Lense</h1>
+    <h1 style="text-align: center;color:lightblue;">Add New Contact Lense</h1>
         <div  class="small-middle-container" >
             
             {!! Form::open(['route' => 'lenses.store','files' => 'true', 'method'=>'post']) !!}

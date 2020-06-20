@@ -6,6 +6,7 @@ use App\LenseBrand;
 use App\LenseType;
 use App\LenseManufacturerer;
 use App\Color;
+use App\Comment;
 use App\ColoredEye;
 use App\ColorLense;
 use Illuminate\Http\Request;
@@ -114,11 +115,9 @@ class ContactLensesController extends Controller
         $lense=ContactLenses::where("id","=",$id)->firstOrFail();
         $brand=LenseBrand::where("id","=",$lense->brand_id)->firstOrFail();
         $color=ColorLense::where("lense_id","=",$lense->id)->get('color_id');
-        // dd($color);
         $colors=Color::whereIn("id",$color)->get();
-        // dd($colors);
-        
-        return view('ContactLenses/lenseProfile',compact('lense','brand','colors'));
+        $comments=Comment::where([["category","=",'lense'],["product_id","=",$id]])->get();
+        return view('ContactLenses/lenseProfile',compact('lense','brand','colors','comments'));
 
     }
 
