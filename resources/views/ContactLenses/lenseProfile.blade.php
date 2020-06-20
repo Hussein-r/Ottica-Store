@@ -57,6 +57,45 @@
             </div>
         </div>
     </section>
+    <hr>
+    <div class="row bootstrap snippets col-md-10 " style="margin:auto">
+    <div class="col-md-10 col-md-offset-2 col-sm-12" style="margin:auto">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="text-primary h1" style="text-align:center;">
+                    Comment panel
+                </div>
+                <div class="panel-body">
+                    <form action="{{ route('comment.store') }}" id="mainform" method='post' class="mt-3">
+                        @csrf
+                        <input type="text" name='category' hidden value="lense" >
+                        <input type="text" name='product_id' hidden value="{{$lense->id}}" >
+                        <textarea style="resize:none" class="form-control" name="comment" placeholder="write a comment..." rows="3"></textarea>
+                        <br>
+                        <button type="submit" class="btn btn-info pull-right">Post</button>
+                    </form>
+                    <div class="clearfix"></div>
+                    <hr>
+                    @foreach ($comments as $comment)
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="media-body">
+                                    <span class="text-muted pull-right">
+                                        <small class="text-muted">{{$comment->created_at}}</small>
+                                    </span>
+                                    <strong class="text-success">{{$comment->user->name}}</strong>
+                                    <p>
+                                        {{$comment->comment}}
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="/js/popper.min.js"></script>
