@@ -201,10 +201,28 @@ else{
   {
     array_push($fitArr,$fit->id);
   }
-
-
 }
 // dd($fitArr);
+if (isset($request->maximum_price)){
+  if ($request->maximum_price == 1)
+  {
+    $price=[0,500];
+    // dd($price);
+  }
+  elseif ($request->maximum_price == 2)
+  {
+    $price=[500,1000];
+    // dd($price);
+  }
+  elseif ($request->maximum_price == 3)
+  {
+    $price=[1000,100000];
+    // dd($price);
+  }
+
+}else{
+  $price=[0,100000];
+}
 
 $glasses_types=['eyeglass'];
 $glasses=Glass::whereIn('glass_type',$glasses_types)
@@ -217,8 +235,9 @@ $glasses=Glass::whereIn('glass_type',$glasses_types)
 ->WhereIn('face_shape_id',$face_shapeArr)
 ->WhereIn('frame_shape_id',$frame_shapeArr)
 ->WhereIn('fit_id',$fitArr)
+->whereBetween('price_after_discount',$price)
 ->get();
-       
+
  return view('glass.filteredEyeglass',compact('glasses'));
 
     }
@@ -232,6 +251,7 @@ $glasses=Glass::whereIn('glass_type',$glasses_types)
     public function show(Request $request)
     {
  //sunglass filteration
+//  dd($request);
 
 if (isset($request->brand))
 {
@@ -367,10 +387,28 @@ else{
   {
     array_push($fitArr,$fit->id);
   }
-
-
 }
 // dd($fitArr);
+if (isset($request->maximum_price)){
+  if ($request->maximum_price == 1)
+  {
+    $price=[0,500];
+    // dd($price);
+  }
+  elseif ($request->maximum_price == 2)
+  {
+    $price=[500,1000];
+    // dd($price);
+  }
+  elseif ($request->maximum_price == 3)
+  {
+    $price=[1000,100000];
+    // dd($price);
+  }
+
+}else{
+  $price=[0,100000];
+}
 
 $glasses_types=['sunglass'];
 $glasses=Glass::whereIn('glass_type',$glasses_types)
@@ -383,6 +421,7 @@ $glasses=Glass::whereIn('glass_type',$glasses_types)
 ->WhereIn('face_shape_id',$face_shapeArr)
 ->WhereIn('frame_shape_id',$frame_shapeArr)
 ->WhereIn('fit_id',$fitArr)
+->whereBetween('price_after_discount',$price)
 ->get();
 
 return view('glass.filteredSunglass',compact('glasses'));

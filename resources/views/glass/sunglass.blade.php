@@ -73,9 +73,9 @@
   <div class="border p-4 rounded mb-4 filteration">
       <h3 class="mb-3 h6 text-uppercase text-black d-block">Price</h3>
       <ul class="list-unstyled mb-0" >
-      <li class="mb-1"> <input type="checkbox"  id="maximum_price" value="500"><span> Less Than 500 </span></li>
-      <li class="mb-1"> <input type="checkbox"  id="maximum_price"  value="1000"><span>500:1000 </span></li>
-      <li class="mb-1"> <input type="checkbox"  id="maximum_price" value="1000"><span>More Than 1000 </span></li>
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price" value="1"><span> Less Than 500 </span></li>
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price"  value="2"><span>500:1000 </span></li>
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price" value="3"><span>More Than 1000 </span></li>
       </ul>
     </div>
 
