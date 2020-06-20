@@ -12,6 +12,7 @@ $("#LenseColor").change(function() {
 });
 
 function changeImage() {
+    console.log("Hussein");
     var lensecolor = $("#LenseColor").val();
     $.ajax({
         type: "POST",

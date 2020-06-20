@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use Mail;
+use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -32,8 +33,8 @@ class SendEmailController extends Controller
             'Subject'=>$request->Subject,
             'Body'=>$request->Body
         ];
-        $users = explode(',',$request->To);
-        Mail::to($users)->send(new \App\Mail\ContactMail($Email));
+        $users = explode(',',$Email['To']);
+        Mail::to($users)->send(new ContactMail($Email));
         return back()->with('success', 'Email Sent!');
 
     }

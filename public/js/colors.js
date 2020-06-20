@@ -178,11 +178,15 @@ object.onclick = function() {
                     .hide()
                     .appendTo("#mainform");
             } else if (manual) {
-                $("#tableform :input")
-                    .not(":submit")
-                    .clone()
-                    .hide()
-                    .appendTo("#mainform");
+                $("#tableform select").each(function() {
+                    $(
+                        "<input type='hidden' name='" +
+                            $(this).attr("name") +
+                            "' value='" +
+                            $(this).val() +
+                            "' />"
+                    ).appendTo("#mainform");
+                });
             }
         } else if (is_progressive) {
             $("#progressiveform :input")
@@ -197,11 +201,15 @@ object.onclick = function() {
                     .hide()
                     .appendTo("#mainform");
             } else if (manual) {
-                $("#tableform :input")
-                    .not(":submit")
-                    .clone()
-                    .hide()
-                    .appendTo("#mainform");
+                $("#tableform select").each(function() {
+                    $(
+                        "<input type='hidden' name='" +
+                            $(this).attr("name") +
+                            "' value='" +
+                            $(this).val() +
+                            "' />"
+                    ).appendTo("#mainform");
+                });
             }
         } else if (is_bifocal) {
             $("#bifocalform :input")
@@ -216,25 +224,16 @@ object.onclick = function() {
                     .hide()
                     .appendTo("#mainform");
             } else if (manual) {
-                $("#tableform :input")
-                    .not(":submit")
-                    .clone()
-                    .hide()
-                    .appendTo("#mainform");
+                $("#tableform select").each(function() {
+                    $(
+                        "<input type='hidden' name='" +
+                            $(this).attr("name") +
+                            "' value='" +
+                            $(this).val() +
+                            "' />"
+                    ).appendTo("#mainform");
+                });
             }
-        }
-        if (is_image) {
-            $("#imageform :input")
-                .not(":submit")
-                .clone()
-                .hide()
-                .appendTo("#mainform");
-        } else if (manual) {
-            $("#tableform :input")
-                .not(":submit")
-                .clone()
-                .hide()
-                .appendTo("#mainform");
         }
     }
 };

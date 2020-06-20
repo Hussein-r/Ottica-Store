@@ -71,19 +71,12 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-product-wrapper">
                         <!-- Product Image -->
-                        @if($lense->images->first())                        
                         <div class="product-img">
-                            <img style="height: 150px" src="/images/{{$lense->images->first()->image}}" alt="product image">
-                            @endif
-                            <!-- Hover Thumb -->
-                            @if($lense->images->last())     
-                            <img class="hover-img" src="/images/{{$lense->images->last()->image}}" alt="">
-                            @endif
+                            <img style="height: 150px" src="/images/{{$lense->image}}" alt="product image">
                             <!-- Product Badge -->
                             <div class="product-badge new-badge">
-                            <span>{{$lense->label}}</span>
+                                <span>{{$lense->label}}</span>
                             </div>
-                            
                         </div>
 
                         <!-- Product Description -->
