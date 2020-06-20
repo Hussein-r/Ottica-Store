@@ -57,9 +57,8 @@
             </div>
         </div>
     </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
     <script src="/js/popper.min.js"></script>
     <!-- Bootstrap js -->
     <script src="/js/bootstrap.min.js"></script>

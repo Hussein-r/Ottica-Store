@@ -35,44 +35,53 @@ return [
 
     'mailers' => [
         'smtp' => [
-            'driver'     => env('MAIL_DRIVER', 'smtp'),
-            'host'       => env('MAIL_HOST', 'smtp.gmail.com'),
-            'port'       => env('MAIL_PORT', 587),
-            'from'       => ['address' =>'Hussein.rk94@gmail.com', 'name' => 'Hussein Ragab'],
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username'   => env('MAIL_USERNAME','Hussein.rk94@gmail.com'),
-            'password'   => env('MAIL_PASSWORD','HussRk94@_'),
-            'sendmail'   => '/usr/sbin/sendmail -bs',
+        'transport' => 'smtp',
+        'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+        'port' => env('MAIL_PORT', 587),
+        'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+        'username' => env('MAIL_USERNAME'),
+        'password' => env('MAIL_PASSWORD'),
+        'timeout' => null,
+        'auth_mode' => null,
         ],
         
-
         'ses' => [
-            'transport' => 'ses',
+        'transport' => 'ses',
         ],
-
+        
         'mailgun' => [
-            'transport' => 'mailgun',
+        'transport' => 'mailgun',
         ],
-
+        
         'postmark' => [
-            'transport' => 'postmark',
+        'transport' => 'postmark',
         ],
-
+        
         'sendmail' => [
-            'transport' => 'sendmail',
-            'path' => '/usr/sbin/sendmail -bs',
+        'transport' => 'sendmail',
+        'path' => '/usr/sbin/sendmail -bs',
         ],
-
+        
         'log' => [
-            'transport' => 'log',
-            'channel' => env('MAIL_LOG_CHANNEL'),
+        'transport' => 'log',
+        'channel' => env('MAIL_LOG_CHANNEL'),
         ],
-
+        
         'array' => [
-            'transport' => 'array',
+        'transport' => 'array',
         ],
-    ],
-
+        ], 
+        'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'eslamelkholy444@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'News Website'),
+        ], 
+        'markdown' => [
+        'theme' => 'default',
+        
+        'paths' => [
+        resource_path('views/vendor/mail'),
+        ],
+        ], 
     /*
     |--------------------------------------------------------------------------
     | Global "From" Address

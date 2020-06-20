@@ -63,7 +63,7 @@
                     <input type="text" id="maincategory" hidden name="category" value="1">
                     <input type="text" class="id" hidden name='code' value="{{$glass->glass_code}}"></input>
                     <input type="text" hidden name='product_id' value="{{$glass->id}}"></input>
-                    <input type="number" class="form-control mt-3" id="quantity" name="quantity" min="1" placeholder="Quantity"></input>
+                    <input type="number" class="form-control mt-3" id="quantity" value="1" name="quantity" min="1" placeholder="Quantity"></input>
                     <input type="text" hidden name='price' value="{{$glass->price_after_discount}}"></input>
                     <div class="alert alert-success mt-2" id="presimage">
                         <ul>
