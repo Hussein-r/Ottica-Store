@@ -60,7 +60,7 @@
             </a>
             <p style="margin-left:10%;" class="product-price"><strong class="price"><del>{{$glass->price_before_discount}}</del> 
                     {{$glass->price_after_discount}}</strong></p>
-                    <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
+                    <span><h5 class="text-danger" style="text-align:right;">{{round((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100) }} %</h5></span>
 
             <!-- Hover Content -->
             <div class="hover-content">

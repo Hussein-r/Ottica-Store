@@ -49,7 +49,7 @@
                 <thead>
                   <tr>
                     <th class="product-thumbnail">Image</th>
-                    <th class="product-name">Brand</th>
+                    <th class="product-name">Name</th>
                     <th class="product-price">Price</th>
                     <th class="product-price">Discount</th>
                     <th class="product-price">Type</th>
@@ -67,11 +67,26 @@
                        </td> 
   
                       <td class="product-name">
-                      <h2 class="h5 text-black">{{$brand->find($glass->brand_id)->name }}</h2>
+                        <a href="/glass/{{$glass->id}}">
+                        <h2 class="h5 text-black">{{$brand->find($glass->brand_id)->name }}</h2> <span class="text-black">{{$glass->glass_type}} <span style="color: {{$color->find($glass->color_id)->name}}">{{$color->find($glass->color_id)->name}}</span>
+                        </a>
                       </td>
                       <td>{{$glass->price_before_discount}}</td>
-                      <td class="text text-danger">{{((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100)}} %</td>
-                      <td></td>
+                      <td class="text text-danger">{{round(((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100))}} %</td>
+                      @if ($glass->glass_type == 'sunglass')
+                          <td>{{$glass->glass_type}}</td>
+                      @else
+                        @if (($glass->glass_type == 'eyeglass') && ($glass->category == 'no prescription'))
+                          <td>Frame</td>
+                        @else
+                          @if ($glass->category != 'no prescription')
+                              <td>Frame with <a href="">lenses</a>  <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">donate now</button>
+                              </td> 
+                          @endif
+                          
+                        @endif
+                      @endif 
+                      
                       <td>{{$glass->quantity}}</td>
                     <td>{{($glass->price_after_discount)* $glass->quantity}}</td>
                     <td><a href="#" class="btn btn-danger height-auto btn-sm">X</a></td>
@@ -88,7 +103,37 @@
             </div>
           </form>
         </div>
-
+<!-- Modal -->
+<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header" style="background: orange">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ion-android-close"></span></button>
+              <h4 class="modal-title" id="myModalLabel" style="color: whitesmoke;">Donation For Siddhyog Sadhan Mandal</h4>
+          </div>            <!-- Modal Body -->
+          <div class="modal-body">
+              <div>
+                  Payment Option
+              </div>
+              <form id="frm-donation" name="frm-donation">
+                  <div class="header-btn">
+                      <div id="div-physical">
+                          <label>
+                              <input id="rdb_physical" name="rdb_donation" value="0" type="radio" checked="" class="validate[required]" data-errormessage-value-missing="Donation Type is required!">
+                              Physical Entity Donation
+                          </label>
+                      </div>
+              </form>
+              <div class="modal-body">
+                  <div class="modal-footer" id="modal_footer">
+                      <!--<input id="btnSubmit" name="btnSubmit" value="Donate" class="btn btn-default-border-blk" type="submit">-->
+                      <a id="btnDonate" class="btn btn-default-border-blk">Donate</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
         <div class="row">
           <div class="col-md-6">
             <div class="row mb-5">

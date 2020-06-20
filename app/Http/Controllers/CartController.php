@@ -9,6 +9,8 @@ use App\GlassProduct;
 use App\Brand;
 use App\Color;
 use App\glass_images;
+use App\GlassProductPrescriptions;
+use App\LenseProduct;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -20,11 +22,23 @@ class CartController extends Controller
      */
     public function index()
     {
-        $glasses = GlassProduct::crossJoin('glasses','glasses.id','=','order_glasses_products.product_id')->get();
-        // dd($glasses);
+        $order = orderList::where([
+            ['user_order_state',0],
+            ['admin_order_state','inactive']
+        ])->firstOrFail();
+
+        $glasses = GlassProduct::crossJoin('glasses','glasses.id','=','order_glasses_products.product_id')
+        ->where('order_id',$order->id)
+        ->get();
         $brand = new Brand;
         $color = new Color;
         $image = new glass_images;
+        $lenses = LenseProduct::crossJoin('glasses','glasses.id','=','order_lenses_products.product_id')
+        ->where('order_id',$order->id)
+        ->get();
+        dd($lenses);
+
+
         return view('cart',compact('glasses','brand','color','image'));
     }
 

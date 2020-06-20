@@ -57,13 +57,13 @@
         <!-- Product Description -->
         <div class="product-description">
             <span>{{$glass->code}}</span>
-            <a  href="single-product-details.html">
+            <a  href="#">
                 <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
             </a>
             <p class="product-price">
                 <span class="old-price">{{$glass->price_before_discount}}EGP</span> 
                 {{$glass->price_after_discount}}EGP
-                <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
+                <span><h5 class="text-danger" style="text-align:right;">{{round((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100) }} %</h5></span>
             </p>
             <!-- Hover Content -->
             <div class="hover-content">
