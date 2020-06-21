@@ -74,19 +74,22 @@ class ClientOrdersController extends Controller
             if($request->category == 1){
                 $glass->price=$request->price * $request->quantity;
             }else if($request->category == 2){
+                $lense_details = explode(',', $request->single_lense);
                 $glass->lense_type=$request->single_lense_type;
-                $glass->color_id=$request->single_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 3){
+                $lense_details = explode(',', $request->progressive_lense);
                 $glass->lense_type=$request->progressive_lense_type;
-                $glass->color_id=$request->progressive_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 4){
+                $lense_details = explode(',', $request->bifocal_lense);
                 $glass->lense_type=$request->bifocal_lense_type;
-                $glass->color_id=$request->bifocal_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }
             $glass->save();
@@ -123,19 +126,22 @@ class ClientOrdersController extends Controller
             if($request->category == 1){
                 $glass->price=$request->price * $request->quantity;
             }else if($request->category == 2){
+                $lense_details = explode(',', $request->single_lense);
                 $glass->lense_type=$request->single_lense_type;
-                $glass->color_id=$request->single_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 3){
+                $lense_details = explode(',', $request->progressive_lense);
                 $glass->lense_type=$request->progressive_lense_type;
-                $glass->color_id=$request->progressive_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 4){
+                $lense_details = explode(',', $request->bifocal_lense);
                 $glass->lense_type=$request->bifocal_lense_type;
-                $glass->color_id=$request->bifocal_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }
             $glass->save();
@@ -206,14 +212,12 @@ class ClientOrdersController extends Controller
                 $prescription_details= new LenseProductPrescriptions();
                 $prescription_details->order_id = $order->id;
                 $prescription_details->product_id =$request->product_id;
-                $prescription_details->right_sphere =$request->right_sphere;
-                $prescription_details->left_sphere =$request->left_sphere;
-                $prescription_details->right_cylinder =$request->right_cylinder;
-                $prescription_details->left_cylinder =$request->left_cylinder;
-                $prescription_details->right_axis =$request->right_axis;
-                $prescription_details->left_axis =$request->left_axis;
-                $prescription_details->right_add =$request->right_add;
-                $prescription_details->left_add =$request->left_add;
+                $prescription_details->right_bc =$request->right_bc;
+                $prescription_details->left_bc =$request->left_bc;
+                $prescription_details->right_power =$request->right_power;
+                $prescription_details->left_power =$request->left_power;
+                $prescription_details->right_dia =$request->right_dia;
+                $prescription_details->left_dia =$request->left_dia;
                 $prescription_details->save();
 
             }
@@ -243,14 +247,12 @@ class ClientOrdersController extends Controller
                 $prescription_details= new LenseProductPrescriptions();
                 $prescription_details->order_id = $openOrder[0]->id;
                 $prescription_details->product_id =$request->product_id;
-                $prescription_details->right_sphere =$request->right_sphere;
-                $prescription_details->left_sphere =$request->left_sphere;
-                $prescription_details->right_cylinder =$request->right_cylinder;
-                $prescription_details->left_cylinder =$request->left_cylinder;
-                $prescription_details->right_axis =$request->right_axis;
-                $prescription_details->left_axis =$request->left_axis;
-                $prescription_details->right_add =$request->right_add;
-                $prescription_details->left_add =$request->left_add;
+                $prescription_details->right_bc =$request->right_bc;
+                $prescription_details->left_bc =$request->left_bc;
+                $prescription_details->right_power =$request->right_power;
+                $prescription_details->left_power =$request->left_power;
+                $prescription_details->right_dia =$request->right_dia;
+                $prescription_details->left_dia =$request->left_dia;
                 $prescription_details->save();
 
             }
