@@ -37,8 +37,6 @@
   <div class="col-9">
      <!-- ------ -->
      <div id="filter_data" class="mt-3" style="border-top:1px solid black;">
-
-    <div class="mt-3" style="border-top:1px solid black;">
         <div class="product-sorting d-flex" style="text-align: right">
             <strong>Sort by:</strong>
             {{-- <form action="/price" method="post">
@@ -188,7 +186,7 @@
       @endforeach 
       </ul>
     </div>
-<!-- ------------------ -->
+
 </div>
   <!-- --------------------- -->
 </div>
@@ -198,12 +196,11 @@
 
 
     </section>
-
-<body>
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery-2.2.4.min.js"></script>
-    <script src="/js/jquery-ui.js"></script>
-    <script src="/js/aos.js"></script>
+  </body>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-2.2.4.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>

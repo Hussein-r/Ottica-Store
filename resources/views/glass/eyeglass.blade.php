@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/css/core-style.css">
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
-
-<body>
-<section class="container">
+@section('content')
+<body style="background-color:white;">
+    <section class="container">
     <div class="site-blocks-cover" data-aos="fade">
         <div class="container">
                 <div class="row">

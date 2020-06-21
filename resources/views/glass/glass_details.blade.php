@@ -41,8 +41,7 @@
             </a>
             <h2>{{$glass->label}}</h2>
             <p id='id'>{{$glass->glass_code}}</p>
-            <p class="product-price"><span class="old-price">{{$glass->price_before_discount}}</span>{{$glass->price_after_discount}}</p>
-            <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
+            <p class="product-desc">{{$glass->description}}</p>
             <form action="{{ route('order.store') }}" id="mainform" method='post' class="mt-3" enctype="multipart/form-data">
                 @csrf 
                 @if ($glass->glass_type == 'eyeglass')
@@ -60,11 +59,11 @@
                         <option value="{{$color->id}}" {{( $glass->color_id==$color->id ? "selected":"") }}>{{$color->name}}</option>
                     @endforeach   
                     </select>
+                    <input type="number" value="{{$glass->price_after_discount}}" name="price" hidden>
                     <input type="text" id="maincategory" hidden name="category" value="1">
                     <input type="text" class="id" hidden name='code' value="{{$glass->glass_code}}"></input>
                     <input type="text" hidden name='product_id' value="{{$glass->id}}"></input>
                     <input type="number" class="form-control mt-3" id="quantity" value="1" name="quantity" min="1" placeholder="Quantity"></input>
-                    <input type="text" hidden name='price' value="{{$glass->price_after_discount}}"></input>
                     <div class="alert alert-success mt-2" id="presimage">
                         <ul>
                             <li>Your prescription image has been added</li>
@@ -104,8 +103,7 @@
                         </label>
                         @foreach($singlelense as $singlelensecolor)
                         <div class="form-check reveal-if-active" >
-                            <input class="form-check-input form1-field" type="radio" name="single_lense_color"  value="{{$singlelensecolor->color_id}}" onchange="changeFirstForm()">
-                            <input type="text" name="lense_price" value="{{$singlelensecolor->price}}" hidden>
+                            <input class="form-check-input form1-field" type="radio" name="single_lense"  value="{{$singlelensecolor->color_id}},{{$singlelensecolor->price}}" onchange="changeFirstForm()">
                             <label style="color:black" class="form-check-label">
                                 {{$singlelensecolor->color->name}}&emsp;{{$singlelensecolor->price}} EGP
                             </label>
@@ -133,8 +131,7 @@
                         </label>
                         @foreach($progressivelense as $progressivelensecolor)
                         <div class="form-check reveal-if-active" id="progressivecolors">
-                            <input type="text" name="lense_price" value="{{$progressivelensecolor->price}}" hidden>
-                            <input class="form-check-input form2-field" type="radio" name="progressive_lense_color"  value="{{$progressivelensecolor->color_id}}" onchange="changeSecondForm()">
+                            <input class="form-check-input form2-field" type="radio" name="progressive_lense"  value="{{$progressivelensecolor->color_id}},{{$progressivelensecolor->price}}" onchange="changeSecondForm()">
                             <label style="color:black" class="form-check-label" >
                                 {{$progressivelensecolor->color->name}}&emsp;{{$progressivelensecolor->price}} EGP
                             </label>
@@ -162,8 +159,7 @@
                     </label>
                     @foreach($bifocallense as $bifocallensecolor)
                     <div class="form-check reveal-if-active" id="bifocalcolors">
-                        <input type="text" name="lense_price" value="{{$bifocallensecolor->price}}" hidden>
-                        <input class="form-check-input form3-field" type="radio" name="bifocal_lense_color" value="{{$bifocallensecolor->color_id}}" onchange="changeThirdForm()">
+                        <input class="form-check-input form3-field" type="radio" name="bifocal_lense" value="{{$bifocallensecolor->color_id}},{{$bifocallensecolor->price}}" onchange="changeThirdForm()">
                         <label style="color:black" class="form-check-label" >
                             {{$bifocallensecolor->color->name}}&emsp;{{$bifocallensecolor->price}} EGP
                         </label>
@@ -200,6 +196,7 @@
                         <span class="input-group-text">Upload</span>
                     </div>
                     <div class="custom-file">
+                        <input type="text" name="prescription_type" hidden value="image">
                         <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
@@ -239,6 +236,9 @@
                         <tr>
                             <th>Right Eye (OD)</th> 
                             <td>
+                                <select hidden name="prescription_type">
+                                    <option value="table">table</option>
+                                </select>
                                 <select class="col-md-6" name="right_sphere">
                                     <option value=" "></option>
                                     <option value="-20.00">-20.00</option>

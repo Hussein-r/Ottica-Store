@@ -34,3 +34,42 @@ function changeNumber(number) {
 $("#numbers").change(function() {
     changeNumber(this.value);
 });
+
+var addedPrescription = false;
+
+$("input[name='presType']").change(function() {
+    if ($("#table").is(":checked")) {
+        $("#tableform").prop("hidden", false);
+        $("#imageform").prop("hidden", true);
+    } else {
+        $("#imageform").prop("hidden", false);
+        $("#tableform").prop("hidden", true);
+    }
+});
+
+function addPrescription() {
+    var presType = document.querySelector('input[name="presType"]:checked')
+        .value;
+    if (presType == "table") {
+        $("#tableform select").each(function() {
+            $(
+                "<input type='hidden' name='" +
+                    $(this).attr("name") +
+                    "' value='" +
+                    $(this).val() +
+                    "' />"
+            ).appendTo("#mainform");
+            $("#tableform :input")
+                .not(":submit")
+                .clone()
+                .hide()
+                .appendTo("#mainform");
+        });
+    } else if (presType == "image") {
+        $("#imageform :input")
+            .not(":submit")
+            .clone()
+            .hide()
+            .appendTo("#mainform");
+    }
+}
