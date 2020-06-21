@@ -180,21 +180,64 @@ class GlassController extends Controller
 
     public function sunglasses()
     {
-        // $glasses=Glass::where('glass_type','=','sunglass')->get()->sortBy('price_after_discount');
+        //filteration part (hajar)
+         //price in same table
+         $brands=Brand::all();
+         //gender-> male - female - unisex
+         $faceShapes=FaceShape::all();
+         $frameShapes=FrameShape::all();
+         $colors=Color::all();
+         $secondaryColors=Color::all();
+         $materials=Material::all();
+         $secondaryMaterials=Material::all();
+         $fits=Fit::all();
+        /////////////////
 
         $glasses = Glass::where('glass_type','=','sunglass')->paginate(15);
         // $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
-        // dd($glasses);
-        return view('glass.sunglass',['glasses'=>$glasses])->render();
+        return view('glass.sunglass',[
+            'glasses'=>$glasses,
+            'brands'=>$brands,
+            'faceShapes'=>$faceShapes,
+            'frameShapes'=>$frameShapes,
+            'colors'=>$colors,
+            'secondaryColors'=>$secondaryColors,
+            'materials'=>$materials,
+            'secondaryMaterials'=>$secondaryMaterials,
+            'fits'=>$fits,
+        ])->render();
     }
 
     public function eyeglasses()
     {
+
+        //filteration part (hajar)
+         //price in same table
+         $brands=Brand::all();
+         //gender-> male - female - unisex
+         $faceShapes=FaceShape::all();
+         $frameShapes=FrameShape::all();
+         $colors=Color::all();
+         $secondaryColors=Color::all();
+         $materials=Material::all();
+         $secondaryMaterials=Material::all();
+         $fits=Fit::all();
+        /////////////////
         $glasses = Glass::where('glass_type','=','eyeglass')->paginate(15);
         // $allcolors=Glass::where("glass_code",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
-        return view('glass.eyeglass', compact('glasses'));
+        return view('glass.eyeglass',[
+            'glasses'=>$glasses,
+            'brands'=>$brands,
+            'faceShapes'=>$faceShapes,
+            'frameShapes'=>$frameShapes,
+            'colors'=>$colors,
+            'secondaryColors'=>$secondaryColors,
+            'materials'=>$materials,
+            'secondaryMaterials'=>$secondaryMaterials,
+            'fits'=>$fits,
+        ]);
     }
 
     public function sort(Request $request)
