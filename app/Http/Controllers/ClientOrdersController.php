@@ -212,14 +212,12 @@ class ClientOrdersController extends Controller
                 $prescription_details= new LenseProductPrescriptions();
                 $prescription_details->order_id = $order->id;
                 $prescription_details->product_id =$request->product_id;
-                $prescription_details->right_sphere =$request->right_sphere;
-                $prescription_details->left_sphere =$request->left_sphere;
-                $prescription_details->right_cylinder =$request->right_cylinder;
-                $prescription_details->left_cylinder =$request->left_cylinder;
-                $prescription_details->right_axis =$request->right_axis;
-                $prescription_details->left_axis =$request->left_axis;
-                $prescription_details->right_add =$request->right_add;
-                $prescription_details->left_add =$request->left_add;
+                $prescription_details->right_bc =$request->right_bc;
+                $prescription_details->left_bc =$request->left_bc;
+                $prescription_details->right_power =$request->right_power;
+                $prescription_details->left_power =$request->left_power;
+                $prescription_details->right_dia =$request->right_dia;
+                $prescription_details->left_dia =$request->left_dia;
                 $prescription_details->save();
 
             }
@@ -249,14 +247,12 @@ class ClientOrdersController extends Controller
                 $prescription_details= new LenseProductPrescriptions();
                 $prescription_details->order_id = $openOrder[0]->id;
                 $prescription_details->product_id =$request->product_id;
-                $prescription_details->right_sphere =$request->right_sphere;
-                $prescription_details->left_sphere =$request->left_sphere;
-                $prescription_details->right_cylinder =$request->right_cylinder;
-                $prescription_details->left_cylinder =$request->left_cylinder;
-                $prescription_details->right_axis =$request->right_axis;
-                $prescription_details->left_axis =$request->left_axis;
-                $prescription_details->right_add =$request->right_add;
-                $prescription_details->left_add =$request->left_add;
+                $prescription_details->right_bc =$request->right_bc;
+                $prescription_details->left_bc =$request->left_bc;
+                $prescription_details->right_power =$request->right_power;
+                $prescription_details->left_power =$request->left_power;
+                $prescription_details->right_dia =$request->right_dia;
+                $prescription_details->left_dia =$request->left_dia;
                 $prescription_details->save();
 
             }
