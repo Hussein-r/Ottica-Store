@@ -164,9 +164,11 @@
                   <div class="col-md-12">
                     <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
                   </div>
+                  <a href="/paypal/ec-checkout"> <h4><img src="img/bg-img/paypal.png" alt="logo Ray-ban"></h4></a> 
                 </div>
               </div>
             </div>
+          
           </div>
         </div>
       </div>

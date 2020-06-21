@@ -46,18 +46,25 @@
                         </div> --}}
                         <!-- Sorting -->
                        
-
+                        
+                        <form class="form-inline d-block" metod="POST" action="/search">
+                            <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </form>
+           
                         <div class="btn-group" style=margin-left:900px;>
                             <button type="button" class="btn btn-danger" disabled>Sorted BY</button>
                             <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item"  href='/sort/1'>Newest</a>
-                                <a class="dropdown-item"  href='/sort/4'>Name</a>
-                                <a class="dropdown-item" href="/sort/2">Price: $ - $$</a>
-                                <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>  
+                                <a class="dropdown-item"  href='/sortt/1'>Newest</a>
+                                <a class="dropdown-item"  href='/sortt/4'>Name</a>
+                                <a class="dropdown-item" href="/sortt/2">Price: $ - $$</a>
+                                <a class="dropdown-item" href="/sortt/3">Price: $$ - $</a>  
                         </div>
+
+                       
                         <div>
                         </div>
                     </div>
