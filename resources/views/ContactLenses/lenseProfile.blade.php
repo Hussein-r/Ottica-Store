@@ -159,7 +159,7 @@
                                     <select hidden name="prescription_type">
                                         <option value="table">table</option>
                                     </select>
-                                    <select class="col-md-6" name="right_sphere">
+                                    <select class="col-md-6" name="right_bc">
                                         <option value=" "></option>
                                         <option value="-20.00">-20.00</option>
                                         <option value="-19.75">-19.75</option>
@@ -310,7 +310,7 @@
                                     </select> 
                                 </td> 
                                 <td>
-                                    <select class="col-md-6" name="right_cylinder">
+                                    <select class="col-md-6" name="right_power">
                                         <option value=" "></option>
                                         <option value="-12.00">-12.00</option>
                                         <option value="-11.75">-11.75</option>
@@ -412,7 +412,7 @@
                                     </select> 
                                 </td> 
                                 <td>
-                                    <select class="col-md-6" name="right_axis">
+                                    <select class="col-md-6" name="right_dia">
                                         <option value=" "></option>
                                         <option value="blank/0">blank/0</option>
                                         <option value="001">001</option>
@@ -597,41 +597,11 @@
                                         <option value="180">180</option>
                                     </select> 
                                 </td> 
-                                <td>
-                                    <select class="col-md-6" name="right_add">
-                                        <option value=" "></option>
-                                        <option value="0"></option>
-                                        <option value="+0.25">+0.25</option>
-                                        <option value="+0.50">+0.50</option>
-                                        <option value="+0.75">+0.75</option>
-                                        <option value="+1.00">+1.00</option>
-                                        <option value="+1.25">+1.25</option>
-                                        <option value="+1.50">+1.50</option>
-                                        <option value="+1.75">+1.75</option>
-                                        <option value="+2.00">+2.00</option>
-                                        <option value="+2.25">+2.25</option>
-                                        <option value="+2.50">+2.50</option>
-                                        <option value="+2.75">+2.75</option>
-                                        <option value="+3.00">+3.00</option>
-                                        <option value="+3.25">+3.25</option>
-                                        <option value="+3.50">+3.50</option>
-                                        <option value="+3.75">+3.75</option>
-                                        <option value="+4.00">+4.00</option>
-                                        <option value="+4.25">+4.25</option>
-                                        <option value="+4.50">+4.50</option>
-                                        <option value="+4.75">+4.75</option>
-                                        <option value="+5.00">+5.00</option>
-                                        <option value="+5.25">+5.25</option>
-                                        <option value="+5.50">+5.50</option>
-                                        <option value="+5.75">+5.75</option>
-                                        <option value="+6.00">+6.00</option>
-                                    </select> 
-                                </td>
                             </tr> 
                             <tr>
                                 <th>Left Eye (OS)</th> 
                                 <td>
-                                    <select class="col-md-6" name="left_sphere">
+                                    <select class="col-md-6" name="left_bc">
                                         <option value=" "></option>
                                         <option value="-20.00">-20.00</option>
                                         <option value="-19.75">-19.75</option>
@@ -782,7 +752,7 @@
                                     </select> 
                                 </td> 
                                 <td>
-                                    <select class="col-md-6" name="left_cylinder">
+                                    <select class="col-md-6" name="left_power">
                                         <option value=" "></option>
                                         <option value="-12.00">-12.00</option>
                                         <option value="-11.75">-11.75</option>
@@ -884,7 +854,7 @@
                                     </select> 
                                 </td> 
                                 <td>
-                                    <select class="col-md-6" name="left_axis">
+                                    <select class="col-md-6" name="left_dia">
                                         <option value=" "></option>
                                         <option value="blank/0">blank/0</option>
                                         <option value="001">001</option>
@@ -1069,36 +1039,6 @@
                                         <option value="180">180</option>
                                     </select> 
                                 </td> 
-                                <td>
-                                    <select class="col-md-6" name="left_add">
-                                        <option value=" "></option>
-                                        <option value="0"></option>
-                                        <option value="+0.25">+0.25</option>
-                                        <option value="+0.50">+0.50</option>
-                                        <option value="+0.75">+0.75</option>
-                                        <option value="+1.00">+1.00</option>
-                                        <option value="+1.25">+1.25</option>
-                                        <option value="+1.50">+1.50</option>
-                                        <option value="+1.75">+1.75</option>
-                                        <option value="+2.00">+2.00</option>
-                                        <option value="+2.25">+2.25</option>
-                                        <option value="+2.50">+2.50</option>
-                                        <option value="+2.75">+2.75</option>
-                                        <option value="+3.00">+3.00</option>
-                                        <option value="+3.25">+3.25</option>
-                                        <option value="+3.50">+3.50</option>
-                                        <option value="+3.75">+3.75</option>
-                                        <option value="+4.00">+4.00</option>
-                                        <option value="+4.25">+4.25</option>
-                                        <option value="+4.50">+4.50</option>
-                                        <option value="+4.75">+4.75</option>
-                                        <option value="+5.00">+5.00</option>
-                                        <option value="+5.25">+5.25</option>
-                                        <option value="+5.50">+5.50</option>
-                                        <option value="+5.75">+5.75</option>
-                                        <option value="+6.00">+6.00</option>
-                                    </select> 
-                                </td>
                             </tr>
                         </tbody>
                     </table>
