@@ -14,7 +14,7 @@ class RemoveQuantityFromContactLenses extends Migration
     public function up()
     {
         Schema::table('contact_lenses', function (Blueprint $table) {
-            $table->dropColumn('quantity');
+            $table->dropColumn('duration');
         });
     }
 
@@ -26,7 +26,7 @@ class RemoveQuantityFromContactLenses extends Migration
     public function down()
     {
         Schema::table('contact_lenses', function (Blueprint $table) {
-            $table->string('quantity');
+            $table->string('duration');
         });
     }
 }

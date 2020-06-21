@@ -96,16 +96,6 @@
                     <a href="{{route('lensetype.create')}}"  class="btn btn-info center-block">Add A New Type</a>
                     </div>
                 </div>
-                <div class="input-group mb-3">
-                    <select class="custom-select" id="inputGroupSelect01" name="duration">
-                        <option selected disabled>Choose Duration</option>
-                        <option value="1">1 Day</option> 
-                        <option value="7">1 Week</option> 
-                        <option value="30">1 Month</option> 
-                        <option value="90">3 Months</option> 
-                        <option value="365">1 Year</option> 
-                    </select>
-                </div>
                 <div><span class="text-white">{{$errors->first('type_id')}}</span></div>
                 <div class="input-group mb-3">
                 
@@ -133,6 +123,11 @@
                     {!! Form::text('water_of_content',null,['class'=>'form-control','aria-label'=>'water_of_content', 'aria-describedby'=>'basic-addon1','placeholder'=>'Water Of Content'])  !!}
                 </div>
                 <div><span class="text-white">{{$errors->first('water_of_content')}}</span></div>
+                <div class="input-group mb-3">
+                    <input type="number" id="numbers"  name="number_of_types" placeholder="how many types have you got?">
+                </div>
+                <div id="useandprice" class="mt-3 mb-3">
+                </div>
                 <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect01" name="lense_purpose">
                         <option disabled>Choose Lense Purpose</option>
@@ -165,6 +160,10 @@
         
 
     </body>
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="/js/LenseColors.js"></script>
+
 </html>
 @endsection
 

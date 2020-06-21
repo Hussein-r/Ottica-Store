@@ -23,8 +23,7 @@ class ContactLenses extends Model
         'material_of_content',
         'water_of_content',
         'lense_purpose',
-        'duration',
-        'image'
+        'image',
     ];
 
     public function brand()
