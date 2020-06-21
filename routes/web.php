@@ -52,9 +52,11 @@ Route::get('admin/sunglasses','AdminController@sun');
 Route::get('admin/eyeglasses','AdminController@eye');
 Route::get('dashboard','AdminController@adminHome');
 Route::get('chart', 'AdminController@adminHome');
+Route::resource('cart','CartController');
 Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
 Route::post('/promocode', 'CartController@promocode');
 Route::get('checkout','CartController@checkout');
+Route::get('thanks','CartController@submitOrder');
 
 
 //hajar

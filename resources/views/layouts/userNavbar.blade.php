@@ -95,7 +95,7 @@
           </div>
           <div class="icons">
           <a href="{{url('/favourite')}}" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
-            <a href="/cart" class="icons-btn d-inline-block bag">
+            <a href="{{url('cart')}}" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
               <span class="number">2</span>
             </a>

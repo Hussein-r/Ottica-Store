@@ -124,7 +124,7 @@
                       </td>
                       {{-- {{$item->product_id}} --}}
                       <td>{{  $use_type->where([['duration',$item->duration],['lense_id',$item->product_id]])->firstOrFail()->price  }}</td>
-                    <td class="h5 text-dander">0%</td>                      
+                    <td class="h5 text-danger">0%</td>                      
                     <td>{{$lense_type->find($item->type_id)->name}}</td>
                       <td>{{$item->quantity}}</td>
                     <td>{{$item->price}}</td>
@@ -162,7 +162,7 @@
               <div class="col-md-8 mb-3 mb-md-0">
                 <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
               </div>
-              <div class="col-md-4">
+              <div id="alertappend" class="col-md-4">
                 <button  id="promocode" class="btn btn-primary btn-sm px-4">Apply Coupon</button>
               </div>
             </div>
@@ -173,6 +173,14 @@
                 <div class="row">
                   <div class="col-md-12 text-right border-bottom mb-5">
                     <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                  </div>
+                </div>
+                <div id="sub" class="row mb-3">
+                  <div class="col-md-6">
+                    <span class="text-black">Discount</span>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <strong class="text-danger">- {{$discount}}</strong>
                   </div>
                 </div>
                 <div id="sub" class="row mb-3">
@@ -189,6 +197,7 @@
                   <div id="discount" class="col-md-6 text-right">
                   </div>
                 </div>
+                <hr/>
                 <div class="row mb-5">
                   <div class="col-md-6">
                     <span class="text-black">Total</span>

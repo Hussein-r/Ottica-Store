@@ -53,9 +53,12 @@ class CartController extends Controller
         $lense_color = new ColorLense;
         $use_type = new LenseUseType;
 
+        $discount = 0;
         $total_price = 0;
         foreach ($glasses as $glass){
             $total_price += $glass->price;
+            $discount += ($glass->price_before_discount * $glass->quantity) - $glass->price;
+
         }
         foreach ($lenses as $lense){
             $total_price += $lense->price;
@@ -65,12 +68,12 @@ class CartController extends Controller
             ['price'=> $total_price,'price_after_promocode'=> $total_price],
         ) ;
 
-        // dd($glasses);
+        // dd($lenses);
         // $order_price = new TotalPrice;
         // $order_price->price = $total_price;
         // $order_price->save();
 
-        return view('cart',compact('glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color','total_price','use_type'));
+        return view('cart',compact('glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color','total_price','use_type','discount'));
     }
 
     public function deleteOrderProduct($id, $quantity,$category, $type)
@@ -148,12 +151,25 @@ class CartController extends Controller
         $total = TotalPrice::where('order_id', $order->id)->firstOrFail();
         $discount = $total->price *($promocode->discount / 100);
         $total->price_after_promocode = $total->price - $discount;
+            $total->save();
+
         return response()->json(['total'=>$total->price_after_promocode, 'discount'=> $discount]);
 
     }
 
     public function checkout(){
+
         return view('Users.checkout')->render();
+    }
+
+    public function submitOrder(){
+        $order = orderList::where([
+            ['user_id',Auth::id()],
+            ['user_order_state',0],
+            ['admin_order_state','inactive']
+        ])->update(['user_order_state' => 1],
+        );
+        return view('thanks')->render();
     }
 
     /**
