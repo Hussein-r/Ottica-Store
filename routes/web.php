@@ -52,6 +52,7 @@ Route::get('admin/sunglasses','AdminController@sun');
 Route::get('admin/eyeglasses','AdminController@eye');
 Route::get('dashboard','AdminController@adminHome');
 Route::get('chart', 'AdminController@adminHome');
+Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
 
 
 //hajar

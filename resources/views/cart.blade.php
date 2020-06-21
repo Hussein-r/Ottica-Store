@@ -59,7 +59,11 @@
                   </tr>
                 </thead>
                 <tbody>
-
+                  @if (!($glasses->count() || $$lenses->count()))
+                  <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
+                    Empty Cart <a href="/">Continue shopping..</a>
+                </div>
+                @endif
                   @forelse ($glasses as $glass)
                     <tr>
                        <td class="product-thumbnail">
@@ -80,7 +84,8 @@
                           <td>Frame</td>
                         @else
                           @if ($glass->category != 'no prescription')
-                              <td>Frame with <a href="">lenses</a>  <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">donate now</button>
+                              <td>Frame with <a href="">lenses</a> 
+                               <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">donate now</button>
                               </td> 
                           @endif
                           
@@ -89,51 +94,51 @@
                       
                       <td>{{$glass->quantity}}</td>
                     <td>{{($glass->price_after_discount)* $glass->quantity}}</td>
-                    <td><a href="#" class="btn btn-danger height-auto btn-sm">X</a></td>
+                    <td>
+                    {!! Form::open(['url' => ['product', $glass->id, $glass->quantity, $glass->category, 'glass'] ,'method' => 'delete' ]) !!}
+                    {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
+                    {!! Form::close() !!}
+                    </td>
+                    {{-- <td><a href="#" class="btn btn-danger height-auto btn-sm">X</a></td> --}}
                   </tr>
-                 
                   @empty
-                  <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
-                      Empty Cart <a href="/">Continue shopping..</a> and ..chert
-                  </div>
+                      
                   @endforelse
-                 
+                  
+                  @forelse ($lenses as $item)
+                    <tr>
+                       <td class="product-thumbnail">
+                      <img src="images/{{$item->image}}" alt="Image" class="img-fluid"> 
+                       </td> 
+  
+                      <td class="product-name">
+                        <a href="/glass/{{$item->id}}">
+                        <h2 class="h5 text-black">{{$lenses_brand->find($item->brand_id)->name }} {{$item->name}}</h2> 
+                        </a>
+                      </td>
+                      <td>{{$item->price_before_discount}}</td>
+                      <td class="text text-danger">{{round(((($item->price_before_discount - $item->price_after_discount)/$item->price_before_discount)*100))}} %</td>
+                      
+                      <td>{{$lense_type->find($item->type_id)->name}}</td>
+
+                      <td>{{$item->quantity}}</td>
+                    <td>{{($item->price_after_discount)* $item->quantity}}</td>
+                    <td>
+                    {!! Form::open(['url' => ['product', $item->id, $item->quantity, $lense_type->find($item->type_id)->name, 'lenses'] ,'method' => 'delete' ]) !!}
+                    {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
+                    {!! Form::close() !!}
+                    </td>
+                    {{-- <td><a href="{{route()}}" class="btn btn-danger height-auto btn-sm">X</a></td> --}}
+                  </tr>
+                  @empty
+                      
+                  @endforelse                 
                 </tbody>
               </table>
             </div>
           </form>
         </div>
-<!-- Modal -->
-<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header" style="background: orange">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ion-android-close"></span></button>
-              <h4 class="modal-title" id="myModalLabel" style="color: whitesmoke;">Donation For Siddhyog Sadhan Mandal</h4>
-          </div>            <!-- Modal Body -->
-          <div class="modal-body">
-              <div>
-                  Payment Option
-              </div>
-              <form id="frm-donation" name="frm-donation">
-                  <div class="header-btn">
-                      <div id="div-physical">
-                          <label>
-                              <input id="rdb_physical" name="rdb_donation" value="0" type="radio" checked="" class="validate[required]" data-errormessage-value-missing="Donation Type is required!">
-                              Physical Entity Donation
-                          </label>
-                      </div>
-              </form>
-              <div class="modal-body">
-                  <div class="modal-footer" id="modal_footer">
-                      <!--<input id="btnSubmit" name="btnSubmit" value="Donate" class="btn btn-default-border-blk" type="submit">-->
-                      <a id="btnDonate" class="btn btn-default-border-blk">Donate</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+
         <div class="row">
           <div class="col-md-6">
             <div class="row mb-5">
@@ -193,6 +198,39 @@
         </div>
       </div>
     </div>
+
+{{-- <!-- Modal -->
+    <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header" style="background: orange">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ion-android-close"></span></button>
+                  <h4 class="modal-title" id="myModalLabel" style="color: whitesmoke;">Donation For Siddhyog Sadhan Mandal</h4>
+              </div>            <!-- Modal Body -->
+              <div class="modal-body">
+                  <div>
+                      Payment Option
+                  </div>
+                  <form id="frm-donation" name="frm-donation">
+                      <div class="header-btn">
+                          <div id="div-physical">
+                              <label>
+                                  <input id="rdb_physical" name="rdb_donation" value="0" type="radio" checked="" class="validate[required]" data-errormessage-value-missing="Donation Type is required!">
+                                  Physical Entity Donation
+                              </label>
+                          </div>
+                  </form>
+                  <div class="modal-body">
+                      <div class="modal-footer" id="modal_footer">
+                          <!--<input id="btnSubmit" name="btnSubmit" value="Donate" class="btn btn-default-border-blk" type="submit">-->
+                          <a id="btnDonate" class="btn btn-default-border-blk">Donate</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div> --}}
 </body>
 @endsection
 </html>
