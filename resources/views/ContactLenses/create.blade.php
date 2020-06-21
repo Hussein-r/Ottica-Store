@@ -51,7 +51,7 @@
                 </div>
                 <div><span class="text-white">{{$errors->first('color')}}</span></div>
 
-                <div class="input-group mb-3">
+                {{-- <div class="input-group mb-3">
                         
                     {!! Form::text('price_before_discount',null,['class'=>'form-control','aria-label'=>'Price', 'aria-describedby'=>'basic-addon5','placeholder'=>'Price Before Discount'])  !!}
                 </div>
@@ -62,6 +62,7 @@
                     {!! Form::text('price_after_discount',null,['class'=>'form-control','aria-label'=>'Price', 'aria-describedby'=>'basic-addon5','placeholder'=>'Price After Discount'])  !!}
                 </div>
                 <div><span class="text">{{$errors->first('price_after_discount')}}</span></div>
+                 --}}
                 <div class="input-group mb-3">
                     
                     <select class="custom-select" id="inputGroupSelect01" name="brand_id">

@@ -90,11 +90,11 @@
                             </a>
                             <h3>{{$lense->name}}</h3>
                             
-                            <p class="product-price">
+                            {{-- <p class="product-price">
                                 <span class="old-price">{{$lense->price_before_discount}}EGP</span> 
                                 {{$lense->price_after_discount}}EGP
                                 <span><h5 class="text-danger" style="text-align:right;">-{{round((($lense->price_before_discount-$lense->price_after_discount)/$lense->price_before_discount)*100)}}%</h5></span>
-                            </p>
+                            </p> --}}
                 
                             <!-- Hover Content -->
                             <div class="hover-content">
