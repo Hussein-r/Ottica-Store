@@ -10,7 +10,6 @@ use App\LenseProductPrescriptions;
 use App\LenseProduct;
 use App\Glass;
 use App\Color;
-use App\LenseImage;
 use App\glass_images;
 use App\ColorLense;
 use DB; 
@@ -44,7 +43,6 @@ class BestSellerController extends Controller
         foreach ($bestsellerlenses as $item) {
             array_push($LenseImg,$item->id);
         }
-        $bestSellerLenseImages=LenseImage::whereIn('lense_id',$LenseImg)->get();
         // dd($bestSellerLenseImages);   
         $lenseColorBallet=ColorLense::whereIn('lense_id',$LenseImg)->get();
         $lenseColor=array();
@@ -86,7 +84,6 @@ class BestSellerController extends Controller
             array_push($lensearr,$item->product_id);
         }
      $lenseProducts =ContactLenses::whereIn('id',$lensearr)->get();
-     $lenseProductsImages=LenseImage::whereIn('lense_id',$lensearr)->get();
     //  dd($lenseProductsImages);
      $lenseProductColorBallet=ColorLense::whereIn('lense_id',$lensearr)->get();
      $LenseProductColor =array();
@@ -103,10 +100,8 @@ class BestSellerController extends Controller
         'glassProductsColor' =>$glassProductsColor,
         'glassProductsImages'=>$glassProductsImages,
         'bestsellerlenses' => $bestsellerlenses, 
-        'bestSellerLenseImages' =>$bestSellerLenseImages, 
         'bestSellerLenseColor'=>$bestSellerLenseColor,
         'lenseProducts' =>$lenseProducts,
-        'lenseProductsImages'=>$lenseProductsImages,
         'lenseProductsColor'=>$lenseProductsColor, 
         ]);   
     }

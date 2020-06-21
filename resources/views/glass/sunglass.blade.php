@@ -27,17 +27,6 @@
                 </div>
         </div>
     </div>
-<<<<<<< HEAD
-    <!-- ----------------------------->
- <div class="site-section ">
- <div class="container">
-
-  <div class="row mb-5">
-
-  <div class="col-9">
-     <!-- ------ -->
-     <div id="filter_data" class="mt-3" style="border-top:1px solid black;">
-=======
     <div class="mt-3" style="border-top:1px solid black;">
         <div class="product-sorting d-flex" style="text-align: right">
             <strong>Sort by:</strong>
@@ -53,19 +42,21 @@
 
         </form> --}}
         </div>
+
+        <!-- --------------- -->
+    <div id='filter_data'>
         <div id="glassArea">
->>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
-    @foreach ($glasses as $glass)
-    <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;">
-        <!-- Product Image -->
-        <div class="product-img" >
-            <img src="images/{{$glass->images->first()->image}}" alt="">
-            <!-- Favourite -->
-            <div class="product-favourite">
-                <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
-            </div>
-        </div>
-        <!-- Product Description -->
+               @foreach ($glasses as $glass)
+         <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;">
+                 <!-- Product Image -->
+              <div class="product-img" >
+                   <img src="images/{{$glass->images->first()->image}}" alt="">
+                      <!-- Favourite -->
+                     <div class="product-favourite">
+                         <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
+                        </div>
+               </div>
+                 <!-- Product Description -->
         <div class="product-description ">
             <span>{{$glass->code}}</span>
             <a  href="single-product-details.html">
@@ -82,8 +73,8 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     @endforeach  
+    </div>
     </div>
     <!-- ---------- -->
 
@@ -186,10 +177,7 @@
       </ul>
     </div>
 <!-- ------------------ -->
-=======
-    @endforeach   
         </div>  
->>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
 </div>
   <!-- --------------------- -->
 </div>
@@ -199,16 +187,11 @@
 
 
     </section>
-<<<<<<< HEAD
-</body>
-<script src="/js/aos.js"></script>
-=======
 <body>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/jquery-2.2.4.min.js"></script>
     <script src="/js/jquery-ui.js"></script>
     <script src="/js/aos.js"></script>
->>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
 <script src="/js/sunmain.js"></script>
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>

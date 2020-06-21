@@ -9,15 +9,9 @@
     <link rel="stylesheet" href="/css/core-style.css">
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
-<<<<<<< HEAD
-
-<body>
-<section class="container">
-=======
 @section('content')
 <body style="background-color:white;">
     <section class="container">
->>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
     <div class="site-blocks-cover" data-aos="fade">
         <div class="container">
                 <div class="row">
@@ -35,67 +29,6 @@
                 
         </div>
     </div>
-<<<<<<< HEAD
-<!-- ----------------------------- -->
-    <div class="col-12 col-md-8 col-lg-9">
-        <div class="shop_grid_product_area">
-            <div class="row">
-                <div class="col-12">
-                    <div class="product-topbar d-flex align-items-center justify-content-between">
-                        <!-- Sorting -->
-                        <div class="product-sorting d-flex">
-                            <p>Sort by:</p>
-                            {{-- <form action="/sort" method="POSt"> --}}
-                                {{-- {{ csrf_field() }} --}}
-                                <select name="select" id="sortByselect">
-                                    
-                                    <option  value="low" >Price: Low - High</option>
-                                    <option value="high" >Price: High - Low</option>
-                                </select>
-                                {{-- <input type="submit" class="d-none" value="select"> --}}
-                            {{-- </form> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ---------------------
-             -->
-     <div  id="filter_data" class="row">
-                @forelse ($glasses as $glass)
-                {{$allcolors = $glasses->where("glass_code",$glass->glass_code)->get('color_id')}}
-                {{-- {{$colors=Color::whereIn("id",$allcolors)->get('name')}} --}}
-                <!-- Single Product -->
-         <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        @if($glass->images->first()->image)                        
-                        <div class="product-img">
-                            <img style="height: 150px" src="/images/{{$glass->images->first()->image}}" alt="product image">
-                            @endif
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="/images/{{$glass->images->last()->image}}" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                            <span>{{$glass->label}}</span>
-                            </div>
-                            
-                            
-                        </div>
-
-                        <!-- Product Description -->
-                        <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
-                            <!-- Favourite -->
-                            <div class="product-favourite" style="text-align: right">
-                                <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$glass->id}},this)"></button>
-                            </div>
-                    
-                            <a href="#">
-                                <h6>{{$glass->brand->name}}</h6>
-                            </a>
-                            <span>{{$glass->glass_code}}</span>
-
-=======
     
     <div class="mt-3" style="border-top:1px solid black;">
         <div class="product-sorting d-flex" style="text-align: right">
@@ -107,6 +40,7 @@
                 <input type="hidden" id='glassType' value="eye" />
             </select>
         </div>
+        <div  id="filter_data">
     @foreach ($glasses as $glass)
     <div class="single-product-wrapper mt-6 col-md-4 h-30" style="display:inline-block;">
         <!-- Product Image -->
@@ -123,7 +57,7 @@
 
 
         <!-- Product Description -->
-        <div class="product-description">
+        <div  class="product-description">
             <span>{{$glass->code}}</span>
             <a  href="single-product-details.html">
                 <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
@@ -133,7 +67,6 @@
                 {{$glass->price_after_discount}}EGP
                 <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
             </p>
->>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
             <!-- Hover Content -->
             <div class="hover-content">
                 <!-- Add to Cart -->
@@ -144,10 +77,10 @@
         </div>
     </div>
     @endforeach     
-<<<<<<< HEAD
             <div style="text-align: center;">
                 {{-- {{ $glasses->links() }} --}}
             </div>
+        </div>
         </div>
 </div>
         <!-- -------------------------------- -->
@@ -264,7 +197,6 @@
   </div>
 </section>
 </body>
-=======
 </div>
     </section>
 <body>    
@@ -273,7 +205,6 @@
     <script src="/js/aos.js"></script>
 <script src="/js/active.js"></script>
 <script src="/js/sunmain.js"></script>
->>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/js/eyeglass_filteration.js"></script>
@@ -291,8 +222,6 @@
 
 
 </script>
-
-<script src="/js/active.js"></script>
 @endsection
 
 

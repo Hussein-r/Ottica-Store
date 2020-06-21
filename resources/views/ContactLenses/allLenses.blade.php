@@ -57,18 +57,11 @@
                                 <a class="dropdown-item"  href='/sort/1'>Newest</a>
                                 <a class="dropdown-item"  href='/sort/4'>Name</a>
                                 <a class="dropdown-item" href="/sort/2">Price: $ - $$</a>
-<<<<<<< HEAD
                                 <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>
                                 
                              </div>
                            <div>
                            </div>
-=======
-                                <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>  
-                        </div>
-                        <div>
-                        </div>
->>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
                     </div>
                 </div>
             </div>
@@ -119,7 +112,7 @@
                 </div>
                     
                 @endforelse
-         </div>
+          </div>
          <!-- end foreach -->
       </div>
       
@@ -145,6 +138,18 @@
         </div>
 
       <!-- ------------------ -->
+      <div class="border p-4 rounded mb-4 filteration">
+         <h3 class="mb-3 h6 text-uppercase text-black d-block">Using Duration</h3>
+         <ul class="list-unstyled mb-0">
+       
+            <li class="mb-1"> <input type="checkbox"  id="duration"  value="1"><span> Just one day</span></li>
+            <li class="mb-1"> <input type="checkbox"  id="duration"  value="30"><span>One month</span></li>
+            <li class="mb-1"> <input type="checkbox"  id="duration"  value="90"><span>Three months</span></li>
+            <li class="mb-1"> <input type="checkbox"  id="duration"  value="365"><span>One year</span></li>
+
+         </ul>
+        </div>
+      <!-- ---------------- -->
        <div class="border p-4 rounded mb-4 filteration">
          <h3 class="mb-3 h6 text-uppercase text-black d-block">manufacturers</h3>
          <ul class="list-unstyled mb-0" >
@@ -170,6 +175,7 @@
 <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/lenseFilteration.js"></script>
 @endsection
 </html>
