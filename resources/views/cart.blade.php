@@ -57,7 +57,7 @@
                     <th class="product-name">Name</th>
                     <th class="product-price">Price</th>
                     <th class="product-price">Discount</th>
-                    <th class="product-price">Type</th>
+                    <th class="product-price">Discreption</th>
                     <th class="product-quantity">Quantity</th>
                     <th class="product-total">Total</th>
                     <th class="product-remove">Remove</th>
@@ -77,7 +77,7 @@
   
                       <td class="product-name">
                         <a href="/glass/{{$glass->id}}">
-                        <h2 class="h5 text-black">{{$brand->find($glass->brand_id)->name }}</h2> <span class="text-black">{{$glass->glass_type}} <span style="color: {{$color->find($glass->color_id)->name}}">{{$color->find($glass->color_id)->name}}</span>
+                        <h2 class="text text-black">{{$brand->find($glass->brand_id)->name }}</h2> <span class="text-black">{{$glass->glass_type}} <span style="color: {{$color->find($glass->color_id)->name}}">{{$color->find($glass->color_id)->name}}</span>
                         </a>
                       </td>
                       <td>{{$glass->price_before_discount}}</td>
@@ -98,7 +98,7 @@
                       @endif 
                       
                       <td>{{$glass->quantity}}</td>
-                    <td>{{($glass->price_after_discount)* $glass->quantity}}</td>
+                    <td>{{$glass->price}}</td>
                     <td>
                     {!! Form::open(['url' => ['product', $glass->id, $glass->quantity, $glass->category, 'glass'] ,'method' => 'delete' ]) !!}
                     {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
@@ -119,18 +119,17 @@
   
                       <td class="product-name">
                         <a href="/glass/{{$item->id}}">
-                        <h2 class="h5 text-black">{{$lenses_brand->find($item->brand_id)->name }} {{$item->name}}</h2> 
+                        <h2 class="text text-black">{{$lenses_brand->find($item->brand_id)->name }} {{$item->name}}</h2> 
                         </a>
                       </td>
-                      <td>{{$item->price_before_discount}}</td>
-                      <td class="text text-danger">{{round(((($item->price_before_discount - $item->price_after_discount)/$item->price_before_discount)*100))}} %</td>
-                      
-                      <td>{{$lense_type->find($item->type_id)->name}}</td>
-
-                      <td>{{1}}</td>
-                    <td>{{$item->price_after_discount}}</td>
+                      {{-- {{$item->product_id}} --}}
+                      <td>{{  $use_type->where([['duration',$item->duration],['lense_id',$item->product_id]])->firstOrFail()->price  }}</td>
+                    <td class="h5 text-dander">0%</td>                      
+                    <td>{{$lense_type->find($item->type_id)->name}}</td>
+                      <td>{{$item->quantity}}</td>
+                    <td>{{$item->price}}</td>
                     <td>
-                    {!! Form::open(['url' => ['product', $item->id, '1', $lense_type->find($item->type_id)->name, 'lenses'] ,'method' => 'delete' ]) !!}
+                    {!! Form::open(['url' => ['product', $item->id, $item->quantity, $lense_type->find($item->type_id)->name, 'lenses'] ,'method' => 'delete' ]) !!}
                     {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
                     {!! Form::close() !!}
                     </td>

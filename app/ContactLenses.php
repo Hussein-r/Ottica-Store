@@ -14,8 +14,6 @@ class ContactLenses extends Model
         'name',
         'quantity',
         'label',
-        'price_before_discount',
-        'price_after_discount',
         'description',
         'brand_id',
         'type_id',
@@ -23,6 +21,8 @@ class ContactLenses extends Model
         'material_of_content',
         'water_of_content',
         'lense_purpose',
+        'duration',
+        'price',
         'image',
     ];
 

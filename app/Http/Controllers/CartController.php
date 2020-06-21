@@ -19,6 +19,7 @@ use App\LensePrescriptionImage;
 use App\GlassPrescriptionImage;
 use App\Promocode;
 use App\TotalPrice;
+use App\LenseUseType;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -31,6 +32,7 @@ class CartController extends Controller
     public function index()
     {
         $order = orderList::where([
+            ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
         ])->firstOrFail();
@@ -46,32 +48,35 @@ class CartController extends Controller
         ->where('order_id',$order->id)
         ->get();
 
-
         $lenses_brand = new LenseBrand;
         $lense_type = new LenseType;
         $lense_color = new ColorLense;
+        $use_type = new LenseUseType;
 
         $total_price = 0;
         foreach ($glasses as $glass){
-            $total_price += ($glass->price_after_discount)* $glass->quantity;
+            $total_price += $glass->price;
         }
         foreach ($lenses as $lense){
-            $total_price += ($lense->price_after_discount);
+            $total_price += $lense->price;
         }
         $order_price = TotalPrice::updateOrCreate(
             ['order_id'=> $order->id],
-            ['price'=> $total_price, 'price_after_promocode'=> $total_price],
+            ['price'=> $total_price,'price_after_promocode'=> $total_price],
         ) ;
+
+        // dd($glasses);
         // $order_price = new TotalPrice;
         // $order_price->price = $total_price;
         // $order_price->save();
 
-        return view('cart',compact('glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color','total_price'));
+        return view('cart',compact('glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color','total_price','use_type'));
     }
 
     public function deleteOrderProduct($id, $quantity,$category, $type)
     {
         $order = orderList::where([
+            ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
         ])->firstOrFail();
@@ -135,6 +140,7 @@ class CartController extends Controller
         $promocode = Promocode::where('code','=',$request->coupon)->firstOrFail();
         $discount = ($promocode->discount);
         $order = orderList::where([
+            ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
         ])->firstOrFail();
