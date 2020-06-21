@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 use App\GlassProductPrescriptions;
 use App\LenseProductPrescriptions;
+use App\GlassPrescriptionImage;
 use App\GlassProduct;
 use App\LenseProduct;
 use App\User;
+use App\Glass;
+use App\LenseImage;
+use App\ContactLenses;
 use Illuminate\Support\Facades\Auth;
 use App\orderList;
 use Illuminate\Http\Request;
+
 
 class ClientOrdersController extends Controller
 {
@@ -20,6 +25,14 @@ class ClientOrdersController extends Controller
     public function index()
     {
         //
+       
+        $orders=orderList::where("user_id","=",Auth::id())->get();
+        // dd($orders);
+        return view('ordersForClient.index', [
+            'orders' =>$orders,
+            ])->render();
+        
+       
     }
 
     /**
@@ -57,10 +70,25 @@ class ClientOrdersController extends Controller
             $glass->order_id= $order->id;
             $glass->product_id=$request->product_id;
             $glass->quantity=$request->quantity;
-            $glass->price=$request->price * $request->quantity;
+            $glass->category=$request->category;
+            if($request->category == 1){
+                $glass->price=$request->price * $request->quantity;
+            }else if($request->category == 2){
+                $glass->lense_type=$request->single_lense_type;
+                $glass->color_id=$request->single_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }else if($request->category == 3){
+                $glass->lense_type=$request->progressive_lense_type;
+                $glass->color_id=$request->progressive_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }else if($request->category == 4){
+                $glass->lense_type=$request->bifocal_lense_type;
+                $glass->color_id=$request->bifocal_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }
             $glass->save();
             if($request->check=='1'){
-                if(Request::exists('image')){
+                if($request->file('image')){
                     $prescription_image= new GlassPrescriptionImage();
                     $prescription_image->order_id=$order->id;
                     $prescription_image->product_id=$request->product_id;
@@ -69,36 +97,66 @@ class ClientOrdersController extends Controller
                     $prescription_image->image = $imageName;
                     $prescription_image->save();
                 }else{
-                    $prescription_details= GlassProductPrescriptions::create($request->all());
+                    $prescription_details= new GlassProductPrescriptions();
                     $prescription_details->order_id = $order->id;
                     $prescription_details->product_id =$request->product_id;
+                    $prescription_details->right_sphere =$request->right_sphere;
+                    $prescription_details->left_sphere =$request->left_sphere;
+                    $prescription_details->right_cylinder =$request->right_cylinder;
+                    $prescription_details->left_cylinder =$request->left_cylinder;
+                    $prescription_details->right_axis =$request->right_axis;
+                    $prescription_details->left_axis =$request->left_axis;
+                    $prescription_details->right_add =$request->right_add;
+                    $prescription_details->left_add =$request->left_add;
                     $prescription_details->save();
                 }
             }
         }else{
-            dd('hussein');
             $glass = new GlassProduct();
-            $glass->order_id= $openOrder->id;
+            $glass->order_id= $openOrder[0]->id;
             $glass->product_id=$request->product_id;
             $glass->quantity=$request->quantity;
-            $glass->price=$request->price * $request->quantity;
+            $glass->category=$request->category;
+            if($request->category == 1){
+                $glass->price=$request->price * $request->quantity;
+            }else if($request->category == 2){
+                $glass->lense_type=$request->single_lense_type;
+                $glass->color_id=$request->single_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }else if($request->category == 3){
+                $glass->lense_type=$request->progressive_lense_type;
+                $glass->color_id=$request->progressive_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }else if($request->category == 4){
+                $glass->lense_type=$request->bifocal_lense_type;
+                $glass->color_id=$request->bifocal_lense_color;
+                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+            }
             $glass->save();
             if($request->check=='1'){
-                if(Request::exists('image')){
+                if($request->file('image')){
                     $prescription_image= new GlassPrescriptionImage();
-                    $prescription_image->order_id=$openOrder->id;
+                    $prescription_image->order_id=$openOrder[0]->id;
                     $prescription_image->product_id=$request->product_id;
                     $imageName = time().'.'.$request->image->extension();  
                     $request->image->move(public_path('images'), $imageName);
                     $prescription_image->image = $imageName;
                     $prescription_image->save();
                 }else{
-                    $prescription_details= GlassProductPrescriptions::create($request->all());
-                    $prescription_details->order_id = $openOrder->id;
+                    $prescription_details= new GlassProductPrescriptions();
+                    $prescription_details->order_id = $openOrder[0]->id;
                     $prescription_details->product_id =$request->product_id;
+                    $prescription_details->right_sphere =$request->right_sphere;
+                    $prescription_details->left_sphere =$request->left_sphere;
+                    $prescription_details->right_cylinder =$request->right_cylinder;
+                    $prescription_details->left_cylinder =$request->left_cylinder;
+                    $prescription_details->right_axis =$request->right_axis;
+                    $prescription_details->left_axis =$request->left_axis;
+                    $prescription_details->right_add =$request->right_add;
+                    $prescription_details->left_add =$request->left_add;
                     $prescription_details->save();
                 }
-            }   
+            }
         }
     }
     
@@ -112,6 +170,24 @@ class ClientOrdersController extends Controller
     public function show($id)
     {
         //
+        $glassesArray=array();
+        $lensesArray=array();
+        
+        $glassesProduct=GlassProduct::where('order_id','=',$id)->get();
+        $lensesProduct=LenseProduct::where('order_id','=',$id)->get();
+            foreach ($glassesProduct as $product) {
+                array_push($glassesArray,$product->product_id);
+             }
+             foreach ($lensesProduct as $product) {
+                array_push($lensesArray,$product->product_id);
+             }
+            //  dd($lensesArray);
+        $glasses=Glass::whereIn('id',$glassesArray)->get();
+        // dd($glasses);
+        $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
+        // dd($lenses);
+        return view('ordersForClient.show',compact('glasses','lenses'));
+
     }
 
     /**
@@ -146,5 +222,10 @@ class ClientOrdersController extends Controller
     public function destroy($id)
     {
         //
+        // dd($id);
+        $order=orderList::find($id);
+        $order->delete();
+        return redirect()->action("ClientOrdersController@index");   
+  
     }
 }

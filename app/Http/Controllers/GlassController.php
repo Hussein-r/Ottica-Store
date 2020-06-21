@@ -10,8 +10,12 @@ use App\FaceShape;
 use App\FrameShape;
 use App\Material;
 use App\Fit;
+use App\Comment;
 use App\GlassImage;
 use App\Favourite;
+use App\SingleVision;
+use App\ProgressiveVision;
+use App\Bifocal;
 use Illuminate\Support\Facades\Auth;
 
 class GlassController extends Controller
@@ -23,7 +27,7 @@ class GlassController extends Controller
      */
     public function index()
     {
-         $glasses = Glass::paginate(3);
+         $glasses = Glass::paginate(15);
          $color = new Color();
         return view('glass.index',compact('glasses','color'));
     }
@@ -91,7 +95,11 @@ class GlassController extends Controller
         $images=GlassImage::where("glass_id","=",$id)->get();
         $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
         $colorsnames=Color::whereIn("id",$allcolors)->get();
-        return view('glass.glass_details',compact('glass','images','brand','colorsnames'));
+        $comments=Comment::where([["category","=",'glass'],["product_id","=",$id]])->get();
+        $singlelenses= SingleVision::all()->groupBy('lense_type');
+        $progressivelenses= ProgressiveVision::all()->groupBy('lense_type');
+        $bifocallenses= Bifocal::all()->groupBy('lense_type');
+        return view('glass.glass_details',compact('glass','images','brand','colorsnames','comments','singlelenses','progressivelenses','bifocallenses'));
     }
 
     public function changeColor(Request $request){
@@ -160,7 +168,7 @@ class GlassController extends Controller
     public function destroy($id)
     {
         $glass = Glass::find($id);
-        dd($id);
+        // dd($id);
         foreach($glass->images as $image){
             $image->delete();
         }
@@ -232,19 +240,65 @@ class GlassController extends Controller
         ]);
     }
 
-    public function sort($option)
+    public function sort(Request $request)
     {
-        // dd($option);
-        $all_glasses = Glass::all();
-        if($option == 'low'){
-            $glasses=$all_glasses->sortBy('price_after_discount');
+        
+        $option = $request->get('option');
+        $type = $request->get('type');
+
+        // $all_glasses = Glass::all();
+        if($type == 'sun'){
+            if($option == 'low'){
+                dd('mmm');
+                $sorted=Glass::where('glass_type','=','sunglass')->get()->sortBy('price_after_discount')->toArray();
+                
+            }
+            else{
+                dd('mmm');
+                $sorted=Glass::where('glass_type','=','sunglass')->get()->sortByDesc('price_after_discount')->toArray();
+            }
+            // return  response()->json(['glasses'=>$sorted,'option'=>$option]);
+            return $sorted;
+
         }
-        elseif($option == 'high'){
-            $glasses=$all_glasses->sortByDesc('price_after_discount');
+        else{
+            if($option == 'low'){
+                $sorted=Glass::where('glass_type','=','eyeglass')->get()->sortBy('price_after_discount')->toArray();
+            }
+            else{
+                $sorted=Glass::where('glass_type','=','eyeglass')->get()->sortByDesc('price_after_discount')->toArray();
+            }
+            return  response()->json(['glasses'=>$sorted,'option'=>$option]);
+
         }
-        return view('glass.eyeglass', compact('glasses'));
-        // return  response()->json(['glasses'=>$glasses]);
+
+        // return view('glass.eyeglass', compact('glasses'));
+
     }
+
+
+
+    // public function sort(Request $request)
+    // {
+    //     // $all_glasses = Glass::all();
+    //     if($request->type == 'sun'){
+    //         $all_glasses = Glass::where('glass_type','=','sunglass')->get();
+    //     }
+    //     elseif($request->type == 'eye'){
+    //         $all_glasses = Glass::where('glass_type','=','eyeglass')->get();
+    //     }
+        
+    //     if($request->select == 'low'){
+    //         $glasses=$all_glasses->sortBy('price_after_discount');
+    //     }
+    //     elseif($request->select == 'high'){
+    //         $glasses=$all_glasses->sortByDesc('price_after_discount');
+    //     }
+    //     return redirect('sunglasses')->with('glasses', $glasses);
+    //     // return view('glass.eyeglass', compact('glasses'));
+
+    //     // return  response()->json(['glasses'=>$glasses]);
+    // }
 
     public function favourite(Request $request)
     {

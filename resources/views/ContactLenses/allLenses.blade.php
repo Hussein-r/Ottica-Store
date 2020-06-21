@@ -57,11 +57,18 @@
                                 <a class="dropdown-item"  href='/sort/1'>Newest</a>
                                 <a class="dropdown-item"  href='/sort/4'>Name</a>
                                 <a class="dropdown-item" href="/sort/2">Price: $ - $$</a>
+<<<<<<< HEAD
                                 <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>
                                 
                              </div>
                            <div>
                            </div>
+=======
+                                <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>  
+                        </div>
+                        <div>
+                        </div>
+>>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
                     </div>
                 </div>
             </div>
@@ -70,24 +77,17 @@
      
                 @forelse ($lenses as $lense)
                
-                {{-- {{$colors=Color::whereIn("id",$allcolors)->get('name')}} --}}
+               
                 <!-- Single Product -->
              <div class="col-12 col-sm-6 col-lg-4">
                  <div class="single-product-wrapper">
                         <!-- Product Image -->
-                        @if($lense->images->first())                        
                         <div class="product-img">
-                            <img style="height: 150px" src="/images/{{$lense->images->first()->image}}" alt="product image">
-                            @endif
-                            <!-- Hover Thumb -->
-                            @if($lense->images->last())     
-                            <img class="hover-img" src="/images/{{$lense->images->last()->image}}" alt="">
-                            @endif
+                            <img style="height: 150px" src="/images/{{$lense->image}}" alt="product image">
                             <!-- Product Badge -->
                             <div class="product-badge new-badge">
-                            <span>{{$lense->label}}</span>
+                                <span>{{$lense->label}}</span>
                             </div>
-                            
                         </div>
 
                         <!-- Product Description -->

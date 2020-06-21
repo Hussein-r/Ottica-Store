@@ -27,6 +27,7 @@
                 </div>
         </div>
     </div>
+<<<<<<< HEAD
     <!-- ----------------------------->
  <div class="site-section ">
  <div class="container">
@@ -36,6 +37,24 @@
   <div class="col-9">
      <!-- ------ -->
      <div id="filter_data" class="mt-3" style="border-top:1px solid black;">
+=======
+    <div class="mt-3" style="border-top:1px solid black;">
+        <div class="product-sorting d-flex" style="text-align: right">
+            <strong>Sort by:</strong>
+            {{-- <form action="/price" method="post">
+                @csrf --}}
+            <select name="select" id="sortByselect">
+                <option value="" disabled selected>Sorting by Price</option>
+                <option value="low">Price: Low - High</option>
+                <option value="high">Price: High - Low</option>
+            </select>
+            <input type="hidden" id='glassType' value="sun" name="type"/>
+            {{-- <input type="submit" name="sort" value="sort"/>
+
+        </form> --}}
+        </div>
+        <div id="glassArea">
+>>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
     @foreach ($glasses as $glass)
     <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;">
         <!-- Product Image -->
@@ -43,7 +62,7 @@
             <img src="images/{{$glass->images->first()->image}}" alt="">
             <!-- Favourite -->
             <div class="product-favourite">
-                <a href="#" class="favme fa fa-heart"></a>
+                <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
             </div>
         </div>
         <!-- Product Description -->
@@ -63,6 +82,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     @endforeach  
     </div>
     <!-- ---------- -->
@@ -166,6 +186,10 @@
       </ul>
     </div>
 <!-- ------------------ -->
+=======
+    @endforeach   
+        </div>  
+>>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
 </div>
   <!-- --------------------- -->
 </div>
@@ -175,8 +199,16 @@
 
 
     </section>
+<<<<<<< HEAD
 </body>
 <script src="/js/aos.js"></script>
+=======
+<body>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/aos.js"></script>
+>>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
 <script src="/js/sunmain.js"></script>
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>

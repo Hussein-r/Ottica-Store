@@ -1,32 +1,41 @@
-@extends('layouts.userNavbar')
+
+ @extends('layouts.userNavbar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/styling.css">
     <link rel="stylesheet" href="/css/core-style.css">
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
-    <link rel="stylesheet" href="/css/styling.css">
 </head>
+<<<<<<< HEAD
 
 <body>
 <section class="container">
+=======
+@section('content')
+<body style="background-color:white;">
+    <section class="container">
+>>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
     <div class="site-blocks-cover" data-aos="fade">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 ml-auto order-md-2 align-self-start">
-                    <div class="site-block-cover-content">
-                        <h2 class="sub-title">Ottica Store</h2>
-                        <h1>Eye Glasses</h1>
-                        <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
+                <div class="row">
+                    <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                        <div class="site-block-cover-content">
+                            <h2 class="sub-title">Ottica Store</h2>
+                            <h1>Eye Glasses</h1>
+                            <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-1 align-self-end">
+                        <img src="/images/eyeglassmodel.jpg" alt="Image" class="img-fluid">
                     </div>
                 </div>
-                <div class="col-md-6 order-1 align-self-end">
-                    <img src="/images/eyeglassmodel.jpg" alt="Image" class="img-fluid">
-                </div>
-            </div>
+                
         </div>
     </div>
+<<<<<<< HEAD
 <!-- ----------------------------- -->
     <div class="col-12 col-md-8 col-lg-9">
         <div class="shop_grid_product_area">
@@ -86,6 +95,45 @@
                             </a>
                             <span>{{$glass->glass_code}}</span>
 
+=======
+    
+    <div class="mt-3" style="border-top:1px solid black;">
+        <div class="product-sorting d-flex" style="text-align: right">
+            <strong>Sort by:</strong>
+            <select name="select" id="sortByselect" aria-placeholder="sorting by price">
+                <option value="" disabled selected>Sorting by Price</option>
+                <option value="low">Price: Low - High</option>
+                <option value="high">Price: High - Low</option>
+                <input type="hidden" id='glassType' value="eye" />
+            </select>
+        </div>
+    @foreach ($glasses as $glass)
+    <div class="single-product-wrapper mt-6 col-md-4 h-30" style="display:inline-block;">
+        <!-- Product Image -->
+        <div class="product-img" >
+            <img src="images/{{$glass->images->first()->image}}" alt="">
+            <!-- Favourite -->
+            <div class="product-favourite">
+                {{-- <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button> --}}
+
+                <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
+            </div>
+        </div>
+
+
+
+        <!-- Product Description -->
+        <div class="product-description">
+            <span>{{$glass->code}}</span>
+            <a  href="single-product-details.html">
+                <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
+            </a>
+            <p class="product-price">
+                <span class="old-price">{{$glass->price_before_discount}}EGP</span> 
+                {{$glass->price_after_discount}}EGP
+                <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
+            </p>
+>>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
             <!-- Hover Content -->
             <div class="hover-content">
                 <!-- Add to Cart -->
@@ -96,6 +144,7 @@
         </div>
     </div>
     @endforeach     
+<<<<<<< HEAD
             <div style="text-align: center;">
                 {{-- {{ $glasses->links() }} --}}
             </div>
@@ -215,6 +264,16 @@
   </div>
 </section>
 </body>
+=======
+</div>
+    </section>
+<body>    
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/aos.js"></script>
+<script src="/js/active.js"></script>
+<script src="/js/sunmain.js"></script>
+>>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/js/eyeglass_filteration.js"></script>
@@ -233,6 +292,8 @@
 
 </script>
 
-</html>
+<script src="/js/active.js"></script>
+@endsection
+
 
 

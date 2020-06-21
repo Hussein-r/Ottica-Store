@@ -28,7 +28,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from Ottica Store')
+        return $this->subject($this->Email['Subject'])
                     ->view('Emails.EmailTemplate');
     }
 }

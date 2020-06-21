@@ -126,9 +126,6 @@ class ListOrdersController extends Controller
             $glassImgarr =glass_images::where('glass_id', $glass->id)->first();
         }
 
-
-
-
         //  dd($lensesDetails);
         return view('ordersForAdmin.orderDetails',
         ['glassesDetails' => $glassesDetails,

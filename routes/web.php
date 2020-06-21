@@ -19,23 +19,41 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::resource('brand', 'BrandController');
 Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
 Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
 Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
 Route::resource('order','ClientOrdersController');
+Route::resource('cart','CartController');
+Route::resource('SingleVisionLense','SingleVisionController');
+Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
+Route::resource('BifocalLense','BifocalController');
+Route::resource('comment','CommentsController');
+Route::resource('ColoredEye','ColoredEyesController');
+Route::post('/changeLenseColor','ContactLensesController@changeColor');
+
+
 
 //mariam
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/contact', function () {
+    return view('contact')->render();
+});
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
 Route::get('eyeglasses','GlassController@eyeglasses');
 Route::get('/fav','GlassController@favourite');
-Route::get('/sort/{option}', 'GlassController@sort');
+// Route::get('/price/{option}/{type}', 'GlassController@sort');
+Route::post('/price', 'GlassController@sort');
 Route::get('favourite', 'UserController@myFavourite');
+Route::get('admin/sunglasses','AdminController@sun');
+Route::get('admin/eyeglasses','AdminController@eye');
+Route::get('dashboard','AdminController@adminHome');
+
+
+
 //hajar
 //specail offers & list orders for admin 
 Route::resource('specialoffers','SpecialOffersController');
@@ -69,9 +87,26 @@ Route::resource('lenseBrand', 'LenseBrandController');
 Route::resource('lensetype', 'LenseTypeController');
 Route::get('/details/{lense}','ContactLensesController@details');
 Route::resource('LenseManufacturerer', 'LenseManufacturererController');
+Route::resource('/orderHistory', 'ClientOrdersController');
 Route::get('allLenses','ContactLensesController@list');
 Route::get('/search', 'ContactLensesController@search');
 Route::get('/sort/{value}', 'ContactLensesController@sort');
-
+Route::get('/ourLenses', function () {return view('OurLenses.index');});
+Route::get('/ComfortLight1', function () {return view('OurLenses.ComfortLight1');});
+Route::get('/ComfortLightActive1', function () {return view('OurLenses.ComfortLightActive1');});
+Route::get('/ComfortLightPerformance1', function () {return view('OurLenses.ComfortLightPerformance1');});
+Route::get('/rayban1', function () {return view('OurLenses.rayban1');});
+Route::get('/ComfortLight2', function () {return view('OurLenses.ComfortLight2');});
+Route::get('/ComfortLightActive2', function () {return view('OurLenses.ComfortLightActive2');});
+Route::get('/ComfortLightPerformance2', function () {return view('OurLenses.ComfortLightPerformance2');});
+Route::get('/rayban2', function () {return view('OurLenses.rayban2');});
+Route::get('/ComfortLight3', function () {return view('OurLenses.ComfortLight3');});
+Route::get('/ComfortLightActive3', function () {return view('OurLenses.ComfortLightActive3');});
+Route::get('/ComfortLightPerformance3', function () {return view('OurLenses.ComfortLightPerformance3');});
+Route::get('/rayban3', function () {return view('OurLenses.rayban3');});
+Route::get('/ComfortLight4', function () {return view('OurLenses.ComfortLight4');});
+Route::get('/ComfortLightActive4', function () {return view('OurLenses.ComfortLightActive4');});
+Route::get('/ComfortLightPerformance4', function () {return view('OurLenses.ComfortLightPerformance4');});
+Route::get('/rayban4', function () {return view('OurLenses.rayban4');});
 
 
