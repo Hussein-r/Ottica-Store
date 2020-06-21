@@ -70,6 +70,7 @@ return array(
     'App\\LenseProduct' => $baseDir . '/app/LenseProduct.php',
     'App\\LenseProductPrescriptions' => $baseDir . '/app/LenseProductPrescriptions.php',
     'App\\LenseType' => $baseDir . '/app/LenseType.php',
+    'App\\LenseUseType' => $baseDir . '/app/LenseUseType.php',
     'App\\Mail\\ContactMail' => $baseDir . '/app/Mail/ContactMail.php',
     'App\\Material' => $baseDir . '/app/Material.php',
     'App\\ProgressiveVision' => $baseDir . '/app/ProgressiveVision.php',

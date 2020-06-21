@@ -200,6 +200,7 @@
                         <span class="input-group-text">Upload</span>
                     </div>
                     <div class="custom-file">
+                        <input type="text" name="prescription_type" hidden value="image">
                         <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
@@ -239,6 +240,9 @@
                         <tr>
                             <th>Right Eye (OD)</th> 
                             <td>
+                                <select hidden name="prescription_type">
+                                    <option value="table">table</option>
+                                </select>
                                 <select class="col-md-6" name="right_sphere">
                                     <option value=" "></option>
                                     <option value="-20.00">-20.00</option>

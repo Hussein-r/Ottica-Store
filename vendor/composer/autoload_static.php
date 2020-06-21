@@ -580,6 +580,7 @@ class ComposerStaticInitb5ff8548a07c10173337d76a294f2398
         'App\\LenseProduct' => __DIR__ . '/../..' . '/app/LenseProduct.php',
         'App\\LenseProductPrescriptions' => __DIR__ . '/../..' . '/app/LenseProductPrescriptions.php',
         'App\\LenseType' => __DIR__ . '/../..' . '/app/LenseType.php',
+        'App\\LenseUseType' => __DIR__ . '/../..' . '/app/LenseUseType.php',
         'App\\Mail\\ContactMail' => __DIR__ . '/../..' . '/app/Mail/ContactMail.php',
         'App\\Material' => __DIR__ . '/../..' . '/app/Material.php',
         'App\\ProgressiveVision' => __DIR__ . '/../..' . '/app/ProgressiveVision.php',

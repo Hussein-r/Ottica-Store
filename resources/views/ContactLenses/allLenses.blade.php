@@ -40,11 +40,12 @@
                 <div class="col-12">
                     <div class="product-topbar d-flex align-items-center justify-content-between">
                    
-                  </div>
+                    <div>
                         <!-- Total Products -->
                         {{-- <div class="total-products">
-                            <p><span>{{count($lenses)}}</span> products found</p>
-                        </div> --}}
+                                <p><span>{{count($lenses)}}</span> products found</p>
+                            </div> 
+                        --}}
                         <!-- Sorting -->
                        
 
@@ -57,18 +58,10 @@
                                 <a class="dropdown-item"  href='/sort/1'>Newest</a>
                                 <a class="dropdown-item"  href='/sort/4'>Name</a>
                                 <a class="dropdown-item" href="/sort/2">Price: $ - $$</a>
-<<<<<<< HEAD
-                                <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>
-                                
-                             </div>
-                           <div>
-                           </div>
-=======
                                 <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>  
                         </div>
                         <div>
                         </div>
->>>>>>> 792b371e5096dd470962a36ceab26ebb0cac6233
                     </div>
                 </div>
             </div>

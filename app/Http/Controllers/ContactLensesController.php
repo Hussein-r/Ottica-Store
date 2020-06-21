@@ -124,8 +124,9 @@ class ContactLensesController extends Controller
         $brand=LenseBrand::where("id","=",$lense->brand_id)->firstOrFail();
         $color=ColorLense::where("lense_id","=",$lense->id)->get('color_id');
         $colors=Color::whereIn("id",$color)->get();
+        $types=LenseUseType::where("lense_id","=",$id)->get();
         $comments=Comment::where([["category","=",'lense'],["product_id","=",$id]])->get();
-        return view('ContactLenses/lenseProfile',compact('lense','brand','colors','comments'));
+        return view('ContactLenses/lenseProfile',compact('lense','brand','colors','comments','types'));
 
     }
 
