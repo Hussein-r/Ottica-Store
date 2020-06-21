@@ -14,6 +14,11 @@ use App\LenseProduct;
 use App\LenseBrand;
 use App\LenseType;
 use App\ColorLense;
+use App\LenseProductPrescriptions;
+use App\LensePrescriptionImage;
+use App\GlassPrescriptionImage;
+use App\Promocode;
+use App\TotalPrice;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -45,10 +50,23 @@ class CartController extends Controller
         $lenses_brand = new LenseBrand;
         $lense_type = new LenseType;
         $lense_color = new ColorLense;
-        // dd($glasses);
 
+        $total_price = 0;
+        foreach ($glasses as $glass){
+            $total_price += ($glass->price_after_discount)* $glass->quantity;
+        }
+        foreach ($lenses as $lense){
+            $total_price += ($lense->price_after_discount);
+        }
+        $order_price = TotalPrice::updateOrCreate(
+            ['order_id'=> $order->id],
+            ['price'=> $total_price, 'price_after_promocode'=> $total_price],
+        ) ;
+        // $order_price = new TotalPrice;
+        // $order_price->price = $total_price;
+        // $order_price->save();
 
-        return view('cart',compact('glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color'));
+        return view('cart',compact('glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color','total_price'));
     }
 
     public function deleteOrderProduct($id, $quantity,$category, $type)
@@ -64,20 +82,74 @@ class CartController extends Controller
                 ['order_id',$order->id],
                 ['quantity',$quantity],
                 ['category',$category]
-                ])->get();
+                ]);
+                
             $details = GlassProductPrescriptions::where([
                 ['product_id',$id],
                 ['order_id',$order->id],
-            ])->exists();
+            ]);
+            $lense_image = GlassPrescriptionImage::where([
+                ['product_id',$id],
+                ['order_id',$order->id],
+            ]);
+            if($details->exists()){
+                $details->delete();
+            }
+            if($lense_image->exists()){
+                $lense_image->delete();
+            }
+
+            $product->delete();
+
         } 
         else {
             $product = LenseProduct::where([
                 ['product_id',$id],
                 ['order_id',$order->id],
-                ])->get();
+                ]);
+            
+            $details = LenseProductPrescriptions::where([
+                ['product_id',$id],
+                ['order_id',$order->id],
+            ]);
+            $lense_image = LensePrescriptionImage::where([
+                ['product_id',$id],
+                ['order_id',$order->id],
+            ]);
+
+            if($details->exists()){
+                $details->delete();
+            }
+            if($lense_image->exists()){
+                $lense_image->delete();
+            }
+
+            $product->delete();
         }
-        dd($details);
+        // dd($details);
+        return redirect()->route('cart.index')->with('success','A product has been removed..');
     }
+
+
+    public function promocode(Request $request ){
+        $promocode = Promocode::where('code','=',$request->coupon)->firstOrFail();
+        $discount = ($promocode->discount);
+        $order = orderList::where([
+            ['user_order_state',0],
+            ['admin_order_state','inactive']
+        ])->firstOrFail();
+
+        $total = TotalPrice::where('order_id', $order->id)->firstOrFail();
+        $discount = $total->price *($promocode->discount / 100);
+        $total->price_after_promocode = $total->price - $discount;
+        return response()->json(['total'=>$total->price_after_promocode, 'discount'=> $discount]);
+
+    }
+
+    public function checkout(){
+        return view('Users.checkout')->render();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -141,13 +213,5 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        $order = orderList::where([
-            ['user_order_state',0],
-            ['admin_order_state','inactive']
-        ])->firstOrFail();
-
-        $product = GlassProduct::where('product_id',$id)->get();
-
-        dd($id);
     }
 }

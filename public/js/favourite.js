@@ -1,3 +1,29 @@
+$('#promocode').click(function(){
+    coupon = $('#coupon').val();
+    console.log(coupon);
+
+    $.ajax({
+        url: 'promocode',
+        type: 'post',
+        data:{
+            _token: $("#csrf-token")[0].content,
+            coupon: coupon,
+        },
+        success: function(response){
+            console.log(response.total);
+            console.log(response.discount);
+            $('#total_price').html(response.total);
+            $('#promo').append("<span>Promocode</span>");
+            $('#discount').append(`<span>-${response.discount}</span>`);
+
+        },
+        error: function(){
+            alert('ajax failed');
+        }
+    })
+})
+
+
 
 
 

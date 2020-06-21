@@ -34,7 +34,6 @@ Route::resource('ColoredEye','ColoredEyesController');
 Route::post('/changeLenseColor','ContactLensesController@changeColor');
 
 
-
 //mariam
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/contact', function () {
@@ -53,6 +52,8 @@ Route::get('admin/eyeglasses','AdminController@eye');
 Route::get('dashboard','AdminController@adminHome');
 Route::get('chart', 'AdminController@adminHome');
 Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
+Route::post('/promocode', 'CartController@promocode');
+Route::get('checkout','CartController@checkout');
 
 
 //hajar

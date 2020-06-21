@@ -45,6 +45,11 @@
         <div class="row mb-5">
           <form class="col-md-12" method="post">
             <div class="site-blocks-table">
+              @if(session('success'))
+                <div class="alert alert-success">
+                    {{Session::get('success')}}
+                </div>     
+                @endif
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -81,10 +86,10 @@
                           <td>{{$glass->glass_type}}</td>
                       @else
                         @if (($glass->glass_type == 'eyeglass') && ($glass->category == 'no prescription'))
-                          <td>Frame</td>
+                          <td>eyeglass Frame</td>
                         @else
                           @if ($glass->category != 'no prescription')
-                              <td>Frame with <a href="">lenses</a> 
+                              <td>eyeglass Frame with <a href="">lenses</a> 
                                <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">donate now</button>
                               </td> 
                           @endif
@@ -101,6 +106,7 @@
                     </td>
                     {{-- <td><a href="#" class="btn btn-danger height-auto btn-sm">X</a></td> --}}
                   </tr>
+                  
                   @empty
                       
                   @endforelse
@@ -121,10 +127,10 @@
                       
                       <td>{{$lense_type->find($item->type_id)->name}}</td>
 
-                      <td>{{$item->quantity}}</td>
-                    <td>{{($item->price_after_discount)* $item->quantity}}</td>
+                      <td>{{1}}</td>
+                    <td>{{$item->price_after_discount}}</td>
                     <td>
-                    {!! Form::open(['url' => ['product', $item->id, $item->quantity, $lense_type->find($item->type_id)->name, 'lenses'] ,'method' => 'delete' ]) !!}
+                    {!! Form::open(['url' => ['product', $item->id, '1', $lense_type->find($item->type_id)->name, 'lenses'] ,'method' => 'delete' ]) !!}
                     {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
                     {!! Form::close() !!}
                     </td>
@@ -142,11 +148,11 @@
         <div class="row">
           <div class="col-md-6">
             <div class="row mb-5">
-              <div class="col-md-6 mb-3 mb-md-0">
+              {{-- <div class="col-md-6 mb-3 mb-md-0">
                 <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
-              </div>
+              </div> --}}
               <div class="col-md-6">
-                <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                <a href="/" class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</a>
               </div>
             </div>
             <div class="row">
@@ -158,7 +164,7 @@
                 <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
               </div>
               <div class="col-md-4">
-                <button class="btn btn-primary btn-sm px-4">Apply Coupon</button>
+                <button  id="promocode" class="btn btn-primary btn-sm px-4">Apply Coupon</button>
               </div>
             </div>
           </div>
@@ -170,12 +176,18 @@
                     <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
                   </div>
                 </div>
-                <div class="row mb-3">
+                <div id="sub" class="row mb-3">
                   <div class="col-md-6">
                     <span class="text-black">Subtotal</span>
                   </div>
                   <div class="col-md-6 text-right">
-                    <strong class="text-black">$230.00</strong>
+                    <strong class="text-black">{{$total_price}}</strong>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div id = "promo"class="col-md-6">
+                  </div>
+                  <div id="discount" class="col-md-6 text-right">
                   </div>
                 </div>
                 <div class="row mb-5">
@@ -183,13 +195,14 @@
                     <span class="text-black">Total</span>
                   </div>
                   <div class="col-md-6 text-right">
-                    <strong class="text-black">$230.00</strong>
+                    <strong id="total_price" class="text-black">{{$total_price}}</strong>
                   </div>
                 </div>
+                
 
                 <div class="row">
                   <div class="col-md-12">
-                    <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
+                    <a class="btn btn-primary btn-lg btn-block" href="checkout" >Proceed To Checkout</a>
                   </div>
                 </div>
               </div>
@@ -231,6 +244,8 @@
           </div>
       </div>
     </div> --}}
+
+  <script src="{{ asset('/js/favourite.js') }}" defer></script>
 </body>
 @endsection
 </html>
