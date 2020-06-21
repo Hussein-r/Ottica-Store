@@ -7,6 +7,7 @@ use App\LenseType;
 use App\LenseManufacturerer;
 use App\Color;
 use App\Comment;
+use App\LenseUseType;
 use App\ColoredEye;
 use App\ColorLense;
 use Illuminate\Http\Request;
@@ -66,20 +67,18 @@ class ContactLensesController extends Controller
 
     public function store(Request $request)
     {
-        
-        $data=$this->validate($request,[
-                'name' => 'required|unique:contact_lenses',
-                'quantity'=>'required|numeric',
-                'price_before_discount'=>'required|numeric',
-                'price_after_discount'=>'required|numeric|lt:price_before_discount',
-                'brand_id'=>'required|numeric',
-                'type_id'=>'required|numeric',
-                'manufacturerer_id'=>'required|numeric',
-                'color'=>'required',
-                'duration'=>'required',
-                'image'=>'required'
-               
-            ]);
+        // $data=$this->validate($request,[
+        //     'name' => 'required|unique:contact_lenses',
+        //     'quantity'=>'required|numeric',
+        //     'price_before_discount'=>'required|numeric',
+        //     'price_after_discount'=>'required|numeric|lt:price_before_discount',
+        //     'brand_id'=>'required|numeric',
+        //     'type_id'=>'required|numeric',
+        //     'manufacturerer_id'=>'required|numeric',
+        //     'color'=>'required',
+        //     'label'=>'required',
+        //     'description'=>'required'
+        // ]);
         $lense= ContactLenses::create($request->except(['image']));
         if($files=$request->file('image')){
             $imageName = time().'.'.$request->image->extension();  
@@ -99,6 +98,15 @@ class ContactLensesController extends Controller
             }
             
             // $lense->quantity=$request->quantity;
+            for($i = 0;$i<($request->number_of_types);$i++)
+            {
+                $lenseusetype=new LenseUseType();
+                $lenseusetype->lense_id=$lense->id;
+                $lenseusetype->duration=$request->duration[$i];
+                $lenseusetype->price=$request->price[$i];
+                $lenseusetype->save();
+            }
+            
        
         
         return redirect()->action('ContactLensesController@index');
@@ -204,6 +212,10 @@ class ContactLensesController extends Controller
            $colors = ColorLense::where('lesne_id','=',$id);
             foreach($colors as $color){
                 $color->delete();
+            }
+            $types=LenseUseType::where('lense_id','=',$id);
+            foreach($types as $type){
+                $type->delete();
             }
 
         $lense->delete();

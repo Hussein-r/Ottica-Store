@@ -25,3 +25,12 @@ function changeImage() {
         }
     });
 }
+
+function changeNumber(number) {
+    var myHtml =
+        "<input type='number' class='mb-1' id='duration' name='duration[]' placeholder='Please specify time by days'><input type='number' class='mb-2' id='price' name='price[]' placeholder='Price'>";
+    $("#useandprice").html(myHtml.repeat(number));
+}
+$("#numbers").change(function() {
+    changeNumber(this.value);
+});
