@@ -37,14 +37,14 @@ class BestSellerController extends Controller
         foreach ($bestsellerglasses as $item) {
             array_push($GlassImg,$item->id);
         }
-        $bestSellerGlassImages=glass_images::whereIn('glass_id',$GlassImg)->take(1)->get();
+        $bestSellerGlassImages=glass_images::whereIn('glass_id',$GlassImg)->get();
         // dd($bestSellerGlassImages);
         $bestsellerlenses=ContactLenses::where('best_seller',1)->get();
         $LenseImg =array();
         foreach ($bestsellerlenses as $item) {
             array_push($LenseImg,$item->id);
         }
-        $bestSellerLenseImages=LenseImage::whereIn('lense_id',$LenseImg)->take(1)->get();
+        $bestSellerLenseImages=LenseImage::whereIn('lense_id',$LenseImg)->get();
         // dd($bestSellerLenseImages);   
         $lenseColorBallet=ColorLense::whereIn('lense_id',$LenseImg)->get();
         $lenseColor=array();
@@ -65,13 +65,14 @@ class BestSellerController extends Controller
             array_push($glassarr,$item->product_id);
            } 
      $glassProducts =Glass::whereIn('id',$glassarr)->get();
+    //  dd($glassProducts);
      $GlassProductColor=array();
      foreach ($glassProducts as $item) {
          array_push($GlassProductColor,$item->color_id);
      }
      $glassProductsColor=Color::whereIn('id',$GlassProductColor)->get();
     //  dd($glassProductsColor);
-     $glassProductsImages=glass_images::whereIn('glass_id',$glassarr)->take(1)->get();
+     $glassProductsImages=glass_images::whereIn('glass_id',$glassarr)->get();
     //  dd($glassProductsImages);
      //lenses
      $lensearr=array();
@@ -85,7 +86,8 @@ class BestSellerController extends Controller
             array_push($lensearr,$item->product_id);
         }
      $lenseProducts =ContactLenses::whereIn('id',$lensearr)->get();
-     $lenseProductsImages=LenseImage::whereIn('lense_id',$lensearr)->take(1)->get();
+     $lenseProductsImages=LenseImage::whereIn('lense_id',$lensearr)->get();
+    //  dd($lenseProductsImages);
      $lenseProductColorBallet=ColorLense::whereIn('lense_id',$lensearr)->get();
      $LenseProductColor =array();
      foreach ($lenseProductColorBallet as $item) {

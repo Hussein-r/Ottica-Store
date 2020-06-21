@@ -66,13 +66,19 @@ Route::get('orders/processing', 'ListOrdersController@processingOrdersList');
 Route::get('orders/done', 'ListOrdersController@doneOrdersList');
 //our special offers home
 Route::get('offers','SpecialOffersController@list');
-
 //our brands home page 
 Route::resource('ourbrands','OurBrandsController');
 Route::get('ourbrands/home','OurBrandsController@returnHome');
-
 //best seller home page
 Route::resource('bestseller','BestSellerController');
+//filteration 
+// Route::resource('filter','FilterationController');
+Route::post('/Sunfilters','FilterationController@show');
+Route::post('/Eyefilters','FilterationController@store');
+Route::post('/Lensefilters','FilterationController@edit');
+
+
+
 
 
 

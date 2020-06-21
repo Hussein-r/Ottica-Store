@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/aos.css">
     <link rel="stylesheet" href="/css/styling.css">
     <link rel="stylesheet" href="/css/core-style.css">
@@ -26,6 +27,17 @@
                 </div>
         </div>
     </div>
+
+    <!-- ----------------------------->
+ <div class="site-section ">
+ <div class="container">
+
+  <div class="row mb-5">
+
+  <div class="col-9">
+     <!-- ------ -->
+     <div id="filter_data" class="mt-3" style="border-top:1px solid black;">
+
     <div class="mt-3" style="border-top:1px solid black;">
         <div class="product-sorting d-flex" style="text-align: right">
             <strong>Sort by:</strong>
@@ -42,8 +54,9 @@
         </form> --}}
         </div>
         <div id="glassArea">
+
     @foreach ($glasses as $glass)
-    <div class="single-product-wrapper mt-6 col-md-4 h-30" style="display:inline-block;">
+    <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;">
         <!-- Product Image -->
         <div class="product-img" >
             <img src="images/{{$glass->images->first()->image}}" alt="">
@@ -53,8 +66,10 @@
             </div>
         </div>
         <!-- Product Description -->
+
         <div class="product-description">
             <span>{{$glass->glass_code}}</span>
+
             <a  href="single-product-details.html">
                 <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
             </a>
@@ -71,10 +86,119 @@
             </div>
         </div>
     </div>
-    @endforeach   
-        </div>  
+    @endforeach  
+    </div>
+    <!-- ---------- -->
+
+  </div>
+    <!-- !-- --------------------------------------------------- --> 
+<div class="col-md-3 order-2 mb-5 mb-md-0">
+  <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Price</h3>
+      <ul class="list-unstyled mb-0" >
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price" value="1"><span> Less Than 500 </span></li>
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price"  value="2"><span>500:1000 </span></li>
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price" value="3"><span>More Than 1000 </span></li>
+      </ul>
+    </div>
+
+<!-- -------------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Gender</h3>
+      <ul class="list-unstyled mb-0" >
+        <li class="mb-1"> <input type="checkbox"  id="gender"  value="male"><span> Men</span></li>
+        <li class="mb-1"><input type="checkbox"  id="gender" value="female"><span> Women</span></li>
+        <li class="mb-1"><input type="checkbox"  id="gender" value="unisex"><span> unisex</span> </li>
+      </ul>
+    </div>
+    <!-- -------------------------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Brand</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($brands as $brand)
+            <li class="mb-1"> <input id="brand" type="checkbox" value="{{$brand->id}}"><span> {{$brand->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+    <!-- ---------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Face Shape</h3>
+      <ul class="list-unstyled mb-0">
+      @foreach($faceShapes as $faceShape)
+            <li class="mb-1"> <input type="checkbox"  id="face_shape"  value="{{$faceShape->id}}"><span> {{$faceShape->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+  <!-- ------------------ -->
+  <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Frame Shape</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($frameShapes as $frameShape)
+            <li class="mb-1"> <input type="checkbox" id="frame_shape" value="{{$frameShape->id}}"><span> {{$frameShape->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+  <!-- ---------------------------- -->
+  <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Colors</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($colors as $color)
+            <li class="mb-1"> <input type="checkbox" id="color"  value="{{$color->id}}"><span> {{$color->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+<!-- -------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Secondary Colors</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($secondaryColors as $color)
+            <li class="mb-1"> <input type="checkbox"  id="secondary_color" value="{{$color->id}}"><span> {{$color->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+<!-- ------------------ -->
+   <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Fits</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($fits as $fit)
+            <li class="mb-1"> <input type="checkbox" id="fit"  value="{{$fit->id}}"><span> {{$fit->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+<!-- ----------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Materials</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($materials as $material)
+            <li class="mb-1"> <input type="checkbox" id="material" value="{{$material->id}}"><span> {{$material->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+<!-- ------------------- -->
+<div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block"> Secondary Materials</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($secondaryMaterials as $material)
+            <li class="mb-1"> <input type="checkbox"  id="secondary_material" value="{{$material->id}}"><span> {{$material->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+<!-- ------------------ -->
 </div>
+  <!-- --------------------- -->
+</div>
+
+</div>
+</div>
+
+
     </section>
+
 <body>
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/jquery-2.2.4.min.js"></script>
@@ -82,6 +206,8 @@
     <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/sunglass_filteration.js"></script>
 <script src="/js/active.js"></script>
 @endsection
 
