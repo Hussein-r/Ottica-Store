@@ -17,6 +17,11 @@ It is written in PHP (PHP 7+) and can work without "mbstring", "iconv" or any ot
 The benefit of Portable ASCII is that it is easy to use, easy to bundle.
 
 The project based on ...
+<<<<<<< HEAD
+=======
++ Sean M. Burke's work (https://metacpan.org/pod/Text::Unidecode)
++ Tomaz Solc's work (https://pypi.org/project/Unidecode/)
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 + Portable UTF-8 work (https://github.com/voku/portable-utf8) 
 + Daniel St. Jules's work (https://github.com/danielstjules/Stringy) 
 + Johnny Broadway's work (https://github.com/jbroadway/urlify)

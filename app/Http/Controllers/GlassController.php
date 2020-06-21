@@ -180,33 +180,125 @@ class GlassController extends Controller
 
     public function sunglasses()
     {
+        //filteration part (hajar)
+         //price in same table
+         $brands=Brand::all();
+         //gender-> male - female - unisex
+         $faceShapes=FaceShape::all();
+         $frameShapes=FrameShape::all();
+         $colors=Color::all();
+         $secondaryColors=Color::all();
+         $materials=Material::all();
+         $secondaryMaterials=Material::all();
+         $fits=Fit::all();
+        /////////////////
+
         $glasses = Glass::where('glass_type','=','sunglass')->paginate(15);
         // $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
-        return view('glass.sunglass',['glasses'=>$glasses])->render();
+        return view('glass.sunglass',[
+            'glasses'=>$glasses,
+            'brands'=>$brands,
+            'faceShapes'=>$faceShapes,
+            'frameShapes'=>$frameShapes,
+            'colors'=>$colors,
+            'secondaryColors'=>$secondaryColors,
+            'materials'=>$materials,
+            'secondaryMaterials'=>$secondaryMaterials,
+            'fits'=>$fits,
+        ])->render();
     }
 
     public function eyeglasses()
     {
+
+        //filteration part (hajar)
+         //price in same table
+         $brands=Brand::all();
+         //gender-> male - female - unisex
+         $faceShapes=FaceShape::all();
+         $frameShapes=FrameShape::all();
+         $colors=Color::all();
+         $secondaryColors=Color::all();
+         $materials=Material::all();
+         $secondaryMaterials=Material::all();
+         $fits=Fit::all();
+        /////////////////
         $glasses = Glass::where('glass_type','=','eyeglass')->paginate(15);
         // $allcolors=Glass::where("glass_code",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
-        return view('glass.eyeglass', compact('glasses'));
+        return view('glass.eyeglass',[
+            'glasses'=>$glasses,
+            'brands'=>$brands,
+            'faceShapes'=>$faceShapes,
+            'frameShapes'=>$frameShapes,
+            'colors'=>$colors,
+            'secondaryColors'=>$secondaryColors,
+            'materials'=>$materials,
+            'secondaryMaterials'=>$secondaryMaterials,
+            'fits'=>$fits,
+        ]);
     }
 
-    public function sort($option)
+    public function sort(Request $request)
     {
-        // dd($option);
-        $all_glasses = Glass::all();
-        if($option == 'low'){
-            $glasses=$all_glasses->sortBy('price_after_discount');
+        
+        $option = $request->get('option');
+        $type = $request->get('type');
+
+        // $all_glasses = Glass::all();
+        if($type == 'sun'){
+            if($option == 'low'){
+                dd('mmm');
+                $sorted=Glass::where('glass_type','=','sunglass')->get()->sortBy('price_after_discount')->toArray();
+                
+            }
+            else{
+                dd('mmm');
+                $sorted=Glass::where('glass_type','=','sunglass')->get()->sortByDesc('price_after_discount')->toArray();
+            }
+            // return  response()->json(['glasses'=>$sorted,'option'=>$option]);
+            return $sorted;
+
         }
-        elseif($option == 'high'){
-            $glasses=$all_glasses->sortByDesc('price_after_discount');
+        else{
+            if($option == 'low'){
+                $sorted=Glass::where('glass_type','=','eyeglass')->get()->sortBy('price_after_discount')->toArray();
+            }
+            else{
+                $sorted=Glass::where('glass_type','=','eyeglass')->get()->sortByDesc('price_after_discount')->toArray();
+            }
+            return  response()->json(['glasses'=>$sorted,'option'=>$option]);
+
         }
-        return view('glass.eyeglass', compact('glasses'));
-        // return  response()->json(['glasses'=>$glasses]);
+
+        // return view('glass.eyeglass', compact('glasses'));
+
     }
+
+
+
+    // public function sort(Request $request)
+    // {
+    //     // $all_glasses = Glass::all();
+    //     if($request->type == 'sun'){
+    //         $all_glasses = Glass::where('glass_type','=','sunglass')->get();
+    //     }
+    //     elseif($request->type == 'eye'){
+    //         $all_glasses = Glass::where('glass_type','=','eyeglass')->get();
+    //     }
+        
+    //     if($request->select == 'low'){
+    //         $glasses=$all_glasses->sortBy('price_after_discount');
+    //     }
+    //     elseif($request->select == 'high'){
+    //         $glasses=$all_glasses->sortByDesc('price_after_discount');
+    //     }
+    //     return redirect('sunglasses')->with('glasses', $glasses);
+    //     // return view('glass.eyeglass', compact('glasses'));
+
+    //     // return  response()->json(['glasses'=>$glasses]);
+    // }
 
     public function favourite(Request $request)
     {

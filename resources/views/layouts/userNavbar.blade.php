@@ -52,10 +52,48 @@
                 <li><a href="#">About</a></li>
               <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
               </ul>
+            {{--  <ul class="navbar-nav">
+                <!-- Authentication Links -->
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                @endif
+            @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle mr-2 d-none d-lg-inline text-gray-600" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+   
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{route('user.show',Auth::user())}}">
+                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            {{ __('profile') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+                          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+   
+                            {{ __('Logout') }}
+                        </a>
+   
+   
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
+             </ul>
+             --}}
             </nav>
           </div>
           <div class="icons">
-           
           <a href="{{url('/favourite')}}" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
             <a href="/cart" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
@@ -63,69 +101,14 @@
             </a>
             <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
           </div>
+          
         </div>
       </div>
     </div>
 </div>
 @yield('content')
 
-<footer class="site-footer custom-border-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-5 ml-auto mb-5 mb-lg-0">
-        <div class="row">
-          <div class="col-md-12">
-            <h3 class="footer-heading mb-4">Quick Links</h3>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <ul class="list-unstyled">
-              <li><a href="#">Sell online</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Shopping cart</a></li>
-              <li><a href="#">Store builder</a></li>
-            </ul>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <ul class="list-unstyled">
-              <li><a href="#">Mobile commerce</a></li>
-              <li><a href="#">Dropshipping</a></li>
-              <li><a href="#">Website development</a></li>
-            </ul>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <ul class="list-unstyled">
-              <li><a href="#">Point of sale</a></li>
-              <li><a href="#">Hardware</a></li>
-              <li><a href="#">Software</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-6 col-lg-3">
-        <div class="block-5 mb-5">
-          <h3 class="footer-heading mb-4">Contact Info</h3>
-          <ul class="list-unstyled">
-            <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-            <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-            <li class="email">emailaddress@domain.com</li>
-          </ul>
-        </div>
 
-      </div>
-    </div>
-    <div class="row pt-5 mt-5 text-center">
-      <div class="col-md-12">
-        <p>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="icon-heart" aria-hidden="true"></i> by <a href="{{url('/')}}" target="_blank" class="text-primary">Ottica Store</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-      </div>
-      
-    </div>
-  </div>
-</footer>
 </body>
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/jquery-ui.js"></script>

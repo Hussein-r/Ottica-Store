@@ -24,7 +24,7 @@ class PayPalController extends Controller
         // dd($cart);
         try{
             $response=$this->provider->setExpressCheckout($cart);
-            // dd($response);
+            dd($response);
             return redirect($response['paypal_link']);
         }
         catch(\Exception $e){
@@ -52,6 +52,7 @@ class PayPalController extends Controller
             return[
                 'name'=>$item['product_id'],
                 'price'=>$item['price'],
+                'quantity'=>$item['quantity'],
                 
             ];
 

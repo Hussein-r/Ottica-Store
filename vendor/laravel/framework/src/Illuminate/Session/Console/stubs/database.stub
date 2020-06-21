@@ -15,7 +15,11 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->unique();
+<<<<<<< HEAD
             $table->unsignedBigInteger('user_id')->nullable();
+=======
+            $table->foreignId('user_id')->nullable();
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->text('payload');

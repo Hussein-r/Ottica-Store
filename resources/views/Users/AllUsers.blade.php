@@ -1,25 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>All Users</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
-	
 	<div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100">
-					<table>
+			<div class="container">
+				<a href="/mail" class="btn btn-primary mt-3" style="margin-bottom: 10px;">Send Email To All Users</a>
+					<table class="table table-striped">
 						<thead>
 							<tr class="table100-head">
 								<th class="column1">Name</th>
@@ -43,11 +28,7 @@
                         @endif			
 						</tbody>
 					</table>
-					<a href="/mail" class="btn btn-success mt-3">Send An Email To Everyone</a>
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
-</html>
 @endsection

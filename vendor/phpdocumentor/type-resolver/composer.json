@@ -24,12 +24,20 @@
     },
     "autoload-dev": {
         "psr-4": {
+<<<<<<< HEAD
             "phpDocumentor\\Reflection\\": "tests/unit"
+=======
+            "phpDocumentor\\Reflection\\": ["tests/unit", "tests/benchmark"]
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         }
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "1.x-dev"
+=======
+            "dev-1.x": "1.x-dev"
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         }
     }
 }

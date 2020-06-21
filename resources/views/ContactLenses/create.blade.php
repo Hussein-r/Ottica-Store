@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <html>
 <head>
@@ -15,7 +15,7 @@
 </style>
 </head>
     <body class="form-v6">
-    <h1 style="text-align: center">Add New Contact Lense</h1>
+    <h1 style="text-align: center;color:lightblue;">Add New Contact Lense</h1>
         <div  class="small-middle-container" >
             
             {!! Form::open(['route' => 'lenses.store','files' => 'true', 'method'=>'post']) !!}
@@ -124,6 +124,11 @@
                 </div>
                 <div><span class="text-white">{{$errors->first('water_of_content')}}</span></div>
                 <div class="input-group mb-3">
+                    <input type="number" id="numbers"  name="number_of_types" placeholder="how many types have you got?">
+                </div>
+                <div id="useandprice" class="mt-3 mb-3">
+                </div>
+                <div class="input-group mb-3">
                 <select class="custom-select" id="inputGroupSelect01" name="lense_purpose">
                         <option disabled>Choose Lense Purpose</option>
                         <option  value="1">medical</option> 
@@ -141,7 +146,7 @@
                 <div class="input-group mb-3">
                
                     <div class="custom-file" >
-                        <input type="file" class="custom-file-input" name="images[]" id="inputGroupFile01" multiple>
+                        <input type="file" class="custom-file-input" name="image" id="inputGroupFile01" >
                         <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
                     </div>
                     </div>
@@ -155,6 +160,10 @@
         
 
     </body>
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="/js/LenseColors.js"></script>
+
 </html>
 @endsection
 

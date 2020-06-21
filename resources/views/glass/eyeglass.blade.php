@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/aos.css">
     <link rel="stylesheet" href="/css/styling.css">
     <link rel="stylesheet" href="/css/core-style.css">
@@ -25,16 +26,20 @@
                         <img src="/images/eyeglassmodel.jpg" alt="Image" class="img-fluid">
                     </div>
                 </div>
+                
         </div>
     </div>
-    {{-- <div class="product-sorting d-flex">
-        <p>Sort by:</p>
-            <select name="select" id="sortByselect">
-                <option value="value">Low</option>
-                <option value="value">High</option>
-            </select>
-    </div> --}}
+    
     <div class="mt-3" style="border-top:1px solid black;">
+        <div class="product-sorting d-flex" style="text-align: right">
+            <strong>Sort by:</strong>
+            <select name="select" id="sortByselect" aria-placeholder="sorting by price">
+                <option value="" disabled selected>Sorting by Price</option>
+                <option value="low">Price: Low - High</option>
+                <option value="high">Price: High - Low</option>
+                <input type="hidden" id='glassType' value="eye" />
+            </select>
+        </div>
     @foreach ($glasses as $glass)
     <div class="single-product-wrapper mt-6 col-md-4 h-30" style="display:inline-block;">
         <!-- Product Image -->
@@ -42,9 +47,9 @@
             <img src="images/{{$glass->images->first()->image}}" alt="">
             <!-- Favourite -->
             <div class="product-favourite">
-                <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button>
+                {{-- <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button> --}}
 
-                {{-- <a href="#" class="favme fa fa-heart"></a> --}}
+                <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
             </div>
         </div>
 
@@ -74,12 +79,29 @@
 </div>
     </section>
 <body>    
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery-ui.js"></script>
-    <script src="/js/aos.js"></script>
-
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/active.js"></script>
 <script src="/js/sunmain.js"></script>
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/eyeglass_filteration.js"></script>
+<script>
+// for price slider
+// var slider = document.getElementById("myRange");
+// var output = document.getElementById("amount");
+// output.innerHTML = slider.value; // Display the default slider value
+
+// // Update the current slider value (each time you drag the slider handle)
+// slider.oninput = function() {
+//   output.innerHTML = this.value;
+// }
+
+
+
+</script>
+
 <script src="/js/active.js"></script>
 @endsection
 

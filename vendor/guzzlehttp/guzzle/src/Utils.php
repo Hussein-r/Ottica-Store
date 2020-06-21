@@ -81,9 +81,19 @@ final class Utils
         }
 
         /*
+<<<<<<< HEAD
          * The Idn class is marked as @internal. We've locked the version to
          * symfony/polyfill-intl-idn to avoid issues in the future.
          */
         return Idn::idn_to_ascii($domain, $options, Idn::INTL_IDNA_VARIANT_UTS46, $info);
+=======
+         * The Idn class is marked as @internal. Verify that class and method exists.
+         */
+        if (method_exists(Idn::class, 'idn_to_ascii')) {
+            return Idn::idn_to_ascii($domain, $options, Idn::INTL_IDNA_VARIANT_UTS46, $info);
+        }
+
+        throw new \RuntimeException('ext-intl or symfony/polyfill-intl-idn not loaded or too old');
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     }
 }

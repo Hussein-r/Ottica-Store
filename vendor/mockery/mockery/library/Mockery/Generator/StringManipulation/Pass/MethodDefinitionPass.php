@@ -105,11 +105,19 @@ class MethodDefinitionPass implements Pass
 
         if (!empty($typeHint)) {
             if (!\Mockery::isBuiltInType($typeHint)) {
+<<<<<<< HEAD
                 $typeHint = '\\'.$typeHint;
             }
 
             if (version_compare(PHP_VERSION, '7.1.0-dev') >= 0 && $param->allowsNull()) {
                 $typeHint = "?".$typeHint;
+=======
+                $typeHint = '\\' . $typeHint;
+            }
+
+            if ($param->allowsNull()) {
+                $typeHint = "?" . $typeHint;
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
             }
         }
 

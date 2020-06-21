@@ -148,7 +148,11 @@ is called.
         ->withSomeOfArgs(arg1, arg2, arg3, ...);
 
 The given expected arguments order doesn't matter.
+<<<<<<< HEAD
 Check if expected values are inclued or not, but type should be matched:
+=======
+Check if expected values are included or not, but type should be matched:
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 .. code-block:: php
 

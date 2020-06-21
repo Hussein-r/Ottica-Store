@@ -15,9 +15,7 @@
                <h4> Contact Lense Details</h4>
             </div>
                 <div class="card-body">
-                    @if($lense->images->first())
-                         <img class="card-img-top" style="height:15rem" src="/images/{{$lense->images->first()->image}}" alt="Card image cap">
-                    @endif
+                    <img class="card-img-top" style="height:15rem" src="/images/{{$lense->image}}" alt="Card image cap">
                     <h1  class="card-title"> {{$lense->name}}</h1>
                     <p class="card-text"><b>Quantity :</b> {{$lense->quantity}}</p>
                     <p class="card-text"><b>Label </b>: {{$lense->label}}</p>

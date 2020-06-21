@@ -23,7 +23,11 @@
     "require": {
         "php": ">=5.5",
         "ext-json": "*",
+<<<<<<< HEAD
         "symfony/polyfill-intl-idn": "1.17.0",
+=======
+        "symfony/polyfill-intl-idn": "^1.17.0",
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         "guzzlehttp/promises": "^1.0",
         "guzzlehttp/psr7": "^1.6.1"
     },

@@ -22,12 +22,15 @@ namespace Mockery\Adapter\Phpunit;
 
 use Mockery;
 
+<<<<<<< HEAD
 if (class_exists('PHPUnit_Framework_TestCase') || version_compare(\PHPUnit\Runner\Version::id(), '8.0.0', '<')) {
     class_alias(MockeryPHPUnitIntegrationAssertPostConditionsForV7AndPrevious::class, MockeryPHPUnitIntegrationAssertPostConditions::class);
 } else {
     class_alias(MockeryPHPUnitIntegrationAssertPostConditionsForV8::class, MockeryPHPUnitIntegrationAssertPostConditions::class);
 }
 
+=======
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 /**
  * Integrates Mockery into PHPUnit. Ensures Mockery expectations are verified
  * for each test and are included by the assertion counter.

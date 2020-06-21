@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+<meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,18 +33,19 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-12 col-md-8 col-lg-9">
+</div>
+<div class="col-12 col-md-8 col-lg-9">
         <div class="shop_grid_product_area">
             <div class="row">
                 <div class="col-12">
                     <div class="product-topbar d-flex align-items-center justify-content-between">
                    
-                </div>
+                    <div>
                         <!-- Total Products -->
                         {{-- <div class="total-products">
-                            <p><span>{{count($lenses)}}</span> products found</p>
-                        </div> --}}
+                                <p><span>{{count($lenses)}}</span> products found</p>
+                            </div> 
+                        --}}
                         <!-- Sorting -->
                        
                         
@@ -70,31 +72,26 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- ------------------------------------- -->
+          <div id="filter_data" class="row">
+     
                 @forelse ($lenses as $lense)
                
                
                 <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-product-wrapper">
+             <div class="col-12 col-sm-6 col-lg-4">
+                 <div class="single-product-wrapper">
                         <!-- Product Image -->
-                        @if($lense->images->first())                        
                         <div class="product-img">
-                            <img style="height: 150px" src="/images/{{$lense->images->first()->image}}" alt="product image">
-                            @endif
-                            <!-- Hover Thumb -->
-                            @if($lense->images->last())     
-                            <img class="hover-img" src="/images/{{$lense->images->last()->image}}" alt="">
-                            @endif
+                            <img style="height: 150px" src="/images/{{$lense->image}}" alt="product image">
                             <!-- Product Badge -->
                             <div class="product-badge new-badge">
-                            <span>{{$lense->label}}</span>
+                                <span>{{$lense->label}}</span>
                             </div>
-                            
                         </div>
 
                         <!-- Product Description -->
-                        <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
+                     <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
                             <a href="#">
                                 <h6>{{$lense->brand->name}}</h6>
                             </a>
@@ -105,9 +102,7 @@
                                 {{$lense->price_after_discount}}EGP
                                 <span><h5 class="text-danger" style="text-align:right;">-{{round((($lense->price_before_discount-$lense->price_after_discount)/$lense->price_before_discount)*100)}}%</h5></span>
                             </p>
-                    
-                    
-                        
+                
                             <!-- Hover Content -->
                             <div class="hover-content">
                                 <!-- Add to Cart -->
@@ -115,20 +110,66 @@
                                  <a href="{{route('lenses.show', $lense->id)}}" class="btn essence-btn">View Details</a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                     </div>
+                 </div>
+             </div>
                 @empty
                 <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
                     No products yet!
                 </div>
                     
                 @endforelse
-            </div>
+         </div>
+         <!-- end foreach -->
+      </div>
+      
+        
+         <!-- ----------------------- -->
+    <div class="col-md-3 order-2 mb-5 mb-md-0">
+         <div class="border p-4 rounded mb-4 filteration">
+               <h3 class="mb-3 h6 text-uppercase text-black d-block">Brand</h3>
+              <ul class="list-unstyled mb-0" >
+              @foreach($brands as $brand)
+            <li class="mb-1"> <input id="brand" type="checkbox" value="{{$brand->id}}"><span> {{$brand->name}}</span></li>
+             @endforeach 
+              </ul>
         </div>
+      <!-- ---------------- -->
+     <div class="border p-4 rounded mb-4 filteration">
+         <h3 class="mb-3 h6 text-uppercase text-black d-block">Types</h3>
+         <ul class="list-unstyled mb-0">
+         @foreach($types as $type)
+            <li class="mb-1"> <input type="checkbox"  id="type"  value="{{$type->id}}"><span> {{$type->name}}</span></li>
+         @endforeach 
+         </ul>
+        </div>
+
+      <!-- ------------------ -->
+       <div class="border p-4 rounded mb-4 filteration">
+         <h3 class="mb-3 h6 text-uppercase text-black d-block">manufacturers</h3>
+         <ul class="list-unstyled mb-0" >
+         @foreach($manufacturers as $manufacturer)
+            <li class="mb-1"> <input type="checkbox" id="manufacturer" value="{{$manufacturer->id}}"><span> {{$manufacturer->name}}</span></li>
+         @endforeach 
+         </ul>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+</div>
+  <!-- ---------------------------- -->
+ 
+ <!-- --------------------------- -->
+
 </section>
 </body>
 <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/lenseFilteration.js"></script>
 @endsection
 </html>

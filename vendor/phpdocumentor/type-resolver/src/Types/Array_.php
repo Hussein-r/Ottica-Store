@@ -21,6 +21,11 @@ namespace phpDocumentor\Reflection\Types;
  * 1. Untyped (`array`), where the key and value type is unknown and hence classified as 'Mixed_'.
  * 2. Types (`string[]`), where the value type is provided by preceding an opening and closing square bracket with a
  *    type name.
+<<<<<<< HEAD
+=======
+ *
+ * @psalm-immutable
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
  */
 final class Array_ extends AbstractList
 {

@@ -30,13 +30,25 @@ use function trim;
  *
  * @see ContextFactory::createFromClassReflector()
  * @see ContextFactory::createForNamespace()
+<<<<<<< HEAD
+=======
+ *
+ * @psalm-immutable
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
  */
 final class Context
 {
     /** @var string The current namespace. */
     private $namespace;
 
+<<<<<<< HEAD
     /** @var string[] List of namespace aliases => Fully Qualified Namespace. */
+=======
+    /**
+     * @var string[] List of namespace aliases => Fully Qualified Namespace.
+     * @psalm-var array<string, string>
+     */
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     private $namespaceAliases;
 
     /**
@@ -45,6 +57,11 @@ final class Context
      *
      * @param string   $namespace        The namespace where this DocBlock resides in.
      * @param string[] $namespaceAliases List of namespace aliases => Fully Qualified Namespace.
+<<<<<<< HEAD
+=======
+     *
+     * @psalm-param array<string, string> $namespaceAliases
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      */
     public function __construct(string $namespace, array $namespaceAliases = [])
     {
@@ -80,6 +97,11 @@ final class Context
      * the alias for the imported Namespace.
      *
      * @return string[]
+<<<<<<< HEAD
+=======
+     *
+     * @psalm-return array<string, string>
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      */
     public function getNamespaceAliases() : array
     {

@@ -69,7 +69,11 @@ class Mockery
      */
     public static function globalHelpers()
     {
+<<<<<<< HEAD
         require_once __DIR__.'/helpers.php';
+=======
+        require_once __DIR__ . '/helpers.php';
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     }
 
     /**
@@ -78,6 +82,7 @@ class Mockery
     public static function builtInTypes()
     {
         $builtInTypes = array(
+<<<<<<< HEAD
             'self',
             'array',
             'callable',
@@ -94,6 +99,20 @@ class Mockery
             $builtInTypes[] = 'object';
         }
 
+=======
+            'array',
+            'bool',
+            'callable',
+            'float',
+            'int',
+            'iterable',
+            'object',
+            'self',
+            'string',
+            'void',
+        );
+
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         return $builtInTypes;
     }
 
@@ -234,7 +253,11 @@ class Mockery
     }
 
     /**
+<<<<<<< HEAD
      * Setter for the $_generator static propery.
+=======
+     * Setter for the $_generator static property.
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      *
      * @param \Mockery\Generator\Generator $generator
      */
@@ -592,10 +615,17 @@ class Mockery
                     $sample[] = "$key => $value";
                 }
 
+<<<<<<< HEAD
                 $argument = "[".implode(", ", $sample)."]";
             }
 
             return ((strlen($argument) > 1000) ? substr($argument, 0, 1000).'...]' : $argument);
+=======
+                $argument = "[" . implode(", ", $sample) . "]";
+            }
+
+            return ((strlen($argument) > 1000) ? substr($argument, 0, 1000) . '...]' : $argument);
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         }
 
         if (is_bool($argument)) {
@@ -610,7 +640,11 @@ class Mockery
             return 'NULL';
         }
 
+<<<<<<< HEAD
         return "'".(string) $argument."'";
+=======
+        return "'" . (string) $argument . "'";
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     }
 
     /**
@@ -858,6 +892,7 @@ class Mockery
     ) {
         $newMockName = 'demeter_' . md5($parent) . '_' . $method;
 
+<<<<<<< HEAD
         if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
             $parRef = null;
             $parRefMethod = null;
@@ -881,6 +916,29 @@ class Mockery
 
                     return $mock;
                 }
+=======
+        $parRef = null;
+        $parRefMethod = null;
+        $parRefMethodRetType = null;
+
+        $parentMock = $exp->getMock();
+        if ($parentMock !== null) {
+            $parRef = new ReflectionObject($parentMock);
+        }
+
+        if ($parRef !== null && $parRef->hasMethod($method)) {
+            $parRefMethod = $parRef->getMethod($method);
+            $parRefMethodRetType = $parRefMethod->getReturnType();
+
+            if ($parRefMethodRetType !== null) {
+                $nameBuilder = new MockNameBuilder();
+                $nameBuilder->addPart('\\' . $newMockName);
+                $type = $parRefMethodRetType->getName();
+                $mock = self::namedMock($nameBuilder->build(), $type);
+                $exp->andReturn($mock);
+
+                return $mock;
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
             }
         }
 

@@ -17,6 +17,11 @@ use phpDocumentor\Reflection\Type;
 
 /**
  * Represents a list of values. This is an abstract class for Array_ and Collection.
+<<<<<<< HEAD
+=======
+ *
+ * @psalm-immutable
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
  */
 abstract class AbstractList implements Type
 {
@@ -48,11 +53,15 @@ abstract class AbstractList implements Type
      */
     public function getKeyType() : Type
     {
+<<<<<<< HEAD
         if ($this->keyType === null) {
             return $this->defaultKeyType;
         }
 
         return $this->keyType;
+=======
+        return $this->keyType ?? $this->defaultKeyType;
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     }
 
     /**

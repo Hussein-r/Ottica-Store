@@ -30,11 +30,14 @@ Route::resource('SingleVisionLense','SingleVisionController');
 Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
 Route::resource('BifocalLense','BifocalController');
 Route::resource('comment','CommentsController');
+Route::resource('ColoredEye','ColoredEyesController');
+Route::post('/changeLenseColor','ContactLensesController@changeColor');
+Route::post('/storeLense','ClientOrdersController@storeLense');
+
 
 
 //mariam
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('admin','HomeController@adminHome');
 Route::get('/contact', function () {
     return view('contact')->render();
 });
@@ -43,8 +46,14 @@ Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
 Route::get('eyeglasses','GlassController@eyeglasses');
 Route::get('/fav','GlassController@favourite');
-Route::get('/sort/{option}', 'GlassController@sort');
+// Route::get('/price/{option}/{type}', 'GlassController@sort');
+Route::post('/price', 'GlassController@sort');
 Route::get('favourite', 'UserController@myFavourite');
+Route::get('admin/sunglasses','AdminController@sun');
+Route::get('admin/eyeglasses','AdminController@eye');
+Route::get('dashboard','AdminController@adminHome');
+
+
 
 //hajar
 //specail offers & list orders for admin 
@@ -57,13 +66,19 @@ Route::get('orders/processing', 'ListOrdersController@processingOrdersList');
 Route::get('orders/done', 'ListOrdersController@doneOrdersList');
 //our special offers home
 Route::get('offers','SpecialOffersController@list');
-
 //our brands home page 
 Route::resource('ourbrands','OurBrandsController');
 Route::get('ourbrands/home','OurBrandsController@returnHome');
-
 //best seller home page
 Route::resource('bestseller','BestSellerController');
+//filteration 
+// Route::resource('filter','FilterationController');
+Route::post('/Sunfilters','FilterationController@show');
+Route::post('/Eyefilters','FilterationController@store');
+Route::post('/Lensefilters','FilterationController@edit');
+
+
+
 
 
 

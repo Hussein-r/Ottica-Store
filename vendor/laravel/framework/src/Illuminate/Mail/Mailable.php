@@ -133,6 +133,16 @@ class Mailable implements MailableContract, Renderable
     public $callbacks = [];
 
     /**
+<<<<<<< HEAD
+=======
+     * The name of the theme that should be used when formatting the message.
+     *
+     * @var string|null
+     */
+    public $theme;
+
+    /**
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * The name of the mailer that should send the message.
      *
      * @var string

@@ -203,11 +203,15 @@ class Expectation implements ExpectationInterface
             return;
         }
 
+<<<<<<< HEAD
         $type = version_compare(PHP_VERSION, '7.0.0') >= 0
             ? "\Throwable"
             : "\Exception";
 
         if ($return instanceof $type) {
+=======
+        if ($return instanceof \Throwable) {
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
             throw $return;
         }
 
@@ -344,8 +348,12 @@ class Expectation implements ExpectationInterface
             reset($this->_expectedArgs);
 
             if ($this->isAndAnyOtherArgumentsMatcher($lastExpectedArgument)) {
+<<<<<<< HEAD
                 $argCountToSkipMatching = $argCount - count($this->_expectedArgs);
                 $args = array_slice($args, 0, $argCountToSkipMatching);
+=======
+                $args = array_slice($args, 0, array_search($lastExpectedArgument, $this->_expectedArgs, true));
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
                 return $this->_matchArgs($args);
             }
 
@@ -406,7 +414,12 @@ class Expectation implements ExpectationInterface
     /**
      * Expected argument setter for the expectation
      *
+<<<<<<< HEAD
      * @param mixed[] ...$args
+=======
+     * @param mixed ...$args
+     *
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * @return self
      */
     public function with(...$args)
@@ -455,7 +468,11 @@ class Expectation implements ExpectationInterface
         } elseif ($argsOrClosure instanceof Closure) {
             $this->withArgsMatchedByClosure($argsOrClosure);
         } else {
+<<<<<<< HEAD
             throw new \InvalidArgumentException(sprintf('Call to %s with an invalid argument (%s), only array and '.
+=======
+            throw new \InvalidArgumentException(sprintf('Call to %s with an invalid argument (%s), only array and ' .
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
                 'closure are allowed', __METHOD__, $argsOrClosure));
         }
         return $this;
@@ -486,7 +503,11 @@ class Expectation implements ExpectationInterface
     /**
      * Expected arguments should partially match the real arguments
      *
+<<<<<<< HEAD
      * @param mixed[] ...$expectedArgs
+=======
+     * @param mixed ...$expectedArgs
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * @return self
      */
     public function withSomeOfArgs(...$expectedArgs)
@@ -504,7 +525,11 @@ class Expectation implements ExpectationInterface
     /**
      * Set a return value, or sequential queue of return values
      *
+<<<<<<< HEAD
      * @param mixed[] ...$args
+=======
+     * @param mixed ...$args
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * @return self
      */
     public function andReturn(...$args)
@@ -516,7 +541,11 @@ class Expectation implements ExpectationInterface
     /**
      * Set a return value, or sequential queue of return values
      *
+<<<<<<< HEAD
      * @param mixed[] ...$args
+=======
+     * @param mixed ...$args
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * @return self
      */
     public function andReturns(...$args)
@@ -551,7 +580,11 @@ class Expectation implements ExpectationInterface
      * values. The arguments passed to the expected method are passed to the
      * closures as parameters.
      *
+<<<<<<< HEAD
      * @param callable[] ...$args
+=======
+     * @param callable ...$args
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * @return self
      */
     public function andReturnUsing(...$args)
@@ -589,7 +622,11 @@ class Expectation implements ExpectationInterface
      */
     public function andReturnUndefined()
     {
+<<<<<<< HEAD
         $this->andReturn(new \Mockery\Undefined);
+=======
+        $this->andReturn(new \Mockery\Undefined());
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         return $this;
     }
 

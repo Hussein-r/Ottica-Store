@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/aos.css">
     <link rel="stylesheet" href="/css/styling.css">
     <link rel="stylesheet" href="/css/core-style.css">
@@ -27,18 +28,33 @@
         </div>
     </div>
     <div class="mt-3" style="border-top:1px solid black;">
+        <div class="product-sorting d-flex" style="text-align: right">
+            <strong>Sort by:</strong>
+            {{-- <form action="/price" method="post">
+                @csrf --}}
+            <select name="select" id="sortByselect">
+                <option value="" disabled selected>Sorting by Price</option>
+                <option value="low">Price: Low - High</option>
+                <option value="high">Price: High - Low</option>
+            </select>
+            <input type="hidden" id='glassType' value="sun" name="type"/>
+            {{-- <input type="submit" name="sort" value="sort"/>
+
+        </form> --}}
+        </div>
+        <div id="glassArea">
     @foreach ($glasses as $glass)
-    <div class="single-product-wrapper mt-6 col-md-4 h-30" style="display:inline-block;">
+    <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;">
         <!-- Product Image -->
         <div class="product-img" >
             <img src="images/{{$glass->images->first()->image}}" alt="">
             <!-- Favourite -->
             <div class="product-favourite">
-                <a href="#" class="favme fa fa-heart"></a>
+                <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
             </div>
         </div>
         <!-- Product Description -->
-        <div class="product-description">
+        <div class="product-description ">
             <span>{{$glass->code}}</span>
             <a  href="single-product-details.html">
                 <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
@@ -54,15 +70,26 @@
             </div>
         </div>
     </div>
-    @endforeach     
+    @endforeach   
+        </div>  
 </div>
+  <!-- --------------------- -->
+</div>
+
+</div>
+</div>
+
+
     </section>
 <body>
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery-ui.js"></script>
-    <script src="/js/aos.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-2.2.4.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/js/sunglass_filteration.js"></script>
 <script src="/js/active.js"></script>
 @endsection
 

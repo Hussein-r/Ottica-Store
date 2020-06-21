@@ -111,7 +111,11 @@ class MagicMethodTypeHintsPass implements Pass
     }
 
     /**
+<<<<<<< HEAD
      * Checks if the method is declared withing code.
+=======
+     * Checks if the method is declared within code.
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      *
      * @param int $code
      * @param Method $method
@@ -173,6 +177,7 @@ class MagicMethodTypeHintsPass implements Pass
     ) {
         $declaration = 'public';
         $declaration .= $method->isStatic() ? ' static' : '';
+<<<<<<< HEAD
         $declaration .= ' function '.$method->getName().'(';
 
         foreach ($method->getParameters() as $index => $parameter) {
@@ -181,6 +186,16 @@ class MagicMethodTypeHintsPass implements Pass
                 $namedParameters[$index]            :
                 $parameter->getName();
             $declaration .= '$'.$name;
+=======
+        $declaration .= ' function ' . $method->getName() . '(';
+
+        foreach ($method->getParameters() as $index => $parameter) {
+            $declaration .= $parameter->getTypeHintAsString() . ' ';
+            $name = isset($namedParameters[$index]) ?
+                $namedParameters[$index]            :
+                $parameter->getName();
+            $declaration .= '$' . $name;
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
             $declaration .= ',';
         }
         $declaration = rtrim($declaration, ',');
@@ -188,7 +203,11 @@ class MagicMethodTypeHintsPass implements Pass
 
         $returnType = $method->getReturnType();
         if (!empty($returnType)) {
+<<<<<<< HEAD
             $declaration .= ': '.$returnType;
+=======
+            $declaration .= ': ' . $returnType;
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         }
 
         return $declaration;

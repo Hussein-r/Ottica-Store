@@ -18,6 +18,11 @@ It is written in PHP (PHP 7+) and can work without "mbstring", "iconv" or any ot
 The benefit of Portable ASCII is that it is easy to use, easy to bundle.
 
 The project based on ...
+<<<<<<< HEAD
+=======
++ Sean M. Burke's work (https://metacpan.org/pod/Text::Unidecode)
++ Tomaz Solc's work (https://pypi.org/project/Unidecode/)
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 + Portable UTF-8 work (https://github.com/voku/portable-utf8) 
 + Daniel St. Jules's work (https://github.com/danielstjules/Stringy) 
 + Johnny Broadway's work (https://github.com/jbroadway/urlify)
@@ -114,7 +119,11 @@ var_dump($array['ru']['б']); // 'b'
 - `bool $replace_extra_symbols [optional] <p>Add some more replacements e.g. "£" with " pound ".</p>`
 
 **Return:**
+<<<<<<< HEAD
 - `- `array``
+=======
+- `array`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -131,7 +140,11 @@ var_dump($array['b']); // ['β', 'б', 'ဗ', 'ბ', 'ب']
 - `bool $replace_extra_symbols [optional] <p>Add some more replacements e.g. "£" with " pound ".</p>`
 
 **Return:**
+<<<<<<< HEAD
 - `- `array <p>An array of replacements.</p>``
+=======
+- `array <p>An array of replacements.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -152,11 +165,19 @@ echo $array['orig'][$tmpKey]; // 'ё'
 - `string $language [optional] <p>Language of the source string e.g.: en, de_at, or de-ch.
 (default is 'en') | ASCII::*_LANGUAGE_CODE</p>`
 - `bool $replace_extra_symbols [optional] <p>Add some more replacements e.g. "£" with " pound ".</p>`
+<<<<<<< HEAD
 - `bool $asOrigReplaceArray [optional] <p>TRUE === return thr {orig: string[], replace: string[]}
 array</p>`
 
 **Return:**
 - `- `array <p>An array of replacements.</p>``
+=======
+- `bool $asOrigReplaceArray [optional] <p>TRUE === return {orig: string[], replace: string[]}
+array</p>`
+
+**Return:**
+- `array <p>An array of replacements.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -172,11 +193,19 @@ echo $array['orig'][$tmpKey]; // '၌'
 
 **Parameters:**
 - `bool $replace_extra_symbols [optional] <p>Add some more replacements e.g. "£" with " pound ".</p>`
+<<<<<<< HEAD
 - `bool $asOrigReplaceArray [optional] <p>TRUE === return thr {orig: string[], replace: string[]}
 array</p>`
 
 **Return:**
 - `- `array <p>An array of replacements.</p>``
+=======
+- `bool $asOrigReplaceArray [optional] <p>TRUE === return {orig: string[], replace: string[]}
+array</p>`
+
+**Return:**
+- `array <p>An array of replacements.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -198,7 +227,11 @@ e.g.: "…"
 characters e.g.: "\0"</p>`
 
 **Return:**
+<<<<<<< HEAD
 - `- `string <p>A clean UTF-8 string.</p>``
+=======
+- `string <p>A clean UTF-8 string.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -210,7 +243,11 @@ Get all languages from the constants "ASCII::.*LANGUAGE_CODE".
 __nothing__
 
 **Return:**
+<<<<<<< HEAD
 - `- `string[]``
+=======
+- `string[]`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -226,10 +263,17 @@ ASCII::is_ascii('白'); // false
 - `string $str <p>The string to check.</p>`
 
 **Return:**
+<<<<<<< HEAD
 - `- `bool <p>
 <strong>true</strong> if it is ASCII<br>
 <strong>false</strong> otherwise
 </p>``
+=======
+- `bool <p>
+<strong>true</strong> if it is ASCII<br>
+<strong>false</strong> otherwise
+</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -247,7 +291,11 @@ ASCII::normalize_msword('„Abcdef…”'); // '"Abcdef..."'
 - `string $str <p>The string to be normalized.</p>`
 
 **Return:**
+<<<<<<< HEAD
 - `- `string <p>A string with normalized characters for commonly used chars in Word documents.</p>``
+=======
+- `string <p>A string with normalized characters for commonly used chars in Word documents.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -266,7 +314,11 @@ ASCII::normalize_whitespace("abc-\xc2\xa0-öäü-\xe2\x80\xaf-\xE2\x80\xAC", tru
 bidirectional text chars.</p>`
 
 **Return:**
+<<<<<<< HEAD
 - `- `string <p>A string with normalized whitespace.</p>``
+=======
+- `string <p>A string with normalized whitespace.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -284,7 +336,11 @@ copy&past from https://github.com/bcit-ci/CodeIgniter/blob/develop/system/core/C
 - `string $replacement`
 
 **Return:**
+<<<<<<< HEAD
 - `- `string``
+=======
+- `string`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -316,7 +372,11 @@ at the same time. | NULL === auto-setting, depended on the
 language</p>`
 
 **Return:**
+<<<<<<< HEAD
 - `- `string <p>A string that contains only ASCII characters.</p>``
+=======
+- `string <p>A string that contains only ASCII characters.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -335,7 +395,11 @@ simply replaced with hyphen otherwise.</p>`
 - `string $fallback_char`
 
 **Return:**
+<<<<<<< HEAD
 - `- `string <p>A string that contains only safe characters for a filename.</p>``
+=======
+- `string <p>A string that contains only safe characters for a filename.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -361,7 +425,11 @@ pound ".</p>`
 chars.</p>`
 
 **Return:**
+<<<<<<< HEAD
 - `- `string <p>A string that has been converted to an URL slug.</p>``
+=======
+- `string <p>A string that has been converted to an URL slug.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 
@@ -382,7 +450,11 @@ But you can also use NULL to keep the unknown chars.</p>`
 - `bool $strict [optional] <p>Use "transliterator_transliterate()" from PHP-Intl`
 
 **Return:**
+<<<<<<< HEAD
 - `- `string <p>A String that contains only ASCII characters.</p>``
+=======
+- `string <p>A String that contains only ASCII characters.</p>`
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 
 --------
 

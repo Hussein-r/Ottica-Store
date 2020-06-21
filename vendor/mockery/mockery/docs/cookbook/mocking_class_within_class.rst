@@ -92,8 +92,13 @@ such as::
 
 That basically means that the loading prevents mocking and for each such
 a loading initiator there needs to be implemented a workaround.
+<<<<<<< HEAD
 Overloading is one approach, however it polutes the global state. In this case
 we try to completely avoid the global state polution with custom
+=======
+Overloading is one approach, however it pollutes the global state. In this case
+we try to completely avoid the global state pollution with custom
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 ``new Class()`` behavior per loading initiator and that can be mocked easily
 in few critical places.
 
