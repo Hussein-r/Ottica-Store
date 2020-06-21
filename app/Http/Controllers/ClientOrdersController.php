@@ -74,19 +74,22 @@ class ClientOrdersController extends Controller
             if($request->category == 1){
                 $glass->price=$request->price * $request->quantity;
             }else if($request->category == 2){
+                $lense_details = explode(',', $request->single_lense);
                 $glass->lense_type=$request->single_lense_type;
-                $glass->color_id=$request->single_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$request->$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 3){
+                $lense_details = explode(',', $request->progressive_lense);
                 $glass->lense_type=$request->progressive_lense_type;
-                $glass->color_id=$request->progressive_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$request->$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 4){
+                $lense_details = explode(',', $request->bifocal_lense);
                 $glass->lense_type=$request->bifocal_lense_type;
-                $glass->color_id=$request->bifocal_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$request->$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }
             $glass->save();
@@ -123,19 +126,22 @@ class ClientOrdersController extends Controller
             if($request->category == 1){
                 $glass->price=$request->price * $request->quantity;
             }else if($request->category == 2){
+                $lense_details = explode(',', $request->single_lense);
                 $glass->lense_type=$request->single_lense_type;
-                $glass->color_id=$request->single_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 3){
+                $lense_details = explode(',', $request->progressive_lense);
                 $glass->lense_type=$request->progressive_lense_type;
-                $glass->color_id=$request->progressive_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$request->$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 4){
+                $lense_details = explode(',', $request->bifocal_lense);
                 $glass->lense_type=$request->bifocal_lense_type;
-                $glass->color_id=$request->bifocal_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$request->$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
                 $glass->prescription_type=$request->prescription_type;
             }
             $glass->save();

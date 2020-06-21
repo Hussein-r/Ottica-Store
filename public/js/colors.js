@@ -39,7 +39,7 @@ function validateFirstForm() {
         'input[name="single_lense_type"]:checked'
     );
     var checkColorRadio = document.querySelector(
-        'input[name="single_lense_color"]:checked'
+        'input[name="single_lense"]:checked'
     );
     var isValid = true;
     if (checkTypeRadio == null || checkColorRadio == null) {
@@ -52,7 +52,7 @@ function validateSecondForm() {
         'input[name="progressive_lense_type"]:checked'
     );
     var checkProgressiveColor = document.querySelector(
-        'input[name="progressive_lense_color"]:checked'
+        'input[name="progressive_lense"]:checked'
     );
     var isValid = true;
     if (checkProgressiveType == null || checkProgressiveColor == null) {
@@ -66,7 +66,7 @@ function validateThirdForm() {
         'input[name="bifocal_lense_type"]:checked'
     );
     var checkBifocalColor = document.querySelector(
-        'input[name="bifocal_lense_color"]:checked'
+        'input[name="bifocal_lense"]:checked'
     );
     var isValid = true;
     if (checkBifocalType == null || checkBifocalColor == null) {
