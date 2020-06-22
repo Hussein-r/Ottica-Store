@@ -17,7 +17,7 @@
             <h6 class="card-subtitle mb-2 text-muted">{{$color->find($glass->color_id)->name}}</h6> 
             <p style="margin-left:10%;" class="product-price"><strong class="price"><del>{{$glass->price_before_discount}}</del>
                  {{$glass->price_after_discount}}</strong>
-                 <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
+                 <span><h5 class="text-danger" style="text-align:right;">{{round((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100) }} %</h5></span>
                 </p>
                 <div style="text-align: right;">
             <a href="{{route('glass.edit', $glass->id)}}" class="btn btn-success">Edit</a>

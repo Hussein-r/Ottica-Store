@@ -32,12 +32,8 @@
               </div>
             </div>
             <!-- Card Body -->
-            <div class="card-body">
-              <div class="chart-area">
-                {{-- {!! $chart->container() !!} --}}
-                {{-- <canvas id="myAreaChart"></canvas> --}}
-              </div>
-            </div>
+            {{-- {!! $chart->container() !!} --}}
+            {{-- <div id="chart" style="height: 300px;"></div> --}}
           </div>
         </div>
     </div>

@@ -25,4 +25,10 @@ class orderList extends Model
     {
         return $this->belongsToMany('App\ContactLenses', 'ordered_lenses_prescriptions', 'order_id', 'product_id');
     }
+
+    // public function glassProducts(){
+    //     return $this->hasMany('App\Glass','order_glasses_products','order_id','product_id');
+    // }
+
+    // 
 }
