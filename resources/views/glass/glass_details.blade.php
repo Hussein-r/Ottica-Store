@@ -41,6 +41,7 @@
             </a>
             <h2>{{$glass->label}}</h2>
             <p id='id'>{{$glass->glass_code}}</p>
+            <p class="product-price"><span class="old-price">{{$glass->price_before_discount}}</span>{{$glass->price_after_discount}}</p>
             <p class="product-desc">{{$glass->description}}</p>
             <form action="{{ route('order.store') }}" id="mainform" method='post' class="mt-3" enctype="multipart/form-data">
                 @csrf 

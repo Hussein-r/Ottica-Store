@@ -200,6 +200,7 @@ class ClientOrdersController extends Controller
             if($request->category =="medical"){
                 $lense->prescription_type=$request->prescription_type;
             }
+            $lense->save();
             if($request->prescription_type =="image"){
                 $prescription_image= new LensePrescriptionImage();
                 $prescription_image->order_id=$order->id;
@@ -235,6 +236,7 @@ class ClientOrdersController extends Controller
             if($request->category =="medical"){
                 $lense->prescription_type=$request->prescription_type;
             }
+            $lense->save();
             if($request->prescription_type =="image"){
                 $prescription_image= new LensePrescriptionImage();
                 $prescription_image->order_id=$openOrder[0]->id;
