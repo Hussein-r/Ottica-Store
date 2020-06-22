@@ -26,12 +26,6 @@
                 </div>
                 <div><span class="text-white">{{$errors->first('name')}}</span></div>
                 <div class="input-group mb-3">
-                     
-                    {!! Form::number('quantity',null,['class'=>'form-control','aria-label'=>'quantity', 'aria-describedby'=>'basic-addon4','placeholder'=>'The quantity'])  !!}
-                </div>
-                <div><span class="text-white">{{$errors->first('quantity')}}</span></div>
-   
-                <div class="input-group mb-3">
                        
                     {!! Form::text('label',null,['class'=>'form-control','aria-label'=>'label', 'aria-describedby'=>'basic-addon1','placeholder'=>'The label'])  !!}
                 </div>
