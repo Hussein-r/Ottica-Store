@@ -82,6 +82,7 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\SingleVision' => $baseDir . '/app/SingleVision.php',
     'App\\SpecialOffers' => $baseDir . '/app/SpecialOffers.php',
+    'App\\TotalPrice' => $baseDir . '/app/TotalPrice.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\glass_images' => $baseDir . '/app/glass_images.php',
     'App\\lense_brands' => $baseDir . '/app/lense_brands.php',

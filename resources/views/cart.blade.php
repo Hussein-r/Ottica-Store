@@ -210,7 +210,7 @@
 
                 <div class="row">
                   <div class="col-md-12">
-                    <a class="btn btn-primary btn-lg btn-block" href="checkout" >Proceed To Checkout</a>
+                    <a class="btn btn-primary btn-lg btn-block" href="{{url('/checkout')}}" >Proceed To Checkout</a>
                   </div>
                 </div>
               </div>

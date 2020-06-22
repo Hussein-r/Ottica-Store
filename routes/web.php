@@ -25,7 +25,6 @@ Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
 Route::resource('order','ClientOrdersController');
-Route::resource('cart','CartController');
 Route::resource('SingleVisionLense','SingleVisionController');
 Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
 Route::resource('BifocalLense','BifocalController');
@@ -55,8 +54,11 @@ Route::get('chart', 'AdminController@adminHome');
 Route::resource('cart','CartController');
 Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
 Route::post('/promocode', 'CartController@promocode');
-Route::get('checkout','CartController@checkout');
-Route::get('thanks','CartController@submitOrder');
+Route::post('thanks','CartController@submitOrder');
+Route::get('/checkout', function () {
+    return view('Users.checkout')->render();
+});
+// Route::get('thanks','CartController@submitOrder');
 
 
 //hajar

@@ -592,6 +592,7 @@ class ComposerStaticInitb5ff8548a07c10173337d76a294f2398
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\SingleVision' => __DIR__ . '/../..' . '/app/SingleVision.php',
         'App\\SpecialOffers' => __DIR__ . '/../..' . '/app/SpecialOffers.php',
+        'App\\TotalPrice' => __DIR__ . '/../..' . '/app/TotalPrice.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\glass_images' => __DIR__ . '/../..' . '/app/glass_images.php',
         'App\\lense_brands' => __DIR__ . '/../..' . '/app/lense_brands.php',

@@ -157,18 +157,20 @@ class CartController extends Controller
 
     }
 
-    public function checkout(){
-
-        return view('Users.checkout')->render();
-    }
-
-    public function submitOrder(){
+    public function submitOrder(Request $request){
+        // dd($request);
         $order = orderList::where([
             ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
-        ])->update(['user_order_state' => 1],
-        );
+        ])->update([
+            'user_order_state' => 1,
+            'first_name'=>$request->c_fname,
+            'last_name'=>$request->c_lname,
+            'address'=> $request->c_address,
+            'phone'=> $request->c_phone
+        ]);
+
         return view('thanks')->render();
     }
 

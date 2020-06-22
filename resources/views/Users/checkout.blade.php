@@ -10,6 +10,8 @@
         <div class="offset-3 col-md-6 mb-5 mb-md-0">
           <h2 class="h3 mb-3 text-black">Shipping Details</h2>
           <div class="p-3 p-lg-5 border">
+          <form action="{{url('thanks')}}" method="POST">
+            @csrf
             <div class="form-group row">
               <div class="col-md-6">
                 <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
@@ -35,8 +37,9 @@
               </div>
             </div>
             <div class="form-group">
-            <a class="btn btn-primary btn-lg btn-block" href="{{url('thanks')}}" >Submit Order</a>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit Order</button>
             </div>
+          </form>
   </div>
 </div>
 @endsection
