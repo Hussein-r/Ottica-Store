@@ -131,37 +131,48 @@ class ListOrdersController extends Controller
         // dd($glassPrescription);
         // dd( $glassProducts);
 
-
-
-
-
         //LENSES
-        // $lenseProducts=ContactLenses::where('order_id','=',$id)->get();-
-        // $glassesDetails = 
-        // $lensesDetails= LenseProductPrescriptions::where('order_id',$id)->get();
-        // // $lensearr=array();
-        // $glassarr=array();
-        // $lenseImgarr=array();
-        // $glassImgarr=array();
-       
-        // foreach ($lensesDetails as $product) {
-        //     array_push($lensearr,$product->product_id);
-        // }
-        // $lenses = ContactLenses::find($lensearr);
-        // foreach($lenses as $lense){
-        //     $lenseImgarr =lenses_images::where('lense_id', $lense->id)->first();
-        // }
-        // dd($glassImgarr->image);
 
+        $lenseProducts=LenseProduct::where('order_id','=',$id)->get();
+        // dd($lenseProducts);
 
-        //  dd($lensesDetails);
-        return view('ordersForAdmin.orderDetails',
+        foreach($lenseProducts as $lense){
+            if ($lense->prescription_type =='image')
+            {
+                // dd("okay");
+               $lensePrescriptionImages=LensePrescriptionImage::where('order_id','=',$id)
+               ->where('product_id','=',$lense->product_id)
+               ->get();
+            }
+            else{
+                $lensePrescription=LenseProductPrescriptions::where('order_id','=',$id)
+                ->where('product_id','=',$lense->product_id)
+               ->get();
+            }
+        }
+        // dd($lensePrescriptionImages);
+        // dd($lensePrescription);
+         $lensearr=array();
+        foreach ($lenseProducts as $product) {
+            array_push($lensearr,$product->product_id);
+        }
+
+        $lenses = ContactLenses::find($lensearr);
+        // dd($lenses);
+
+        return view('ordersForAdmin.details',
         ['glassProducts' => $glassProducts,
         'glassPrescriptionImages'=> $glassPrescriptionImages,
         'glassPrescription' => $glassPrescription ,
         'glasses'=>$glasses,
         'glassImgarr' =>$glassImgarr,
         'glassQty' => $glassQty,
+        'lenseProducts'=>$lenseProducts,
+        // 'lensePrescriptionImages'=>$lensePrescriptionImages,
+        // 'lensePrescription'=>$lensePrescription,
+        // 'lenses'=>$lenses,
+
+
         ]);
     }
 
