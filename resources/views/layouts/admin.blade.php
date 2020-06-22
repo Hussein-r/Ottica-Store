@@ -172,6 +172,7 @@
                 <div id="collapseOrders" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('orderslist.index')}}">All Orders</a>
+                    <a class="collapse-item" href="{{url('orders/inactive')}}">Inactive</a>
                     <a class="collapse-item" href="{{url('orders/processing')}}">Processing</a>
                     <a class="collapse-item" href="{{url('orders/done')}}">Done</a>
   
@@ -292,7 +293,11 @@
               </nav>
               <!-- End of Topbar -->
               <main class="py-4">
+                <div id="content-wrapper" class="d-flex flex-column">
+                <div class="container-fluid">
                 @yield('content')
+                </div>
+                </div>
             </main>
       
             <!-- Footer -->

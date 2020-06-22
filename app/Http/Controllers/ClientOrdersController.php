@@ -170,6 +170,8 @@ class ClientOrdersController extends Controller
                 }
             }
         }
+
+        return redirect()->action('CartController@index');
     }
 
 
@@ -257,6 +259,9 @@ class ClientOrdersController extends Controller
 
             }
         }
+
+        return redirect()->action('CartController@index');
+
     }
 
     /**

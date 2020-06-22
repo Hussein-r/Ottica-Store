@@ -3,7 +3,11 @@
 @section('content')
 	<div class="limiter">
 			<div class="container">
-				<a href="/mail" class="btn btn-primary mt-3" style="margin-bottom: 10px;">Send Email To All Users</a>
+				
+				<div class="d-sm-flex align-items-center justify-content-between mb-4">
+					<h1 class="h2 mb-0 text-black-800">Users</h1>
+					<a href="/mail"  ><i class="fas fa-envelope fa-sm text-white-50"></i> Send Email To All Users</a>
+				  </div>
 					<table class="table table-striped">
 						<thead>
 							<tr class="table100-head">
@@ -15,6 +19,7 @@
 							</tr>
 						</thead>
 						<tbody>
+							
                         @if ($users->count())
                             @foreach($users as $user)
 								<tr>
@@ -22,7 +27,10 @@
 									<td class="column2">{{$user->email}}</td>
 									<td class="column3">{{$user->address}}</td>
 									<td class="column4">{{$user->phone}}</td>
-                                    <th class="column5"><a href="/mail/{{$user->id}}" class="btn btn-success mr-2">Send Email</a></th>
+									<th class="column5">
+										<a href="/mail/{{$user->id}}" class="btn btn-icons btn-rounded btn-success">
+											<i class="fas fa-envelope"></i>									</a>
+									</th>
 								</tr>
                             @endforeach   
                         @endif			
@@ -31,4 +39,5 @@
 				</div>
 			</div>
 		</div>
+	
 @endsection
