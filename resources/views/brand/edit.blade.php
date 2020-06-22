@@ -1,8 +1,10 @@
 
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 <section class="container">
-    <h1 style="text-align: center">Edit Brand</h1>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-black-800">Edit Glass Brand</h1>
+    </div>
     {!! Form::model($brand, ['route' => ['brand.update',$brand] ,'method' => 'PUT' ,'files' => 'true','enctype'=>'multipart/form-data']) !!}
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -23,7 +25,7 @@
             </div>
         </div>
         <div><span class="text-white">{{$errors->first('image')}}</span></div>
-        {!! Form::submit('Update Brand',['class'=>'btn btn-primary'])  !!}
+        {!! Form::submit('Update Brand',['class'=>'btn btn-primary center-block btn-lg'])  !!}
 
     {!! Form::close() !!}
 </section>

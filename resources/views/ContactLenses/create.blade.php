@@ -1,21 +1,10 @@
 @extends('layouts.admin')
 @section('content')
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Cntact Lenses</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" type="text/css" href="/css/nunito-font.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <style>
-    .small-middle-container{
-	margin: auto;
-	width: 40%;
-  }
-</style>
-</head>
-    <body class="form-v6">
-    <h1 style="text-align: center;color:lightblue;">Add New Contact Lense</h1>
+<div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-black-800">Add New Contact Lense</h1>
+        {{-- <a href="/mail"  ><i class="fas fa-envelope fa-sm text-blue-80 "></i> Setting</a> --}}
+    </div>
         <div  class="small-middle-container" >
             
             {!! Form::open(['route' => 'lenses.store','files' => 'true', 'method'=>'post']) !!}
@@ -124,35 +113,29 @@
                 </select>
                  <div ><span class="text-white">{{$errors->first('lense_purpose')}}</span></div> 
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Best seller</span>
-                    </div> 
-                    {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
-                   
-                </div>
+                
                 <div class="input-group mb-3">
                
                     <div class="custom-file" >
                         <input type="file" class="custom-file-input" name="image" id="inputGroupFile01" >
                         <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
-                    </div>
-                    </div>
-                   
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Best seller</span>
+                    </div> 
+                    {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
+                    
+                </div>
                 
 
         <div  style="text-align: center "> 
-         <button type="submit" class="btn btn-primary center-block btn-lg" >ADD</button>
-         <a href="{{route('lenses.index')}}" class="btn btn-primary center-block btn-lg">List All Lenses</a>
+         <button type="submit" class="btn btn-primary center-block btn-lg" >Add Lenses</button>
+         {{-- <a href="{{route('lenses.index')}}" class="btn btn-primary center-block btn-lg">List All Lenses</a> --}}
         </div>
-        
+        </div> 
 
-    </body>
-    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="/js/LenseColors.js"></script>
-
-</html>
 @endsection
 
 
