@@ -27,7 +27,16 @@
                 </div>
         </div>
     </div>
-    <div class="mt-3" style="border-top:1px solid black;">
+
+    <!-- ----------------------------->
+ <div class="site-section ">
+ <div class="container">
+
+  <div class="row mb-5">
+
+  <div class="col-9">
+     <!-- ------ -->
+     <div id="filter_data" class="mt-3" style="border-top:1px solid black;">
         <div class="product-sorting d-flex" style="text-align: right">
             <strong>Sort by:</strong>
             {{-- <form action="/price" method="post">
@@ -62,7 +71,9 @@
             <a  href="single-product-details.html">
                 <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
             </a>
-            <p style="margin-left:10%;" class="product-price"><strong class="price"><del>{{$glass->price_before_discount}}</del>                 {{$glass->price_after_discount}}</strong></p>
+            <p style="margin-left:10%;" class="product-price"><strong class="price"><del>{{$glass->price_before_discount}}</del> 
+                    {{$glass->price_after_discount}}</strong></p>
+                    <span><h5 class="text-danger" style="text-align:right;">{{round((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100) }} %</h5></span>
 
             <!-- Hover Content -->
             <div class="hover-content">
@@ -79,7 +90,7 @@
     <!-- ---------- -->
 
   </div>
-    <!-- !-- --------------------------------------------------- --> -->
+    <!-- !-- --------------------------------------------------- --> 
 <div class="col-md-3 order-2 mb-5 mb-md-0">
   <div class="border p-4 rounded mb-4 filteration">
       <h3 class="mb-3 h6 text-uppercase text-black d-block">Price</h3>
@@ -187,10 +198,11 @@
 
 
     </section>
-<body>
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery-ui.js"></script>
-    <script src="/js/aos.js"></script>
+  </body>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-2.2.4.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>

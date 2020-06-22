@@ -19,73 +19,77 @@
 </head>
 <body>
 <div class="page-content" >
-@if ($glassesDetails->count())
-@foreach($glassesDetails  as $glassesDetail)
+@if ($glassProducts->count())
+@foreach($glassProducts  as $glassProduct)
 <div id="maindiv">
 			<div style="float:left;padding-left:30px;padding-top:20px;">
-			@foreach($glasses  as $glass)
-          @if ($glass->id == $glassesDetail->product_id)
+			@foreach($glasses as $glass)
+            @if ($glass->id == $glassProduct->product_id)
 				<h4> Glass Code : {{$glass->glass_code}}</h4>
                 @foreach($glassQty  as $glassqty)
                 @if ($glass->id == $glassqty->product_id)
                 <h4>Quantity :  {{$glassqty->quantity}} </h4>
-                <h4>Glass Color :  </h4>
                 @endif
                 @endforeach
-                @endif
-                @endforeach
+            @endif
+            @endforeach
 			<div class="row col-md-12">
-                <table>
+         @if ($glassProduct->prescription_type =='image')
+            @foreach ($glassPrescriptionImages as $glasspresc)
+            @if($glassProduct->product_id==$glasspresc->product_id &&$glassProduct->order_id==$glasspresc->order_id)
+            <div style="float:right;">
+            <img style="height:550px;border-top-right-radius:10px;border-bottom-right-radius:10px" src="/images/{{$glasspresc->image}}" alt="form" >
+            </div>
+            @endif
+            @endforeach
+         @endif
+         @if ($glassProduct->prescription_type =='table')
+          @foreach ($glassPrescription as $glasspresc)
+            @if($glassProduct->product_id==$glasspresc->product_id &&$glassProduct->order_id==$glasspresc->order_id)
+            <table>
                 <tr>
                     <td> right sphere</td>
-                    <td> {{$glassesDetail->right_sphere	}}   </td>
+                    <td> {{$glasspresc->right_sphere	}}   </td>
                 </tr>
                 <tr>
                     <td> left sphere</td>
-                    <td> {{$glassesDetail->left_sphere}}    </td>
+                    <td> {{$glasspresc->left_sphere}}    </td>
                 </tr>
                 <tr>
                     <td> right cylinder </td>
-                    <td> {{$glassesDetail->right_cylinder}}  </td>
+                    <td> {{$glasspresc->right_cylinder}}  </td>
                 </tr>
                 <tr>
                     <td> right sphere</td>
-                    <td> {{$glassesDetail->right_sphere	}}   </td>
+                    <td> {{$glasspresc->right_sphere	}}   </td>
                 </tr>
                 <tr>
                     <td> left cylinder </td>
-                    <td>  {{$glassesDetail->left_cylinder}}    </td>
+                    <td>  {{$glasspresc->left_cylinder}}    </td>
                 </tr>
                 <tr>
                     <td> right axis </td>
-                    <td> {{$glassesDetail->right_axis}}    </td>
+                    <td> {{$glasspresc->right_axis}}    </td>
                 </tr>
                 <tr>
                     <td> left axis</td>
-                    <td>  {{$glassesDetail->left_axis}}   </td>
+                    <td>  {{$glasspresc->left_axis}}   </td>
                 </tr>
                 <tr>
                     <td> right add </td>
-                    <td>  {{$glassesDetail->right_add}}    </td>
+                    <td>  {{$glasspresc->right_add}}    </td>
                 </tr>
                 <tr>
                     <td> leftright add </td>
-                    <td>  {{$glassesDetail->left_add}}    </td>
+                    <td>  {{$glasspresc->left_add}}    </td>
                 </tr>
-                <tr>
-                    <td>Uploaded image </td>
-                    <td> 
-      <img style="height:200px ; width:150px;" class="img-thumbnail" src="/images/{{$glassesDetail->image}}" />
-       </td>
-
-  
-                </tr>
-       
-
-          </table>
+           </table>
+            @endif
+            @endforeach
+            @endif
 			
-				@endforeach
-				@endif
+ @endforeach
+ @endif
            </div>
 
              </div>
@@ -93,96 +97,10 @@
  <img style="height:550px;border-top-right-radius:10px;border-bottom-right-radius:10px" src="/images/{{$glassImgarr->image}}" alt="form" >
  </div>
 
-</div>
-
-<!-- ////////////////////////// -->
-@if ($lensesDetails->count())
-@foreach($lensesDetails as $lensesDetail)
-<div id="maindiv">
-			<div style="float:left;padding-left:30px;padding-top:20px;">
-			@foreach($lenses  as $lense)
-			@if ($lense->id == $lensesDetail->product_id)
-				<h2>Lense Name:  {{$lense->name}} </h2>
-				@endif
-				@endforeach
-			<div class="row col-md-12">
-                <table>
-                <tr>
-                    <td> right bc</td>
-                    <td>  {{$lensesDetail->right_bc}}    </td>
-                </tr>
-                <tr>
-                    <td> left bc</td>
-                    <td>   {{$lensesDetail->left_bc}}    </td>
-                </tr>
-                <tr>
-                    <td> right power </td>
-                    <td> {{$lensesDetail->right_power}} </td>
-                </tr>
-                <tr>
-                    <td>left power</td>
-                    <td>   {{$lensesDetail->left_power}}   </td>
-                </tr>
-                <tr>
-                    <td> left cylinder </td>
-                    <td>  {{$glassesDetail->left_cylinder}}    </td>
-                </tr>
-                <tr>
-                    <td> right dia </td>
-                    <td>  {{$lensesDetail->right_dia}}   </td>
-                </tr>
-                <tr>
-                    <td> left dia</td>
-                    <td>   {{$lensesDetail->left_dia}}   </td>
-                </tr>
-                <tr>
-                    <td> left color </td>
-					<td>    {{$lensesDetail->left_color}}     </td>
-                </tr>
-                <tr>
-                    <td> right color </td>
-					<td>       {{$lensesDetail->right_color}} </td>
-                </tr>
-                <tr>
-                    <td>Uploaded image </td>
-                    <td> 
-      <img style="height:200px ; width:150px;" class="img-thumbnail" src="/images/{{$lensesDetail->image}}" />
-       </td>
-
-  
-                </tr>
-          </table>
-			
-				@endforeach
-				@endif
-           </div>
-
-             </div>
- <div style="float:right;">
- <img style="height:550px;border-top-right-radius:10px;border-bottom-right-radius:10px" src="/images/{{$lenseImgarr->image}}" alt="form" >
  </div>
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
 </body>
 </html>

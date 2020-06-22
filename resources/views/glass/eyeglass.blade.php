@@ -65,7 +65,7 @@
             <p class="product-price">
                 <span class="old-price">{{$glass->price_before_discount}}EGP</span> 
                 {{$glass->price_after_discount}}EGP
-                <span><h5 class="text-danger" style="text-align:right;">{{(($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100 }} %</h5></span>
+                <span><h5 class="text-danger" style="text-align:right;">{{round((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100) }} %</h5></span>
             </p>
             <!-- Hover Content -->
             <div class="hover-content">
@@ -198,13 +198,125 @@
 </section>
 </body>
 </div>
-    </section>
-<body>    
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/jquery-ui.js"></script>
-<script src="/js/aos.js"></script>
+        <!-- -------------------------------- -->
+ <div class="col-md-3 order-2 mb-5 mb-md-0">
+<div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Price</h3>
+      <ul class="list-unstyled mb-0" >
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price" value="1"><span> Less Than 500 </span></li>
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price"  value="2"><span>500:1000 </span></li>
+      <li class="mb-1"> <input type="checkbox"  id="maximum_price" value="3"><span>More Than 1000 </span></li>
+      </ul>
+    </div>
+
+    <!-- -------------------->
+     <!-- <div class="border p-4 rounded mb-4">
+           <div class="mb-4">
+                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
+                <div class="slidecontainer">
+                  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="">
+            </div>
+     </div> -->
+              
+               <!-- ------------------ -->
+
+<!-- -------------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Gender</h3>
+      <ul class="list-unstyled mb-0" >
+        <li class="mb-1"> <input type="checkbox"  id="gender"  value="male"><span> Men</span></li>
+        <li class="mb-1"><input type="checkbox"  id="gender" value="female"><span> Women</span></li>
+        <li class="mb-1"><input type="checkbox"  id="gender" value="unisex"><span> unisex</span> </li>
+      </ul>
+    </div>
+    <!-- -------------------------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Brand</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($brands as $brand)
+            <li class="mb-1"> <input id="brand" type="checkbox" value="{{$brand->id}}"><span> {{$brand->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+    <!-- ---------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Face Shape</h3>
+      <ul class="list-unstyled mb-0">
+      @foreach($faceShapes as $faceShape)
+            <li class="mb-1"> <input type="checkbox"  id="face_shape"  value="{{$faceShape->id}}"><span> {{$faceShape->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+  <!-- ------------------ -->
+  <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Frame Shape</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($frameShapes as $frameShape)
+            <li class="mb-1"> <input type="checkbox" id="frame_shape" value="{{$frameShape->id}}"><span> {{$frameShape->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+  <!-- ---------------------------- -->
+  <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Colors</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($colors as $color)
+            <li class="mb-1"> <input type="checkbox" id="color"  value="{{$color->id}}"><span> {{$color->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+<!-- -------------- -->
+    <div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Secondary Colors</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($secondaryColors as $color)
+            <li class="mb-1"> <input type="checkbox"  id="secondary_color" value="{{$color->id}}"><span> {{$color->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+<!-- ------------------ -->
+<div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Fits</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($fits as $fit)
+            <li class="mb-1"> <input type="checkbox" id="fit"  value="{{$fit->id}}"><span> {{$fit->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+
+<!-- ----------------- -->
+<div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block">Materials</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($materials as $material)
+            <li class="mb-1"> <input type="checkbox" id="material" value="{{$material->id}}"><span> {{$material->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+<!-- ------------------- -->
+<div class="border p-4 rounded mb-4 filteration">
+      <h3 class="mb-3 h6 text-uppercase text-black d-block"> Secondary Materials</h3>
+      <ul class="list-unstyled mb-0" >
+      @foreach($secondaryMaterials as $material)
+            <li class="mb-1"> <input type="checkbox"  id="secondary_material" value="{{$material->id}}"><span> {{$material->name}}</span></li>
+      @endforeach 
+      </ul>
+    </div>
+<!-- ------------------ -->
+  </div>
+</section>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/aos.js"></script>
 <script src="/js/active.js"></script>
 <script src="/js/sunmain.js"></script>
+
 <script src="{{ asset('/js/favourite.js') }}" defer></script>
 <script src="/js/jquery/jquery-2.2.4.min.js"></script>
 <script src="/js/eyeglass_filteration.js"></script>
@@ -222,7 +334,12 @@
 
 
 </script>
+<<<<<<< HEAD
 @endsection
 
+=======
+
+</body>   
+>>>>>>> 05ab3a00ae1f155ecc30a76d74d104604a2eb1f1
 
 

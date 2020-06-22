@@ -25,7 +25,6 @@ Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
 Route::resource('order','ClientOrdersController');
-Route::resource('cart','CartController');
 Route::resource('SingleVisionLense','SingleVisionController');
 Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
 Route::resource('BifocalLense','BifocalController');
@@ -33,7 +32,6 @@ Route::resource('comment','CommentsController');
 Route::resource('ColoredEye','ColoredEyesController');
 Route::post('/changeLenseColor','ContactLensesController@changeColor');
 Route::post('/storeLense','ClientOrdersController@storeLense');
-
 
 
 //mariam
@@ -52,7 +50,15 @@ Route::get('favourite', 'UserController@myFavourite');
 Route::get('admin/sunglasses','AdminController@sun');
 Route::get('admin/eyeglasses','AdminController@eye');
 Route::get('dashboard','AdminController@adminHome');
-
+Route::get('chart', 'AdminController@adminHome');
+Route::resource('cart','CartController');
+Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
+Route::post('/promocode', 'CartController@promocode');
+Route::post('thanks','CartController@submitOrder');
+Route::get('/checkout', function () {
+    return view('Users.checkout')->render();
+});
+// Route::get('thanks','CartController@submitOrder');
 
 
 //hajar

@@ -12,7 +12,6 @@ class ContactLenses extends Model
     protected $table = 'contact_lenses';
     protected $fillable = [
         'name',
-        'quantity',
         'label',
         'description',
         'brand_id',

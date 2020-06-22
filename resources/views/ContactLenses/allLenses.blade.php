@@ -91,7 +91,6 @@
                             </a>
                             <h3>{{$lense->name}}</h3>
                             
-                       
                 
                             <!-- Hover Content -->
                             <div class="hover-content">
