@@ -18,32 +18,24 @@
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-<div class="page-content" >
+
+<section class="single_product_details_area d-flex align-items-center">
+
+<!-- Single Product Thumb -->
 @if ($glassProducts->count())
 @foreach($glassProducts  as $glassProduct)
-<div id="maindiv">
-			<div style="float:left;padding-left:30px;padding-top:20px;">
-			@foreach($glasses as $glass)
-            @if ($glass->id == $glassProduct->product_id)
-				<h4> Glass Code : {{$glass->glass_code}}</h4>
-                @foreach($glassQty  as $glassqty)
-                @if ($glass->id == $glassqty->product_id)
-                <h4>Quantity :  {{$glassqty->quantity}} </h4>
-                @endif
-                @endforeach
-            @endif
-            @endforeach
-			<div class="row col-md-12">
-         @if ($glassProduct->prescription_type =='image')
+<div class="single_product_thumb clearfix">
+@if ($glassProduct->prescription_type =='image')
             @foreach ($glassPrescriptionImages as $glasspresc)
             @if($glassProduct->product_id==$glasspresc->product_id &&$glassProduct->order_id==$glasspresc->order_id)
-            <div style="float:right;">
-            <img style="height:550px;border-top-right-radius:10px;border-bottom-right-radius:10px" src="/images/{{$glasspresc->image}}" alt="form" >
-            </div>
-            @endif
-            @endforeach
-         @endif
-         @if ($glassProduct->prescription_type =='table')
+                <div class="col-md-12">
+                    <img src="/images/{{$glasspresc->image}}" alt="">	
+                </div>
+           @endif
+           @endforeach
+ @endif
+ 
+    @if ($glassProduct->prescription_type =='table')
           @foreach ($glassPrescription as $glasspresc)
             @if($glassProduct->product_id==$glasspresc->product_id &&$glassProduct->order_id==$glasspresc->order_id)
             <table>
@@ -87,23 +79,33 @@
             @endif
             @endforeach
             @endif
-			
- @endforeach
- @endif
-           </div>
-
-             </div>
- <div style="float:right;">
- <img style="height:550px;border-top-right-radius:10px;border-bottom-right-radius:10px" src="/images/{{$glassImgarr->image}}" alt="form" >
- </div>
-
- </div>
-
 </div>
+
+<!-- Single Product Description -->
+
+<div class="single_product_desc clearfix">
+@foreach($glasses as $glass)
+            @if ($glass->id == $glassProduct->product_id)
+				<h4> Glass Code : {{$glass->glass_code}}</h4>
+                @foreach($glassQty  as $glassqty)
+                @if ($glass->id == $glassqty->product_id)
+                <h4>Quantity :  {{$glassqty->quantity}} </h4>
+                @endif
+                @endforeach
+            @endif
+            @endforeach
+        <div class="select-box mt-3 mb-30">
+         <img style="height:150px;width:500px;" class="mt-3 mb-3" src="/images/{{$glassImgarr->image}}" id="coloredEye">
+        </div>
+      
+   
+</div>
+			
+@endforeach
+ @endif
+</section>
 
 
 </body>
 </html>
 @endsection
-
-

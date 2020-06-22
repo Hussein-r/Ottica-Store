@@ -159,8 +159,23 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   </section>
 </body>
+=======
+<!-- ------------------ -->
+        </div>  
+</div>
+  <!-- --------------------- -->
+</div>
+
+</div>
+</div>
+
+
+    </section>
+  </body>
+>>>>>>> dd8cf64a682c4ca43be8927615a37c29db8dd598
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/jquery-2.2.4.min.js"></script>
 <script src="/js/jquery-ui.js"></script>
