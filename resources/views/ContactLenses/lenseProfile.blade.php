@@ -37,8 +37,7 @@
                 <span>{{$brand->name}}</span>
             </a>
             <h5>{{$lense->label}}</h5>
-           
-            <p class="product-price"><span class="old-price">{{$lense->price_before_discount}}</span>{{$lense->price_after_discount}}</p>
+            <p>{{$lense->lense_purpose}}</p>
             <p class="product-desc">{{$lense->description}}</p>
             <form action="/storeLense" id="mainform" method='post' class="mt-3" enctype="multipart/form-data">
                 @csrf 
@@ -61,7 +60,7 @@
                         </label>
                     </div>
                 @endforeach
-                @if ($lense->lense_purpose == 'beauty')
+                @if ($lense->lense_purpose == 'medical')
                     <button type="button" class="btn btn-link mt-2" data-toggle="modal" data-target="#exampleModal">
                         Add Your Prescription
                     </button>
@@ -139,17 +138,14 @@
                             <tr>
                                 <th></th> 
                                 <th>
-                                    <span>Sphere (SPH)</span> 
+                                    <span>BC</span> 
                                 </th> 
                                 <th>
-                                    <span>Cylinder (CYL)</span> 
+                                    <span>POWER</span> 
                                 </th> 
                                 <th>
-                                    <span>Axis</span> 
+                                    <span>DIA</span> 
                                 </th> 
-                                <th>
-                                    <span>Add</span> 
-                                </th>
                             </tr>
                         </thead> 
                         <tbody>
