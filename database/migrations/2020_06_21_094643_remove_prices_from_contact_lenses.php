@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RemoveQuantityFromContactLenses extends Migration
+class RemovePricesFromContactLenses extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class RemoveQuantityFromContactLenses extends Migration
     public function up()
     {
         Schema::table('contact_lenses', function (Blueprint $table) {
-            $table->dropColumn('duration');
+            $table->dropColumn('price_before_discount');
+            $table->dropColumn('price_after_discount');
         });
     }
 
@@ -26,7 +27,7 @@ class RemoveQuantityFromContactLenses extends Migration
     public function down()
     {
         Schema::table('contact_lenses', function (Blueprint $table) {
-            $table->string('duration');
+            //
         });
     }
 }

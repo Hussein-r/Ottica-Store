@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RemoveQuantityFromContactLenses extends Migration
+class MakePrescriptionTypeNullableInOrderGlassesProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class RemoveQuantityFromContactLenses extends Migration
      */
     public function up()
     {
-        Schema::table('contact_lenses', function (Blueprint $table) {
-            $table->dropColumn('duration');
+        Schema::table('order_glasses_products', function (Blueprint $table) {
+            $table->string('prescription_type')->nullable()->change();
         });
     }
 
@@ -25,8 +25,8 @@ class RemoveQuantityFromContactLenses extends Migration
      */
     public function down()
     {
-        Schema::table('contact_lenses', function (Blueprint $table) {
-            $table->string('duration');
+        Schema::table('order_glasses_products', function (Blueprint $table) {
+            //
         });
     }
 }

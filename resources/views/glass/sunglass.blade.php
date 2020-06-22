@@ -189,7 +189,6 @@
     </section>
 <body>
     <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery-2.2.4.min.js"></script>
     <script src="/js/jquery-ui.js"></script>
     <script src="/js/aos.js"></script>
 <script src="/js/sunmain.js"></script>

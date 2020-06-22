@@ -74,17 +74,23 @@ class ClientOrdersController extends Controller
             if($request->category == 1){
                 $glass->price=$request->price * $request->quantity;
             }else if($request->category == 2){
+                $lense_details = explode(',', $request->single_lense);
                 $glass->lense_type=$request->single_lense_type;
-                $glass->color_id=$request->single_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
+                $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 3){
+                $lense_details = explode(',', $request->progressive_lense);
                 $glass->lense_type=$request->progressive_lense_type;
-                $glass->color_id=$request->progressive_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
+                $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 4){
+                $lense_details = explode(',', $request->bifocal_lense);
                 $glass->lense_type=$request->bifocal_lense_type;
-                $glass->color_id=$request->bifocal_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
+                $glass->prescription_type=$request->prescription_type;
             }
             $glass->save();
             if($request->check=='1'){
@@ -120,17 +126,23 @@ class ClientOrdersController extends Controller
             if($request->category == 1){
                 $glass->price=$request->price * $request->quantity;
             }else if($request->category == 2){
+                $lense_details = explode(',', $request->single_lense);
                 $glass->lense_type=$request->single_lense_type;
-                $glass->color_id=$request->single_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
+                $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 3){
+                $lense_details = explode(',', $request->progressive_lense);
                 $glass->lense_type=$request->progressive_lense_type;
-                $glass->color_id=$request->progressive_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
+                $glass->prescription_type=$request->prescription_type;
             }else if($request->category == 4){
+                $lense_details = explode(',', $request->bifocal_lense);
                 $glass->lense_type=$request->bifocal_lense_type;
-                $glass->color_id=$request->bifocal_lense_color;
-                $glass->price=($request->price + $request->lense_color) * $request->quantity;
+                $glass->color_id=$lense_details[0];
+                $glass->price=($request->price + $lense_details[1]) * $request->quantity;
+                $glass->prescription_type=$request->prescription_type;
             }
             $glass->save();
             if($request->check=='1'){
@@ -159,7 +171,93 @@ class ClientOrdersController extends Controller
             }
         }
     }
-    
+
+
+    public function storeLense(Request $request)
+    {
+        $type = explode(',', $request->type);
+        try {
+            $openOrder=orderList::where([["user_id","=",Auth::id()],["user_order_state","=",'0']])->get();
+
+        } catch(\Illuminate\Database\QueryException $ex){ 
+            dd($ex->getMessage()); 
+        }
+        if ($openOrder->isEmpty()) {
+            $userdata=User::where("id","=",Auth::id())->firstOrFail();
+            $order = new orderList();
+            $order->user_id = Auth::id();
+            $order->phone = $userdata->phone;
+            $order->address = $userdata->address;
+            $order->save();
+            $lense = new LenseProduct();
+            $lense->order_id=$order->id;
+            $lense->product_id=$request->product_id;
+            $lense->duration=$type[0];
+            $lense->price=$type[1];
+            $lense->quantity=$request->quantity;
+            $lense->color_id=$request->color;
+            $lense->category=$request->category;
+            if($request->category =="medical"){
+                $lense->prescription_type=$request->prescription_type;
+            }
+            if($request->prescription_type =="image"){
+                $prescription_image= new LensePrescriptionImage();
+                $prescription_image->order_id=$order->id;
+                $prescription_image->product_id=$request->product_id;
+                $imageName = time().'.'.$request->image->extension();  
+                $request->image->move(public_path('images'), $imageName);
+                $prescription_image->image = $imageName;
+                $prescription_image->save();
+            }else{
+                $prescription_details= new LenseProductPrescriptions();
+                $prescription_details->order_id = $order->id;
+                $prescription_details->product_id =$request->product_id;
+                $prescription_details->right_bc =$request->right_bc;
+                $prescription_details->left_bc =$request->left_bc;
+                $prescription_details->right_power =$request->right_power;
+                $prescription_details->left_power =$request->left_power;
+                $prescription_details->right_dia =$request->right_dia;
+                $prescription_details->left_dia =$request->left_dia;
+                $prescription_details->save();
+
+            }
+            
+
+        }else{
+            $lense = new LenseProduct();
+            $lense->order_id=$openOrder[0]->id;
+            $lense->product_id=$request->product_id;
+            $lense->duration=$type[0];
+            $lense->price=$type[1];
+            $lense->quantity=$request->quantity;
+            $lense->color_id=$request->color;
+            $lense->category=$request->category;
+            if($request->category =="medical"){
+                $lense->prescription_type=$request->prescription_type;
+            }
+            if($request->prescription_type =="image"){
+                $prescription_image= new LensePrescriptionImage();
+                $prescription_image->order_id=$openOrder[0]->id;
+                $prescription_image->product_id=$request->product_id;
+                $imageName = time().'.'.$request->image->extension();  
+                $request->image->move(public_path('images'), $imageName);
+                $prescription_image->image = $imageName;
+                $prescription_image->save();
+            }else{
+                $prescription_details= new LenseProductPrescriptions();
+                $prescription_details->order_id = $openOrder[0]->id;
+                $prescription_details->product_id =$request->product_id;
+                $prescription_details->right_bc =$request->right_bc;
+                $prescription_details->left_bc =$request->left_bc;
+                $prescription_details->right_power =$request->right_power;
+                $prescription_details->left_power =$request->left_power;
+                $prescription_details->right_dia =$request->right_dia;
+                $prescription_details->left_dia =$request->left_dia;
+                $prescription_details->save();
+
+            }
+        }
+    }
 
     /**
      * Display the specified resource.
