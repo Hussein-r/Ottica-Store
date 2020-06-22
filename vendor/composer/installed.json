@@ -147,17 +147,17 @@
     },
     {
         "name": "consoletvs/charts",
-        "version": "7.0.3",
-        "version_normalized": "7.0.3.0",
+        "version": "7.0.4",
+        "version_normalized": "7.0.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/ConsoleTVs/Charts.git",
-            "reference": "897b72544012452b77392ac4069683a8068886de"
+            "reference": "5a942e65d55ad359bb62fb72031b9de1b5ec0a91"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ConsoleTVs/Charts/zipball/897b72544012452b77392ac4069683a8068886de",
-            "reference": "897b72544012452b77392ac4069683a8068886de",
+            "url": "https://api.github.com/repos/ConsoleTVs/Charts/zipball/5a942e65d55ad359bb62fb72031b9de1b5ec0a91",
+            "reference": "5a942e65d55ad359bb62fb72031b9de1b5ec0a91",
             "shasum": ""
         },
         "require": {
@@ -168,7 +168,7 @@
             "illuminate/support": "^7.14.1",
             "php": ">=7.4"
         },
-        "time": "2020-06-13T02:26:54+00:00",
+        "time": "2020-06-21T13:33:51+00:00",
         "type": "library",
         "extra": {
             "laravel": {
@@ -1912,22 +1912,22 @@
     },
     {
         "name": "league/commonmark",
-        "version": "1.4.3",
-        "version_normalized": "1.4.3.0",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/thephpleague/commonmark.git",
-            "reference": "412639f7cfbc0b31ad2455b2fe965095f66ae505"
+            "reference": "fc33ca12575e98e57cdce7d5f38b2ca5335714b3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/412639f7cfbc0b31ad2455b2fe965095f66ae505",
-            "reference": "412639f7cfbc0b31ad2455b2fe965095f66ae505",
+            "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/fc33ca12575e98e57cdce7d5f38b2ca5335714b3",
+            "reference": "fc33ca12575e98e57cdce7d5f38b2ca5335714b3",
             "shasum": ""
         },
         "require": {
             "ext-mbstring": "*",
-            "php": "^7.1"
+            "php": "^7.1 || ^8.0"
         },
         "conflict": {
             "scrutinizer/ocular": "1.7.*"
@@ -1945,16 +1945,11 @@
             "scrutinizer/ocular": "^1.5",
             "symfony/finder": "^4.2"
         },
-        "time": "2020-05-04T22:15:21+00:00",
+        "time": "2020-06-21T20:50:13+00:00",
         "bin": [
             "bin/commonmark"
         ],
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.4-dev"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
@@ -3261,17 +3256,17 @@
     },
     {
         "name": "phpunit/phpunit",
-        "version": "8.5.6",
-        "version_normalized": "8.5.6.0",
+        "version": "8.5.7",
+        "version_normalized": "8.5.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/phpunit.git",
-            "reference": "3f9c4079d1407cd84c51c02c6ad1df6ec2ed1348"
+            "reference": "809b4bf6754569870c1a93075929bae5615d5ee2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3f9c4079d1407cd84c51c02c6ad1df6ec2ed1348",
-            "reference": "3f9c4079d1407cd84c51c02c6ad1df6ec2ed1348",
+            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/809b4bf6754569870c1a93075929bae5615d5ee2",
+            "reference": "809b4bf6754569870c1a93075929bae5615d5ee2",
             "shasum": ""
         },
         "require": {
@@ -3309,7 +3304,7 @@
             "ext-xdebug": "*",
             "phpunit/php-invoker": "^2.0.0"
         },
-        "time": "2020-06-15T10:45:47+00:00",
+        "time": "2020-06-21T06:32:54+00:00",
         "bin": [
             "phpunit"
         ],

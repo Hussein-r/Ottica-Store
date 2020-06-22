@@ -51,9 +51,9 @@ class Registrar
      */
     public function register(array $charts): void
     {
-        $globalRoutePrefix = $this->config->get('charts.global_route_prefix');
-        $globalMiddlewares = $this->config->get('charts.global_middlewares');
-        $globalRouteNamePrefix = $this->config->get('charts.global_route_name_prefix');
+        $globalRoutePrefix = $this->config->get('charts.global_route_prefix', 'api/chart');
+        $globalMiddlewares = $this->config->get('charts.global_middlewares', []);
+        $globalRouteNamePrefix = $this->config->get('charts.global_route_name_prefix', 'charts');
         $globalPrefixArray = Str::of($globalRoutePrefix)->explode('/')->filter()->values();
 
         foreach ($charts as $chartClass) {
