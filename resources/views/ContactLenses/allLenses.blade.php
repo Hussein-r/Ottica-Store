@@ -35,20 +35,14 @@
         </div>
 </div>
 <div class="col-12 col-md-8 col-lg-9">
-        <div class="shop_grid_product_area">
+        <div class="shop_grid_product_area" style="display:inline-block;">
             <div class="row">
                 <div class="col-12">
                     <div class="product-topbar d-flex align-items-center justify-content-between">
-                   
-                    <div>
-                        <!-- Total Products -->
                         {{-- <div class="total-products">
                                 <p><span>{{count($lenses)}}</span> products found</p>
                             </div> 
                         --}}
-                        <!-- Sorting -->
-                       
-
                         <div class="btn-group" style=margin-left:900px;>
                             <button type="button" class="btn btn-danger" disabled>Sorted BY</button>
                             <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,18 +53,11 @@
                                 <a class="dropdown-item"  href='/sort/4'>Name</a>
                                 <a class="dropdown-item" href="/sort/2">Price: $ - $$</a>
                                 <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>  
-                        </div>
-                        <div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- ------------------------------------- -->
-          <div id="filter_data" class="row">
-     
+                    <div id="filter_data" class="row" style="display:inline-block;">
                 @forelse ($lenses as $lense)
-               
-               
                 <!-- Single Product -->
              <div class="col-12 col-sm-6 col-lg-4">
                  <div class="single-product-wrapper">
@@ -112,7 +99,7 @@
       
         
          <!-- ----------------------- -->
-    <div class="col-md-3 order-2 mb-5 mb-md-0">
+    <div class="col-md-3 order-2 mb-5 mb-md-0" style="display:inline-block;float:left;">
          <div class="border p-4 rounded mb-4 filteration">
                <h3 class="mb-3 h6 text-uppercase text-black d-block">Brand</h3>
               <ul class="list-unstyled mb-0" >
