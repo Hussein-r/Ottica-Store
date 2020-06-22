@@ -10,6 +10,8 @@ use App\LenseProduct;
 use App\Glass;
 use App\lenses_images;
 use App\glass_images;
+use App\LensePrescriptionImage;
+use App\GlassPrescriptionImage;
 use Illuminate\Http\Request;
 
 class ListOrdersController extends Controller
@@ -98,43 +100,79 @@ class ListOrdersController extends Controller
     public function show($id)
     {
         //
-        // dd($id);
-        // $id=$order->id;
-        // dd($order);
-        $glassesDetails = GlassProductPrescriptions::where('order_id',$id)->get();
-        $lensesDetails= LenseProductPrescriptions::where('order_id',$id)->get();
-        $glassQty=GlassProduct::where('order_id',$id)->get();
-        $lensearr=array();
-        $glassarr=array();
-        $lenseImgarr=array();
-        $glassImgarr=array();
-       
-        foreach ($lensesDetails as $product) {
-            array_push($lensearr,$product->product_id);
-        }
-        $lenses = ContactLenses::find($lensearr);
-        foreach($lenses as $lense){
-            $lenseImgarr =lenses_images::where('lense_id', $lense->id)->first();
-        }
-        // dd($lenseImgarr->image);
+        $glassProducts=GlassProduct::where('order_id','=',$id)->get();
 
-        foreach ($glassesDetails as $product) {
+        foreach($glassProducts as $glass){
+            if ($glass->prescription_type =='image')
+            {
+               $glassPrescriptionImages= GlassPrescriptionImage::where('order_id','=',$id)
+               ->where('product_id','=',$glass->product_id)
+               ->get();
+            }
+            else{
+                $glassPrescription=GlassProductPrescriptions::where('order_id',$id)
+                ->where('product_id','=',$glass->product_id)
+               ->get();
+            }
+        }
+         $glassarr=array();
+        foreach ($glassProducts as $product) {
             array_push($glassarr,$product->product_id);
         }
+
         $glasses = Glass::find($glassarr);
+        // dd($glasses);
+
         foreach($glasses as $glass){
             $glassImgarr =glass_images::where('glass_id', $glass->id)->first();
         }
+        $glassQty=GlassProduct::where('order_id',$id)->get();
+        // dd( $glassPrescriptionImages);
+        // dd($glassPrescription);
+        // dd( $glassProducts);
 
-        //  dd($lensesDetails);
-        return view('ordersForAdmin.orderDetails',
-        ['glassesDetails' => $glassesDetails,
-        'lensesDetails'=> $lensesDetails,
-        'lenses' => $lenses ,
-        'lenseImgarr' =>$lenseImgarr,
-        'glasses'=> $glasses,
-        'glassImgarr'=>$glassImgarr,
+        //LENSES
+
+        $lenseProducts=LenseProduct::where('order_id','=',$id)->get();
+        // dd($lenseProducts);
+
+        foreach($lenseProducts as $lense){
+            if ($lense->prescription_type =='image')
+            {
+                // dd("okay");
+               $lensePrescriptionImages=LensePrescriptionImage::where('order_id','=',$id)
+               ->where('product_id','=',$lense->product_id)
+               ->get();
+            }
+            else{
+                $lensePrescription=LenseProductPrescriptions::where('order_id','=',$id)
+                ->where('product_id','=',$lense->product_id)
+               ->get();
+            }
+        }
+        // dd($lensePrescriptionImages);
+        // dd($lensePrescription);
+         $lensearr=array();
+        foreach ($lenseProducts as $product) {
+            array_push($lensearr,$product->product_id);
+        }
+
+        $lenses = ContactLenses::find($lensearr);
+        // dd($lenses);
+
+        return view('ordersForAdmin.details',
+        ['glassProducts' => $glassProducts,
+        'glassPrescriptionImages'=> $glassPrescriptionImages,
+        'glassPrescription' => $glassPrescription ,
+        'glasses'=>$glasses,
+        'glassImgarr' =>$glassImgarr,
         'glassQty' => $glassQty,
+        'lenseProducts'=>$lenseProducts,
+        // 'lensePrescriptionImages'=>$lensePrescriptionImages,
+        // 'lensePrescription'=>$lensePrescription,
+        // 'lenses'=>$lenses,
+
+
         ]);
     }
 

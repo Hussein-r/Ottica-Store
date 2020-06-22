@@ -49,7 +49,7 @@
                 <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
                 <li><a href="{{ url('ourLenses') }}">Our Lenses</a></li>
                 <li><a href="{{ url('offers') }}">Special Offers</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{route('bestseller.create')}}">About</a></li>
               <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
               </ul>
             {{--  <ul class="navbar-nav">
@@ -107,7 +107,41 @@
     </div>
 </div>
 @yield('content')
-
+<div class="mt-5 pt-5 pb-5 footer">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5 col-xs-12 about-company">
+      <h2 style="color:white;">OTTICA STORE</h2>
+      <p style="color:white;">We joined to the world of multi-brand eye-wear (Optical, Sunglasses) and Watches since 2019. Our priority is customer satisfaction in every possible way. </p>
+      <p><a href="https://www.facebook.com/ottica.eg/" target="_blank"><i class="fab fa-facebook"></i></a></p>
+    </div>
+    <div class="col-lg-3 col-xs-12 links">
+      <h4 class="mt-lg-0 mt-sm-3" style="color:white;">Links</h4>
+        <ul class="m-0 p-0" style="color:white;">
+          <li>- <a href="/">HOME</a></li>
+          <li>- <a href="/sunglasses">SUNGLASSES</a></li>
+          <li>- <a href="/eyeglasses">EYEGLASSES</a></li>
+          <li>- <a href="/allLenses">CONTACT LENSES</a></li>
+          <li>- <a href="/ourLenses">OUR LENSES</a></li>
+          <li>- <a href="/offers">SPECIAL OFFERS</a></li>
+          <li>- <a href="#">ABOUT US</a></li>
+          <li>- <a href="#">CONTACT US</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-4 col-xs-12 location" >
+      <h4 class="mt-lg-0 mt-sm-4" style="color:white;">Location</h4>
+      <p style="color:white;">Mansoura city<br> First Branch : El Dawlya Street, behind the National Station.<br> Second branch : El Mashya , Front of El Nile Club and El-Sallab Mosque.</p>
+      <p class="mb-0" style="color:white;"><i class="fa fa-phone mr-3"></i>01020015853</p>
+      <p style="color:white;"><i class="fas fa-envelope mr-3" ></i>info@ottica-eg.com</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col copyright">
+      <p class=""><small class="text-white-50">© 2020. All Rights Reserved.</small></p>
+    </div>
+  </div>
+</div>
+</div>
 
 </body>
 <script src="/js/jquery-3.3.1.min.js"></script>

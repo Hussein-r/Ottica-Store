@@ -147,13 +147,9 @@
                 <!-- Single Product -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                     @foreach($bestSellerLenseImages as $bestImg)
-                        @if($BestLense->id == $bestImg->lense_id)                        
+                        <!-- Product Image -->                      
                         <div class="product-img mt-5">
-                            <img style="height:150px; width:247px" src="/images/{{$bestImg->image}}" alt="product image">
-                            @endif
-                            @endforeach
+                            <img style="height:150px; width:247px" src="/images/{{$BestLense->image}}" alt="product image">
                             <!-- Product Badge -->
                             <div class="product-badge new-badge">
                             <span>{{$BestLense->label}}</span>
@@ -194,13 +190,9 @@
                 <!-- Single Product -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                     @foreach($lenseProductsImages as $bestImg)
-                        @if($LenseProduct->id == $bestImg->lense_id)                        
+                        <!-- Product Image -->                    
                         <div class="product-img mt-5">
-                            <img style="height:150px; width:247px" src="/images/{{$bestImg->image}}" alt="product image">
-                            @endif
-                            @endforeach
+                            <img style="height:150px; width:247px" src="/images/{{$LenseProduct->image}}" alt="product image">
                             <!-- Product Badge -->
                             <div class="product-badge new-badge">
                             <span>{{$LenseProduct->label}}</span>

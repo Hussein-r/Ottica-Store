@@ -51,23 +51,23 @@
 
         </form> --}}
         </div>
+
+        <!-- --------------- -->
+    <div id='filter_data'>
         <div id="glassArea">
-
-    @foreach ($glasses as $glass)
-    <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;">
-        <!-- Product Image -->
-        <div class="product-img" >
-            <img src="images/{{$glass->images->first()->image}}" alt="">
-            <!-- Favourite -->
-            <div class="product-favourite">
-                <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
-            </div>
-        </div>
-        <!-- Product Description -->
-
-        <div class="product-description">
-            <span>{{$glass->glass_code}}</span>
-
+               @foreach ($glasses as $glass)
+         <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;">
+                 <!-- Product Image -->
+              <div class="product-img" >
+                   <img src="images/{{$glass->images->first()->image}}" alt="">
+                      <!-- Favourite -->
+                     <div class="product-favourite">
+                         <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
+                        </div>
+               </div>
+                 <!-- Product Description -->
+        <div class="product-description ">
+            <span>{{$glass->code}}</span>
             <a  href="single-product-details.html">
                 <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
             </a>
@@ -85,6 +85,7 @@
         </div>
     </div>
     @endforeach  
+    </div>
     </div>
     <!-- ---------- -->
 
@@ -186,7 +187,8 @@
       @endforeach 
       </ul>
     </div>
-
+<!-- ------------------ -->
+        </div>  
 </div>
   <!-- --------------------- -->
 </div>
