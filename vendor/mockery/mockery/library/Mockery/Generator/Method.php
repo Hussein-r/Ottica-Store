@@ -53,19 +53,6 @@ class Method
             return '';
         }
 
-<<<<<<< HEAD
-        if (version_compare(PHP_VERSION, '7.0.0-dev') >= 0 && $this->method->hasReturnType()) {
-            $returnType = PHP_VERSION_ID >= 70100 ? $this->method->getReturnType()->getName() : (string) $this->method->getReturnType();
-
-            if ('self' === $returnType) {
-                $returnType = "\\".$this->method->getDeclaringClass()->getName();
-            } elseif (!\Mockery::isBuiltInType($returnType)) {
-                $returnType = '\\'.$returnType;
-            }
-
-            if (version_compare(PHP_VERSION, '7.1.0-dev') >= 0 && $this->method->getReturnType()->allowsNull()) {
-                $returnType = '?'.$returnType;
-=======
         if ($this->method->hasReturnType()) {
             $returnType = $this->method->getReturnType()->getName();
 
@@ -77,7 +64,6 @@ class Method
 
             if ($this->method->getReturnType()->allowsNull()) {
                 $returnType = '?' . $returnType;
->>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
             }
 
             return $returnType;

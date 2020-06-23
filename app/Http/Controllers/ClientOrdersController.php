@@ -13,10 +13,20 @@ use App\ContactLenses;
 use Illuminate\Support\Facades\Auth;
 use App\orderList;
 use Illuminate\Http\Request;
+use Cartalyst\Stripe\Laravel\Facades\Stripe;
+use Cartalyst\Stripe\Exception\CardErrorException;
 
 
 class ClientOrdersController extends Controller
 {
+
+    
+    public function __construct() {
+      $stripe= Stripe::setApiKey(env('STRIPE_SECRET'));
+      
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -276,6 +286,8 @@ class ClientOrdersController extends Controller
             foreach ($glassesProduct as $product) {
                 array_push($glassesArray,$product->product_id);
              }
+            //  dd($glassesArray);
+            //  dd($glassesProduct);
              foreach ($lensesProduct as $product) {
                 array_push($lensesArray,$product->product_id);
              }
@@ -326,4 +338,51 @@ class ClientOrdersController extends Controller
         return redirect()->action("ClientOrdersController@index");   
   
     }
+
+    //Payment
+
+
+    public function payment()
+    {
+        $availablePlans =[
+           'webdevmatics_monthly' => "Monthly",
+           'webdevmatics_yearly' => "Yearly",
+        ];
+        $data = [
+            'intent' => auth()->user()->createSetupIntent(),
+            'plans'=> $availablePlans
+        ];
+        return view('payment')->with($data);
+    }
+
+    public function subscribe(Request $request)
+    {
+        // dd($stripe);
+        // dd($request->all());
+       
+        try {
+            $charge = Stripe::charges()->create([
+                'amount' => 20,
+                'currency' => 'CAD',
+                'source' => $request->stripeToken,
+                'description' => 'Description goes here',
+                'metadata' => [
+                    'data1' => 'metadata 1',
+                    'data2' => 'metadata 2',
+                    'data3' => 'metadata 3',
+                ],
+            ]);
+    
+            // save this info to your database
+    
+            // SUCCESSFUL
+            return back()->with('success_message', 'Thank you! Your payment has been accepted.');
+        } catch (CardErrorException $e) {
+            // save info to database for failed
+            return back()->withErrors('Error! ' . $e->getMessage());
+        }
+    }
+
+
+    
 }

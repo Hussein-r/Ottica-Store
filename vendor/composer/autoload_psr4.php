@@ -88,6 +88,8 @@ return array(
     'ConsoleTVs\\Charts\\' => array($vendorDir . '/consoletvs/charts/src'),
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'Chartisan\\PHP\\' => array($vendorDir . '/chartisan/php/src'),
+    'Cartalyst\\Stripe\\Laravel\\' => array($vendorDir . '/cartalyst/stripe-laravel/src'),
+    'Cartalyst\\Stripe\\' => array($vendorDir . '/cartalyst/stripe/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src/Asm89/Stack'),

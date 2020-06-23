@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,3 +115,7 @@ Route::get('/rayban4', function () {return view('OurLenses.rayban4');});
 Route::get('paypal/ec-checkout','PayPalController@getExpressCheckout')->name('checkout');
 Route::get('paypal/ec-checkout-success','PayPalController@getExpressCheckoutSuccess')->name('paypal.success');
 Route::get('paypal/ec-checkout-cancel','PayPalController@getExpressCheckoutCancel')->name('paypal.cancel');
+// Route::get('payment', 'ClientOrdersController@payment');
+// Route::post('subscribe', 'ClientOrdersController@subscribe');
+Route::view('/payment', 'payment');
+Route::post('/checkout', 'ClientOrdersController@subscribe');

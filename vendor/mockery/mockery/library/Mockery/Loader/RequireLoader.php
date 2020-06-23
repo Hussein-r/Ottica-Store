@@ -38,11 +38,7 @@ class RequireLoader implements Loader
             return;
         }
 
-<<<<<<< HEAD
-        $tmpfname = $this->path.DIRECTORY_SEPARATOR."Mockery_".uniqid().".php";
-=======
         $tmpfname = $this->path . DIRECTORY_SEPARATOR . "Mockery_" . uniqid() . ".php";
->>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         file_put_contents($tmpfname, $definition->getCode());
 
         require $tmpfname;

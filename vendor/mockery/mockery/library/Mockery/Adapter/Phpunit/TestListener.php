@@ -20,19 +20,6 @@
 
 namespace Mockery\Adapter\Phpunit;
 
-<<<<<<< HEAD
-if (class_exists('PHPUnit_Runner_Version') && version_compare(\PHPUnit_Runner_Version::id(), '6.0.0', '<')) {
-    class_alias('Mockery\Adapter\Phpunit\Legacy\TestListenerForV5', 'Mockery\Adapter\Phpunit\TestListener');
-} elseif (version_compare(\PHPUnit\Runner\Version::id(), '7.0.0', '<')) {
-    class_alias('Mockery\Adapter\Phpunit\Legacy\TestListenerForV6', 'Mockery\Adapter\Phpunit\TestListener');
-} else {
-    class_alias('Mockery\Adapter\Phpunit\Legacy\TestListenerForV7', 'Mockery\Adapter\Phpunit\TestListener');
-}
-
-if (false) {
-    class TestListener
-    {
-=======
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestListenerDefaultImplementation;
 use PHPUnit\Framework\TestSuite;
@@ -57,6 +44,5 @@ class TestListener implements PHPUnitTestListener
     public function startTestSuite(TestSuite $suite): void
     {
         $this->trait->startTestSuite();
->>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     }
 }
