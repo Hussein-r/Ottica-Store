@@ -21,7 +21,13 @@
     <link rel="stylesheet" href="/css/core-style.css">
 
 
-    
+    <style>
+    .auto-index td:first-child:before
+      {
+        counter-increment: Serial;      /* Increment the Serial counter */
+        content: "Serial is: " counter(Serial); /* Display the counter */
+      }
+    </style>
 
 </head>
 @section('content')
@@ -47,7 +53,7 @@
         <div class="row mb-5">
           <form class="col-md-12" method="post">
             <div class="site-blocks-table">
-              <table class="table table-bordered">
+              <table class="table table-bordered ">
                 <thead>
                   <tr>
                     <th class="product-name">Number of Order</th>
@@ -57,11 +63,12 @@
                   </tr>
                 </thead>
                 <tbody>
+                <?php $no=1;?>
                 @foreach ($orders as $order)
                   <tr>
                   
                     <td class="product-name">
-                    <h4>Your Order</h4>
+                   <h3><?php echo $no;?></h3>
                     </td>
                     <td>
                     <div class="btn btn-success"  >
@@ -72,7 +79,7 @@
                     @if ($order->admin_order_state == 'inactive')
                     <td>
                     <div  class="btn btn-warning">
-                      <a href="/payment" type="submit">Payment</a>
+                      <a href="/payment/{{$order->id}}" type="submit">Payment</a>
                     </div>
                     </td>
                     <td>
@@ -103,6 +110,7 @@
                     </td>
                     @endif
                   </tr>
+                  <?php $no++;?>
                   @endforeach
                 </tbody>
               </table>

@@ -26,7 +26,6 @@ Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
 Route::resource('order','ClientOrdersController');
-Route::resource('cart','CartController');
 Route::resource('SingleVisionLense','SingleVisionController');
 Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
 Route::resource('BifocalLense','BifocalController');
@@ -34,8 +33,7 @@ Route::resource('comment','CommentsController');
 Route::resource('ColoredEye','ColoredEyesController');
 Route::post('/changeLenseColor','ContactLensesController@changeColor');
 Route::post('/storeLense','ClientOrdersController@storeLense');
-
-
+Route::get('about','HomeController@about');
 
 //mariam
 Route::get('/', 'HomeController@index')->name('home');
@@ -53,8 +51,15 @@ Route::get('favourite', 'UserController@myFavourite');
 Route::get('admin/sunglasses','AdminController@sun');
 Route::get('admin/eyeglasses','AdminController@eye');
 Route::get('dashboard','AdminController@adminHome');
-
-
+Route::get('chart', 'AdminController@adminHome');
+Route::resource('cart','CartController');
+Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
+Route::post('/promocode', 'CartController@promocode');
+Route::post('thanks','CartController@submitOrder');
+Route::get('/checkout', function () {
+    return view('Users.checkout')->render();
+});
+Route::resource('color', 'colorController');
 
 //hajar
 //specail offers & list orders for admin 
@@ -117,5 +122,5 @@ Route::get('paypal/ec-checkout-success','PayPalController@getExpressCheckoutSucc
 Route::get('paypal/ec-checkout-cancel','PayPalController@getExpressCheckoutCancel')->name('paypal.cancel');
 // Route::get('payment', 'ClientOrdersController@payment');
 // Route::post('subscribe', 'ClientOrdersController@subscribe');
-Route::view('/payment', 'payment');
-Route::post('/checkout', 'ClientOrdersController@subscribe');
+Route::get('/payment/{id}', 'ClientOrdersController@payment');
+Route::post('/PaymentCheckout/{order_id}', 'ClientOrdersController@subscribe');

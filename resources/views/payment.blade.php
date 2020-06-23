@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.userNavbar')
 @section('content')
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Ottica</title>
 
         <script src="https://js.stripe.com/v3/"></script>
 
@@ -47,9 +47,12 @@
     <body>
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
-                <h1>Payment Form</h1>
+            <div class='mt-5'>
+            <h4>Payment Now</h4>
+            <img src='/images/unnamed.png'>
+            
                 <div class="spacer"></div>
-
+               
                 @if (session()->has('success_message'))
                     <div class="alert alert-success">
                         {{ session()->get('success_message') }}
@@ -65,68 +68,16 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ url('/checkout') }}" method="POST" id="payment-form">
+               
+                <form action="{{ url('/PaymentCheckout',$orderId) }}" method="POST" id="payment-form">
                     {{ csrf_field() }}
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email">
-                    </div>
-
+                   
                     <div class="form-group">
                         <label for="name_on_card">Name on Card</label>
                         <input type="text" class="form-control" id="name_on_card" name="name_on_card">
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address" name="address">
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="city">City</label>
-                                <input type="text" class="form-control" id="city" name="city">
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="province">Province</label>
-                                <input type="text" class="form-control" id="province" name="province">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="postalcode">Postal Code</label>
-                                <input type="text" class="form-control" id="postalcode" name="postalcode">
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="country">Country</label>
-                                <input type="text" class="form-control" id="country" name="country">
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone" name="phone">
-                            </div>
-                        </div>
-
-                    </div>
-
-                
-
+                   
                     <div class="form-group">
                         <label for="card-element">Credit Card</label>
                         <div id="card-element">
@@ -141,6 +92,8 @@
 
                     <button type="submit" class="btn btn-success">Submit Payment</button>
                 </form>
+               
+                </div>
             </div>
         </div>
         <script>

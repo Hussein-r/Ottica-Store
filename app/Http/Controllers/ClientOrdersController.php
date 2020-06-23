@@ -10,6 +10,7 @@ use App\User;
 use App\Glass;
 use App\LenseImage;
 use App\ContactLenses;
+use App\TotalPrice;
 use Illuminate\Support\Facades\Auth;
 use App\orderList;
 use Illuminate\Http\Request;
@@ -180,6 +181,8 @@ class ClientOrdersController extends Controller
                 }
             }
         }
+
+        return redirect()->action('CartController@index');
     }
 
 
@@ -210,6 +213,7 @@ class ClientOrdersController extends Controller
             if($request->category =="medical"){
                 $lense->prescription_type=$request->prescription_type;
             }
+            $lense->save();
             if($request->prescription_type =="image"){
                 $prescription_image= new LensePrescriptionImage();
                 $prescription_image->order_id=$order->id;
@@ -245,6 +249,7 @@ class ClientOrdersController extends Controller
             if($request->category =="medical"){
                 $lense->prescription_type=$request->prescription_type;
             }
+            $lense->save();
             if($request->prescription_type =="image"){
                 $prescription_image= new LensePrescriptionImage();
                 $prescription_image->order_id=$openOrder[0]->id;
@@ -267,6 +272,9 @@ class ClientOrdersController extends Controller
 
             }
         }
+
+        return redirect()->action('CartController@index');
+
     }
 
     /**
@@ -281,6 +289,12 @@ class ClientOrdersController extends Controller
         $glassesArray=array();
         $lensesArray=array();
         
+        $price = TotalPrice::where('order_id','=',$id)->get();
+        // dd($price);
+        foreach ($price as $item) {
+            $finalprice=$item->price_after_promocode;
+          }
+        //    dd($finalprice);
         $glassesProduct=GlassProduct::where('order_id','=',$id)->get();
         $lensesProduct=LenseProduct::where('order_id','=',$id)->get();
             foreach ($glassesProduct as $product) {
@@ -296,7 +310,7 @@ class ClientOrdersController extends Controller
         // dd($glasses);
         $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
         // dd($lenses);
-        return view('ordersForClient.show',compact('glasses','lenses'));
+        return view('ordersForClient.show',compact('glasses','lenses','finalprice'));
 
     }
 
@@ -342,37 +356,36 @@ class ClientOrdersController extends Controller
     //Payment
 
 
-    public function payment()
+    public function payment($id)
     {
-        $availablePlans =[
-           'webdevmatics_monthly' => "Monthly",
-           'webdevmatics_yearly' => "Yearly",
-        ];
-        $data = [
-            'intent' => auth()->user()->createSetupIntent(),
-            'plans'=> $availablePlans
-        ];
-        return view('payment')->with($data);
+       
+        $orderId=$id;
+        return view('payment',compact('orderId'));
     }
 
-    public function subscribe(Request $request)
+    public function subscribe(Request $request,$order_id)
     {
         // dd($stripe);
+        // dd($request);
         // dd($request->all());
-       
+
+        $id=$order_id;
+        $price = TotalPrice::where('order_id','=',$id)->get();
+        foreach ($price as $item) {
+           $finalprice=$item->price_after_promocode;
+         }
+        //  dd($finalprice);
+
+        // dd($price->price_after_promocode);
         try {
             $charge = Stripe::charges()->create([
-                'amount' => 20,
-                'currency' => 'CAD',
+              
+                'amount'=>$finalprice,
                 'source' => $request->stripeToken,
-                'description' => 'Description goes here',
-                'metadata' => [
-                    'data1' => 'metadata 1',
-                    'data2' => 'metadata 2',
-                    'data3' => 'metadata 3',
-                ],
+                "currency" => "EGP",
             ]);
-    
+            
+                //  dd($charge);
             // save this info to your database
     
             // SUCCESSFUL

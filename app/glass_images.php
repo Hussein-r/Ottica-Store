@@ -9,4 +9,8 @@ class glass_images extends Model
     //
     protected $table = 'glass_images';
 
+    // public function orderGlasses(){
+
+    // }
+
 }

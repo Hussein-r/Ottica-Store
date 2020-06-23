@@ -103,12 +103,11 @@
                   </div>
                 </div>
             </li>
-
+            <!-- Glasses ---------------- -->
             <hr class="sidebar-divider">
-
             <!-- Heading -->
             <div class="sidebar-heading">
-              Products
+              Glass Products
             </div>
       
             <!-- Nav Item - Pages Collapse Menu -->
@@ -124,12 +123,120 @@
                   <a class="collapse-item" href="{{url('admin/sunglasses')}}">Sun Glasses</a>
                   <a class="collapse-item" href="{{url('admin/eyeglasses')}}">Eye Glasses</a>
                   <a class="collapse-item" href="{{route('glass.index')}}">All Glasses</a>
-                  <h6 class="collapse-header">Brands</h6>
-                  <a class="collapse-item" href="{{route('brand.create')}}">Add New</a>
-                  <a class="collapse-item" href="{{route('brand.index')}}">Brands</a>
                 </div>
               </div>
             </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGlassSet" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Glasses Settings</span>
+              </a>
+              <!-- Brands -------------------------- -->
+              <div id="collapseGlassSet" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Brands</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Glasses Brands</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Brands</a>
+                      </div>
+                    </div>
+                  </div>
+
+              <!-- Colors -------------------------- -->
+
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Colors</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Lenses Colors</h6>
+                        <a class="dropdown-item" href="{{route('color.create')}}">Add New color </a>
+                        <a class="dropdown-item" href="{{route('color.index')}}">All Colors</a>
+                      </div>
+                    </div>
+                  </div>
+
+              <!-- Face shape -------------------------- -->
+
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Face Shape</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Face Shape</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Shapes</a>
+                      </div>
+                    </div>
+                  </div>
+              <!-- Frame shape -------------------------- -->
+                  
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Frame Shape</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Glasses Frames</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Shapes</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Fit Size -------------------------- -->
+                  
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Fit</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Fit Size</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Fits</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Frame shape -------------------------- -->
+                  
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Material</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Material</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Materias</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Contact Lenses ------------------------------------------- -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+              Lenses Products
+            </div>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLenses" aria-expanded="true" aria-controls="collapsePages">
@@ -141,27 +248,112 @@
                     <h6 class="collapse-header">Lenses</h6>
                     <a class="collapse-item" href="{{route('lenses.create')}}">Add New</a>
                     <a class="collapse-item" href="{{route('lenses.index')}}">All Lenses</a>
-                    <h6 class="collapse-header">Brands</h6>
-                    <a class="collapse-item" href="{{route('lenseBrand.create')}}">Add New</a>
-                    <a class="collapse-item" href="{{route('lenseBrand.index')}}">Brands</a>
-                  </div>
+                    </div>
                 </div>
             </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLenseSet" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Lenses Settings</span>
+              </a>
+              <!-- Brands -------------------------- -->
+              <div id="collapseLenseSet" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Brands</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Lenses Brands</h6>
+                        <a class="dropdown-item" href="{{route('lenseBrand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('lenseBrand.index')}}">All Brands</a>
+                      </div>
+                    </div>
+                  </div>
 
-            {{-- <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBrands" aria-expanded="true" aria-controls="collapsePages">
-                  <i class="fas fa-fw fa-copyright"></i>
-                  <span>Brands</span>
-                </a>
-                <div id="collapseBrands" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="{{route('brand.create')}}">Add New</a>
-                    <a class="collapse-item" href="{{route('brand.index')}}">All Brands</a>
-  
+              <!-- Colors -------------------------- -->
+
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Colors</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Glasses Colors</h6>
+                        <a class="dropdown-item" href="{{route('color.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('color.index')}}">All Colors</a>
+                      </div>
+                    </div>
+                  </div>
+
+              <!-- Face shape -------------------------- -->
+
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Face Shape</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Face Shape</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Shapes</a>
+                      </div>
+                    </div>
+                  </div>
+              <!-- Frame shape -------------------------- -->
+                  
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Frame Shape</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Glasses Frames</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Shapes</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Fit Size -------------------------- -->
+                  
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Fit</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Fit Size</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Fits</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Frame shape -------------------------- -->
+                  
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Material</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Material</h6>
+                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('brand.index')}}">All Materias</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-            </li> --}}
+              </div>
+            </li>
             <hr class="sidebar-divider">
             <!-- Nav Item - Orders -->
             <li class="nav-item">
@@ -172,6 +364,7 @@
                 <div id="collapseOrders" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('orderslist.index')}}">All Orders</a>
+                    <a class="collapse-item" href="{{url('orders/inactive')}}">Inactive</a>
                     <a class="collapse-item" href="{{url('orders/processing')}}">Processing</a>
                     <a class="collapse-item" href="{{url('orders/done')}}">Done</a>
   
@@ -192,13 +385,13 @@
                   </div>
                 </div>
             </li>
-            <hr class="sidebar-divider">
+            {{-- <hr class="sidebar-divider"> --}}
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link" href="charts.html">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Charts</span></a>
-            </li>
+            </li> --}}
       
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -292,7 +485,11 @@
               </nav>
               <!-- End of Topbar -->
               <main class="py-4">
+                <div id="content-wrapper" class="d-flex flex-column">
+                <div class="container-fluid">
                 @yield('content')
+                </div>
+                </div>
             </main>
       
             <!-- Footer -->

@@ -12,7 +12,6 @@ class ContactLenses extends Model
     protected $table = 'contact_lenses';
     protected $fillable = [
         'name',
-        'quantity',
         'label',
         'description',
         'brand_id',
@@ -34,6 +33,11 @@ class ContactLenses extends Model
     public function color()
     {
         return $this->belongsToMany('App\Color','lense_colors','color_id','lense_id');
+
+    }
+    public function lenseType()
+    {
+        return $this->hasMany('App\LenseUseType','lense_id');
 
     }
     

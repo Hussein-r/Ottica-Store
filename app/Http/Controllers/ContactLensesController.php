@@ -79,7 +79,7 @@ class ContactLensesController extends Controller
         //     'label'=>'required',
         //     'description'=>'required'
         // ]);
-        $lense= ContactLenses::create($request->except(['image']));
+        $lense= ContactLenses::create($request->except(['image','duration','price']));
         if($files=$request->file('image')){
             $imageName = time().'.'.$request->image->extension();  
             $request->image->move(public_path('images'), $imageName);

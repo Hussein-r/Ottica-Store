@@ -22,14 +22,18 @@ class Glass extends Model
         return $this->belongsTo('App\Brand');
     }
 
-    public function color()
-    {
-        return $this->hasOne('App\Color');
-    }
+    // public function color()
+    // {
+    //     return $this->hasOne('App\Color');
+    // }
 
     public function favourite()
     {
         return $this->hasMany('App\Favourite');
     }
+
+    // public function orders(){
+    //     return $this->belongsToMany('App\orderList','order_glasses_products','order_id','product_id');
+    // }
 
 }

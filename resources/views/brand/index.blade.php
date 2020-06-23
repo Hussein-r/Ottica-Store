@@ -1,26 +1,33 @@
-
 @extends('layouts.admin')
 @section('content')
-<a style="margin-left: 80px" href="{{route('brand.create')}}" class="btn btn-primary btn-lg">Add New Brand</a>
-
 <section class="container">
-    <h1 style="text-align: center">All Brands</h1>
-    {{-- <h1><i class="fas fa-edit"></i></h1> --}}
-    <table class="table">        
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-black-800">Glasses Brands </h1>
+    <a href="{{route('brand.create')}}" class="btn btn-icons btn-rounded btn-outline-info"  ><i class="fas fa-plus-square fa-sm text-blue-80 "></i> Add New Brand</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <th>Brand</th>
+            <th>Image</th>
+            <th></th>
     @forelse ($brands as $brand)
-    <tr>
+    <tr class="table100-head">
         <th>{{$brand->name}}</th>
         <th>
             <img style="height:150px ; width:150px;" class="img-thumbnail" src="/images/{{$brand->image}}" />
         </th>
         <th>
-            <a href="{{route('brand.edit', $brand->id)}}" class="btn btn-success">Edit</a>
-            <div>
-                
+            <div class="row">
+                <div>   
+                    <a href="{{route('brand.edit', $brand->id)}}" class="btn btn-icons btn-rounded btn-success"><i class="fas fa-edit fa-sm text-green-80 "></i></a>
+                </div>
+            <div style="margin-left:20px">       
             {!! Form::open(['route' => ['brand.destroy', $brand] ,'method' => 'delete' ]) !!}
-            {!! Form::submit('Delete',['class'=>'btn btn-danger mt-3'])  !!}
+            {!! Form::submit('X',['class'=>'btn btn-icons btn-rounded btn-danger']) !!}
             {!! Form::close() !!}
             </div>
+            
+        </div>
         </th>
     </tr>
         

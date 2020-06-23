@@ -59,11 +59,6 @@ function addPrescription() {
                     $(this).val() +
                     "' />"
             ).appendTo("#mainform");
-            $("#tableform :input")
-                .not(":submit")
-                .clone()
-                .hide()
-                .appendTo("#mainform");
         });
     } else if (presType == "image") {
         $("#imageform :input")

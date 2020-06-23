@@ -18,6 +18,6 @@ class Color extends Model
     
     public function glass()
     {
-        return $this->hasMany('App\Glass');
+        return $this->hasone('App\Glass');
     }
 }
