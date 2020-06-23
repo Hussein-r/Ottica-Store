@@ -35,6 +35,11 @@ class ContactLenses extends Model
         return $this->belongsToMany('App\Color','lense_colors','color_id','lense_id');
 
     }
+    public function lenseType()
+    {
+        return $this->hasMany('App\LenseUseType','lense_id');
+
+    }
     
   
 

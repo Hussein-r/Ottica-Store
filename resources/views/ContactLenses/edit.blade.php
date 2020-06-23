@@ -27,11 +27,6 @@
                 </div>
                 <div><span class="text">{{$errors->first('name')}}</span></div>
                 <div class="input-group mb-3">
-                     
-                    {!! Form::number('quantity',null,['class'=>'form-control','aria-label'=>'quantity', 'aria-describedby'=>'basic-addon4','placeholder'=>'The quantity'])  !!}
-                </div>
-                <div><span class="text">{{$errors->first('quantity')}}</span></div>
-                <div class="input-group mb-3">
                     
                     {!! Form::text('label',null,['class'=>'form-control','aria-label'=>'label', 'aria-describedby'=>'basic-addon1','placeholder'=>'The label'])  !!}
                 </div>
@@ -49,16 +44,6 @@
                    
                 </div>
                 <div><span class="text">{{$errors->first('color')}}</span></div>
-                <div class="input-group mb-3">
-                   
-                    {!! Form::text('price_before_discount',null,['class'=>'form-control','aria-label'=>'Price', 'aria-describedby'=>'basic-addon5','placeholder'=>'Price Before Discount'])  !!}
-                </div>
-                <div><span class="text">{{$errors->first('price_before_discount')}}</span></div>
-                <div class="input-group mb-3">
-                    
-                    {!! Form::text('price_after_discount',null,['class'=>'form-control','aria-label'=>'Price', 'aria-describedby'=>'basic-addon5','placeholder'=>'Price After Discount'])  !!}
-                </div>
-                <div><span class="text">{{$errors->first('price_before_discount')}}</span></div>
                  <div class="input-group mb-3">
                       
                     {!! Form::text('description',null,['class'=>'form-control','aria-label'=>'description', 'aria-describedby'=>'basic-addon1','placeholder'=>'Description'])  !!}
@@ -121,6 +106,11 @@
                     {!! Form::text('water_of_content',null,['class'=>'form-control','aria-label'=>'water_of_content', 'aria-describedby'=>'basic-addon1','placeholder'=>'Water Of Content'])  !!}
                 </div>
                 <div><span class="text">{{$errors->first('water_of_content')}}</span></div>
+                <div class="input-group mb-3">
+                    <input type="number" id="numbers"  name="number_of_types" placeholder="how many types have you got?">
+                </div>
+                <div id="useandprice" class="mt-3 mb-3">
+                </div>
                 <select class="custom-select" id="inputGroupSelect01" name="lense_purpose">
                  <option disabled>Choose Lense Purpose</option>
                                 <option  value="1">medical</option> 
@@ -139,7 +129,7 @@
                         <span class="input-group-text">Upload</span>
                     </div>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="images[]" id="inputGroupFile01" multiple>
+                        <input type="file" class="custom-file-input" name="image" id="inputGroupFile01" >
                         <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
                     </div>
                 </div>
@@ -154,5 +144,8 @@
            </div>
          </div>
     </body>
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="/js/LenseColors.js"></script>
 </html>
 @endsection

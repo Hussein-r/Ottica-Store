@@ -32,7 +32,7 @@ Route::resource('comment','CommentsController');
 Route::resource('ColoredEye','ColoredEyesController');
 Route::post('/changeLenseColor','ContactLensesController@changeColor');
 Route::post('/storeLense','ClientOrdersController@storeLense');
-
+Route::get('about','HomeController@about');
 
 //mariam
 Route::get('/', 'HomeController@index')->name('home');
@@ -58,8 +58,7 @@ Route::post('thanks','CartController@submitOrder');
 Route::get('/checkout', function () {
     return view('Users.checkout')->render();
 });
-// Route::get('thanks','CartController@submitOrder');
-
+Route::resource('color', 'colorController');
 
 //hajar
 //specail offers & list orders for admin 
@@ -79,6 +78,10 @@ Route::get('ourbrands/home','OurBrandsController@returnHome');
 Route::resource('bestseller','BestSellerController');
 //About Us home page
 Route::resource('contact','ContactUsController');
+//contactUs home page
+Route::POST('/messages/create', 'ContactUsController@store');
+//messages for admin 
+Route::get('admin/messages','ContactUsController@adminShow');
 
 //filteration 
 // Route::resource('filter','FilterationController');

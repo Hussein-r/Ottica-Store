@@ -1,8 +1,11 @@
 
 @extends('layouts.admin')
 @section('content')
-<section class="container">
-    <h1 style="text-align: center">Add New Glass</h1>
+<div class="container">
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h2 mb-0 text-black-800">Add New Glass</h1>
+    {{-- <a href="/mail"  ><i class="fas fa-envelope fa-sm text-blue-80 "></i> Setting</a> --}}
+</div>
     {!! Form::open(['route' => 'glass.store','files' => 'true','enctype'=>'multipart/form-data']) !!}
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -120,7 +123,7 @@
             </div>   
             {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
         </div>
-        {!! Form::submit('Add Glass',['class'=>'btn btn-primary'])  !!}
+        {!! Form::submit('Add Glass',['class'=>'btn btn-primary center-block btn-lg'])  !!}
 
     {!! Form::close() !!}
 </section>

@@ -124,7 +124,7 @@
           <li>- <a href="/allLenses">CONTACT LENSES</a></li>
           <li>- <a href="/ourLenses">OUR LENSES</a></li>
           <li>- <a href="/offers">SPECIAL OFFERS</a></li>
-          <li>- <a href="#">ABOUT US</a></li>
+          <li>- <a href="about">ABOUT US</a></li>
           <li>- <a href="#">CONTACT US</a></li>
         </ul>
     </div>
