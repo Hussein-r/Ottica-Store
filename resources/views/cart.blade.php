@@ -90,9 +90,9 @@
                           <td>eyeglass Frame</td>
                         @else
                           @if ($glass->category != 'no prescription')
-                              <td>eyeglass Frame with 
-                                <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">
-                                  Lenses</button>
+                              <td>eyeglass Frame with Lenses 
+                                {{-- <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">
+                                  Lenses</button> --}}
                               </td> 
                           @endif
                           

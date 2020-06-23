@@ -58,7 +58,7 @@
 
         <!-- Product Description -->
         <div  class="product-description">
-            <span>{{$glass->code}}</span>
+            <span>{{$glass->glass_code}}</span>
             <a  href="single-product-details.html">
                 <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
             </a>
@@ -78,7 +78,7 @@
     </div>
     @endforeach     
             <div style="text-align: center;">
-                {{-- {{ $glasses->links() }} --}}
+                {{ $glasses->links() }}
             </div>
         </div>
         </div>

@@ -58,9 +58,7 @@ Route::post('thanks','CartController@submitOrder');
 Route::get('/checkout', function () {
     return view('Users.checkout')->render();
 });
-// Route::delete('cart', function ($id) {
-    
-// });
+Route::resource('color', 'colorController');
 
 //hajar
 //specail offers & list orders for admin 

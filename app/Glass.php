@@ -22,10 +22,10 @@ class Glass extends Model
         return $this->belongsTo('App\Brand');
     }
 
-    public function color()
-    {
-        return $this->hasOne('App\Color');
-    }
+    // public function color()
+    // {
+    //     return $this->hasOne('App\Color');
+    // }
 
     public function favourite()
     {

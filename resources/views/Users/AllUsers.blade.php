@@ -3,7 +3,7 @@
 @section('content')
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
 		<h1 class="h2 mb-0 text-black-800">Users</h1>
-		<a href="/mail"  ><i class="fas fa-envelope fa-sm text-blue-80 "></i> Send Email To All Users</a>
+		<a href="/mail" class="btn btn-icons btn-rounded btn-outline-info"><i class="fas fa-envelope fa-sm text-blue-80 "></i> Send E-mail To All Users</a>
 	</div>
 		<table class="table table-striped">
 			<thead>

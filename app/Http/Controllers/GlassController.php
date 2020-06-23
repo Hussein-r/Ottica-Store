@@ -28,8 +28,13 @@ class GlassController extends Controller
     public function index()
     {
          $glasses = Glass::paginate(15);
-         $color = new Color();
-        return view('glass.index',compact('glasses','color'));
+         $color = new Color;
+         $faceShape =new FaceShape;
+         $frameShape =new FrameShape;
+         $material =new Material;
+         $fit =new Fit;
+        return view('glass.index',compact('glasses','color','faceShape','frameShape','material','fit'));
+    
     }
 
     /**
@@ -224,7 +229,7 @@ class GlassController extends Controller
          $secondaryMaterials=Material::all();
          $fits=Fit::all();
         /////////////////
-        $glasses = Glass::where('glass_type','=','eyeglass')->paginate(15);
+        $glasses = Glass::where('glass_type','=','eyeglass')->paginate(10);
         // $allcolors=Glass::where("glass_code",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
         return view('glass.eyeglass',[

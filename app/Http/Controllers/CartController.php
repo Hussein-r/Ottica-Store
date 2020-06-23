@@ -67,12 +67,6 @@ class CartController extends Controller
             ['order_id'=> $order->id],
             ['price'=> $total_price,'price_after_promocode'=> $total_price],
         ) ;
-
-        // dd($lenses);
-        // $order_price = new TotalPrice;
-        // $order_price->price = $total_price;
-        // $order_price->save();
-
         return view('cart',compact('glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color','total_price','use_type','discount'));
     }
 

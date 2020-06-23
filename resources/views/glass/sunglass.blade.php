@@ -67,8 +67,8 @@
                </div>
                  <!-- Product Description -->
         <div class="product-description ">
-            <span>{{$glass->code}}</span>
-            <a  href="single-product-details.html">
+            <span>{{$glass->glass_code}}</span>
+            <a  href="">
                 <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
             </a>
             <p style="margin-left:10%;" class="product-price"><strong class="price"><del>{{$glass->price_before_discount}}</del> 

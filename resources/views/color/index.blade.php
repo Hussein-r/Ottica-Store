@@ -2,27 +2,22 @@
 @section('content')
 <section class="container">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h2 mb-0 text-black-800">Glasses Brands </h1>
-    <a href="{{route('brand.create')}}" class="btn btn-icons btn-rounded btn-outline-info"  ><i class="fas fa-plus-square fa-sm text-blue-80 "></i> Add New Brand</a>
+        <h1 class="h2 mb-0 text-black-800">Colors</h1>
+    <a href="{{route('color.create')}}" class="btn btn-icons btn-rounded btn-outline-info"  ><i class="fas fa-plus-square fa-sm text-blue-80 "></i> Add New Color</a>
     </div>
     <table class="table table-striped">
         <thead>
-            <th>Brand</th>
-            <th>Image</th>
+            <th>Name</th>
             <th></th>
-    @forelse ($brands as $brand)
+    @forelse ($colors as $color)
     <tr class="table100-head">
-        <th>{{$brand->name}}</th>
-        <th>
-            <img style="height:150px ; width:150px;" class="img-thumbnail" src="/images/{{$brand->image}}" />
-        </th>
-        <th>
+        <th style="background-color: {{$color->name}} ">{{$color->name}}</th>
             <div class="row">
                 <div>   
-                    <a href="{{route('brand.edit', $brand->id)}}" class="btn btn-icons btn-rounded btn-success"><i class="fas fa-edit fa-sm text-green-80 "></i></a>
+                    <a href="{{route('color.edit', $color->id)}}" class="btn btn-icons btn-rounded btn-success"><i class="fas fa-edit fa-sm text-green-80 "></i></a>
                 </div>
             <div style="margin-left:20px">       
-            {!! Form::open(['route' => ['brand.destroy', $brand] ,'method' => 'delete' ]) !!}
+            {!! Form::open(['route' => ['color.destroy', $color] ,'method' => 'delete' ]) !!}
             {!! Form::submit('X',['class'=>'btn btn-icons btn-rounded btn-danger']) !!}
             {!! Form::close() !!}
             </div>
