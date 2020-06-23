@@ -77,6 +77,9 @@ Route::resource('ourbrands','OurBrandsController');
 Route::get('ourbrands/home','OurBrandsController@returnHome');
 //best seller home page
 Route::resource('bestseller','BestSellerController');
+//About Us home page
+Route::resource('contact','ContactUsController');
+
 //filteration 
 // Route::resource('filter','FilterationController');
 Route::post('/Sunfilters','FilterationController@show');

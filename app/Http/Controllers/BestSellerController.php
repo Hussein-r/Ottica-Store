@@ -114,8 +114,8 @@ class BestSellerController extends Controller
     public function create()
     {
         //
-        return view("About&Contact.about");
     }
+
 
     /**
      * Store a newly created resource in storage.
