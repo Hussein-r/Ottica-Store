@@ -7,19 +7,33 @@ use App\Glass;
 use App\Color;
 use App\Charts\AdminChart;
 use App\orderList;
+use App\FaceShape;
+use App\FrameShape;
+use App\Material;
+use App\Fit;
 class AdminController extends Controller
 {
     public function sun(){
         $glasses = Glass::where('glass_type','=','sunglass')->paginate(15);
         $color = new Color();
-        return view('glass.index',compact('glasses','color'));
-
+        $faceShape =new FaceShape;
+        $frameShape =new FrameShape;
+        $material =new Material;
+        $fit =new Fit;
+       return view('glass.index',compact('glasses','color','faceShape','frameShape','material','fit'));
     }
+
+
     public function eye(){
         $glasses = Glass::where('glass_type','=','eyeglass')->paginate(15);
         $color = new Color();
-        return view('glass.index',compact('glasses','color'));
-    
+        $faceShape =new FaceShape;
+        $frameShape =new FrameShape;
+        $material =new Material;
+        $fit =new Fit;
+        return view(users.index, $data)->render();
+       return view('glass.index',compact('glasses','color','faceShape','frameShape','material','fit'));
+   
     }
     public function adminHome(){
         // $orders = orderList::whereYear('created_at', date('Y'));

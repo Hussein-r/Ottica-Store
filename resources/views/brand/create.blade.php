@@ -2,7 +2,10 @@
 @extends('layouts.admin')
 @section('content')
 <section class="container">
-    <h1 style="text-align: center">Add New Brand</h1>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-black-800">Add New Brand</h1>
+        <a href="{{route('brand.index')}}" class="btn btn-icons btn-rounded btn-outline-info"><i class="fas fa-list fa-sm text-blue-80 "></i> All Brands</a>
+    </div>
     {!! Form::open(['route' => 'brand.store','files' => 'true','enctype'=>'multipart/form-data']) !!}
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -23,9 +26,9 @@
             </div>
         </div>
         <div><span class="text-white">{{$errors->first('image')}}</span></div>
-        
+        <div style="text-align: center">
         {!! Form::submit('Add Brand',['class'=>'btn btn-primary'])  !!}
-
-    {!! Form::close() !!}
+        {!! Form::close() !!}
+        </div>
 </section>
 @endsection

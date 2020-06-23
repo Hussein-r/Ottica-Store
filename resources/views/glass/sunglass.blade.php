@@ -27,6 +27,7 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="product-sorting d-flex mt-3" style="float:right;">
       {{-- <form action="/price" method="post">
           @csrf --}}
@@ -69,6 +70,61 @@
                           </div>
                       </div>
                   </div>
+=======
+
+    <!-- ----------------------------->
+ <div class="site-section ">
+ <div class="container">
+
+  <div class="row mb-5">
+
+  <div class="col-9">
+     <!-- ------ -->
+     <div id="filter_data" class="mt-3" style="border-top:1px solid black;">
+        <div class="product-sorting d-flex" style="text-align: right">
+            <strong>Sort by:</strong>
+            {{-- <form action="/price" method="post">
+                @csrf --}}
+            <select name="select" id="sortByselect">
+                <option value="" disabled selected>Sorting by Price</option>
+                <option value="low">Price: Low - High</option>
+                <option value="high">Price: High - Low</option>
+            </select>
+            <input type="hidden" id='glassType' value="sun" name="type"/>
+            {{-- <input type="submit" name="sort" value="sort"/>
+
+        </form> --}}
+        </div>
+
+        <!-- --------------- -->
+    <div id='filter_data'>
+        <div id="glassArea">
+               @foreach ($glasses as $glass)
+         <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;">
+                 <!-- Product Image -->
+              <div class="product-img" >
+                   <img src="images/{{$glass->images->first()->image}}" alt="">
+                      <!-- Favourite -->
+                     <div class="product-favourite">
+                         <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
+                        </div>
+               </div>
+                 <!-- Product Description -->
+        <div class="product-description ">
+            <span>{{$glass->glass_code}}</span>
+            <a  href="">
+                <h3 style="margin-left:10%;">{{$glass->brand->name}}</h6>
+            </a>
+            <p style="margin-left:10%;" class="product-price"><strong class="price"><del>{{$glass->price_before_discount}}</del> 
+                    {{$glass->price_after_discount}}</strong></p>
+                    <span><h5 class="text-danger" style="text-align:right;">{{round((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100) }} %</h5></span>
+
+            <!-- Hover Content -->
+            <div class="hover-content">
+                <!-- Add to Cart -->
+                <div class="add-to-cart-btn">
+                    <a href="/glass/{{$glass->id}}" class="btn essence-btn">View Details</a>
+>>>>>>> 75f46dddde970b22c74e67f2691dc3ef5b90313e
                 </div>
                 @endforeach  
               </div>
