@@ -32,7 +32,7 @@ Route::resource('comment','CommentsController');
 Route::resource('ColoredEye','ColoredEyesController');
 Route::post('/changeLenseColor','ContactLensesController@changeColor');
 Route::post('/storeLense','ClientOrdersController@storeLense');
-
+Route::get('about','HomeController@about');
 
 //mariam
 Route::get('/', 'HomeController@index')->name('home');

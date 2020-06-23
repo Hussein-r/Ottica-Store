@@ -69,7 +69,7 @@
             <div class="block-16">
               <figure>
                 <img src="/images/otticaProfile.jpg" alt="Image placeholder" class="img-fluid rounded">
-                <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+                <a href="/video/Ottica.mp4" class="play-button popup-vimeo"><span class="icon-play"></span></a>
 
               </figure>
             </div>
