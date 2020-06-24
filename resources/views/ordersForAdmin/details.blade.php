@@ -103,6 +103,70 @@
 			
 @endforeach
  @endif
+
+ <!-- --------------------------------- -->
+ @if ($lenseProducts->count())
+@foreach($lenseProducts  as $lenseProduct)
+<div class="single_product_thumb clearfix">
+@if ($lenseProduct->prescription_type =='image')
+            @foreach ($lensePrescriptionImages as $lensepresc)
+            @if($lenseProduct->product_id==$lensepresc->product_id &&$lenseProduct->order_id==$lensepresc->order_id)
+                <div class="col-md-12">
+                    <img src="/images/{{$lensepresc->image}}" alt="">	
+                </div>
+           @endif
+           @endforeach
+ @endif
+ 
+    @if ($lenseProduct->prescription_type =='table')
+          @foreach ($lensePrescription as $lensepresc)
+            @if($lenseProduct->product_id==$lensepresc->product_id &&$lenseProduct->order_id==$lensepresc->order_id)
+            <table>
+                <tr>
+                    <td> right bc</td>
+                    <td>  {{$lensepresc->right_bc}}    </td>
+                </tr>
+                <tr>
+                    <td> left bc</td>
+                    <td>   {{$lensepresc->left_bc}}    </td>
+                </tr>
+                <tr>
+                    <td> right power </td>
+                    <td> {{$lensepresc->right_power}} </td>
+                </tr>
+                <tr>
+                    <td>left power</td>
+                    <td>   {{$lensepresc->left_power}}   </td>
+                </tr>
+                <tr>
+                    <td> right dia </td>
+                    <td>  {{$lensepresc->right_dia}}   </td>
+                </tr>
+                <tr>
+                    <td> left dia</td>
+                    <td>   {{$lensepresc->left_dia}}   </td>
+                </tr>
+           </table>
+            @endif
+            @endforeach
+            @endif
+</div>
+
+<!-- Single Product Description -->
+
+<div class="single_product_desc clearfix">
+@foreach($lenses as $lense)
+            @if ($lense->id == $lenseProduct->product_id)
+				<h4>Lense Name: {{$lense->name}}</h4>
+            @endif
+            @endforeach
+        <div class="select-box mt-3 mb-30">
+         <img style="height:150px;width:500px;" class="mt-3 mb-3" src="/images/{{$lense->image}}" id="coloredEye">
+        </div>
+</div>			
+@endforeach
+ @endif
+
 </section>
 
 

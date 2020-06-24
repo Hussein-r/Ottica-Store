@@ -10,11 +10,13 @@
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">   
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="stylesheet" href="css/navstyle.css">
+    <link rel="stylesheet" href="/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="/css/navstyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/nunito-font.css">
+
     
   </head>
   <body>
@@ -50,7 +52,7 @@
                 <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
                 <li><a href="{{ url('ourLenses') }}">Our Lenses</a></li>
                 <li><a href="{{ url('offers') }}">Special Offers</a></li>
-                <li><a href="about">About</a></li>
+                <li><a href="{{ url('about') }}">About</a></li>
                 <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
                 <li>
                   <ul >

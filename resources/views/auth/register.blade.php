@@ -7,9 +7,8 @@
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Font-->
-	<link rel="stylesheet" type="text/css" href="css/nunito-font.css">
 	<!-- Main Style Css -->
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 </head>
 @section('content')
 <body class="form-v6">

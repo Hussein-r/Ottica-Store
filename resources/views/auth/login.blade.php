@@ -7,12 +7,13 @@
 	<meta charset="utf-8">
 	<title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="css/styling.css">
-    <link rel="stylesheet" type="text/css" href="css/nunito-font.css">
     <link rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+
 </head>
 <body class="form-v6">
-	<div class="page-content" style="margin-top:60px;">
+	<div class="page-content" style="margin-top:100px;">
 		<div class="form-v6-content">
 			<div class="form-left">
 				<img src="images/form-v6.jpg" alt="form">

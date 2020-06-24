@@ -100,6 +100,17 @@ class ListOrdersController extends Controller
     public function show($id)
     {
         //
+        $glassProducts=0;
+        $glassPrescriptionImages=0;
+        $glassPrescription=0;
+        $glasses=0;
+        $glassImgarr=0;
+        $glassQty=0;
+        $lenseProducts=0;
+        $lensePrescriptionImages=0;
+        $lensePrescription=0;
+        $lenses=0;
+
         $glassProducts=GlassProduct::where('order_id','=',$id)->get();
 
         foreach($glassProducts as $glass){
@@ -168,11 +179,9 @@ class ListOrdersController extends Controller
         'glassImgarr' =>$glassImgarr,
         'glassQty' => $glassQty,
         'lenseProducts'=>$lenseProducts,
-        // 'lensePrescriptionImages'=>$lensePrescriptionImages,
-        // 'lensePrescription'=>$lensePrescription,
-        // 'lenses'=>$lenses,
-
-
+        'lensePrescriptionImages'=>$lensePrescriptionImages,
+        'lensePrescription'=>$lensePrescription,
+        'lenses'=>$lenses,
         ]);
     }
 
