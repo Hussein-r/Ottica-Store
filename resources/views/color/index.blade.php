@@ -11,18 +11,19 @@
             <th></th>
     @forelse ($colors as $color)
     <tr class="table100-head">
-        <th style="background-color: {{$color->name}} ">{{$color->name}}</th>
+        <th>{{$color->name}}</th>
+        <th>
             <div class="row">
                 <div>   
-                    <a href="{{route('color.edit', $color->id)}}" class="btn btn-icons btn-rounded btn-success"><i class="fas fa-edit fa-sm text-green-80 "></i></a>
+                    <a href="{{route('color.edit', $color)}}" class="btn btn-icons btn-rounded btn-success"><i class="fas fa-edit fa-sm text-green-80 "></i></a>
                 </div>
-            <div style="margin-left:20px">       
-            {!! Form::open(['route' => ['color.destroy', $color] ,'method' => 'delete' ]) !!}
-            {!! Form::submit('X',['class'=>'btn btn-icons btn-rounded btn-danger']) !!}
-            {!! Form::close() !!}
-            </div>
+                {{-- <div style="margin-left:20px">       
+                {!! Form::open(['route' => ['color.destroy', $color] ,'method' => 'delete' ]) !!}
+                {!! Form::submit('X',['class'=>'btn btn-icons btn-rounded btn-danger']) !!}
+                {!! Form::close() !!}
+                </div> --}}
             
-        </div>
+            </div>
         </th>
     </tr>
         
