@@ -60,14 +60,14 @@
                 </h5>
             </div>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                     <div>
                             @if ($glassProduct->prescription_type =='image')
                                     @foreach ($glassPrescriptionImages as $glasspresc)
                                     @if($glassProduct->product_id==$glasspresc->product_id &&$glassProduct->order_id==$glasspresc->order_id)
                                         <div class="col-md-9 ml-5">
-                                            <img style="width:600px;height:300px;"src="/images/{{$glasspresc->image}}" alt="">	
+                                            <img style="width:820px;height:300px;"src="/images/{{$glasspresc->image}}" alt="">	
                                         </div>
                                     @endif
                                     @endforeach
@@ -131,7 +131,7 @@
             @if ($lenseProducts->count())
             @foreach($lenseProducts  as $lenseProduct)
                 <div class="card">
-                    <div class="card-header" id="headingOne">
+                    <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
                         @foreach($lenses as $lense)
                         <table>
@@ -150,7 +150,7 @@
                                     @endif
                                 @endforeach
                                 <td class="row-2">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                         
                                         See Client Prescription
                                     </button>     
@@ -162,14 +162,14 @@
                         </h5>
                     </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
                         <div class="card-body">
                             <div>
                             @if ($lenseProduct->prescription_type =='image')
                             @foreach ($lensePrescriptionImages as $lensepresc)
                             @if($lenseProduct->product_id==$lensepresc->product_id &&$lenseProduct->order_id==$lensepresc->order_id)
                                                 <div class="col-md-9 ml-5">
-                                                    <img style="width:600px;height:300px;"src="/images/{{$lensepresc->image}}" alt="">	
+                                                    <img style="width:820px;height:300px;"src="/images/{{$lensepresc->image}}" alt="">	
                                                 </div>
                                             @endif
                                             @endforeach
