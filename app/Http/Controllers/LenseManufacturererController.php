@@ -28,7 +28,7 @@ class LenseManufacturererController extends Controller
     public function index()
     {
         $manufacturerers = LenseManufacturerer::all();
-        return view('lenseBrand/index', ['manufacturerers'=>$manufacturerers])->render();
+        return view('lenseManufacturerer/index', ['manufacturerers'=>$manufacturerers])->render();
     }
     
     public function destroy($id)
