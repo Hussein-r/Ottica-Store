@@ -113,6 +113,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
                
                
     <!-- ##### Blog Wrapper Area End ##### -->
@@ -134,5 +137,5 @@
     <script src="js/active.js"></script>
 
 </body>
-
+@endsection
 </html>
