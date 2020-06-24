@@ -9,9 +9,11 @@ use App\LenseProductPrescriptions;
 use App\LenseProduct;
 use App\Glass;
 use App\lenses_images;
+use App\Color;
 use App\glass_images;
 use App\LensePrescriptionImage;
 use App\GlassPrescriptionImage;
+use App\TotalPrice;
 use Illuminate\Http\Request;
 
 class ListOrdersController extends Controller
@@ -26,8 +28,20 @@ class ListOrdersController extends Controller
         //
          //
          $orders = orderList::List()->get();
+         $prices=array();
+         foreach ($orders as $order)
+         {
+             array_push($prices,$order->id);
+         }
+         $totalprices=TotalPrice::find($prices);
         
-         return view('ordersForAdmin.listOrders',['orders' => $orders]);
+         return view('ordersForAdmin.listOrders',
+         [
+             'orders' => $orders,
+             'totalprices'=>$totalprices,
+         
+         
+         ]);
          
     }
     // public function details($id)
@@ -110,6 +124,7 @@ class ListOrdersController extends Controller
         $lensePrescriptionImages=0;
         $lensePrescription=0;
         $lenses=0;
+        $glassColors=0;
 
         $glassProducts=GlassProduct::where('order_id','=',$id)->get();
 
@@ -130,8 +145,16 @@ class ListOrdersController extends Controller
         foreach ($glassProducts as $product) {
             array_push($glassarr,$product->product_id);
         }
+        $glasses = Glass::find($glassarr); 
 
-        $glasses = Glass::find($glassarr);
+        $glassColor=array();
+        foreach ($glassProducts as $product) {
+            array_push($glassColor,$product->color_id);
+        }
+        $glassColors = Color::find($glassColor);
+
+
+    
         // dd($glasses);
 
         foreach($glasses as $glass){
@@ -171,7 +194,14 @@ class ListOrdersController extends Controller
         $lenses = ContactLenses::find($lensearr);
         // dd($lenses);
 
-        return view('ordersForAdmin.details',
+        $lenseColor=array();
+        foreach ($lenseProducts as $product) {
+            array_push($lenseColor,$product->color_id);
+        }
+        $lenseColors = Color::find($lenseColor);
+
+
+        return view('ordersForAdmin.orderDetail',
         ['glassProducts' => $glassProducts,
         'glassPrescriptionImages'=> $glassPrescriptionImages,
         'glassPrescription' => $glassPrescription ,
@@ -182,6 +212,8 @@ class ListOrdersController extends Controller
         'lensePrescriptionImages'=>$lensePrescriptionImages,
         'lensePrescription'=>$lensePrescription,
         'lenses'=>$lenses,
+        'glassColors'=>$glassColors,
+        'lenseColors'=>$lenseColors,
         ]);
     }
 
