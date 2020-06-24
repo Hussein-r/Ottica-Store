@@ -129,6 +129,9 @@
          {{-- <a href="{{route('lenses.index')}}" class="btn btn-primary center-block btn-lg">List All Lenses</a> --}}
         </div>
         </div> 
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/jquery-ui.js"></script>
+        <script src="/js/LenseColors.js"></script>
 
 @endsection
 
