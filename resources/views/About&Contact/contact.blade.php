@@ -88,9 +88,10 @@
               <span class="d-block text-primary h6 text-uppercase">Mansoura</span>
               <p class="mb-0">Second branch : El Mashya , Front of El Nile Club and El-Sallab Mosque.</p>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-
+</section>
+</body>
+@endsection

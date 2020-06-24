@@ -291,26 +291,31 @@ class ClientOrdersController extends Controller
         
         $price = TotalPrice::where('order_id','=',$id)->get();
         // dd($price);
-        foreach ($price as $item) {
-            $finalprice=$item->price_after_promocode;
-          }
+      
         //    dd($finalprice);
         $glassesProduct=GlassProduct::where('order_id','=',$id)->get();
+
         $lensesProduct=LenseProduct::where('order_id','=',$id)->get();
+        // $lensePrice=$lensesProduct->price;
             foreach ($glassesProduct as $product) {
                 array_push($glassesArray,$product->product_id);
+                
              }
             //  dd($glassesArray);
             //  dd($glassesProduct);
              foreach ($lensesProduct as $product) {
                 array_push($lensesArray,$product->product_id);
+                $lensePrice=$product->price;
              }
             //  dd($lensesArray);
+            foreach ($price as $item) {
+                $finalprice=$item->price_after_promocode+$lensePrice;
+              }
         $glasses=Glass::whereIn('id',$glassesArray)->get();
         // dd($glasses);
         $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
         // dd($lenses);
-        return view('ordersForClient.show',compact('glasses','lenses','finalprice'));
+        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensePrice'));
 
     }
 
@@ -368,9 +373,12 @@ class ClientOrdersController extends Controller
         // dd($stripe);
         // dd($request);
         // dd($request->all());
-
+        $order=orderList::find($order_id);
+        // dd($order);
         $id=$order_id;
+        // dd($id);
         $price = TotalPrice::where('order_id','=',$id)->get();
+        // dd($price);
         foreach ($price as $item) {
            $finalprice=$item->price_after_promocode;
          }
@@ -386,10 +394,12 @@ class ClientOrdersController extends Controller
             ]);
             
                 //  dd($charge);
-            // save this info to your database
+        
     
             // SUCCESSFUL
-            return back()->with('success_message', 'Thank you! Your payment has been accepted.');
+            $order->payment_state=1;
+            $order->save();
+            return redirect('/orderHistory');
         } catch (CardErrorException $e) {
             // save info to database for failed
             return back()->withErrors('Error! ' . $e->getMessage());
