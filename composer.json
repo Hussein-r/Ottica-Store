@@ -9,15 +9,19 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "cartalyst/stripe-laravel": "^12.0",
         "consoletvs/charts": "7.*",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.5",
+        "laravel/cashier": "^12.0",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "laravelcollective/html": "^6.1"
+        "laravelcollective/html": "^6.1",
+        "srmklive/paypal": "~1.0",
+        "symfony/http-foundation": "^5.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

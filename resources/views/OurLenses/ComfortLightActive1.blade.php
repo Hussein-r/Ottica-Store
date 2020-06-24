@@ -5640,7 +5640,7 @@ utagFiller.initialize();
             </div>
             <div style="opacity: 1;" data-material="RayBan">
             <a href='/rayban1'>  <div>
-                    <h4><img src="https://s7d5.scene7.com/is/image/TargetOptical/rayban_logo_black_2X?$g-jpg$&amp;scl=1" alt="logo Ray-ban"></h4></a>
+                  <h4> <img src="img/bg-img/rayban.png" alt="logo Ray-ban"></h4></a>
                     <p>I want something high-performing and iconic.</p>
                     <div class="line"></div>
                 </div>

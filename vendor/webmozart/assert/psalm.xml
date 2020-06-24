@@ -7,8 +7,15 @@
     phpVersion="7.3"
 >
     <projectFiles>
+<<<<<<< HEAD
+        <directory name="tests/static-analysis" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+=======
         <directory name="bin" />
         <directory name="tests/static-analysis" />
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     </projectFiles>
 
 </psalm>

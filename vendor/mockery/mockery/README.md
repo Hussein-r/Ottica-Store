@@ -34,6 +34,8 @@ to learn how to use Mockery.
 
 The current version can be seen at [docs.mockery.io](http://docs.mockery.io).
 
+<<<<<<< HEAD
+=======
 ## PHPUnit Integration
 
 Mockery ships with some helpers if you are using PHPUnit. You can extend the
@@ -42,6 +44,7 @@ class instead of `PHPUnit\Framework\TestCase`, or if you are already using a
 custom base class for your tests, take a look at the traits available in the
 [`Mockery\Adapter\Phpunit`](library/Mockery/Adapter/Phpunit) namespace.
 
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 ## Test Doubles
 
 Test doubles (often called mocks) simulate the behaviour of real objects. They are

@@ -47,14 +47,22 @@ class PrettyPageHandler extends Handler
     /**
      * The name of the custom css file.
      *
+<<<<<<< HEAD
+     * @var string
+=======
      * @var string|null
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      */
     private $customCss = null;
 
     /**
      * The name of the custom js file.
      *
+<<<<<<< HEAD
+     * @var string
+=======
      * @var string|null
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      */
     private $customJs = null;
 
@@ -518,8 +526,13 @@ class PrettyPageHandler extends Handler
     /**
      * Determine if the editor link should act as an Ajax request.
      *
+<<<<<<< HEAD
+     * @param string  $filePath
+     * @param int     $line
+=======
      * @param string $filePath
      * @param int    $line
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      *
      * @throws UnexpectedValueException If editor resolver does not return a boolean
      *
@@ -611,7 +624,11 @@ class PrettyPageHandler extends Handler
     /**
      * Adds a path to the list of paths to be searched for resources.
      *
+<<<<<<< HEAD
+     * @param  string $path
+=======
      * @param string $path
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      *
      * @throws InvalidArgumentException If $path is not a valid directory
      *
@@ -631,7 +648,11 @@ class PrettyPageHandler extends Handler
     /**
      * Adds a custom css file to be loaded.
      *
+<<<<<<< HEAD
+     * @param string $name
+=======
      * @param string|null $name
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      *
      * @return void
      */
@@ -643,8 +664,12 @@ class PrettyPageHandler extends Handler
     /**
      * Adds a custom js file to be loaded.
      *
+<<<<<<< HEAD
+     * @param  string $name
+=======
      * @param string|null $name
      *
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * @return void
      */
     public function addCustomJs($name)
@@ -667,7 +692,11 @@ class PrettyPageHandler extends Handler
      * way back to the first, enabling a cascading-type system of overrides for
      * all resources.
      *
+<<<<<<< HEAD
+     * @param  string $resource
+=======
      * @param string $resource
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      *
      * @throws RuntimeException If resource cannot be found in any of the available paths
      *
@@ -761,11 +790,17 @@ class PrettyPageHandler extends Handler
 
     /**
      * blacklist a sensitive value within one of the superglobal arrays.
+<<<<<<< HEAD
+     *
+     * @param string $superGlobalName The name of the superglobal array, e.g. '_GET'
+     * @param string $key             The key within the superglobal
+=======
      * Alias for the hideSuperglobalKey method.
      *
      * @param string $superGlobalName The name of the superglobal array, e.g. '_GET'
      * @param string $key             The key within the superglobal
      * @see hideSuperglobalKey
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      *
      * @return void
      */
@@ -775,6 +810,8 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
+=======
      * Hide a sensitive value within one of the superglobal arrays.
      *
      * @param string $superGlobalName The name of the superglobal array, e.g. '_GET'
@@ -787,13 +824,18 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * Checks all values within the given superGlobal array.
      *
      * Blacklisted values will be replaced by a equal length string cointaining
      * only '*' characters. We intentionally dont rely on $GLOBALS as it
      * depends on the 'auto_globals_jit' php.ini setting.
      *
+<<<<<<< HEAD
+     * @param array $superGlobal      One of the superglobal arrays
+=======
      * @param array  $superGlobal     One of the superglobal arrays
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
      * @param string $superGlobalName The name of the superglobal array, e.g. '_GET'
      *
      * @return array $values without sensitive data

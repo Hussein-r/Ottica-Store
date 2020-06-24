@@ -19,8 +19,11 @@ use phpDocumentor\Reflection\Type;
  * Value Object representing the 'self' type.
  *
  * Self, as a Type, represents the class in which the associated element was defined.
+<<<<<<< HEAD
+=======
  *
  * @psalm-immutable
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
  */
 final class Self_ implements Type
 {

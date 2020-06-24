@@ -25,7 +25,8 @@ class ColorController extends Controller
      */
     public function create()
     {
-        //
+    //    $color = new Color;
+       return view('color.create')->render();
     }
 
     /**
@@ -36,7 +37,13 @@ class ColorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+  
+        $color= Color::create($request->all());
+        return redirect()->route('color.index');
+
     }
 
     /**
@@ -58,7 +65,13 @@ class ColorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $color = Color::find($id);
+        // dd($color);
+        return view('color.edit', compact('color'));
+        // return view('color.edit', $color)->render();
     }
 
     /**
@@ -70,7 +83,10 @@ class ColorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $color = Color::find($id);
+        $color->name = $request->name;
+        $color->save();
+        return redirect()->route('color.index');
     }
 
     /**
@@ -81,6 +97,6 @@ class ColorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $color = Color::find($id);
     }
 }

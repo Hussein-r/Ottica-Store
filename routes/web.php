@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,7 +59,12 @@ Route::post('thanks','CartController@submitOrder');
 Route::get('/checkout', function () {
     return view('Users.checkout')->render();
 });
-Route::resource('color', 'colorController');
+Route::resource('color', 'ColorController');
+Route::resource('faceShape', 'FaceShapeController');
+Route::resource('frameShape', 'FrameShapeController');
+Route::resource('fit', 'FitController');
+Route::resource('material', 'MaterialController');
+
 
 //hajar
 //specail offers & list orders for admin 
@@ -103,7 +109,8 @@ Route::resource('LenseManufacturerer', 'LenseManufacturererController');
 Route::resource('/orderHistory', 'ClientOrdersController');
 Route::get('allLenses','ContactLensesController@list');
 Route::get('/search', 'ContactLensesController@search');
-Route::get('/sort/{value}', 'ContactLensesController@sort');
+Route::get('/sortt/{value}', 'ContactLensesController@sort');
+//// our lenses
 Route::get('/ourLenses', function () {return view('OurLenses.index');});
 Route::get('/ComfortLight1', function () {return view('OurLenses.ComfortLight1');});
 Route::get('/ComfortLightActive1', function () {return view('OurLenses.ComfortLightActive1');});
@@ -121,5 +128,11 @@ Route::get('/ComfortLight4', function () {return view('OurLenses.ComfortLight4')
 Route::get('/ComfortLightActive4', function () {return view('OurLenses.ComfortLightActive4');});
 Route::get('/ComfortLightPerformance4', function () {return view('OurLenses.ComfortLightPerformance4');});
 Route::get('/rayban4', function () {return view('OurLenses.rayban4');});
-
-
+///Paypal
+Route::get('paypal/ec-checkout','PayPalController@getExpressCheckout')->name('checkout');
+Route::get('paypal/ec-checkout-success','PayPalController@getExpressCheckoutSuccess')->name('paypal.success');
+Route::get('paypal/ec-checkout-cancel','PayPalController@getExpressCheckoutCancel')->name('paypal.cancel');
+// Route::get('payment', 'ClientOrdersController@payment');
+// Route::post('subscribe', 'ClientOrdersController@subscribe');
+Route::get('/payment/{id}', 'ClientOrdersController@payment');
+Route::post('/PaymentCheckout/{order_id}', 'ClientOrdersController@subscribe');

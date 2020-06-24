@@ -24,8 +24,11 @@ use phpDocumentor\Reflection\Type;
  *
  * See the documentation on late static binding in the PHP Documentation for more information on the difference between
  * static and self.
+<<<<<<< HEAD
+=======
  *
  * @psalm-immutable
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
  */
 final class Static_ implements Type
 {
