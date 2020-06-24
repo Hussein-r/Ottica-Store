@@ -49,8 +49,8 @@
                 <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
                 <li><a href="{{ url('ourLenses') }}">Our Lenses</a></li>
                 <li><a href="{{ url('offers') }}">Special Offers</a></li>
-                <li><a href="about">About</a></li>
-              <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
+                <li><a href="{{route('contact.create')}}">About</a></li>
+              <li class="active"><a href="{{route('contact.index')}}">Contact</a></li>
               </ul>
             {{--  <ul class="navbar-nav">
                 <!-- Authentication Links -->

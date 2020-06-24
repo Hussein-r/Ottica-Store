@@ -6,17 +6,17 @@
         <a href="{{route('color.index')}}" class="btn btn-icons btn-rounded btn-outline-info"><i class="fas fa-list fa-sm text-blue-80 "></i> All Colors</a>
     </div> 
     <div class="d-sm-flex align-items-center">
-    {!! Form::open(['route' => 'color.store']) !!}
+    {!! Form::model($color, ['route' => ['color.update',$color] ,'method' => 'PUT']) !!}
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Color</span>
             </div>    
-        {!! Form::text('name',null,['class'=>'form-control','aria-label'=>'Name', 'aria-describedby'=>'basic-addon1','placeholder'=>'new color'])  !!}
+        {!! Form::text('name',null,['class'=>'form-control','aria-label'=>'Name', 'aria-describedby'=>'basic-addon1','placeholder'=>'edit color'])  !!}
         </div>
 
         <div><span class="text-white">{{$errors->first('name')}}</span></div>
         
-        {!! Form::submit('Add Color',['class'=>'btn btn-primary'])  !!}
+        {!! Form::submit('Update',['class'=>'btn btn-primary'])  !!}
 
     {!! Form::close() !!}
     </div>

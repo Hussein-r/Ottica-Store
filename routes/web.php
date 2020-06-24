@@ -59,7 +59,12 @@ Route::post('thanks','CartController@submitOrder');
 Route::get('/checkout', function () {
     return view('Users.checkout')->render();
 });
-Route::resource('color', 'colorController');
+Route::resource('color', 'ColorController');
+Route::resource('faceShape', 'FaceShapeController');
+Route::resource('frameShape', 'FrameShapeController');
+Route::resource('fit', 'FitController');
+Route::resource('material', 'MaterialController');
+
 
 //hajar
 //specail offers & list orders for admin 
@@ -77,6 +82,13 @@ Route::resource('ourbrands','OurBrandsController');
 Route::get('ourbrands/home','OurBrandsController@returnHome');
 //best seller home page
 Route::resource('bestseller','BestSellerController');
+//About Us home page
+Route::resource('contact','ContactUsController');
+//contactUs home page
+Route::POST('/messages/create', 'ContactUsController@store');
+//messages for admin 
+Route::get('admin/messages','ContactUsController@adminShow');
+
 //filteration 
 // Route::resource('filter','FilterationController');
 Route::post('/Sunfilters','FilterationController@show');
