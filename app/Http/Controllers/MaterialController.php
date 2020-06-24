@@ -69,7 +69,9 @@ class MaterialController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shape = Material::find($id);
+        return view('material.edit', compact('shape'));
+        
     }
 
     /**
@@ -81,7 +83,14 @@ class MaterialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $shape = Material::find($id);
+        $shape->name = $request->name;
+        $shape->save();
+        return redirect()->route('material.index');
+
     }
 
     /**
@@ -92,6 +101,9 @@ class MaterialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shape = Material::find($id);
+        $shape->delete();
+        return redirect()->route('material.index');
+    
     }
 }

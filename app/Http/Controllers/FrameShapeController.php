@@ -67,7 +67,9 @@ class FrameShapeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shape = FrameShape::find($id);
+        return view('frameShape.edit', compact('shape'));
+        
     }
 
     /**
@@ -79,7 +81,14 @@ class FrameShapeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $shape = FrameShape::find($id);
+        $shape->name = $request->name;
+        $shape->save();
+        return redirect()->route('frameShape.index');
+
     }
 
     /**
@@ -90,6 +99,9 @@ class FrameShapeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shape = FrameShape::find($id);
+        $shape->delete();
+        return redirect()->route('frameShape.index');
+    
     }
 }

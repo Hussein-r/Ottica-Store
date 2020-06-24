@@ -582,7 +582,6 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         'App\\ColoredEye' => __DIR__ . '/../..' . '/app/ColoredEye.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\ContactLenses' => __DIR__ . '/../..' . '/app/ContactLenses.php',
         'App\\Contact_us' => __DIR__ . '/../..' . '/app/Contact_us.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\FaceShape' => __DIR__ . '/../..' . '/app/FaceShape.php',

@@ -48,12 +48,12 @@
    </td>
    @if ($order->admin_order_state == 'inactive')
    <td>
-  <a href="/processing/{{$order->id}}" class="btn btn-warning btn-lg"> make it processing </a>
+  <a href="/processing/{{$order->id}}" class="btn btn-info btn-lg"> make it processing </a>
    </td>
    @endif
    @if ($order->admin_order_state == 'processing')
    <td>
-  <a href="/done/{{$order->id}}" class="btn btn-warning btn-lg">   make it Out for delivery </a>
+  <a href="/done/{{$order->id}}" class="btn btn-success btn-lg">   make it Out for delivery </a>
    </td>
    @endif
    @if ($order->admin_order_state == 'out for delivery')

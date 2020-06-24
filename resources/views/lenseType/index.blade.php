@@ -12,7 +12,13 @@
     @forelse ($types as $type)
     <tr class="table100-head">
         <th>{{$type->name}}</th>
-        
+        <th>
+            <div style="margin-left:20px">       
+                {!! Form::open(['route' => ['lensetype.destroy', $type] ,'method' => 'delete' ]) !!}
+                {!! Form::submit('X',['class'=>'btn btn-icons btn-rounded btn-danger']) !!}
+                {!! Form::close() !!}
+                </div>
+        </th>
     </tr>
         
     @empty

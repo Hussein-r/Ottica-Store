@@ -67,7 +67,9 @@ class FitController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shape = Fit::find($id);
+        return view('fit.edit', compact('shape'));
+        
     }
 
     /**
@@ -79,7 +81,14 @@ class FitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $shape = Fit::find($id);
+        $shape->name = $request->name;
+        $shape->save();
+        return redirect()->route('fit.index');
+
     }
 
     /**
@@ -90,6 +99,9 @@ class FitController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shape = Fit::find($id);
+        $shape->delete();
+        return redirect()->route('fit.index');
+    
     }
 }

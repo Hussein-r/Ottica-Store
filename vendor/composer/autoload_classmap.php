@@ -14,7 +14,6 @@ return array(
     'App\\ColoredEye' => $baseDir . '/app/ColoredEye.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
-    'App\\ContactLenses' => $baseDir . '/app/ContactLenses.php',
     'App\\Contact_us' => $baseDir . '/app/Contact_us.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\FaceShape' => $baseDir . '/app/FaceShape.php',

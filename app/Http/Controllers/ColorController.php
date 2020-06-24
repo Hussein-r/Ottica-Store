@@ -65,9 +65,7 @@ class ColorController extends Controller
      */
     public function edit($id)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
+        
         $color = Color::find($id);
         // dd($color);
         return view('color.edit', compact('color'));
@@ -83,6 +81,9 @@ class ColorController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+        ]);
         $color = Color::find($id);
         $color->name = $request->name;
         $color->save();
