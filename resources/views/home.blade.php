@@ -1,7 +1,11 @@
 @extends('layouts.userNavbar')
 
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/styling.css">
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link rel="stylesheet" type="text/css" href="/css/nunito-font.css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 <div class="container">
     <div class="row justify-content-center">
         {{-- <div class="col-md-8"> --}}
@@ -64,11 +68,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        
-    </div>
-    
+            </div>
+            </div>
 </div>
 
 @endsection

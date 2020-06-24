@@ -28,10 +28,11 @@ function changeImage() {
 
 function changeNumber(number) {
     var myHtml =
-        "<input type='number' class='mb-1' id='duration' name='duration[]' placeholder='Please specify time by days'><input type='number' class='mb-2' id='price' name='price[]' placeholder='Price'>";
+        "<input type='number' id='duration' name='duration[]' placeholder='Please specify time by days'><input type='number' class='mb-2 ml-2' id='price' name='price[]' placeholder='Price'><br>";
     $("#useandprice").html(myHtml.repeat(number));
 }
 $("#numbers").change(function() {
+    console.log("hussein");
     changeNumber(this.value);
 });
 

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.userNavbar')
 
 @section('content')
 <!DOCTYPE html>
@@ -6,12 +6,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Login</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/nunito-font.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+
 </head>
 <body class="form-v6">
-	<div class="page-content">
+	<div class="page-content" style="margin-top:100px;">
 		<div class="form-v6-content">
 			<div class="form-left">
 				<img src="images/form-v6.jpg" alt="form">
@@ -41,14 +43,19 @@
                         {{ __('Remember Me') }}
                     </label>
                 </div>
-				<div class="form-row-last">
+				<div class="form-row">
                     <input type="submit" name="login" class="register" value="Login">
                     @if (Route::has('password.request'))
                         <a style="font-size:20px;" class="btn btn-link" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif
-				</div>
+                </div>
+                <div class="form-row">
+                <a style="font-size:20px;" class="btn btn-link" href="{{ route('register') }}">
+                    {{ __('Create a new account') }}
+                </a>
+                </div>
 			</form>
 		</div>
 	</div>

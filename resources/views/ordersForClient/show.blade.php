@@ -35,26 +35,23 @@
                     <h6 class="color-1 mb-0 change-color">Order Details</h6>
                 </div>
             </div>
-            <div class="row">
             @foreach($lenses as $lense)
-           
+            <div class="row">
                 <div class="col">
                     <div class="card card-2">
                         <div class="card-body">
                             <div class="media">
-                                <div class="sq align-self-center "> <img class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0" src="images/{{$lense->image}}" width="135" height="135" /> </div>
+                                <div class="sq align-self-center "> <img class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0"  src="/images/{{$lense->image}}" width="135" height="135" /> </div>
                                 <div class="media-body my-auto text-right">
                                     <div class="row my-auto flex-column flex-md-row">
-                                        <div class="col-auto my-auto"> <small>{{$lense->name}} </small></div>
-                                        <div class="col my-auto"> <small>Qty :  {{$lense->quantity}}</small></div>
+                                        <div class="col my-auto"> <small>{{$lense->name}} </small></div>
+                                        <div class="col my-auto"> <small>{{$lense->lense_purpose}}</small></div>
                                         <div class="col my-auto ">
-                                            <h6 class="mb-0">Price : {{$lense->price_after_discount}}</h6>
+                                            <h6 class="mb-0">Price : {{$lensePrice}}</h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr class="my-3 ">
-                            
                         </div>
                     </div>
                 </div>
@@ -74,9 +71,6 @@
                                 </div>
                                 <div class="media-body my-auto text-right">
                                     <div class="row my-auto flex-column flex-md-row">
-                                        <div class="col-auto my-auto ">
-                                            <h6 class="mb-0">  {{$glass->name}}</h6>
-                                        </div>
                                         <div class="col my-auto "> <small>{{$glass->glass_type}} </small></div>
                                         <div class="col my-auto "> <small>For {{$glass->gender}}</small></div>
                                         <div class="col my-auto ">

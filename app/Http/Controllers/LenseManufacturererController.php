@@ -25,6 +25,36 @@ class LenseManufacturererController extends Controller
         return redirect()->action("LenseManufacturererController@create");   
     }
    
+    public function index()
+    {
+        $manufacturerers = LenseManufacturerer::all();
+        return view('lenseManufacturerer/index', ['manufacturerers'=>$manufacturerers])->render();
+    }
     
+    public function destroy($id)
+    {
+    //    dd($id);
+        $manufacturerer = LenseManufacturerer::find($id);
+        // dd($brand);
+        if ($manufacturerer != null) {
+        $manufacturerer->delete();
+    }
     
+    return redirect()->action("LenseManufacturererController@index");   
+}
+    
+
+    public function update(Request $request, $id)
+    {
+        $manufacturerer = LenseManufacturerer::find($id);
+        $manufacturerer->name = $request->name;
+        $manufacturerer->save();
+        return redirect()->action('LenseManufacturererController@index');
+    }
+
+    public function edit($id)
+    {
+        $manufacturerer = LenseManufacturerer::find($id);
+        return view('LenseManufacturerer/edit', ['manufacturerer' =>$manufacturerer])->render();
+    }
    }

@@ -119,8 +119,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Best seller</span>
                     </div> 
-                    {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
-                    
+                    <input class="form-control"  name="best_seller" value="0" type="Hidden"></input>
+                    <input class="form-control" name="best_seller" value="1" type="checkbox" ></input>
                 </div>
                 
 
@@ -129,6 +129,9 @@
          {{-- <a href="{{route('lenses.index')}}" class="btn btn-primary center-block btn-lg">List All Lenses</a> --}}
         </div>
         </div> 
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/jquery-ui.js"></script>
+        <script src="/js/LenseColors.js"></script>
 
 @endsection
 

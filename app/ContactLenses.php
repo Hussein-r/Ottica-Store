@@ -23,6 +23,7 @@ class ContactLenses extends Model
         'duration',
         'price',
         'image',
+        'best_seller'
     ];
 
     public function brand()

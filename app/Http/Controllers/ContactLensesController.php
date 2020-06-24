@@ -67,18 +67,6 @@ class ContactLensesController extends Controller
 
     public function store(Request $request)
     {
-        // $data=$this->validate($request,[
-        //     'name' => 'required|unique:contact_lenses',
-        //     'quantity'=>'required|numeric',
-        //     'price_before_discount'=>'required|numeric',
-        //     'price_after_discount'=>'required|numeric|lt:price_before_discount',
-        //     'brand_id'=>'required|numeric',
-        //     'type_id'=>'required|numeric',
-        //     'manufacturerer_id'=>'required|numeric',
-        //     'color'=>'required',
-        //     'label'=>'required',
-        //     'description'=>'required'
-        // ]);
         $lense= ContactLenses::create($request->except(['image','duration','price']));
         if($files=$request->file('image')){
             $imageName = time().'.'.$request->image->extension();  
@@ -87,10 +75,10 @@ class ContactLensesController extends Controller
         }
             $lense->save();
             $color=$request->color;
-            // dd($color);
+         
             foreach($color as $subColor)
           {
-            //     dd($subColor);
+           
             $colorlense=new ColorLense();
             $colorlense->color_id=$subColor;
             $colorlense->lense_id=$lense->id;
@@ -175,7 +163,7 @@ class ContactLensesController extends Controller
         $sort = ContactLenses::all();
         $brands=LenseBrand::all();
         $types=LenseType::all();
-        $manufacturerers=LenseManufacturerer::all();
+        $manufacturers=LenseManufacturerer::all();
       
             if($value==1)
             {
@@ -201,7 +189,7 @@ class ContactLensesController extends Controller
             'lenses'=>$lenses,
             'brands' => $brands,
             'types' => $types,
-            'manufacturerers' => $manufacturerers,
+            'manufacturers' => $manufacturers,
            
             ]);
     }
@@ -251,13 +239,14 @@ class ContactLensesController extends Controller
     {   
         
         
-        $lense= ContactLenses::whereId($id)->update($request->except(['_method','_token','image','color']));
+        ContactLenses::whereId($id)->update($request->except(['_method','_token','image','duration','price','color','number_of_types']));
+        $lense=ContactLenses::where("id","=",$id)->firstOrFail();
         if($files=$request->file('image')){
             $imageName = time().'.'.$request->image->extension();  
             $request->image->move(public_path('images'), $imageName);
             $lense->image=$imageName;
         }
-        $lense.save();
+        $lense->save();
     
        
        $color=$request->color;
@@ -269,7 +258,16 @@ class ContactLensesController extends Controller
         $colorlense->lense_id=$id;
         $colorlense->save();
         }
-
+        $lenseTypes=LenseUseType::where("lense_id","=",$id)->delete();
+        for($i = 0;$i<($request->number_of_types);$i++)
+        {
+            $lenseusetype=new LenseUseType();
+            $lenseusetype->lense_id=$lense->id;
+            $lenseusetype->duration=$request->duration[$i];
+            $lenseusetype->price=$request->price[$i];
+            $lenseusetype->save();
+        }
+        
        
         return redirect()->action(
             'ContactLensesController@index'
@@ -280,7 +278,6 @@ class ContactLensesController extends Controller
     public function edit($id)
     {
         $lense = ContactLenses::find($id);
-       
         $brands=LenseBrand::all();
         $types=LenseType::all();
         $manufacturerers=LenseManufacturerer::all();

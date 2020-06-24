@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.userNavbar')
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +6,19 @@
 	<title>Sign Up</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- Font-->
 	<link rel="stylesheet" type="text/css" href="/css/nunito-font.css">
-	<!-- Main Style Css -->
     <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/navstyle.css">
+    <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" type="text/css" href="/css/nunito-font.css">
+	<!-- Font-->
+	
+	
 </head>
 @section('content')
 <body class="form-v6">
-	<div class="page-content">
+	<div class="page-content" style="margin-top:100px;">
 		<div class="form-v6-content">
 			<div class="form-left">
 				<img src="/images/form-v6.jpg" alt="form" >

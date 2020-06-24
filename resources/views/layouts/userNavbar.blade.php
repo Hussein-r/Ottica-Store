@@ -12,8 +12,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
     <link rel="stylesheet" href="/fonts/icomoon/style.css">
     <link rel="stylesheet" href="/css/aos.css">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="stylesheet" href="/css/navstyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/nunito-font.css">
+
     
   </head>
   <body>
@@ -49,59 +52,54 @@
                 <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
                 <li><a href="{{ url('ourLenses') }}">Our Lenses</a></li>
                 <li><a href="{{ url('offers') }}">Special Offers</a></li>
-                <li><a href="about">About</a></li>
-              <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
+                <li><a href="{{ url('about') }}">About</a></li>
+                <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
+                <li>
+                  <ul >
+                        <!-- Authentication Links -->
+                        @guest
+                          <div>
+                            <li class="d-inline-block ">
+                                <a href="{{ route('login') }}" >Login</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="d-inline-block ml-2">
+                                    <a href="{{ route('register') }}" >Register</a>
+                                </li>
+                            @endif
+                          </div>
+                        @else
+                          <div class="icons d-inline-block">
+                            <a href="{{url('/favourite')}}" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
+                            <a href="{{route('cart.index')}}" class="icons-btn d-inline-block bag">
+                              <span class="icon-shopping-bag"></span>
+                              <span class="number">2</span>
+                            </a>
+                          </div>
+                          <div class="dropdown d-inline-block">
+                            <a id="Dropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Dropdown">
+                              <a class="dropdown-item" href="{{route('user.show',Auth::user())}}">
+                                  {{ __('profile') }}
+                              </a>
+                              <a class="dropdown-item" href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                  {{ __('Logout') }}
+                              </a>
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  @csrf
+                              </form>
+                            </div>
+                          </div>
+                        @endguest
+                    </ul>
+                </li>
               </ul>
-            {{--  <ul class="navbar-nav">
-                <!-- Authentication Links -->
-                @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                @endif
-            @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle mr-2 d-none d-lg-inline text-gray-600" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-   
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('user.show',Auth::user())}}">
-                          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                            {{ __('profile') }}
-                        </a>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();">
-                          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-   
-                            {{ __('Logout') }}
-                        </a>
-   
-   
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-            @endguest
-             </ul>
-             --}}
             </nav>
           </div>
-          <div class="icons">
-          <a href="{{url('/favourite')}}" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
-            <a href="{{route('cart.index')}}" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
-            </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-          </div>
-          
         </div>
       </div>
     </div>
@@ -147,11 +145,10 @@
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/jquery-ui.js"></script>
 <script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/jquery.magnific-popup.min.js"></script>
 <script src="/js/aos.js"></script>
-
+<script src="{{ asset('js/app.js') }}" defer></script>
 <script src="/js/main.js"></script>
 <script src="/js/sunmain.js"></script>
 </html>
