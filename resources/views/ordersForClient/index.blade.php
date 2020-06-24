@@ -91,14 +91,25 @@
                     </td>
                    
                      @elseif($order->admin_order_state == 'processing')
-                    <td>
-                    <div class="add-to-cart-btn">
-                    <h3>Wait...!</h3>
+                     @if ($order->payment_state == 0)
+                     <td>
+                    <div  class="btn btn-warning">
+                      <a href="/payment/{{$order->id}}" type="submit">Payment</a>
                     </div>
                     </td>
                     <td>
                     <h3>Wait...!</h3>
                     </td>
+                    @elseif($order->payment_state == 1)
+                    <td>
+                    <div class="add-to-cart-btn">
+                    <h3>Done</h3>
+                    </div>
+                    </td>
+                    <td>
+                    <h3>Can't Cancel Order Now</h3>
+                    </td>
+                    @endif
                     @elseif($order->admin_order_state == 'out for delivery')
                     <td>
                     <div class="add-to-cart-btn">

@@ -54,10 +54,10 @@
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item"  href='/sort/1'>Newest</a>
-                        <a class="dropdown-item"  href='/sort/4'>Name</a>
-                        <a class="dropdown-item" href="/sort/2">Price: $ - $$</a>
-                        <a class="dropdown-item" href="/sort/3">Price: $$ - $</a>  
+                        <a class="dropdown-item"  href='/sortt/1'>Newest</a>
+                        <a class="dropdown-item"  href='/sortt/4'>Name</a>
+                        <a class="dropdown-item" href="/sortt/2">Price: $ - $$</a>
+                        <a class="dropdown-item" href="/sortt/3">Price: $$ - $</a>  
                     </div>
                 <div>
             </div>
