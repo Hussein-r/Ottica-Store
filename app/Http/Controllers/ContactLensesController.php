@@ -75,10 +75,10 @@ class ContactLensesController extends Controller
         }
             $lense->save();
             $color=$request->color;
-            // dd($color);
+         
             foreach($color as $subColor)
           {
-            //     dd($subColor);
+           
             $colorlense=new ColorLense();
             $colorlense->color_id=$subColor;
             $colorlense->lense_id=$lense->id;

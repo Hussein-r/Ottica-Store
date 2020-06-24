@@ -98,7 +98,7 @@
                     </div>
                     </td>
                     <td>
-                    <h3>Wait...!</h3>
+                    <h3>Can't Cancel Order Now</h3>
                     </td>
                     @elseif($order->payment_state == 1)
                     <td>
@@ -117,7 +117,7 @@
                     </div>
                     </td>
                     <td>
-                    <h3>Wait...!</h3>
+                    <h3>Can't Cancel Order Now</h3>
                     </td>
                     @endif
                   </tr>
