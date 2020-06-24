@@ -163,7 +163,7 @@ class ContactLensesController extends Controller
         $sort = ContactLenses::all();
         $brands=LenseBrand::all();
         $types=LenseType::all();
-        $manufacturerers=LenseManufacturerer::all();
+        $manufacturers=LenseManufacturerer::all();
       
             if($value==1)
             {
@@ -189,7 +189,7 @@ class ContactLensesController extends Controller
             'lenses'=>$lenses,
             'brands' => $brands,
             'types' => $types,
-            'manufacturerers' => $manufacturerers,
+            'manufacturers' => $manufacturers,
            
             ]);
     }
