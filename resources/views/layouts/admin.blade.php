@@ -372,13 +372,19 @@
       
               <!-- Topbar -->
               <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
                 <ul class="navbar-nav ml-auto">
                   <!-- Authentication Links -->
                   <li class="nav-item">
-                    <a href="" class="nav-link">
+                  <a href="{{url('admin/messages')}}" class="nav-link">
                       <i class="fas fa-envelope fa-fw"></i>
                     </a>
                   </li>
+                  <div class="topbar-divider d-none d-sm-block"></div>
+
                   @guest
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -413,9 +419,9 @@
                           </form>
                       </div>
                   </li>
-                  @endguest
                 </ul>
-      
+                  @endguest
+
               </nav>
               <!-- End of Topbar -->
               <main class="py-4">

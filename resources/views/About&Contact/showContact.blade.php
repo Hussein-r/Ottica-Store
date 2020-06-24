@@ -6,11 +6,8 @@
 
 
 <!-- -------------------------------------- -->
-<div class="site-section">
       <div class="container">
-        <div class="row mb-5">
-            <div class="site-blocks-table">
-              <table class="table table-bordered">
+              <table class="table table-striped">
                 <thead>
                   <tr>
                     <th class="product-thumbnail">Name</th>
@@ -39,7 +36,5 @@
               </table>
             </div>
           </div>
-          </div>
-        </div>
 <!-- --------------- -->
 @endsection

@@ -64,7 +64,7 @@
                     <p class="product-price">
                         <span class="old-price">{{$fav->glass->price_before_discount}}EGP</span> 
                         {{$fav->glass->price_after_discount}}EGP
-                        <span><h5 class="text-danger" style="text-align:right;">{{(($fav->glass->price_before_discount - $fav->glass->price_after_discount)/$fav->glass->price_before_discount)*100 }} %</h5></span>
+                        <span><h5 class="text-danger" style="text-align:right;">{{round((($fav->glass->price_before_discount - $fav->glass->price_after_discount)/$fav->glass->price_before_discount)*100) }} %</h5></span>
                     </p>
             
                     <!-- Hover Content -->
