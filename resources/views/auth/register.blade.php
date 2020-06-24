@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.userNavbar')
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 </head>
 @section('content')
 <body class="form-v6">
-	<div class="page-content">
+	<div class="page-content" style="margin-top:100px;">
 		<div class="form-v6-content">
 			<div class="form-left">
 				<img src="images/form-v6.jpg" alt="form" >

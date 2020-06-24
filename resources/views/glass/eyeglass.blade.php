@@ -1,9 +1,8 @@
-
- @extends('layouts.userNavbar')
+@extends('layouts.userNavbar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/css/aos.css">
     <link rel="stylesheet" href="/css/styling.css">
     <link rel="stylesheet" href="/css/core-style.css">
