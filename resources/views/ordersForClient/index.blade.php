@@ -78,9 +78,7 @@
 
                     @if ($order->admin_order_state == 'inactive')
                     <td>
-                    <div  class="btn btn-warning">
-                      <a href="/payment/{{$order->id}}" type="submit">Payment</a>
-                    </div>
+                    <h3>Wait...!</h3>
                     </td>
                     <td>
                     <form style ="margin:auto; width:40%;" action="{{route('orderHistory.destroy',$order->id)}}" method="POST">
