@@ -119,8 +119,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Best seller</span>
                     </div> 
-                    {!! Form::checkbox('best_seller', '1', null, ['class'=>'form-control']) !!}
-                    
+                    <input class="form-control"  name="best_seller" value="0" type="Hidden"></input>
+                    <input class="form-control" name="best_seller" value="1" type="checkbox" ></input>
                 </div>
                 
 
