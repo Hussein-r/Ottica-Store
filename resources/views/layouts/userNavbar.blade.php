@@ -49,7 +49,7 @@
                 <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
                 <li><a href="{{ url('ourLenses') }}">Our Lenses</a></li>
                 <li><a href="{{ url('offers') }}">Special Offers</a></li>
-                <li><a href="{{route('bestseller.create')}}">About</a></li>
+                <li><a href="about">About</a></li>
               <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
               </ul>
             {{--  <ul class="navbar-nav">
@@ -124,7 +124,7 @@
           <li>- <a href="/allLenses">CONTACT LENSES</a></li>
           <li>- <a href="/ourLenses">OUR LENSES</a></li>
           <li>- <a href="/offers">SPECIAL OFFERS</a></li>
-          <li>- <a href="#">ABOUT US</a></li>
+          <li>- <a href="about">ABOUT US</a></li>
           <li>- <a href="#">CONTACT US</a></li>
         </ul>
     </div>

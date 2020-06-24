@@ -13,9 +13,12 @@ declare(strict_types=1);
 
 namespace phpDocumentor\Reflection;
 
+<<<<<<< HEAD
+=======
 /**
  * @psalm-immutable
  */
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 interface Type
 {
     /**

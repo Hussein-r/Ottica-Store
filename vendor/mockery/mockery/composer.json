@@ -31,15 +31,23 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
+        "php": ">=5.6.0",
+=======
         "php": "^7.3.0",
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         "lib-pcre": ">=7.0",
         "hamcrest/hamcrest-php": "~2.0"
     },
     "require-dev": {
+<<<<<<< HEAD
+        "phpunit/phpunit": "~5.7.10|~6.5|~7.0|~8.0"
+=======
         "phpunit/phpunit": "^8.0.0 || ^9.0.0"
     },
     "conflict": {
         "phpunit/phpunit": "<8.0"
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     },
     "autoload": {
         "psr-0": {
@@ -53,7 +61,11 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
+            "dev-master": "1.3.x-dev"
+=======
             "dev-master": "1.4.x-dev"
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         }
     }
 }

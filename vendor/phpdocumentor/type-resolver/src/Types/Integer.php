@@ -15,11 +15,14 @@ namespace phpDocumentor\Reflection\Types;
 
 use phpDocumentor\Reflection\Type;
 
+<<<<<<< HEAD
+=======
 /**
  * Value object representing Integer type
  *
  * @psalm-immutable
  */
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
 final class Integer implements Type
 {
     /**

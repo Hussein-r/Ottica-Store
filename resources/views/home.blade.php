@@ -46,20 +46,20 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="product-item sm-height">
-                            <a href="" class="product-category">Women</a>
-                            <img src="images/model.jpg" alt="Image" class="img-fluid">
+                            <a href="/eyeglasses" class="product-category">Eyeglasses</a>
+                            <img src="images/mt6636_w2.jpg" alt="Image" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="product-item sm-height">
-                            <a href="#" class="product-category">Men</a>
-                            <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                            <a  href="/sunglasses" class="product-category">Sunglasses</a>
+                            <img src="images/coolwinkscom-eyeglasses-sunglasses-frames-buy-1-get-1-glasses-man-png-312_313.png" alt="Image" class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 ">
                         <div class="product-item sm-height">
-                            <a href="#" class="product-category">Kids</a>
-                            <img src="images/kid.jpg" alt="Image" class="img-fluid">
+                            <a href="/allLenses" class="product-category ">Lenses</a>
+                            <img src="images/89479373_494593801219205_7109747870906974208_n (2).jpg" alt="Image" class="img-fluid">
                         </div>
                     </div>
                 </div>

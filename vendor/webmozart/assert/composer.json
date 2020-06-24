@@ -21,8 +21,12 @@
         "phpunit/phpunit": "^4.8.36 || ^7.5.13"
     },
     "conflict": {
+<<<<<<< HEAD
+        "vimeo/psalm": "<3.9.1"
+=======
         "vimeo/psalm": "<3.9.1",
         "phpstan/phpstan": "<0.12.20"
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
     },
     "autoload": {
         "psr-4": {
@@ -31,8 +35,12 @@
     },
     "autoload-dev": {
         "psr-4": {
+<<<<<<< HEAD
+            "Webmozart\\Assert\\Tests\\": "tests/"
+=======
             "Webmozart\\Assert\\Tests\\": "tests/",
             "Webmozart\\Assert\\Bin\\": "bin/src"
+>>>>>>> 98dd4b87aba509854b5b11cb014f5f5075dbb62f
         }
     }
 }
