@@ -7,7 +7,7 @@ $.ajaxSetup({
 
 
 $(".filteration").change(function(){
-    // console.log("ajax");
+    console.log("ajax");
     // $('#filter_data').html('<div id="loading"></div>');
     // var action ='fetch_data';
     var brand =[];

@@ -158,42 +158,35 @@ class ContactLensesController extends Controller
 //// Sorttt
 
 
-    public function sort($value)
-    {
-        $sort = ContactLenses::all();
-        $brands=LenseBrand::all();
-        $types=LenseType::all();
-        $manufacturers=LenseManufacturerer::all();
-      
-            if($value==1)
-            {
-                $lenses=$sort->sortByDesc('created_at');
-                
-            }
-            else if($value==2)
-            {
-                $lenses=$sort->sortBy('price_after_discount');
-            }
-            else if($value==3)
-            {
-                $lenses=$sort->sortByDesc('price_after_discount');
-            }
-            else if ($value==4)
-            {
-                $lenses=$sort->sortBy('name');
-            }
+public function sort(Request $request)
+{
+    // dd($request->option);
+  
+    // dd($option);
+        if($request->option == 'newest'){
+            // dd('mmm');
+            
+            $lenses=ContactLenses::all()->sortByDesc('created_at');
+            // dd($sorted);
+        }
+        elseif($request->option == 'alphabet'){
+            // dd('mmm');
+            $lenses=ContactLenses::all()->sortBy('name');
+            // dd($sorted);
+        }
+        elseif($request->option == 'non-alphabet')
+        {
+            $lenses=ContactLenses::all()->sortByDesc('name');
+            
+        }
+        // dd($lenses);
+        //  return  response()->json(['lenses'=>$lenses,'option'=>$option]);
+   
+        return view( 'ContactLenses.sort',compact('lenses'));
+}
 
-      
-        return view(
-            'ContactLenses.allLenses',[
-            'lenses'=>$lenses,
-            'brands' => $brands,
-            'types' => $types,
-            'manufacturers' => $manufacturers,
-           
-            ]);
-    }
     
+
 
     public function destroy($id)
     {
@@ -298,3 +291,5 @@ class ContactLensesController extends Controller
     
 
 }
+
+
