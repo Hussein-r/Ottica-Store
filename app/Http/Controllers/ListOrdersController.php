@@ -28,18 +28,16 @@ class ListOrdersController extends Controller
         //
          //
          $orders = orderList::List()->get();
-         $prices=array();
-         foreach ($orders as $order)
-         {
-             array_push($prices,$order->id);
-         }
-         $totalprices=TotalPrice::find($prices);
+        //  $prices=array();
+        //  foreach ($orders as $order)
+        //  {
+        //      array_push($prices,$order->id);
+        //  }
+        //  $totalprices=TotalPrice::find($prices);
         
          return view('ordersForAdmin.listOrders',
          [
              'orders' => $orders,
-             'totalprices'=>$totalprices,
-         
          
          ]);
          
