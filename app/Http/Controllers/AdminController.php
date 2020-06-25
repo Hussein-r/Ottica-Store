@@ -31,7 +31,6 @@ class AdminController extends Controller
         $frameShape =new FrameShape;
         $material =new Material;
         $fit =new Fit;
-        return view(users.index, $data)->render();
        return view('glass.index',compact('glasses','color','faceShape','frameShape','material','fit'));
    
     }

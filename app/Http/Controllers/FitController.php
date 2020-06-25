@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Fit;
+use App\Glass;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -100,6 +101,10 @@ class FitController extends Controller
     public function destroy($id)
     {
         $shape = Fit::find($id);
+        $glass = Glass::where('fit_id',$shape->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
         $shape->delete();
         return redirect()->route('fit.index');
     

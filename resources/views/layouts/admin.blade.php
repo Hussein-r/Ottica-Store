@@ -249,19 +249,34 @@
                       </div>
                     </div>
                   </div>
-
-              <!-- Face shape -------------------------- -->
+                  <!-- Colors -------------------------- -->
 
                   <div class="collapse-item">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Face Shape</button>
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Colored Eye</button>
                       <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
-                        <h6 class="dropdown-header">Face Shape</h6>
-                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
-                        <a class="dropdown-item" href="{{route('brand.index')}}">All Shapes</a>
+                        <h6 class="dropdown-header">Eye Colors Images</h6>
+                        <a class="dropdown-item" href="{{route('ColoredEye.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('ColoredEye.index')}}">All Colored Eye </a>
+                      </div>
+                    </div>
+                  </div>
+
+              <!-- Lenses type -------------------------- -->
+
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Types</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Lenses Types</h6>
+                        <a class="dropdown-item" href="{{route('lensetype.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('lensetype.index')}}">All Types</a>
                       </div>
                     </div>
                   </div>
@@ -269,45 +284,33 @@
                   
                   <div class="collapse-item">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Frame Shape</button>
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Manufacturer</button>
                       <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                         <h6 class="dropdown-header">Glasses Frames</h6>
-                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
-                        <a class="dropdown-item" href="{{route('brand.index')}}">All Shapes</a>
+                        <a class="dropdown-item" href="{{route('LenseManufacturerer.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('LenseManufacturerer.index')}}">All Manufacturer</a>
                       </div>
                     </div>
                   </div>
                   
-                  <!-- Fit Size -------------------------- -->
+
+                  <!-- Add Types -------------------------- -->
                   
                   <div class="collapse-item">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Fit</button>
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Lenses Types</button>
                       <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
-                        <h6 class="dropdown-header">Fit Size</h6>
-                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
-                        <a class="dropdown-item" href="{{route('brand.index')}}">All Fits</a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Frame shape -------------------------- -->
-                  
-                  <div class="collapse-item">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Material</button>
-                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
-                        <h6 class="dropdown-header">Material</h6>
-                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
-                        <a class="dropdown-item" href="{{route('brand.index')}}">All Materias</a>
+                        <h6 class="dropdown-header">lenses Type</h6>
+                        <a class="dropdown-item" href="{{route('SingleVisionLense.create')}}">Single Vision </a>
+                        <a class="dropdown-item" href="{{route('ProgressiveVisionLense.create')}}">Progressive Vision </a>
+                        <a class="dropdown-item" href="{{route('BifocalLense.create')}}">Bifocal</a>
+                        
                       </div>
                     </div>
                   </div>

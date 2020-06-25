@@ -100,6 +100,10 @@ class FaceShapeController extends Controller
     public function destroy($id)
     {
         $shape = FaceShape::find($id);
+        $glass = Glass::where('face_shape_id',$shape->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
         $shape->delete();
         return redirect()->route('faceShape.index');
     

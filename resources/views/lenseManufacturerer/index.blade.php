@@ -13,7 +13,17 @@
     <tr class="table100-head">
         <th>{{$manufacturerer->name}}</th>
         <th>
-           
+            <div class="row">
+                <div>   
+                    <a href="{{route('LenseManufacturerer.edit', $manufacturerer)}}" class="btn btn-icons btn-rounded btn-success"><i class="fas fa-edit fa-sm text-green-80 "></i></a>
+                </div>
+                <div style="margin-left:20px">       
+                {!! Form::open(['route' => ['LenseManufacturerer.destroy', $manufacturerer] ,'method' => 'delete' ]) !!}
+                {!! Form::submit('X',['class'=>'btn btn-icons btn-rounded btn-danger']) !!}
+                {!! Form::close() !!}
+                </div>
+            
+            </div>
         </th> 
     </tr>
         

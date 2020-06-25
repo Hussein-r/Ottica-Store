@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Material;
+use App\Glass;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -102,6 +103,10 @@ class MaterialController extends Controller
     public function destroy($id)
     {
         $shape = Material::find($id);
+        $glass = Glass::where('material_id',$shape->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
         $shape->delete();
         return redirect()->route('material.index');
     

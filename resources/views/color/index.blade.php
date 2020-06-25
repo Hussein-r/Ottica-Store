@@ -17,11 +17,11 @@
                 <div>   
                     <a href="{{route('color.edit', $color)}}" class="btn btn-icons btn-rounded btn-success"><i class="fas fa-edit fa-sm text-green-80 "></i></a>
                 </div>
-                {{-- <div style="margin-left:20px">       
+                <div style="margin-left:20px">       
                 {!! Form::open(['route' => ['color.destroy', $color] ,'method' => 'delete' ]) !!}
                 {!! Form::submit('X',['class'=>'btn btn-icons btn-rounded btn-danger']) !!}
                 {!! Form::close() !!}
-                </div> --}}
+                </div>
             
             </div>
         </th>

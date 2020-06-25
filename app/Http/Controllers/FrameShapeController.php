@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\FrameShape;
+use App\Glass;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -100,6 +101,10 @@ class FrameShapeController extends Controller
     public function destroy($id)
     {
         $shape = FrameShape::find($id);
+        $glass = Glass::where('frame_shape_id',$shape->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
         $shape->delete();
         return redirect()->route('frameShape.index');
     

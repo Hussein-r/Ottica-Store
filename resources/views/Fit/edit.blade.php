@@ -2,7 +2,7 @@
 @section('content')
 <section class="container">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h2 mb-0 text-black-800">Add New Fit</h1>
+        <h1 class="h2 mb-0 text-black-800">Edit Fit</h1>
         <a href="{{route('fit.index')}}" class="btn btn-icons btn-rounded btn-outline-info"><i class="fas fa-list fa-sm text-blue-80 "></i> All Fits</a>
     </div> 
     <div class="d-sm-flex align-items-center">
