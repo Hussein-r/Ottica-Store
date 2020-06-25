@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\GlassProductPrescriptions;
 use App\LenseProductPrescriptions;
 use App\GlassPrescriptionImage;
+use App\LensePrescriptionImage;
 use App\GlassProduct;
 use App\LenseProduct;
 use App\User;
@@ -288,7 +289,11 @@ class ClientOrdersController extends Controller
         //
         $glassesArray=array();
         $lensesArray=array();
-        
+        $glassesProduct=0;
+        $lensesProduct=0;
+        $lensePrice=0;
+        $finalprice=0;
+
         $price = TotalPrice::where('order_id','=',$id)->get();
         // dd($price);
       
@@ -306,8 +311,10 @@ class ClientOrdersController extends Controller
              foreach ($lensesProduct as $product) {
                 array_push($lensesArray,$product->product_id);
                 $lensePrice=$product->price;
+                
              }
             //  dd($lensesArray);
+            
             foreach ($price as $item) {
                 $finalprice=$item->price_after_promocode+$lensePrice;
               }

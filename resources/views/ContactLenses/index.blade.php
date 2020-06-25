@@ -15,7 +15,7 @@
 <head>
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h2 mb-0 text-black-800">Lenses</h1>
-    <a href="{{route('glass.create')}}" class="btn btn-icons btn-rounded btn-outline-info"><i class="fas fa-glasses fa-sm text-blue-80 "></i> Add New Glass</a>
+    <a href="{{route('lenses.create')}}" class="btn btn-icons btn-rounded btn-outline-info"><i class="fas fa-glasses fa-sm text-blue-80 "></i> Add New Contact Lenses</a>
 </div>
     <table id="dtHorizontalExample" class="table table-striped table-responsive" width="100%" cellspacing="0">
         <thead>
