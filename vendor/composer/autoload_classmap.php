@@ -88,6 +88,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Role' => $baseDir . '/app/Role.php',
     'App\\SingleVision' => $baseDir . '/app/SingleVision.php',
     'App\\SpecialOffers' => $baseDir . '/app/SpecialOffers.php',
     'App\\TotalPrice' => $baseDir . '/app/TotalPrice.php',

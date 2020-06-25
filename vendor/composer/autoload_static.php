@@ -656,6 +656,7 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
         'App\\SingleVision' => __DIR__ . '/../..' . '/app/SingleVision.php',
         'App\\SpecialOffers' => __DIR__ . '/../..' . '/app/SpecialOffers.php',
         'App\\TotalPrice' => __DIR__ . '/../..' . '/app/TotalPrice.php',
