@@ -109,7 +109,7 @@ Route::resource('LenseManufacturerer', 'LenseManufacturererController');
 Route::resource('/orderHistory', 'ClientOrdersController');
 Route::get('allLenses','ContactLensesController@list');
 Route::get('/search', 'ContactLensesController@search');
-Route::get('/sortt/{value}', 'ContactLensesController@sort');
+Route::post('/Lensesort', 'ContactLensesController@sort');
 //// our lenses
 Route::get('/ourLenses', function () {return view('OurLenses.index');});
 Route::get('/ComfortLight1', function () {return view('OurLenses.ComfortLight1');});
