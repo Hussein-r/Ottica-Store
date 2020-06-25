@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Material;
+use App\Glass;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -69,7 +70,9 @@ class MaterialController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shape = Material::find($id);
+        return view('material.edit', compact('shape'));
+        
     }
 
     /**
@@ -81,7 +84,14 @@ class MaterialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $shape = Material::find($id);
+        $shape->name = $request->name;
+        $shape->save();
+        return redirect()->route('material.index');
+
     }
 
     /**
@@ -92,6 +102,13 @@ class MaterialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shape = Material::find($id);
+        $glass = Glass::where('material_id',$shape->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
+        $shape->delete();
+        return redirect()->route('material.index');
+    
     }
 }

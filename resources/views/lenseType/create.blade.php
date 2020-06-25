@@ -1,36 +1,25 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Lense Type</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" type="text/css" href="/css/nunito-font.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <style>
-    .small-middle-container{
-	margin: auto;
-	width: 40%;
-  }
-</style>
-</head>
-    <body  class="form-v6">
-    <h1 style="text-align: center">Add New Type</h1>
-      <div  class="small-middle-container" >
+<div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-black-800">Add New Type</h1>
+    <a href="{{route('lensetype.index')}}" class="btn btn-icons btn-rounded btn-outline-info"  ><i class="fas fa-list fa-sm text-blue-80 "></i> All Lenses Types</a>
+    </div>
+    <div class="d-sm-flex align-items-center">
+
             {!! Form::open(['route' => 'lensetype.store','files' => 'true' ]) !!}
                 <div class="input-group mb-3">
-                       
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Type</span>
+                    </div>
                     {!! Form::text('name',null,['class'=>'form-control','aria-label'=>'name', 'aria-describedby'=>'basic-addon1','placeholder'=>'Type Name'])  !!}
                 </div>
                 <div><span class="text">{{$errors->first('name')}}</span></div>
                  
         <div  style="text-align: center "> 
-         <button type="submit" class="btn btn-primary center-block btn-lg" >ADD</button>
-         <a href="{{route('lenses.create')}}" class="btn btn-primary center-block btn-lg">Cancel</a>
+         <button type="submit" class="btn btn-primary center-block btn-lg" >Add</button>
         </div>
-
-    </body>
-</html>
+      </div>
 @endsection
 
 

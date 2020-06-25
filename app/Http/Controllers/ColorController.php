@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Color;
+use App\Glass;
 
 class ColorController extends Controller
 {
@@ -65,9 +66,7 @@ class ColorController extends Controller
      */
     public function edit($id)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
+        
         $color = Color::find($id);
         // dd($color);
         return view('color.edit', compact('color'));
@@ -83,6 +82,9 @@ class ColorController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+        ]);
         $color = Color::find($id);
         $color->name = $request->name;
         $color->save();
@@ -98,5 +100,11 @@ class ColorController extends Controller
     public function destroy($id)
     {
         $color = Color::find($id);
+        $glass = Glass::where('color_id',$color->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
+        $color->delete();
+        return redirect()->route('color.index');
     }
 }

@@ -44,7 +44,6 @@ class FaceShapeController extends Controller
         $shape = new FaceShape;
         $shape->name = $request->name;
         $shape->save();
-        // $shape= FaceShape::create($request->all());
         return redirect()->route('faceShape.index');
 
     }
@@ -68,7 +67,9 @@ class FaceShapeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shape = FaceShape::find($id);
+        return view('faceShape.edit', compact('shape'));
+        
     }
 
     /**
@@ -80,7 +81,14 @@ class FaceShapeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $shape = FaceShape::find($id);
+        $shape->name = $request->name;
+        $shape->save();
+        return redirect()->route('faceShape.index');
+
     }
 
     /**
@@ -91,6 +99,13 @@ class FaceShapeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shape = FaceShape::find($id);
+        $glass = Glass::where('face_shape_id',$shape->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
+        $shape->delete();
+        return redirect()->route('faceShape.index');
+    
     }
 }

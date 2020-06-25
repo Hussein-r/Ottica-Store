@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\FrameShape;
+use App\Glass;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -67,7 +68,9 @@ class FrameShapeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shape = FrameShape::find($id);
+        return view('frameShape.edit', compact('shape'));
+        
     }
 
     /**
@@ -79,7 +82,14 @@ class FrameShapeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $shape = FrameShape::find($id);
+        $shape->name = $request->name;
+        $shape->save();
+        return redirect()->route('frameShape.index');
+
     }
 
     /**
@@ -90,6 +100,13 @@ class FrameShapeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shape = FrameShape::find($id);
+        $glass = Glass::where('frame_shape_id',$shape->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
+        $shape->delete();
+        return redirect()->route('frameShape.index');
+    
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Fit;
+use App\Glass;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -67,7 +68,9 @@ class FitController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shape = Fit::find($id);
+        return view('fit.edit', compact('shape'));
+        
     }
 
     /**
@@ -79,7 +82,14 @@ class FitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $shape = Fit::find($id);
+        $shape->name = $request->name;
+        $shape->save();
+        return redirect()->route('fit.index');
+
     }
 
     /**
@@ -90,6 +100,13 @@ class FitController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shape = Fit::find($id);
+        $glass = Glass::where('fit_id',$shape->id);
+        if ($glass->exists()){
+            $glass->delete();
+        }
+        $shape->delete();
+        return redirect()->route('fit.index');
+    
     }
 }

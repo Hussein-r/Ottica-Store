@@ -1,25 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Bifocal Lense</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="stylesheet" type="text/css" href="/css/nunito-font.css"/>
-    </head>
-    <body class="form-v6">
-    `<h1 style="text-align: center;">Bifocal Lenses</h1>
-        <h3 style="text-align: center;">Add New Lense</h3>
+<div class="container">
+    <h1 style="text-align: center;">Bifocal Lenses</h1>
 
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h4 class="h2 mb-0 text-black-800">Add New Lense</h4>
+    <a href="{{route('BifocalLense.index')}}" class="btn btn-icons btn-rounded btn-outline-info"  ><i class="fas fa-list fa-sm text-blue-80 "></i> All Bifocal Lenses</a>
+</div>
         <div class="container col-md-6">
             <form action="{{ route('BifocalLense.store') }}" id="mainform" method='post' class="mt-3">
                 @csrf
                 <div class="form-group">
-                    <label for="example">Lense Type</label>
                     <input type="text" name='lense_type' class="form-control" id="example" placeholder="Lense Type">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Lense Color</label>
                     <select class="form-control" name="color" id="exampleFormControlSelect1">
                     @foreach($colors as $color)
                         <option value="{{$color->id}}">{{$color->name}}</option>
@@ -27,11 +21,10 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="number" name='price' class="form-control" id="price">
+                    <input type="number" name='price' class="form-control" id="price" placeholder="Lense Prices">
                 </div>
                 <div class="d-flex align-items-center">
-                    <button type="submit" name="submit" value="5" id="submitorder"  class="btn btn-info">Add bifocal lense</button>
+                    <button type="submit" name="submit" value="5" id="submitorder"  class="btn btn-primary">Add bifocal lense</button>
                 </div>
             </form>
         </div>
