@@ -9,13 +9,13 @@
 			<div class="wrap-table100">
 				<div class="table100">
             <div class="col text-center">
-               
+{{--                
              <div class="btn-group" role="group"  aria-label="Basic example">
             <a href="{{route('orderslist.index')}}"  style="color:black" class="btn btn-link btn-lg" >All Orders </a>
             <a href="/orders/inactive" class="btn btn-link btn-lg" {{$orders->first()->admin_order_state == 'inactive' ? "style= background-color:lightsteelblue" :''}}>Inactive </a>
             <a href="/orders/processing"  class="btn btn-link btn-lg" {{$orders->first()->admin_order_state == 'processing' ? "style= background-color:lightsteelblue" :''}}>Processing </a>
             <a href="/orders/done"   class="btn btn-link btn-lg"  {{$orders->first()->admin_order_state == 'out for delivery' ? "style= background-color:lightsteelblue" :''}}>Delivered</a>
-					</div> 
+					</div>  --}}
                </div>
                <table class="table table-striped">
 						<thead>
