@@ -19,46 +19,58 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Auth::routes();
+Route::group(['middleware'=>['auth']],function(){
+    Route::resource('order','ClientOrdersController');
+    Route::resource('comment','CommentsController');
+    Route::post('/storeLense','ClientOrdersController@storeLense');
+    Route::get('/fav','GlassController@favourite');
+    Route::get('favourite', 'UserController@myFavourite');
+    Route::resource('cart','CartController');
+    Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
+    Route::post('/promocode', 'CartController@promocode');
+    Route::post('thanks','CartController@submitOrder');
+    Route::get('/checkout', function () {
+        return view('Users.checkout')->render();
+    });
 
+
+
+
+
+});
 Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
 Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
 Route::post('/mail', 'SendEmailController@send')->name('mail');
 Route::resource('user','UserController');
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
-Route::resource('order','ClientOrdersController');
 Route::resource('SingleVisionLense','SingleVisionController');
 Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
 Route::resource('BifocalLense','BifocalController');
-Route::resource('comment','CommentsController');
 Route::resource('ColoredEye','ColoredEyesController');
 Route::post('/changeLenseColor','ContactLensesController@changeColor');
-Route::post('/storeLense','ClientOrdersController@storeLense');
 Route::get('about','HomeController@about');
 
 //mariam
-Route::get('/', 'HomeController@index')->name('home');
+Route::group(['middleware'=>['auth']],function(){
+    Route::group(['middleware'=>['admin']],function(){
+        Route::get('/', 'HomeController@index')->name('home');
+    });
+});
 Route::get('/contact', function () {
     return view('contact')->render();
 });
+Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
 Route::get('eyeglasses','GlassController@eyeglasses');
-Route::get('/fav','GlassController@favourite');
 // Route::get('/price/{option}/{type}', 'GlassController@sort');
 Route::post('/price', 'GlassController@sort');
-Route::get('favourite', 'UserController@myFavourite');
 Route::get('admin/sunglasses','AdminController@sun');
 Route::get('admin/eyeglasses','AdminController@eye');
 Route::get('dashboard','AdminController@adminHome');
 Route::get('chart', 'AdminController@adminHome');
-Route::resource('cart','CartController');
-Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
-Route::post('/promocode', 'CartController@promocode');
-Route::post('thanks','CartController@submitOrder');
-Route::get('/checkout', function () {
-    return view('Users.checkout')->render();
-});
+
 Route::resource('color', 'ColorController');
 Route::resource('faceShape', 'FaceShapeController');
 Route::resource('frameShape', 'FrameShapeController');
@@ -109,7 +121,7 @@ Route::resource('LenseManufacturerer', 'LenseManufacturererController');
 Route::resource('/orderHistory', 'ClientOrdersController');
 Route::get('allLenses','ContactLensesController@list');
 Route::get('/search', 'ContactLensesController@search');
-Route::get('/sortt/{value}', 'ContactLensesController@sort');
+Route::post('/Lensesort', 'ContactLensesController@sort');
 //// our lenses
 Route::get('/ourLenses', function () {return view('OurLenses.index');});
 Route::get('/ComfortLight1', function () {return view('OurLenses.ComfortLight1');});
@@ -129,6 +141,7 @@ Route::get('/ComfortLightActive4', function () {return view('OurLenses.ComfortLi
 Route::get('/ComfortLightPerformance4', function () {return view('OurLenses.ComfortLightPerformance4');});
 Route::get('/rayban4', function () {return view('OurLenses.rayban4');});
 ///Paypal
+Route::group(['middleware'=>['auth']],function(){
 Route::get('paypal/ec-checkout','PayPalController@getExpressCheckout')->name('checkout');
 Route::get('paypal/ec-checkout-success','PayPalController@getExpressCheckoutSuccess')->name('paypal.success');
 Route::get('paypal/ec-checkout-cancel','PayPalController@getExpressCheckoutCancel')->name('paypal.cancel');
@@ -136,3 +149,4 @@ Route::get('paypal/ec-checkout-cancel','PayPalController@getExpressCheckoutCance
 // Route::post('subscribe', 'ClientOrdersController@subscribe');
 Route::get('/payment/{id}', 'ClientOrdersController@payment');
 Route::post('/PaymentCheckout/{order_id}', 'ClientOrdersController@subscribe');
+});

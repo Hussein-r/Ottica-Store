@@ -36,14 +36,6 @@
    <td >  {{$order->user->name}} </td>
    <td >    {{$order->phone}}     </td>
    <td >        {{$order->address}}   </td>
-   <td>
-         {{-- @foreach($totalprices as $price)
-         @if($order->id == $price->order_id)
-         {{$price->price_after_promocode}}
-         @endif
-         @endforeach --}}
-
-   </td>
    <td >
   <a href="{{route('orderslist.show',$order->id)}}" class="btn btn-link btn-lg"> Click to more details </a>
    </td>

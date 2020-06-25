@@ -16,7 +16,7 @@ class FitController extends Controller
     public function index()
     {
         $shapes = Fit::all();
-        return view('fit.index', compact('shapes'));
+        return view('Fit.index', compact('shapes'));
         
     }
 
@@ -27,7 +27,7 @@ class FitController extends Controller
      */
     public function create()
     {
-        return view('fit.create')->render();
+        return view('Fit.create')->render();
         
     }
 
