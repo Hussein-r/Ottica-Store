@@ -152,6 +152,12 @@ class CartController extends Controller
     }
 
     public function submitOrder(Request $request){
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+        ]);
         // dd($request);
         $order = orderList::where([
             ['user_id',Auth::id()],
