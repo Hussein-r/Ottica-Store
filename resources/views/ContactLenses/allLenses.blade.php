@@ -58,67 +58,64 @@
         </div>
     </div>
 </div>
-<div class="site-section ">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-9">
-                <div id="filter_data" style="float:right;" >
-                    <div id="sorted_data">
-                        @foreach ($lenses as $lense)
-                        <div class="single-product-wrapper col-md-9 mt-6 col-4 h-30 border p-4" style="display:inline-block;">
-                            <div class="product-img" >
-                                <img src="images/{{$lense->image}}" alt="">
-                            </div>
-                            <div class="product-description">
-                                <span>{{$lense->name}}</span>
-
-                                <a href="single-product-details.html">
-                                    <h3 >{{$lense->brand->name}}</h6>
-                                </a>
-                                <ul>
-                                @foreach ($lense->lenseType as $lensetype)
-                                    <li> {{$lensetype->duration}} Days &emsp; For {{$lensetype->price}} EGP</li>
-                                @endforeach
-                                </ul>
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="/lenses/{{$lense->id}}" class="btn essence-btn">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach 
-                  </div> 
+<div class="container " style="width: 100%; overflow: hidden;">
+    <div class="col-md-3 order-2 mb-5 mb-md-0 " style="float: left;display:inline-block;">
+        <div class="border p-4 rounded mb-4 filteration">
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">Brand</h3>
+            <ul class="list-unstyled mb-0" >
+            @foreach($brands as $brand)
+            <li class="mb-1"> <input id="brand" type="checkbox" value="{{$brand->id}}"><span> {{$brand->name}}</span></li>
+            @endforeach 
+            </ul>
+        </div>
+        <div class="border p-4 rounded mb-4 filteration">
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">Types</h3>
+            <ul class="list-unstyled mb-0">
+            @foreach($types as $type)
+                <li class="mb-1"> <input type="checkbox"  id="type"  value="{{$type->id}}"><span> {{$type->name}}</span></li>
+            @endforeach 
+            </ul>
+        </div>
+        <div class="border p-4 rounded mb-4 filteration">
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">manufacturers</h3>
+            <ul class="list-unstyled mb-0" >
+            @foreach($manufacturers as $manufacturer)
+                <li class="mb-1"> <input type="checkbox" id="manufacturer" value="{{$manufacturer->id}}"><span> {{$manufacturer->name}}</span></li>
+            @endforeach 
+            </ul>
+        </div>
+    </div>
+    <div id="filter_data" class="col-md-9" style="display:inline-block;float:right;" >
+     <div id="sorted_data">
+            @foreach ($lenses as $lense)
+            <div class="single-product-wrapper mt-6 border p-4" style="display:inline-block;height:400px;width:255px;">
+                <div class="product-img h-60" >
+                    <img style="height:200px;" src="images/{{$lense->image}}" alt="">
+                    <div class="product-favourite">
+                        <a onclick="return(updateFavorite({{$lense->id}},this))" class="favme fa fa-heart"></a>
+                    </div>
                 </div>
-                <div class="col-md-4 order-2 mb-5 mb-md-0 " style="float:left;display:inline:block;">
-                    <div class="border p-4 rounded mb-4 filteration">
-                        <h3 class="mb-3 h6 text-uppercase text-black d-block">Brand</h3>
-                        <ul class="list-unstyled mb-0" >
-                        @foreach($brands as $brand)
-                        <li class="mb-1"> <input id="brand" type="checkbox" value="{{$brand->id}}"><span> {{$brand->name}}</span></li>
-                        @endforeach 
-                        </ul>
-                    </div>
-                    <div class="border p-4 rounded mb-4 filteration">
-                        <h3 class="mb-3 h6 text-uppercase text-black d-block">Types</h3>
-                        <ul class="list-unstyled mb-0">
-                        @foreach($types as $type)
-                            <li class="mb-1"> <input type="checkbox"  id="type"  value="{{$type->id}}"><span> {{$type->name}}</span></li>
-                        @endforeach 
-                        </ul>
-                    </div>
-                    <div class="border p-4 rounded mb-4 filteration">
-                        <h3 class="mb-3 h6 text-uppercase text-black d-block">manufacturers</h3>
-                        <ul class="list-unstyled mb-0" >
-                        @foreach($manufacturers as $manufacturer)
-                            <li class="mb-1"> <input type="checkbox" id="manufacturer" value="{{$manufacturer->id}}"><span> {{$manufacturer->name}}</span></li>
-                        @endforeach 
-                        </ul>
+                <div class="product-description">
+                    <span>{{$lense->name}}</span>
+
+                    <a href="single-product-details.html">
+                        <h3 >{{$lense->brand->name}}</h6>
+                    </a>
+                    <ul>
+                    @foreach ($lense->lenseType as $lensetype)
+                        <li> {{$lensetype->duration}} Days &emsp; For {{$lensetype->price}} EGP</li>
+                    @endforeach
+                    </ul>
+                    <div class="hover-content">
+                        <!-- Add to Cart -->
+                        <div class="add-to-cart-btn">
+                            <a href="/lenses/{{$lense->id}}" class="btn essence-btn">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            @endforeach  
+      </div>
     </div>
 </div>
 </section>
