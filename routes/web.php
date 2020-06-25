@@ -51,10 +51,15 @@ Route::post('/changeLenseColor','ContactLensesController@changeColor');
 Route::get('about','HomeController@about');
 
 //mariam
-Route::get('/', 'HomeController@index')->name('home');
+Route::group(['middleware'=>['auth']],function(){
+    Route::group(['middleware'=>['admin']],function(){
+        Route::get('/', 'HomeController@index')->name('home');
+    });
+});
 Route::get('/contact', function () {
     return view('contact')->render();
 });
+Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
