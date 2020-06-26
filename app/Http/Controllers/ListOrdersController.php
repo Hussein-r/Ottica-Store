@@ -198,6 +198,7 @@ class ListOrdersController extends Controller
         }
         $lenseColors = Color::find($lenseColor);
 
+        // dd($glassPrescriptionImages);
 
         return view('ordersForAdmin.orderDetail',
         ['glassProducts' => $glassProducts,

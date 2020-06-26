@@ -15,7 +15,6 @@
 								<th class="column1">Client name</th>
 								<th class="column1">Phone</th>
 								<th class="column1">Address</th>
-                        <th class="column1">Total Price</th>
 								<th class="column1">Order description</th>
                      <th class="column1">Order State </th>
 							</tr>
