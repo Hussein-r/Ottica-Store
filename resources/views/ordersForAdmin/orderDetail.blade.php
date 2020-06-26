@@ -47,10 +47,12 @@
                              @endif
                         @endforeach
                         <td class="row-4">
+                        @if ($glassProduct->category != "no prescription")
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 
                                 See Client Prescription
-                            </button>     
+                            </button> 
+                        @endif    
                         </td>
                   </tr>
                   </table>
@@ -149,10 +151,11 @@
                                     @endif
                                 @endforeach
                                 <td class="row-2">
+                                 @if ($lenseProduct->category != 1)
                                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                        
                                         See Client Prescription
-                                    </button>     
+                                    </button> 
+                                 @endif    
                                 </td>
                         </tr>
                         </table>
