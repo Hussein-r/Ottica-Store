@@ -14,7 +14,10 @@ use Illuminate\Http\Request;
 
 class ContactLensesController extends Controller
 {
-    // 
+    public function __construct()
+    {
+        $this->middleware('adminaccess')->except(['show','list','sort','changeColor']);
+    }
 
  /**
      * Display a listing of the resource.
