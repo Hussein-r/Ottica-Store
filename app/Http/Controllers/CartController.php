@@ -36,7 +36,7 @@ class CartController extends Controller
             ['user_order_state',0],
             ['admin_order_state','inactive']
         ]);
-// dd($order);
+
         if($order->exists()){
             $order = $order->first();
         $glasses = GlassProduct::crossJoin('glasses','glasses.id','=','order_glasses_products.product_id')
@@ -45,7 +45,7 @@ class CartController extends Controller
         $brand = new Brand;
         $color = new Color;
         $image = new glass_images;
-
+// dd($glasses);
         $lenses = LenseProduct::crossJoin('contact_lenses','contact_lenses.id','=','order_lenses_products.product_id')
         ->where('order_id',$order->id)
         ->get();
@@ -82,7 +82,7 @@ class CartController extends Controller
             ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
-        ])->firstOrFail();
+        ])->first();
 
         if ($type == 'glass') {
             $product = GlassProduct::where([

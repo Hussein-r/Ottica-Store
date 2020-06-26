@@ -85,7 +85,7 @@
                         <h2 class="text text-black">{{$brand->find($glass->brand_id)->name }}</h2> <span class="text-black">{{$glass->glass_type}} <span style="color: {{$color->find($glass->color_id)->name}}">{{$color->find($glass->color_id)->name}}</span>
                         </a>
                       </td>
-                      <td>{{$glass->price_before_discount}}</td>
+                      <td>{{$glass->price_before_discount + $glass->price - $glass->price_after_discount}}</td> 
                       <td class="text text-danger">{{round(((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100))}} %</td>
                       @if ($glass->glass_type == 'sunglass')
                         <td>{{$glass->glass_type}}</td>
@@ -94,7 +94,7 @@
                           <td>eyeglass Frame</td>
                         @else
                           @if ($glass->category != 'no prescription')
-                              <td>eyeglass Frame with Lenses 
+                              <td>eyeglass Frame with Lenses {{$glass->category}}
                                 {{-- <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">
                                   Lenses</button> --}}
                               </td> 
