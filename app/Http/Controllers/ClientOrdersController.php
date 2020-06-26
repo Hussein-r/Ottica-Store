@@ -316,7 +316,7 @@ class ClientOrdersController extends Controller
             //  dd($lensesArray);
             
             foreach ($price as $item) {
-                $finalprice=$item->price_after_promocode+$lensePrice;
+                $finalprice=$item->price_after_promocode;
               }
         $glasses=Glass::whereIn('id',$glassesArray)->get();
         // dd($glasses);
