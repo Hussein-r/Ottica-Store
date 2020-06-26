@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class SpecialOffersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('adminaccess')->except('list');
+    }
     /**
      * Display a listing of the resource.
      *
