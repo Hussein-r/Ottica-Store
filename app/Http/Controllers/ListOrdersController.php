@@ -34,6 +34,7 @@ class ListOrdersController extends Controller
         //      array_push($prices,$order->id);
         //  }
         //  $totalprices=TotalPrice::find($prices);
+        // dd($orders);
         
          return view('ordersForAdmin.listOrders',
          [
@@ -198,6 +199,7 @@ class ListOrdersController extends Controller
         }
         $lenseColors = Color::find($lenseColor);
 
+        // dd($glassPrescriptionImages);
 
         return view('ordersForAdmin.orderDetail',
         ['glassProducts' => $glassProducts,

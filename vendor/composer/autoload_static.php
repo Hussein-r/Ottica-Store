@@ -576,6 +576,7 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
     public static $classMap = array (
         'App\\Bifocal' => __DIR__ . '/../..' . '/app/Bifocal.php',
         'App\\Brand' => __DIR__ . '/../..' . '/app/Brand.php',
+        'App\\Charts\\OrderChart' => __DIR__ . '/../..' . '/app/Charts/OrderChart.php',
         'App\\Color' => __DIR__ . '/../..' . '/app/Color.php',
         'App\\ColorLense' => __DIR__ . '/../..' . '/app/ColorLense.php',
         'App\\ColoredEye' => __DIR__ . '/../..' . '/app/ColoredEye.php',
@@ -631,6 +632,7 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         'App\\Http\\Controllers\\SpecialOffersController' => __DIR__ . '/../..' . '/app/Http/Controllers/SpecialOffersController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AdminAccess' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminAccess.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckAdmin.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

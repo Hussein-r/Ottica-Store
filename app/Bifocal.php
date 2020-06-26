@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Bifocal extends Model
 {
+    use SoftDeletes;
     //
     protected $table = 'bifocal_lenses';
     public function color()

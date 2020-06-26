@@ -439,62 +439,63 @@ return view('glass.filteredSunglass',compact('glasses'));
     {
         //lenses_filteration
         // dd($request->type);
-// dd($request);
-if (!is_null($request->brand))
-{
-  $brandArr=array();
-  $brandArr=$request->brand;
-}else{
-  $brandArr=array();
-  $lensesBrands=LenseBrand::all();
-  foreach($lensesBrands as $brand)
-  {
-    array_push($brandArr,$brand->id);
-  }
+            // dd($request);
+            if (!is_null($request->brand))
+            {
+              $brandArr=array();
+              $brandArr=$request->brand;
+            }else{
+              $brandArr=array();
+              $lensesBrands=LenseBrand::all();
+              foreach($lensesBrands as $brand)
+              {
+                array_push($brandArr,$brand->id);
+              }
 
-}
-// dd($brandArr);
-// /////
-if (!is_null($request->type))
-{
-  $typeArr=array();
-  $typeArr=$request->type;
-}else{
-  $typeArr=array();
-  $lensesTypes=LenseType::all();
-  foreach($lensesTypes as $type)
-  {
-    array_push($typeArr,$type->id);
-  }
-}
-if (!is_null($request->manufacturer))
-{
-  $manufacturerArr=array();
-  $manufacturerArr=$request->manufacturer;
-}else{
-  $manufacturerArr=array();
-  $lenseManufacturer=LenseManufacturerer::all();
-  foreach($lenseManufacturer as $manufacturer)
-  {
-    array_push($manufacturerArr,$manufacturer->id);
-  }
-}
-if (!is_null($request->duration))
-{
-  $durationArr=array();
-  $durationArr=$request->duration;
-}else{
-  $durationArr=array();
-  $durationArr=[1,30,90,365];
-}
-          $lenses=ContactLenses::whereIn('brand_id',$brandArr)
-          ->whereIn('type_id',$typeArr)
-          ->whereIn('manufacturerer_id',$manufacturerArr)
-          ->whereIn('duration',$durationArr)
-          ->get();
-          // dd($lenses);
-        
-         return view('ContactLenses.filteredLenses',compact('lenses'));
+            }
+            // dd($brandArr);
+            // /////
+            if (!is_null($request->type))
+            {
+              $typeArr=array();
+              $typeArr=$request->type;
+            }else{
+              $typeArr=array();
+              $lensesTypes=LenseType::all();
+              foreach($lensesTypes as $type)
+              {
+                array_push($typeArr,$type->id);
+              }
+            }
+            // dd($typeArr);
+            if (!is_null($request->manufacturer))
+            {
+              $manufacturerArr=array();
+              $manufacturerArr=$request->manufacturer;
+            }else{
+              $manufacturerArr=array();
+              $lenseManufacturer=LenseManufacturerer::all();
+              foreach($lenseManufacturer as $manufacturer)
+              {
+                array_push($manufacturerArr,$manufacturer->id);
+              }
+            }
+            // dd($manufacturerArr);
+            // if (!is_null($request->duration))
+            // {
+            //   $durationArr=array();
+            //   $durationArr=$request->duration;
+            // }else{
+            //   $durationArr=array();
+            //   $durationArr=[1,30,90,365];
+            // }
+                      $lenses=ContactLenses::whereIn('brand_id',$brandArr)
+                      ->whereIn('type_id',$typeArr)
+                      ->whereIn('manufacturerer_id',$manufacturerArr)
+                      ->get();
+                      // dd($lenses);
+                    
+                    return view('ContactLenses.filteredLenses',compact('lenses'));
     }
 
     /**

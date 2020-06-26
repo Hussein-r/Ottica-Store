@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProgressiveVision extends Model
 {
     //
+    use SoftDeletes;
     protected $table = 'progressive_vision_lenses';
     public function color()
     {
