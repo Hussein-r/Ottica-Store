@@ -58,19 +58,19 @@
                   </div>
                 </div>
 
-                <div class="form-group row">
+                <div id ="whatever" class="form-group row">
                   <div class="col-md-12">
                     <label for="c_message" class="text-black">Message </label>
                     <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
                   </div>
                 </div>
-                <div class="form-group row">
+                <div  class="form-group row">
                   <div class="col-lg-12">
                     <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send Message">
                   </div>
                 </div>
                 @if (\Session::has('success'))
-              <div class="alert alert-success">
+              <div  class="alert alert-success">
                 <ul>
                   <li>{!! \Session::get('success') !!}</li>
                 </ul>

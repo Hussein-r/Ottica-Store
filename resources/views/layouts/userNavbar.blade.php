@@ -51,7 +51,13 @@
                 </li>
                 <li><a href="{{ url('allLenses') }}">Contact Lenses</a></li>
                 <li><a href="{{ url('ourLenses') }}">Our Lenses</a></li>
-                <li><a href="{{ url('offers') }}">Special Offers</a></li>
+                <li class="has-children ">
+                <a href="#">Other Pages</a>
+                  <ul class="dropdown">
+                    <li><a href="{{ url('ourbrands') }}">Our Brands</a></li>
+                    <li><a href="{{ url('offers') }}">Special Offers</a></li>
+                  </ul>
+                </li>
                 <li><a href="{{ url('about') }}">About</a></li>
                 <li class="active"><a href="{{url('/contact')}}">Contact</a></li>
                 <li>
@@ -83,6 +89,9 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Dropdown">
                               <a class="dropdown-item" href="{{route('user.show',Auth::user())}}">
                                   {{ __('profile') }}
+                              </a>
+                              <a class="dropdown-item" href="/orderHistory">
+                                  {{ __('Order History') }}
                               </a>
                               <a class="dropdown-item" href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
@@ -123,7 +132,7 @@
           <li>- <a href="/ourLenses">OUR LENSES</a></li>
           <li>- <a href="/offers">SPECIAL OFFERS</a></li>
           <li>- <a href="about">ABOUT US</a></li>
-          <li>- <a href="#">CONTACT US</a></li>
+          <li>- <a href="{{url('/contact')}}">CONTACT US</a></li>
         </ul>
     </div>
     <div class="col-lg-4 col-xs-12 location" >

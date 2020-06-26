@@ -40,6 +40,7 @@
     <div class="col-12" >
         <div class="product-topbar d-flex align-items-center justify-content-between mt-3" style="float:right;">
             <div>
+                
                 <!-- Total Products -->
                 {{-- <div class="total-products">
                         <p><span>{{count($lenses)}}</span> products found</p>

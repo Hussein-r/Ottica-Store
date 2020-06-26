@@ -287,38 +287,36 @@ class ClientOrdersController extends Controller
         $lensesArray=array();
         $glassesProduct=0;
         $lensesProduct=0;
-        $lensePrice=0;
+        $lensePrice=array();
         $finalprice=0;
 
         $price = TotalPrice::where('order_id','=',$id)->get();
         // dd($price);
-      
-        //    dd($finalprice);
+           
         $glassesProduct=GlassProduct::where('order_id','=',$id)->get();
-
         $lensesProduct=LenseProduct::where('order_id','=',$id)->get();
-        // $lensePrice=$lensesProduct->price;
+        // dd($lensesProduct);
             foreach ($glassesProduct as $product) {
                 array_push($glassesArray,$product->product_id);
                 
              }
-            //  dd($glassesArray);
-            //  dd($glassesProduct);
+            
              foreach ($lensesProduct as $product) {
                 array_push($lensesArray,$product->product_id);
-                $lensePrice=$product->price;
-                
+                              
              }
-            //  dd($lensesArray);
-            
+            // dd($product->price);
             foreach ($price as $item) {
-                $finalprice=$item->price_after_promocode+$lensePrice;
+                $finalprice=$item->price_after_promocode;
               }
+            
+            //   dd($finalprice);
+            
         $glasses=Glass::whereIn('id',$glassesArray)->get();
         // dd($glasses);
         $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
         // dd($lenses);
-        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensePrice'));
+        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensesProduct','glassesProduct'));
 
     }
 

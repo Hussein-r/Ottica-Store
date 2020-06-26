@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 class LenseBrandController extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware('adminaccess');
+    }
     public function create()
     {
         $brands=LenseBrand::all();
