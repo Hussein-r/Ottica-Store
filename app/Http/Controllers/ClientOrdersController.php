@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\GlassProductPrescriptions;
 use App\LenseProductPrescriptions;
 use App\GlassPrescriptionImage;
+use App\LensePrescriptionImage;
 use App\GlassProduct;
 use App\LenseProduct;
 use App\User;
