@@ -50,6 +50,8 @@
                     {{Session::get('success')}}
                 </div>     
                 @endif
+                @if ($order->count())
+                    
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -64,12 +66,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                   
+                
                   
-                  @if (!($glasses->count() || $lenses->count()))
+                  {{-- @if (!($glasses->count() || $lenses->count()))
                   <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
                     Empty Cart <a href="/">Continue shopping..</a>
                 </div>
-                @endif
+                @endif --}}
                   @forelse ($glasses as $glass)
                     <tr>
                        <td class="product-thumbnail">
@@ -223,7 +227,12 @@
         </div>
       </div>
     </div>
-
+    @else
+    <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
+      Empty Cart <a href="/">Continue shopping..</a>
+  </div>
+                      
+    @endif
 {{-- 
  <!-- Modal -->
     <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-hidden="true">
