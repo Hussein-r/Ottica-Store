@@ -18,37 +18,36 @@
           <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-              <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-              <div class="dropdown no-arrow">
-                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                  <div class="dropdown-header">Dropdown Header:</div>
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+              <h6 class="m-0 font-weight-bold text-primary">Orders Sum Overview</h6>
+            </div>
+            <div class="card-body">
+              <div class="chart-area">
+              {!! $chart_order->container() !!}
+
               </div>
             </div>
-            <div id="pop" style="width:800px;margin:20px auto;">
-              {!! $chart->container() !!}
           </div>
-            {{-- <div id="chart" style="height: 300px;"></div> --}}
+        </div>
+
+        <!-- Area Chart -->
+        <div class="col-xl-8 col-lg-7">
+          <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h6 class="m-0 font-weight-bold text-primary">Total price Overview</h6>
+            </div>
+            <div class="card-body">
+              <div class="chart-area">
+              {!! $chart_total->container() !!}
+
+              </div>
+            </div>
           </div>
         </div>
     </div>
 </div>
-{!! $chart->script() !!}
-{{-- <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
-<!-- Chartisan -->
-<script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script> --}}
+{!! $chart_order->script() !!}
+{!! $chart_total->script() !!}
 
-{{-- <script>
-  const chart = new Chartisan({
-    el: '#chart',
-    url: "@chart('chart_route_name')",
-  });
-</script> --}}
+
 @endsection

@@ -35,21 +35,28 @@ class AdminController extends Controller
        return view('glass.index',compact('glasses','color','faceShape','frameShape','material','fit'));
    
     }
-    public function adminHome(){
-        // $orders = orderList::whereYear('created_at', date('Y'));
-        // $glass = Glass::pluck('price_before_discount','id');
+    public function adminHome(){ 
+        $days = TotalPrice::select(\DB::raw("DATE_FORMAT(created_at,'%M %D') as days"))
+        ->whereYear('created_at', date('Y'))->distinct()->pluck('days');
+        // dd($days);
         $order = TotalPrice::select(\DB::raw("COUNT(*) as count"))
                     ->whereYear('created_at', date('Y'))
                     ->groupBy(\DB::raw("Day(created_at)"))
                     ->pluck('count');
 
-       $chart = new OrderChart();
-       $chart->labels(['Mon', 'Tue', 'Wed', 'Thu','Fri','Sat', 'Sun'])
+        $total = TotalPrice::select(\DB::raw("sum(price_after_promocode) as count"))
+        ->whereYear('created_at', date('Y'))
+        ->groupBy(\DB::raw("Day(created_at)"))
+        ->pluck('count');
+        
+       $chart_order = new OrderChart();
+       $chart_total = new OrderChart();
+       $chart_order->labels($days)
+        ->dataset('Sum of Orders','line', $order);
 
-    //    $chart->labels(['First', 'Second', 'Third'])
-        ->dataset('Order Price','line', $order); 
-
-        return view('dashboard',compact('chart'));
+       $chart_total->labels($days)
+        ->dataset('Total price of Orders','line', $total);
+        return view('dashboard',compact('chart_order','chart_total'));
     }
 
 
