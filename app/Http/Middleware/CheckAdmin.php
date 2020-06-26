@@ -21,7 +21,7 @@ class CheckAdmin
         if($userRoles->contains('Admin')){
             return redirect('/dashboard');
         }else{
-            return redirect('/home');
+            return redirect('/');
         }
     }
 }

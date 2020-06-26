@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Glass;
 use App\Color;
-use App\Charts\AdminChart;
+use App\Charts\OrderChart;
 use App\orderList;
+use App\TotalPrice;
 use App\FaceShape;
 use App\FrameShape;
 use App\Material;
@@ -31,17 +32,22 @@ class AdminController extends Controller
         $frameShape =new FrameShape;
         $material =new Material;
         $fit =new Fit;
-        return view(users.index, $data)->render();
        return view('glass.index',compact('glasses','color','faceShape','frameShape','material','fit'));
    
     }
     public function adminHome(){
         // $orders = orderList::whereYear('created_at', date('Y'));
-        $glass = Glass::pluck('price_before_discount','id');
-       $chart = new AdminChart();
+        // $glass = Glass::pluck('price_before_discount','id');
+        $order = TotalPrice::select(\DB::raw("COUNT(*) as count"))
+                    ->whereYear('created_at', date('Y'))
+                    ->groupBy(\DB::raw("Day(created_at)"))
+                    ->pluck('count');
+
+       $chart = new OrderChart();
+       $chart->labels(['Mon', 'Tue', 'Wed', 'Thu','Fri','Sat', 'Sun'])
 
     //    $chart->labels(['First', 'Second', 'Third'])
-    //     ->dataset('Sample', $glass->values()->toArray()); 
+        ->dataset('Order Price','line', $order); 
 
         return view('dashboard',compact('chart'));
     }

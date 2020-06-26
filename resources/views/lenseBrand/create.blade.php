@@ -8,7 +8,9 @@
     <div >
       {!! Form::open(['route' => 'lenseBrand.store','files' => 'true','enctype'=>'multipart/form-data']) !!}
           <div class="input-group mb-3">
-                
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Brand</span>
+          </div>
               {!! Form::text('name',null,['class'=>'form-control','aria-label'=>'name', 'aria-describedby'=>'basic-addon1','placeholder'=>'Brand Name'])  !!}
           </div>
           <div><span class="text">{{$errors->first('name')}}</span></div>

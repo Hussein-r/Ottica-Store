@@ -30,7 +30,7 @@
     <div class="product-sorting d-flex mt-3" style="float:right;">
       {{-- <form action="/price" method="post">
           @csrf --}}
-          <select name="select" id="sortByselect">
+          <select name="select" id="sortByPrice">
               <option value="" disabled selected>Sorting by Price</option>
               <option value="low">Price: Low - High</option>
               <option value="high">Price: High - Low</option>
@@ -71,6 +71,9 @@
                   </div>
                 </div>
                 @endforeach  
+                <div style="text-align: center;">
+                  {{ $glasses->links() }}
+              </div>
               </div>
             </div>
             <div class="col-md-4 order-2 mb-5 mb-md-0" style="display:inline-block;float:left;">

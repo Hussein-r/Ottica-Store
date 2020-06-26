@@ -172,7 +172,6 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
             'Cron\\' => 5,
             'ConsoleTVs\\Charts\\' => 18,
             'Collective\\Html\\' => 16,
-            'Chartisan\\PHP\\' => 14,
             'Cartalyst\\Stripe\\Laravel\\' => 25,
             'Cartalyst\\Stripe\\' => 17,
             'Carbon\\' => 7,
@@ -180,6 +179,7 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'Balping\\JsonRaw\\' => 16,
         ),
         'A' => 
         array (
@@ -515,10 +515,6 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
         ),
-        'Chartisan\\PHP\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/chartisan/php/src',
-        ),
         'Cartalyst\\Stripe\\Laravel\\' => 
         array (
             0 => __DIR__ . '/..' . '/cartalyst/stripe-laravel/src',
@@ -534,6 +530,10 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
+        ),
+        'Balping\\JsonRaw\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/balping/json-raw-encoder/src',
         ),
         'Asm89\\Stack\\' => 
         array (
@@ -576,7 +576,6 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
     public static $classMap = array (
         'App\\Bifocal' => __DIR__ . '/../..' . '/app/Bifocal.php',
         'App\\Brand' => __DIR__ . '/../..' . '/app/Brand.php',
-        'App\\Charts\\AdminChart' => __DIR__ . '/../..' . '/app/Charts/AdminChart.php',
         'App\\Color' => __DIR__ . '/../..' . '/app/Color.php',
         'App\\ColorLense' => __DIR__ . '/../..' . '/app/ColorLense.php',
         'App\\ColoredEye' => __DIR__ . '/../..' . '/app/ColoredEye.php',
@@ -667,6 +666,9 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         'App\\orderList' => __DIR__ . '/../..' . '/app/orderList.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
+        'Balping\\JsonRaw\\Encoder' => __DIR__ . '/..' . '/balping/json-raw-encoder/src/Encoder.php',
+        'Balping\\JsonRaw\\Raw' => __DIR__ . '/..' . '/balping/json-raw-encoder/src/Raw.php',
+        'Balping\\JsonRaw\\Replacer' => __DIR__ . '/..' . '/balping/json-raw-encoder/src/Replacer.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
@@ -831,10 +833,6 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         'Cartalyst\\Stripe\\Pager' => __DIR__ . '/..' . '/cartalyst/stripe/src/Pager.php',
         'Cartalyst\\Stripe\\Stripe' => __DIR__ . '/..' . '/cartalyst/stripe/src/Stripe.php',
         'Cartalyst\\Stripe\\Utility' => __DIR__ . '/..' . '/cartalyst/stripe/src/Utility.php',
-        'Chartisan\\PHP\\ChartData' => __DIR__ . '/..' . '/chartisan/php/src/ChartData.php',
-        'Chartisan\\PHP\\Chartisan' => __DIR__ . '/..' . '/chartisan/php/src/Chartisan.php',
-        'Chartisan\\PHP\\DatasetData' => __DIR__ . '/..' . '/chartisan/php/src/DatasetData.php',
-        'Chartisan\\PHP\\ServerData' => __DIR__ . '/..' . '/chartisan/php/src/ServerData.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
         'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
@@ -843,10 +841,34 @@ class ComposerStaticInitb3a47df9c80ea6021cdedb1e57bed6bd
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
-        'ConsoleTVs\\Charts\\BaseChart' => __DIR__ . '/..' . '/consoletvs/charts/src/BaseChart.php',
         'ConsoleTVs\\Charts\\ChartsServiceProvider' => __DIR__ . '/..' . '/consoletvs/charts/src/ChartsServiceProvider.php',
-        'ConsoleTVs\\Charts\\Commands\\CreateChart' => __DIR__ . '/..' . '/consoletvs/charts/src/Commands/CreateChart.php',
-        'ConsoleTVs\\Charts\\Registrar' => __DIR__ . '/..' . '/consoletvs/charts/src/Registrar.php',
+        'ConsoleTVs\\Charts\\Classes\\BaseChart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/BaseChart.php',
+        'ConsoleTVs\\Charts\\Classes\\C3\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/C3/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\C3\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/C3/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\Chartjs\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Chartjs/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Chartjs\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Chartjs/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\DatasetClass' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/DatasetClass.php',
+        'ConsoleTVs\\Charts\\Classes\\Echarts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Echarts/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Echarts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Echarts/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\Frappe\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Frappe/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Frappe\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Frappe/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\Fusioncharts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Fusioncharts/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Fusioncharts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Fusioncharts/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\Highcharts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Highcharts/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Highcharts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Highcharts/Dataset.php',
+        'ConsoleTVs\\Charts\\Commands\\ChartsCommand' => __DIR__ . '/..' . '/consoletvs/charts/src/Commands/ChartsCommand.php',
+        'ConsoleTVs\\Charts\\Features\\C3\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/C3/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\C3\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/C3/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Chartjs\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Chartjs/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Chartjs\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Chartjs/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Echarts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Echarts/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Echarts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Echarts/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Frappe\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Frappe/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Frappe\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Frappe/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Fusioncharts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Fusioncharts/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Fusioncharts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Fusioncharts/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Highcharts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Highcharts/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Highcharts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Highcharts/Dataset.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',

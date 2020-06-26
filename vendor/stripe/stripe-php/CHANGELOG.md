@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.39.0 - 2020-06-25
+* [#960](https://github.com/stripe/stripe-php/pull/960) Add constants for `payment_behavior` on `Subscription`
+
+## 7.38.0 - 2020-06-24
+* [#959](https://github.com/stripe/stripe-php/pull/959) Add multiple constants missing for `Event`
+
 ## 7.37.2 - 2020-06-23
 * [#957](https://github.com/stripe/stripe-php/pull/957) Updated PHPDocs
 

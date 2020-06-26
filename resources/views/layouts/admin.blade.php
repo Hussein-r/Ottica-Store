@@ -249,19 +249,34 @@
                       </div>
                     </div>
                   </div>
-
-              <!-- Face shape -------------------------- -->
+                  <!-- Colors -------------------------- -->
 
                   <div class="collapse-item">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Face Shape</button>
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Colored Eye</button>
                       <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
-                        <h6 class="dropdown-header">Face Shape</h6>
-                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
-                        <a class="dropdown-item" href="{{route('brand.index')}}">All Shapes</a>
+                        <h6 class="dropdown-header">Eye Colors Images</h6>
+                        <a class="dropdown-item" href="{{route('ColoredEye.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('ColoredEye.index')}}">All Colored Eye </a>
+                      </div>
+                    </div>
+                  </div>
+
+              <!-- Lenses type -------------------------- -->
+
+                  <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Types</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">Lenses Types</h6>
+                        <a class="dropdown-item" href="{{route('lensetype.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('lensetype.index')}}">All Types</a>
                       </div>
                     </div>
                   </div>
@@ -269,45 +284,33 @@
                   
                   <div class="collapse-item">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Frame Shape</button>
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Manufacturer</button>
                       <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
                         <h6 class="dropdown-header">Glasses Frames</h6>
-                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
-                        <a class="dropdown-item" href="{{route('brand.index')}}">All Shapes</a>
+                        <a class="dropdown-item" href="{{route('LenseManufacturerer.create')}}">Add New </a>
+                        <a class="dropdown-item" href="{{route('LenseManufacturerer.index')}}">All Manufacturer</a>
                       </div>
                     </div>
                   </div>
                   
-                  <!-- Fit Size -------------------------- -->
+
+                  <!-- Add Types -------------------------- -->
                   
                   <div class="collapse-item">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Fit</button>
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Lenses Types</button>
                       <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
-                        <h6 class="dropdown-header">Fit Size</h6>
-                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
-                        <a class="dropdown-item" href="{{route('brand.index')}}">All Fits</a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Frame shape -------------------------- -->
-                  
-                  <div class="collapse-item">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Material</button>
-                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
-                        <h6 class="dropdown-header">Material</h6>
-                        <a class="dropdown-item" href="{{route('brand.create')}}">Add New </a>
-                        <a class="dropdown-item" href="{{route('brand.index')}}">All Materias</a>
+                        <h6 class="dropdown-header">lenses Type</h6>
+                        <a class="dropdown-item" href="{{route('SingleVisionLense.create')}}">Single Vision </a>
+                        <a class="dropdown-item" href="{{route('ProgressiveVisionLense.create')}}">Progressive Vision </a>
+                        <a class="dropdown-item" href="{{route('BifocalLense.create')}}">Bifocal</a>
+                        
                       </div>
                     </div>
                   </div>
@@ -372,39 +375,19 @@
       
               <!-- Topbar -->
               <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-      
                 <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                  <i class="fa fa-bars"></i>
-                </button>
-      
-                <!-- Topbar Navbar -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
                 <ul class="navbar-nav ml-auto">
-      
-                  <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                  <li class="nav-item dropdown no-arrow d-sm-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-search fa-fw"></i>
-                    </a>
-                    <!-- Dropdown - Messages -->
-                    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                      <form class="form-inline mr-auto w-100 navbar-search">
-                        <div class="input-group">
-                          <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                          <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                              <i class="fas fa-search fa-sm"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </li>
-      
-     
-      
-                  <!-- Nav Item - User Information -->
                   <!-- Authentication Links -->
+                  <li class="nav-item">
+                  <a href="{{url('admin/messages')}}" class="nav-link">
+                      <i class="fas fa-envelope fa-fw"></i>
+                    </a>
+                  </li>
+                  <div class="topbar-divider d-none d-sm-block"></div>
+
                   @guest
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -414,9 +397,9 @@
                           <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                       </li>
                   @endif
-              @else
+                  @else
                   <li class="nav-item dropdown">
-                      <a id="navbarDropdown" class="nav-link dropdown-toggle mr-2 d-none d-lg-inline text-gray-600" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle mr-2 d-none d-lg-inline text-gray-600" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                           {{ Auth::user()->name }} <span class="caret"></span>
                       </a>
 
@@ -439,9 +422,9 @@
                           </form>
                       </div>
                   </li>
-              @endguest
                 </ul>
-      
+                  @endguest
+
               </nav>
               <!-- End of Topbar -->
               <main class="py-4">
