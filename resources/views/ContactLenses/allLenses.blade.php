@@ -46,20 +46,14 @@
                     </div> 
                 --}}
                 <!-- Sorting -->
-                
-
-                <div class="btn-group" >
-                    <button type="button" class="btn btn-danger" disabled>Sorted BY</button>
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item"  href='/sortt/1'>Newest</a>
-                        <a class="dropdown-item"  href='/sortt/4'>Name</a>
-                        <a class="dropdown-item" href="/sortt/2">Price: $ - $$</a>
-                        <a class="dropdown-item" href="/sortt/3">Price: $$ - $</a>  
-                    </div>
-                <div>
+                <div class="product-sorting d-flex mt-3" style="float: right">
+                    <select name="select" id="sorting" aria-placeholder="sorting by ">
+                        <option value="" disabled selected>Sorting by </option>
+                        <option value="newest" >Newest</option>
+                        <option value="alphabet" >A-Z</option>
+                        <option value="non-alphabet">Z-A</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
@@ -92,41 +86,47 @@
         </div>
     </div>
     <div id="filter_data" class="col-md-9" style="display:inline-block;float:right;" >
-        @foreach ($lenses as $lense)
-        <div class="single-product-wrapper mt-6 border p-4" style="display:inline-block;height:400px;width:255px;">
-            <div class="product-img h-60" >
-                <img style="height:200px;" src="images/{{$lense->image}}" alt="">
-                <div class="product-favourite">
-                    <a onclick="return(updateFavorite({{$lense->id}},this))" class="favme fa fa-heart"></a>
+     <div id="sorted_data">
+            @foreach ($lenses as $lense)
+            <div class="single-product-wrapper mt-6 border p-4" style="display:inline-block;height:400px;width:255px;">
+                <div class="product-img h-60" >
+                    <img style="height:200px;" src="images/{{$lense->image}}" alt="">
+                    <div class="product-favourite">
+                        <a onclick="return(updateFavorite({{$lense->id}},this))" class="favme fa fa-heart"></a>
+                    </div>
                 </div>
-            </div>
-            <div class="product-description">
-                <span>{{$lense->name}}</span>
+                <div class="product-description">
+                    <span>{{$lense->name}}</span>
 
-                <a href="single-product-details.html">
-                    <h3 >{{$lense->brand->name}}</h6>
-                </a>
-                <ul>
-                @foreach ($lense->lenseType as $lensetype)
-                    <li> {{$lensetype->duration}} Days &emsp; For {{$lensetype->price}} EGP</li>
-                @endforeach
-                </ul>
-                <div class="hover-content">
-                    <!-- Add to Cart -->
-                    <div class="add-to-cart-btn">
-                        <a href="/lenses/{{$lense->id}}" class="btn essence-btn">View Details</a>
+                    <a href="single-product-details.html">
+                        <h3 >{{$lense->brand->name}}</h6>
+                    </a>
+                    <ul>
+                    @foreach ($lense->lenseType as $lensetype)
+                        <li> {{$lensetype->duration}} Days &emsp; For {{$lensetype->price}} EGP</li>
+                    @endforeach
+                    </ul>
+                    <div class="hover-content">
+                        <!-- Add to Cart -->
+                        <div class="add-to-cart-btn">
+                            <a href="/lenses/{{$lense->id}}" class="btn essence-btn">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        @endforeach  
+            @endforeach  
+      </div>
     </div>
 </div>
 </section>
 </body>
 @endsection
-<script src="/js/aos.js"></script>
-<script src="/js/sunmain.js"></script>
-<script src="/js/jquery/jquery-2.2.4.min.js"></script>
-<script src="/js/lenseFilteration.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/active.js"></script>
+    <script src="/js/sunmain.js"></script>
+    <script src="{{ asset('/js/lenseSort.js') }}" defer></script>
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="/js/lenseFilteration.js"></script>
 </html>

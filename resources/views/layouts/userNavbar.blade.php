@@ -73,7 +73,7 @@
                             <a href="{{url('/favourite')}}" class="icons-btn d-inline-block"><span class="icon-heart-o"></span></a>
                             <a href="{{route('cart.index')}}" class="icons-btn d-inline-block bag">
                               <span class="icon-shopping-bag"></span>
-                              <span class="number">2</span>
+                              {{-- <span class="number">2</span> --}}
                             </a>
                           </div>
                           <div class="dropdown d-inline-block">

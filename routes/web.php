@@ -29,59 +29,71 @@ Route::group(['middleware'=>['auth']],function(){
     Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
     Route::post('/promocode', 'CartController@promocode');
     Route::post('thanks','CartController@submitOrder');
+    Route::resource('/orderHistory', 'ClientOrdersController');
     Route::get('/checkout', function () {
         return view('Users.checkout')->render();
+
     });
-
-
-
-
-
 });
-Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
-Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
-Route::post('/mail', 'SendEmailController@send')->name('mail');
-Route::resource('user','UserController');
+
+
+Route::group(['middleware'=>['auth']],function(){
+    Route::group(['middleware'=>['adminaccess']],function(){
+        Route::get('/mail/{id}', 'SendEmailController@mailOne')->name('mail');
+        Route::get('/mail', 'SendEmailController@mailAll')->name('mail');
+        Route::post('/mail', 'SendEmailController@send')->name('mail');
+        Route::resource('user','UserController');
+        Route::resource('SingleVisionLense','SingleVisionController');
+        Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
+        Route::resource('BifocalLense','BifocalController');
+        Route::resource('ColoredEye','ColoredEyesController');
+        Route::get('admin/sunglasses','AdminController@sun');
+        Route::get('admin/eyeglasses','AdminController@eye');
+        Route::get('dashboard','AdminController@adminHome');
+        Route::resource('color', 'ColorController');
+        Route::resource('faceShape', 'FaceShapeController');
+        Route::resource('frameShape', 'FrameShapeController');
+        Route::resource('fit', 'FitController');
+        Route::resource('material', 'MaterialController');
+        Route::resource('orderslist','ListOrdersController');
+        Route::resource('LenseManufacturerer', 'LenseManufacturererController');
+        Route::get('admin/messages','ContactUsController@adminShow');
+
+
+
+
+    });
+});
+
 Route::post('/changecolor','GlassController@changeColor')->name('changecolor');
-Route::resource('SingleVisionLense','SingleVisionController');
-Route::resource('ProgressiveVisionLense','ProgressiveVisionController');
-Route::resource('BifocalLense','BifocalController');
-Route::resource('ColoredEye','ColoredEyesController');
 Route::post('/changeLenseColor','ContactLensesController@changeColor');
 Route::get('about','HomeController@about');
 
 //mariam
 Route::group(['middleware'=>['auth']],function(){
     Route::group(['middleware'=>['admin']],function(){
-        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/home', 'HomeController@index')->name('home');
     });
 });
 Route::get('/contact', function () {
     return view('contact')->render();
 });
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::resource('brand', 'BrandController');
 Route::resource('glass', 'GlassController');
 Route::get('sunglasses','GlassController@sunglasses');
 Route::get('eyeglasses','GlassController@eyeglasses');
 // Route::get('/price/{option}/{type}', 'GlassController@sort');
 Route::post('/price', 'GlassController@sort');
-Route::get('admin/sunglasses','AdminController@sun');
-Route::get('admin/eyeglasses','AdminController@eye');
-Route::get('dashboard','AdminController@adminHome');
-Route::get('chart', 'AdminController@adminHome');
 
-Route::resource('color', 'ColorController');
-Route::resource('faceShape', 'FaceShapeController');
-Route::resource('frameShape', 'FrameShapeController');
-Route::resource('fit', 'FitController');
-Route::resource('material', 'MaterialController');
+// Route::get('chart', 'AdminController@adminHome');
+
+
 
 
 //hajar
 //specail offers & list orders for admin 
 Route::resource('specialoffers','SpecialOffersController');
-Route::resource('orderslist','ListOrdersController');
 Route::get('processing/{id}', 'ListOrdersController@processingOrder');
 Route::get('done/{id}', 'ListOrdersController@doneOrder');
 Route::get('orders/inactive', 'ListOrdersController@inactiveOrdersList');
@@ -99,29 +111,20 @@ Route::resource('contact','ContactUsController');
 //contactUs home page
 Route::POST('/messages/create', 'ContactUsController@store');
 //messages for admin 
-Route::get('admin/messages','ContactUsController@adminShow');
 
 //filteration 
 // Route::resource('filter','FilterationController');
 Route::post('/Sunfilters','FilterationController@show');
 Route::post('/Eyefilters','FilterationController@store');
 Route::post('/Lensefilters','FilterationController@edit');
-
-
-
-
-
-
 //haidy
 Route::resource('lenses', 'ContactLensesController');
 Route::resource('lenseBrand', 'LenseBrandController');
 Route::resource('lensetype', 'LenseTypeController');
 Route::get('/details/{lense}','ContactLensesController@details');
-Route::resource('LenseManufacturerer', 'LenseManufacturererController');
-Route::resource('/orderHistory', 'ClientOrdersController');
 Route::get('allLenses','ContactLensesController@list');
 Route::get('/search', 'ContactLensesController@search');
-Route::get('/sortt/{value}', 'ContactLensesController@sort');
+Route::post('/Lensesort', 'ContactLensesController@sort');
 //// our lenses
 Route::get('/ourLenses', function () {return view('OurLenses.index');});
 Route::get('/ComfortLight1', function () {return view('OurLenses.ComfortLight1');});

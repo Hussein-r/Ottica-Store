@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="product-sorting d-flex mt-3" style="float: right">
-            <select name="select" id="sortByselect" aria-placeholder="sorting by price">
+            <select name="select" id="sortByPrice" aria-placeholder="sorting by price">
                 <option value="" disabled selected>Sorting by Price</option>
                 <option value="low">Price: Low - High</option>
                 <option value="high">Price: High - Low</option>
@@ -45,6 +45,9 @@
                                 <div class="single-product-wrapper mt-6 col-4 h-30" style="display:inline-block;float:right;" >
                                     <div class="product-img" >
                                         <img src="images/{{$glass->images->first()->image}}" alt="">
+                                        {{-- <!-- Hover Thumb -->
+                                        <img class="hover-img" style="height: 250px" src="/images/{{$glass->images->last()->image}}" alt=""> --}}
+
                                         <div class="product-favourite">
                                             {{-- <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button> --}}
 
@@ -72,7 +75,7 @@
                                 </div>
                                 @endforeach     
                                 <div style="text-align: center;">
-                                    {{-- {{ $glasses->links() }} --}}
+                                    {{ $glasses->links() }}
                                 </div>
                             </div>
                         </div>

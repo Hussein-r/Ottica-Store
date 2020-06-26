@@ -12,7 +12,7 @@
     @forelse ($materials as $material)
     <tr class="table100-head">
         <th>{{$material->name}}</th>
-        {{-- <th>
+        <th>
             <div class="row">
                 <div>   
                     <a href="{{route('material.edit', $material)}}" class="btn btn-icons btn-rounded btn-success"><i class="fas fa-edit fa-sm text-green-80 "></i></a>
@@ -24,7 +24,7 @@
                 </div>
             
             </div>
-        </th> --}}
+        </th> 
     </tr>
         
     @empty
