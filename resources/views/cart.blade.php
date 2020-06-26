@@ -50,6 +50,8 @@
                     {{Session::get('success')}}
                 </div>     
                 @endif
+                @if ($order->count())
+                    
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -64,12 +66,14 @@
                   </tr>
                 </thead>
                 <tbody>
+                   
+                
                   
-                  @if (!($glasses->count() || $lenses->count()))
+                  {{-- @if (!($glasses->count() || $lenses->count()))
                   <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
                     Empty Cart <a href="/">Continue shopping..</a>
                 </div>
-                @endif
+                @endif --}}
                   @forelse ($glasses as $glass)
                     <tr>
                        <td class="product-thumbnail">
@@ -81,7 +85,7 @@
                         <h2 class="text text-black">{{$brand->find($glass->brand_id)->name }}</h2> <span class="text-black">{{$glass->glass_type}} <span style="color: {{$color->find($glass->color_id)->name}}">{{$color->find($glass->color_id)->name}}</span>
                         </a>
                       </td>
-                      <td>{{$glass->price_before_discount}}</td>
+                      <td>{{$glass->price_before_discount + $glass->price - $glass->price_after_discount}}</td> 
                       <td class="text text-danger">{{round(((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100))}} %</td>
                       @if ($glass->glass_type == 'sunglass')
                         <td>{{$glass->glass_type}}</td>
@@ -90,7 +94,7 @@
                           <td>eyeglass Frame</td>
                         @else
                           @if ($glass->category != 'no prescription')
-                              <td>eyeglass Frame with Lenses 
+                              <td>eyeglass Frame with Lenses {{$glass->category}}
                                 {{-- <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">
                                   Lenses</button> --}}
                               </td> 
@@ -223,7 +227,12 @@
         </div>
       </div>
     </div>
-
+    @else
+    <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
+      Empty Cart <a href="/">Continue shopping..</a>
+  </div>
+                      
+    @endif
 {{-- 
  <!-- Modal -->
     <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-hidden="true">

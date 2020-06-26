@@ -35,15 +35,17 @@ class CartController extends Controller
             ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
-        ])->firstOrFail();
+        ]);
 
+        if($order->exists()){
+            $order = $order->first();
         $glasses = GlassProduct::crossJoin('glasses','glasses.id','=','order_glasses_products.product_id')
         ->where('order_id',$order->id)
         ->get();
         $brand = new Brand;
         $color = new Color;
         $image = new glass_images;
-
+// dd($glasses);
         $lenses = LenseProduct::crossJoin('contact_lenses','contact_lenses.id','=','order_lenses_products.product_id')
         ->where('order_id',$order->id)
         ->get();
@@ -67,7 +69,11 @@ class CartController extends Controller
             ['order_id'=> $order->id],
             ['price'=> $total_price,'price_after_promocode'=> $total_price],
         ) ;
-        return view('cart',compact('glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color','total_price','use_type','discount'));
+        return view('cart',compact('order','glasses','brand','color','image','lenses','lenses_brand','lense_type','lense_color','total_price','use_type','discount'));
+        }
+        else {
+            return view('cart',compact('order'));
+        }
     }
 
     public function deleteOrderProduct($id, $quantity,$category, $type)
@@ -76,7 +82,7 @@ class CartController extends Controller
             ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
-        ])->firstOrFail();
+        ])->first();
 
         if ($type == 'glass') {
             $product = GlassProduct::where([
@@ -152,12 +158,6 @@ class CartController extends Controller
     }
 
     public function submitOrder(Request $request){
-        $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'address' => 'required',
-            'phone' => 'required',
-        ]);
         // dd($request);
         $order = orderList::where([
             ['user_id',Auth::id()],
