@@ -2,14 +2,7 @@
 
 $("#sorting").change(function(){
     console.log("ajax");
-    // $('#filter_data').html('<div id="loading"></div>');
-    // var action ='fetch_data';
-    // option =$(this).children("option:selected").val();
     var option = document.getElementById('sorting').value;
-    // var newest = $("input[id='newest']").val();
-    // var alphabet =$("input[id='alphabet']").val();
-    // var non_alphabet = $("input[id='non-alphabet']").val();
-  
     console.log(option);
     
     // console.log($data);
