@@ -52,8 +52,12 @@
                                             <div class="col my-auto ">
                                                 <h6 class="mb-0">Price :{{$product->price}} </h6>
                                             </div>
+                                            <div class="col my-auto ">
+                                                <h6 class="mb-0">Quantity :{{$product->quantity}} </h6>
+                                            </div>
                                             @endif
                                         @endforeach
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -80,6 +84,13 @@
                                             <div class="col my-auto ">
                                                 <h6 class="mb-0">Price : {{$glass->price_after_discount}}</h6>
                                             </div>
+                                            @foreach($glassesProduct as $product)
+                                            @if($glass->id== $product->product_id)
+                                            <div class="col my-auto ">
+                                                <h6 class="mb-0">Quantity :{{$product->quantity}} </h6>
+                                            </div>
+                                            @endif
+                                        @endforeach
                                         </div>
                                     </div>
                                 </div>

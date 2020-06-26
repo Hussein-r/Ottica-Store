@@ -303,8 +303,7 @@ class ClientOrdersController extends Controller
             
              foreach ($lensesProduct as $product) {
                 array_push($lensesArray,$product->product_id);
-               
-                
+                              
              }
             // dd($product->price);
             foreach ($price as $item) {
@@ -317,7 +316,7 @@ class ClientOrdersController extends Controller
         // dd($glasses);
         $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
         // dd($lenses);
-        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensesProduct'));
+        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensesProduct','glassesProduct'));
 
     }
 
