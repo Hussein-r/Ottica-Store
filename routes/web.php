@@ -69,7 +69,7 @@ Route::post('/price', 'GlassController@sort');
 Route::get('admin/sunglasses','AdminController@sun');
 Route::get('admin/eyeglasses','AdminController@eye');
 Route::get('dashboard','AdminController@adminHome');
-Route::get('chart', 'AdminController@adminHome');
+// Route::get('chart', 'AdminController@adminHome');
 
 Route::resource('color', 'ColorController');
 Route::resource('faceShape', 'FaceShapeController');

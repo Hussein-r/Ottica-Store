@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script> --}}
 
+<meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">   
 
 <!-- Begin Page Content -->
               
@@ -31,12 +32,23 @@
                 </div>
               </div>
             </div>
-            <!-- Card Body -->
-            {{-- {!! $chart->container() !!} --}}
+            <div id="pop" style="width:800px;margin:20px auto;">
+              {!! $chart->container() !!}
+          </div>
             {{-- <div id="chart" style="height: 300px;"></div> --}}
           </div>
         </div>
     </div>
 </div>
-{{-- {!! $chart->script() !!} --}}
+{!! $chart->script() !!}
+{{-- <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+<!-- Chartisan -->
+<script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script> --}}
+
+{{-- <script>
+  const chart = new Chartisan({
+    el: '#chart',
+    url: "@chart('chart_route_name')",
+  });
+</script> --}}
 @endsection
