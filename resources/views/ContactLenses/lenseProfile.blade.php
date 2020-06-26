@@ -53,7 +53,7 @@
                 </div>
                 @foreach($types as $type)
                     <div class="form-check mt-2 ml-3" >
-                        <input class="form-check-input form3-field" type="radio" name="type" value="{{$type->duration}},{{$type->price}}">
+                        <input class="form-check-input form3-field" checked type="radio" name="type" value="{{$type->duration}},{{$type->price}}">
                         <label style="color:black" class="form-check-label" >
                         {{$type->duration}} Days &emsp; For {{$type->price}} EGP
                         </label>
