@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Bifocal' => $baseDir . '/app/Bifocal.php',
     'App\\Brand' => $baseDir . '/app/Brand.php',
+    'App\\Charts\\OrderChart' => $baseDir . '/app/Charts/OrderChart.php',
     'App\\Color' => $baseDir . '/app/Color.php',
     'App\\ColorLense' => $baseDir . '/app/ColorLense.php',
     'App\\ColoredEye' => $baseDir . '/app/ColoredEye.php',
@@ -63,6 +64,7 @@ return array(
     'App\\Http\\Controllers\\SpecialOffersController' => $baseDir . '/app/Http/Controllers/SpecialOffersController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
+    'App\\Http\\Middleware\\AdminAccess' => $baseDir . '/app/Http/Middleware/AdminAccess.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckAdmin' => $baseDir . '/app/Http/Middleware/CheckAdmin.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',

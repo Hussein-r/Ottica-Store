@@ -71,7 +71,6 @@ class SpecialOffersController extends Controller
         //
         $specialOffers = SpecialOffers::List()->get();
         return view('specialOffers.ourSpecialOffers',['specialOffers' => $specialOffers]);
-
         
     }
     
