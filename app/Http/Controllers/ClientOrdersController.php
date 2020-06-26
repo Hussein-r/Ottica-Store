@@ -292,7 +292,7 @@ class ClientOrdersController extends Controller
 
         $price = TotalPrice::where('order_id','=',$id)->get();
         // dd($price);
-        //    dd($finalprice);
+           
         $glassesProduct=GlassProduct::where('order_id','=',$id)->get();
         $lensesProduct=LenseProduct::where('order_id','=',$id)->get();
         // dd($lensesProduct);
@@ -310,7 +310,7 @@ class ClientOrdersController extends Controller
                 $finalprice=$item->price_after_promocode;
               }
             
-            //  dd($lensePrice);
+            //   dd($finalprice);
             
         $glasses=Glass::whereIn('id',$glassesArray)->get();
         // dd($glasses);
