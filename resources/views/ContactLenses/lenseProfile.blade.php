@@ -44,6 +44,9 @@
                         <option value="{{$color->id}}">{{$color->name}}</option>
                     @endforeach   
                     </select>
+                    @if ($lense->lense_purpose == 'beauty')
+                        <input type="text" class="form-control mt-3" hidden value="no prescription"  name="prescription_type" ></input>
+                    @endif
                     <input type="number" class="form-control mt-3" value="1" id="quantity" name="quantity" min="1" placeholder="Quantity"></input>
                     <input type="number" class="form-control mt-3" hidden value="{{$lense->id}}"  name="product_id" placeholder="Quantity"></input>
                     <input type="text" class="form-control mt-3" hidden value="{{$lense->lense_purpose}}"  name="category" ></input>

@@ -211,9 +211,7 @@ class ClientOrdersController extends Controller
             $lense->quantity=$request->quantity;
             $lense->color_id=$request->color;
             $lense->category=$request->category;
-            if($request->category =="medical"){
-                $lense->prescription_type=$request->prescription_type;
-            }
+            $lense->prescription_type=$request->prescription_type;
             $lense->save();
             if($request->prescription_type =="image"){
                 $prescription_image= new LensePrescriptionImage();
@@ -223,7 +221,7 @@ class ClientOrdersController extends Controller
                 $request->image->move(public_path('images'), $imageName);
                 $prescription_image->image = $imageName;
                 $prescription_image->save();
-            }else{
+            }elseif($request->prescription_type =="table"){
                 $prescription_details= new LenseProductPrescriptions();
                 $prescription_details->order_id = $order->id;
                 $prescription_details->product_id =$request->product_id;
@@ -247,9 +245,7 @@ class ClientOrdersController extends Controller
             $lense->quantity=$request->quantity;
             $lense->color_id=$request->color;
             $lense->category=$request->category;
-            if($request->category =="medical"){
-                $lense->prescription_type=$request->prescription_type;
-            }
+            $lense->prescription_type=$request->prescription_type;
             $lense->save();
             if($request->prescription_type =="image"){
                 $prescription_image= new LensePrescriptionImage();
@@ -259,7 +255,7 @@ class ClientOrdersController extends Controller
                 $request->image->move(public_path('images'), $imageName);
                 $prescription_image->image = $imageName;
                 $prescription_image->save();
-            }else{
+            }elseif($request->prescription_type =="table"){
                 $prescription_details= new LenseProductPrescriptions();
                 $prescription_details->order_id = $openOrder[0]->id;
                 $prescription_details->product_id =$request->product_id;
