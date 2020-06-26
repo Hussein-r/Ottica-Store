@@ -16,8 +16,12 @@ $(".filteration").change(function(){
     type[0]=$("input[id='type']:checked").val();
     var manufacturer =[];
     manufacturer[0]= $("input[id='manufacturer']:checked").val();
-    var duration =[];
-    duration[0]= $("input[id='duration']:checked").val();
+    // var duration =[];
+    // duration[0]= $("input[id='duration']:checked").val();
+    console.log(brand);
+    console.log(type);
+    console.log(manufacturer);
+   
    
 
     $.ajax({
@@ -28,7 +32,7 @@ $(".filteration").change(function(){
             type: 'post',
             dataType :'html',
             data: {_token: $("#csrf-token")[0].content, brand:brand,
-            type:type,manufacturer:manufacturer,duration:duration},
+            type:type,manufacturer:manufacturer},
             success:function(data){
                 $('#filter_data').html(data);
                 // console.log($data);
