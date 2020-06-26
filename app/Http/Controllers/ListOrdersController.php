@@ -34,6 +34,7 @@ class ListOrdersController extends Controller
         //      array_push($prices,$order->id);
         //  }
         //  $totalprices=TotalPrice::find($prices);
+        // dd($orders);
         
          return view('ordersForAdmin.listOrders',
          [

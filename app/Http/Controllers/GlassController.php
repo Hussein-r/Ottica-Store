@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Auth;
 
 class GlassController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('adminaccess')->except(['sunglasses','eyeglasses','show','favourite','sort']);
+    }
     /**
      * Display a listing of the resource.
      *
