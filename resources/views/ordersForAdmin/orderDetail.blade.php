@@ -1,67 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-{{-- <div class="container">
-    <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th class="product-name">Product_code</th>
-            <th class="product-price">Quantity</th>
-            <th class="product-price">Discreption</th>
-            <th class="product-total">Color</th>
-          </tr>
-        </thead>
-        <tbody>
-            @if ($glassProducts->count())
-            @foreach($glassProducts  as $glassProduct)
-            @forelse ($glasses as $glass)
-                    <tr>
-                    @if ($glass->id == $glassProduct->product_id)
 
-                       <td class="product-thumbnail">
-                           {{$glass->glass_code }}</td> 
-                       @endif
-                       <td>{{$glassProduct->quantity}}</td>
-                       <td>{{$glassProduct->category}}</td>
-                       @foreach($glassColors  as $color)
-                            @if ($glassProduct->color_id == $color->id)
-                                <td class="row-2">{{$color->name}} </td>
-                            @endif
-                        @endforeach
-                      --}}
-                      {{-- <td>{{$glass->price_before_discount + $glass->price - $glass->price_after_discount}}</td>  --}}
-                      {{-- <td class="text text-danger">{{round(((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100))}} %</td> --}}
-                      {{-- @if ($glass->glass_type == 'sunglass')
-                        <td>{{$glass->glass_type}}</td>
-                      @else
-                        @if (($glass->glass_type == 'eyeglass') && ($glass->category == 'no prescription'))
-                          <td>eyeglass Frame</td>
-                        @else
-                          @if ($glass->category != 'no prescription')
-                              <td>eyeglass Frame with Lenses {{$glass->category}}
-                                {{-- <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">
-                                  Lenses</button> --}}
-                              {{-- </td> 
-                          @endif
-                          
-                        @endif
-                      @endif 
-                      
-                      <td>{{$glass->quantity}}</td>
-                    <td>{{$glass->price}}</td>
-                    
-                  </tr>
-                  
-                  @empty
-            
-                  @endforelse
-                  @endforeach
-            @endif
-        </tbody>
-    </table>
-
-
-
-</div>  --}}
 <!-- ------------------------------ -->
 
 <section class="single_product_details_area d-flex align-items-center">
