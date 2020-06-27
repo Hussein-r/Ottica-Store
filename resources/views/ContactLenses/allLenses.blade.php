@@ -21,20 +21,20 @@
 <body style="background-color:white;">
 <section class="container">
 <div class="site-blocks-cover" data-aos="fade">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 ml-auto order-md-2 align-self-start">
-                    <div class="site-block-cover-content">
-                        <h2 class="sub-title">Ottica Store</h2>
-                        <h1>Contact Lenses</h1>
-                        <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
-                    </div>
-                </div>
-                <div class="col-md-6 order-1 align-self-end">
-                    <img src="/images/contactlense.jpg" alt="Image" style="height:100%;" class="img-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 ml-auto order-md-2 align-self-start">
+                <div class="site-block-cover-content">
+                    <h2 class="sub-title">Ottica Store</h2>
+                    <h1>Contact Lenses</h1>
+                    <p><a href="#" class="btn btn-black rounded-0">Shop Now</a></p>
                 </div>
             </div>
+            <div class="col-md-6 order-1 align-self-end">
+                <img src="/images/contactlense.jpg" alt="Image" style="height:100%;" class="img-fluid">
+            </div>
         </div>
+    </div>
 </div>
 <div class="row" >
     <div class="col-12" >
@@ -89,14 +89,14 @@
     <div id="filter_data" class="col-md-9" style="display:inline-block;float:right;" >
      <div id="sorted_data">
             @foreach ($lenses as $lense)
-            <div class="single-product-wrapper mt-6 border p-4" style="display:inline-block;height:400px;width:255px;">
-                <div class="product-img h-60" >
-                    <img style="height:200px;" src="images/{{$lense->image}}" alt="">
-                    <div class="product-favourite">
-                        <a onclick="return(updateFavorite({{$lense->id}},this))" class="favme fa fa-heart"></a>
+            <div class="single-product-wrapper" style="display:inline-block;width:250px;height:350px;"">
+                <div class="product-img" style="border: 1px solid rgb(243, 243, 243);height:200px;" >
+                    <img src="images/{{$lense->image}}" alt="">
+                    <div class="product-badge new-badge">
+                      <span>{{$lense->label}}</span>
                     </div>
                 </div>
-                <div class="product-description">
+                <div class="product-description" style="background-color:rgb(247, 247, 247); padding:10px;height:150px;">
                     <span>{{$lense->name}}</span>
 
                     <a href="single-product-details.html">

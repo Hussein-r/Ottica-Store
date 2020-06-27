@@ -1,5 +1,4 @@
-<div id="filter_data" class="col-9" style="display:inline-block;float:right;">
-    <div id="glassArea" >
+<div id="glassArea" >
     @foreach ($glasses as $glass)
     <div class="single-product-wrapper" style="display:inline-block;width:260px;height:350px;">
         <div class="product-img" style="border: 1px solid rgb(243, 243, 243);height:200px;">
@@ -27,6 +26,5 @@
     @endforeach  
     <div style="text-align: center;">
         {{ $glasses->links() }}
-    </div>
     </div>
 </div>

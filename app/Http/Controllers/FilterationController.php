@@ -251,7 +251,6 @@ $glasses=Glass::whereIn('glass_type',$glasses_types)
     public function show(Request $request)
     {
  //sunglass filteration
-//  dd($request);
 
 if (isset($request->brand))
 {
@@ -423,10 +422,7 @@ $glasses=Glass::whereIn('glass_type',$glasses_types)
 ->WhereIn('fit_id',$fitArr)
 ->whereBetween('price_after_discount',$price)
 ->get();
-
 return view('glass.filteredSunglass',compact('glasses'));
-          
-    
     }
 
     /**
