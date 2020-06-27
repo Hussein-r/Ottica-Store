@@ -26,7 +26,8 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/fav','GlassController@favourite');
     Route::get('favourite', 'UserController@myFavourite');
     Route::resource('cart','CartController');
-    Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
+    Route::post('product','CartController@deleteOrderProduct');
+    // Route::delete('product/{id}/{quantity}/{category}/{type}','CartController@deleteOrderProduct');
     Route::post('/promocode', 'CartController@promocode');
     Route::post('thanks','CartController@submitOrder');
     Route::resource('/orderHistory', 'ClientOrdersController');
