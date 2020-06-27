@@ -38,15 +38,16 @@
         <div class="site-section ">
             <div class="container">
                 <div class="row mb-5">
-                    {{-- <div class="col-9"> --}}
-                        <div id="filter_data"  class="col-9">
+                    <div class="col-12">
+                        <div id="filter_data"  class="col-9" style="display:inline-block;float:right;">
                             <div id="glassArea">
                                 @foreach ($glasses as $glass)
-                                <div class="single-product-wrapper mt-6 col-4 h-30" style="display:inline-block;float:right;" >
-                                    <div class="product-img" >
-                                        <img src="images/{{$glass->images->first()->image}}" alt="">
-                                        {{-- <!-- Hover Thumb -->
-                                        <img class="hover-img" style="height: 250px" src="/images/{{$glass->images->last()->image}}" alt=""> --}}
+                                <div class="single-product-wrapper" style="display:inline-block;width:250px;height:350px;" >
+                                    <div class="product-img" style="border: 1px solid rgb(243, 243, 243);height:200px;">
+                                        <img src="images/{{$glass->images->first()->image}}" alt="" class="mt-4">
+                                        <div class="product-badge new-badge">
+                                            <span>{{$glass->label}}</span>
+                                        </div>
 
                                         <div class="product-favourite">
                                             {{-- <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button> --}}
@@ -54,8 +55,7 @@
                                             <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
                                         </div>
                                     </div>
-                                    <div class="product-description">
-                                        <span>{{$glass->glass_code}}</span>
+                                    <div class="product-description" style="background-color:rgb(247, 247, 247); padding:10px">
                                         <a  href="#">
                                             <h3 >{{$glass->brand->name}}</h6>
                                         </a>
@@ -162,7 +162,7 @@
                                 </ul>
                             </div>
                         </div>
-                    {{-- </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
