@@ -24,6 +24,7 @@
             </div>
     </div>
     </div>
+    <br>
     <div class="col-12 col-md-12 col-lg-12">
     <div class="shop_grid_product_area">
     <div class="row">
@@ -31,25 +32,19 @@
         @forelse ($glasses as $fav)
         <!-- Single Product -->
         <div class="col-12 col-sm-3 h-100 col-lg-3">
-            <div class="single-product-wrapper">
-                <!-- Product Image -->
-                @if($fav->glass->images->first()->image)                        
-                <div class="product-img">
-                    <img style="height: 200px" src="/images/{{$fav->glass->images->first()->image}}" alt="product image">
-                    @endif
+            <div class="single-product-wrapper">                      
+                <div class="product-img" style="border: 1px solid rgb(243, 243, 243)">
+                    <img style="height: 200px" src="/images/{{$fav->glass->images->first()->image}}" alt="product image">        
                     <!-- Hover Thumb -->
                     <img class="hover-img" style="height: 250px" src="/images/{{$fav->glass->images->last()->image}}" alt="">
-
                     <!-- Product Badge -->
-                    <div class="product-badge new-badge">
+                    {{-- <div class="product-badge new-badge">
                     <span>{{$fav->glass->label}}</span>
-                    </div>
-                    
-                    
+                    </div> --}}
                 </div>
 
                 <!-- Product Description -->
-                <div class="product-description" style="padding: 5px; border: lightgrey solid 1px;">
+                <div class="product-description" style="background-color:rgb(247, 247, 247); padding:10px>
                     <!-- Favourite -->
                     {{-- <div class="product-favourite" style="text-align: right">
                         <button class="favme fa fa-heart" id="love"  onclick="updateFavorite({{$fav->glass->id}},this)"></button>
@@ -58,12 +53,12 @@
                     <a href="#">
                         <h6>{{$fav->glass->brand->name}}</h6>
                     </a>
-                    <span>{{$fav->glass->glass_code}}</span>
+                    {{-- <span>{{$fav->glass->glass_code}}</span> --}}
 
                     {{-- <span style="margin-left: 20px">{{$colors}}</span> --}}
                     <p class="product-price">
-                        <span class="old-price">{{$fav->glass->price_before_discount}}EGP</span> 
-                        {{$fav->glass->price_after_discount}}EGP
+                        <span class="old-price">{{$fav->glass->price_before_discount}} EGP</span> 
+                        {{$fav->glass->price_after_discount}} EGP
                         <span><h5 class="text-danger" style="text-align:right;">{{round((($fav->glass->price_before_discount - $fav->glass->price_after_discount)/$fav->glass->price_before_discount)*100) }} %</h5></span>
                     </p>
             
