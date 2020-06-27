@@ -69,12 +69,13 @@
                   @forelse ($glasses as $glass)
                     <tr>
                        <td class="product-thumbnail">
-                      <img src="images/{{$image->where('glass_id',$glass->id)->first()->image}}" alt="Image" class="img-fluid"> 
+                      <img src="images/{{$image->where('glass_id',$glass->product_id)->first()->image}}" alt="Image" class="img-fluid"> 
                        </td> 
   
                       <td class="product-name">
-                        <a href="/glass/{{$glass->id}}">
-                        <h2 class="text text-black">{{$brand->find($glass->brand_id)->name }}</h2> <span class="text-black">{{$glass->glass_type}} <span style="color: {{$color->find($glass->color_id)->name}}">{{$color->find($glass->color_id)->name}}</span>
+                        <a href="/glass/{{$glass->product_id}}">
+                        <h2 class="text text-black">{{$brand->find($glass->brand_id)->name }}</h2> 
+                        {{-- <span class="text-black">{{$glass->glass_type}} <span style="color: {{$color->find($glass->color_id)->name}}">{{$color->find($glass->color_id)->name}}</span> --}}
                         </a>
                       </td>
                       <td>{{$glass->price_before_discount + $glass->price - ($glass->price_after_discount*$glass->quantity)}}</td> 
@@ -100,8 +101,6 @@
                     <td>
                       {!! Form::open(['url'=>'product','method' => 'post' ]) !!}
                       {{ Form::hidden('id',$glass->id) }}
-                      {{ Form::hidden('quantity',$glass->quantity) }}
-                      {{ Form::hidden('category',$glass->category) }}
                       {{ Form::hidden('type','glass') }}
 
                       {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
@@ -126,20 +125,27 @@
                        </td> 
   
                       <td class="product-name">
-                        <a href="/glass/{{$item->id}}">
+                        <a href="/lenses/{{$item->product_id}}">
                         <h2 class="text text-black">{{$lenses_brand->find($item->brand_id)->name }} {{$item->name}}</h2> 
                         </a>
                       </td>
                       {{-- {{$item->product_id}} --}}
                     <td>{{  $use_type->where([['duration',$item->duration],['lense_id',$item->product_id]])->firstOrFail()->price  }}</td>
                     <td class="h5 text-danger">0%</td>                      
-                    <td>lenses {{$lense_type->find($item->type_id)->name}} for {{$item->duration}}</td>
+                    <td>lenses {{$lense_type->find($item->type_id)->name}} for {{$item->duration}} months</td>
                     <td>{{$item->quantity}}</td>
                     <td>{{$item->price}}</td>
                     <td>
+                      {!! Form::open(['url'=>'product','method' => 'post' ]) !!}
+                      {{ Form::hidden('id',$item->id) }}
+                      {{ Form::hidden('type','lenses') }}
+
+                      {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
+                      {!! Form::close() !!}
+{{-- 
                     {!! Form::open(['url' => ['product', $item->id, $item->quantity, $lense_type->find($item->type_id)->name, 'lenses'] ,'method' => 'delete' ]) !!}
                     {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
-                    {!! Form::close() !!}
+                    {!! Form::close() !!} --}}
                     </td>
                     {{-- <td><a href="{{route()}}" class="btn btn-danger height-auto btn-sm">X</a></td> --}}
                   </tr>

@@ -12,22 +12,33 @@
 <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="{{ mix('/css/app.css') }}">
 <body style="background-image: url('/images/model.jpg'); background-size: cover;" class="mt-5">
-	<div class="mt-3 ml-3" style="height:480px;margin:auto;">
-        <h2>Your Profile Information</h2>
+<style>
+    .info{
+        font-size:30px;
+        margin-bottom:10px;
+        margin-left:70px;
+    }
+    label{
+        font-size:30px;
+        margin-bottom:10px;
+    }
+</style>
+	<div class="mt-3 " style="height:480px;margin-left:30%;">
+        <h2 style="margin-left:100px;">Your Profile Information</h2>
         <div class='row'>
             <div class="col-md-1">
                 <label>Name</label>
             </div>
             <div>
-                <p>{{$user->name}}</p>
+                <p class="info">{{$user->name}}</p>
             </div>
         </div>
         <div class='row'>
             <div class="col-md-1">
-                <label>E-mail Address</label>
+                <label>E-mail</label>
             </div>
             <div>
-                <p>{{$user->email}}</p>
+                <p class="info">{{$user->email}}</p>
             </div>
         </div>
         <div class='row'>
@@ -35,7 +46,7 @@
                 <label>Address</label>
             </div>
             <div>
-                <p>{{$user->address}}</p>
+                <p class="info">{{$user->address}}</p>
             </div>
         </div>
         <div class='row'>
@@ -43,10 +54,10 @@
                 <label>Phone</label>
             </div>
             <div>
-                <p>{{$user->phone}}</p>
+                <p class="info">{{$user->phone}}</p>
             </div>
         </div>
-        <div>
+        <div style="margin-left:200px;">
             <a href="{{route('user.edit',Auth::user())}}" class="btn btn-info">Edit</a>
         </div>
 	</div>

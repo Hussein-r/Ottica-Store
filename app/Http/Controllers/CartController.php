@@ -20,6 +20,7 @@ use App\GlassPrescriptionImage;
 use App\Promocode;
 use App\TotalPrice;
 use App\LenseUseType;
+use App\ContactLenses;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -38,23 +39,31 @@ class CartController extends Controller
         ]);
 // dd($order->count());
         if($order->exists()){
-            $order = $order->first();
-        $glasses = GlassProduct::crossJoin('glasses','glasses.id','=','order_glasses_products.product_id')
-        ->where('order_id',$order->id)
+            $order = $order->first();      
+        $glasses = Glass::Join('order_glasses_products','order_glasses_products.product_id','=','glasses.id')
+        ->where([
+            ['order_glasses_products.order_id',$order->id],
+            ['order_glasses_products.deleted_at',NULL]
+            ])
         ->get();
         $brand = new Brand;
         $color = new Color;
-        $image = new glass_images;
-// dd($glasses);
-        $lenses = LenseProduct::crossJoin('contact_lenses','contact_lenses.id','=','order_lenses_products.product_id')
-        ->where('order_id',$order->id)
+        $image = new glass_images;     
+
+        $lenses = ContactLenses::crossJoin('order_lenses_products','order_lenses_products.product_id','=','contact_lenses.id')
+        ->where([
+            ['order_lenses_products.order_id',$order->id],
+            ['order_lenses_products.deleted_at',NULL]
+            ])
         ->get();
+        // dd($lenses);
 
         $lenses_brand = new LenseBrand;
         $lense_type = new LenseType;
         $lense_color = new ColorLense;
         $use_type = new LenseUseType;
 
+//--------Total price calculation ---------//
         $discount = 0;
         $total_price = 0;
         foreach ($glasses as $glass){
@@ -79,30 +88,27 @@ class CartController extends Controller
     public function deleteOrderProduct(Request $request)
     {
         $id = $request->input('id');
-        $quantity = $request->input('quantity');
-        $category = $request->input('category');
         $type = $request->input('type');
-        // dd($category);
         $order = orderList::where([
             ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
         ])->first();
+        $items = 0;
+        $items_glass = GlassProduct::where('order_id',$order->id)->count();
+        $items_lenses = LenseProduct::where('order_id',$order->id)->count();
+        $items = $items_glass + $items_lenses;
+
+        // dd($type);
         if ($type == 'glass') {
             // dd($type);
-            $product = GlassProduct::where([
-                ['product_id',$id],
-                ['order_id',$order->id],
-                ['quantity',$quantity],
-                ['category',$category]
-                ]);
-                // dd($product);
+            $product = GlassProduct::find($id);
             $details = GlassProductPrescriptions::where([
-                ['product_id',$id],
+                ['product_id',$product->product_id],
                 ['order_id',$order->id],
             ]);
             $lense_image = GlassPrescriptionImage::where([
-                ['product_id',$id],
+                ['product_id',$product->product_id],
                 ['order_id',$order->id],
             ]);
             if($details->exists()){
@@ -112,7 +118,6 @@ class CartController extends Controller
                 $lense_image->delete();
             }
 
-            $items = GlassProduct::where('order_id',$order->id)->count();
             // dd($items);
             if($items == 1){
             $product->delete();
@@ -124,22 +129,18 @@ class CartController extends Controller
                 // dd('.....');
                 $product->delete();
 
-            }
-            
+            }      
         
         } 
-        else {
-            $product = LenseProduct::where([
-                ['product_id',$id],
-                ['order_id',$order->id],
-                ]);
+        elseif ($type == 'lenses') {
+            $product = LenseProduct::find($id);
             
             $details = LenseProductPrescriptions::where([
-                ['product_id',$id],
+                ['product_id',$product->product_id],
                 ['order_id',$order->id],
             ]);
             $lense_image = LensePrescriptionImage::where([
-                ['product_id',$id],
+                ['product_id',$product->product_id],
                 ['order_id',$order->id],
             ]);
 
@@ -149,9 +150,17 @@ class CartController extends Controller
             if($lense_image->exists()){
                 $lense_image->delete();
             }
+            // dd($items);
+            if($items == 1){
+                $product->delete();
+                $price = TotalPrice::where('order_id',$order->id);
+                $price->delete();  
+                $order->delete();
+            }
+            else {
+                $product->delete();
 
-            $product->delete();
-            $order->delete();
+            } 
 
         }
         // dd($details);
