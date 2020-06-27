@@ -394,9 +394,7 @@ class ClientOrdersController extends Controller
                 "currency" => "EGP",
             ]);
             
-                //  dd($charge);
-        
-    
+               
             // SUCCESSFUL
             $order->payment_state=1;
             $order->save();

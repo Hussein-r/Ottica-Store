@@ -72,13 +72,13 @@
                     </td>
                     <td>
                     <div class="btn btn-success"  >
-                         <a href="{{route('orderHistory.show',$order->id)}}" >View Details</a>
+                         <a style ="color:white" href="{{route('orderHistory.show',$order->id)}}" >View Details</a>
                     </div>
                     </td>
 
                     @if ($order->admin_order_state == 'inactive')
                     <td>
-                    <h3>Wait...!</h3>
+                    <h4>Wait!</h4>
                     </td>
                     <td>
                     <form style ="margin:auto; width:40%;" action="{{route('orderHistory.destroy',$order->id)}}" method="POST">
@@ -92,30 +92,30 @@
                      @if ($order->payment_state == 0)
                      <td>
                     <div  class="btn btn-warning">
-                      <a href="/payment/{{$order->id}}" type="submit">Payment</a>
+                      <a style ="color:white" href="/payment/{{$order->id}}" type="submit">Payment</a>
                     </div>
                     </td>
                     <td>
-                    <h3>Can't Cancel Order Now</h3>
+                    <h5>Can't Cancel Order Now</h5>
                     </td>
                     @elseif($order->payment_state == 1)
                     <td>
                     <div class="add-to-cart-btn">
-                    <h3>Done</h3>
+                    <h4>Done</h4>
                     </div>
                     </td>
                     <td>
-                    <h3>Can't Cancel Order Now</h3>
+                    <h5>Can't Cancel Order Now</h5>
                     </td>
                     @endif
                     @elseif($order->admin_order_state == 'out for delivery')
                     <td>
                     <div class="add-to-cart-btn">
-                    <h3>Wait...!</h3>
+                    <h4>Wait!</h4>
                     </div>
                     </td>
                     <td>
-                    <h3>Can't Cancel Order Now</h3>
+                    <h5>Can't Cancel Order Now</h5>
                     </td>
                     @endif
                   </tr>
