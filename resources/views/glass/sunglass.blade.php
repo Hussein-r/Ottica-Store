@@ -28,39 +28,37 @@
       </div>
     </div>
     <div class="product-sorting d-flex mt-3" style="float:right;">
-      {{-- <form action="/price" method="post">
-          @csrf --}}
+      
           <select name="select" id="sortByPrice">
               <option value="" disabled selected>Sorting by Price</option>
               <option value="low">Price: Low - High</option>
               <option value="high">Price: High - Low</option>
           </select>
           <input type="hidden" id='glassType' value="sun" name="type"/>
-          {{-- <input type="submit" name="sort" value="sort"/>
-      </form> --}}
+          
     </div>
     <div class="site-section ">
       <div class="container">
         <div class="row mb-5">
-          <div class="col-9">
-            <div id="filter_data">
+          {{-- <div class="col-9"> --}}
+            <div id="filter_data" class="col-9">
               <div id="glassArea">
                 @foreach ($glasses as $glass)
-                <div class="single-product-wrapper  mt-6 col-4 h-30" style="display:inline-block;float:right;">
-                  <div class="product-img" >
+                <div class="single-product-wrapper  mt-8 col-4 h-30" style="display:inline-block;">
+                  <div class="product-img" style="border: 1px solid rgb(243, 243, 243)">
                       <img src="images/{{$glass->images->first()->image}}" alt="">
                       <div class="product-favourite">
                           <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
                       </div>
                   </div>
-                  <div class="product-description">
-                      <span>{{$glass->glass_code}}</span>
-
-                      <a href="single-product-details.html">
+                  <div class="product-description" style="background-color:rgb(247, 247, 247); padding:10px">
+                      {{-- <span>{{$glass->glass_code}}</span> --}}
                           <h3 >{{$glass->brand->name}}</h6>
-                      </a>
-                      <p class="product-price"><strong class="price"><del>{{$glass->price_before_discount}}</del> 
-                              {{$glass->price_after_discount}}</strong><span><h5 class="text-danger">{{round((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100) }} %</h5></span></p>
+                      
+                      {{-- <span>Price:  </span>  --}}
+                      <p class="product-price"><span>{{$glass->price_before_discount}}</span> 
+                              {{$glass->price_after_discount}} EGP<span>
+                    <h5 class="text-danger" style="text-align: right">{{round((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100) }} %</h5></span></p>
                       <!-- Hover Content -->
                       <div class="hover-content">
                           <!-- Add to Cart -->
@@ -76,7 +74,8 @@
               </div>
               </div>
             </div>
-            <div class="col-md-4 order-2 mb-5 mb-md-0" style="display:inline-block;float:left;">
+            <div class="col-3">
+            {{-- <div class="col-md-4 order-2 mb-5 mb-md-0" style="display:inline-block;float:left;"> --}}
               <div class="border p-4 rounded mb-4 filteration">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Price</h3>
                 <ul class="list-unstyled mb-0" >
@@ -158,7 +157,7 @@
                 </ul>
               </div>
             </div>
-          </div>
+          {{-- </div> --}}
         </div>
       </div>
     </div>

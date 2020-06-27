@@ -38,8 +38,8 @@
         <div class="site-section ">
             <div class="container">
                 <div class="row mb-5">
-                    <div class="col-9">
-                        <div id="filter_data">
+                    {{-- <div class="col-9"> --}}
+                        <div id="filter_data"  class="col-9">
                             <div id="glassArea">
                                 @foreach ($glasses as $glass)
                                 <div class="single-product-wrapper mt-6 col-4 h-30" style="display:inline-block;float:right;" >
@@ -79,7 +79,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 order-2 mb-5 mb-md-0" style="display:inline-block;float:left;">
+                        <div class="col-3">
+                        {{-- <div class="col-md-4 order-2 mb-5 mb-md-0" style="display:inline-block;float:left;"> --}}
                             <div class="border p-4 rounded mb-4 filteration">
                                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Price</h3>
                                 <ul class="list-unstyled mb-0" >
@@ -161,7 +162,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    {{-- </div> --}}
                 </div>
             </div>
         </div>
