@@ -32,7 +32,4 @@
         </div>
     </div>
     @endforeach     
-    <div style="text-align: center;">
-        {{ $glasses->links() }}
-    </div>
 </div>

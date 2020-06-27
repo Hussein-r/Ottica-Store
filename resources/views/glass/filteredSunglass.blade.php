@@ -1,14 +1,14 @@
-<div id="glassArea" >
+<div id="glassArea">
     @foreach ($glasses as $glass)
     <div class="single-product-wrapper" style="display:inline-block;width:260px;height:350px;">
         <div class="product-img" style="border: 1px solid rgb(243, 243, 243);height:200px;">
-        <img src="images/{{$glass->images->first()->image}}" alt="">
+        <img src="images/{{$glass->images->first()->image}}" alt="" class="mt-4">
         <div class="product-badge new-badge">
             <span>{{$glass->label}}</span>
         </div>
-        <div class="product-favourite">
-            <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
         </div>
+        <div class="product-favourite">
+        <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
         </div>
         <div class="product-description" style="background-color:rgb(247, 247, 247); padding:10px">
         <h3>{{$glass->brand->name}}</h6>
@@ -24,7 +24,4 @@
         </div>
     </div>
     @endforeach  
-    <div style="text-align: center;">
-        {{ $glasses->links() }}
-    </div>
 </div>

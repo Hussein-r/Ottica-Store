@@ -52,6 +52,9 @@ $(".filteration").change(function() {
             $("#filter_data").html(data);
             // $("#post-data").append(data.html);
             // console.log($data);
+        },
+        error: function(error) {
+            alert("hussein");
         }
     });
 });
