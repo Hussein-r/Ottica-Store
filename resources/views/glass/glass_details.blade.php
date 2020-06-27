@@ -1194,7 +1194,7 @@
         <div class="comment-wrapper">
             <div class="panel panel-info">
                 <div class="text-primary h1" style="text-align:center;">
-                    Comment panel
+                    Comments
                 </div>
                 <div class="panel-body">
                     <form action="{{ route('comment.store') }}" id="mainform" method='post' class="mt-3">
