@@ -41,10 +41,10 @@
       <div class="container">
         <div class="row mb-5">
           {{-- <div class="col-9"> --}}
-            <div id="filter_data" class="col-9">
-              <div id="glassArea">
+            <div id="filter_data" class="col-8">
+              {{-- <div id="glassArea"> --}}
                 @foreach ($glasses as $glass)
-                <div class="single-product-wrapper  mt-8 col-4 h-30" style="display:inline-block;">
+                <div class="single-product-wrapper  mt-8 col-5 h-30" style="display:inline-block;">
                   <div class="product-img" style="border: 1px solid rgb(243, 243, 243)">
                       <img src="images/{{$glass->images->first()->image}}" alt="">
                       {{-- <div class="product-badge new-badge">
@@ -74,7 +74,7 @@
                 @endforeach  
                 <div style="text-align: center;">
                   {{ $glasses->links() }}
-              </div>
+              {{-- </div> --}}
               </div>
             </div>
             <div class="col-3">
