@@ -22,7 +22,7 @@ class GlassController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('adminaccess')->except(['sunglasses','eyeglasses','show','favourite','sort']);
+        $this->middleware('adminaccess')->except(['sunglasses','eyeglasses','show','favourite','sort','changeColor']);
     }
     /**
      * Display a listing of the resource.
