@@ -52,10 +52,15 @@ class AdminController extends Controller
        $chart_order = new OrderChart();
        $chart_total = new OrderChart();
        $chart_order->labels($days)
-        ->dataset('Sum of Orders','line', $order);
-
+        ->dataset('Sum of Orders','bar', $order)
+        ->options([
+            'backgroundColor' => '#F06464'
+        ]);
        $chart_total->labels($days)
-        ->dataset('Total price of Orders','line', $total);
+        ->dataset('Total price of Orders','line', $total)
+        ->options([
+            'backgroundColor' => '#50B374'
+        ]);
         return view('dashboard',compact('chart_order','chart_total'));
     }
 
