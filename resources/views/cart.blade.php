@@ -220,17 +220,13 @@
                     <strong id="total_price" class="text-black">{{$total_price}}</strong>
                   </div>
                 </div>
-                
-
                 <div class="row">
                   <div class="col-md-12">
                     <a class="btn btn-primary btn-lg btn-block" href="{{url('/checkout')}}" >Proceed To Checkout</a>
                   </div>
-              
                 </div>
               </div>
             </div>
-          
           </div>
         </div>
       </div>
@@ -238,7 +234,7 @@
     @else
     <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
       Empty Cart <a href="/">Continue shopping..</a>
-  </div>
+    </div>
                       
     @endif
 {{-- 
