@@ -311,7 +311,7 @@ class ClientOrdersController extends Controller
               }
             
             //   dd($finalprice);
-            
+            // dd($glassesProduct);
         $glasses=Glass::whereIn('id',$glassesArray)->get();
         // dd($glasses);
         $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
