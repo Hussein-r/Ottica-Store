@@ -10,13 +10,12 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Ottica</title>
     <link rel="icon" href="/img/core-img/favicon.ico">
-    <link rel="stylesheet" href="/css/styling.css">
     <link rel="stylesheet" href="/css/core-style.css">
     <link rel="stylesheet" href="/style.css">
 </head>
 @section('content')
 
-<body class="ng-scope" ng-app="TargetOpticalApp" style="overflow: inherit;">
+<body style="margin-top:30px;">
 	<!-- BEGIN DevelopersGlobalEspotHeader.jspf -->
 <div aria-hidden="true">
 <!-- BEGIN ContentAreaESpot.jsp -->

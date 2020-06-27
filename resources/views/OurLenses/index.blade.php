@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/core-style.css">
 </head>
 @section('content')
-<body>       
+<body style="margin-top:30px;">       
     <!-- ##### Breadcumb Area Start ##### -->
     <div class="breadcumb_area breadcumb-style-two bg-img" style="background-image: url(img/bg-img/girl-wearing-shades-3.jpg);">
         <div class="container h-100">

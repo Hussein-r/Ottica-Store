@@ -51,7 +51,6 @@
 
                                         <div class="product-favourite">
                                             {{-- <button id="love"  onclick="updateFavorite({{$glass->id}},this)">&#x2764;</button> --}}
-
                                             <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
                                         </div>
                                     </div>
@@ -74,9 +73,6 @@
                                     </div>
                                 </div>
                                 @endforeach     
-                                <div style="text-align: center;">
-                                    {{ $glasses->links() }}
-                                </div>
                             </div>
                         </div>
                         <div class="col-3">
