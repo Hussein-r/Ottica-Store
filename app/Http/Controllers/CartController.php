@@ -36,7 +36,7 @@ class CartController extends Controller
             ['user_order_state',0],
             ['admin_order_state','inactive']
         ]);
-
+// dd($order->count());
         if($order->exists()){
             $order = $order->first();
         $glasses = GlassProduct::crossJoin('glasses','glasses.id','=','order_glasses_products.product_id')
@@ -78,6 +78,7 @@ class CartController extends Controller
 
     public function deleteOrderProduct($id, $quantity,$category, $type)
     {
+        // dd($id);
         $order = orderList::where([
             ['user_id',Auth::id()],
             ['user_order_state',0],
@@ -85,6 +86,10 @@ class CartController extends Controller
         ])->first();
 
         if ($type == 'glass') {
+            // $items = GlassProduct::where('order_id',$order->id);
+            // if($items->count() == 1){
+            // dd($items);
+            // }
             $product = GlassProduct::where([
                 ['product_id',$id],
                 ['order_id',$order->id],
@@ -107,8 +112,20 @@ class CartController extends Controller
                 $lense_image->delete();
             }
 
+            $items = GlassProduct::where('order_id',$order->id)->count();
+            // dd($items);
+            if($items == 1){
             $product->delete();
+            $price = TotalPrice::where('order_id',$order->id);
+            $price->delete();  
+            $order->delete();
+            }
+            else {
+                $product->delete();
 
+            }
+            
+        
         } 
         else {
             $product = LenseProduct::where([
@@ -133,6 +150,8 @@ class CartController extends Controller
             }
 
             $product->delete();
+            $order->delete();
+
         }
         // dd($details);
         return redirect()->route('cart.index')->with('success','A product has been removed..');
