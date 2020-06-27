@@ -1030,7 +1030,6 @@ img {
 .single-product-wrapper {
     position: relative;
     z-index: 1;
-    margin-bottom: 50px;
     overflow: hidden;
     background-color: #ffffff;
 }
