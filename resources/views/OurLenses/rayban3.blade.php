@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 @section('content')
-<body class="ng-scope" ng-app="TargetOpticalApp" style="overflow: inherit;">
+<body style="margin-top:30px;">
 
 
 	<!-- BEGIN DevelopersGlobalEspotHeader.jspf -->

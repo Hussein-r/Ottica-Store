@@ -72,9 +72,6 @@
                                     </div>
                                 </div>
                                 @endforeach     
-                                <div style="text-align: center;">
-                                    {{ $glasses->links() }}
-                                </div>
                             </div>
                         </div>
                         <div class="col-3">

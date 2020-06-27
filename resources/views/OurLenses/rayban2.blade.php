@@ -16,7 +16,7 @@
 </head>
 @section('content')
 
-<body class="ng-scope" ng-app="TargetOpticalApp" style="overflow: inherit;">
+<body style="margin-top:30px;">
 
 
 	<!-- BEGIN DevelopersGlobalEspotHeader.jspf -->
@@ -122,17 +122,6 @@
 
 
 <div class="site-search js-site-search border-box-fix">
-	<div class="site-search__query container py-3 px-2 d-flex justify-content-between">
-		<div class="d-none d-md-block">
-			<a id="target_logo2_r19" class="header__logo" href="https://www.targetoptical.com/" data-element-id="D_X_MainNav_LOGO">
-				<img src="/wcsstore/TargetOpticalStorefrontAssetStore/Attachment/TO_logo.png" height="32" alt="Target optical home">
-			</a>
-		</div>
-	
-		<button type="button" class="close pb-2" aria-label="Close" data-close="" style="float:none">
-			<span aria-hidden="true">×</span>
-		</button>
-	</div>
 			
 	<div class="site-search__hints-wrapper py-4">
 		<!--  espot with name  [X_Search_SuggestedTags] --><style media="screen">
