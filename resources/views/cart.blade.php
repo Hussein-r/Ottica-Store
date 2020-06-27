@@ -98,10 +98,20 @@
                       <td>{{$glass->quantity}}</td>
                     <td>{{$glass->price}}</td>
                     <td>
+                      {!! Form::open(['url'=>'product','method' => 'post' ]) !!}
+                      {{ Form::hidden('id',$glass->id) }}
+                      {{ Form::hidden('quantity',$glass->quantity) }}
+                      {{ Form::hidden('category',$glass->category) }}
+                      {{ Form::hidden('type','glass') }}
+
+                      {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
+                      {!! Form::close() !!}
+                      </td>
+                    {{-- <td>
                     {!! Form::open(['url' => ['product', $glass->id, $glass->quantity, $glass->category, 'glass'] ,'method' => 'delete' ]) !!}
                     {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
                     {!! Form::close() !!}
-                    </td>
+                    </td> --}}
                     {{-- <td><a href="#" class="btn btn-danger height-auto btn-sm">X</a></td> --}}
                   </tr>
                   
