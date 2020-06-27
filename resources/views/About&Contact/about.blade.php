@@ -101,8 +101,8 @@
         
                     <div class="block-38 text-center">
                     <div class="block-38-img">
-                        <div class="block-38-header">
-                        <img src="/images/mohamed.jpeg" alt="Image placeholder" class="mb-4">
+                        <div>
+                        <img src="/images/elso7ab.jpg" alt="Image placeholder" class="mb-4">
                         <h3 class="block-38-heading h4">Mohamed Ashraf</h3>
                         <p class="block-38-subheading">CEO/Co-Founder</p>
                         </div>
@@ -115,8 +115,8 @@
                 <div class="col-md-6 col-lg-6">
                     <div class="block-38 text-center">
                     <div class="block-38-img">
-                        <div class="block-38-header">
-                        <img src="/images/ahmed.jpeg" alt="Image placeholder" class="mb-4">
+                        <div>
+                        <img src="/images/elso7ab2.jpg" alt="Image placeholder" class="mb-4">
                         <h3 class="block-38-heading h4">Ahmed Ashraf</h3>
                         <p class="block-38-subheading">Co-Founder</p>
                         </div>

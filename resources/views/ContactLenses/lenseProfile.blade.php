@@ -53,7 +53,7 @@
                 </div>
                 @foreach($types as $type)
                     <div class="form-check mt-2 ml-3" >
-                        <input class="form-check-input form3-field" type="radio" name="type" value="{{$type->duration}},{{$type->price}}">
+                        <input class="form-check-input form3-field" checked type="radio" name="type" value="{{$type->duration}},{{$type->price}}">
                         <label style="color:black" class="form-check-label" >
                         {{$type->duration}} Days &emsp; For {{$type->price}} EGP
                         </label>
@@ -75,7 +75,7 @@
             <div class="comment-wrapper">
                 <div class="panel panel-info">
                     <div class="text-primary h1" style="text-align:center;">
-                        Comment panel
+                        Comments
                     </div>
                     <div class="panel-body">
                         <form action="{{ route('comment.store') }}" id="mainform" method='post' class="mt-3">

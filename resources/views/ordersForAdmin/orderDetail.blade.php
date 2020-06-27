@@ -1,18 +1,80 @@
 @extends('layouts.admin')
 @section('content')
+{{-- <div class="container">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="product-name">Product_code</th>
+            <th class="product-price">Quantity</th>
+            <th class="product-price">Discreption</th>
+            <th class="product-total">Color</th>
+          </tr>
+        </thead>
+        <tbody>
+            @if ($glassProducts->count())
+            @foreach($glassProducts  as $glassProduct)
+            @forelse ($glasses as $glass)
+                    <tr>
+                    @if ($glass->id == $glassProduct->product_id)
 
+                       <td class="product-thumbnail">
+                           {{$glass->glass_code }}</td> 
+                       @endif
+                       <td>{{$glassProduct->quantity}}</td>
+                       <td>{{$glassProduct->category}}</td>
+                       @foreach($glassColors  as $color)
+                            @if ($glassProduct->color_id == $color->id)
+                                <td class="row-2">{{$color->name}} </td>
+                            @endif
+                        @endforeach
+                      --}}
+                      {{-- <td>{{$glass->price_before_discount + $glass->price - $glass->price_after_discount}}</td>  --}}
+                      {{-- <td class="text text-danger">{{round(((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100))}} %</td> --}}
+                      {{-- @if ($glass->glass_type == 'sunglass')
+                        <td>{{$glass->glass_type}}</td>
+                      @else
+                        @if (($glass->glass_type == 'eyeglass') && ($glass->category == 'no prescription'))
+                          <td>eyeglass Frame</td>
+                        @else
+                          @if ($glass->category != 'no prescription')
+                              <td>eyeglass Frame with Lenses {{$glass->category}}
+                                {{-- <button type="submit"  class="donate_now btn btn-default-border-blk generalDonation" data-toggle="modal"  data-backdrop="static" data-keyboard="false" data-target="#myModalHorizontal">
+                                  Lenses</button> --}}
+                              {{-- </td> 
+                          @endif
+                          
+                        @endif
+                      @endif 
+                      
+                      <td>{{$glass->quantity}}</td>
+                    <td>{{$glass->price}}</td>
+                    
+                  </tr>
+                  
+                  @empty
+            
+                  @endforelse
+                  @endforeach
+            @endif
+        </tbody>
+    </table>
+
+
+
+</div>  --}}
 <!-- ------------------------------ -->
 
 <section class="single_product_details_area d-flex align-items-center">
-<div>
-    <div id="accordion" style="margin-left:230px; width:1000px;" >
+    
+<div id="accordion" style="margin-left:230px; width:1000px;" >
         <!-- start of card -->
         @if ($glassProducts->count())
-        @foreach($glassProducts  as $glassProduct)
+    @foreach($glassProducts  as $glassProduct)
             <div class="card">
-                <div class="card-header" id="headingOne">
+           
+            <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
-                    @foreach($glasses as $glass)
+                        @foreach($glasses as $glass)  
                     <table>
                     <tr>
                     @if ($glass->id == $glassProduct->product_id)
@@ -27,15 +89,13 @@
 
                             @foreach($glassColors  as $color)
                                 @if ($glassProduct->color_id == $color->id)
-                                <td class="row-2">Lense Color :{{$color->name}} </td>
+                                    <td class="row-2">Lense Color :{{$color->name}} </td>
                                 @endif
-                                
                             @endforeach
                             <td class="row-4">
                             @if ($glassProduct->category != "no prescription")
                                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    
-                                        See Client Prescription
+                                    Prescription
                                 </button> 
                             @endif  
                             @if ($glassProduct->category == "no prescription")
@@ -207,23 +267,9 @@
                     @endif
                     
                 <!-- end of card -->
-
-
-
-
-            
+        
             <!-- end of lenses--------------- -->
         </div>
-    </div>
-
-
-
-
-
-
-
-
-
 </div>
 </section>
 <!-- ------------------- -->

@@ -22,7 +22,7 @@ class GlassController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('adminaccess')->except(['sunglasses','eyeglasses','show','favourite','sort']);
+        $this->middleware('adminaccess')->except(['sunglasses','eyeglasses','show','favourite','sort','changeColor']);
     }
     /**
      * Display a listing of the resource.
@@ -253,21 +253,21 @@ class GlassController extends Controller
     {
         if($request->glassType == 'sun'){
             if($request->option == 'low'){
-                $glasses = Glass::where('glass_type','=','sunglass')->orderBy('price_after_discount', 'desc')->get();            
+                $glasses = Glass::where('glass_type','=','sunglass')->orderBy('price_after_discount', 'asc')->get();            
             }
             else{
-                $glasses = Glass::where('glass_type','=','sunglass')->orderBy('price_after_discount', 'asc')->get();
+                $glasses = Glass::where('glass_type','=','sunglass')->orderBy('price_after_discount', 'desc')->get();
             }
         }
         elseif($request->glassType == 'eye')
         {
             if($request->option == 'low'){
-                $glasses = Glass::where('glass_type','=','eyeglass')->orderBy('price_after_discount', 'desc')->get();
+                $glasses = Glass::where('glass_type','=','eyeglass')->orderBy('price_after_discount', 'asc')->get();
 
                 // $glasses=Glass::where('glass_type','=','eyeglass')->get()->sortBy('price_after_discount')->toArray();
             }
             else{
-                $glasses = Glass::where('glass_type','=','eyeglass')->orderBy('price_after_discount', 'asc')->get();
+                $glasses = Glass::where('glass_type','=','eyeglass')->orderBy('price_after_discount', 'desc')->get();
 
                 // $glasses=Glasss::where('glass_type','=','eyeglass')->get()->sortByDesc('price_after_discount')->toArray();
             }
