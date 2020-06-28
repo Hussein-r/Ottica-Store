@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+
 <!-- ------------------------------ -->
 <section class="single_product_details_area d-flex align-items-center">   
 <div id="accordion" style="margin-left:230px; width:1000px;" >

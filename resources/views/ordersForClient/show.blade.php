@@ -86,7 +86,7 @@
                                             <div class="col my-auto "> <small>{{$glass->glass_type}} </small></div>
                                             <div class="col my-auto "> <small>For {{$glass->gender}}</small></div>
                                             <div class="col my-auto ">
-                                                <h6 class="mb-0">Price : {{$glass->price_after_discount}}</h6>
+                                                <h6 class="mb-0">Price : {{$product->price}}</h6>
                                             </div>
                                            
                                             <div class="col my-auto ">

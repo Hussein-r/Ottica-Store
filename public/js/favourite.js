@@ -23,7 +23,7 @@ $("#promocode").click(function() {
         </div>`);
         },
         error: function() {
-            alert("ajax failed");
+           cosole.log("ajax failed");
         }
     });
 });
