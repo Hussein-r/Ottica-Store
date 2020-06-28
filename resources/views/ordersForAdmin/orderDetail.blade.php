@@ -145,7 +145,7 @@
                                                 @endif
                                             @endforeach
                                             <td class="row-2">
-                                            @if ($lenseProduct->category != 1)
+                                            @if ($lenseProduct->category !='beauty')
                                                 <button class="btn btn-link row-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                                  Prescription
                                                 </button> 

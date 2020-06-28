@@ -66,9 +66,9 @@
                 @endif
                 <div class="cart-fav-box d-flex align-items-center" style="margin:18px;">
                     @if ($lense->lense_purpose == 'medical')
-                        <button type="submit" id="cart" name="addtocart" Hidden value="5" class="btn essence-btn">Add to cart</button>
+                        <button type="submit" id="submitorder" name="addtocart" Hidden value="5" class="btn essence-btn">Add to cart</button>
                     @else   
-                    <button type="submit" id="cart" name="addtocart" value="5" class="btn essence-btn">Add to cart</button> 
+                    <button type="submit" id="submitorder" name="addtocart" value="5" class="btn essence-btn">Add to cart</button> 
                     @endif                            
                 </div>
             </form>
@@ -157,7 +157,7 @@
                                         <select hidden name="prescription_type">
                                             <option value="table">table</option>
                                         </select>
-                                        <select class="col-md-6" name="right_bc">
+                                        <select class="col-md-9" name="right_bc">
                                             <option value=" "></option>
                                             <option selected value="-20.00">-20.00</option>
                                             <option value="-19.75">-19.75</option>
@@ -308,7 +308,7 @@
                                         </select> 
                                     </td> 
                                     <td>
-                                        <select class="col-md-6" name="right_power">
+                                        <select class="col-md-9" name="right_power">
                                             <option value=" "></option>
                                             <option selected value="-12.00">-12.00</option>
                                             <option value="-11.75">-11.75</option>
@@ -410,7 +410,7 @@
                                         </select> 
                                     </td> 
                                     <td>
-                                        <select class="col-md-6" name="right_dia">
+                                        <select class="col-md-9" name="right_dia">
                                             <option value=" "></option>
                                             <option value="blank/0">blank/0</option>
                                             <option selected value="001">001</option>
@@ -599,7 +599,7 @@
                                 <tr>
                                     <th>Left Eye (OS)</th> 
                                     <td>
-                                        <select class="col-md-6" name="left_bc">
+                                        <select class="col-md-9" name="left_bc">
                                             <option value=" "></option>
                                             <option selected value="-20.00">-20.00</option>
                                             <option value="-19.75">-19.75</option>
@@ -750,7 +750,7 @@
                                         </select> 
                                     </td> 
                                     <td>
-                                        <select class="col-md-6" name="left_power">
+                                        <select class="col-md-9" name="left_power">
                                             <option value=" "></option>
                                             <option selected value="-12.00">-12.00</option>
                                             <option value="-11.75">-11.75</option>
@@ -852,7 +852,7 @@
                                         </select> 
                                     </td> 
                                     <td>
-                                        <select class="col-md-6" name="left_dia">
+                                        <select class="col-md-9" name="left_dia">
                                             <option value=" "></option>
                                             <option value="blank/0">blank/0</option>
                                             <option selected value="001">001</option>
@@ -1063,7 +1063,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addPrescription()">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="savelensepres" data-dismiss="modal" onclick="addPrescription()">Save changes</button>
                 </div>
                 </div>
             </div>

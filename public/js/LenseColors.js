@@ -61,11 +61,14 @@ function addPrescription() {
                     "' />"
             ).appendTo("#mainform");
         });
+        $("#submitorder").prop("hidden", false);
     } else if (presType == "image") {
         $("#imageform :input")
             .not(":submit")
             .clone()
             .hide()
             .appendTo("#mainform");
+        alert("Hussein");
+        $("#submitorder").prop("hidden", false);
     }
 }
