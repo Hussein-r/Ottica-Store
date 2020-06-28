@@ -106,7 +106,29 @@
                 @endif
               @endforeach
             @endforeach
-            
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            <p class="mb-1 text-dark"><b>Order Details</b></p>
+                        </div>
+                        <div class="flex-sm-col text-right col">
+                            <p class="mb-1"><b>Total</b></p>
+                        </div>
+                        <div class="flex-sm-col col-auto">
+                            <p class="mb-1">{{$firstprice}} &pound;</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="flex-sm-col text-right col">
+                            <p class="mb-1"> <b>Discount</b></p>
+                        </div>
+                        <div class="flex-sm-col col-auto">
+                            <p class="mb-1">{{$firstprice-$finalprice}} &pound;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         
             <div class="card-footer">
                 <div class="jumbotron-fluid">

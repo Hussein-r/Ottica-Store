@@ -38,7 +38,9 @@ class ClientOrdersController extends Controller
     {
         //
        
-        $orders=orderList::where("user_id","=",Auth::id())->get();
+        $orders=orderList::where("user_id","=",Auth::id())
+        ->where('user_order_state','=','1')
+        ->get();
         // dd($orders);
         return view('ordersForClient.index', [
             'orders' =>$orders,
@@ -307,6 +309,7 @@ class ClientOrdersController extends Controller
              }
             // dd($product->price);
             foreach ($price as $item) {
+                $firstprice=$item->price;
                 $finalprice=$item->price_after_promocode;
               }
             
@@ -316,7 +319,7 @@ class ClientOrdersController extends Controller
         // dd($glasses);
         $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
         // dd($lenses);
-        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensesProduct','glassesProduct'));
+        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensesProduct','glassesProduct','firstprice'));
 
     }
 
@@ -394,9 +397,7 @@ class ClientOrdersController extends Controller
                 "currency" => "EGP",
             ]);
             
-                //  dd($charge);
-        
-    
+               
             // SUCCESSFUL
             $order->payment_state=1;
             $order->save();
