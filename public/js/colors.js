@@ -156,6 +156,7 @@ imagesave.onclick = function() {
     imagemessage.style.display = "block";
     window.scrollTo(10, 10);
     $("#savetable").prop("disabled", true);
+    $("#submitorder").removeAttr("disabled");
 };
 
 var manual = false;
@@ -166,6 +167,7 @@ tablesave.onclick = function() {
     tablemessage.style.display = "block";
     window.scrollTo(10, 10);
     $("#saveimage").prop("disabled", true);
+    $("#submitorder").removeAttr("disabled");
 };
 
 function validateAndUpload() {

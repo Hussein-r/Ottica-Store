@@ -65,7 +65,11 @@
                     </button>
                 @endif
                 <div class="cart-fav-box d-flex align-items-center" style="margin:18px;">
-                        <button type="submit" id="cart" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>                
+                    @if ($lense->lense_purpose == 'medical')
+                        <button type="submit" id="cart" name="addtocart" Hidden value="5" class="btn essence-btn">Add to cart</button>
+                    @else   
+                    <button type="submit" id="cart" name="addtocart" value="5" class="btn essence-btn">Add to cart</button> 
+                    @endif                            
                 </div>
             </form>
         </div>
@@ -117,20 +121,20 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-check mt-2 ml-3" >
-                            <input class="form-check-input form3-field" id="table" type="radio" name="presType" value="table">
+                            <input class="form-check-input form3-field" checked id="table" type="radio" name="presType" value="table">
                             <label style="color:black" class="form-check-label" >
                                 Add your prescription manually
                             </label>
                         </div>
-                        <form action="{{ route('order.store') }}" hidden method='post' id="tableform" class="mt-3" enctype="multipart/form-data">
+                        <form action="{{ route('order.store') }}"  method='post' id="tableform" class="mt-3" enctype="multipart/form-data">
                         @csrf 
-                        <table class="params-prescription-table">
+                        <table class="params-prescription-table" style="width:500px;">
                             <colgroup>
-                                <col width="17.5%">
-                                <col width="20%"> 
-                                <col width="20%"> 
-                                <col width="20%"> 
-                                <col width="20%">
+                                <col>
+                                <col> 
+                                <col> 
+                                <col> 
+                                <col>
                             </colgroup> 
                             <thead>
                                 <tr>
@@ -155,7 +159,7 @@
                                         </select>
                                         <select class="col-md-6" name="right_bc">
                                             <option value=" "></option>
-                                            <option value="-20.00">-20.00</option>
+                                            <option selected value="-20.00">-20.00</option>
                                             <option value="-19.75">-19.75</option>
                                             <option value="-19.50">-19.50</option>
                                             <option value="-19.25">-19.25</option>
@@ -306,7 +310,7 @@
                                     <td>
                                         <select class="col-md-6" name="right_power">
                                             <option value=" "></option>
-                                            <option value="-12.00">-12.00</option>
+                                            <option selected value="-12.00">-12.00</option>
                                             <option value="-11.75">-11.75</option>
                                             <option value="-11.50">-11.50</option>
                                             <option value="-11.25">-11.25</option>
@@ -409,7 +413,7 @@
                                         <select class="col-md-6" name="right_dia">
                                             <option value=" "></option>
                                             <option value="blank/0">blank/0</option>
-                                            <option value="001">001</option>
+                                            <option selected value="001">001</option>
                                             <option value="002">002</option>
                                             <option value="003">003</option>
                                             <option value="004">004</option>
@@ -597,7 +601,7 @@
                                     <td>
                                         <select class="col-md-6" name="left_bc">
                                             <option value=" "></option>
-                                            <option value="-20.00">-20.00</option>
+                                            <option selected value="-20.00">-20.00</option>
                                             <option value="-19.75">-19.75</option>
                                             <option value="-19.50">-19.50</option>
                                             <option value="-19.25">-19.25</option>
@@ -748,7 +752,7 @@
                                     <td>
                                         <select class="col-md-6" name="left_power">
                                             <option value=" "></option>
-                                            <option value="-12.00">-12.00</option>
+                                            <option selected value="-12.00">-12.00</option>
                                             <option value="-11.75">-11.75</option>
                                             <option value="-11.50">-11.50</option>
                                             <option value="-11.25">-11.25</option>
@@ -851,7 +855,7 @@
                                         <select class="col-md-6" name="left_dia">
                                             <option value=" "></option>
                                             <option value="blank/0">blank/0</option>
-                                            <option value="001">001</option>
+                                            <option selected value="001">001</option>
                                             <option value="002">002</option>
                                             <option value="003">003</option>
                                             <option value="004">004</option>

@@ -246,7 +246,7 @@
                                 </select>
                                 <select class="col-md-6" name="right_sphere">
                                     <option value=" "></option>
-                                    <option value="-20.00">-20.00</option>
+                                    <option selected value="-20.00">-20.00</option>
                                     <option value="-19.75">-19.75</option>
                                     <option value="-19.50">-19.50</option>
                                     <option value="-19.25">-19.25</option>
@@ -397,7 +397,7 @@
                             <td>
                                 <select class="col-md-6" name="right_cylinder">
                                     <option value=" "></option>
-                                    <option value="-12.00">-12.00</option>
+                                    <option selected value="-12.00">-12.00</option>
                                     <option value="-11.75">-11.75</option>
                                     <option value="-11.50">-11.50</option>
                                     <option value="-11.25">-11.25</option>
@@ -500,7 +500,7 @@
                                 <select class="col-md-6" name="right_axis">
                                     <option value=" "></option>
                                     <option value="blank/0">blank/0</option>
-                                    <option value="001">001</option>
+                                    <option selected value="001">001</option>
                                     <option value="002">002</option>
                                     <option value="003">003</option>
                                     <option value="004">004</option>
@@ -686,7 +686,7 @@
                                 <select class="col-md-6" name="right_add">
                                     <option value=" "></option>
                                     <option value="0"></option>
-                                    <option value="+0.25">+0.25</option>
+                                    <option selected value="+0.25">+0.25</option>
                                     <option value="+0.50">+0.50</option>
                                     <option value="+0.75">+0.75</option>
                                     <option value="+1.00">+1.00</option>
@@ -718,7 +718,7 @@
                             <td>
                                 <select class="col-md-6" name="left_sphere">
                                     <option value=" "></option>
-                                    <option value="-20.00">-20.00</option>
+                                    <option selected value="-20.00">-20.00</option>
                                     <option value="-19.75">-19.75</option>
                                     <option value="-19.50">-19.50</option>
                                     <option value="-19.25">-19.25</option>
@@ -869,7 +869,7 @@
                             <td>
                                 <select class="col-md-6" name="left_cylinder">
                                     <option value=" "></option>
-                                    <option value="-12.00">-12.00</option>
+                                    <option selected value="-12.00">-12.00</option>
                                     <option value="-11.75">-11.75</option>
                                     <option value="-11.50">-11.50</option>
                                     <option value="-11.25">-11.25</option>
@@ -972,7 +972,7 @@
                                 <select class="col-md-6" name="left_axis">
                                     <option value=" "></option>
                                     <option value="blank/0">blank/0</option>
-                                    <option value="001">001</option>
+                                    <option selected value="001">001</option>
                                     <option value="002">002</option>
                                     <option value="003">003</option>
                                     <option value="004">004</option>
@@ -1158,7 +1158,7 @@
                                 <select class="col-md-6" name="left_add">
                                     <option value=" "></option>
                                     <option value="0"></option>
-                                    <option value="+0.25">+0.25</option>
+                                    <option selected value="+0.25">+0.25</option>
                                     <option value="+0.50">+0.50</option>
                                     <option value="+0.75">+0.75</option>
                                     <option value="+1.00">+1.00</option>
