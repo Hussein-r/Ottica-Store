@@ -1,5 +1,5 @@
 @extends('layouts.userNavbar')
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="/css/core-style.css">
 
 
-</head>
+</head>--}}
 @section('content')
-<body style="background-color:white;">
+{{-- <body style="background-color:white;">  --}}
 <div class="site-blocks-cover" data-aos="fade">
     <div class="container">
         <div class="row">
@@ -43,7 +43,7 @@
 <div class="site-section">
       <div class="container">
         <div class="row mb-5">
-          <form class="col-md-12" method="post">
+          {{-- <form class="col-md-12" method="post"> --}}
             <div class="site-blocks-table">
               @if(session('success'))
                 <div class="alert alert-success">
@@ -155,7 +155,7 @@
                 </tbody>
               </table>
             </div>
-          </form>
+          {{-- </form> --}}
         </div>
 
         <div class="row">
@@ -237,32 +237,9 @@
     </div>
                       
     @endif
-{{-- 
- <!-- Modal -->
-    <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-              <!-- Modal Header -->
-              <div class="modal-header" style="background: rgb(101, 101, 243)">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="ion-android-close"></span></button>
-                  <h4 class="modal-title" id="myModalLabel" style="color: whitesmoke;">Ordered Lenses</h4>
-              </div>            <!-- Modal Body -->
-              <div class="modal-body">
-                  <div>
-                      Payment Option
-                  </div>
-                  <div class="modal-body">
-                      <div class="modal-footer" id="modal_footer">
-                          <!--<input id="btnSubmit" name="btnSubmit" value="Donate" class="btn btn-default-border-blk" type="submit">-->
-                          <a id="btnDonate" class="btn btn-default-border-blk">Donate</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>  --}}
+
 
   <script src="{{ asset('/js/favourite.js') }}" defer></script>
-</body>
+{{-- </body> --}}
 @endsection
-</html>
+{{-- </html> --}}
