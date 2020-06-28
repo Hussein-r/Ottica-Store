@@ -187,6 +187,24 @@
                       </div>
                     </div>
                   </div>
+
+                   <!-- Add Types -------------------------- -->
+                  
+                   <div class="collapse-item">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Lenses Types</button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
+                        <h6 class="dropdown-header">lenses Type</h6>
+                        <a class="dropdown-item" href="{{route('SingleVisionLense.create')}}">Single Vision </a>
+                        <a class="dropdown-item" href="{{route('ProgressiveVisionLense.create')}}">Progressive Vision </a>
+                        <a class="dropdown-item" href="{{route('BifocalLense.create')}}">Bifocal</a>
+                        
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
@@ -296,24 +314,6 @@
                     </div>
                   </div>
                   
-
-                  <!-- Add Types -------------------------- -->
-                  
-                  <div class="collapse-item">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" style="width: 120px">Lenses Types</button>
-                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton1">
-                        <h6 class="dropdown-header">lenses Type</h6>
-                        <a class="dropdown-item" href="{{route('SingleVisionLense.create')}}">Single Vision </a>
-                        <a class="dropdown-item" href="{{route('ProgressiveVisionLense.create')}}">Progressive Vision </a>
-                        <a class="dropdown-item" href="{{route('BifocalLense.create')}}">Bifocal</a>
-                        
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </li>
@@ -348,6 +348,20 @@
                   </div>
                 </div>
             </li>
+            <!-- Nav Item - promocode -->
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePromo" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-clipboard-list"></i>
+                <span>Promocodes</span>
+              </a>
+              <div id="collapsePromo" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="{{route('promo.create')}}">Add New</a>
+                  {{-- <a class="collapse-item" href="{{route('specialoffers.index')}}">All Promocodes</a>                     --}}
+
+                </div>
+              </div>
+          </li>
             {{-- <hr class="sidebar-divider"> --}}
             <!-- Nav Item - Charts -->
             {{-- <li class="nav-item">

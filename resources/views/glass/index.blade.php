@@ -34,7 +34,7 @@
                 <th scope="col">Material</th>
                 <th scope="col">Secondary_Material</th>
                 <th scope="col">Description</th>
-                <th scope="col">Lable</th>
+                <th scope="col">Label</th>
                 <th scope="col">Best_Seller</th>
                 <th></th>
             </tr>
@@ -60,7 +60,7 @@
                     <td class="column4">{{$material->find($glass->material_id)->name}}</td>
                     <td class="column4">{{$material->find($glass->secondary_material_id)->name}}</td>
                     <td class="column2">{{$glass->description}}</td>
-                    <td class="column2">{{$glass->lable}}</td>
+                    <td class="column2">{{$glass->label}}</td>
                     @if ($glass->best_seller == 1)
                         <td class="column2">True</td>
                     @else

@@ -202,7 +202,7 @@ class GlassController extends Controller
          $fits=Fit::all();
         /////////////////
 
-        $glasses = Glass::where('glass_type','=','sunglass')->paginate(10);
+        $glasses = Glass::where('glass_type','=','sunglass')->paginate(9);
         // $allcolors=Glass::where("glass_code","=",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
         return view('glass.sunglass',[
@@ -233,7 +233,7 @@ class GlassController extends Controller
          $secondaryMaterials=Material::all();
          $fits=Fit::all();
         /////////////////
-        $glasses = Glass::where('glass_type','=','eyeglass')->paginate(10);
+        $glasses = Glass::where('glass_type','=','eyeglass')->paginate(9);
         // $allcolors=Glass::where("glass_code",$glass->glass_code)->get('color_id');
         // $colors=Color::whereIn("id",$allcolors)->get('name');
         return view('glass.eyeglass',[

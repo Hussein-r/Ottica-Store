@@ -77,7 +77,7 @@
                         {{-- <span class="text-black">{{$glass->glass_type}} <span style="color: {{$color->find($glass->color_id)->name}}">{{$color->find($glass->color_id)->name}}</span> --}}
                         </a>
                       </td>
-                      <td>{{$glass->price_before_discount + $glass->price - ($glass->price_after_discount*$glass->quantity)}}</td> 
+                      <td>{{$glass->price_before_discount + ($glass->price - ($glass->price_after_discount*$glass->quantity))}}</td> 
                       <td class="text text-danger">{{round(((($glass->price_before_discount - $glass->price_after_discount)/$glass->price_before_discount)*100))}} %</td>
                       @if ($glass->glass_type == 'sunglass')
                         <td>{{$glass->glass_type}}</td>
@@ -183,7 +183,7 @@
                     <span class="text-black">Discount</span>
                   </div>
                   <div class="col-md-6 text-right">
-                    <strong class="text-danger">- {{$discount}}</strong>
+                    <strong class="text-danger">-{{$discount}}</strong>
                   </div>
                 </div>
                 <div id="sub" class="row mb-3">

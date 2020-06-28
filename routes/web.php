@@ -59,9 +59,7 @@ Route::group(['middleware'=>['auth']],function(){
         Route::resource('orderslist','ListOrdersController');
         Route::resource('LenseManufacturerer', 'LenseManufacturererController');
         Route::get('admin/messages','ContactUsController@adminShow');
-
-
-
+        Route::resource('promo', 'PromocodeController');
 
     });
 });

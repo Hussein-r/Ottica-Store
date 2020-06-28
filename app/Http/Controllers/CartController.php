@@ -50,13 +50,13 @@ class CartController extends Controller
         $color = new Color;
         $image = new glass_images;     
 
-        $lenses = ContactLenses::crossJoin('order_lenses_products','order_lenses_products.product_id','=','contact_lenses.id')
+        $lenses = ContactLenses::Join('order_lenses_products','order_lenses_products.product_id','=','contact_lenses.id')
         ->where([
             ['order_lenses_products.order_id',$order->id],
             ['order_lenses_products.deleted_at',NULL]
             ])
         ->get();
-        // dd($lenses);
+        // dd($glasses);
 
         $lenses_brand = new LenseBrand;
         $lense_type = new LenseType;
@@ -68,7 +68,7 @@ class CartController extends Controller
         $total_price = 0;
         foreach ($glasses as $glass){
             $total_price += $glass->price;
-            $discount += ($glass->price_before_discount * $glass->quantity) - $glass->price;
+            $discount += ($glass->price_before_discount * $glass->quantity) - ($glass->price_after_discount * $glass->quantity);
 
         }
         foreach ($lenses as $lense){

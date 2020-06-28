@@ -33,6 +33,7 @@
             <div class="single-product-wrapper mt-3 ml-3" style="display:inline-block;width:250px;height:300px;">                      
                 <div class="product-img" style="border: 1px solid rgb(243, 243, 243);height:200px;">
                     <img style="height: 200px" src="/images/{{$fav->glass->images->first()->image}}" alt="product image">      
+
                     <div class="product-badge new-badge">
                         <span>{{$fav->glass->label}}</span>
                     </div>
