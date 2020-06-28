@@ -46,7 +46,7 @@ class ColoredEyesController extends Controller
             $colored_eye->image=$imageName;
         }
         $colored_eye->save();
-        return redirect()->action("ColoredEyesController@index");  
+        return redirect()->action("ColoredEyesController@create");  
     }
 
     /**
