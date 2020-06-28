@@ -309,6 +309,7 @@ class ClientOrdersController extends Controller
              }
             // dd($product->price);
             foreach ($price as $item) {
+                $firstprice=$item->price;
                 $finalprice=$item->price_after_promocode;
               }
             
@@ -318,7 +319,7 @@ class ClientOrdersController extends Controller
         // dd($glasses);
         $lenses=ContactLenses::whereIn('id',$lensesArray)->get();
         // dd($lenses);
-        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensesProduct','glassesProduct'));
+        return view('ordersForClient.show',compact('glasses','lenses','finalprice','lensesProduct','glassesProduct','firstprice'));
 
     }
 
