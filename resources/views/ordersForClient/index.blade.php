@@ -51,7 +51,6 @@
 <div class="site-section">
       <div class="container">
         <div class="row mb-5">
-          <form class="col-md-12" method="post">
             <div class="site-blocks-table">
               <table class="table table-bordered ">
                 <thead>
@@ -124,7 +123,6 @@
                 </tbody>
               </table>
             </div>
-          </form>
         </div>
 
         

@@ -43,7 +43,6 @@
 <div class="site-section">
       <div class="container">
         <div class="row mb-5">
-          {{-- <form class="col-md-12" method="post"> --}}
             <div class="site-blocks-table">
               @if(session('success'))
                 <div class="alert alert-success">
@@ -106,13 +105,7 @@
                       {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
                       {!! Form::close() !!}
                       </td>
-                    {{-- <td>
-                    {!! Form::open(['url' => ['product', $glass->id, $glass->quantity, $glass->category, 'glass'] ,'method' => 'delete' ]) !!}
-                    {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
-                    {!! Form::close() !!}
-                    </td> --}}
-                    {{-- <td><a href="#" class="btn btn-danger height-auto btn-sm">X</a></td> --}}
-                  </tr>
+                   </tr>
                   
                   @empty
             
@@ -142,10 +135,7 @@
 
                       {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
                       {!! Form::close() !!}
-{{-- 
-                    {!! Form::open(['url' => ['product', $item->id, $item->quantity, $lense_type->find($item->type_id)->name, 'lenses'] ,'method' => 'delete' ]) !!}
-                    {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
-                    {!! Form::close() !!} --}}
+
                     </td>
                     {{-- <td><a href="{{route()}}" class="btn btn-danger height-auto btn-sm">X</a></td> --}}
                   </tr>
@@ -155,7 +145,6 @@
                 </tbody>
               </table>
             </div>
-          {{-- </form> --}}
         </div>
 
         <div class="row">
