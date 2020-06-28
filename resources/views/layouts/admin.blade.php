@@ -398,7 +398,7 @@
                       </li>
                   @endif
                   @else
-                  <li class="nav-item dropdown">
+                  <li class="nav-item dropdown mt-4">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle mr-2 d-none d-lg-inline text-gray-600" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                           {{ Auth::user()->name }} <span class="caret"></span>
                       </a>

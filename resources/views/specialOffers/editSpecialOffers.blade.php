@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('layouts.userNavbar')
 
 @section('content')
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
 			<div class="wrap-table100">
 				<div class="table100">
 
-<section class="container">
+<section class="container col-md-6" style="margin-top:100px;">
 <form action="{{route('specialoffers.update', $offer->id )}}" enctype='multipart/form-data' method="POST">
 @method('PATCH')
 @csrf
@@ -79,7 +79,7 @@
  <div><span class="text-white">{{$errors->first('image')}}</span></div>
 
  <div class="col-md-13 mt-5 text-center"> 
-  <button type="submit" class=" col-3 btn btn-success btn-lg" >Save changes</button>
+  <button type="submit" class=" btn btn-success btn-lg" >Save changes</button>
 </div>
 </form>
 </section>

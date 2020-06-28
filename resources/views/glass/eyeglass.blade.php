@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 order-1 align-self-end">
-                        <img src="/images/eyeglassmodel.jpg" alt="Image" class="img-fluid">
+                        <img src="/images/bg-img/blog1.jpg" alt="Image" class="img-fluid">
                     </div>
                 </div> 
             </div>

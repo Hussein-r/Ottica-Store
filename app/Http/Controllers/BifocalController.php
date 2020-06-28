@@ -42,6 +42,7 @@ class BifocalController extends Controller
         $lense->color_id=$request->color;
         $lense->price=$request->price;
         $lense->save();
+        return redirect()->route('BifocalLense.create');
     }
 
     /**

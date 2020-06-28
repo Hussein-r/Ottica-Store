@@ -41,6 +41,7 @@ class ProgressiveVisionController extends Controller
         $lense->color_id=$request->color;
         $lense->price=$request->price;
         $lense->save();
+        return redirect()->route('ProgressiveVisionLense.create');
         
     }
 

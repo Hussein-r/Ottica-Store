@@ -76,4 +76,11 @@
     </div>
 </div>
 </section>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/active.js"></script>
+<script src="/js/sunmain.js"></script>
+<script src="{{ asset('/js/favourite.js') }}" defer></script>
+<script src="/js/jquery/jquery-2.2.4.min.js"></script>
 @endsection

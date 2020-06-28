@@ -23,40 +23,37 @@ $("#promocode").click(function() {
         </div>`);
         },
         error: function() {
-           cosole.log("ajax failed");
+            cosole.log("ajax failed");
         }
     });
 });
 
 // sorting glasses ----------
 
-$('#sortByPrice').change(function(){
-    option = $(this).children("option:selected").val();
+$("#sortByPrice").change(function() {
+    option = $(this)
+        .children("option:selected")
+        .val();
     glassType = document.getElementById("glassType").value;
     console.log(option);
     console.log(glassType);
     $.ajax({
-        url: '/price',
-        type: 'post',
-        data:{
+        url: "/price",
+        type: "post",
+        data: {
             _token: $("#csrf-token")[0].content,
-            option :option,
-            glassType :glassType,
+            option: option,
+            glassType: glassType
         },
-        success : function(data){
-            console.log(data)
-            $('#filter_data').html(data);
+        success: function(data) {
+            console.log(data);
+            $("#filter_data").html(data);
         },
-        error: function(){
-            console.log('failed');
+        error: function() {
+            console.log("failed");
         }
-    })
-
-    
-})
-
-
-
+    });
+});
 
 // favourite glasses ----------------
 
