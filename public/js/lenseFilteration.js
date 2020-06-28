@@ -12,6 +12,8 @@ $(".filteration").change(function(){
     // var action ='fetch_data';
     var brand =[];
     brand[0]= $("input[id='brand']:checked").val();
+    var purpose =[];
+    purpose[0]= $("input[id='purpose']:checked").val();
     var type = [];
     type[0]=$("input[id='type']:checked").val();
     var manufacturer =[];
@@ -32,7 +34,7 @@ $(".filteration").change(function(){
             type: 'post',
             dataType :'html',
             data: {_token: $("#csrf-token")[0].content, brand:brand,
-            type:type,manufacturer:manufacturer},
+            type:type,purpose:purpose,manufacturer:manufacturer},
             success:function(data){
                 $('#filter_data').html(data);
                 // console.log($data);

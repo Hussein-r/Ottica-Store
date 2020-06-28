@@ -477,17 +477,19 @@ return view('glass.filteredSunglass',compact('glasses'));
               }
             }
             // dd($manufacturerArr);
-            // if (!is_null($request->duration))
-            // {
-            //   $durationArr=array();
-            //   $durationArr=$request->duration;
-            // }else{
-            //   $durationArr=array();
-            //   $durationArr=[1,30,90,365];
-            // }
+
+            if (!is_null($request->purpose))
+            {
+              $purposeArr=array();
+              $purposeArr=$request->purpose;
+            }else{
+              $purposeArr=array();
+              $purposeArr=['medical','beauty'];
+            }
                       $lenses=ContactLenses::whereIn('brand_id',$brandArr)
                       ->whereIn('type_id',$typeArr)
                       ->whereIn('manufacturerer_id',$manufacturerArr)
+                      ->whereIn('lense_purpose',$purposeArr)
                       ->get();
                       // dd($lenses);
                     
