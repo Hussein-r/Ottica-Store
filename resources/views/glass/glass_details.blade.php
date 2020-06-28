@@ -20,7 +20,11 @@
 
 </head>
 @section('content')
+@if ($glass->glass_type=='sunglass')
 <body style="background-color:#f6f6f6;">
+@elseif($glass->glass_type=='eyeglass')
+<body style="background-color:white;">
+@endif
     <section class="single_product_details_area d-flex align-items-center" style="height:600px;">
 
         <!-- Single Product Thumb -->
@@ -198,12 +202,12 @@
                     </div>
                     <div class="custom-file">
                         <input type="text" name="prescription_type" hidden value="image">
-                        <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
+                        <input type="file" name="image" class="custom-file-input" id="inputGroupFile01" onChange="validateAndUpload()">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
                 </div>
             </form>
-            <button  name="save" id="saveimage" class="btn btn-success ml-3">Save & Continue</button>
+            <button  name="save" id="saveimage" disabled class="btn btn-success ml-3">Save & Continue</button>
         </div>
         <div id="prescription" class="tabcontent prescription-table-wrapper">
             <form action="{{ route('order.store') }}" method='post' id="tableform" class="mt-3" enctype="multipart/form-data">

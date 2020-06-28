@@ -107,6 +107,7 @@ savesingle.onclick = function() {
     presdiv.style.display = "block";
     $("#progressivebutton").prop("disabled", true);
     $("#bifocalbutton").prop("disabled", true);
+    window.scrollTo(0, 1000);
 };
 
 var is_progressive = false;
@@ -125,6 +126,7 @@ saveprogressive.onclick = function() {
     presdiv.style.display = "block";
     $("#singlebutton").prop("disabled", true);
     $("#bifocalbutton").prop("disabled", true);
+    window.scrollTo(0, 1000);
 };
 
 var is_bifocal = false;
@@ -143,6 +145,7 @@ savebifocal.onclick = function() {
     presdiv.style.display = "block";
     $("#progressivebutton").prop("disabled", true);
     $("#singlebutton").prop("disabled", true);
+    window.scrollTo(0, 1000);
 };
 
 var is_image = false;
@@ -151,6 +154,8 @@ var imagesave = document.getElementById("saveimage");
 imagesave.onclick = function() {
     is_image = true;
     imagemessage.style.display = "block";
+    window.scrollTo(10, 10);
+    $("#savetable").prop("disabled", true);
 };
 
 var manual = false;
@@ -159,7 +164,15 @@ var tablesave = document.getElementById("savetable");
 tablesave.onclick = function() {
     manual = true;
     tablemessage.style.display = "block";
+    window.scrollTo(10, 10);
+    $("#saveimage").prop("disabled", true);
 };
+
+function validateAndUpload() {
+    if ($("#inputGroupFile01").val() != "") {
+        $("#saveimage").removeAttr("disabled");
+    }
+}
 
 var checkBox = document.getElementById("defaultCheck1");
 var object = document.getElementById("submitorder");
@@ -177,6 +190,7 @@ object.onclick = function() {
                     .clone()
                     .hide()
                     .appendTo("#mainform");
+                $("#submitorder").removeAttr("disabled");
             } else if (manual) {
                 $("#tableform select").each(function() {
                     $(
@@ -187,6 +201,7 @@ object.onclick = function() {
                             "' />"
                     ).appendTo("#mainform");
                 });
+                $("#submitorder").removeAttr("disabled");
             }
         } else if (is_progressive) {
             $("#progressiveform :input")
@@ -200,6 +215,7 @@ object.onclick = function() {
                     .clone()
                     .hide()
                     .appendTo("#mainform");
+                $("#submitorder").removeAttr("disabled");
             } else if (manual) {
                 $("#tableform select").each(function() {
                     $(
@@ -210,6 +226,7 @@ object.onclick = function() {
                             "' />"
                     ).appendTo("#mainform");
                 });
+                $("#submitorder").removeAttr("disabled");
             }
         } else if (is_bifocal) {
             $("#bifocalform :input")
@@ -223,6 +240,7 @@ object.onclick = function() {
                     .clone()
                     .hide()
                     .appendTo("#mainform");
+                $("#submitorder").removeAttr("disabled");
             } else if (manual) {
                 $("#tableform select").each(function() {
                     $(
@@ -233,8 +251,16 @@ object.onclick = function() {
                             "' />"
                     ).appendTo("#mainform");
                 });
+                $("#submitorder").removeAttr("disabled");
             }
         }
+    }
+};
+
+checkBox.onclick = function() {
+    if (checkBox.checked == true) {
+        $("#submitorder").prop("disabled", true);
+        window.scrollTo(0, 500);
     }
 };
 
