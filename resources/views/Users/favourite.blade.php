@@ -34,9 +34,12 @@
                 <div class="product-img" style="border: 1px solid rgb(243, 243, 243);height:200px;">
                     <img style="height: 200px" src="/images/{{$fav->glass->images->first()->image}}" alt="product image">      
 
-                    <div class="product-badge new-badge">
-                        <span>{{$fav->glass->label}}</span>
-                    </div>
+                    @if ($fav->glass->label == NULL)                            
+                    @else
+                        <div class="product-badge new-badge">
+                            <span>{{$fav->glass->label}}</span>
+                        </div>
+                    @endif
                     <div class="product-favourite">
                         <a class=" {{ $fav->glass->favourite->where('user_id',Auth::id())->count() ? 'favme fa fa-heart active' : 'favme fa fa-heart'}}" id="love"  onclick="return(updateFavorite({{$fav->glass->id}},this))"></a>
                     </div>

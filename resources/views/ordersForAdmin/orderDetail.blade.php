@@ -1,48 +1,58 @@
 @extends('layouts.admin')
 @section('content')
 
-<!-- ------------------------------ -->
+<body>
 <section class="single_product_details_area d-flex align-items-center">   
-<div id="accordion" style="margin-left:230px; width:1000px;" >
+<div id="accordion" style="margin-left:50px; width:1000px;" >
         <!-- start of card -->
         @if ($glassProducts->count())
         @foreach($glassProducts  as $glassProduct)
-            <div class="card">
-              <div class="card-header" id="headingOne">
+            <div class="card" >
+                <div class="card-header" id="headingOne" style="background-color:white;">
                     <h5 class="mb-0">
-                            <table>
+                        <table id="dtHorizontalExample" class="table table-striped table-responsive" width="100%" cellspacing="0" style="background-color:white;">
                             <tr>
                             @foreach($glasses as $glass)&emsp;
                             @if ($glass->id == $glassProduct->product_id)
-                                    <td class="row-2">
-                                    Glass Code : {{$glass->glass_code}}&emsp;
-                                    </td>
-                                    <td class="row-2">Quantity :{{$glassProduct->quantity}}&emsp;&emsp;
-                                    </td>
-                                    @foreach($glassColors  as $color)
-                                        @if ($glassProduct->color_id == $color->id)
-                                            <td class="row-2">Lense Color :{{$color->name}}&emsp;&emsp;</td>
-                                        @endif
-                                    @endforeach
-
-                                    <td class="row-4">
-                                    @if ($glassProduct->category != "no prescription")
-                                        <button class="btn btn-link row-2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Prescription
-                                        </button> 
-                                    @endif  
-                                    @if ($glassProduct->category == "no prescription")
-                                        User didn't add prescription !
-                                    @endif   
-                                    </td>
-                            @endif      
+                                <td class="row-2">
+                                    <img style="height:100px;width:150px;" src="/images/{{$glass->images->first()->image}}">&emsp;
+                                </td>
+                                <td class="row-2">
+                                Glass Code  {{$glass->glass_code}}&emsp;
+                                </td>
+                                <td class="row-2">
+                                Glass Type  {{$glass->glass_type}}&emsp;
+                                </td>
+                                <td class="row-2">Quantity {{$glassProduct->quantity}}&emsp;
+                                </td>
+                                <td class="row-2">Price {{$glassProduct->price}}&emsp;
+                                </td>
+                                @foreach($glassColors  as $color)
+                                    @if ($glass->color_id == $color->id)
+                                        <td class="row-2">Frame Color {{$color->name}}&emsp;&emsp;</td>
+                                    @endif
+                                @endforeach
+                                @foreach($glassColors  as $color)
+                                    @if ($glassProduct->color_id == $color->id)
+                                        <td class="row-2">Lense Color {{$color->name}}&emsp;&emsp;</td>
+                                    @endif
+                                @endforeach
+                                <td class="row-4">
+                                @if ($glassProduct->category != "no prescription")
+                                    <button class="btn btn-link row-2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Prescription
+                                    </button> 
+                                @endif  
+                                @if ($glassProduct->category == "no prescription")
+                                    User didn't add prescription !
+                                @endif   
+                                </td>
+                            @endif   
+                            @endforeach   
                             </tr>
-                            </table>
-                            @endforeach
-                    
+                        </table>
                     </h5>
                 </div>
-
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
                         <div class="row-12">
@@ -121,14 +131,17 @@
                                     <tr>
                                     @if ($lense->id == $lenseProduct->product_id)
                                             <td class="row-2">
+                                                <img style="height:100px;width:150px;" src="/images/{{$lense->image}}">&emsp;
+                                            </td>
+                                            <td class="row-2">
                                             Lense Name: {{$lense->name}}&emsp;
                                             </td>
-
-                                            <td class="row-2">Duration :{{$lenseProduct->duration}}&emsp;</td>
-                                            <td class="row-2">Category :{{$lenseProduct->category}}&emsp;</td>
+                                            
+                                            <td class="row-2">Duration {{$lenseProduct->duration}}&emsp;</td>
+                                            <td class="row-2">Category {{$lenseProduct->category}}&emsp;</td>
                                             @foreach($lenseColors  as $color)
                                                 @if ($lenseProduct->color_id == $color->id)
-                                                <td class="row-2">Lense Color :{{$color->name}}&emsp; </td>
+                                                <td class="row-2">Lense Color {{$color->name}}&emsp; </td>
                                                 @endif
                                             @endforeach
                                             <td class="row-2">
@@ -206,6 +219,5 @@
         </div>
 </div>
 </section>
-<!-- ------------------- -->
-
+</body>
 @endsection

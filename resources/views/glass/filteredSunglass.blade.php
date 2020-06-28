@@ -3,9 +3,12 @@
     <div class="single-product-wrapper" style="display:inline-block;width:260px;height:350px;">
         <div class="product-img" style="border: 1px solid rgb(243, 243, 243);height:200px;">
         <img src="images/{{$glass->images->first()->image}}" alt="" class="mt-4">
-        <div class="product-badge new-badge">
-            <span>{{$glass->label}}</span>
-        </div>
+        @if ($glass->label == NULL)                            
+            @else
+                <div class="product-badge new-badge">
+                    <span>{{$glass->label}}</span>
+                </div>
+             @endif
         
         <div class="product-favourite">
             <a class=" {{ $glass->favourite->where('user_id',Auth::id())->count() ? 'favme fa fa-heart active' : 'favme fa fa-heart'}}" id="love"  onclick="return(updateFavorite({{$glass->id}},this))"></a>

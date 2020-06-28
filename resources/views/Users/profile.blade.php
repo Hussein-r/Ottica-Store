@@ -22,6 +22,12 @@
         font-size:30px;
         margin-bottom:10px;
     }
+    .btn{
+        width:200px;
+        height:50px;
+        color:white;
+        font-size:20px;
+    }
 </style>
 	<div class="mt-3 " style="height:480px;margin-left:30%;">
         <h2 style="margin-left:100px;">Your Profile Information</h2>
@@ -57,8 +63,8 @@
                 <p class="info">{{$user->phone}}</p>
             </div>
         </div>
-        <div style="margin-left:200px;">
-            <a href="{{route('user.edit',Auth::user())}}" class="btn btn-info">Edit</a>
+        <div style="margin-left:150px;">
+            <a href="{{route('user.edit',Auth::user())}}" class="btn btn-primary">Edit</a>
         </div>
 	</div>
 </body>
