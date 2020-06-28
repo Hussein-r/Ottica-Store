@@ -20,7 +20,7 @@
 
 </head>
 @section('content')
-<body style="background-color:white;">
+<body style="background-color:#f6f6f6;">
     <section class="single_product_details_area d-flex align-items-center" style="height:600px;">
 
         <!-- Single Product Thumb -->

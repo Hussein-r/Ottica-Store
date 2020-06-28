@@ -51,19 +51,19 @@
                     <div class="col-lg-4">
                         <div class="product-item sm-height">
                             <a href="/eyeglasses" class="product-category">Eyeglasses</a>
-                            <img src="images/mt6636_w2.jpg" alt="Image" class="img-fluid">
+                            <img src="images/eyeglassescover.jpeg" alt="Image" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="product-item sm-height">
                             <a  href="/sunglasses" class="product-category">Sunglasses</a>
-                            <img src="images/coolwinkscom-eyeglasses-sunglasses-frames-buy-1-get-1-glasses-man-png-312_313.png" alt="Image" class="img-fluid">
+                            <img src="images/sunglassescover.jpeg" alt="Image" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-lg-4 ">
                         <div class="product-item sm-height">
                             <a href="/allLenses" class="product-category ">Lenses</a>
-                            <img src="images/89479373_494593801219205_7109747870906974208_n (2).jpg" alt="Image" class="img-fluid">
+                            <img src="images/contactlensescover.jpeg" alt="Image" class="img-fluid">
                         </div>
                     </div>
                 </div>

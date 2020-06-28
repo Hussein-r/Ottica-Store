@@ -15,7 +15,7 @@
 	<div class="page-content" style="margin-top:100px;">
 		<div class="form-v6-content">
 			<div class="form-left">
-				<img src="images/form-v6.jpg" alt="form" >
+				<img src="images/form.jpeg" alt="form" >
 			</div>
 			<form class="form-detail" method="POST" action="{{ route('register') }}">
                 @csrf

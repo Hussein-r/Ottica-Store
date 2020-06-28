@@ -13,7 +13,7 @@
 <body class="form-v6">
 	<div class="page-content" >
         <div id="maindiv">
-            <div style="float:left;padding-left:30px;padding-top:20px;width:400px;">
+            <div style="float:left;padding-left:30px;padding-top:20px;width:600px;">
                 <h2>Send Emails</h2>
                 <form method="POST" action="{{ route('mail') }}">
                     @csrf
@@ -59,9 +59,6 @@
 			            @endif
 				    </div>
                 </form>
-            </div>
-            <div style="float:right;">
-                <img style="height:550px;border-top-right-radius:10px;border-bottom-right-radius:10px" src="/images/model.jpg" alt="form" >
             </div>
         </div>
 	</div>
