@@ -54,8 +54,9 @@
                 <li class="has-children ">
                 <a href="#">Other Pages</a>
                   <ul class="dropdown">
-                    <li><a href="{{ url('ourbrands') }}">Our Brands</a></li>
-                    <li><a href="{{ url('offers') }}">Special Offers</a></li>
+                    <li><a href="{{ url('ourbrands') }}">OUR BRANDS</a></li>
+                    <li><a href="{{ url('offers') }}">SPECIAL OFFERS</a></li>
+                    <li><a href="{{ url('bestseller') }}">BEST SELLERS</a></li>
                   </ul>
                 </li>
                 <li><a href="{{ url('about') }}">About</a></li>

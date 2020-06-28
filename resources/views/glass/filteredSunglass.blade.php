@@ -6,10 +6,11 @@
         <div class="product-badge new-badge">
             <span>{{$glass->label}}</span>
         </div>
-        </div>
+        
         <div class="product-favourite">
-        <a {{ $glass->favourite->count() ? "style=color:red;" : ''}} id="love"  onclick="return(updateFavorite({{$glass->id}},this))" class="favme fa fa-heart"></a>
+            <a class=" {{ $glass->favourite->where('user_id',Auth::id())->count() ? 'favme fa fa-heart active' : 'favme fa fa-heart'}}" id="love"  onclick="return(updateFavorite({{$glass->id}},this))"></a>
         </div>
+    </div>
         <div class="product-description" style="background-color:rgb(247, 247, 247); padding:10px">
         <h3>{{$glass->brand->name}}</h6>
         <p class="product-price"><span>{{$glass->price_before_discount}} EGP</span> 

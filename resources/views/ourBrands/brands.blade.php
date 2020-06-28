@@ -55,7 +55,7 @@
                     <div class="hover-content">
                             <!-- Post Title -->
                             <!-- <p>{{$glassbrand->name}}</p> -->
-                            <a href="/ourbrands/home">Continue shopping <i class="fa fa-angle-right"></i></a>
+                            <a href="/">Continue shopping <i class="fa fa-angle-right"></i></a>
                         </div> 
 
                     </div>

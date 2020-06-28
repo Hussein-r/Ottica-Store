@@ -98,10 +98,20 @@
                       <td>{{$glass->quantity}}</td>
                     <td>{{$glass->price}}</td>
                     <td>
+                      {!! Form::open(['url'=>'product','method' => 'post' ]) !!}
+                      {{ Form::hidden('id',$glass->id) }}
+                      {{ Form::hidden('quantity',$glass->quantity) }}
+                      {{ Form::hidden('category',$glass->category) }}
+                      {{ Form::hidden('type','glass') }}
+
+                      {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
+                      {!! Form::close() !!}
+                      </td>
+                    {{-- <td>
                     {!! Form::open(['url' => ['product', $glass->id, $glass->quantity, $glass->category, 'glass'] ,'method' => 'delete' ]) !!}
                     {!! Form::submit('X',['class'=>"btn btn-danger height-auto btn-sm"])  !!} 
                     {!! Form::close() !!}
-                    </td>
+                    </td> --}}
                     {{-- <td><a href="#" class="btn btn-danger height-auto btn-sm">X</a></td> --}}
                   </tr>
                   
@@ -204,17 +214,13 @@
                     <strong id="total_price" class="text-black">{{$total_price}}</strong>
                   </div>
                 </div>
-                
-
                 <div class="row">
                   <div class="col-md-12">
                     <a class="btn btn-primary btn-lg btn-block" href="{{url('/checkout')}}" >Proceed To Checkout</a>
                   </div>
-              
                 </div>
               </div>
             </div>
-          
           </div>
         </div>
       </div>
@@ -222,7 +228,7 @@
     @else
     <div class="alert alert-info" style="margin:40px auto; text-align:center; width:500px">
       Empty Cart <a href="/">Continue shopping..</a>
-  </div>
+    </div>
                       
     @endif
 {{-- 

@@ -76,27 +76,27 @@ class CartController extends Controller
         }
     }
 
-    public function deleteOrderProduct($id, $quantity,$category, $type)
+    public function deleteOrderProduct(Request $request)
     {
-        // dd($id);
+        $id = $request->input('id');
+        $quantity = $request->input('quantity');
+        $category = $request->input('category');
+        $type = $request->input('type');
+        // dd($category);
         $order = orderList::where([
             ['user_id',Auth::id()],
             ['user_order_state',0],
             ['admin_order_state','inactive']
         ])->first();
-
         if ($type == 'glass') {
-            // $items = GlassProduct::where('order_id',$order->id);
-            // if($items->count() == 1){
-            // dd($items);
-            // }
+            // dd($type);
             $product = GlassProduct::where([
                 ['product_id',$id],
                 ['order_id',$order->id],
                 ['quantity',$quantity],
                 ['category',$category]
                 ]);
-                
+                // dd($product);
             $details = GlassProductPrescriptions::where([
                 ['product_id',$id],
                 ['order_id',$order->id],
@@ -121,6 +121,7 @@ class CartController extends Controller
             $order->delete();
             }
             else {
+                // dd('.....');
                 $product->delete();
 
             }
@@ -158,7 +159,7 @@ class CartController extends Controller
     }
 
 
-    public function promocode(Request $request ){
+    public function promocode(Request $request){
         $promocode = Promocode::where('code','=',$request->coupon)->firstOrFail();
         $discount = ($promocode->discount);
         $order = orderList::where([

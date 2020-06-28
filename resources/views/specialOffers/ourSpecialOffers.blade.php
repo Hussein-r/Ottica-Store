@@ -60,7 +60,7 @@
                                 <a href="#">Available {{$offer->location}}</a>
                             </div>
                             <p>{{$offer->description}}</p>
-                            <a href="#">Explore more <i class="fa fa-angle-right"></i></a>
+                            <a href="/">Explore more <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>

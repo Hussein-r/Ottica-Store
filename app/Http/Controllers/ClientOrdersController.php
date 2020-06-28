@@ -38,7 +38,9 @@ class ClientOrdersController extends Controller
     {
         //
        
-        $orders=orderList::where("user_id","=",Auth::id())->get();
+        $orders=orderList::where("user_id","=",Auth::id())
+        ->where('user_order_state','=','1')
+        ->get();
         // dd($orders);
         return view('ordersForClient.index', [
             'orders' =>$orders,
